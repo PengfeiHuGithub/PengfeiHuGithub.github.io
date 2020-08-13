@@ -1,5 +1,5 @@
 module.exports = {
-    base: '',
+    base: '/blog/',
     title: '我的个人博客',
     dest: './production',
     markdown: {
