@@ -12,5 +12,13 @@
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^1.5.3"
-  }
+  },
+  "dependencies": {
+    "vuepress-plugin-helper-live2d": "^1.0.2",
+    "vuepress-plugin-live2d-cat": "^0.1.6"
+  },
+  "bugs": {
+    "url": "https://github.com/QiShaoXuan/vuepress-plugin-cat/issues"
+  },
+  "homepage": "https://github.com/QiShaoXuan/vuepress-plugin-cat#readme"
 }
