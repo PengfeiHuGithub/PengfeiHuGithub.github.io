@@ -24,5 +24,14 @@ module.exports = {
           `/web/git/操作标签`,
         ]
       }
+    ],
+    '/web/vue难点解读': [
+      {
+        title: 'vue难点解读',
+        children: [
+          `/web/vue难点解读/`,
+          `/web/vue难点解读/vue难点解读`,
+        ]
+      }
     ]
   };
