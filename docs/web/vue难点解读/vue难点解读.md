@@ -134,3 +134,319 @@ $emit
 总结：避免变量污染
 
 ---------------------------------------------------------------->>
+
+## vue中的v-once 
+
+被定义了 v-once 指令的元素或组件（包括元素或组件内的所有子孙节点）只能被渲染一次。首次渲染后，即使数据发生变化，也不会被重新渲染。一般用于静态内容展示。
+
+html:
+
+```html
+<div id="app">
+    <div v-once>
+        {{content}}
+    </div>
+</div>
+```
+
+
+
+js:
+
+```js
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            content:'格陵兰岛冰下疑现巨大陨石坑 或与灭绝理论有关'
+        }
+    });
+
+    app.content='显卡第一利器升级：AMD新卡到位';
+</script>
+```
+
+输出结果:
+
+格陵兰岛冰下疑现巨大陨石坑 或与灭绝理论有关
+
+这里虽然使用了  app.content 重新设置了内容，但并没有生效，因为我们使用了  v-once 指令。
+
+v-once 指令除了用于展示静态内容，也可能在需要进一步优化性能时用到它哦O(∩_∩)O~
+
+
+
+## vue中的 v-if 与 v-show 的区别
+
+![img](image/1650307-20190819162826144-758116745.png)
+
+### 区别
+
+- 1.手段：v-if是通过控制dom节点的存在与否来控制元素的显隐；v-show是通过设置DOM元素的display样式，block为显示，none为隐藏；
+- 2.编译过程：v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件；v-show只是简单的基于css切换；
+- 3.编译条件：v-if是惰性的，如果初始条件为假，则什么也不做；只有在条件第一次变为真时才开始局部编译（编译被缓存？编译被缓存后，然后再切换的时候进行局部卸载); v-show是在任何条件下（首次条件是否为真）都被编译，然后被缓存，而且DOM元素保留；
+- 4.性能消耗：v-if有更高的切换消耗；v-show有更高的初始渲染消耗；
+
+### 使用场景
+
+基于以上区别，因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
+
+### 总结
+
+v-if判断是否加载，可以减轻服务器的压力，在需要时加载,但有更高的切换开销;v-show调整DOM元素的CSS的dispaly属性，可以使客户端操作更加流畅，但有更高的初始渲染开销。如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。
+
+```vue
+<!--模板 控制 -->
+  <template v-if="false">
+    fdafdsaf
+  </template>
+```
+
+在模板中只能使用 v-if    v-show是不起作用的
+
+
+
+## vue中v-for循环的数据类型，以及相关参数顺序，以及v-for的注意事项
+
+### vue中的v-for可以循环四种数据，分别是，*数字，字符串，数组，对象*
+
+首先，v-for是属性，是对元素属性的扩展。记得，是v-for=""，而不是 v-for:"".
+接着，在v-for属性的值是表达式，里面的参数，用逗号，而不是用空格隔开。
+
+#### 一：v-for循环数字
+
+````html
+<li v-for='num in 10'>{{ num }}</li>
+````
+
+#### 二：v-for循环字符串
+
+```html
+<li v-for="str in 'haha'">{{ str }}</li>
+```
+
+#### 三：v-for循环数组
+
+```html
+<div id="test">
+        <ul>
+            <li v-for='(item,index) in arr'>{{ item }}---{{ index }}</li>
+        </ul>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#test",
+            data: {
+                arr: ['apple', 'orange', 'banana'],
+            }
+        })
+    </script>
+```
+
+上面的item，index是语义化的写法，不是固定的，可以是a,b,c这样的，顺序就是数组内容，数组索引
+
+#### 四：v-for循环对象
+
+```html
+<div id="test">
+        <ul>
+            <li v-for='(value,key,index) in obj'>{{ value }}---{{ key }}---{{ index }}				</li>
+        </ul>
+ </div>
+ <script>
+        const vm = new Vue({
+            el: "#test",
+            data: {
+                obj: {
+                    name: "zhangsan",
+                    age: 18,
+                    sex: '男'
+                }
+            }
+        })
+ </script>
+```
+
+第一个是值，第二个是键，第三个是索引
+
+#### 关于数组和对象中参数顺序的解释
+
+1.所有的循环，首要目的都是为了获取元素的值
+2.其次是元素的键
+3.最后是元素的索引
+可以依靠这个规则来记忆参数的顺序
+
+使用索引的时候要注意数组的翻转   会出现问题
+
+html:
+
+````html
+<div v-for="(item,index) in arr" :key="item.id" :a="index">{{item.name}}</div>
+<button @click="arr.reverse()">反转</button>
+````
+
+js:
+
+````vue
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      hello: '',
+      flag: true,
+      msg: 'hello',
+      arr:[
+        {name:'橘子',id:'a'},
+        {name:'香蕉',id:'b'},
+        {name:'苹果',id:'c'},
+      ],
+    },
+    methods:{
+      fn($event,num) {
+        this.hello = $event.target.value;
+      }
+    }
+  });
+  vm.msg = 'world';
+
+
+</script>
+````
+
+## vue中v-model 实现原理及 input、radio、checkbox 使用区别
+
+html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <!--下拉框-->
+  <label>
+    <select v-model="selectValue">
+      <option disabled>--请选择--</option>
+      <option v-for="item in selectList">{{item.name}}</option>
+    </select>
+    {{selectValue}}
+  </label>
+
+  <br>
+  <!--单选-->
+  <label for="sex1">
+    男
+    <input id="sex1" type="radio" v-model="sex" value="男">
+  </label>
+  <label for="sex2">
+    女
+    <input id="sex2" type="radio" v-model="sex" value="女">
+  </label>
+  <label for="sex3">
+    未知
+    <input id="sex3" type="radio" v-model="sex" value="未知">
+  </label>
+  {{sex}}
+
+  <br>
+  <!--多选-->
+  吃:<input  type="checkbox" v-model="likes" value="吃">
+  睡觉:<input  type="checkbox" v-model="likes" value="睡觉">
+  打豆豆:<input  type="checkbox" v-model="likes" value="打豆豆">
+  面壁:<input  type="checkbox" v-model="likes" value="面壁">
+  {{likes}}
+
+</div>
+```
+
+js:
+
+```vue
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      selectValue: '--请选择--',
+      selectList: [{id:1, name:'大老婆'},{id:1, name:'二老婆'},{id:1, name: '小老婆'},],
+      sex: '男',
+      likes: []
+    },
+    methods:{
+
+    }
+  });
+</script>
+```
+
+使用v-model来进行双向数据绑定的时：
+
+```html
+<input v-model="something">
+```
+
+仅仅是一个语法糖：
+
+```html
+<input v-bind:value="something" v-on:input="something=$event.target.value">
+```
+
+所以在组件中使用的时候，相当于下面的简写：
+
+```vue
+<custom v-bind:value="something" v-on:input="something = $event.target.value"></custom>
+```
+
+所以要组件的v-model生效，它必须：
+
+- 接受一个 value 属性
+- 在有新的value时触发input事件
+
+对比：
+
+```vue
+<template>
+  <InputNumber v-model="value" />
+</template>
+<script>
+  import InputNumber from '../components/input-number/input-number.vue';
+
+  export default {
+    components: { InputNumber },
+    data () {
+      return {
+        value: 1
+      }
+    }
+  }
+</script>
+
+```
+
+````vue
+<template>
+  <InputNumber :value="value" @input="handleChange" />
+</template>
+<script>
+  import InputNumber from '../components/input-number/input-number.vue';
+
+  export default {
+    components: { InputNumber },
+    data () {
+      return {
+        value: 1
+      }
+    },
+    methods: {
+      handleChange (val) {
+        this.value = val;
+      }
+    }
+  }
+</script>
+
+````
+
