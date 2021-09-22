@@ -13,7 +13,8 @@ module.exports = {
         /*横向导航*/
         logo: '/logo3.png',  // 左上角logo
         nav: require('../guide/nav'), // 1.先配置横向导航
-        sidebar: require('../guide/sidebar'),//2.
+        // sidebar: require('../guide/sidebar'),//2.
+        sidebar: 'auto',
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
         search: true,
