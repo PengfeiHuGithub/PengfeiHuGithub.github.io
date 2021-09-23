@@ -1,14 +1,17 @@
 module.exports = [
     {
+        text: '基础', link: '/web-basics/'
+    },
+    {
+        text: '进阶', link:'/web-advanced/'
+    },
+    {
         text: '精选', link:'/web-featured/',
         items: [
             { text: 'HTML模块', link:'/web-featured/html/'},
             { text: 'CSS模块', link:'/web-featured/css/'},
             { text: 'JS模块儿', link:'/web-featured/js/'}
         ]
-    },
-    {
-        text: '进阶', link:'/web-basics/'
     },
     {
         text: '高频', link: '/web-high_frequency/'
@@ -29,6 +32,9 @@ module.exports = [
         text: '手写', link: '/web-handwriting/'
     },
     {
+        text: '模式', link: '/web-model/'
+    },
+    {
         text: '前端面试', link: '/web/',
         items: [
             { text: '优化相关之webpack', link: '/web/webpack/' },
@@ -37,7 +43,9 @@ module.exports = [
         ]
     },
     {
-        text: '后端面试', link: '/web/',
-        items: []
+        text: '拓展阅读', link: '/web-expand/',
+        items: [
+            { text: '浏览器原理', link: '/web-expand/browser/'}
+        ]
     }
 ];
