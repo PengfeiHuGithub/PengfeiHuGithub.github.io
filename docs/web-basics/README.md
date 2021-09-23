@@ -2,9 +2,7 @@
 
 ![面试经验谈--来自知乎芋头Live ](http://poetries1.gitee.io/img-repo/2020/01/23.png)
 
-## 一、HTML、HTTP、web综合问题
-
-
+## **一、HTML、HTTP、web综合问题**
 
 ### 1 前端需要注意哪些SEO
 
@@ -356,7 +354,7 @@
 
 - `DOCTYPE`声明、新增的结构元素、功能元素
 
-### 10 `HTML5`的离线储存怎么使用，工作原理能不能解释一下？
+### 10`HTML5`的离线储存怎么使用，工作原理能不能解释一下？
 
 - 在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件
 - 原理：`HTML5`的离线存储是基于一个新建的`.appcache`文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像`cookie`一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示
@@ -608,17 +606,13 @@ FALLBACK:
 
 > `dns`缓存，`cdn`缓存，浏览器缓存，服务器缓存
 
-### 33 一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。
+###  34 一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。
 
 - 图片懒加载，在页面上的未可视区域可以添加一个滚动事件，判断图片位置与浏览器顶端的距离与页面的距离，如果前者小于后者，优先加载。
 - 如果为幻灯片、相册等，可以使用图片预加载技术，将当前展示图片的前一张和后一张优先下载。
 - 如果图片为css图片，可以使用`CSSsprite`，`SVGsprite`，`Iconfont`、`Base64`等技术。
 - 如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。
 - 如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。
-
-### 34 常见排序算法的时间复杂度,空间复杂度
-
-![img](https://github.com/qiu-deqing/FE-interview/raw/master/img/sort-compare.png)
 
 ### 35 web开发中会话跟踪的方法有哪些
 
@@ -694,14 +688,12 @@ Content-Type: text/html; charset=iso-8859-1
 - `cookie` 的最大大约为 `4096` 字节，为了兼容性，一般设置不超过 `4095` 字节
 - 如果 `cookie` 被人拦截了，就可以取得所有的 `session` 信息
 
-### git fetch和git pull的区别
+### 40 git fetch和git pull的区别
 
 - `git pull`：相当于是从远程获取最新版本并`merge`到本地
 - `git fetch`：相当于是从远程获取最新版本到本地，不会自动`merge`
 
-## 二、CSS部分
-
-
+## **二、CSS部分**
 
 ### 1 css sprite是什么,有什么优缺点
 
@@ -923,7 +915,7 @@ Content-Type: text/html; charset=iso-8859-1
 - 单冒号(`:`)用于`CSS3`伪类，双冒号(`::`)用于`CSS3`伪元素
 - 用于区分伪类和伪元素
 
-### 21 如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
+###  21 如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
 
 - 多数显示器默认频率是`60Hz`，即`1`秒刷新`60`次，所以理论上最小间隔为`1/60*1000ms ＝ 16.7ms`
 
@@ -969,13 +961,13 @@ div{
 
 - `position`、`display`、`float`、`width`、`height`、`margin`、`padding`、`top`、`left`、`right`、`
 
-### 25 CSS在性能优化方面的实践
+###  25 CSS在性能优化方面的实践
 
 - `css`压缩与合并、`Gzip`压缩
 - `css`文件放在`head`里、不要用`@import`
 - 尽量用缩写、避免用滤镜、合理使用选择器
 
-### 26 CSS3动画（简单动画的实现，如旋转等）
+###  26 CSS3动画（简单动画的实现，如旋转等）
 
 - 依靠`CSS3`中提出的三个属性：`transition`、`transform`、`animation`
 - `transition`：定义了元素在变化过程中是怎么样的，包含`transition-property`、`transition-duration`、`transition-timing-function`、`transition-delay`。
@@ -4701,7 +4693,7 @@ function defineReactive(obj, key, val) {
 - **组合继承**：通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用
 - **寄生组合继承**：通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点
 
-### 36 this指向
+### 136 this指向
 
 **1. this 指向有哪几种**
 
@@ -4839,8 +4831,6 @@ Reflect.ownKeys({ [Symbol()]:0, b:0, 10:0, 2:0, a:0 })
 
 ## 143 在输入框中如何判断输入的是一个正确的网址
 
-
-
 ```js
 function isUrl(url) {
        try {
@@ -4852,8 +4842,6 @@ function isUrl(url) {
 ```
 
 ## 四、jQuery
-
-
 
 ### 1 你觉得jQuery或zepto源码有哪些写的好的地方
 
@@ -5057,8 +5045,6 @@ $('#box').clearQueue("queue1"); // delete queue1 with clearQueue
 
 ## 五、Bootstrap
 
-
-
 ### 1 什么是Bootstrap？以及为什么要使用Bootstrap？
 
 > `Bootstrap` 是一个用于快速开发 `Web`应用程序和网站的前端框架。`Bootstrap`是基于 `HTML`、`CSS`、`JAVASCRIPT` 的
@@ -5199,8 +5185,6 @@ $('#box').clearQueue("queue1"); // delete queue1 with clearQueue
 
 ## 六、微信小程序
 
-
-
 ### 1 微信小程序有几个文件
 
 - `WXSS (WeiXin Style Sheets)`是一套样式语言，用于描述 `WXML` 的组件样式， `js` 逻辑处理，网络请求`json`小程序设置，如页面注册，页面标题及 `tabBar`。
@@ -5230,8 +5214,6 @@ $('#box').clearQueue("queue1"); // delete queue1 with clearQueue
 - 数据双向绑定也不也不一样在 `vue`中,只需要再表单元素上加上 `v-model`,然后再绑定 `data`中对应的一个值，当表单元素内容发生变化时，`data`中对应的值也会相应改变，这是 `vue`非常 nice 的一点。微信小程序必须获取到表单元素，改变的值，然后再把值赋给一个 `data`中声明的变量。
 
 ## 七、webpack相关
-
-
 
 ### 1 打包体积 优化思路
 
@@ -5298,8 +5280,6 @@ module.exports = function(src) {
 - 拆包 `splitChunksPlugin`、`import()`、`require.ensure`
 
 ## 八、编程题
-
-
 
 ### 1 写一个通用的事件侦听器函数
 
@@ -5670,8 +5650,6 @@ Object.prototype.clone = function(){
 
 ## 九、其他
 
-
-
 ### 1 负载均衡
 
 > 多台服务器共同协作，不让其中某一台或几台超额工作，发挥服务器的最大作用
@@ -5749,8 +5727,6 @@ Element.prototype.triggerEvent  = function(en){
 - 前端路由实际上只是`JS`根据`URL`来操作`DOM`元素，根据每个页面需要的去服务端请求数据，返回数据后和模板进行组合
 
 ## 十、综合
-
-
 
 ### 1 谈谈你对重构的理解
 
@@ -5854,8 +5830,6 @@ Element.prototype.triggerEvent  = function(en){
 
 ## 十一、一些常见问题
 
-
-
 - 自我介绍
 - 面试完你还有什么问题要问的吗
 - 你有什么爱好?
@@ -5878,8 +5852,6 @@ Element.prototype.triggerEvent  = function(en){
 - 你希望通过这份工作获得什么？
 
 ## 十二、HR面
-
-
 
 ### 你还有其他公司的Offer吗?
 
@@ -5923,4 +5895,3 @@ Element.prototype.triggerEvent  = function(en){
 - 如果你觉得技术面试效果一般，但是你比较想进这家公司，可以报一个折中的薪资。
 - 如果你觉得面试效果很好，但是你不想进这家公司，你可以适当“漫天要价”一下。
 - 如果你觉得面试效果不好，但是你想进这家公司，你可以开一个稍微低一点的工资
-

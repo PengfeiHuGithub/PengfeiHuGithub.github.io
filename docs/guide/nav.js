@@ -35,6 +35,9 @@ module.exports = [
         text: '模式', link: '/web-model/'
     },
     {
+        text: '算法', link: '/web-algorithm/'
+    },
+    {
         text: '前端面试', link: '/web/',
         items: [
             { text: '优化相关之webpack', link: '/web/webpack/' },
