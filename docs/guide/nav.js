@@ -124,9 +124,43 @@ module.exports = [{
     {
         text: '拓展阅读',
         link: '/web-expand/',
-        items: [{
-            text: '浏览器原理',
-            link: '/web-expand/browser/'
-        }]
+        items: [
+            {
+                text: '浏览器原理',
+                link: '/web-expand/browser/'
+            },
+            {
+                text: 'HTTP相关',
+                link: '/web-expand/http/'
+            },
+            {
+                text: '计算机基础',
+                link: '/web-expand/computer/'
+            },
+            {
+                text: 'H5开发',
+                link: '/web-expand/h5/'
+            },
+            {
+                text: '小程序开发',
+                link: '/web-expand/applet/'
+            },
+            {
+                text: 'Canvas学习',
+                link: '/web-expand/canvas/'
+            },
+            {
+                text: 'Taro原理',
+                link: '/web-expand/taro/'
+            },
+            {
+                text: '深入浅出PWA',
+                link: '/web-expand/pwa/'
+            },
+            {
+                text: 'Uniapp实战',
+                link: '/web-expand/uniapp/'
+            }
+        ]
     }
 ];
