@@ -69,6 +69,34 @@ module.exports = [{
             {
                 text: 'JS模块儿',
                 link: '/web-featured/js/'
+            },
+            {
+                text: 'Vue基础',
+                link: '/web-featured/vue-basics/'
+            },
+            {
+                text: 'Vue组件精讲',
+                link: '/web-featured/vue-component/'
+            },
+            {
+                text: 'Vue2.x源码分析',
+                link: '/web-featured/vue-source/'
+            },
+            {
+                text: 'React组合式开发',
+                link: '/web-featured/react-combination/'
+            },
+            {
+                text: 'React Hooks实战',
+                link: '/web-featured/react-hooks/'
+            },
+            {
+                text: 'React 服务端渲染',
+                link: '/web-featured/react-ssr/'
+            },
+            {
+                text: 'IM聊天系统实践',
+                link: '/web-featured/react-chat/'
             }
         ]
     },
@@ -160,6 +188,10 @@ module.exports = [{
             {
                 text: 'Uniapp实战',
                 link: '/web-expand/uniapp/'
+            },
+            {
+                text: 'CSS之美',
+                link: '/web-expand/css/'
             }
         ]
     }

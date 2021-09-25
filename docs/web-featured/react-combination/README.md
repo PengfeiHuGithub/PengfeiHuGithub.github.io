@@ -1,0 +1,2205 @@
+# React组合式开发实践
+
+# 以史为鉴：前端开发的四个时代
+
+在前端整体进入组件化开发时代后，手写各种 UI 组件成为了许多前端工程师入门后的第一课。而对于工作了几年的资深工程师来说，手写组件已经不再是问题，但对于如何帮助团队提升整体开发效率以及个人接下来的技术成长方向却开始变得非常迷茫。
+
+> 以铜为鉴，可以正衣冠；以人为鉴，可以明得失；以史为鉴，可以知兴替。
+
+想要摆脱对未来的迷茫，最好的方法就是向后看，看一路走来前端开发是如何从服务端主导的静态网站一步步发展到现在由客户端主导的单页应用。只有了解了过去前端分别在不同的阶段解决了怎样的问题，才能更好地看清楚未来要向哪里去。
+
+## [#](http://interview.poetries.top/fe-react-docs/react-web-action/01-前端开发的四个时代.html#四个时代)四个时代
+
+
+
+### [#](http://interview.poetries.top/fe-react-docs/react-web-action/01-前端开发的四个时代.html#黑铁时代-插件化)黑铁时代 - 插件化
+
+![img](https://user-gold-cdn.xitu.io/2018/6/15/16403cbbe2e891c5?w=286&h=176&f=png&s=3544)
+
+在前端界大名鼎鼎的 [jQuery (opens new window)](https://jquery.com/)诞生于 2006 年，那时还没有 [Google Chrome (opens new window)](https://en.wikipedia.org/wiki/Google_Chrome)，微软刚刚发布了直到现在还在令许多前端开发者头疼的 [IE 7 (opens new window)](https://en.wikipedia.org/wiki/Internet_Explorer_7)。
+
+jQuery 作为试图抹平不同浏览器之间 API 差异的先锋进入了人们的视野，并在之后很长的一段时间内占据了 Web 开发领域统治性的地位。那时开发一个网站并不需要先配置一个复杂的脚手架，只需要新建一个 HTML 文件即可，开发者们也远未意识到未来前端开发究竟会复杂到什么样的程度，以页面为单位的开发方式在当时看起来并没有什么问题。
+
+**那时还没有人提出组件的概念，基于 jQuery 的 UI 组件都被称为 jQuery 插件（plugin），代表着在任何浏览器环境下都可以即插即用。**
+
+项目的开发速度完全取决于页面数量的多少及布局的复杂程度，所有的变量都挂载在全局之下，引用的各个插件之间相互独立，这样的开发方式似乎并没有给开发者们留下多少可以优化的空间。
+
+### 青铜时代 - 模块化
+
+![img](https://user-gold-cdn.xitu.io/2018/6/16/164080f0d96479ab?w=182&h=62&f=png&s=5975)
+
+随着 [Ajax (opens new window)](https://en.wikipedia.org/wiki/Ajax_(programming))等技术的普及，客户端 JavaScript 的代码量也越来越大，开发者们开始无法忍受全局变量带来的命名冲突，各个插件之间虽然相互独立但多个插件之间的依赖关系却也变得越来越复杂。这时前端开发对于模块化的需求变得非常强烈，于是便涌现出了 [RequireJS (opens new window)](http://requirejs.org/)和 [Sea.js (opens new window)](https://github.com/seajs/seajs)两大专注于解决前端模块化问题的类库，以 Sea.js 发布 1.0 正式版的时间为参考，那时是 2011 年 7 月。
+
+**解决了命名空间和文件依赖的问题，前端终于可以轻装上阵。配合着日趋成熟的各种 UI 插件库，这时前端项目的开发速度有了第一次质的提升。**
+
+摆脱了全局变量的限制，越来越多的前端插件被沉淀了下来。页面数量虽然依然被作为衡量开发量的一个重要指标，但在开发流程中各个模块之间已经开始了协作，开发一个新页面的工作量也不再完全等于页面本身。与此同时，[npm (opens new window)](https://en.wikipedia.org/wiki/Npm_(software))的出现也让这些沉淀下来的前端插件有了栖身之处，却也为今天前端类库**小而分散**的现状埋下了隐患。
+
+### 白银时代 - 组件化
+
+![img](https://user-gold-cdn.xitu.io/2018/6/15/16403cefec123ee1?w=200&h=200&f=png&s=8192)
+
+在前端模块化进行得如火如荼的同时，由谷歌开发的 [AngularJS (opens new window)](https://angularjs.org/)也于 2010 年 10 月发布，这是第一次 JavaScript 框架试图接管所有的 DOM 操作。不过由于在当时过于超前的设计和后续断崖式的升级，AngularJS 一直没能打破 jQuery 在前端开发界的统治地位，直到 2013 年 Facebook 发布 [React (opens new window)](https://reactjs.org/)。
+
+专注于 View 层的 React 虽然提出了 [JSX (opens new window)](https://reactjs.org/docs/introducing-jsx.html)这样不符合传统前端开发习惯的新概念，但基于[虚拟 DOM (opens new window)](https://reactjs.org/docs/faq-internals.html)的重绘效率确实要比 AngularJS 的[脏检查 (opens new window)](https://docs.angularjs.org/guide/scope#scope-life-cycle)高出一个数量级。这着实吸引了许多前端开发者的目光，也让前端开发真正进入了组件化时代。
+
+**摆脱了 DOM 的限制，组件与组件之间的数据传递第一次变得如此轻松，这让开发功能强大的大型复杂组件及沉淀能够覆盖大部分底层需求的 UI 组件库变为了可能。**
+
+过去的几年中，以 [ant-design (opens new window)](https://ant.design/)、[material-ui (opens new window)](https://material-ui.com/)等为代表的优秀的开源前端组件库如雨后春笋般冒了出来，MVVM 框架配合其生态内的组件库成为了现代前端开发的标配。与此同时，前端工程化的浪潮也汹涌袭来，以 [Babel (opens new window)](https://babeljs.io/)、[webpack (opens new window)](https://webpack.js.org/)和 [TypeScript (opens new window)](https://www.typescriptlang.org/)等为代表的 JavaScript 增强工具帮助 JavaScript 摆脱了脚本语言的定位，JavaScript 也开始成为编写大型工程项目的可选项。
+
+但这时开发者们突然发现，以前只需要打开 [Notepad++ (opens new window)](https://notepad-plus-plus.org/)就可以轻松写前端的日子不在了，开始一个前端项目变得异常复杂。在组件库的帮助下，虽然项目的复杂度被大幅降低了，但花在写代码上的时间却一点也没有减少，用组件拼出一个个页面的世界似乎并没有想象中那么美好。
+
+### 黄金时代 - 专业化
+
+![img](https://user-gold-cdn.xitu.io/2018/6/15/16403da01a06c7ca?w=1920&h=1080&f=png&s=157421)
+
+时间来到 2017 年，作为前端组件库界标杆的 ant-design 先后发布了 [ant-design-mobile (opens new window)](https://mobile.ant.design/)及 [ant-design-pro (opens new window)](https://pro.ant.design/)，淘宝系也发布了[飞冰 (opens new window)](https://alibaba.github.io/ice/)（以下称为 ice）。
+
+其中 ant-design-mobile 是一套专注于移动端混合应用开发的前端组件库，现在又推出了 React Native 的版本。曾经在前端开发界流行过一段时间响应式设计的风潮，即一套代码适配所有终端。但慢慢大家发现，一套代码支持所有终端终究只是一个美丽的梦想，移动端和桌面端之间页面尺寸及操作交互的巨大差异，导致二者都需要更专业的解决方案来应对。
+
+ant-design-mobile 想要解决的是移动端的问题，而 ant-design-pro 想要解决的则是企业中后台管理系统搭建这样一个问题。这些被抽象出来后针对中后台系统优化的组件并不能够直接用于搭建前台项目，但牺牲了通用性所换来的专业性也代表着前端在向着细分领域的专业化解决方案靠拢。ice 与 ant-design-pro 类似，所不同的是 ice 还集成了项目的脚手架部分，致力于实现一套纯 GUI 的前端开发模式。
+
+这里我们先按下这些垂直领域的解决方案是否能够解决相应的问题不表，但我们从这些事例中可以看出的趋势是清晰的：**区别于之前大力建设作为前端基础设施的组件库，前端的下一个方向就是要在这些基础设施之上同时向多个细分领域进军，如上面提到的移动端、企业中后台，又如富文本编辑、数据可视化等这些对于专业深度要求更高的领域。**
+
+## 资深工程师的下一站
+
+
+
+随着我们对未来的认知越来越清晰问题也随之而来：在这么多的细分领域中应该专攻哪一个呢？
+
+对于这个问题我们很难给出一个确定的答案，因为每个人所擅长的领域都不尽相同。但有一点可以确定的是，对于资深工程师来说，除了抽象 UI 组件的能力，对业务组件的良好抽象也是一个非常值得去培养的能力。有人可能会提出异议：“我每天写的不就是业务组件？业务组件因为其本身复用价值比较低所以不值得去抽象难道不是前端开发界的共识吗？”
+
+如果你也有着同样的困惑，那么你很可能走入了一个认知误区，即业务组件等同于商品详情页这样具体的需求。事实并不是这样，对业务的抽象代表的是页面的布局、应用的鉴权、产品的国际化等这些更高维度上的问题，只有解决好了这些问题，配合上基础组件库才可以真正做到保质保量地完成一个又一个前端项目，最终推动公司业务向前发展。
+
+## 小结
+
+
+
+在本节中我们一起回顾了从 2006 年至今 12 年来前端开发所走过的四个阶段，即**插件化**、**模块化**、**组件化**和**专业化**。在前端专业化的趋势逐渐清晰的今天，抛去跨领域、跨学科的新技术不谈，希望继续在前端领域深耕的资深工程师培养自己对于复杂业务的抽象能力就变得尤为重要。
+
+我们将以**企业管理系统**为切入点，一起来探讨如何从布局、权限、菜单、通知、多语言等五个方面提升自己抽象复杂业务逻辑的能力。而在这之前，让我们先一起来看一下企业管理系统的前世今生，以及前端组件库为什么不是解决企业管理系统这样一个历史难题的[银弹 (opens new window)](https://zh.wikipedia.org/wiki/没有银弹)。
+
+# 似水流年：企业管理系统的前世今生
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647da99e643b687?w=773&h=336&f=png&s=58280)
+
+站在 2018 年 7 月这样一个时间点上，工程师们在谈起 Web 应用开发时已经很少再会提起如 [JSP（JavaServer Pages） (opens new window)](https://en.wikipedia.org/wiki/JavaServer_Pages)、[ASP.NET（Active Server Pages） (opens new window)](https://en.wikipedia.org/wiki/Active_Server_Pages)等这些传统的服务端 Web 应用开发方案，与此同时像 [jQuery (opens new window)](https://jquery.com/)、[Bootstrap (opens new window)](https://getbootstrap.com/)等这些直接处理样式及交互的工具库也逐渐淡出了历史舞台。随着 React、Angular 及 Vue 这些 MVVM 框架的流行，使用组件去组合页面逐渐代替了 Web 应用过去以页面为单位的开发方式，各种各样的组件库也应运而生成为了支撑现代 Web 应用开发的中坚力量。
+
+## 历史
+
+
+
+时间退回到 2011 年，那是[千团大战（团购） (opens new window)](https://baike.baidu.com/item/千团大战)的元年，也是移动互联网开始真正进入人们日常生活的开始。从那之后，不论是 O2O、垂直电商，还是互联网金融等风靡全国的商业模式，各家创业公司都进入了一个 App 就可以创业的时代，同时也催生了技术领域学习 iOS 和 Android 开发的热潮，会用 Xcode 就可以月薪过万的 iOS 工程师成为了那个时代最好的代名词。但后来随着各大互联网巨头之间的合纵连横，能够不依赖投资机构独立运营的创业公司越来越少，客户端开发的需求也开始大量萎缩。在大起大落的移动端开发之外，其实这几年 Web 端开发的日子也并不好过。传统公司的官网项目连外包公司都喂不饱，除去个别大厂外又有多少公司一定要开发一个 Web 端的应用才能做生意呢？
+
+### 传统企业管理系统（ERP）
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dab5c1e91ad9?w=1280&h=770&f=gif&s=103853)
+
+抛开一直在走下坡路的面向用户的客户端应用不谈，长期占据 Web 应用开发需求主流的各种企业管理系统却从来都没有沉寂过，只是因为这些内部应用的使用者通常来讲不过是内部员工而已，人们对这些管理系统的期待与忍耐度都已经被培养到了一种近乎变态的地步。
+
+但事实上对于企业管理系统开发方式的改良从未停止过。
+
+随着互联网在办公领域的深度普及，几乎所有的传统企业都在将老旧的 CS（client/server）架构的内部系统迁移至更方便灵活的 BS（browser/server）架构。但令人遗憾的是，很多这样的升级只是将原来 C# 写的代码转换成了 JavaScript 而已，相较于现在各种交互流畅、动画炫酷的面向终端用户的应用，大部分企业管理系统的设计与交互依然停留在 Win97 时代。
+
+## 雕版印刷术 vs. 活字印刷术
+
+
+
+![img](https://user-gold-cdn.xitu.io/2018/6/17/1640beee5154b502?w=600&h=316&f=jpeg&s=41059)
+
+发明于唐朝的雕版印刷术一直到明清时期都还在被广泛使用，而更为人所称道的宋代毕昇所发明的活字印刷术却一直都没有成为古代中国主流的印刷技术。这其中最主要的原因一方面是古代所要印刷的书大部分都是比较固定的（如四书五经等），雕版印刷的可复用性并不比活字印刷低多少。另一方面是制造和使用一块雕版还是几千个活字模在成本与复杂度上也是不可同日而语的。换句话说，如果现在就是要印 1000 册《论语》，你是会选择做一块雕版印 1000 次，还是先做几千个活字模并把它们组装好再印上 1000 次呢？答案不言而喻。而且别忘了印完这 1000 册《论语》后，接下来要印的可能是《大学》也可能是《中庸》，上次积累的这几千个活字模并不能够完全覆盖到其他的书，额外的拆卸与组装成本也是一笔不小的开销。再者而言，组装和拆卸活字模要求所有的印刷工人都必须识字，相反雕版印刷对于印刷工人来说几乎是零门槛的，任何人在接受了一定的训练后都可以把这个活儿干好。又由于一个个活字模本身是独立制造的，将几千个活字模组装好后印出的书也难免会出现字与字之间风格或样式不统一的问题，而统一制造的雕版就不存在这个缺陷。在古代，人们所达成的共识也是雕版印刷书的质量和美观程度都要远远胜过活字印刷。
+
+聪明的你可能已经猜到了，上面我们提到的活字印刷术就像是现代前端开发中的组件库，活字模就是一个个独立的组件。如果说我们要解决的是整个 Web 应用领域的终极问题，我们自然需要应用活字印刷的思想在最细的粒度上去进行抽象，以达到边做新项目边充实组件库的目的。但如果我们要解决的就是企业管理系统这样一个具体的问题，应用雕版印刷的思想在更粗的粒度上进行抽象，完成任务所需要的时间和人工成本可能只是原来的百分之一甚至千分之一。
+
+## 机遇
+
+
+
+积重难返的企业管理系统同样是一片充满了变革机遇的绿洲，但有机遇的地方就会有挑战。
+
+企业管理系统作为一个已经存在了几十年的传统行业，一直以来都没有人能够总结出一套较为通用的解决方案，这也从侧面说明了解决这一问题要面临着多大的挑战。相较于注重展示的面向终端用户的应用，企业管理系统的核心在于对工作流程的抽象，这一部分根据企业的不同，其复杂度也不尽相同。这导致了抽取不同系统之间的共性变得异常困难，经验或者说知识很难沉淀下来。另一方面，再小的企业管理系统也都是“麻雀虽小，五脏俱全”，通用布局、用户登录、权限管理、菜单路由、消息通知、操作反馈、多语言支持等等这些模块一个都不能少。这样分散且琐碎的组成形式，让解决企业管理系统开发这个问题不仅需要强大的技术背景支持更需要耐心与细心。
+
+当然，目前在这个领域也有着许多优秀的先行者，我们一起来看几个开源的企业管理系统。
+
+[react-admin(opens new window)](https://github.com/marmelab/react-admin)
+
+![img](https://user-gold-cdn.xitu.io/2018/6/11/163eda126bff53f3?w=1024&h=576&f=png&s=196855)
+
+[ngx-admin(opens new window)](https://github.com/akveo/ngx-admin)
+
+![img](https://user-gold-cdn.xitu.io/2018/6/11/163eda1ac5e131a1?w=1024&h=576&f=png&s=325280)
+
+[blur-admin(opens new window)](https://github.com/akveo/blur-admin)
+
+![img](https://user-gold-cdn.xitu.io/2018/6/11/163eda1faf0e7aa4?w=1024&h=576&f=png&s=228384)
+
+[ant-design-pro(opens new window)](https://github.com/ant-design/ant-design-pro)
+
+![img](https://user-gold-cdn.xitu.io/2018/6/11/163eda226646646a?w=1024&h=576&f=png&s=165156)
+
+## 工程师 vs. 设计师
+
+
+
+对于上面提到的这些优秀的开源项目，许多开发者所抱的态度很多时候都是又爱又恨。在网络讨论中，一个经常被人拿来讨论的问题是，互联网大厂的工程师和传统公司的工程师之间有什么区别？但其实除了工程师之间存在着不同外，互联网大厂设计师与传统公司设计师之间的区别才是最为巨大的。
+
+在传统公司中绝大部分的设计师都是项目导向的，这导致设计师很少有时间去思考和沉淀所做过的东西。素材库、图标库、设计理念及交互方式等这些本该有确定答案的部分几乎都是缺失的。造成这一结果的除了设计师自身的原因之外，“罪魁祸首”其实是公司内部的管理机制，即外行领导内行。许多非软件开发行业出身的项目经理经常简单粗暴地认为两个系统之间长得像就是偷懒，一个系统用了栅格式布局，另一个系统就非得是列表式，这不仅造成了巨大的资源浪费，更带坏了许多设计师的设计思想，将设计系统变成了设计广告，力求标新立异，推陈出新。
+
+说回企业管理系统，许多认可这些开源项目的开发者在新项目开始时遇到的第一个问题就是，设计师已经给出了第一版的设计稿，如果我现在要拿上面这样大而全的解决方案去实现的话要怎么才能跟设计师交代呢？如果要深入内部去把这些开源项目不符合设计要求的部分都改成自己这边的实现，是否还不如另起炉灶再做一个？
+
+是的，在非一线的互联网公司中，困扰程序员的关键往往不是技术，而是不同部门之间因为各自背景、诉求、视野等不同而产生的不协调。大而全的方案看起来很美，但实践起来却困难重重。
+
+## 组合式开发
+
+
+
+为了解决大而全的方案在实践中不够灵活的问题，我们是不是可以将其中包含的各个模块解耦后，独立发布出来供开发者们按需取用呢？让我们先来看一段理想中完整的企业管理系统应用架构部分的伪代码：
+
+```text
+const App = props => (
+  <Provider>                                        // react-redux bind
+    <ConnectedRouter>                               // react-router-redux bind
+      <MultiIntlProvider>                           // intl support
+        <AclRouter>                                 // router with access control list
+          <Route path="/login">                     // route that doesn't need authentication
+            <NormalLayout>                          // layout component
+              <View />                              // page content (view component)
+            </NormalLayout>
+          <Route path="/login">
+          ...                                       // more routes that don't need authentication
+          <Route path="/analysis">                  // route that needs authentication
+            <LoginChecker>                          // hoc for user login check
+              <BasicLayout>                         // layout component
+                <SiderMenu />                       // sider menu
+                <Content>
+                  <PageHeader />                    // page header
+                  <View />                          // page content (view component)
+                  <PageFooter />                    // page footer
+                </Content>
+              </BasicLayout>
+            </LoginChecker>
+          </Route>
+          ...                                       // more routes that need authentication
+          <Route render={() => <div>404</div>} />   // 404 page
+        </AclRouter>
+      </MultiIntlProvider>
+    </ConnectedRouter>
+  </Provider>
+);
+```
+
+在上面的这段伪代码中，我们抽象出了多语言支持、基于路由的权限管理、登录鉴权、基础布局、侧边栏菜单等多个独立模块，可以根据需求添加或删除任意一个模块，而且添加或删除任意一个模块都不会对应用的其他部分产生不可接受的副作用。这让我们对接下来要做的事情有了一个大体的认识，但在具体的实践中，如 props 如何传递、模块之间如何共享数据、如何灵活地让用户自定义某些特殊逻辑等都仍然面临着巨大的挑战。我们需要时刻注意，在处理一个具体问题时哪些部分应当放在某个独立模块内部去处理，哪些部分应当暴露出接口供使用者自定义，模块与模块之间如何做到零耦合以至于使用者可以随意插拔任意一个模块去适应当前项目的需要。
+
+## 小结
+
+
+
+在本节中我们从企业管理系统的历史讲起，一起探讨了为什么活字印刷式的组件库并不能够很好地解决企业管理系统这样一个需要更高层抽象的问题，并由此引出了**组合式开发**的概念，即将不同的核心模块分别抽象再根据项目需要最终组合在一起的开发方式。
+
+在下一节中我们将从最基础的项目脚手架讲起，一起来搭建一个简单却功能齐全的项目脚手架。
+
+如果你想参与到文章中内容的讨论，欢迎在下面的评论区留言，期待与大家的交流。
+
+# 继往开来：可视化页面搭建工具
+
+在人们的传统印象中，前端一直都是**很薄**的一层，向上不能影响后端数据，向下不能改变产品设计，只是相当于数据与界面之间的一个连接层，单独拿出来后就将失去其大部分的价值。但随着单页应用的普及，越来越多的重型前端应用被开发了出来并逐渐成为了人们常用的生产力工具中重要的组成部分。
+
+这其中最经典的一个应用莫过于「可视化页面搭建工具」。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/25/164376ee0b313636?w=770&h=380&f=jpeg&s=53781)
+
+对于任何一家有运营需求的公司，「可视化页面搭建工具」都是一个刚需，我们很难想象有哪家公司的前端工程师每天的工作就是做生命周期只有几天甚至几小时的活动页。所以一直以来「可视化页面搭建工具」在前端开发界都不是一个新鲜的议题。从 20 年前的 [Dreamweaver (opens new window)](https://en.wikipedia.org/wiki/Adobe_Dreamweaver)开始，一直到最近淘宝推出的 [飞冰（ice） (opens new window)](https://alibaba.github.io/ice/)，其本质上的思路都是类似的，即基于组件的模块化页面搭建。
+
+## 三个阶段
+
+
+
+在讨论具体的页面搭建工具之前，我们首先要明确一个问题，那就是谁是页面搭建工具的目标用户以及页面搭建工具能够帮助这些目标用户解决什么问题？
+
+结合目前市面上已经推出的产品，可视化页面搭建工具的目标用户大致可以分为两类：一类是非技术的运营（产品）人员，主要使用场景为更新较为频繁的促销页、活动页等；另一类是非前端开发的技术人员，主要使用场景为简单的内部管理系统搭建。而根据不同的使用场景及需求，页面搭建工具最终交付的成品也不尽相同。
+
+### 静态页面
+
+![img](https://user-gold-cdn.xitu.io/2018/6/25/164376bc84094315?w=1590&h=977&f=png&s=1219738)
+
+常见的可视化页面搭建工具一般都会包含**页面预览区**、**组件选择区**及**布局调整区**（如调整组件顺序等）等三个部分。在从组件选择区选择了某几个组件后，每个被选用的组件还会有各自的属性编辑界面，一般为弹窗的形式，如下图所示的表格组件编辑界面。
+
+![img](https://user-gold-cdn.xitu.io/2018/7/24/164ca43a9b8db929?w=1794&h=683&f=png&s=54559)
+
+最终的产出就是一段描述当前页面布局与内容的 [DSL (opens new window)](https://en.wikipedia.org/wiki/Domain-specific_language)，通常以 JSON 的格式存储。
+
+```text
+{
+  "pageId": 1,
+  "pageUrl": "/11-11-promo/electronics",
+  "pageTitle": "双十一大促 - 家电专场",
+  "layout": "two-columns",
+  "components": {
+    "two-columns": {
+      "firstCol": [{
+        "componentName": "list",
+        "componentProps": [{
+          "title": "促销家电列表",
+          "data": [{
+            "name": "电视机"
+          }, {
+            "name": "洗衣机"
+          }, {
+            "name": "冰箱"
+          }]
+        }]
+      }],
+      "secondCol": [{
+        "componentName": "list",
+        "componentProps": [{
+          "title": "促销家电列表",
+          "data": [{
+            "name": "电视机"
+          }, {
+            "name": "洗衣机"
+          }, {
+            "name": "冰箱"
+          }]
+        }]
+      }]
+    }
+  }
+}
+```
+
+与之相配合的在客户端代码中还需要有两个解析器。第一个解析器是路由解析器，即根据当前页面路径向后端发送请求拿到对应页面的 DSL 数据。第二个解析器是在拿到这段 DSL 数据后对 `components` 字段进行解析然后按照设置的布局逐个渲染配置好的组件。
+
+这种架构非常适合处理内容展示页面的需求，从技术角度来讲也很适合做服务端渲染因为每个页面的渲染结果完全是数据驱动的，后端返回的服务端渲染结果就是最终前端展示的 HTML。但这种方案的局限性在于无法动态更新页面数据，因为数据和组件的配置是完全绑定的想要更新页面数据就需要去更改组件的配置。
+
+### 动态页面
+
+为了实现动态更新数据的需求，我们需要将组件的数据源与组件的配置解耦，也就是说我们需要将原先组件中配置好的数据替换为一个后端的数据接口，让后端的数据接口可以直接与组件进行对接。这样就实现了数据与配置之间的解耦，即不需要更新组件的配置就可以直接更新组件的展示数据。这样的灵活性对于促销页、活动页等数据变动频繁的业务场景来说是非常有帮助的。
+
+```text
+{
+  "pageId": 1,
+  "pageUrl": "/11-11-promo/electronics",
+  "pageTitle": "双十一大促 - 家电专场",
+  "layout": "two-columns",
+  "components": {
+    "two-columns": {
+      "firstCol": [{
+        "componentName": "list",
+        "componentApi": "/api/11-11-promo/electronics/list",
+        "componentProps": [{
+          "title": "促销家电列表"
+        }]
+      }],
+      "secondCol": [{
+        "componentName": "list",
+        "componentApi": "/api/11-11-promo/electronics/list",
+        "componentProps": [{
+          "title": "促销家电列表"
+        }]
+      }]
+    }
+  }
+}
+```
+
+除了直接配置数据接口外，另一种常见的做法是将数据接口统一处理为数据资产，在使用者配置组件的数据源时，让其可以在所有相关的数据资产中选择需要的部分，然后再转化为具体的数据接口，保存在组件配置中。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/26/1643a100da62e87f?w=1862&h=1332&f=png&s=274984)
+
+但在引入了异步数据之后，有一个必须要解决的问题就是何时发出这些数据请求。这里推荐使用**高阶组件**的方法来解决这一问题，即抽象出一个专门根据组件的 `componentApi` 属性发送请求的高阶组件，并将它包裹在所有需要发送异步请求的组件之上。
+
+```text
+function fetchData(WrappedComponent) {
+  class FetchData extends Component {
+    state = {
+      data: {},
+    }
+
+    componentDidMount() {
+      const { componentApi } = this.props;
+      api.get(componentApi)
+        .then((response) => {
+          this.setState({
+            data: response,
+          });
+        });
+    }
+
+    render() {
+      return <WrappedComponent {...props} data={this.state.data} />;
+    }
+  }
+
+  return FetchData;
+}
+```
+
+### 动态可交互页面
+
+上面提到的动态页面虽然做到了动态更新数据，但组件与组件之间却仍是独立工作的沙盒模式无法交换数据，也无法感知或响应其他组件的变化。
+
+为了实现组件之间的通信与简单交互，我们需要将不同的组件通过一些自定义的钩子 hook 起来。如下面这个例子中，list 组件 `componentQuery` 中的 `type` 字段就来自于 dropdown 组件的 `activeKey`。用户在改变 dropdown 组件的 `activeKey` 时，也会更新 list 组件获取数据所调用的 API，如 `"/api/11-11-promo/electronics/list?type=kitchen"` 或 `"/api/11-11-promo/electronics/list?type=living"` 等。
+
+```text
+{
+  "pageId": 1,
+  "pageUrl": "/11-11-promo/electronics",
+  "pageTitle": "双十一大促 - 家电专场",
+  "layout": "two-columns",
+  "components": {
+    "two-columns": {
+      "firstCol": [{
+        "componentName": "dropdown",
+        "componentProps": [{
+          "title": "选择家电种类",
+          "defaultActiveKey": "kitchen",
+          "data": [{
+            "key": "kitchen",
+            "value": "厨房"
+          }, {
+            "key": "living",
+            "value": "客厅"
+          }, {
+            "key": "bedroom",
+            "value": "卧室"
+          }]
+        }]
+      }],
+      "secondCol": [{
+        "componentName": "list",
+        "componentApi": "/api/11-11-promo/electronics/list",
+        "componentQuery": {
+          "type": "dropdown_activeKey"
+        },
+        "componentProps": [{
+          "title": "促销家电列表"
+        }]
+      }]
+    }
+  }
+}
+```
+
+这样我们就实现了组件与组件之间的联动，大大拓展了页面搭建工具可覆盖的需求范围。在达到了这个阶段之后，我们甚至可以说使用页面搭建工具搭建出来的页面与日常工程师手写的页面之间区别已经不大了。但与此同时随着业务需求的复杂程度越来越高，使用页面搭建工具生成的 DSL 也会越来越复杂，它的表现力相较于代码究竟孰优孰劣，这就很考验平台设计者的内功了。
+
+## 动态路由
+
+
+
+可视化页面搭建工具的核心价值就是以最小的代价快速创建大量时效性较强的页面，在创建页面不再是一个问题后，如何管理这些被创建出来的页面成为了下一个待解决的问题。
+
+假设我们现在已经创建了一个营销页面的 MongoDB 集合，每个页面都有一个自己的 uuid 如 `580d69e57f038c01cc41127e` 。最简单的情况下，我们可以在应用中创建一个例如 `/promotion/:id` 这样的路由，然后根据每个页面的 uuid 来获取页面的 DSL 数据。这样的做法非常简洁，但存在的问题是所有营销页的 url 都是无含义的 uuid，既不利于 SEO，也不利于用户以输入 url 的方式到达页面。
+
+针对这个问题，我们需要在页面的 url 和 uuid 之间再建立起一个一一对应的关系，即后端除了要提供获取页面 DSL 数据的接口外，还需要再提供一个处理动态路由的接口。如 `580d69e57f038c01cc41127e` 对应的页面 url 为 `/double11-promotion`，那么在用户到达 `/double11-promotion` 页面后，前端需要先将页面的 url 发送至后端的动态路由接口以拿到页面真正的 uuid，然后再调用获取页面 DSL 数据的接口拿到页面中配置好的组件数据并渲染。
+
+这时另一个问题出现了，前端如何区分 `/double11-promotion` 这种动态路由和 `/home` 这种固定路由呢？在前文中我们提到过 react-router 是按照所有路由定义的顺序逐一去匹配路由的，如果当前的页面路径和所有的路由都匹配不上的话，则会渲染在最后定义的 404 页面。换句话说，在简单的应用中路由只分为两种，一种是定义好的固定路由，另一种是会由 404 页面统一处理的其他路由。
+
+```text
+const Router = ({ history }) => (
+  <ConnectedRouter history={history}>
+    <div>
+      <Route path="/home" component={Home} />
+      <Route path="/login" component={Login} />
+      <Route path="/store/:id" component={Store} />
+      <Route path="/404" component={NotFound} />
+      <Route component={DynamicRoute} /> // try to query the url from backend
+    </div>
+  </ConnectedRouter>
+);
+```
+
+但在引入了动态路由后，第三种路由就出现了，首先它需要和定义好的固定路由之间没有冲突，即如果应用中已经定义了 `/home` 的话，由页面搭建平台搭建出来的页面的 url 就不能够再是 `/home`。否则的话因为固定路由 `/home` 的匹配优先级较高，用户在到达 `/home` 页面后永远都只会看到固定路由 `/home` 的界面。其次在和所有固定路由尝试匹配失败后，我们不再直接将当前 url 交给 404 页面处理，而是交给动态路由组件，由动态路由组件尝试将当前 url 发送至后端的路由服务，查找当前 url 是否是页面集合中的一个有效 url，如果是则返回页面的 uuid，如果不是则返回查找失败再由前端主动地将页面 url 替换为 `/404` 并渲染 404 页面。也就是说，对于所有无法和固定路由相匹配的 url，我们都先假定它是一个动态路由，尝试调用后端的路由服务来获取页面数据，如果后端的路由服务也查找不到它的话，再将其认定为是 404 的情况。
+
+### 后端路由服务的意义
+
+在前后端分离架构的背景下，前端已经逐渐代替后端接管了所有固定路由的判断与处理，但在动态路由这样一个场景下，我们会发现单纯前端路由服务的灵活度是远远不够的。在用户到达某个页面后，可供下一步逻辑判断的依据就只有当前页面的 url，而根据 url 后端的路由服务是可以返回非常丰富的数据的。
+
+常见的例子如页面的类型。假设应用中营销页和互动页的渲染逻辑并不相同，那么在页面的 DSL 数据之外，我们就还需要获取到页面的类型以进行相应的渲染。再比如页面的 SEO 数据，创建和更新时间等等，这些数据都对应用能够在前端灵活地展示页面，处理业务逻辑有着巨大的帮助。
+
+甚至我们还可以推而广之，彻底抛弃掉由 react-router 等提供的前端路由服务，转而写一套自己的路由分发器，即根据页面类型的不同分别调用不同的页面渲染服务，以多种类型页面的方式来组成一个完整的前端应用。
+
+## 展望未来
+
+
+
+在了解了可视化页面搭建工具大体的工作流程后，我们不得不承认目前的可视化页面搭建工具仍存在着诸多不足。尤其是在搭建动态可交互页面方面，组件之间烦琐的依赖关系甚至比源代码更难管理，出了问题之后 debug 的过程也非常令人头痛。另一方面，上述提到的这种页面搭建方式最终都要落地到一个具体的包含两个特殊解析器的应用中，再加上应用本身的构建和部署过程全程无专业前端开发参与几乎是不可能的。
+
+为了解决这一问题，许多专业的前端团队也在尝试着从工程的角度出发，将项目脚手架部分也一并 GUI 化，提供可视化的操作界面并覆盖项目构建、打包、发布的全过程。但这让整个工具的使用复杂度又上升了一个等级，虽然拥有了对于最终产出结果源码级别的控制能力，但对非技术人员非常不友好，极大地限制了工具可以覆盖到的用户群体。
+
+关于这一问题，笔者这里提供另一种不成熟的思路供各位一起讨论。
+
+其实从本质上讲，项目脚手架及后续的打包、发布与页面搭建之间是没有直接的联系的，也就是说我们能不能将二者完全拆分开来当成两个独立的工具分别开发？让页面的归页面，应用的归应用。一直强调的组合式开发的理念，假设我们现在已经拥有了一个可以很好地解决独立页面开发的工具，使用者在配置完了应用中所有的页面（只包含页面的具体内容，不包含菜单、页眉、页脚等全局组件）后，再使用另一个应用构建工具将配置好的页面嵌入应用路由中，然后选择性地开启一些全局功能，如页面布局、权限配置、菜单管理等，并最终将配置好的应用通过 webpack 等打包工具编译成生产环境中可以运行的 HTML、CSS 和 JavaScript，再通过持续集成工具打上版本 tag 发布到服务器上。
+
+当然，目前这些都仍只是抽象的想法，具体落地时一定还会遇到各种各样的问题。但简而言之，软件工程行业与传统行业最大的区别就是软件工程行业从不重复自己，我们坚信同样的事情在第二次做时受益于第一次积累下来的经验，我们一定会做得比上一次更好。
+
+# 实战篇 01：开发前准备
+
+## 为什么选择 React
+
+
+
+企业管理系统作为供企业内部人员使用的应用，在浏览器适配性方面的要求并没有供普通用户使用的应用那么严格，这为我们选择现代的 JavaScript 框架提供了一定的便利。于是接下来的问题就变为了在 React、Angular、Vue 这三大 JavaScript 框架中应当选择哪一个？
+
+其实这个问题在具体技术层面并没有一个确定的答案，更多的还是要看团队成员们的背景。如果专业前端比较多的话，React 和 Vue 都是不错的选择。如果团队中后端背景的全栈比较多的话，大而全且接近 Java 思想的 Angular 可能是最优的选择。
+
+至于 React 的 Vue 之间的选择可以说虽然二者在写法上有着许多的不同，但核心的区别却是在于二者的社区构成。React 的社区更加去中心化，许多常用的第三方库都不是由官方提供的。这让 React 社区非常得活跃，在一个问题上大家可能会产生出许多种不同的解决方案。Vue 的社区则相对而言更中心化一些，除了 Vue 本身支持的功能要比 React 多之外，如 [Vuex (opens new window)](https://vuex.vuejs.org/)、[Vue Router (opens new window)](https://router.vuejs.org/)这样由官方维护的第三方库也让 Vue 的社区更多地是在官方的指导下去解决问题。简而言之的话，React 选择更多，Vue 更标准化，但二者之间并没有好坏之分。
+
+最后还有一点值得比较的就是二者对于 TypeScript 的友好程度。React 社区在 TypeScript 方面的探索以及积累的经验相对而言要比 Vue 社区更多一些，而 Vue 则是在 [2.5 (opens new window)](https://vuejs.org/v2/guide/typescript.html)版本之后才完善了自身对于 TypeScript 的支持。所以如果你的技术选型中有 TypeScript 的话，在渲染框架层面 React 可能会是一个更好的选择。
+
+## 示例项目列表
+
+
+
+在进入具体的实战篇之前，先交代下后面实战篇中会涉及的示例项目：
+
+1. 基础脚手架：[react-boilerplate(opens new window)](https://github.com/AlanWei/react-boilerplate)
+2. 企业管理系统脚手架：[react-boilerplate-pro(opens new window)](https://github.com/AlanWei/react-boilerplate-pro)
+3. 侧边栏组件：[react-sider(opens new window)](https://github.com/AlanWei/react-sider)
+4. 包含鉴权的路由：[react-acl-router(opens new window)](https://github.com/AlanWei/react-acl-router)
+5. 国际化多语言文件注入：[react-intl-context(opens new window)](https://github.com/AlanWei/react-intl-context)
+
+这其中前两个是完整的示例项目，在把项目 clone 到本地后根据 README.md 文件中的指导就可以运行起来。后三个是企业管理系统中常用模块的组件抽象，全部都应用在了 `react-boilerplate-pro` 项目中，推荐搭配着 demo 一起研究。
+
+## Node.js
+
+
+
+笔者本地的 Node.js 版本是 `8.11.3`。推荐使用 `8.10.0` 或 `9.10.0` 以上的版本，否则将不能够兼容 ESLint 当前最新的 `5.0` 版本。
+
+## 包管理工具
+
+
+
+各位在安装项目依赖时可以使用默认的 npm，但在这里推荐使用 [Yarn (opens new window)](https://yarnpkg.com/)作为项目的包管理工具，在所有的项目中也都提供了相应的 `yarn.lock` 文件。这样可以确保大家使用的第三方依赖与笔者本地的保持一致，而且 Yarn 自身强大的 cache 功能也可以在重复安装相同依赖时起到一定的加速作用。
+
+## 第三方依赖
+
+
+
+所有项目中需要用到的第三方依赖都在项目的 `package.json` 以及 `yarn.lock` 中有所体现，大家使用 `yarn install`（或 `npm install`）安装即可。
+
+这里列出一些使用的重要依赖的版本，供大家参考：
+
+- react: `16.4.2`
+- react-dom: `16.4.2`
+- redux: `4.0.0`
+- redux-thunk: `2.3.0`
+- react-router-dom: `4.3.1`
+- connected-react-router: `4.3.0`
+- antd: `3.6.6`
+- webpack: `4.16.5`
+- babel-core: `6.26.3`
+- eslint: `5.3.0`
+- jest: `23.4.2`
+
+示例项目会定时对使用的第三方依赖进行升级，但因为第三方依赖的更新速度较快，所以上面列出的第三方依赖版本可能会与实际示例项目中的有所出入，一切以实际示例项目中的 `package.json` 和 `yarn.lock` 为准。
+
+## 拓展学习资料
+
+
+
+1. [AlanWei/blog (opens new window)](https://github.com/AlanWei/blog)：笔者的 GitHub 博客，里面有更多关于 React、组件库、前端数据层、服务端渲染的资料。
+2. [pure render (opens new window)](https://zhuanlan.zhihu.com/purerender)：阿里数据中台前端团队分享前端相关经验。
+3. [前端精读评论 (opens new window)](https://zhuanlan.zhihu.com/FrontendPerusal)：阿里数据中台前端团队分享前端界的好文精读。
+4. [前端新能源 (opens new window)](https://zhuanlan.zhihu.com/ne-fe)：分享前端有深度的新思想和新方法。
+5. [蚂蚁金服体验科技 (opens new window)](https://zhuanlan.zhihu.com/xtech)：探索极致用户体验与最佳工程实践。
+
+
+
+# 实战篇 02：项目脚手架
+
+> 本节参考代码：
+> [react-boilerplate(opens new window)](https://github.com/AlanWei/react-boilerplate)
+
+经过了刀耕火种的插件化时代，伴随着越来越繁荣的 [npm (opens new window)](https://www.npmjs.com/)生态，近几年来前端开发的三大件 HTML、CSS 及 JavaScript 都发生了不同程度上的进化，这也让开发或选择一个合适的项目脚手架（boilerplate）成为了前端项目的第一个难点。在 React 生态中，虽然已经有了像 [`create-react-app` (opens new window)](https://github.com/facebook/create-react-app)这样官方指定的脚手架项目，但为了深入理解一个前端脚手架所需要承担的责任与能够解决的问题，不妨让我们删繁就简一起来搭建一个只包含最少依赖的功能齐全的项目脚手架。
+
+## [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#html-部分)HTML 部分
+
+
+
+在 JavaScript 框架接管了所有 DOM 相关的操作与更新后，HTML 方面的工作量就大量地减少了，很多时候只需要为框架提供一个可以注入 DOM 元素的根节点即可。
+
+```text
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+    </div>
+  </body>
+</html>
+```
+
+为了让页面的缩放比例与当前用户设备的屏幕尺寸保持一致，我们可以在模板中添加 HTML5 新引入的 [`viewport` (opens new window)](https://www.w3schools.com/css/css_rwd_viewport.asp)属性，这对于需要支持移动端的项目非常重要。
+
+```text
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+接下来再在 HTML 中添加应用标题 `title`，这里需要注意的是，因为我们不希望采用硬编码的方式来处理应用标题，而是希望将应用标题作为 webpack 插件中的一个变量注入到 HTML 模板中，所以需要选择一个模板语言来增强普通 HTML 的功能。这里我们以 [EJS (opens new window)](http://ejs.co/)为例讲解如何实现变量注入。
+
+```text
+<title><%= htmlWebpackPlugin.options.title %></title>
+```
+
+除了 `title` 部分，我们还需要将 webpack 编译完成后的 JavaScript 与 CSS 的文件路径也注入到 HTML 模板中。
+
+```text
+<% for (var chunk in htmlWebpackPlugin.files.css) { %>
+  <link rel="preload" href="<%= htmlWebpackPlugin.files.css[chunk] %>" as="style">
+<% } %>
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+  <link rel="preload" href="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" as="script">
+<% } %>
+```
+
+除去变量注入外，EJS 等这类 HTML 模板语言还支持条件判断等编程语言的功能，如下面这段代码就实现了根据 webpack 配置来决定应用是否可以被搜索引擎检索。
+
+```text
+<% if (htmlWebpackPlugin.options.IS_SEO_ENABLED) { %>
+<meta name="robots" content="index, follow">
+<% } else { %>
+<meta name="robots" content="noindex, nofollow">
+<% } %>
+```
+
+根据项目的需要我们还可以在模板中定义应用 `favicon` 等传统 HTML 支持的属性，这里不再赘述。
+
+## [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#css-部分)CSS 部分
+
+
+
+相较于 HTML，CSS 作为前端应用的另一核心组成部分受到 JavaScript 发展的冲击要小得多。以 [Sass (opens new window)](https://sass-lang.com/)、[Less (opens new window)](http://lesscss.org/)为代表的 CSS 预处理工具极大地增强了 CSS 的功能，也让 CSS 保持了自己原先独立的地位。
+
+但为了打通基于 webpack 的整体项目编译流程，我们也需要在 webpack 中合理地配置 CSS 的编译方式，使得 Sass（Less）、CSS 及 webpack 可以无缝衔接。
+
+### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#区别对待项目中的-css-与-node-modules-中的-css)区别对待项目中的 CSS 与 node_modules 中的 CSS
+
+#### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#项目中的-css)项目中的 CSS：
+
+```text
+{
+  test: /\.scss$/,
+  exclude: /node_modules/,
+  use: IS_PROD ? [
+    MiniCssExtractPlugin.loader,
+    {
+      loader: 'css-loader',
+      options: { minimize: true },
+    },
+    {
+      loader: 'postcss-loader',
+      options: {
+        plugins: () => [autoprefixer({ browsers: 'last 5 versions' })],
+        sourceMap: true,
+      },
+    },
+    {
+      loader: 'sass-loader',
+      options: {
+        includePaths: [
+          SOURCE_DIR,
+        ],
+      },
+    },
+  ] : [
+    {
+      loader: 'style-loader',
+      options: { singleton: true },
+    },
+    'css-loader',
+    {
+      loader: 'postcss-loader',
+      options: {
+        plugins: () => [autoprefixer({ browsers: 'last 5 versions' })],
+        sourceMap: true,
+      },
+    },
+    {
+      loader: 'sass-loader',
+      options: {
+        includePaths: [
+          SOURCE_DIR,
+        ],
+      },
+    },
+  ],
+}
+```
+
+这里需要注意的有两点，一是 `sass-loader` 的 `includePaths` 设置为 `src/` 目录，这是为了项目中的 scss 文件可以方便地使用绝对路径相互引用，而不需要使用较为繁琐且不利用重构的相对路径。二是开发时使用 `style-loader` 而不是 `css-loader` 来加载 CSS，这是为了结合 `webpack-dev-server` 的热更新（hot reload）功能，在本地开发时将所有的 CSS 都直接内嵌至 HTML 中以加快热更新的速度。
+
+#### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#node-modules-中的-css)node_modules 中的 CSS：
+
+```text
+{
+  test: /\.css$/,
+  include: /node_modules/,
+  use: [
+    MiniCssExtractPlugin.loader,
+    'css-loader',
+    {
+      loader: 'postcss-loader',
+      options: {
+        plugins: () => [autoprefixer({ browsers: 'last 5 versions' })],
+        sourceMap: true,
+      },
+    },
+  ],
+}
+```
+
+在项目开发的过程中，我们很有可能还需要引入一些包含 CSS 的第三方库。这里需要注意的是，为了避免有些第三方库提供的 CSS 没有做浏览器兼容性处理，我们在加载 `node_moduels` 中的 CSS 之前还要使用 `postcss-loader` 再统一处理一遍，以确保所有进入生产环境的 CSS 都经过了相应的浏览器兼容性处理。
+
+### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#样式变量与-mixin)样式变量与 mixin
+
+正如前文中所提到的，CSS 作为独立的一部分一直以来受到前端工程化的影响都比较小。但与此同时许多开发者一味地追求开发效率，很多时候忽略了应该以一门编程语言的态度去对待 CSS。
+
+最常见的例子就是对于 CSS 中颜色的处理，许多开发者都是直接复制设计稿中的十六进制代码，丝毫没有考虑到不同颜色在整体项目中的复用性与统一性。对于 mixin 的使用也是一样，例如卡片阴影等这些需要多个 CSS 属性组合的样式，很多时候也都是采取复制粘贴 CSS 代码的方式解决。
+
+这些都是我们在实际开发中应该尽量去避免出现的问题。在样式表的根目录 `styles/` 文件夹中我们完全可以将这些通用的变量与 mixin 提前定义好：
+
+```text
+// variables.scss
+$grey-1: #ffffff !default;
+$grey-2: #fafafa !default;
+$grey-3: #f5f5f5 !default;
+$grey-4: #e8e8e8 !default;
+$grey-5: #d9d9d9 !default;
+$grey-6: #bfbfbf !default;
+$grey-7: #8c8c8c !default;
+$grey-8: #595959 !default;
+$grey-9: #262626 !default;
+$grey-10: #000000 !default;
+
+$blue-1: #e6f7ff !default;
+$blue-2: #bae7ff !default;
+$blue-3: #91d5ff !default;
+$blue-4: #69c0ff !default;
+$blue-5: #40a9ff !default;
+$blue-6: #1890ff !default;
+$blue-7: #096dd9 !default;
+$blue-8: #0050b3 !default;
+$blue-9: #003a8c !default;
+$blue-10: #002766 !default;
+
+$red-1: #fff1f0 !default;
+$red-2: #ffccc7 !default;
+$red-3: #ffa39e !default;
+$red-4: #ff7875 !default;
+$red-5: #ff4d4f !default;
+$red-6: #f5222d !default;
+$red-7: #cf1322 !default;
+$red-8: #a8071a !default;
+$red-9: #820014 !default;
+$red-10: #5c0011 !default;
+
+// mixins.scss
+@mixin text-ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+```
+
+并在编写具体的页面样式时坚持不使用任何硬编码的值来保证项目样式的统一性，为后续维护中的样式变更打下良好的基础。
+
+## [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#javascript-部分)JavaScript 部分
+
+
+
+JavaScript 作为近几年来变化最大的一部分，总结下来的改变主要集中在三个方面：一是需要将使用 ES2015、ES2016、ES2017 特性的 JavaScript 代码编译至大多数浏览器普遍支持的 ES5（对应工具为 Babel），二是需要将编译好的 JavaScript、CSS 及 HTML 整合起来，也就是我们常说的打包（对应工具为 webpack），三是需要对代码风格及规范进行检查（对应工具为 ESLint）。
+
+### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#babel-配置)Babel 配置
+
+![img](https://user-gold-cdn.xitu.io/2018/6/18/164114407bfed7d8)
+
+`.babelrc` 作为 Babel 的配置文件，最核心的两部分就是 `presets` 以及 `plugins`。
+
+`presets` 代表了 Babel 配置的核心部分。其中 `babel-preset-env` 整合了 `es2015`、`es2016`、`es2017` 三个原先独立的 `preset`，开发者只需要引入 `env` 这样一个 `preset` 就可以安全地使用上述三个版本中包含的 JavaScript 新特性。
+
+`plugins` 更像是对 `presets` 的一个补充，供开发者们去自定义一些 `presets` 之外的功能，其中比较常用的如对象扩展符 `...` 就需要引入 `babel-plugin-transform-object-rest-spread` 开启。除了 JavaScript 部分的扩展外，Babel 对 React 也有着相应的支持，如将 JSX 编译为 React 原生的 `React.createElement` 方法以及为 React 组件添加 `displayName` 属性等。
+
+Babel 作为一个基于插件系统打造的 JavaScript 编译工具，其可定制度是非常高的，开发者们完全可以根据自己的使用需要与编码习惯去选择或开发合适的插件以达到提升开发效率的效果。
+
+### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#webpack-配置)webpack 配置
+
+![img](https://user-gold-cdn.xitu.io/2018/6/18/164114462180b3bc?w=1280&h=660&f=jpeg&s=38167)
+
+webpack 作为现在最流行的前端打包工具，其一路走来的发展史也是许多前端开发者的血泪史。webpack 1 到 webpack 2 时破坏式的升级导致了许多前端项目直到今天都仍然停留在 webpack 1，而 webpack 3 到 webpack 4 时彻底重构了的内部插件系统又导致了第二次断崖式升级。但值得庆幸的是，webpack 在最新的 4+ 版本中终于承认了「约定大于配置」并大幅减少了在功能与插件方面配置代码的数量。
+
+webpack 配置的核心一是源代码的入口（entry）与打包后代码的出口（output），二是不同资源的加载器（loader），三是插件，常用的如处理 CSS 的 `mini-css-extract-plugin`，处理 HTML 的 `html-webpack-plugin` 等。具体实用的 webpack 配置大家可以参考示例项目 [`react-boilerplate` (opens new window)](https://github.com/AlanWei/react-boilerplate)中的 [`webpack.config.js` (opens new window)](https://github.com/AlanWei/react-boilerplate/blob/master/webpack.config.js)部分。
+
+### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#eslint-配置)ESLint 配置
+
+![img](https://user-gold-cdn.xitu.io/2018/6/18/16411449e8db5234?w=398&h=233&f=png&s=12758)
+
+相较于 Babel 与 webpack，ESLint 更像是一个可选项，因为它并不会直接影响最终编译完成的代码，而是在编写阶段对开发者的编码风格进行约束，帮助开发者写出更好的 JavaScript 代码。
+
+写代码是一门手艺，对于手艺人来说从资深手艺人那里学来的经验就是自己成长路上最宝贵的财富。ESLint 让你可以不需要师从哪一位或哪几位优秀的程序员，只需要遵守他们定下的代码规范就可以写出和他们一样优秀的代码。现在市面上最流行的 ESLint 配置就是由 Airbnb 所提供的，我们只需要在 `.eslintrc` 中配置 `extends` 为 `airbnb` 就可以开启 Airbnb 的 JavaScript 编写规范。当然，为了满足自定义的需求，在 `.eslintrc` 的 `rules` 中我们也可以独立地开启或关闭任意一条代码检查规则。
+
+## 文件目录
+
+
+
+介绍完了 HTML、CSS、JavaScript 三个部分后，项目脚手架已经初见雏形，让我们先来写一个 Hello World。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c46791ba26b1?w=2560&h=1600&f=png&s=107962)
+
+脚手架除了能够帮助团队一次性地解决上述提到的这些技术栈配置问题外，还有一个重要的责任就是梳理项目的标准目录组织结构。从通用的角度来讲，一般一个完整的前端项目都至少需要包含以下九个部分：
+
+1. `layouts/`: 存放布局级别的组件
+2. `views/`: 存放页面级别的组件
+3. `components/`: 存放业务级别的 UI 组件
+4. `hocs/`: 存放业务级别的逻辑组件（看情况可与 `components/` 合并，但建议分开）
+5. `app/`: 存放应用级别的配置信息，如菜单、路由等，以及应用初始化的相关代码，如初始化 redux store 等
+6. `utils/`: 存放通用的功能性函数，如数据聚合、处理等
+7. `styles/`: 存放全局的 CSS 样式、变量、mixins 等
+8. `assets/`: 存放静态资源，如图标、图片等
+9. `i18n/`: 存放应用国际化需要的多语言文件
+
+在将这些文件夹都添加到我们的脚手架后，让我们来写一个复杂点的页面。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c4a82308f45c?w=2560&h=1600&f=png&s=160649)
+
+最后关于 redux 部分的设置，根据业务需要可能会有所区别，大家可以参考以下的几个条件渐进式地选择数据流工具。
+
+#### redux
+
+- 我需要一个全局数据源且其他组件可以直接获取/改变全局数据源中的数据
+- 我需要全程跟踪/管理 action 的分发过程/顺序
+
+#### redux-thunk
+
+- 我需要一个全局数据源且其他组件可以直接获取/改变全局数据源中的数据
+- 我需要全程跟踪/管理 action 的分发过程/顺序
+- **我需要组件对同步或异步的 action 无感，调用异步 action 时不需要显式地传入 dispatch**
+
+#### redux-saga
+
+- 我需要一个全局数据源且其他组件可以直接获取/改变全局数据源中的数据
+- 我需要全程跟踪/管理 action 的分发过程/顺序
+- 我需要组件对同步或异步的 action 无感，调用异步 action 时不需要显式地传入 dispatch
+- **我需要声明式地来表述复杂异步数据流（如长流程表单、请求失败后重试等），命令式的 thunk 对于复杂异步数据流的表现力有限**
+
+## 脚手架的维护
+
+
+
+虽然在设计脚手架时的一大原则就是尽可能少地引入第三方依赖，但因为 React 并不是一个大而全的框架，所以在搭建脚手架时还是难免需要引入 redux、react-router、babel、webpack 等这些必需的第三方依赖。而在后续维护中，根据业务场景的不同我们可以有以下两种不同的维护方式。
+
+一是稳定压倒一切，即不更新依赖，使用搭建完成的脚手架直到不能够满足业务的需要时再推倒重来。二是及时更新，即对脚手架所有的第三方依赖进行定期（半个月或一个月）的升级，保证脚手架所使用的第三方依赖永远都是最新的稳定版本。对于业务场景并不复杂的企业来说，稳定压倒一切是提升生产力的不二法门。而对于大厂或者说业务场景较为复杂的企业来说，及时更新却是必须的。做好技术基础设施建设是解决未来不可预见的技术难题的基础，技术项目的落后很多时候是一步落后，步步落后，在遇到具体问题时再去寻求完美的解决方案是不现实的。
+
+## 小结
+
+
+
+在本节中我们从 HTML、CSS、JavaScript 三个方面分析了近年来前端开发界发生的变化以及如何使用最新的技术栈搭建出一个扩展性良好的自研脚手架。
+
+在下一节中我们将正式进入企业管理系统搭建的讨论，从页面的基础布局开始一步步剖析企业管理系统中的痛点与解决方案。
+
+如果你想参与到文章中内容的讨论，欢迎在下面的评论区留言，期待与大家的交流。
+
+
+
+# 实战篇 03：页面布局方案
+
+> 本节参考代码：
+>
+> 1. [react-boilerplate-pro/src/layouts/BasicLayout.jsx(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/layouts/BasicLayout.jsx)
+> 2. [react-boilerplate-pro/src/layouts/NormalLayout.jsx(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/layouts/NormalLayout.jsx)
+> 3. [react-acl-router/src/AclRouter.jsx(opens new window)](https://github.com/AlanWei/react-acl-router/blob/master/src/AclRouter.jsx)
+
+在传统的前端开发中提到布局我们可能第一时间会想到「圣杯布局」或「双飞燕布局」这些跟 CSS 相关的页面布局方式。而在现代前端开发中，更准确地说在组件化开发逐渐成为现代前端开发主流之后对于布局这一概念又有了新的定义，那就是多个页面中共同的部分，也可以叫做页面的骨架。
+
+如下图，在不同页面中都会包含的侧边栏菜单就是页面基础布局的一部分：
+
+![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c60353535fa8?w=864&h=1360&f=png&s=52196)
+
+## 布局与路由
+
+
+
+在讨论具体的布局组件设计前，我们首先要解决一个更为基础的问题，那就是如何将布局组件与应用路由结合起来。
+
+下面的这个例子是 `react-router` 官方提供的侧边栏菜单与路由结合的例子，笔者这里做了一些简化：
+
+```text
+const SidebarExample = () => (
+  <Router>
+    <div style={{ display: "flex" }}>
+      <div
+        style={{
+          padding: "10px",
+          width: "40%",
+          background: "#f0f0f0"
+        }}
+      >
+        <ul style={{ listStyleType: "none", padding: 0 }}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/bubblegum">Bubblegum</Link>
+          </li>
+          <li>
+            <Link to="/shoelaces">Shoelaces</Link>
+          </li>
+        </ul>
+      </div>
+
+      <div style={{ flex: 1, padding: "10px" }}>
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.main}
+          />
+        ))}
+      </div>
+    </div>
+  </Router>
+);
+```
+
+抽象为布局的思想，写成简单的伪代码就是：
+
+```text
+<Router>
+  <BasicLayout>                   // with sidebar
+    {routes.map(route => (
+      <Route {...route} />
+    ))}
+  </BasicLayout>
+</Router>
+```
+
+这样的确是一种非常优雅的解决方案，但它的局限性在于无法支持多种不同的布局。受限于一个 `Router` 只能包含一个子组件，即使我们将多个布局组件包裹在一个容器组件中，如：
+
+```text
+<Router>
+  <div>
+    <BasicLayout>                 // with sidebar
+      {routes.map(route => (
+      	<Route {...route} />
+      )}
+    </BasicLayout>
+    <FlexLayout>                  // with footer
+      {routes.map(route => (
+        <Route {...route} />
+      )}
+    </FlexLayout>
+  </div>
+</Router>
+```
+
+路由在匹配到 `FlexLayout` 下的页面时，`BasicLayout` 中的 `sidebar` 也会同时显示出来，这显然不是我们想要的结果。换个思路，我们可不可以将布局组件当做 `children` 直接传给更底层的 `Route` 组件呢？代码如下：
+
+```text
+<Router>
+  <div>
+    {basicLayoutRoutes.map(route => (
+      <Route {...route}>
+        <BasicLayout component={route.component} />
+      </Route>
+    ))}
+    {flexLayoutRoutes.map(route => (
+      <Route {...route}>
+        <FlexLayout component={route.component} />
+      </Route>
+    ))}
+  </div>
+</Router>
+```
+
+这里我们将不同的布局组件当做高阶组件，相应地包裹在了不同的页面组件上，这样就实现了对多种不同布局的支持。还有一点需要注意的是，`react-router` 默认会将 `match`、`location`、`history` 等路由信息传递给 `Route` 的下一级组件，由于在上述方案中，`Route` 的下一级组件并不是真正的页面组件而是布局组件，因而我们需要在布局组件中手动将这些路由信息传递给页面组件，或者统一改写 `Route` 的 `render` 方法为：
+
+```text
+<Route
+  render={props => (                 // props contains match, location, history
+    <BasicLayout {...props}>          
+      <PageComponent {...props} />
+    </BasicLayout>
+  )}
+/>
+```
+
+另外一个可能会遇到的问题是，`connected-react-router` 并不会将路由中非常重要的 `match` 对象（包含当前路由的 `params` 等数据 ）同步到 redux store 中，所以我们一定要保证布局及页面组件在路由部分就可以接收到 `match` 对象，否则在后续处理页面页眉等与当前路由参数相关的需求时就会变得非常麻烦。
+
+## 页眉 & 页脚
+
+
+
+解决了与应用路由相结合的问题，具体到布局组件内部，其中最重要的两部分就是页面的页眉和页脚部分，而页眉又可以分为应用页眉与页面页眉两部分。
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647db6284664b46?w=2560&h=1600&f=png&s=251710)
+
+应用页眉指的是整个应用层面的页眉，与具体的页面无关，一般来说会包含用户头像、通知栏、搜索框、多语言切换等这些应用级别的信息与操作。页面页眉则一般来讲会包含页面标题、面包屑导航、页面通用操作等与具体页面相关的内容。
+
+在以往的项目中，尤其是在项目初期许多开发者因为对项目本身还没有一个整体的认识，很多时候会倾向于将应用页眉做成一个展示型组件并在不同的页面中直接调用。这样做当然有其方便之处，比如说页面与布局之间的数据同步环节就被省略掉了，每个页面都可以直接向页眉传递自己内部的数据。
+
+但从理想的项目架构角度来讲这样做却是一个[反模式（anti-pattern） (opens new window)](https://zh.wikipedia.org/wiki/反面模式)。因为应用页眉实际是一个应用级别的组件，但按照上述做法的话却变成了一个页面级别的组件，伪代码如下：
+
+```text
+<App>
+  <BasicLayout>
+    <PageA>
+      <AppHeader title="Page A" />
+    </PageA>
+  </BasicLayout>
+  <BasicLayout>
+    <PageB>
+      <AppHeader title="Page B" />
+    </PageB>
+  </BasicLayout>
+</App>
+```
+
+从应用数据流的角度来讲也存在着同样的问题，那就是应用页眉应该是向不同的页面去传递数据的，而不是反过来去接收来自页面的数据。这导致应用页眉丧失了控制自己何时 rerender（重绘) 的机会，作为一个纯展示型组件，一旦接收到的 props 发生变化页眉就需要进行一次重绘。
+
+另一方面，除了通用的应用页眉外，页面页眉与页面路由之间是有着严格的一一对应的关系的，那么我们能不能将页面页眉部分的配置也做到路由配置中去，以达到新增加一个页面时只需要在 `config/routes.js` 中多配置一个路由对象就可以完成页面页眉部分的创建呢？理想情况下的伪代码如下：
+
+```text
+<App>
+  <BasicLayout>                    // with app & page header already
+    <PageA />
+  </BasicLayout>
+  <BasicLayout>
+    <PageB />
+  </BasicLayout>
+</App>
+```
+
+### 配置优于代码
+
+在过去关于组件库的讨论中我们曾经得出过代码优于配置的结论，即需要使用者自定义的部分，应该尽量抛出回调函数让使用者可以使用代码去控制自定义的需求。这是因为组件作为极细粒度上的抽象，配置式的使用模式往往很难满足使用者多变的需求。但在企业管理系统中，作为一个应用级别的解决方案，能使用配置项解决的问题我们都应该尽量避免让使用者编写代码。
+
+配置项（配置文件）天然就是一种集中式的管理模式，可以极大地降低应用复杂度。以页眉为例来说，如果我们每个页面文件中都调用了页眉组件，那么一旦页眉组件出现问题我们就需要修改所有用到页眉组件页面的代码。除去 debug 的情况外，哪怕只是修改一个页面标题这样简单的需求，开发者也需要先找到这个页面相对应的文件，并在其 `render` 函数中进行修改。这些隐性成本都是我们在设计企业管理系统解决方案时需要注意的，因为就是这样一个个的小细节造成了本身并不复杂的企业管理系统在维护、迭代了一段时间后应用复杂度陡增。理想情况下，一个优秀的企业管理系统解决方案应该可以做到 80% 以上非功能性需求变更都可以使用修改配置文件的方式解决。
+
+### 配置式页眉
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647db9a22f6b1f9?w=2560&h=1600&f=png&s=221813)
+
+```text
+import { matchRoutes } from 'react-router-config';
+
+// routes config
+const routes = [{
+  path: '/outlets',
+  exact: true,
+  permissions: ['admin', 'user'],
+  component: Outlets,
+  unauthorized: Unauthorized,
+  pageTitle: '门店管理',
+  breadcrumb: ['/outlets'],
+}, {
+  path: '/outlets/:id',
+  exact: true,
+  permissions: ['admin', 'user'],
+  component: OutletDetail,
+  unauthorized: Unauthorized,
+  pageTitle: '门店详情',
+  breadcrumb: ['/outlets', '/outlets/:id'],
+}];
+
+// find current route object
+const pathname = get(state, 'router.location.pathname', '');
+const { route } = head((matchRoutes(routes, pathname)));
+```
+
+基于这样一种思路，我们可以在通用的布局组件中根据当前页面的 `pathname` 使用 `react-router-config` 提供的 `matchRoutes` 方法来获取到当前页面 `route` 对象的所有配置项，也就意味着我们可以对所有的这些配置项做统一的处理。这不仅为处理通用逻辑带来了方便，同时对于编写页面代码的同事来说也是一种约束，能够让不同开发者写出的代码带有更少的个人色彩，方便对于代码库的整体管理。
+
+### 页面标题
+
+```text
+renderPageHeader = () => {
+  const { prefixCls, route: { pageTitle }, intl } = this.props;
+
+  if (isEmpty(pageTitle)) {
+    return null;
+  }
+
+  const pageTitleStr = intl.formatMessage({ id: pageTitle });
+  return (
+    <div className={`${prefixCls}-pageHeader`}>
+      {this.renderBreadcrumb()}
+      <div className={`${prefixCls}-pageTitle`}>{pageTitleStr}</div>
+    </div>
+  );
+}
+```
+
+### 面包屑导航
+
+```text
+renderBreadcrumb = () => {
+  const { route: { breadcrumb }, intl, prefixCls } = this.props;
+  const breadcrumbData = generateBreadcrumb(breadcrumb);
+
+  return (
+    <Breadcrumb className={`${prefixCls}-breadcrumb`}>
+      {map(breadcrumbData, (item, idx) => (
+        idx === breadcrumbData.length - 1 ?
+          <Breadcrumb.Item key={item.href}>
+            {intl.formatMessage({ id: item.text })}
+          </Breadcrumb.Item>
+          :
+          <Breadcrumb.Item key={item.href}>
+            <Link href={item.href} to={item.href}>
+              {intl.formatMessage({ id: item.text })}
+            </Link>
+          </Breadcrumb.Item>
+      ))}
+    </Breadcrumb>
+  );
+}
+```
+
+## 知识点：组件与 redux
+
+
+
+在以上的讨论中我们发现布局组件与应用路由之间有着千丝万缕的联系，那么我们能不能抽象出一个通用的布局组件并直接将它作为应用路由的一部分包含在路由中呢？这样开发者在使用这个「高级路由」时，只需要配置每个页面的路由属性就可以自动获得页面的基础布局，岂不是非常方便？
+
+关于这点笔者也做过相关的尝试，但目前得出的结论是布局组件最好还是要做在应用层。因为如果想做一个非展示型的功能强大的布局组件的话，将它 connect 到 redux store 几乎是一件不可避免的事。如果硬要把所有可以从 redux store 中拿到的数据当做 props 再传给抽象出的布局组件的话，props 的设计会非常难做，因为随时的一个需求变更都有可能导致要增加新的 props。这是因为布局组件作为承接全局应用和具体页面之间的一个中间层，需要能够很灵活地向下传递数据。这些数据的处理逻辑都是因具体需求而异的，强行抽象往往会起到适得其反的效果。
+
+延伸来讲，一个组件如果必须要 connect 到 redux store 后才能使用的话，严格意义上来说它就不再是一个组件了，因为这时它就对自己所处的上下文环境有了要求，一旦脱离了当前应用它就无法再顺利地完成自身内部的一些功能，组件所应当拥有的可复用性也就不存在了。
+
+这其中隐含的道理是 UI 与数据在架构时应当是分离的，redux 作为二者之间的粘合剂，一旦二者通过 redux 被连接到了一起，那么这个组件也就不再纯净（pure）了，变为了只隶属于当前项目的一个业务组件且不再具备通用性。一般而言，前端应用中的每一个页面都是这样的业务组件。这又涉及到不同组件的抽象级别，一般而言到了页面这个级别，我们就不再追求组件的通用性，转而更多地追求尽量在组件中简化当前项目内的业务需求，于是将组件 connect 到 redux store 以方便组件获取各个 reducer 中的数据就是可以接受的一种做法了。
+
+## 组合式开发：页面布局
+
+
+
+对于常见的前端应用来说，应用是由页面直接通过路由组成的。又因为页面与页面之间是互相平行的关系，所以不同页面之间的共性很难被抽取出来，从而使得应用中出现了大量的重复代码却又因为它们会直接影响到页面的渲染逻辑而无法被删除。
+
+页面布局作为应用与页面之间的连接层很好地缓冲了应用和页面之间的巨大差异，使得我们有了一个恰当的地方来处理同类页面的基础布局以及应用与页面之间的数据交换。举例来说，如果应用中的搜索框只存在于个别几个页面的话，我们就可以为这几个页面专门抽象出一个包含搜索框的布局组件。这样一来，需要搜索框的页面只需要应用这个专用布局即可，不需要搜索框的页面则不需要做任何逻辑判断。相较于在每个页面都需要判断是否渲染搜索框的组件化解法，页面布局的解法显然要优雅得多。
+
+另一方面，页面布局这一层同时也是可插拔的。假设我们现在拿掉了页面布局这一层，具体页面中的渲染逻辑和核心数据并不会受到任何影响，我们可以很方便地将这个页面移植到其他的应用中去，而不需要担心页面和应用之间耦合过深。同理，被抽取出来的布局层也可以轻松地被移植到其他的应用中，而不需要担心其下属页面的具体内容。而在抽掉了页面，布局之后，所留下来的应用层就是上一节中提到的脚手架部分，其中将不包含任何的业务逻辑，可以被应用到任意前端项目。这样一来，应用、布局、页面三者各司其职，在增加了一层抽象后反而更加合理地重新分配了工程复杂度，大大增强了每一层代码的可复用性。
+
+## 小结
+
+
+
+在本节中我们从布局组件与应用路由的关系讲起，一起探讨了应用页眉、页面页眉等页面中的通用部分并得出了在企业管理系统搭建中「配置优于代码」的结论。
+
+在下一节中我们将会继续深入探讨企业管理系统中页面级别的权限管理设计。
+
+如果你想参与到文章中内容的讨论，欢迎在下面的评论区留言，期待与大家的交流。
+
+
+
+# 实战篇 04：权限管理机制
+
+> 本节参考代码：
+>
+> 1. [react-acl-router(opens new window)](https://github.com/AlanWei/react-acl-router)
+> 2. [react-boilerplate-pro/src/app/init/router.js(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/app/init/router.js)
+> 3. [react-boilerplate-pro/src/app/config/routes.js(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/app/config/routes.js)
+
+![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c84270857908?w=600&h=400&f=jpeg&s=43441)
+
+权限管理作为企业管理系统中非常核心的一个部分，一直以来因为业务方很多时候无法使用准确的术语来描述需求成为了困扰开发者们的一大难题。这里我们先来介绍两种常见的权限管理设计模式，即基于角色的访问控制以及访问控制列表。
+
+## 设计策略
+
+
+
+### 基于角色的访问控制（[Role-based access control (opens new window)](https://en.wikipedia.org/wiki/Role-based_access_control)）
+
+基于角色的访问控制不直接将系统操作的各种权限赋予具体用户，而是在用户与权限之间建立起角色集合，将权限赋予角色再将角色赋予用户。这样就实现了对于权限和角色的集中管理，避免用户与权限之间直接产生复杂的多对多关系。
+
+### 访问控制列表（[Access control list (opens new window)](https://en.wikipedia.org/wiki/Access_control_list)）
+
+具体到角色与权限之间，访问控制列表指代的是某个角色所拥有的系统权限列表。在传统计算机科学中，权限一般指的是对于文件系统进行增删改查的权力。而在 Web 应用中，大部分系统只需要做到页面级别的权限控制即可，简单来说就是根据当前用户的角色来决定其是否拥有查看当前页面的权利。
+
+下面就让我们按照这样的思路实现一个基础版的包含权限管理功能的应用路由。
+
+## 实战代码
+
+
+
+### 路由容器
+
+在编写权限管理相关的代码前，我们需要先为所有的页面路由找到一个合适的容器，即 `react-router` 中的 `Switch` 组件。与多个独立路由不同的是，包裹在 `Switch` 中的路由每次只会渲染路径匹配成功的第一个，而不是所有符合路径匹配条件的路由。
+
+```text
+<Router>
+  <Route path="/about" component={About}/>
+  <Route path="/:user" component={User}/>
+  <Route component={NoMatch}/>
+</Router>
+<Router>
+  <Switch>
+    <Route path="/about" component={About}/>
+    <Route path="/:user" component={User}/>
+    <Route component={NoMatch}/>
+  </Switch>
+</Router>
+```
+
+以上面两段代码为例，如果当前页面路径是 `/about` 的话，因为 `<About />`、`<User />` 及 `<NoMatch />` 这三个路由的路径都符合 `/about`，所以它们会同时被渲染在当前页面。而将它们包裹在 `Switch` 中后，`react-router` 在找到第一个符合条件的 `<About />` 路由后就会停止查找直接渲染 `<About />` 组件。
+
+在企业管理系统中因为页面与页面之间一般都是平行且排他的关系，所以利用好 `Switch` 这个特性对于我们简化页面渲染逻辑有着极大的帮助。
+
+另外值得一提的是，在 `react-router` 作者 [Ryan Florence (opens new window)](https://github.com/ryanflorence)的新作 [@reach/router (opens new window)](https://reach.tech/router)中，`Switch` 的这一特性被默认包含了进去，而且 `@reach/router` 会自动匹配最符合当前路径的路由。这就使得使用者不必再去担心路由的书写顺序，感兴趣的朋友可以关注一下。
+
+### 权限管理
+
+现在我们的路由已经有了一个大体的框架，下面就让我们为其添加具体的权限判断逻辑。
+
+对于一个应用来说，除去需要鉴权的页面外，一定还存在着不需要鉴权的页面，让我们先将这些页面添加到我们的路由中，如登录页。
+
+```text
+<Router>
+  <Switch>
+    <Route path="/login" component={Login}/>
+  </Switch>
+</Router>
+```
+
+对于需要鉴权的路由，我们需要先抽象出一个判断当前用户是否有权限的函数来作为判断依据，而根据具体的需求，用户可以拥有单个角色或多个角色，抑或更复杂的一个鉴权函数。这里笔者提供一个最基础的版本，即我们将用户的角色以字符串的形式存储在后台，如一个用户的角色是 admin，另一个用户的角色是 user。
+
+```text
+import isEmpty from 'lodash/isEmpty';
+import isArray from 'lodash/isArray';
+import isString from 'lodash/isString';
+import isFunction from 'lodash/isFunction';
+import indexOf from 'lodash/indexOf';
+
+const checkPermissions = (authorities, permissions) => {
+  if (isEmpty(permissions)) {
+    return true;
+  }
+
+  if (isArray(authorities)) {
+    for (let i = 0; i < authorities.length; i += 1) {
+      if (indexOf(permissions, authorities[i]) !== -1) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  if (isString(authorities)) {
+    return indexOf(permissions, authorities) !== -1;
+  }
+
+  if (isFunction(authorities)) {
+    return authorities(permissions);
+  }
+
+  throw new Error('[react-acl-router]: Unsupport type of authorities.');
+};
+
+export default checkPermissions;
+```
+
+在上一节中我们提到了路由的配置文件，这里我们为每一个需要鉴权的路由再添加一个属性 `permissions`，即哪些角色可以访问该页面。
+
+```text
+const routes = [{
+  path: '/outlets',
+  exact: true,
+  permissions: ['admin', 'user'],
+  component: Outlets,
+  unauthorized: Unauthorized,
+  pageTitle: 'Outlet Management',
+  breadcrumb: ['/outlets'],
+}, {
+  path: '/outlets/:id',
+  exact: true,
+  permissions: ['admin'],
+  component: OutletDetail,
+  redirect: '/',
+  pageTitle: 'Outlet Detail',
+  breadcrumb: ['/outlets', '/outlets/:id'],
+}];
+```
+
+在上面的配置中，admin 和 user 都可以访问门店列表页面，但只有 admin 才可以访问门店详情页面。
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dbdca3edc792?w=2560&h=1600&f=png&s=178741)
+
+对于没有权限查看当前页面的情况，一般来讲有两种处理方式，一是直接重定向到另一个页面（如首页），二是渲染一个无权限页面，提示用户因为没有当前页面的权限所以无法查看。二者是排他的，即每个页面只需要使用其中一种即可，于是我们在路由配置中可以根据需要去配置 `redirect` 或 `unauthorized` 属性，分别对应**无权限重定向**及**无权限显示无权限页面**两种处理方式。具体代码大家可以参考示例项目 [react-acl-router (opens new window)](https://github.com/AlanWei/react-acl-router/blob/master/src/AclRouter.jsx)中的实现，这里摘录一小段核心部分。
+
+```text
+renderRedirectRoute = route => (
+  <Route
+    key={route.path}
+    {...omitRouteRenderProperties(route)}
+    render={() => <Redirect to={route.redirect} />}
+  />
+);
+
+renderAuthorizedRoute = (route) => {
+  const { authorizedLayout: AuthorizedLayout } = this.props;
+  const { authorities } = this.state;
+  const {
+    permissions,
+    path,
+    component: RouteComponent,
+    unauthorized: Unauthorized,
+  } = route;
+  const hasPermission = checkPermissions(authorities, permissions);
+
+  if (!hasPermission && route.unauthorized) {
+    return (
+      <Route
+        key={path}
+        {...omitRouteRenderProperties(route)}
+        render={props => (
+          <AuthorizedLayout {...props}>
+            <Unauthorized {...props} />
+          </AuthorizedLayout>
+        )}
+      />
+    );
+  }
+
+  if (!hasPermission && route.redirect) {
+    return this.renderRedirectRoute(route);
+  }
+
+  return (
+    <Route
+      key={path}
+      {...omitRouteRenderProperties(route)}
+      render={props => (
+        <AuthorizedLayout {...props}>
+          <RouteComponent {...props} />
+        </AuthorizedLayout>
+      )}
+    />
+  );
+}
+```
+
+于是，在最终的路由中，我们会优先匹配无需鉴权的页面路径，保证所有用户在访问无需鉴权的页面时，第一时间就可以看到页面。然后再去匹配需要鉴权的页面路径，最终如果所有的路径都匹配不到的话，再渲染 404 页面告知用户当前页面路径不存在。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c97456cd6847?w=2560&h=1600&f=png&s=119442)
+
+```text
+<Switch>
+  {map(normalRoutes, route => (
+    this.renderNormalRoute(route)
+  ))}
+  {map(authorizedRoutes, route => (
+    this.renderAuthorizedRoute(route)
+  ))}
+  {this.renderNotFoundRoute()}
+</Switch>
+```
+
+需要鉴权的路由和不需要鉴权的路由作为两种不同的页面，一般而言它们的页面布局也是不同的。如登录页面使用的就是普通页面布局：
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647d205501260fd?w=2560&h=1600&f=png&s=162652)
+
+在这里我们可以将不同的页面布局与鉴权逻辑相结合以达到只需要在路由配置中配置相应的属性，新增加的页面就可以同时获得鉴权逻辑和基础布局的效果。这将极大地提升开发者们的工作效率，尤其是对于项目组的新成员来说纯配置的上手方式是最友好的。
+
+## 应用集成
+
+
+
+至此一个包含基础权限管理的应用路由就大功告成了，我们可以将它抽象为一个独立的路由组件，使用时只需要配置需要鉴权的路由和不需要鉴权的路由两部分即可。
+
+```text
+const authorizedRoutes = [{
+  path: '/outlets',
+  exact: true,
+  permissions: ['admin', 'user'],
+  component: Outlets,
+  unauthorized: Unauthorized,
+  pageTitle: 'pageTitle_outlets',
+  breadcrumb: ['/outlets'],
+}, {
+  path: '/outlets/:id',
+  exact: true,
+  permissions: ['admin', 'user'],
+  component: OutletDetail,
+  unauthorized: Unauthorized,
+  pageTitle: 'pageTitle_outletDetail',
+  breadcrumb: ['/outlets', '/outlets/:id'],
+}, {
+  path: '/exception/403',
+  exact: true,
+  permissions: ['god'],
+  component: WorkInProgress,
+  unauthorized: Unauthorized,
+}];
+
+const normalRoutes = [{
+  path: '/',
+  exact: true,
+  redirect: '/outlets',
+}, {
+  path: '/login',
+  exact: true,
+  component: Login,
+}];
+
+const Router = props => (
+  <ConnectedRouter history={props.history}>
+    <MultiIntlProvider
+      defaultLocale={locale}
+      messageMap={messages}
+    >
+      // the router component
+      <AclRouter
+        authorities={props.user.authorities}
+        authorizedRoutes={authorizedRoutes}
+        authorizedLayout={BasicLayout}
+        normalRoutes={normalRoutes}
+        normalLayout={NormalLayout}
+        notFound={NotFound}
+      />
+    </MultiIntlProvider>
+  </ConnectedRouter>
+);
+
+const mapStateToProps = state => ({
+  user: state.app.user,
+});
+
+Router.propTypes = propTypes;
+export default connect(mapStateToProps)(Router);
+```
+
+在实际项目中，我们可以使用 `react-redux` 提供的 `connect` 组件将应用路由 connect 至 redux store，以方便我们直接读取当前用户的角色信息。一旦登录用户的角色发生变化，客户端路由就可以进行相应的判断与响应。
+
+## 组合式开发：权限管理
+
+
+
+对于页面级别的权限管理来说，权限管理部分的逻辑是独立于页面的，是与页面中的具体内容无关的。也就是说，权限管理部分的代码并不应该成为页面中的一部分，而是应该在拿到用户权限后创建应用路由时就将没有权限的页面替换为重定向或无权限页面。
+
+这样一来，页面部分的代码就可以实现与权限管理逻辑的彻底解耦，以至于如果抽掉权限管理这一层后，页面就变成了一个无需权限判断的页面依然可以独立运行。而通用部分的权限管理代码也可以在根据业务需求微调后服务于更多的项目。
+
+## 小结
+
+
+
+在本节中我们从权限管理的基础设计思想讲起，实现了一套基于角色的页面级别的应用权限管理系统并分别讨论了无权限重定向及无权限显示无权限页面两种无权限查看时的处理方法。
+
+在下一节中我们将会探讨当前页面如何匹配企业管理系统中的多级菜单以及如何让路径较深的子页面高亮其隶属于的父级菜单。
+
+如果你想参与到文章中内容的讨论，欢迎在下面的评论区留言，期待与大家的交流。
+
+
+
+# 实战篇 05：菜单匹配逻辑
+
+> 本节参考代码：
+> [react-sider(opens new window)](https://github.com/AlanWei/react-sider)
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dc258aff5805?w=2560&h=1600&f=png&s=228508)
+
+在大部分企业管理系统中，页面的基础布局所采取的一般都是侧边栏菜单加页面内容这样的组织形式。在成熟的组件库支持下，UI 层面想要做出一个漂亮的侧边栏菜单并不困难，但因为在企业管理系统中菜单还承担着页面导航的功能，于是就导致了两大难题，一是多级菜单如何处理，二是菜单项的子页面（如点击门店管理中的某一个门店进入的门店详情页在菜单中并没有对应的菜单项）如何高亮其隶属于的父级菜单。
+
+## 多级菜单
+
+
+
+为了增强系统的可扩展性，企业管理系统中的菜单一般都需要提供多级支持，对应的数据结构就是在每一个菜单项中都要有 children 属性来配置下一级菜单项。
+
+```text
+const menuData = [{
+  name: '仪表盘',
+  icon: 'dashboard',
+  path: 'dashboard',
+  children: [{
+    name: '分析页',
+    path: 'analysis',
+    children: [{
+      name: '实时数据',
+      path: 'realtime',
+    }, {
+      name: '离线数据',
+      path: 'offline',
+    }],
+  }],
+}];
+```
+
+### 递归渲染父菜单及子菜单
+
+想要支持多级菜单，首先要解决的问题就是如何统一不同级别菜单项的交互。
+
+在大多数的情况下，每一个菜单项都代表着一个不同的页面路径，点击后会触发 url 的变化并跳转至相应页面，也就是上面配置中的 path 字段。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/21/16421ba418c8b09e?w=512&h=1320&f=png&s=48361)
+
+但对于一个父菜单来说，点击还意味着打开或关闭相应的子菜单，这就与点击跳转页面发生了冲突。为了简化这个问题，我们先统一菜单的交互为点击父菜单（包含 children 属性的菜单项）为打开或关闭子菜单，点击子菜单（不包含 children 属性的菜单项）为跳转至相应页面。
+
+首先，为了成功地渲染多级菜单，菜单的渲染函数是需要支持递归的，即如果当前菜单项含有 children 属性就将其渲染为父菜单并优先渲染其 children 字段下的子菜单，这在算法上被叫做[深度优先遍历 (opens new window)](https://baike.baidu.com/item/深度优先遍历)。
+
+```text
+renderMenu = data => (
+  map(data, (item) => {
+    if (item.children) {
+      return (
+        <SubMenu
+          key={item.path}
+          title={
+            <span>
+              <Icon type={item.icon} />
+              <span>{item.name}</span>
+            </span>
+          }
+        >
+          {this.renderMenu(item.children)}
+        </SubMenu>
+      );
+    }
+
+    return (
+      <Menu.Item key={item.path}>
+        <Link to={item.path} href={item.path}>
+          <Icon type={item.icon} />
+          <span>{item.name}</span>
+        </Link>
+      </Menu.Item>
+    );
+  })
+)
+```
+
+这样我们就拥有了一个支持多级展开、子菜单分别对应页面路由的侧边栏菜单。细心的朋友可能还发现了，虽然父菜单并不对应一个具体的路由但在配置项中依然还有 path 这个属性，这是为什么呢？
+
+## 处理菜单高亮
+
+
+
+在传统的企业管理系统中，为不同的页面配置页面路径是一件非常痛苦的事情，对于页面路径，许多开发者唯一的要求就是不重复即可，如上面的例子中，我们把菜单数据配置成这样也是可以的。
+
+```text
+const menuData = [{
+  name: '仪表盘',
+  icon: 'dashboard',
+  children: [{
+    name: '分析页',
+    children: [{
+      name: '实时数据',
+      path: '/realtime',
+    }, {
+      name: '离线数据',
+      path: '/offline',
+    }],
+  }],
+}];
+
+<Router>
+  <Route path="/realtime" render={() => <div />}
+  <Route path="/offline" render={() => <div />}
+</Router>
+```
+
+用户在点击菜单项时一样可以正确地跳转到相应页面。但这样做的一个致命缺陷就是，对于 `/realtime` 这样一个路由，如果只根据当前的 `pathname` 去匹配菜单项中 `path` 属性的话，要怎样才能同时也匹配到「分析页」与「仪表盘」呢？因为如果匹配不到的话，「分析页」和「仪表盘」就不会被高亮了。我们能不能在页面的路径中直接体现出菜单项之间的继承关系呢？来看下面这个工具函数。
+
+```text
+import map from 'lodash/map';
+
+const formatMenuPath = (data, parentPath = '/') => (
+  map(data, (item) => {
+    const result = {
+      ...item,
+      path: `${parentPath}${item.path}`,
+    };
+    if (item.children) {
+      result.children = formatMenuPath(item.children, `${parentPath}${item.path}/`);
+    }
+    return result;
+  })
+);
+```
+
+这个工具函数把菜单项中可能有的 `children` 字段考虑了进去，将一开始的菜单数据传入就可以得到如下完整的菜单数据。
+
+```text
+[{
+  name: '仪表盘',
+  icon: 'dashboard',
+  path: '/dashboard',  // before is 'dashboard'
+  children: [{
+    name: '分析页',
+    path: '/dashboard/analysis', // before is 'analysis'
+    children: [{
+      name: '实时数据',
+      path: '/dashboard/analysis/realtime', // before is 'realtime'
+    }, {
+      name: '离线数据',
+      path: '/dashboard/analysis/offline', // before is 'offline'
+    }],
+  }],
+}];
+```
+
+然后让我们再对当前页面的路由做一下逆向推导，即假设当前页面的路由为 `/dashboard/analysis/realtime`，我们希望可以同时匹配到 `['/dashboard', '/dashboard/analysis', '/dashboard/analysis/realtime']`，方法如下：
+
+```text
+import map from 'lodash/map';
+
+const urlToList = (url) => {
+  if (url) {
+    const urlList = url.split('/').filter(i => i);
+    return map(urlList, (urlItem, index) => `/${urlList.slice(0, index + 1).join('/')}`);
+  }
+  return [];
+};
+```
+
+上面的这个数组代表着不同级别的菜单项，将这三个值分别与菜单数据中的 `path` 属性进行匹配就可以一次性地匹配到所有当前页面应当被高亮的菜单项了。
+
+这里需要注意的是，虽然菜单项中的 `path` 一般都是普通字符串，但有些特殊的路由也可能是正则的形式，如 `/outlets/:id`。所以我们在对二者进行匹配时，还需要引入 `path-to-regexp` 这个库来处理类似 `/outlets/1` 和 `/outlets/:id` 这样的路径。又因为初始时菜单数据是树形结构的，不利于进行 `path` 属性的匹配，所以我们还需要先将树形结构的菜单数据扁平化，然后再传入 `getMeunMatchKeys` 中。
+
+```text
+import pathToRegexp from 'path-to-regexp';
+import reduce from 'lodash/reduce';
+import filter from 'lodash/filter';
+
+const getFlatMenuKeys = menuData => (
+  reduce(menuData, (keys, item) => {
+    keys.push(item.path);
+    if (item.children) {
+      return keys.concat(getFlatMenuKeys(item.children));
+    }
+    return keys;
+  }, [])
+);
+
+const getMeunMatchKeys = (flatMenuKeys, paths) =>
+  reduce(paths, (matchKeys, path) => (
+    matchKeys.concat(filter(flatMenuKeys, item => pathToRegexp(item).test(path)))
+  ), []);
+```
+
+在这些工具函数的帮助下，多级菜单的高亮也不再是问题了。
+
+## 知识点：记忆化（Memoization）
+
+
+
+在侧边栏菜单中，有两个重要的状态：一个是 `selectedKeys`，即当前选定的菜单项；另一个是 `openKeys`，即多个多级菜单的打开状态。这二者的含义是不同的，因为在 `selectedKeys` 不变的情况下，用户在打开或关闭其他多级菜单后，`openKeys` 是会发生变化的，如下面二图所示，`selectedKeys` 相同但 `openKeys` 不同。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/21/16421c5cf08184c4?w=512&h=1320&f=png&s=31726)
+
+![img](https://user-gold-cdn.xitu.io/2018/6/21/16421c6048790fdf?w=512&h=1320&f=png&s=37488)
+
+对于 `selectedKeys` 来说，由于它是由页面路径（`pathname`）决定的，所以每一次 `pathname` 发生变化都需要重新计算 `selectedKeys` 的值。又因为通过 `pathname` 以及最基础的菜单数据 `menuData` 去计算 `selectedKeys` 是一件非常昂贵的事情（要做许多数据格式处理和计算），有没有什么办法可以优化一下这个过程呢？
+
+[Memoization (opens new window)](https://en.wikipedia.org/wiki/Memoization)可以赋予普通函数记忆输出结果的功能，它会在每次调用函数之前检查传入的参数是否与之前执行过的参数完全相同，如果完全相同则直接返回上次计算过的结果，就像常用的缓存一样。
+
+```text
+import memoize from 'memoize-one';
+
+constructor(props) {
+  super(props);
+
+  this.fullPathMenuData = memoize(menuData => formatMenuPath(menuData));
+  this.selectedKeys = memoize((pathname, fullPathMenu) => (
+    getMeunMatchKeys(getFlatMenuKeys(fullPathMenu), urlToList(pathname))
+  ));
+
+  const { pathname, menuData } = props;
+
+  this.state = {
+    openKeys: this.selectedKeys(pathname, this.fullPathMenuData(menuData)),
+  };
+}
+```
+
+在组件的构造器中我们可以根据当前 props 传来的 `pathname` 及 `menuData` 计算出当前的 `selectedKeys` 并将其当做 `openKeys` 的初始值初始化组件内部 state。因为 `openKeys` 是由用户所控制的，所以对于后续 `openKeys` 值的更新我们只需要配置相应的回调将其交给 `Menu` 组件控制即可。
+
+```text
+import Menu from 'antd/lib/menu';
+
+handleOpenChange = (openKeys) => {
+  this.setState({
+    openKeys,
+  });
+};
+
+<Menu
+  style={{ padding: '16px 0', width: '100%' }}
+  mode="inline"
+  theme="dark"
+  openKeys={openKeys}
+  selectedKeys={this.selectedKeys(pathname, this.fullPathMenuData(menuData))}
+  onOpenChange={this.handleOpenChange}
+>
+  {this.renderMenu(this.fullPathMenuData(menuData))}
+</Menu>
+```
+
+这样我们就实现了对于 `selectedKeys` 及 `openKeys` 的分别管理，开发者在使用侧边栏组件时只需要将应用当前的页面路径同步到侧边栏组件中的 `pathname` 属性即可，侧边栏组件会自动处理相应的菜单高亮（`selectedKeys`）和多级菜单的打开与关闭（`openKeys`）。
+
+## 知识点：正确区分 prop 与 state
+
+
+
+上述这个场景也是一个非常经典的关于如何正确区分 prop 与 state 的例子。
+
+`selectedKeys` 由传入的 `pathname` 决定，于是我们就可以将 `selectedKeys` 与 `pathname` 之间的转换关系封装在组件中，使用者只需要传入正确的 `pathname` 就可以获得相应的 `selectedKeys` 而不需要关心它们之间的转换是如何完成的。而 `pathname` 作为组件渲染所需的基础数据，组件无法从自身内部获得，所以就需要使用者通过 props 将其传入进来。
+
+另一方面， `openKeys` 作为组件内部的 state，初始值可以由 `pathname` 计算而来，后续的更新则与组件外部的数据无关而是会根据用户的操作在组件内部完成，那么它就是一个 state，与其相关的所有逻辑都可以彻底地被封装在组件内部而不需要暴露给使用者。
+
+简而言之，一个数据如果想成为 prop 就必须是组件内部无法获得的，而且在它成为了 prop 之后，所有可以根据它的值推导出来的数据都不再需要成为另外的 props，否则将违背 React 单一数据源的原则。对于 state 来说也是同样，如果一个数据想成为 state，那么它就不应该再能够被组件外部的值所改变，否则也会违背单一数据源的原则而导致组件的表现不可预测，产生难解的 bug。
+
+## 组合式开发：应用菜单
+
+
+
+严格来说，在这一小节中着重探讨的应用菜单部分的思路并不属于组合式开发思想的范畴，更多地是如何写出一个支持无限级子菜单及自动匹配当前路由的菜单组件。组件当然是可以随意插拔的，但前提是应用该组件的父级部分不依赖于组件所提供的信息。这也是我们在编写组件时所应当遵循的一个规范，即组件可以从外界获取信息并在此基础上进行组件内部的逻辑判断。但当组件向其外界抛出信息时，更多的时候应该是以回调的形式让调用者去主动触发，然后更新外部的数据再以 props 的形式传递给组件以达到更新组件的目的，而不是强制需要在外部再配置一个回调的接收函数去直接改变组件的内部状态。
+
+从这点上来说，组合式开发与组件封装其实是有着异曲同工之妙的，关键都在于对内部状态的严格控制。不论一个模块或一个组件需要向外暴露多少接口，在它的内部都应该是解决了某一个或某几个具体问题的。就像工厂产品生产流水线上的一个环节，在经过了这一环节后产品相较于进入前一定产生了某种区别，不论是增加了某些功能还是被打上某些标签，产品一定会变得更利于下游合作者使用。更理想的情况则是即使删除掉了这一环节，原来这一环节的上下游依然可以无缝地衔接在一起继续工作，这就是我们所说的模块或者说组件的可插拔性。
+
+## 小结
+
+
+
+在本节中我们讨论了配置式菜单的数据结构设计以及基于这样的数据结构，如何做到在页面路径中体现页面与页面之间的父子级关系并在侧边栏菜单中高亮其对应的菜单项，还引出了「记忆化」的概念，为各位在处理组件中的复杂计算提供了一种优化方案以及如何正确地区分组件的 props 与 state，如何在不牺牲组件功能的前提下降低组件使用时的复杂度并提升组件的稳定性。
+
+在下一节中我们将会探讨如何处理企业管理系统中的系统通知以及全局级别的用户操作反馈。
+
+如果你想参与到文章中内容的讨论，欢迎在下面的评论区留言，期待与大家的交流。
+
+
+
+# 实战篇 06：消息通知设计
+
+> 本节参考代码：
+> [react-boilerplate-pro(opens new window)](https://github.com/AlanWei/react-boilerplate-pro)
+
+在传统的企业管理系统中一个经常被忽略掉的细节就是对于用户操作的反馈。一方面是因为复杂的业务流程边界条件太多，每一个分支都给予适当的反馈是一件非常烦琐的事情。另一方面往往是因为系统架构设计得不够灵活，只是显示一个操作成功或失败的通知就要写大量重复的逻辑代码，导致专注于业务流程的开发者不愿意花时间去处理操作反馈这一“可有可无”的需求。
+
+在操作反馈通知（Notification）之外，完善的企业管理系统还需要一个全局的消息系统以方便系统管理员向某些或全部成员发送系统消息（Notice），即应用页眉中的通知栏，如 [ant-design-pro (opens new window)](https://pro.ant.design/components/NoticeIcon-cn/)中的例子。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c9fce604fc4f?w=2560&h=1600&f=png&s=378152)
+
+## 全局通知栏与应用初始化
+
+与前端主导的通知系统不同，系统消息更依赖后端的实现。这里我们假设后端提供了获取当前用户未读消息的接口 `/notices`，创建相应的 redux action 为：
+
+```text
+const getNotices = () => (
+  createAsyncAction('APP_GET_NOTICES', () => (
+    api.get('/notices')
+  ))
+);
+```
+
+### 应用数据初始化
+
+在实现系统消息之前，我们首先要解决应用数据初始化的问题。以系统消息为例，用户在登录系统后点击应用页眉中的通知栏就应当立刻可以看到当前的未读消息。但获取用户未读消息是一个异步的过程，这里的异步请求应该在什么时候发出呢？
+
+最简单的解决方案当然是在用户点击通知栏时发出，但这样做的弊端是用户在阅读消息前需要等待时间，没有充分利用到用户登录系统后但未点击通知栏这段空闲时间，而且如果用户频繁点击通知栏的话还会导致大量的冗余异步请求被发送至后端。
+
+另一个解决方案就是在用户成功登录后发送请求去取得最新的未读消息：
+
+```text
+const login = (username, password) => (
+  createAsyncAction('APP_LOGIN', () => (
+    api.post('/login', {
+      username,
+      password,
+    })
+  ))
+);
+
+const loginUser = (username, password) => {
+  const action = login(username, password);
+
+  return dispatch => (
+    action(dispatch)
+      .then(((callbackAction) => {
+        if (callbackAction.type === 'APP_LOGIN_SUCCESS') {
+          return getNotices()(dispatch);
+        }
+        return null;
+      }))
+  );
+};
+```
+
+但这样做会有一个例外就是因为系统会记录用户的登录状态，在鉴权过期前用户刷新页面是不需要重新登录的。这时我们就需要在系统初始化时，判断如果用户已经登录就发送获取系统消息的请求。
+
+```text
+const initClient = (dispatch) => {
+  const commonActions = [
+    dispatch(appAction.getLocale()),
+  ];
+
+  const isLogin = !isNil(Cookie.get('user'));
+
+  if (isLogin) {
+    commonActions.push(dispatch(appAction.getNotices()));
+  }
+
+  return commonActions;
+};
+```
+
+并在应用的入口文件中将 redux 的 `dispatch` 方法传入 `initClient`：
+
+```text
+const { store, history } = createStore(createBrowserHistory(), {});
+const application = createApp(store, history);
+
+initClient(store.dispatch);
+ReactDOM.render(application, window.document.getElementById('app'));
+```
+
+按照同样的逻辑，我们可以将这一解决方案拓展到更多的需求，如在应用初始化时获取用户信息、国家时区信息等。
+
+### 更新消息列表
+
+在解决了数据获取的问题后，我们的布局组件就可以直接访问 redux store 中 app reducer 下的 `notices` 数据了。这里关于把 `notices` 存在哪个 reducer 中可能会有争议，比如它可以属于 `app` 的 reducer，即存放全局数据的地方，也可以单独创建一个 `basicLayout` 的 reducer 来存放布局组件所需要的数据，两种方案都是可行的。
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dca73da0255e?w=1280&h=800&f=png&s=366138)
+
+接下来我们要实现的需求是在用户点击某一条消息后将其从消息列表中删除，因为系统消息列表是由后端控制的，所以这时我们需要向后端发送一个 `DELETE` 的请求以删除当前用户点击的某条消息。这时又会出现一个分歧是，后端在接收到 `DELETE` 请求后会不会将最新的消息列表再返回给前端。如果后端能够返回的话，我们只需要在 reducer 中替换掉原先的消息列表即可，但如果后端只返回操作成功或失败的话，我们还需要再发送一遍 `getNotices` 请求去拉取最新的消息列表。
+
+最后，我们还需要处理无未读消息时的情况。
+
+![img](https://user-gold-cdn.xitu.io/2018/6/20/1641cadbc47a40cf?w=960&h=600&f=png&s=333312)
+
+## 全局通知
+
+回到一开始提到的操作反馈部分。
+
+如果系统中的每个页面都需要独立去处理操作反馈的话，可以预见的是 `<Notification />` 组件几乎会出现在所有的页面。这样的解决方案不仅非常烦琐而且不利于统一处理通用的逻辑。
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dce9b295bb20?w=2560&h=1600&f=png&s=212308)
+
+既然通知组件可以使用绝对定位的方式出现在不同页面的同一位置，那么我们能不能将它的显示和隐藏逻辑也放在全局的层面上进行处理呢？
+
+在回答这个问题前，我们先来写一个简单的基于绝对定位、支持自动隐藏的 UI 通知组件。
+
+```text
+class Notification extends Component {
+  componentDidMount() {
+    this.timeout = setTimeout(this.props.onDismiss, this.props.timeout);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
+  }
+
+  render() {
+    const {
+      prefixCls,
+      title,
+      content,
+      onDismiss,
+    } = this.props;
+
+    return (
+      <div className={prefixCls}>
+        <Icon className={`${prefixCls}-close`} type="close" onClick={onDismiss} />
+        <div className={`${prefixCls}-title`}>{title}</div>
+        <div>{content}</div>
+      </div>
+    );
+  }
+}
+```
+
+从上述代码中可以看出，`onDismiss` 回调就是为使用者隐藏全局通知时准备的。为了在全局的层面上解决通知的问题，让我们在 app reducer 中为通知提供一个存放数据的位置，暂且称为 `notification`，其中包含 `title` 及 `content` 两个字段。
+
+```text
+// app reducer
+const defaultState = () => ({
+  isLogin: false,
+  user: {},
+  notification: {
+    title: '',
+    content: '',
+  },
+});
+
+// app action
+const updateNotification = notification => ({
+  type: 'APP_UPDATE_NOTIFICATION',
+  payload: notification,
+});
+
+const resetNotification = () => ({
+  type: 'APP_RESET_NOTIFICATION',
+});
+
+// app reducer
+const updateNotification = (state, action) => ({
+  ...state,
+  notification: action.payload,
+});
+
+const resetNotification = state => ({
+  ...state,
+  notification: {
+    title: '',
+    content: '',
+  },
+});
+```
+
+再将通知的渲染逻辑添加到 `BasicLayout` 布局组件中：
+
+```text
+renderNotification = () => {
+  const { notification: { title, content }, resetNotification } = this.props;
+  if (isEmpty(title) && isEmpty(content)) {
+    return null;
+  }
+  return (
+    <Notification title={title} content={content} onDismiss={resetNotification} />
+  );
+}
+```
+
+即如果 `notification` 的 `title` 和 `content` 字段都不为空的话，就显示全局通知。同时我们也将重置通知的 action 配置给了 `Notification` 组件的 `onDismiss` 回调，即关闭通知相当于重置 `notification` 字段为空对象。
+
+等这些准备工作都做好后，在具体的页面中显示通知就变得非常容易了：
+
+```text
+const mapDispatchToProps = {
+  updateNotification: appAction.updateNotification,
+};
+
+<Button
+  type="primary"
+  onClick={() => this.props.updateNotification({
+    title: 'Notification Title',
+    content: 'Notification will dismiss after 4.5s.',
+  })}
+>
+>	
+</Button>
+```
+
+将 app action 中的 `updateNotification` 函数 connect 至相应的页面组件即可。然后在这个页面中，使用者就可以直接调用 `this.props.updateNotification` 来显示相应的通知了。又因为通知组件本身就支持自动隐藏的功能，使用者也不再需要去处理隐藏的逻辑。
+
+## 知识点：数据驱动视图
+
+全局通知这个例子很好地为我们诠释了「数据驱动视图」的含义，即根据数据中心是否存在 `notification` 对象来决定是否渲染通知组件。这打破了原先显示或隐藏通知这样命令式的代码逻辑，让每一次的用户操作从执行命令变为了修改数据，然后再由更新后的新数据去驱动视图进行相应的更新。
+
+熟悉 React 的朋友一定看过下面这个公式：
+
+```text
+view = f(state)
+```
+
+即视图是由当前应用状态推导而来。我们再尝试将 redux 也包含进来，在这个公式的基础上进行一下拓展。
+
+根据
+
+```text
+view = f1(state) && nextState = f2(currentState, action)
+```
+
+可以推导出
+
+```text
+view = f1(f2(currentState, action))
+```
+
+对应到全局通知的例子，f2 就是 app reducer 中处理数据的逻辑，而 f1 就是 `BasicLayout` 中的渲染逻辑。有了这两个函数，currentState 是确定的一份数据，在具体 action 的驱动下视图就可以自动地进行更新。
+
+因为视图的不可枚举性（无限种可能），命令式的编码方式一直以来都非常不适合前端应用的开发，因为它会导致非常多的边界情况且不可测试。在传统的前端开发中我们很难说出「在什么情况下视图一定是什么样」这样的话，但根据上面的公式推导，如果我们善加利用 React + Redux 的特性的话前端开发也是可以有底气做到「视图结果可预测」的。
+
+## 组合式开发：消息通知
+
+组合式开发从本质上来说应用的是**分层**的思想，合理的分层可以明显地降低应用复杂度并且在应用出现问题时也可以帮助开发者快速定位问题发生的位置。而在分层固定下来后，开发新需求时第一个要去考虑的问题就是新需求应当被放在应用的哪一层去解决。如这一小节中的操作通知，如果被错误地放在页面层去处理的话就会导致许多冗余的代码，以及出现问题时页面的其他逻辑和操作通知的显示逻辑互相混淆，而放在应用层处理就可以帮助页面层屏蔽掉这些问题。
+
+另一方面，在应用层增加了「显示操作通知」这样一个 action 后，对于其下属的页面层来说相当于是增加了一种「显示操作通知」的能力，是否要使用这种能力以及何时使用这种能力的决定权是在页面层手中的。也就是说在增加了这样一种能力之后并没有加重页面层的负担，页面层可以自己决定在适当的时候使用这种能力，而不需要担心不使用这种能力会带来任何的副作用。这种无副作用的特性也从另一个侧面解释了组合式开发中的可插拔性。
+
+## 小结
+
+在本节中我们以系统消息为例引出了应用数据初始化的解决方案，并结合 React + Redux 实现了一套基于数据驱动的全局操作通知系统，简化了在页面组件中显示全局通知的逻辑。
+
+在下一节中我们将会探讨需要支持多种语言的前端应用架构。
+
+如果你想参与到文章中内容的讨论，欢迎在下面的评论区留言，期待与大家的交流。
+
+
+
+# 实战篇 07：多语言支持
+
+> 本节参考代码：
+>
+> 1. [react-intl-context(opens new window)](https://github.com/AlanWei/react-intl-context)
+> 2. [react-boilerplate-pro/src/app/init/router.js(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/app/init/router.js)
+> 3. [react-boilerplate-pro/src/views/login/index.js(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/views/login/index.js)
+
+![img](https://user-gold-cdn.xitu.io/2018/6/23/164287e50eac13b5?w=1600&h=746&f=png&s=208496)
+
+随着国内市场的逐渐饱和越来越多的中国公司开始将目光投向了国际市场，其中竞争最为激烈的莫过于东南亚。拥有 6.5 亿人口的东南亚，整个地区的 GDP 总和高达 2.6 万亿美元，作为一个互联网行业刚刚进入快速发展阶段的市场其未来的想象空间十分巨大。但与此同时，在这块面积并不算庞大的土地上却分布着大大小小 11 个国家，说着印尼语、马来语、英语、泰语、越南语、中文等几十种不同的语言。
+
+互联网作为一个规模效应非常明显的行业天然就带有扩张的属性，但许多中国公司在出海后面临的第一个挑战就是产品不支持多种语言无法直接进入相应国家的市场。又因为现有系统在架构初期并没有将多语言支持的需求考虑进去，所以临时增加这个功能就变成了一件牵一发而动全身的事情，最后往往无功而返只得重新再做一个新的国际版，也就在这样来来回回的反复中白白浪费掉了许多宝贵的竞争机会。在吃过了这样的亏后，许多公司现在在开始一个新项目时就非常重视产品国际化的需求，希望能在架构初期就打下坚实的基础以至于在需要时可以轻松地产出多个不同语言的版本。
+
+## 语言文件
+
+语言文件，顾名思义就是一套对应不同语言翻译的键值对匹配。如果我们要把多语言支持的工作放在前端来做的话，最简单的一个方法就是以 JSON 的格式存储这些语言文件以方便应用在运行时读取相应的翻译值。
+
+```
+locale.json
+{
+  "en-us": {
+    "appName": "React App Pro",
+    "siderMenu_dashboard": "Dashboard",
+    "siderMenu_analysis": "Analysis",
+    ...
+  },
+  "zh-cn": {
+    "appName": "React 中后台应用",
+    "siderMenu_dashboard": "仪表盘",
+    "siderMenu_analysis": "分析页",
+    ...
+  }
+}
+```
+
+在存储方面对于追求开发效率的团队来说，将语言文件直接 commit 到项目的代码仓库是一种可行的做法。但如果有条件的话还是应该将下载语言文件这一步放在项目[持续集成 (opens new window)](https://baike.baidu.com/item/持续集成)的流程中，每一次构建项目时从存放语言文件的远端服务器拉取最新的版本，以保证发布到生产环境中的语言文件永远是最新的。
+
+## 多语言版本切换 vs. 多语言版本构建
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647d2ebbfde42dd?w=2560&h=1600&f=png&s=157482)
+
+在讨论具体的产品国际化方案前，首先要明确的一点是，多语言支持这样一个需求根据具体的产品形态可以有两种不同的解决方案。
+
+一是**多语言版本切换**，也就是在同一个应用中支持用户切换产品的不同语言版本。
+
+二是**多语言版本构建**，即将同一个应用打包成不同语言的版本，分别发布到不同的生产环境中，但在应用内部不支持多语言切换。
+
+对于多语言版本切换来说，因为在运行时可能会用到所有不同的语言，所以建议将所有语言的翻译都存在同一个 JSON 文件中，这里我们暂且将它命名为 `locale.json`，并将不同语言的区域码设置为第一层的 key 值，第二层则为具体页面占位符的 key 值，命名时建议采取`页面_模块_值（login_loginPanel_usernameplaceholder）`的方式扁平化地存储这些值以加快查询时的速度。如果有跨平台需求的话，也可以在页面前面加上平台，如 `web_login_loginPanel_usernamePlaceholder`、`mobileWeb_login_loginPanel_usernamePlaceholder`，便于统一管理不同平台之间语言文件的 key 值。
+
+对于多语言版本构建来说就没有必要把所有的语言翻译都存在一个文件中了，可以将不同的翻译分别存在各自的语言文件中。
+
+```
+en-us.json
+{
+  "appName": "React App Pro",
+  "siderMenu_dashboard": "Dashboard",
+  "siderMenu_analysis": "Analysis",
+  ...
+}
+zh-cn.json
+{
+  "appName": "React 中后台应用",
+  "siderMenu_dashboard": "仪表盘",
+  "siderMenu_analysis": "分析页",
+  ...
+}
+```
+
+### 在应用构建过程中加载语言文件
+
+准备好了语言文件，下一步就是将它集成到由 webpack 主导的应用构建过程中。
+
+首先将语言文件 import 到 `webpack.config.js` 中，然后再通过 webpack 本身提供的 `webpack.DefinePlugin` 将它注入为应用的一个全局常量。
+
+```text
+const localeMessages = require('./src/i18n/locale.json');
+
+new webpack.DefinePlugin({
+  'process.env.BUILD_LOCALE_MESSAGES': JSON.stringify(localeMessages),
+})
+```
+
+在这里，上面提到的多语言版本切换以及多语言版本构建的区别就体现出来了。对于多语言版本切换来说，像上面这样直接将唯一的语言文件注入为应用常量即可。但如果我们想要构建多个不同语言版本应用的话，又该怎么做呢？
+
+为了解决这一问题，让我们再引入一个应用构建时的配置文件，称为 `buildConfig.js`。
+
+```text
+module.exports = {
+  'PROD-US': {
+    locale: 'en-us',
+  },
+  'PROD-CN': {
+    locale: 'zh-cn',
+  },
+  localhost: {
+    locale: 'zh-cn',
+  },
+};
+```
+
+并在 `package.json` 中分别配置不同语言版本的构建命令。
+
+```text
+"scripts": {
+  "build:PROD-US": "cross-env NODE_ENV=production BUILD_DOMAIN=PROD-US webpack -p --progress --colors",
+  "build:PROD-CN": "cross-env NODE_ENV=production BUILD_DOMAIN=PROD-CN webpack -p --progress --colors",
+}
+```
+
+这样就可以在 webpack 的配置中读取到当前要构建的目标版本语言，然后再据此去匹配相应的语言文件，如 `en-us.json`。
+
+```text
+const BUILD_DOMAIN = process.env.BUILD_DOMAIN || 'localhost';
+const config = buildConfig[BUILD_DOMAIN];
+const localeMessages = require(`./src/i18n/${config.locale}.json`);
+
+new webpack.DefinePlugin({
+  'process.env.BUILD_LOCALE_MESSAGES': JSON.stringify(localeMessages),
+})
+```
+
+### 在应用初始化时读取语言文件
+
+在成功通过 webpack 将语言文件注入为全局常量后，我们就可以在应用中读取到构建时传入的语言文件了。这里为了方便其他文件引用构建配置及语言文件，我们可以提供一个统一的接口。
+
+```
+src/app/config/buildConfig.js
+const buildConfig = process.env.BUILD_CONFIG;
+const messages = process.env.BUILD_LOCALE_MESSAGES;
+
+export {
+  messages,
+  buildConfig,
+};
+src/app/init/router.js
+import { messages, buildConfig } from '../config/buildConfig';
+
+const { locale } = buildConfig;
+
+const Router = props => (
+  <ConnectedRouter history={props.history}>
+    <MultiIntlProvider
+      defaultLocale={locale}
+      messageMap={messages}
+    >
+      ...
+    </MultiIntlProvider>
+  </ConnectedRouter>
+);
+```
+
+### 在页面中注入翻译值
+
+React 在 16.3 版本中引入了新的声明式、可透传 props 的 [Context API (opens new window)](https://github.com/facebook/react/pull/11818)。受益于这次改动 React 开发者们终于拥有了一个官方提供的安全稳定的 global store，子组件跨层级获取父组件数据及后续的更新都不再是问题。
+
+语言文件注入恰巧就是一个非常适合使用 Context API 来解决的用例，因为：第一，语言文件需要能够跨层级传递到每一个组件中因为每一个组件中都可能存在需要翻译的部分；第二，语言文件并不会经常更新。这里的不经常更新指的是在应用运行时而不是开发过程中不经常更新，于是也就避免了 Context 中的数据变化引起应用整体重绘所带来的性能问题。
+
+让我们先来创建一个存放语言文件的 Context。
+
+```text
+import React from 'react';
+
+const { Provider, Consumer } = React.createContext({
+  locale: '',
+  messages: {},
+  formatMessage: () => {},
+});
+
+export {
+  Provider,
+  Consumer,
+};
+```
+
+再将通过 props 传入的国家码、语言文件及读取语言文件中某一个 key 值的函数注入到 Context 的 `value` 对象中。
+
+```text
+import { Provider } from './IntlContext';
+
+class IntlProvider extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: {
+        locale: props.locale,
+        messages: props.messages,
+        formatMessage: this.formatMessage,
+      },
+    };
+  }
+
+  formatMessage = (config) => {
+    const { id } = config;
+    const message = this.state.value.messages[id];
+
+    if (message === undefined) {
+      console.warn(`[react-intl-context]: Message key ${id} is undefined. Fallback to empty string.`);
+      return '';
+    }
+
+    return message;
+  }
+
+  render() {
+    return (
+      <Provider value={this.state.value}>
+        {this.props.children}
+      </Provider>
+    );
+  }
+}
+```
+
+然后再写一个高阶组件作为 Context 的 Consumer。
+
+```text
+import React from 'react';
+import { Consumer } from './IntlContext';
+
+const injectIntl = (WrappedComponent) => {
+  const InjectIntl = props => (
+    <Consumer>
+      {value => <WrappedComponent {...props} intl={value} />}
+    </Consumer>
+  );
+
+  return InjectIntl;
+};
+
+export default injectIntl;
+```
+
+最后我们只需要将页面组件包裹在 `injectIntl` 这个高阶组件中，页面组件就可以多接收到一个名为 `intl` 的 props，直接调用 `this.props.intl.formatMessage` 并传入相应的占位符 key 值即可读取到语言文件中的相应翻译。
+
+```text
+import { injectIntl } from 'react-intl-context';
+
+class OutletDetail extends Component {
+  render() {
+    const { intl } = this.props;
+
+    return (
+      <div className="view-outletDetail">
+        <Button>
+          {intl.formatMessage({ id: 'outletDetail_showNotification' })}
+        </Button>
+      </div>
+    );
+  }
+}
+
+export default injectIntl(OutletDetail);
+```
+
+在读取语言文件 key 值的方法上，多语言版本切换与多语言版本构建之间也有着细微的差别，具体的处理方法可以参考 [react-intl-context (opens new window)](https://github.com/AlanWei/react-intl-context)中的 [MultiIntlProvider (opens new window)](https://github.com/AlanWei/react-intl-context/blob/master/src/MultiIntlProvider.jsx)和 [IntlProvider (opens new window)](https://github.com/AlanWei/react-intl-context/blob/master/src/IntlProvider.jsx)。
+
+来看一下最终的效果。
+
+英文：
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647d2b2ebcc2956?w=2560&h=1600&f=png&s=159800)
+
+中文：
+
+![img](https://user-gold-cdn.xitu.io/2018/7/9/1647d29ab158e51f?w=2560&h=1600&f=png&s=162652)
+
+## 组合式开发：多语言支持
+
+在处理多语言支持这样一个需求时，我们再次印证了组合式开发其实是一个**赋能**的过程，即在增加了某一层或某一个模块后，实际上为其下游使用者赋予了某种没有副作用的能力。如多语言支持中的 `formatMessage` 方法，在页面有国际化的需求时可以随时调用它来获取翻译值，而在页面没有国际化的需求时又可以安全地忽略它。甚至在抽掉 `IntlContext` 后其下属的页面层虽然失去了获取翻译的能力，却并不会影响到页面层原先拥有的其他能力。
+
+这也就是组合式开发思想的精髓所在，它不需要外部为了它去进行复杂的适配而是通过自身向外部赋能。如果应用中的每一个模块都可以达到可组合、可插拔的程度，那么很多时候我们解决一个问题的方式就会从增加一个新模块变为灵活地组合已有模块，这将大大减少所需要的开发时间并降低 bug 出现的几率。
+
+## 小结
+
+在本节中我们剖析了多语言版本切换及多语言版本构建之间的相同与不同，为搭建一个支持多种语言的前端应用打下了良好的基础。
+
+如果你想参与到文章中内容的讨论，欢迎在下面的评论区留言，期待与大家的交流。
