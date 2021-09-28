@@ -191,7 +191,39 @@ module.exports = [{
             },
             {
                 text: 'CSS之美',
-                link: '/web-expand/css/'
+                link: '/web-expand/css3/'
+            },
+            {
+                text: '微前端开发实战',
+                link: '/web-expand/microweb/'
+            },
+            {
+                text: 'Node学习指南一',
+                link: '/web-expand/nodejs1/'
+            },
+            {
+                text: 'Node学习指南二',
+                link: '/web-expand/nodejs2/'
+            },
+            {
+                text: 'GraphQL服务',
+                link: '/web-expand/graphql/'
+            },
+            {
+                text: 'Node面试相关',
+                link: '/web-expand/interface/'
+            },
+            {
+                text: 'TypeScript相关',
+                link: '/web-expand/typescript/'
+            },
+            {
+                text: '前端算法与数据结构',
+                link: '/web-expand/data_structure/'
+            },
+            {
+                text: '算法专题',
+                link: '/web-expand/algorithm_topic/'
             }
         ]
     }
