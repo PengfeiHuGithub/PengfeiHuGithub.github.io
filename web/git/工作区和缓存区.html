@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>工作区和暂存区 | 胡鹏飞的博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/blog/logo3.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.e3fec480.css" as="style"><link rel="preload" href="/blog/assets/js/app.f893fe95.js" as="script"><link rel="preload" href="/blog/assets/js/2.c3348d23.js" as="script"><link rel="preload" href="/blog/assets/js/1.3f843ad6.js" as="script"><link rel="preload" href="/blog/assets/js/74.d2da0c5a.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.d3704d3c.js"><link rel="prefetch" href="/blog/assets/js/11.3e9061b1.js"><link rel="prefetch" href="/blog/assets/js/12.25a56ef6.js"><link rel="prefetch" href="/blog/assets/js/13.8cdf9ead.js"><link rel="prefetch" href="/blog/assets/js/14.56aa978f.js"><link rel="prefetch" href="/blog/assets/js/15.dc2b9346.js"><link rel="prefetch" href="/blog/assets/js/16.b46f5f97.js"><link rel="prefetch" href="/blog/assets/js/17.84c13bfb.js"><link rel="prefetch" href="/blog/assets/js/18.26df4c4b.js"><link rel="prefetch" href="/blog/assets/js/19.f462a0ff.js"><link rel="prefetch" href="/blog/assets/js/20.f8f3c343.js"><link rel="prefetch" href="/blog/assets/js/21.83e84fc7.js"><link rel="prefetch" href="/blog/assets/js/22.04e2e89b.js"><link rel="prefetch" href="/blog/assets/js/23.77886222.js"><link rel="prefetch" href="/blog/assets/js/24.5dadc027.js"><link rel="prefetch" href="/blog/assets/js/25.e67bb7c5.js"><link rel="prefetch" href="/blog/assets/js/26.97a00d2c.js"><link rel="prefetch" href="/blog/assets/js/27.bf629a8b.js"><link rel="prefetch" href="/blog/assets/js/28.0bf998ff.js"><link rel="prefetch" href="/blog/assets/js/29.ca83f49a.js"><link rel="prefetch" href="/blog/assets/js/3.d4f7e991.js"><link rel="prefetch" href="/blog/assets/js/30.512aa98a.js"><link rel="prefetch" href="/blog/assets/js/31.8bdab528.js"><link rel="prefetch" href="/blog/assets/js/32.4b736905.js"><link rel="prefetch" href="/blog/assets/js/33.c179529a.js"><link rel="prefetch" href="/blog/assets/js/34.d57635d1.js"><link rel="prefetch" href="/blog/assets/js/35.477cbb9a.js"><link rel="prefetch" href="/blog/assets/js/36.b2416ae9.js"><link rel="prefetch" href="/blog/assets/js/37.016f12e9.js"><link rel="prefetch" href="/blog/assets/js/38.2448c887.js"><link rel="prefetch" href="/blog/assets/js/39.79f24619.js"><link rel="prefetch" href="/blog/assets/js/4.eb771195.js"><link rel="prefetch" href="/blog/assets/js/40.ffde973b.js"><link rel="prefetch" href="/blog/assets/js/41.e73f2bda.js"><link rel="prefetch" href="/blog/assets/js/42.b5f5174f.js"><link rel="prefetch" href="/blog/assets/js/43.d61e321b.js"><link rel="prefetch" href="/blog/assets/js/44.29303497.js"><link rel="prefetch" href="/blog/assets/js/45.972ea60f.js"><link rel="prefetch" href="/blog/assets/js/46.280edd50.js"><link rel="prefetch" href="/blog/assets/js/47.8dca3cbc.js"><link rel="prefetch" href="/blog/assets/js/48.c06bbc48.js"><link rel="prefetch" href="/blog/assets/js/49.0b52391e.js"><link rel="prefetch" href="/blog/assets/js/5.43ef695b.js"><link rel="prefetch" href="/blog/assets/js/50.63242f96.js"><link rel="prefetch" href="/blog/assets/js/51.34ecd5c0.js"><link rel="prefetch" href="/blog/assets/js/52.2a31cdf7.js"><link rel="prefetch" href="/blog/assets/js/53.f4f03a1c.js"><link rel="prefetch" href="/blog/assets/js/54.1530866e.js"><link rel="prefetch" href="/blog/assets/js/55.3cf1f7d0.js"><link rel="prefetch" href="/blog/assets/js/56.8d01363b.js"><link rel="prefetch" href="/blog/assets/js/57.22b53950.js"><link rel="prefetch" href="/blog/assets/js/58.1c23b05c.js"><link rel="prefetch" href="/blog/assets/js/59.0ae5f7e0.js"><link rel="prefetch" href="/blog/assets/js/6.6e760612.js"><link rel="prefetch" href="/blog/assets/js/60.32f2a363.js"><link rel="prefetch" href="/blog/assets/js/61.5b6a781e.js"><link rel="prefetch" href="/blog/assets/js/62.f56d2f97.js"><link rel="prefetch" href="/blog/assets/js/63.809c8fd9.js"><link rel="prefetch" href="/blog/assets/js/64.fff0e483.js"><link rel="prefetch" href="/blog/assets/js/65.ad674b89.js"><link rel="prefetch" href="/blog/assets/js/66.076cbe3b.js"><link rel="prefetch" href="/blog/assets/js/67.bc33200b.js"><link rel="prefetch" href="/blog/assets/js/68.41653a8b.js"><link rel="prefetch" href="/blog/assets/js/69.ddb26642.js"><link rel="prefetch" href="/blog/assets/js/7.85107ac7.js"><link rel="prefetch" href="/blog/assets/js/70.12cd64b4.js"><link rel="prefetch" href="/blog/assets/js/71.8f8fd320.js"><link rel="prefetch" href="/blog/assets/js/72.d611d16e.js"><link rel="prefetch" href="/blog/assets/js/73.74573dea.js"><link rel="prefetch" href="/blog/assets/js/75.af4cfe93.js"><link rel="prefetch" href="/blog/assets/js/76.350afaa6.js"><link rel="prefetch" href="/blog/assets/js/77.44aeffff.js"><link rel="prefetch" href="/blog/assets/js/78.a916636c.js"><link rel="prefetch" href="/blog/assets/js/79.7e829313.js"><link rel="prefetch" href="/blog/assets/js/80.298b67b0.js"><link rel="prefetch" href="/blog/assets/js/81.2cf09a4f.js"><link rel="prefetch" href="/blog/assets/js/vendors~docsearch.caeb3b49.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.e3fec480.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/logo3.png" alt="胡鹏飞的博客" class="logo"> <span class="site-name can-hide">胡鹏飞的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/web-advanced/" class="nav-link">
+  进阶
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="精选" class="dropdown-title"><span class="title">精选</span> <span class="arrow down"></span></button> <button type="button" aria-label="精选" class="mobile-dropdown-title"><span class="title">精选</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web-featured/html/" class="nav-link">
+  HTML模块
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/css/" class="nav-link">
+  CSS模块
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/js/" class="nav-link">
+  JS模块儿
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/vue-basics/" class="nav-link">
+  Vue基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/vue-component/" class="nav-link">
+  Vue组件精讲
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/vue-source/" class="nav-link">
+  Vue2.x源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/react-combination/" class="nav-link">
+  React组合式开发
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/react-hooks/" class="nav-link">
+  React Hooks实战
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/react-ssr/" class="nav-link">
+  React 服务端渲染
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/react-chat/" class="nav-link">
+  IM聊天系统实践
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/web-high_frequency/" class="nav-link">
+  高频
+</a></div><div class="nav-item"><a href="/blog/web-guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/blog/web-performance/" class="nav-link">
+  性能
+</a></div><div class="nav-item"><a href="/blog/web-comprehensive/" class="nav-link">
+  综合
+</a></div><div class="nav-item"><a href="/blog/web-principle/" class="nav-link">
+  原理
+</a></div><div class="nav-item"><a href="/blog/web-handwriting/" class="nav-link">
+  手写
+</a></div><div class="nav-item"><a href="/blog/web-model/" class="nav-link">
+  模式
+</a></div><div class="nav-item"><a href="/blog/web-algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web/webpack/" class="nav-link">
+  优化相关之webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/git/" class="nav-link router-link-active">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/vue难点解读/" class="nav-link">
+  vue知识点解读
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="拓展阅读" class="dropdown-title"><span class="title">拓展阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="拓展阅读" class="mobile-dropdown-title"><span class="title">拓展阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web-expand/browser/" class="nav-link">
+  浏览器原理
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/http/" class="nav-link">
+  HTTP相关
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/computer/" class="nav-link">
+  计算机基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/h5/" class="nav-link">
+  H5开发
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/applet/" class="nav-link">
+  小程序开发
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/canvas/" class="nav-link">
+  Canvas学习
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/taro/" class="nav-link">
+  Taro原理
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/pwa/" class="nav-link">
+  深入浅出PWA
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/uniapp/" class="nav-link">
+  Uniapp实战
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/css3/" class="nav-link">
+  CSS之美
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/microweb/" class="nav-link">
+  微前端开发实战
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/nodejs1/" class="nav-link">
+  Node学习指南一
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/nodejs2/" class="nav-link">
+  Node学习指南二
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/graphql/" class="nav-link">
+  GraphQL服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/interface/" class="nav-link">
+  Node面试相关
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/typescript/" class="nav-link">
+  TypeScript相关
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/data_structure/" class="nav-link">
+  前端算法与数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/algorithm_topic/" class="nav-link">
+  算法专题
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/web-advanced/" class="nav-link">
+  进阶
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="精选" class="dropdown-title"><span class="title">精选</span> <span class="arrow down"></span></button> <button type="button" aria-label="精选" class="mobile-dropdown-title"><span class="title">精选</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web-featured/html/" class="nav-link">
+  HTML模块
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/css/" class="nav-link">
+  CSS模块
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/js/" class="nav-link">
+  JS模块儿
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/vue-basics/" class="nav-link">
+  Vue基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/vue-component/" class="nav-link">
+  Vue组件精讲
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/vue-source/" class="nav-link">
+  Vue2.x源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/react-combination/" class="nav-link">
+  React组合式开发
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/react-hooks/" class="nav-link">
+  React Hooks实战
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/react-ssr/" class="nav-link">
+  React 服务端渲染
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-featured/react-chat/" class="nav-link">
+  IM聊天系统实践
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/web-high_frequency/" class="nav-link">
+  高频
+</a></div><div class="nav-item"><a href="/blog/web-guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/blog/web-performance/" class="nav-link">
+  性能
+</a></div><div class="nav-item"><a href="/blog/web-comprehensive/" class="nav-link">
+  综合
+</a></div><div class="nav-item"><a href="/blog/web-principle/" class="nav-link">
+  原理
+</a></div><div class="nav-item"><a href="/blog/web-handwriting/" class="nav-link">
+  手写
+</a></div><div class="nav-item"><a href="/blog/web-model/" class="nav-link">
+  模式
+</a></div><div class="nav-item"><a href="/blog/web-algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web/webpack/" class="nav-link">
+  优化相关之webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/git/" class="nav-link router-link-active">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web/vue难点解读/" class="nav-link">
+  vue知识点解读
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="拓展阅读" class="dropdown-title"><span class="title">拓展阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="拓展阅读" class="mobile-dropdown-title"><span class="title">拓展阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/web-expand/browser/" class="nav-link">
+  浏览器原理
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/http/" class="nav-link">
+  HTTP相关
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/computer/" class="nav-link">
+  计算机基础
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/h5/" class="nav-link">
+  H5开发
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/applet/" class="nav-link">
+  小程序开发
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/canvas/" class="nav-link">
+  Canvas学习
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/taro/" class="nav-link">
+  Taro原理
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/pwa/" class="nav-link">
+  深入浅出PWA
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/uniapp/" class="nav-link">
+  Uniapp实战
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/css3/" class="nav-link">
+  CSS之美
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/microweb/" class="nav-link">
+  微前端开发实战
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/nodejs1/" class="nav-link">
+  Node学习指南一
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/nodejs2/" class="nav-link">
+  Node学习指南二
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/graphql/" class="nav-link">
+  GraphQL服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/interface/" class="nav-link">
+  Node面试相关
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/typescript/" class="nav-link">
+  TypeScript相关
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/data_structure/" class="nav-link">
+  前端算法与数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/web-expand/algorithm_topic/" class="nav-link">
+  算法专题
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>工作区和暂存区</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h4 id="工作区和暂存区"><a href="#工作区和暂存区" class="header-anchor">#</a> 工作区和暂存区</h4> <hr> <p>Git和其他版本控制系统如SVN的一个不同之处就是有暂存区的概念。</p> <p>先来看名词解释。</p> <h4 id="工作区-working-directory"><a href="#工作区-working-directory" class="header-anchor">#</a> 工作区（Working Directory）</h4> <p>就是你在电脑里能看到的目录，比如我的<code>learngit</code>文件夹就是一个工作区：</p> <h4 id="版本库-repository"><a href="#版本库-repository" class="header-anchor">#</a> 版本库（Repository）</h4> <p>工作区有一个隐藏目录<code>.git</code>，这个不算工作区，而是Git的版本库。</p> <p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支<code>master</code>，以及指向<code>master</code>的一个指针叫<code>HEAD</code>。</p> <img src="git/image-20200402210722348.png" alt="image-20200402210722348" style="zoom:50%;"> <p>分支和<code>HEAD</code>的概念我们以后再讲。</p> <p>前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p> <p>第一步是用<code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区；</p> <p>第二步是用<code>git commit</code>提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p> <p>因为我们创建Git版本库时，Git自动为我们创建了唯一一个<code>master</code>分支，所以，现在，<code>git commit</code>就是往<code>master</code>分支上提交更改。</p> <p>你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p> <p>俗话说，实践出真知。现在，我们再练习一遍，先对<code>readme.txt</code>做个修改，比如加上一行内容：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>Git is a distributed version control system.
+Git is <span class="token function">free</span> software distributed under the GPL.
+Git has a mutable index called stage.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>然后，在工作区新增一个<code>LICENSE</code>文本文件（内容随便写）。</p> <p>先用<code>git status</code>查看一下状态：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ <span class="token function">git</span> status
+On branch master
+Changes not staged <span class="token keyword">for</span> commit:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+
+	modified:   readme.txt
+
+Untracked files:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="token keyword">in</span> what will be committed<span class="token punctuation">)</span>
+
+	LICENSE
+
+no changes added to commit <span class="token punctuation">(</span>use <span class="token string">&quot;git add&quot;</span> and/or <span class="token string">&quot;git commit -a&quot;</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>Git非常清楚地告诉我们，<code>readme.txt</code>被修改了，而<code>LICENSE</code>还从来没有被添加过，所以它的状态是<code>Untracked</code>。</p> <p>现在，使用两次命令<code>git add</code>，把<code>readme.txt</code>和<code>LICENSE</code>都添加后，用<code>git status</code>再查看一下：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ <span class="token function">git</span> status
+On branch master
+Changes to be committed:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="token punctuation">)</span>
+
+	new file:   LICENSE
+	modified:   readme.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>现在，暂存区的状态就变成这样了：</p> <img src="git/image-20200402210749182.png" alt="image-20200402210749182" style="zoom:50%;"> <p>所以，<code>git add</code>命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行<code>git commit</code>就可以一次性把暂存区的所有修改提交到分支。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">&quot;understand how stage works&quot;</span>
+<span class="token punctuation">[</span>master e43a48b<span class="token punctuation">]</span> understand how stage works
+ <span class="token number">2</span> files changed, <span class="token number">2</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+ create mode <span class="token number">100644</span> LICENSE
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>一旦提交后，如果你又没有对工作区做任何修改，那么工作区就是“干净”的：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>$ <span class="token function">git</span> status
+On branch master
+nothing to commit, working tree clean
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>现在版本库变成了这样，暂存区就没有任何内容了：</p> <img src="git/image-20200402210806335.png" alt="image-20200402210806335" style="zoom:50%;"> <h3 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h3> <p>暂存区是Git非常重要的概念，弄明白了暂存区，就弄明白了Git的很多操作到底干了什么。</p> <p>没弄明白暂存区是怎么回事的童鞋，请向上滚动页面，再看一次。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/13/2020, 3:48:37 AM</span></div></footer> <!----> </main></div><div class="global-ui"><div id="live2d-widget" class="live2d-widget-container" style="position:fixed;right:65px;bottom:0px;width:135px;height:300px;z-index:99999;opacity:0.8;pointer-events:none;"><canvas id="live2d_canvas" width="135" height="300" class="live2d_canvas" style="position:absolute;left:0px;top:0px;width:135px;height:300px;"></canvas></div></div></div>
+    <script src="/blog/assets/js/app.f893fe95.js" defer></script><script src="/blog/assets/js/2.c3348d23.js" defer></script><script src="/blog/assets/js/1.3f843ad6.js" defer></script><script src="/blog/assets/js/74.d2da0c5a.js" defer></script>
+  </body>
+</html>
