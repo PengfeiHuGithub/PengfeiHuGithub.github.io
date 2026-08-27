@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/blog/',
+    base: '/',
     title: '胡鹏飞的博客',
     head: [ // 注入到当前页面的 HTML <head> 中的标签
         ['link', { rel: 'icon', href: '/logo3.png' }], // 增加一个自定义的 favicon(网页标签的图标)
