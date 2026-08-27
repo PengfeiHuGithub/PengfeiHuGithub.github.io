@@ -1,0 +1,36 @@
+name: Deploy VuePress Site
+
+on:
+  push:
+    branches:
+      - main # 触发分支，如果你的是 master 请改为 master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build VuePress
+        run: npm run build
+
+      - name: Create .nojekyll
+        run: touch docs/.vuepress/dist/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.vuepress/dist
+          publish_branch: gh-pages
