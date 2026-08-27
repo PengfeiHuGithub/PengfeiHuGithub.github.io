@@ -8,12 +8,6 @@
 
 想要摆脱对未来的迷茫，最好的方法就是向后看，看一路走来前端开发是如何从服务端主导的静态网站一步步发展到现在由客户端主导的单页应用。只有了解了过去前端分别在不同的阶段解决了怎样的问题，才能更好地看清楚未来要向哪里去。
 
-## [#](http://interview.poetries.top/fe-react-docs/react-web-action/01-前端开发的四个时代.html#四个时代)四个时代
-
-
-
-### [#](http://interview.poetries.top/fe-react-docs/react-web-action/01-前端开发的四个时代.html#黑铁时代-插件化)黑铁时代 - 插件化
-
 ![img](https://user-gold-cdn.xitu.io/2018/6/15/16403cbbe2e891c5?w=286&h=176&f=png&s=3544)
 
 在前端界大名鼎鼎的 [jQuery (opens new window)](https://jquery.com/)诞生于 2006 年，那时还没有 [Google Chrome (opens new window)](https://en.wikipedia.org/wiki/Google_Chrome)，微软刚刚发布了直到现在还在令许多前端开发者头疼的 [IE 7 (opens new window)](https://en.wikipedia.org/wiki/Internet_Explorer_7)。
@@ -512,8 +506,6 @@ const Router = ({ history }) => (
 
 经过了刀耕火种的插件化时代，伴随着越来越繁荣的 [npm (opens new window)](https://www.npmjs.com/)生态，近几年来前端开发的三大件 HTML、CSS 及 JavaScript 都发生了不同程度上的进化，这也让开发或选择一个合适的项目脚手架（boilerplate）成为了前端项目的第一个难点。在 React 生态中，虽然已经有了像 [`create-react-app` (opens new window)](https://github.com/facebook/create-react-app)这样官方指定的脚手架项目，但为了深入理解一个前端脚手架所需要承担的责任与能够解决的问题，不妨让我们删繁就简一起来搭建一个只包含最少依赖的功能齐全的项目脚手架。
 
-## [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#html-部分)HTML 部分
-
 
 
 在 JavaScript 框架接管了所有 DOM 相关的操作与更新后，HTML 方面的工作量就大量地减少了，很多时候只需要为框架提供一个可以注入 DOM 元素的根节点即可。
@@ -566,17 +558,11 @@ const Router = ({ history }) => (
 
 根据项目的需要我们还可以在模板中定义应用 `favicon` 等传统 HTML 支持的属性，这里不再赘述。
 
-## [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#css-部分)CSS 部分
-
-
 
 相较于 HTML，CSS 作为前端应用的另一核心组成部分受到 JavaScript 发展的冲击要小得多。以 [Sass (opens new window)](https://sass-lang.com/)、[Less (opens new window)](http://lesscss.org/)为代表的 CSS 预处理工具极大地增强了 CSS 的功能，也让 CSS 保持了自己原先独立的地位。
 
 但为了打通基于 webpack 的整体项目编译流程，我们也需要在 webpack 中合理地配置 CSS 的编译方式，使得 Sass（Less）、CSS 及 webpack 可以无缝衔接。
 
-### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#区别对待项目中的-css-与-node-modules-中的-css)区别对待项目中的 CSS 与 node_modules 中的 CSS
-
-#### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#项目中的-css)项目中的 CSS：
 
 ```text
 {
@@ -630,8 +616,6 @@ const Router = ({ history }) => (
 
 这里需要注意的有两点，一是 `sass-loader` 的 `includePaths` 设置为 `src/` 目录，这是为了项目中的 scss 文件可以方便地使用绝对路径相互引用，而不需要使用较为繁琐且不利用重构的相对路径。二是开发时使用 `style-loader` 而不是 `css-loader` 来加载 CSS，这是为了结合 `webpack-dev-server` 的热更新（hot reload）功能，在本地开发时将所有的 CSS 都直接内嵌至 HTML 中以加快热更新的速度。
 
-#### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#node-modules-中的-css)node_modules 中的 CSS：
-
 ```text
 {
   test: /\.css$/,
@@ -651,8 +635,6 @@ const Router = ({ history }) => (
 ```
 
 在项目开发的过程中，我们很有可能还需要引入一些包含 CSS 的第三方库。这里需要注意的是，为了避免有些第三方库提供的 CSS 没有做浏览器兼容性处理，我们在加载 `node_moduels` 中的 CSS 之前还要使用 `postcss-loader` 再统一处理一遍，以确保所有进入生产环境的 CSS 都经过了相应的浏览器兼容性处理。
-
-### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#样式变量与-mixin)样式变量与 mixin
 
 正如前文中所提到的，CSS 作为独立的一部分一直以来受到前端工程化的影响都比较小。但与此同时许多开发者一味地追求开发效率，很多时候忽略了应该以一门编程语言的态度去对待 CSS。
 
@@ -705,13 +687,7 @@ $red-10: #5c0011 !default;
 
 并在编写具体的页面样式时坚持不使用任何硬编码的值来保证项目样式的统一性，为后续维护中的样式变更打下良好的基础。
 
-## [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#javascript-部分)JavaScript 部分
-
-
-
 JavaScript 作为近几年来变化最大的一部分，总结下来的改变主要集中在三个方面：一是需要将使用 ES2015、ES2016、ES2017 特性的 JavaScript 代码编译至大多数浏览器普遍支持的 ES5（对应工具为 Babel），二是需要将编译好的 JavaScript、CSS 及 HTML 整合起来，也就是我们常说的打包（对应工具为 webpack），三是需要对代码风格及规范进行检查（对应工具为 ESLint）。
-
-### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#babel-配置)Babel 配置
 
 ![img](https://user-gold-cdn.xitu.io/2018/6/18/164114407bfed7d8)
 
@@ -723,15 +699,11 @@ JavaScript 作为近几年来变化最大的一部分，总结下来的改变主
 
 Babel 作为一个基于插件系统打造的 JavaScript 编译工具，其可定制度是非常高的，开发者们完全可以根据自己的使用需要与编码习惯去选择或开发合适的插件以达到提升开发效率的效果。
 
-### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#webpack-配置)webpack 配置
-
 ![img](https://user-gold-cdn.xitu.io/2018/6/18/164114462180b3bc?w=1280&h=660&f=jpeg&s=38167)
 
 webpack 作为现在最流行的前端打包工具，其一路走来的发展史也是许多前端开发者的血泪史。webpack 1 到 webpack 2 时破坏式的升级导致了许多前端项目直到今天都仍然停留在 webpack 1，而 webpack 3 到 webpack 4 时彻底重构了的内部插件系统又导致了第二次断崖式升级。但值得庆幸的是，webpack 在最新的 4+ 版本中终于承认了「约定大于配置」并大幅减少了在功能与插件方面配置代码的数量。
 
 webpack 配置的核心一是源代码的入口（entry）与打包后代码的出口（output），二是不同资源的加载器（loader），三是插件，常用的如处理 CSS 的 `mini-css-extract-plugin`，处理 HTML 的 `html-webpack-plugin` 等。具体实用的 webpack 配置大家可以参考示例项目 [`react-boilerplate` (opens new window)](https://github.com/AlanWei/react-boilerplate)中的 [`webpack.config.js` (opens new window)](https://github.com/AlanWei/react-boilerplate/blob/master/webpack.config.js)部分。
-
-### [#](http://interview.poetries.top/fe-react-docs/react-web-action/05-实战篇 02：项目脚手架.html#eslint-配置)ESLint 配置
 
 ![img](https://user-gold-cdn.xitu.io/2018/6/18/16411449e8db5234?w=398&h=233&f=png&s=12758)
 

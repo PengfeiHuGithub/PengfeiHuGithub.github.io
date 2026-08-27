@@ -43,23 +43,23 @@
 
 我们要做的应用需要编译成小程序，因此也要[下载微信开发者工具 (opens new window)](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)进行编译预览效果。
 
-![image-20210215142448474](http://img-repo.poetries.top/images/image-20210215142448474.png)
+![image-20210215142448474](https://img-repo.poetries.top/images/image-20210215142448474.png)
 
 找到对应版本，下载安装，完成打开
 
-![image-20210215142500753](http://img-repo.poetries.top/images/image-20210215142500753.png)
+![image-20210215142500753](https://img-repo.poetries.top/images/image-20210215142500753.png)
 
 这里先做个配置，找到菜单 【设置】 >> 【安全设置】，该配置可以使 Uniapp 使用命令行调用微信开发者工具，实现项目的预览与热更新
 
-![image-20210215142513328](http://img-repo.poetries.top/images/image-20210215142513328.png)
+![image-20210215142513328](https://img-repo.poetries.top/images/image-20210215142513328.png)
 
 把服务端口选择开启即可
 
-![image-20210215142524587](http://img-repo.poetries.top/images/image-20210215142524587.png)
+![image-20210215142524587](https://img-repo.poetries.top/images/image-20210215142524587.png)
 
 这里如果不开启，接下来的调试会报以下错
 
-![image-20210215142537280](http://img-repo.poetries.top/images/image-20210215142537280.png)
+![image-20210215142537280](https://img-repo.poetries.top/images/image-20210215142537280.png)
 
 ## HbuilderX
 
@@ -67,23 +67,23 @@
 
 打开 [HbuilderX官方 (opens new window)](https://www.dcloud.io/hbuilderx.html)，使用 Uniapp 框架开发项目搭配官方的编辑器 HBuilderX 开发，编辑器集成了node，添加了很多底层配置。无需复杂的安装，开箱即用并且搭配了可视化界面，可以轻松编辑。
 
-![image-20210215142551362](http://img-repo.poetries.top/images/image-20210215142551362.png)
+![image-20210215142551362](https://img-repo.poetries.top/images/image-20210215142551362.png)
 
 下载对应安装包（我的是 Mac 机），下载选择一个 App 开发版本（App 开发版已集成相关插件、开箱即用），下载成功后直接解压：
 
-![image-20210215142603246](http://img-repo.poetries.top/images/image-20210215142603246.png)
+![image-20210215142603246](https://img-repo.poetries.top/images/image-20210215142603246.png)
 
 一顿操作后找到这个图标打开，打开基本上可以达到秒开。
 
-![image-20210215142616773](http://img-repo.poetries.top/images/image-20210215142616773.png)
+![image-20210215142616773](https://img-repo.poetries.top/images/image-20210215142616773.png)
 
 如果你熟悉了其他大众化的编译器，完全可以无缝衔接过来，因为可以快捷键切换，这样还是同样的配方，熟悉的味道，不用再次学习。打开编译器，空白区域可看快捷键方案设置，点击选择即可。
 
-![image-20210215142632695](http://img-repo.poetries.top/images/image-20210215142632695.png)
+![image-20210215142632695](https://img-repo.poetries.top/images/image-20210215142632695.png)
 
 然后修改主题 【工具】>>【主题】>>【酷黑】，即可看到熟悉的 IDE 的界面。
 
-![image-20210215142647183](http://img-repo.poetries.top/images/image-20210215142647183.png)
+![image-20210215142647183](https://img-repo.poetries.top/images/image-20210215142647183.png)
 
 ## 新建项目
 
@@ -91,11 +91,11 @@
 
 【选择新建项目】 >> 【uni-app】 >> 【默认模板】 >> 【创建】；选择 uni-app(U) 创建项目是为了开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序。
 
-![image-20210215142700433](http://img-repo.poetries.top/images/image-20210215142700433.png)
+![image-20210215142700433](https://img-repo.poetries.top/images/image-20210215142700433.png)
 
 一秒创建成功
 
-![image-20210215142711714](http://img-repo.poetries.top/images/image-20210215142711714.png)
+![image-20210215142711714](https://img-repo.poetries.top/images/image-20210215142711714.png)
 
 目录结构：
 
@@ -112,9 +112,9 @@
 
 选择菜单 【工具】 >> 【插件安装】
 
-![image-20210215142725132](http://img-repo.poetries.top/images/image-20210215142725132.png)
+![image-20210215142725132](https://img-repo.poetries.top/images/image-20210215142725132.png)
 
-![image-20210215142735096](http://img-repo.poetries.top/images/image-20210215142735096.png)
+![image-20210215142735096](https://img-repo.poetries.top/images/image-20210215142735096.png)
 
 建议安装这些：
 
@@ -151,17 +151,17 @@
 
 HBuilder 可能检测不到的浏览器所在位置，所有的运行配置都需要对应上你在本机安装的浏览器的安装路径才能进行命令行启动预览。小程序，手机的运行配置一致。 选择菜单【工具】>>【设置】>>【运行配置】：
 
-![image-20210215142754363](http://img-repo.poetries.top/images/image-20210215142754363.png)
+![image-20210215142754363](https://img-repo.poetries.top/images/image-20210215142754363.png)
 
 完成 chrome 等浏览器运行配置，操作 【运行】>>【运行到浏览器】>>【chrome】，HBuilder 会在底部开启终端，实行项目更新与热编译的检测：
 
-![image-20210215142805646](http://img-repo.poetries.top/images/image-20210215142805646.png)
+![image-20210215142805646](https://img-repo.poetries.top/images/image-20210215142805646.png)
 
 ## Git
 
 
 
-项目开发中，源码管理工具必不可少，比如 Git，但这里我不想花太多篇幅去讲解如何安装配置 Git 以及它的基础概念，这里有一篇更棒的文章很好地解释了 Git：[Git简明指南 (opens new window)](http://rogerdudler.github.io/git-guide/index.zh.html)。
+项目开发中，源码管理工具必不可少，比如 Git，但这里我不想花太多篇幅去讲解如何安装配置 Git 以及它的基础概念，这里有一篇更棒的文章很好地解释了 Git：[Git简明指南 (opens new window)](https://rogerdudler.github.io/git-guide/index.zh.html)。
 
 ## FAQ
 
@@ -191,7 +191,7 @@ HBuilder 可能检测不到的浏览器所在位置，所有的运行配置都�
 
 MVC 的定义：MVC 是 Model-View-Controller 的简写。即模型-视图-控制器
 
-![image-20210215143002544](http://img-repo.poetries.top/images/image-20210215143002544.png)
+![image-20210215143002544](https://img-repo.poetries.top/images/image-20210215143002544.png)
 
 - **模型**（Model）指的是后端传递的数据（比如数据库记录列表）。
 - **视图**（View）指的是所看到的页面，显示数据（数据记录）。
@@ -211,7 +211,7 @@ MVC 的定义：MVC 是 Model-View-Controller 的简写。即模型-视图-控�
 
 > MVVM 是 Model-View-ViewModel 的简写，即模型-视图-视图模型。MVVM 模式是通过以下三个核心组件组成：
 
-![image-20210215143030037](http://img-repo.poetries.top/images/image-20210215143030037.png)
+![image-20210215143030037](https://img-repo.poetries.top/images/image-20210215143030037.png)
 
 - **模型**（Model）指的是后端传递的数据，包含了业务和验证逻辑的数据模型。
 - **视图**（View）指的是所看到的页面，定义屏幕中 View 的结构，布局和外观。
@@ -230,7 +230,7 @@ ViewModel 的角色就是将**视图**与**模型**之间来回转化：
 
 来看一个添加名单的应用页面的 index.vue 结构，用户可以在输入框输入名字，书写的内容可以即时反映显示在文本中，用户可以操作添加，把该名字插入列表数据中：
 
-![image-20210215143048661](http://img-repo.poetries.top/images/image-20210215143048661.png)
+![image-20210215143048661](https://img-repo.poetries.top/images/image-20210215143048661.png)
 
 在 Vue 中可以发现：
 
@@ -505,7 +505,7 @@ Uniapp 支持在 template 模板中嵌套 `<template/>` 和 `<block/>`，用来�
 在 main.js 中挂载属性/方法
 
 ```js
-Vue.prototype.websiteUrl = 'http://localhost:3000';  
+Vue.prototype.websiteUrl = 'https://localhost:3000';  
 ```
 
 然后在 pages/index/index.Vue 中调用
@@ -535,7 +535,7 @@ Vue.prototype.websiteUrl = 'http://localhost:3000';
 
 ```js
 // main.js
-Vue.prototype.$websiteUrl = 'http://localhost:3000';  
+Vue.prototype.$websiteUrl = 'https://localhost:3000';  
 // 访问
 const url = this.$websiteUrl
 ```
@@ -556,7 +556,7 @@ const url = this.$websiteUrl
 <script>  
     export default {  
         globalData: {  
-           websiteUrl: 'http://localhost:3000'  
+           websiteUrl: 'https://localhost:3000'  
         },  
         onLaunch: function() {  
            console.log('App Launch')  
@@ -568,16 +568,16 @@ const url = this.$websiteUrl
 js 中操作 globalData 的方式如下：
 
 ```js
-赋值：getApp().globalData.websiteUrl = 'http://localhost:3000'  
+赋值：getApp().globalData.websiteUrl = 'https://localhost:3000'  
 
-取值：console.log(getApp().globalData.websiteUrl) // 'http://localhost:3000'  
+取值：console.log(getApp().globalData.websiteUrl) // 'https://localhost:3000'  
 ```
 
 ### 3. Vuex
 
 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
 
-![image-20210215143129230](http://img-repo.poetries.top/images/image-20210215143129230.png)
+![image-20210215143129230](https://img-repo.poetries.top/images/image-20210215143129230.png)
 
 关于`Vuex`东西不少，我打算开一章来详细讲解。
 
@@ -599,7 +599,7 @@ Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用�
 
 如果上面说的比较拗口，来点简单的。比如一座房子，把房子看成一个独立的整体由屋顶、窗户、门，墙等组成。
 
-![image-20210215143641799](http://img-repo.poetries.top/images/image-20210215143641799.png)
+![image-20210215143641799](https://img-repo.poetries.top/images/image-20210215143641799.png)
 
 用代码来表示就是：
 
@@ -741,7 +741,7 @@ Uniapp 基础组件分为以下八大类：
 
 - `this.$emit('getMsg', this)` 这一句是该组件通过 `this.$emit()` 派发事件，引用这个组件的地方可以利用 $on 对事件进行监听，实现参数的传递与事件向上传递，当前的 this 指的是该组件本身，指针指向当前组件。通俗的话就是，我传递一个叫 `getMsg` 事件并当前所有的参数内容出去，你只要在外面接收就可以了。
 
-1. css 部分由 `style` 标签组成，这里面样式只作用当前的元素。style 支持 css3 标准，不用再写多余的 hack，比如 `-webkit-` 前缀等，已经由整个框架完成 hask 编译, 可以看到 style 标签有个 `lang="scss"`,说明里面的样式表可以直接以 [scss (opens new window)](https://www.sass.hk/)形式书写，当然 `lang` 的属性值还可以是 [less (opens new window)](http://lesscss.cn/),[stylus (opens new window)](https://stylus-lang.net/)，找到合适自己的 css 预编译期可以事半功倍。
+1. css 部分由 `style` 标签组成，这里面样式只作用当前的元素。style 支持 css3 标准，不用再写多余的 hack，比如 `-webkit-` 前缀等，已经由整个框架完成 hask 编译, 可以看到 style 标签有个 `lang="scss"`,说明里面的样式表可以直接以 [scss (opens new window)](https://www.sass.hk/)形式书写，当然 `lang` 的属性值还可以是 [less (opens new window)](https://lesscss.cn/),[stylus (opens new window)](https://stylus-lang.net/)，找到合适自己的 css 预编译期可以事半功倍。
 
 父子组件（组件引用者与组件）的关系可以总结为 props 向下传递，事件向上传递。父组件通过 props 给子组件下发数据，子组件通过事件给父组件发送消息。
 
@@ -756,7 +756,7 @@ Uniapp 并没有限制使用 HTML 标签，如果开发者写了 div 等标签�
 
 
 
-![img](http://img-repo.poetries.top/images/16e71e5e856e06c3.png)
+![img](https://img-repo.poetries.top/images/16e71e5e856e06c3.png)
 
 一个商品信息由商品图片，商品名称，商品价格，商品参考价组成。
 
@@ -870,7 +870,7 @@ export default {
         data() {
             return {
                 song: {
-                    img: 'http://gw.alicdn.com/bao/uploaded/i3/1917047079/O1CN01VlEDD522AEJzpw3A5_!!2-item_pic.png_360x10000.jpg',
+                    img: 'https://gw.alicdn.com/bao/uploaded/i3/1917047079/O1CN01VlEDD522AEJzpw3A5_!!2-item_pic.png_360x10000.jpg',
                     title: 'Apple/苹果 iPhone 11 Pro',
                     price: '8699.00',
                     marketPrice: '￥8699.00',
@@ -983,12 +983,12 @@ window.addEventListener('hashchange', function(){
 例如访问列表地址，# 后面的路径就是指向页面地址：
 
 ```js
-http://localhost:8080/#/pages/list/list
+https://localhost:8080/#/pages/list/list
 ```
 
 如果不想要很丑的 hash，我们可以用路由的 history 模式，在项目的配置文件 【manifest.json】>>【h5配置】>> 【路由模式】 进行修改：
 
-![image-20210215144001624](http://img-repo.poetries.top/images/image-20210215144001624.png)
+![image-20210215144001624](https://img-repo.poetries.top/images/image-20210215144001624.png)
 
 history 模式改变 url 的方式会导致浏览器向服务器发送请求，如果服务器端未做任何处理，则会请求资源失败，我们需要在服务器端做处理：如果匹配不到任何静态资源，则应该始终返回同一个 html 页面。具体操作可以看[这里(opens new window)](https://router.vuejs.org/zh/guide/essentials/history-mode.html)
 
@@ -1256,11 +1256,11 @@ Uniapp 的 Storage 在不同端的实现不同：
 
 我们在新建 uni-app 项目的模板目录可以发现有一个 uni.scss 文件（相当于公用样式）。是的，你没看错。这里你可以轻松使用 scss ，尝试使用 scss ，会让你工作效率更高。
 
-![image-20210215144542499](http://img-repo.poetries.top/images/image-20210215144542499.png)
+![image-20210215144542499](https://img-repo.poetries.top/images/image-20210215144542499.png)
 
 在前面介绍安装 HbuilderX 编译器的章节中，我们就已经介绍了安装必要使用的插件（ scss/sass 编译），直接点击安装即可，点击【工具】>> 【插件安装】即可查看，如果安装了 scss/sass 编译，就可以在代码中体验着酸爽的感觉了。
 
-![image-20210215144557176](http://img-repo.poetries.top/images/image-20210215144557176.png)
+![image-20210215144557176](https://img-repo.poetries.top/images/image-20210215144557176.png)
 
 Scss 是一种 css 预处理器和一种语言, 它可以用来定义一套新的语法规则和函数，以加强和提升 css，可以解放代码量。
 
@@ -1441,11 +1441,11 @@ rpx 即响应式 px，跟 rem 实现是类似的，一种根据屏幕宽度自�
 
 在 HBuilderX【偏好设置】->【编辑器设置】中进行配置
 
-![image-20210215144617891](http://img-repo.poetries.top/images/image-20210215144617891.png)
+![image-20210215144617891](https://img-repo.poetries.top/images/image-20210215144617891.png)
 
 之后代码里就有提示了
 
-![image-20210215144705043](http://img-repo.poetries.top/images/image-20210215144705043.png)
+![image-20210215144705043](https://img-repo.poetries.top/images/image-20210215144705043.png)
 
 你可能在别处听说过 upx，这个官方已经弃用了，目前版本统一用 rpx，了解完之后就愉快的使用 rpx 吧 😃
 
@@ -1498,11 +1498,11 @@ BEM 的关键是光凭名字就可以告诉其他开发者某个标记是用来�
 
 可能你还是不太理解什么是BEM，没关系，我们看一下下面这个大家比较熟悉的哆啦A梦吧，看看这之间有什么相似之处。
 
-![image-20210215144908146](http://img-repo.poetries.top/images/image-20210215144908146.png)
+![image-20210215144908146](https://img-repo.poetries.top/images/image-20210215144908146.png)
 
 上面的哆啦A梦如果用进行分块，可以分为头部（脸部），手部，脚部这三大块。其中我们把脸部拿出来细分：眼睛、嘴巴、鼻子，用关系图表示：
 
-![image-20210215144921750](http://img-repo.poetries.top/images/image-20210215144921750.png)
+![image-20210215144921750](https://img-repo.poetries.top/images/image-20210215144921750.png)
 
 我们用 BEM 规范来表达一下哆啦A梦的结构：
 
@@ -1636,7 +1636,7 @@ BEM 的关键是光凭名字就可以告诉其他开发者某个标记是用来�
 
 平台名称参数对应：
 
-![image-20210215145011339](http://img-repo.poetries.top/images/image-20210215145011339.png)
+![image-20210215145011339](https://img-repo.poetries.top/images/image-20210215145011339.png)
 
 条件编译是利用注释实现的，在不同语法里注释写法不一样，js使用 // 注释、css 使用 /* 注释 */。
 
@@ -1689,23 +1689,23 @@ BEM 的关键是光凭名字就可以告诉其他开发者某个标记是用来�
 
 在阿里图标库里，可以找到非常多各式各样的字体图标，并且可以私人上传定制图标库，与团队协同开发管理图标。首次登录需要先捆绑账号，支持github及新浪微博快捷入口登录。登录后点击【图标管理】>>【我的项目】进入项目页面：
 
-![image-20210215145102087](http://img-repo.poetries.top/images/image-20210215145102087.png)
+![image-20210215145102087](https://img-repo.poetries.top/images/image-20210215145102087.png)
 
 进入页面点击右侧紫色的添加图标新建一个项目，点进出现弹窗，在弹出的弹窗中填好项目名称及项目描述，然后点击新建：
 
-![image-20210215145115364](http://img-repo.poetries.top/images/image-20210215145115364.png)
+![image-20210215145115364](https://img-repo.poetries.top/images/image-20210215145115364.png)
 
 回到图标库，在搜索框中输入自己想要的图标，并鼠标悬浮到具体图标中，点击购物车（添加入库），此时你的购物车会添加1：
 
-![image-20210215145128487](http://img-repo.poetries.top/images/image-20210215145128487.png)
+![image-20210215145128487](https://img-repo.poetries.top/images/image-20210215145128487.png)
 
 找到所有想要的图标并添加进购物车后，点击右上角购物车的图标，将购物车里的图标添加至项目，选择刚才新建的项目：
 
-![image-20210215145146585](http://img-repo.poetries.top/images/image-20210215145146585.png)
+![image-20210215145146585](https://img-repo.poetries.top/images/image-20210215145146585.png)
 
 回到我的项目页面，点击**下载至本地**按钮，解压即可：
 
-![image-20210215145206187](http://img-repo.poetries.top/images/image-20210215145206187.png)
+![image-20210215145206187](https://img-repo.poetries.top/images/image-20210215145206187.png)
 
 ## 在项目中使用 iconfont
 
@@ -1715,7 +1715,7 @@ BEM 的关键是光凭名字就可以告诉其他开发者某个标记是用来�
 
 将上面下载的文件解压缩后可以看到以下内容，woff，woff2，ttf，eot后缀名的等都是字体文件：
 
-![image-20210215145221504](http://img-repo.poetries.top/images/image-20210215145221504.png)
+![image-20210215145221504](https://img-repo.poetries.top/images/image-20210215145221504.png)
 
 查看 iconfont.css 样式表中如何引用这些字体文件，并且可以清楚知道，引用了四个字体文件加上一个svg文件：
 
@@ -1734,7 +1734,7 @@ BEM 的关键是光凭名字就可以告诉其他开发者某个标记是用来�
 
 将上面提到的5个文件放入到新建文件夹 common/css 中，放在这里的原因是字体属于全局文件，可以统一管理：
 
-![image-20210215145235326](http://img-repo.poetries.top/images/image-20210215145235326.png)
+![image-20210215145235326](https://img-repo.poetries.top/images/image-20210215145235326.png)
 
 要想在所有页面上生效，就要在 App.vue 引入：
 
@@ -1761,7 +1761,7 @@ BEM 的关键是光凭名字就可以告诉其他开发者某个标记是用来�
 
 然后就可以在浏览器，小程序上预览效果了：
 
-![image-20210215145249407](http://img-repo.poetries.top/images/image-20210215145249407.png)
+![image-20210215145249407](https://img-repo.poetries.top/images/image-20210215145249407.png)
 
 可能有小伙伴会有疑问，为什么这样做会生效？其实我们在 App.vue 引入 iconfont.css 的时候，样式表`font-family`属性指定了字体文件，作用于`iconfont`命名的元素，并且在字体库中查找对应的 code（以 `iconfont` 命名的元素包裹的字符）：
 
@@ -1778,11 +1778,11 @@ BEM 的关键是光凭名字就可以告诉其他开发者某个标记是用来�
 
 以 `iconfont` 命名的元素包裹的字符从哪里来呢？就是在 iconfont 项目中把字体图标显示以 Unicode 的形式显示，鼠标悬浮可复制代码：
 
-![image-20210215145302868](http://img-repo.poetries.top/images/image-20210215145302868.png)
+![image-20210215145302868](https://img-repo.poetries.top/images/image-20210215145302868.png)
 
 如果你不想每次都这么麻烦，添加一个图标然后又重复以上操作，你可以使用生成的 cdn 地址：
 
-![image-20210215145315433](http://img-repo.poetries.top/images/image-20210215145315433.png)
+![image-20210215145315433](https://img-repo.poetries.top/images/image-20210215145315433.png)
 
 代码修改调整：
 
@@ -1832,7 +1832,7 @@ Vuex 需要解决的问题：
 - view，以声明方式将 state 映射到视图；
 - actions，响应在 view 上的用户输入导致的状态变化。
 
-![image-20210215145426175](http://img-repo.poetries.top/images/image-20210215145426175.png)
+![image-20210215145426175](https://img-repo.poetries.top/images/image-20210215145426175.png)
 
 上面的概念比较模糊，我们先来点简单的。
 
@@ -1889,7 +1889,7 @@ export default store
 
 在 `pages` 下新建一个页面 login.vue，鼠标悬浮在当前项目目录下选择【新建页面】，命名为 `login` 勾选【自动在 pages.json 中注册】:
 
-上面新建了一个 `login` 路由页面，勾选【自动在 pages.json 中注册】是在 `pages.json` 文件中注册页面路由，在 HBuilder 上部操作 【运行】>>【运行到浏览器】>> 选择一个浏览器，这样客户端就能以 `http://localhost:8080/#/pages/login/login` 访问。
+上面新建了一个 `login` 路由页面，勾选【自动在 pages.json 中注册】是在 `pages.json` 文件中注册页面路由，在 HBuilder 上部操作 【运行】>>【运行到浏览器】>> 选择一个浏览器，这样客户端就能以 `https://localhost:8080/#/pages/login/login` 访问。
 
 第三步，引入 Vuex ；
 
@@ -1938,7 +1938,7 @@ app.$mount()
 
 第四步：访问 Vuex 定义变量。
 
-在应用启动情况下访问 `http://localhost:8080/#/pages/login/login` 可以看到 login.vue 页面上的 `{$store.state.isLogin}` 被渲染成了一个 `false`，这个 `false` 是第一步在文件 store/index.js 中添加的 `isLogin` 变量。
+在应用启动情况下访问 `https://localhost:8080/#/pages/login/login` 可以看到 login.vue 页面上的 `{$store.state.isLogin}` 被渲染成了一个 `false`，这个 `false` 是第一步在文件 store/index.js 中添加的 `isLogin` 变量。
 
 因为有 `Vue.prototype.$store = store` 这样我们就可以在页面组件中以 `$store` 访问 `state` 定义下的所有状态变量，也就是说你可以在页面B，页面C，甚至是页面Y都可以访问到这个变量。
 
@@ -2275,17 +2275,17 @@ html，css的兼容问题大致如此，导致渲染出现异常，未能达到�
 1. 在 HbuilderX 编译器中打开这个工程，找到 manifest.json 文件并选中；
 2. 找到微信小程序配置，在配置面板微信小程序 AppID 中输入刚才申请注册的 AppID；
 
-![image-20210215145627431](http://img-repo.poetries.top/images/image-20210215145627431.png)
+![image-20210215145627431](https://img-repo.poetries.top/images/image-20210215145627431.png)
 
 1. 点击【运行】>> 【运行到小程序模拟器】>> 【运行到小程序模拟器】>> 【微信开发者工具】 （选定第二个，可指定启动页面）：
 
-![image-20210215145702836](http://img-repo.poetries.top/images/image-20210215145702836.png)
+![image-20210215145702836](https://img-repo.poetries.top/images/image-20210215145702836.png)
 
 1. 项目开始编译，并启动微信开发者工具，可能需要在微信开发者工具中开启服务端口（第一章说过），然后 HbuilderX 才能访问，这个在控制台一般有提示，打开微信开发者工具【设置】>>【安全设置】>> 【开启服务端口】就行了（当然还需要手机扫码登录微信开发者）。
 2. 这时候的代码保持着热更新中，在 HbuilderX 编译器保存文件（Ctrl + S）可及时查看修改效果，这也是一大便利。
 3. 在微信小程序的工具栏找到预览并点击，小程序会打包你的代码，等待打包完就会出现一个二维码，用手机微信扫描即可。
 
-![image-20210215145748535](http://img-repo.poetries.top/images/image-20210215145748535.png)
+![image-20210215145748535](https://img-repo.poetries.top/images/image-20210215145748535.png)
 
 1. 在真机上，点击屏幕右上角的按钮打开的菜单里选择「打开调试」，会要求重新打开小程序，再次打开发现右下角会出现 vConsole 按钮，点击打开看到关于请求，报错，生命周期，系统等日志
 
@@ -2299,39 +2299,39 @@ HbuilderX 的调试对比 Xcode 等其他工具是非常简单了，跟着步骤
 
 在 HbuilderX 编译器里面 点击 【运行】>> 【运行到手机或模拟器】>> 【运行设备**】在这里可以检测到在 itunes 关联的苹果手机：
 
-![image-20210215145811960](http://img-repo.poetries.top/images/image-20210215145811960.png)
+![image-20210215145811960](https://img-repo.poetries.top/images/image-20210215145811960.png)
 
 建立手机连接需要安装 HbuilderX 调试基座（iPhone_base.ipa）关联，根据提示点击安装在苹果手机：
 
-![image-20210215145825228](http://img-repo.poetries.top/images/image-20210215145825228.png)
+![image-20210215145825228](https://img-repo.poetries.top/images/image-20210215145825228.png)
 
 安装成功之后会，手机上可以看见 HbuilderX 图标，点开
 
-![image-20210215145835283](http://img-repo.poetries.top/images/image-20210215145835283.png)
+![image-20210215145835283](https://img-repo.poetries.top/images/image-20210215145835283.png)
 
 稍等片刻，HbuilderX 会开始打包代码同步到手机并运行
 
-![image-20210215145851811](http://img-repo.poetries.top/images/image-20210215145851811.png)
+![image-20210215145851811](https://img-repo.poetries.top/images/image-20210215145851811.png)
 
 > Uniapp 提示 ios9.0 及以上系统需要在"设置"-"通用"-"设备管理"(或"描述文件")中信任 DCloud 企业证书( Digital Heaven 开头的证书)才可以正常使用， 我们需要在手机上打开该软件可能会显示此软件未受信任的情况，需要 【设置】>> 【通用】>>【设备管理】>> 进入设备管理页面，我们找到想要授信的企业级应用，直接点击打开，系统将会在 iPhone 上弹出一个提醒窗口，我们直接点击【信任】按钮即可
 
-![image-20210215145907983](http://img-repo.poetries.top/images/image-20210215145907983.png)
+![image-20210215145907983](https://img-repo.poetries.top/images/image-20210215145907983.png)
 
 如无意外，编译成功：
 
-![image-20210215145920461](http://img-repo.poetries.top/images/image-20210215145920461.png)
+![image-20210215145920461](https://img-repo.poetries.top/images/image-20210215145920461.png)
 
 找到 HbuilderX 的调试小甲虫
 
-![image-20210215145932161](http://img-repo.poetries.top/images/image-20210215145932161.png)
+![image-20210215145932161](https://img-repo.poetries.top/images/image-20210215145932161.png)
 
 点击会弹出窗口
 
-![image-20210215145943102](http://img-repo.poetries.top/images/image-20210215145943102.png)
+![image-20210215145943102](https://img-repo.poetries.top/images/image-20210215145943102.png)
 
 待打开就可以调试应用了
 
-![image-20210215145954622](http://img-repo.poetries.top/images/image-20210215145954622.png)
+![image-20210215145954622](https://img-repo.poetries.top/images/image-20210215145954622.png)
 
 ### Windows真机调试
 
@@ -2341,19 +2341,19 @@ HbuilderX 的调试对比 Xcode 等其他工具是非常简单了，跟着步骤
 
 官网下载 [itunes (opens new window)](https://www.apple.com/itunes/)，选择自己电脑系统 window:
 
-![image-20210215150010134](http://img-repo.poetries.top/images/image-20210215150010134.png)
+![image-20210215150010134](https://img-repo.poetries.top/images/image-20210215150010134.png)
 
 根据自己电脑系统32位或者64位进行下载：
 
-![image-20210215150104521](http://img-repo.poetries.top/images/image-20210215150104521.png)
+![image-20210215150104521](https://img-repo.poetries.top/images/image-20210215150104521.png)
 
 一路同意安装完成即可；
 
 1. 下载安装 itools
 
-[itools (opens new window)](http://www.itools.cn/)进行安装本地应用然后再次重复上面运行步骤：
+[itools (opens new window)](https://www.itools.cn/)进行安装本地应用然后再次重复上面运行步骤：
 
-![image-20210215150127994](http://img-repo.poetries.top/images/image-20210215150127994.png)
+![image-20210215150127994](https://img-repo.poetries.top/images/image-20210215150127994.png)
 
 ## 小结
 
@@ -2402,7 +2402,7 @@ HbuilderX 的调试对比 Xcode 等其他工具是非常简单了，跟着步骤
 
 
 
-![image-20210215152844498](http://img-repo.poetries.top/images/image-20210215152844498.png)
+![image-20210215152844498](https://img-repo.poetries.top/images/image-20210215152844498.png)
 
 从这节开始主要会围绕几个页面来分析讲解实战开发的内容，通过实际的开发来引用 Uniapp 框架的组件，api 等，这样能充分深入了解 Uniapp 框架，也可以了解如何搭建一个项目。如果你想更好把控框架与前端项目架构，那就往下看吧。
 
@@ -2586,7 +2586,7 @@ Uniapp 提供的 uni.request() 不能有效的管理请求与响应状态等信�
 /* utils/request/index.js */
 
 // need to change baseUrl
-const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:8081/v1/api" : "https://www.gzamon.wang"
+const baseUrl = process.env.NODE_ENV === 'development' ? "https://localhost:8081/v1/api" : "https://www.gzamon.wang"
 ```
 
 这样在开发调用后端接口的时候，可以以此为 baseUrl。更有可能你需要与公司小伙伴在同个网段下开发联调，那这个 baseUrl 就要改成小伙伴的电脑 ip 地址了。
@@ -2670,13 +2670,13 @@ apis/test.js 中的 `test200` 被封装成了 Promise 对象，因此在调用�
 
 在设备改变路由的时候，在不同路由会渲染成不同的内容，在 Uniapp 中所有页面的路由全部由框架进行管理，即 pages.json 管理配置。 pages.json 文件中不仅可以管理路由而且可以对 Uniapp 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生 tabbar 等。
 
-![image-20210215153917311](http://img-repo.poetries.top/images/image-20210215153917311.png)
+![image-20210215153917311](https://img-repo.poetries.top/images/image-20210215153917311.png)
 
 对于 Uniapp 中的每个页面，都需要在页面对应的 pages.json 文件中进行注册，才可以在访问路径中访问到该页面的数据。
 
 可以使用编辑器注册一个页面，鼠标悬浮在左侧项目管理器那一栏，然后鼠标定位在 pages，右击鼠标：
 
-![image-20210215153929153](http://img-repo.poetries.top/images/image-20210215153929153.png)
+![image-20210215153929153](https://img-repo.poetries.top/images/image-20210215153929153.png)
 
 基础页面的代码结构如下：
 
@@ -2726,15 +2726,15 @@ apis/test.js 中的 `test200` 被封装成了 Promise 对象，因此在调用�
 
 `style` 指定的是页面窗口表现，比如每个页面的状态栏、导航条、标题、窗口背景色等，页面中配置项会覆盖 globalStyle 中相同的配置项。开发这个音乐应用并不需要过多的页面特殊处理，保持原有的设置即可。
 
-然后在浏览器即可查看这个页面 http://localhost:8080/#/pages/index/index，Uniapp 默认端口为 8080，Uniapp运行的时候会检测本机 8080 端口是否被占用，如果占用就会启用 8081 端口，其次类推。当然你可以自行设置端口，【manifest.json】>>【H5配置】>>【端口】：
+然后在浏览器即可查看这个页面 https://localhost:8080/#/pages/index/index，Uniapp 默认端口为 8080，Uniapp运行的时候会检测本机 8080 端口是否被占用，如果占用就会启用 8081 端口，其次类推。当然你可以自行设置端口，【manifest.json】>>【H5配置】>>【端口】：
 
-![image-20210215153944290](http://img-repo.poetries.top/images/image-20210215153944290.png)
+![image-20210215153944290](https://img-repo.poetries.top/images/image-20210215153944290.png)
 
 ## 配置导航栏
 
 
 
-![img](http://img-repo.poetries.top/images/16f368a90d73df90.png)
+![img](https://img-repo.poetries.top/images/16f368a90d73df90.png)
 
 我们需要实现这样一个页面，查看导航栏可以了解到该应用至少需要5个页面，需要先注册5个页面，根据上面的方式在 pages 文件夹新建注册其他页面:
 
@@ -2835,17 +2835,17 @@ apis/test.js 中的 `test200` 被封装成了 Promise 对象，因此在调用�
 
 使用 HBuilderX 编译器的一个好处是，可以随时在编译器正下方的控制台终端看见编译 bug 问题，可以直接定位问题。比如下方出现的报错可以直接知道页面没有注册建立成功还是没有对应好路径：
 
-![image-20210215154022419](http://img-repo.poetries.top/images/image-20210215154022419.png)
+![image-20210215154022419](https://img-repo.poetries.top/images/image-20210215154022419.png)
 
 根据提示做好修改即可，在编译保存（按下ctrl + S）的时候，界面会同时编译，形成热更新可视化，开发就变得便利快捷。
 
 设置导航栏的背景颜色，图片等，即可实现一个简单的应用。
 
-![image-20210215154035641](http://img-repo.poetries.top/images/image-20210215154035641.png)
+![image-20210215154035641](https://img-repo.poetries.top/images/image-20210215154035641.png)
 
 然后补充一下导航栏图标即可：
 
-![image-20210215154049066](http://img-repo.poetries.top/images/image-20210215154049066.png)
+![image-20210215154049066](https://img-repo.poetries.top/images/image-20210215154049066.png)
 
 然后再进行切图补充页面内容。
 
@@ -2870,13 +2870,13 @@ apis/test.js 中的 `test200` 被封装成了 Promise 对象，因此在调用�
 
 首先看页面布局，页面部分可以分为2个小块：轮播图，歌单滑动等小块。
 
-![img](http://img-repo.poetries.top/images/16f3690afa3ee12a.png)
+![img](https://img-repo.poetries.top/images/16f3690afa3ee12a.png)
 
 以上图作为 UI 设计稿，我们需要做的是完善页面内容，开发代码以上一节的架构代码为基础，调试以浏览器为优先。
 
 Uniapp 默认情况下在 h5 端的是有 title 标题栏的，如果需要去掉就要在配置文件进行设置，这是未改之前的图片：
 
-![img](http://img-repo.poetries.top/images/16f369b535843041.png)
+![img](https://img-repo.poetries.top/images/16f369b535843041.png)
 
 当前开发的音乐应用是不需要标题栏的，找到项目的根目录下的 pages.json 文件，添加一下内容，可以去掉对应页面的导航栏，设置 app-plus 的 `titleNView` 为 `false` 即可；
 
@@ -2902,7 +2902,7 @@ Uniapp 默认情况下在 h5 端的是有 title 标题栏的，如果需要去�
 
 
 
-![image-20210215154223903](http://img-repo.poetries.top/images/image-20210215154223903.png)
+![image-20210215154223903](https://img-repo.poetries.top/images/image-20210215154223903.png)
 
 这样的 banner 轮播图交互可以选择 swiper 组件来完成，配置[查看 (opens new window)](https://uniapp.dcloud.io/component/swiper)，代码：
 
@@ -2938,7 +2938,7 @@ Uniapp 的 swiper 组件为滑块视图容器，可以用于左右滑动或上�
 
 ```text
 uni.request({
-    url: 'http://localhost:3000/personalized',
+    url: 'https://localhost:3000/personalized',
     method: 'GET',
     header:{},
     data: {},
@@ -2971,7 +2971,7 @@ methods: {
         // 正在加载状态
         this.loading = true
         uni.request({
-            url: 'http://localhost:3000/banner',
+            url: 'https://localhost:3000/banner',
             method: 'GET',
             data: {},
             success: res => {
@@ -3080,7 +3080,7 @@ setData: function (obj) {
 
 
 
-![image-20210215154241419](http://img-repo.poetries.top/images/image-20210215154241419.png)
+![image-20210215154241419](https://img-repo.poetries.top/images/image-20210215154241419.png)
 
 这一块的开发看起来相对简单，实际上处理起来可以以更优雅的方式来处理（这一块由于接口的限制也做进一步的说明）。
 
@@ -3126,7 +3126,7 @@ contentBar: [
 
 上面的代码可以基本的实现样式等比排列，你会看到：
 
-![image-20210215154257832](http://img-repo.poetries.top/images/image-20210215154257832.png)
+![image-20210215154257832](https://img-repo.poetries.top/images/image-20210215154257832.png)
 
 你可能心里在骂“弄了半天，怎么还是这样？”
 
@@ -3327,7 +3327,7 @@ contentBar: [
 </script>
 ```
 
-![image-20210215154319990](http://img-repo.poetries.top/images/image-20210215154319990.png)
+![image-20210215154319990](https://img-repo.poetries.top/images/image-20210215154319990.png)
 
 你会看到推荐歌单会渲染两个，一个是由组件渲染，另一个则是页面代码渲染。上面只是一个示例与组件实现思想，其实接口字段不完全相同的，如果需要完全共用，就需要重新修改数据字段，这样就可以完全的使用通用组件了。
 
@@ -3335,7 +3335,7 @@ contentBar: [
 
 
 
-![image-20210215154333718](http://img-repo.poetries.top/images/image-20210215154333718.png)
+![image-20210215154333718](https://img-repo.poetries.top/images/image-20210215154333718.png)
 
 点击 tab 切换加载不同数据，并且选中的 tab 样式进行突出设置，未选中保持平常样式。
 
@@ -3407,7 +3407,7 @@ switchTab (type) {
 
 当前首页在小程序端显示下并没有导航栏，页面内容直接从设备顶部屏幕暂时，会出现运营商展示栏遮盖页面内容的问题，我们需要对小程序端差异化处理。对小程序添加一个顶部间隔：
 
-![image-20210215154349904](http://img-repo.poetries.top/images/image-20210215154349904.png)
+![image-20210215154349904](https://img-repo.poetries.top/images/image-20210215154349904.png)
 
 // 平台差异化处理的代码可以放在底部，这样有利于集中管理
 
@@ -3437,7 +3437,7 @@ switchTab (type) {
 
 
 
-![image-20210215154450634](http://img-repo.poetries.top/images/image-20210215154450634.png)
+![image-20210215154450634](https://img-repo.poetries.top/images/image-20210215154450634.png)
 
 导航的滑动区域需要实现左右滑动效果，左右滑动这个在信息资讯设计下很常见，可以选用 Uniapp 中基础组件 `scroll-view` 容器，在遇到与左右或者上下互动局部内容的时候，可以考虑组件 `scroll-view`，配置查看[scroll-view (opens new window)](https://uniapp.dcloud.io/component/scroll-view)，示例代码：
 
@@ -3453,7 +3453,7 @@ switchTab (type) {
 
 但是当你以为一切就这样搞定的时候，可是并没有左右排列，肿么办？
 
-![image-20210215154502950](http://img-repo.poetries.top/images/image-20210215154502950.png)
+![image-20210215154502950](https://img-repo.poetries.top/images/image-20210215154502950.png)
 
 其实是关于 scroll-view 失效的问题，复制官方代码代码后会发现 scroll-view 横向滚共不生效，其实是没有设置好样式，将 scroll-view 容器设置宽度，并设置 white-space: nowrap; scroll-view 容器的每一项都设置宽度和 `display:inline-block`：
 
@@ -3476,7 +3476,7 @@ switchTab (type) {
 
 
 
-![image-20210215154517129](http://img-repo.poetries.top/images/image-20210215154517129.png)
+![image-20210215154517129](https://img-repo.poetries.top/images/image-20210215154517129.png)
 
 这块的交互是点击触发实现滑块滑动至被触发的项，以及被触发的项实现样式切换。
 
@@ -3558,7 +3558,7 @@ switchNav(id, index) {
 
 
 
-![img](http://img-repo.poetries.top/images/16f3743ed6f051a0.png)
+![img](https://img-repo.poetries.top/images/16f3743ed6f051a0.png)
 
 长列表的数据直接是请求后台列表数据，再用 v-for 循环遍历渲染到页面上：
 
@@ -3714,7 +3714,7 @@ methods: {
 
 ## 实战5—导航三 我的页面开发
 
-![img](http://img-repo.poetries.top/images/16f3745c169f542a.png)
+![img](https://img-repo.poetries.top/images/16f3745c169f542a.png)
 
 本节主要讲头部 + 页面布局，讲解添加头部标题栏基础功能。
 
@@ -3739,7 +3739,7 @@ methods: {
 
 视频页实际头部效果：
 
-![image-20210215154648264](http://img-repo.poetries.top/images/image-20210215154648264.png)
+![image-20210215154648264](https://img-repo.poetries.top/images/image-20210215154648264.png)
 
 这个页面的标题栏开发会相对容易一些，因此拿到这里来讲开发导航栏。
 
@@ -3799,11 +3799,11 @@ methods: {
 
 添加完头部标题栏的 APP 页面效果图：
 
-![image-20210215154702414](http://img-repo.poetries.top/images/image-20210215154702414.png)
+![image-20210215154702414](https://img-repo.poetries.top/images/image-20210215154702414.png)
 
 添加完头部标题栏的微信小程序页面效果图：
 
-![image-20210215154712259](http://img-repo.poetries.top/images/image-20210215154712259.png)
+![image-20210215154712259](https://img-repo.poetries.top/images/image-20210215154712259.png)
 
 小程序的载体是运营方 app，会有运营方的设计差异在。因此在设计整个项目之初，哪些功能是否适用的，是否可以在这个端使用的，都要做出评估。功能设计上也要有所取舍。如果产品经理设计一个功能需要在 H5 中调用用户的通讯录，就算程序员再优秀或者框架再实用，H5 也是做不到的调用通讯录的。**开发之前要考虑他们所提供的 API 和性能能否满足产品需求**。
 
@@ -3824,7 +3824,7 @@ methods: {
 <!-- #endif -->
 ```
 
-![image-20210215154743672](http://img-repo.poetries.top/images/image-20210215154743672.png)
+![image-20210215154743672](https://img-repo.poetries.top/images/image-20210215154743672.png)
 
 通过这个头部的组件应用介绍，整个应用都可以改造成自定义的标题栏，在这里组件与插槽 slot 的优点就显露出来了。复用的同时又可以实现功能的自定义。下面我们看一下 slot 插槽的使用。
 
@@ -3875,7 +3875,7 @@ methods: {
 
 
 
-![img](http://img-repo.poetries.top/images/16f374d21d95fbef.png)
+![img](https://img-repo.poetries.top/images/16f374d21d95fbef.png)
 
 当前页面的布局沿用在上一节中提到的布局。如上图所示分为两部分：头部标题栏 + 滚动浏览区域。头部标题栏 fixed 固定，内容区用 scroll-view 组件撑开整个页面。
 
@@ -3912,7 +3912,7 @@ methods: {
 
 H5 的渲染起点并没有状态栏，样式需要条件编译，H5 中页面实际的标题高度展示为 44px ，因此 page-content 内容区需向下偏移 44px ，而不是 64px。
 
-![image-20210215154852615](http://img-repo.poetries.top/images/image-20210215154852615.png)
+![image-20210215154852615](https://img-repo.poetries.top/images/image-20210215154852615.png)
 
 H5 未进行条件编译的状态
 
@@ -3928,7 +3928,7 @@ top:44px;  // h5 无状态栏
 
 
 
-![image-20210215154913770](http://img-repo.poetries.top/images/image-20210215154913770.png)
+![image-20210215154913770](https://img-repo.poetries.top/images/image-20210215154913770.png)
 
 关于这样的信息滚动展示的功能，可能会一大波小伙伴感觉有点吃力。其实分析这一块**滚动**的特性，可以联想到使用 swiper 组件便能轻松实现这样的一个小功能。
 
@@ -3981,7 +3981,7 @@ dateMsg: {
 2. 通过向上滑动浏览，对于触屏设备非常友好，基本上所有移动设备上的信息展示都是采用这种方式，特别是购物网站；
 3. 滚动预加载，用户浏览时的观赏和思维不容易被打断，更高的参与度，留存更容易。
 
-![img](http://img-repo.poetries.top/images/16f374e899d8abd0.png)
+![img](https://img-repo.poetries.top/images/16f374e899d8abd0.png)
 
 可以看上图的展示的瀑布流效果，flexbox 布局可以轻松实现，而不用使用 js 计算排版高度再插入内容等复杂的操作。我们可以把上图以 html 结构设计成：
 
@@ -4046,11 +4046,11 @@ return {
 
 
 
-![image-20210215154950380](http://img-repo.poetries.top/images/image-20210215154950380.png)
+![image-20210215154950380](https://img-repo.poetries.top/images/image-20210215154950380.png)
 
 作为一款应用，应用内的信息提示一般会展现在底部导航栏上，Uniapp 支持设置 TabBar 上的元素以及角标等信息，统一了 h5，小程序，app 的设置角标 API。
 
-![img](http://img-repo.poetries.top/images/16f374f26f0ce1d4.png)
+![img](https://img-repo.poetries.top/images/16f374f26f0ce1d4.png)
 
 `uni.setTabBarBadge` 这个 API 在 **非tabbar** 页面上调用会失效，因此我们需要在 common/js/util.js 封装一个方法由几个 tabbar 页面上调用。结合 Vuex 的状态管理全局管理角标信息。
 
@@ -4197,7 +4197,7 @@ methods: {
 
 
 
-![img](http://img-repo.poetries.top/images/16f3752a40130480.png)
+![img](https://img-repo.poetries.top/images/16f3752a40130480.png)
 
 对于这种 cell 样式使用 flex 布局可以快速解决左（图标）+ 右（cell内容）的排版。这种存在重复性的页面可以考虑使用组件去复用，在这里我使用了[uni-list-item 组件 (opens new window)](https://ext.dcloud.net.cn/plugin?id=24)。
 
@@ -4311,7 +4311,7 @@ barcode.start();
 
 图片示例：
 
-![img](http://img-repo.poetries.top/images/16f3753db7817cc4.png)
+![img](https://img-repo.poetries.top/images/16f3753db7817cc4.png)
 
 来尝试封装成单独一个组件，有助于管理。
 
@@ -4419,7 +4419,7 @@ export default {
 
 需要注意的是，底部导航栏会遮盖扫码识别控件，因此打开扫码的时候隐藏底部导航栏，使用 Uniapp 的 API 操作导航栏 `uni.hideTabBar({})`。
 
-![img](http://img-repo.poetries.top/images/16f37541a38c31a8.png)
+![img](https://img-repo.poetries.top/images/16f37541a38c31a8.png)
 
 设置扫码识别控件在扫码时可以开启摄像头的闪光灯 `obj.setFlash(true)`;
 
@@ -4431,7 +4431,7 @@ export default {
 
 
 
-![img](http://img-repo.poetries.top/images/16f3752eff77d6b9.png)
+![img](https://img-repo.poetries.top/images/16f3752eff77d6b9.png)
 
 按钮边框与cell边框
 
@@ -4479,7 +4479,7 @@ export default {
 
 这样可以完美兼容到多种设备上了，那文字很小的怎么办呢？
 
-![img](http://img-repo.poetries.top/images/16f3753566a6ef8f.png)
+![img](https://img-repo.poetries.top/images/16f3753566a6ef8f.png)
 
 Chrome 为了更好显示中文规定了默认最小字体是 12px，很多手机厂商及浏览器也有这样的规定。那么上图中 10px 字体就会在某些设备下失效。有没有解决方法呢？ 其实答案就在上面，对文字使用 transform 的 scale 进行缩小。
 
@@ -4519,11 +4519,11 @@ Chrome 为了更好显示中文规定了默认最小字体是 12px，很多手�
 
 细心的小伙伴早就可能发现了首页与视频页面并没有头部。这一块头部的添加是相关联搜索的，需要特殊处理一下，因此放到这一节来说。
 
-![image-20210215155333640](http://img-repo.poetries.top/images/image-20210215155333640.png)
+![image-20210215155333640](https://img-repo.poetries.top/images/image-20210215155333640.png)
 
 发现页
 
-![image-20210215155344079](http://img-repo.poetries.top/images/image-20210215155344079.png)
+![image-20210215155344079](https://img-repo.poetries.top/images/image-20210215155344079.png)
 
 由于发现页面布局的改变，因此原有的代码也是需要进行稍微的调整，改为：头部标题栏 + 滚动浏览区域。
 
@@ -4619,7 +4619,7 @@ export default {
 
 说完搜索组件的调用，接下来讲解一下如何写实现页面
 
-![img](http://img-repo.poetries.top/images/16f3757440c62564.png)
+![img](https://img-repo.poetries.top/images/16f3757440c62564.png)
 
 发现页
 
@@ -4698,7 +4698,7 @@ export default {
 
 
 
-![image-20210215155416874](http://img-repo.poetries.top/images/image-20210215155416874.png)
+![image-20210215155416874](https://img-repo.poetries.top/images/image-20210215155416874.png)
 
 这一块的信息一般就是由前端的存储机制去做了，在这使用 Uniapp 的 `uni.setStorageSync()` ，`uni.getStorageSync()` 进行存取搜索历史。
 
@@ -4946,7 +4946,7 @@ onLoad: function (option) {
 
 ## 设置背景模糊图像
 
-![image-20210215155508224](http://img-repo.poetries.top/images/image-20210215155508224.png)
+![image-20210215155508224](https://img-repo.poetries.top/images/image-20210215155508224.png)
 
 这一块要使用 CSS3 filter(radius) 属性给图像设置高斯模糊。"radius"一值设定高斯函数的标准差，或者是屏幕上以多少像素融在一起， 所以值越大越模糊；
 
@@ -4965,7 +4965,7 @@ onLoad: function (option) {
 }
 ```
 
-![image-20210215155532285](http://img-repo.poetries.top/images/image-20210215155532285.png)
+![image-20210215155532285](https://img-repo.poetries.top/images/image-20210215155532285.png)
 
 ```text
 <!-- 标题栏 -->
@@ -5015,7 +5015,7 @@ $bgtop: -44px;
 }
 ```
 
-![image-20210215155552100](http://img-repo.poetries.top/images/image-20210215155552100.png)
+![image-20210215155552100](https://img-repo.poetries.top/images/image-20210215155552100.png)
 
 这里的交互比较特殊，就是标题栏的背景一直衔接内容头部画面背景，因此在滑动内容区的时候监听滑动区的滚动高度，然后标题栏的背景相对应滚动同等高度
 
@@ -5057,7 +5057,7 @@ methods: {
 
 ## 实战10—登录页开发
 
-![img](http://img-repo.poetries.top/images/16f375f207b67096.png)
+![img](https://img-repo.poetries.top/images/16f375f207b67096.png)
 
 这个章节主要实现以下功能：
 
@@ -5231,7 +5231,7 @@ onReady() {
 },
 ```
 
-![img](http://img-repo.poetries.top/images/16f375fcfa423eab.png)
+![img](https://img-repo.poetries.top/images/16f375fcfa423eab.png)
 
 在 input 控件中，使用 `v-model` 指令双向绑定使用，直接对应修改 data 中的数据。在这里的登录功能以手机号登录的 api 为账号登录，限定了类型 `type="number"`，长度 `maxlength="11"`（手机号码最大长度11位）。
 
@@ -5251,7 +5251,7 @@ onReady() {
 
 ## 手机账号登录
 
-![img](http://img-repo.poetries.top/images/16f3760cfcc63273.png)
+![img](https://img-repo.poetries.top/images/16f3760cfcc63273.png)
 
 应用的表单提交时可以说是前端的一项重大工程，后台的数据存储都是用户从前端页面操作存储的，如果没有表单的提交，那数据来源就是单向性的。我们前端在给后台传输数据的时候，需要对数据先行处理，对数据进行加工，校验，过滤等操作（当然后台也可以做）。后台也会对数据做校验过滤等操作，因为前端的数据是可见的，并且在某种手段下甚至是可以伪造的，可以说前端的数据是危险的，如果没有后端的校验过滤等操作，那么存入数据库的可能是一个命令。比如，csrf，xss插入伪造信息，更严重是删除数据库。
 
@@ -5356,7 +5356,7 @@ try {
 
 根据上面的 storage 的 API 与 Vuex，我们可以先捋一下登录功能逻辑：
 
-![img](http://img-repo.poetries.top/images/16f3190c8cb01823.png)
+![img](https://img-repo.poetries.top/images/16f3190c8cb01823.png)
 
 ## 引入 Vuex，定义登录状态及用户信息
 
@@ -5478,9 +5478,9 @@ export default {
 
 登录前与登录后的页面状态：
 
-![img](http://img-repo.poetries.top/images/16f31905e9b5cf90.png)
+![img](https://img-repo.poetries.top/images/16f31905e9b5cf90.png)
 
-![img](http://img-repo.poetries.top/images/16f319082d75a218.png)
+![img](https://img-repo.poetries.top/images/16f319082d75a218.png)
 
 通过 Vuex 中保存的用户信息判断是否已经登录，从而显示不同的内容。关键代码：
 
@@ -5630,7 +5630,7 @@ const reqInterceptor = async (options) => {
 
 本章主要讲解播放页的需求和逻辑处理，以及全局歌单的实现。
 
-![image-20210215160015418](http://img-repo.poetries.top/images/image-20210215160015418.png)
+![image-20210215160015418](https://img-repo.poetries.top/images/image-20210215160015418.png)
 
 ## 播放页的整体思路
 
@@ -5998,7 +5998,7 @@ methods: {
 
 播放成功后，设置的音频标题、歌手名、封面图就是我们的手机在锁屏时看到的画面。
 
-![img](http://img-repo.poetries.top/images/16f47d0b877bdd99.png)
+![img](https://img-repo.poetries.top/images/16f47d0b877bdd99.png)
 
 当加载的时候获取 backgroundAudioManager 对象的 duration 时长可能存在为 NaN 或者为空的情况，这里加个定时器一直访问 duration 属性，直到拿到音频时长后销毁定时器。
 
@@ -6098,7 +6098,7 @@ methods: {
 
 比如在歌单列表删除某一个曲子。
 
-![img](http://img-repo.poetries.top/images/16f59e419e7076de.jpeg)
+![img](https://img-repo.poetries.top/images/16f59e419e7076de.jpeg)
 
 ```text
 // 删除单曲
@@ -6138,7 +6138,7 @@ destroyed() {
 - Android app 端默认不会在通知栏出现音量控制，如需此功能，需要在插件市场单独下载原生插件，[插件：通知栏+音乐控制 (opens new window)](https://ext.dcloud.net.cn/search?q=通知栏+音乐控制)。
 - 由于自动播放网页中的音频或视频，会给用户带来一些困扰或者不必要的流量消耗，所以苹果系统和安卓系统通常都会禁止自动播放和使用 JS 的触发播放，必须由用户来触发才可以播放。
 
-![img](http://img-repo.poetries.top/images/16f47d252fde616b.png)
+![img](https://img-repo.poetries.top/images/16f47d252fde616b.png)
 
 功能已经基本满足播放的功能了，重新选歌单进入播放，随机、顺序、单曲的播放模式。有了这些功能就是一个基本的播放器了。
 
@@ -6259,13 +6259,13 @@ onLoad() {
 
 开屏广告的跳转一般都会到广告主的落地页，这里的设计就是是到达广告主的 H5 商品页
 
-![img](http://img-repo.poetries.top/images/16f3763e755ba805.png)
+![img](https://img-repo.poetries.top/images/16f3763e755ba805.png)
 
 整个交互逻辑可以这样设定：广告内容可以在上一次打开应用时，开启预加载存于本地，在下次用户打开应用判断当前时间离开应用的时间是否超过一个时间段，如果超过这个时间则广告出现。用户离开时记录离开时间，给下一次进入做判断。
 
 流程逻辑：
 
-![img](http://img-repo.poetries.top/images/16f376423908e329.png)
+![img](https://img-repo.poetries.top/images/16f376423908e329.png)
 
 首先我们先新增注册一个广告页面，并改动一下启动页，在 pages.json 设定为第一个页面（pages节点的第一项为应用入口页）。
 
@@ -6415,7 +6415,7 @@ Node.js 简称"服务端 JavaScript "，是基于谷歌 v8 引擎的 js 运行�
 
 ## 安装 Node.js 及相关配置
 
-可从 Node.js [官网 (opens new window)](http://nodejs.cn/download/),下载对应平台的 Node 版本进行安装，一路完成即可。
+可从 Node.js [官网 (opens new window)](https://nodejs.cn/download/),下载对应平台的 Node 版本进行安装，一路完成即可。
 
 完成后在命令行界面输入以下两个命令，检验是否安装成功：
 
@@ -6481,7 +6481,7 @@ http.createServer(function(req, res) {
 	}
 	res.end(bodyStr); //输出内容   
 }).listen(3000); //绑定端口 
-console.log('Server running at http://localhost:3000/'); //控制台输出提示
+console.log('Server running at https://localhost:3000/'); //控制台输出提示
 ```
 
 然后在终端输入脚本：
@@ -6490,7 +6490,7 @@ console.log('Server running at http://localhost:3000/'); //控制台输出提示
 node app.js
 ```
 
-接下来，打开浏览器访问 `http://localhost:3000/`，你会看到页面写着`Hello Uniapp`，如果是 `http://localhost:3000/happy`，会显示`Happy Uniapp`。
+接下来，打开浏览器访问 `https://localhost:3000/`，你会看到页面写着`Hello Uniapp`，如果是 `https://localhost:3000/happy`，会显示`Happy Uniapp`。
 
 就这么简单，你已经启动了服务器。只要敲入键盘`Ctrl+C`就可以停止服务。
 
@@ -6596,7 +6596,7 @@ Koa 中间件包含两个参数 ctx 和 next。参数 next 是一个函数，它
 
 Koa 中间件执行顺序原理图
 
-![img](http://img-repo.poetries.top/images/16ed107ee61bf775.jpeg)
+![img](https://img-repo.poetries.top/images/16ed107ee61bf775.jpeg)
 
 > 执行流程，事件从最外层逐层触发，每层都会一进一出穿过两次，且最先穿入的一层最后穿出，到达最后一层最后冒泡返回。好比水分进出洋葱一样，洋葱的每层相当于中间件，水分输入相当于请求，水分输出相当于相应。
 
@@ -6618,7 +6618,7 @@ app.use(async (ctx, next) => {
 	console.log('从入门')
 });
 app.listen(3000, () => {
-    console.log('server is running at http://localhost:3000')
+    console.log('server is running at https://localhost:3000')
 });
 ```
 
@@ -6726,7 +6726,7 @@ app.use(async(ctx, next) => {
     console.log('从入门')
 });
 app.listen(3000, () => {
-    console.log('启动 http://localhost:3000')
+    console.log('启动 https://localhost:3000')
 });
 ```
 
@@ -6824,16 +6824,14 @@ app.use(router.routes(), router.allowedMethods());
 
 //监听3000端口
 app.listen(3000, () => {
-    console.log('server is running at http://localhost:3000')
+    console.log('server is running at https://localhost:3000')
 });
 ```
 
 使用 curl 命令测试 Restful Api
 
-##### [#](http://interview.poetries.top/fe-mobile-docs/uniapp-docs/action/25-实战15_基于Koa.js实现Restful Api.html#get请求)GET请求
-
 ```text
-$curl http://localhost:3000/rest/list
+$curl https://localhost:3000/rest/list
 打印出：
 {
 	code: 200,
@@ -6842,10 +6840,8 @@ $curl http://localhost:3000/rest/list
 }
 ```
 
-##### [#](http://interview.poetries.top/fe-mobile-docs/uniapp-docs/action/25-实战15_基于Koa.js实现Restful Api.html#post请求)POST请求
-
 ```text
-$curl http://localhost:3000/rest/detail -X POST -H "Content-Type:application/json" -d '{"id": 10086}'
+$curl https://localhost:3000/rest/detail -X POST -H "Content-Type:application/json" -d '{"id": 10086}'
 打印出：
 {
 	code: 200,
@@ -6858,11 +6854,11 @@ $curl http://localhost:3000/rest/detail -X POST -H "Content-Type:application/jso
 
 目前最受大众欢迎的API接口调试工具：[postman (opens new window)](https://www.getpostman.com/)，免费的基本够用，当然你要高级的功能是收费的。
 
-![img](http://img-repo.poetries.top/images/16f0d43611914f7b.jpeg)
+![img](https://img-repo.poetries.top/images/16f0d43611914f7b.jpeg)
 
 因此，最近出现了一款 postman 的“老婆”：[postwoman (opens new window)](https://github.com/liyasthomas/postwoman)，免费开源、轻量级、快速的 API 调试工具，有兴趣的可以自己去尝试 ：）
 
-![img](http://img-repo.poetries.top/images/16f0d43a8b2a4289.png)
+![img](https://img-repo.poetries.top/images/16f0d43a8b2a4289.png)
 
 ## 小结
 
@@ -6879,7 +6875,7 @@ $curl http://localhost:3000/rest/detail -X POST -H "Content-Type:application/jso
 
 NeteaseCloudMusicApi，网易云音乐 NodeJS 版 API。
 
-![image-20210215160547033](http://img-repo.poetries.top/images/image-20210215160547033.png)
+![image-20210215160547033](https://img-repo.poetries.top/images/image-20210215160547033.png)
 
 ### 在线文档
 
@@ -6912,7 +6908,7 @@ $ set PORT=4000 && node app.js
 
 成功启动打开浏览器访问：
 
-![image-20210215160559284](http://img-repo.poetries.top/images/image-20210215160559284.png)
+![image-20210215160559284](https://img-repo.poetries.top/images/image-20210215160559284.png)
 
 ### 接口二次开发
 
@@ -7091,7 +7087,7 @@ fs.readdirSync(path.join(__dirname, 'module')).reverse().forEach(file => {
 const port = process.env.PORT || 3000
 
 app.server = app.listen(port, () => {
-    console.log(`server running @ http://localhost:${port}`)
+    console.log(`server running @ https://localhost:${port}`)
 })
 
 module.exports = app
@@ -7102,15 +7098,15 @@ module.exports = app
 1. 注册腾讯云和申请域名，这里按照官方指导操作就可以
 2. 我选的系统是 CentOS 7.5 64位，申请完登录，进入腾讯云，
 
-![img](http://img-repo.poetries.top/images/16f0e2ba26392d06.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2ba26392d06.jpeg)
 
 选择标准方式`登录`，密码注册时已发`消息中心`里，建议修改密码
 
-![img](http://img-repo.poetries.top/images/16f0e2c039f347b4.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2c039f347b4.jpeg)
 
 登录成功
 
-![img](http://img-repo.poetries.top/images/16f0e2c43574a011.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2c43574a011.jpeg)
 
 接下来依次键入命令安装几个软件：
 
@@ -7151,7 +7147,7 @@ pm2 startup centos 设置pm2开机自启
 pm2 save 保存设置
 ```
 
-了解更多可以查看 [官方文档 (opens new window)](http://pm2.keymetrics.io/docs/usage/quick-start)。
+了解更多可以查看 [官方文档 (opens new window)](https://pm2.keymetrics.io/docs/usage/quick-start)。
 
 ## 部署项目至腾讯云
 
@@ -7174,21 +7170,21 @@ pm2 start app.js -n uni
 pm2 list
 ```
 
-![img](http://img-repo.poetries.top/images/16f0e2cf41d39a44.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2cf41d39a44.jpeg)
 
 已经启动成功，打开浏览器通过域名或 ip（公网ip） 访问。
 
-![img](http://img-repo.poetries.top/images/16f0e2d23894bb5e.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2d23894bb5e.jpeg)
 
 ## 安装Shell软件
 
 对于操作后台管理系统，更多人会选择可视化的软件。Windows 系统一般推荐就是 Xshell，对于 Mac 系统的，我使用 FinalShell（支持国产的，也没找到更傻瓜的）。 也是一路安装，然后配置（Xshell 也是类似操作）：
 
-![img](http://img-repo.poetries.top/images/16f0e2de534eac5e.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2de534eac5e.jpeg)
 
 登录成功之后：
 
-![img](http://img-repo.poetries.top/images/16f0e2e31f41f14b.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2e31f41f14b.jpeg)
 
 尝试输入：
 
@@ -7201,11 +7197,11 @@ pm2 list
 
 众所周知，小程序接口需要使用 https，我们可以利用腾讯云提供的免费 [SSL 证书 (opens new window)](https://console.cloud.tencent.com/ssl)来配置 https，点击免费申请按钮，选择域名型的（DV）免费证书即可：
 
-![img](http://img-repo.poetries.top/images/16f0e2e66cf7914b.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2e66cf7914b.jpeg)
 
 填上申请信息后，等待大概半小时，证书就能申请下来。
 
-![img](http://img-repo.poetries.top/images/16f0e2e90b3cc88b.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2e90b3cc88b.jpeg)
 
 在证书申请通过后，进入SSL证书列表，将所申请的域名SSL证书下载到本地后，再上传到域名所在服务器。
 
@@ -7219,7 +7215,7 @@ mkdir ssl
 
 将 crt 和 key 两个文件(公钥和私钥)修改好名字上传到 ssl 文件夹
 
-![img](http://img-repo.poetries.top/images/16f0e2eee37e98f6.jpeg)
+![img](https://img-repo.poetries.top/images/16f0e2eee37e98f6.jpeg)
 
 修改 nginx 配置文件
 
@@ -7255,7 +7251,7 @@ server{
       }
 		
       location /api/ {
-          proxy_pass http://127.0.0.1:3000/; # node后端接口服务
+          proxy_pass https://127.0.0.1:3000/; # node后端接口服务
           proxy_redirect   off;
           proxy_set_header Host $host;
           proxy_set_header X-Real-IP $remote_addr;
@@ -7299,7 +7295,7 @@ Job for nginx.service failed because the control process exited with error code.
 docker -v
 ```
 
-![img](http://img-repo.poetries.top/images/17106178ce21ebc0.jpeg)
+![img](https://img-repo.poetries.top/images/17106178ce21ebc0.jpeg)
 
 代表安装成功。
 
@@ -7350,7 +7346,7 @@ CMD ["pm2-runtime", "start", "app.js", "-n", "uni-docker"]
 sudo docker build -t uni-back .
 ```
 
-![img](http://img-repo.poetries.top/images/171061734823539d.jpeg)
+![img](https://img-repo.poetries.top/images/171061734823539d.jpeg)
 
 等待构建成功，执行命令查看：
 
@@ -7358,7 +7354,7 @@ sudo docker build -t uni-back .
 docker images
 ```
 
-![img](http://img-repo.poetries.top/images/1710617043a9db24.jpeg)
+![img](https://img-repo.poetries.top/images/1710617043a9db24.jpeg)
 
 ### 运行容器
 
@@ -7370,7 +7366,7 @@ docker images
 sudo docker run -d --name uni-back -p 3000:3000 uni-back
 ```
 
-![img](http://img-repo.poetries.top/images/1710616ba45059a9.jpeg)
+![img](https://img-repo.poetries.top/images/1710616ba45059a9.jpeg)
 
 代表启动成功，通过你的域名+/api/ 访问。
 
@@ -7383,7 +7379,7 @@ sudo docker run -d --name uni-back -p 3000:3000 uni-back
  docker exec -it CONTAINER ID pm2 list
 ```
 
-![img](http://img-repo.poetries.top/images/171061608f01a79e.jpeg)
+![img](https://img-repo.poetries.top/images/171061608f01a79e.jpeg)
 
 uni-docker 运行一切良好，部署完成。
 
@@ -7413,7 +7409,7 @@ uni-docker 运行一切良好，部署完成。
 1. 申请微信小程序 AppID，参考：[微信教程 (opens new window)](https://developers.weixin.qq.com/miniprogram/dev/#申请帐号)；
 2. 在 HBuilderX 中顶部菜单依次点击 "发行" => "小程序-微信"，输入小程序名称和 AppID 点击发行即可在 `unpackage/dist/build/mp-weixin` 生成微信小程序项目代码；
 
-![img](http://img-repo.poetries.top/images/16f51c54f7f89344.jpeg)
+![img](https://img-repo.poetries.top/images/16f51c54f7f89344.jpeg)
 
 1. 在微信小程序开发者工具中，导入生成的微信小程序项目，测试项目代码运行正常后，点击 "上传" 按钮，之后回到小程序后台按照 "提交审核" => "发布" 小程序标准流程，逐步操作即可，详细查看：[微信官方教程(opens new window)](https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/release.html)
 
@@ -7423,19 +7419,19 @@ uni-docker 运行一切良好，部署完成。
 
 1. 工具栏，选择"原生App-云打包"；
 
-![image-20210215161111012](http://img-repo.poetries.top/images/image-20210215161111012.png)
+![image-20210215161111012](https://img-repo.poetries.top/images/image-20210215161111012.png)
 
 1. 弹出配置界面，勾选需要的平台 Android 或 ios；
 
-![img](http://img-repo.poetries.top/images/16f51c5e87f23f4a.jpeg)
+![img](https://img-repo.poetries.top/images/16f51c5e87f23f4a.jpeg)
 
 1. 这里我选择"使用[公共测试证书 (opens new window)](https://ask.dcloud.net.cn/article/36522)"演示，真正发行还是要选择"使用[自有证书 (opens new window)](https://ask.dcloud.net.cn/article/35777)"，点击打包按钮；
 
-![img](http://img-repo.poetries.top/images/16f51c6210c4cea9.jpeg)
+![img](https://img-repo.poetries.top/images/16f51c6210c4cea9.jpeg)
 
 1. 等待控制台，提示消息，成功后会出现下载地址，点击下载 .apk 文件，安装至手机即可。
 
-![img](http://img-repo.poetries.top/images/16f51c66594ef2d3.jpeg)
+![img](https://img-repo.poetries.top/images/16f51c66594ef2d3.jpeg)
 
 ### 本地打包（企业应用推荐使用）
 
@@ -7443,16 +7439,16 @@ uni-docker 运行一切良好，部署完成。
 2. 下载 DCloud 官方 [SDK (opens new window)](https://ask.dcloud.net.cn/article/103)；
 3. 用 HBuilderX 生成本地打包文件；
 
-![img](http://img-repo.poetries.top/images/16f51c6a1eb06b85.jpeg)
+![img](https://img-repo.poetries.top/images/16f51c6a1eb06b85.jpeg)
 
-![img](http://img-repo.poetries.top/images/16f51c6d2a99ac68.jpeg)
+![img](https://img-repo.poetries.top/images/16f51c6d2a99ac68.jpeg)
 
 1. 替换官方 SDK 里面的文件夹（HelloH5）为 "__UNI__EDA8210"（这里是我的 uniapp 应用标识，你的会不同）；
 2. 修改配置文件；
 
 > 返回 Android Studio 修改文件 dcloud_control.xml，修改 id 为打包资源的 manifest.json 的 id 值：
 
-![img](http://img-repo.poetries.top/images/16f51c70c826c3b3.jpeg)
+![img](https://img-repo.poetries.top/images/16f51c70c826c3b3.jpeg)
 
 1. 打包.apk。
 
@@ -7473,13 +7469,13 @@ uni-docker 运行一切良好，部署完成。
 | --------------------- | ------------------------------------------------------------ |
 | 腾讯开放平台          | [应用商店(opens new window)](https://sj.qq.com/)             |
 | 华为开发者社区        | [华为应用市场(opens new window)](https://appstore.huawei.com/) |
-| 小米开放平台          | [小米应用商店(opens new window)](http://app.mi.com/)         |
+| 小米开放平台          | [小米应用商店(opens new window)](https://app.mi.com/)         |
 | 阿里应用分发开发平台  | [豌豆荚(opens new window)](https://www.wandoujia.com/)       |
 | OPPO开放平台          | [OPPO软件商店(opens new window)](https://www.heytapmobi.com/) |
-| 魅族开放平台          | [魅族应用商店(opens new window)](http://app.flyme.cn/)       |
-| vivo开放平台          | [vivo手机助手(opens new window)](http://zs.vivo.com.cn/)     |
+| 魅族开放平台          | [魅族应用商店(opens new window)](https://app.flyme.cn/)       |
+| vivo开放平台          | [vivo手机助手(opens new window)](https://zs.vivo.com.cn/)     |
 | Google Play开发者后台 | [Google Play(opens new window)](https://play.google.com/)    |
-| 360移动开放平台       | [360手机助手(opens new window)](http://zhushou.360.cn/)      |
+| 360移动开放平台       | [360手机助手(opens new window)](https://zhushou.360.cn/)      |
 | 百度移动开放平台      | [百度手机助手(opens new window)](https://shouji.baidu.com/)  |
 
 注：各平台有发布需要注意的点，审核还是挺严格的，一定要看清楚规范，否则会发布失败。
@@ -7490,7 +7486,7 @@ uni-docker 运行一切良好，部署完成。
 
 和安卓的类似，测试需使用越狱手机和选择越狱证书，正式发布必须使用苹果的开发者帐号生成的[证书 (opens new window)](https://appstoreconnect.apple.com/)：
 
-![img](http://img-repo.poetries.top/images/16f51c7b7a6ee38b.jpeg)
+![img](https://img-repo.poetries.top/images/16f51c7b7a6ee38b.jpeg)
 
 ### 原生打包
 
@@ -7530,13 +7526,13 @@ Apple 公司对应用的审核非常严格，所以在开始发布应用程序�
 - 逻辑层：创建一个单独的线程去执行 JavaScript，在这个环境下执行的都是有关小程序业务逻辑的代码
 - 渲染层：界面渲染相关的任务全都在 WebView 线程里执行，通过逻辑层代码去控制渲染哪些界面。一个小程序存在多个界面，所以渲染层存在多个 WebView 线程
 
-![image-20210215153202861](http://img-repo.poetries.top/images/image-20210215153202861.png)
+![image-20210215153202861](https://img-repo.poetries.top/images/image-20210215153202861.png)
 
 #### 双线程通信
 
 前面我们知道，逻辑层和渲染层的通信会由 Native （微信客户端）做中转，逻辑层发送网络请求也经由 Native 转发。
 
-![image-20210215153218219](http://img-repo.poetries.top/images/image-20210215153218219.png)
+![image-20210215153218219](https://img-repo.poetries.top/images/image-20210215153218219.png)
 
 - 1.在渲染层把 WXML 转化成对应的 JS 对象。
 - 2.在逻辑层发生数据变更的时候，通过宿主环境提供的 setData 方法把数据从逻辑层传递到 Native，再转发到渲染层。
@@ -7587,7 +7583,7 @@ Apple 公司对应用的审核非常严格，所以在开始发布应用程序�
 
 Skeleton Screen，相比于 loading 菊花图效果，骨架屏只是从感官上提升了用户体验，对性能没太多帮助（可能会消耗更多），相对于菊花图技术上会稍微复杂，请自行取舍。
 
-![image-20210215153354442](http://img-repo.poetries.top/images/image-20210215153354442.png)
+![image-20210215153354442](https://img-repo.poetries.top/images/image-20210215153354442.png)
 
 ## 动画效果
 
@@ -7731,13 +7727,13 @@ Skeleton Screen，相比于 loading 菊花图效果，骨架屏只是从感官�
 
 微信开发者工具，右上角有个详情 => 本地设置 => 启用自定义处理命令，命令支持 `node`，`bash`语法。
 
-![image-20210215153509111](http://img-repo.poetries.top/images/image-20210215153509111.png)
+![image-20210215153509111](https://img-repo.poetries.top/images/image-20210215153509111.png)
 
 来个栗子：自动切换本地开发环境，我使用 nodejs 编写命令
 
 开发环境配置文件`./config/config.js`
 
-![image-20210215153524752](http://img-repo.poetries.top/images/image-20210215153524752.png)
+![image-20210215153524752](https://img-repo.poetries.top/images/image-20210215153524752.png)
 
 为防止上传代码时，团队成员忘了切回正式环境，强制做`上传前预处理`，把本地`ENV = dev`，切回 `ENV = prod`
 
@@ -7803,7 +7799,7 @@ FS.readdir('./config', function(err, files) {
 
 `leftWindow`、`rightWindow`、`topWindow`，顾名思义就知道代表`左右上`的位置，从用户体验和产品角度，这种模式对使用范围还是有所约束，适合上导航，左分类，右内容的布局，对，我说的就是`后台管理系统`。
 
-![image-20210215153634259](http://img-repo.poetries.top/images/image-20210215153634259.png)
+![image-20210215153634259](https://img-repo.poetries.top/images/image-20210215153634259.png)
 
 首先，在`page.json`里加入配置：
 
@@ -7864,7 +7860,7 @@ FS.readdir('./config', function(err, files) {
 
 这里要说明一下，`<pages-detail-artDetail>`组件是**按照目录结构**来命名的，他表示的是`pages -> detail -> artDetail文件`，
 
-![image-20210215153649007](http://img-repo.poetries.top/images/image-20210215153649007.png)
+![image-20210215153649007](https://img-repo.poetries.top/images/image-20210215153649007.png)
 
 组件数据渲染通过`uni.$emit`和`uni.$on`通信获取：
 
@@ -7899,9 +7895,9 @@ uni.$on('updateDetail', (e) => {
 </template>
 ```
 
-![image-20210215153708460](http://img-repo.poetries.top/images/image-20210215153708460.png)
+![image-20210215153708460](https://img-repo.poetries.top/images/image-20210215153708460.png)
 
-![image-20210215153719791](http://img-repo.poetries.top/images/image-20210215153719791.png)
+![image-20210215153719791](https://img-repo.poetries.top/images/image-20210215153719791.png)
 
 页面小于375px，第一段代码被隐藏了。
 

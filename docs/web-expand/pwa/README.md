@@ -1966,12 +1966,6 @@ async function renderPage(ctx, type, content) {
 
 > 在 Service Worker 的 fetch 事件中，我们往往会从本地缓存中构建请求结果从而加速响应，然而有些时候我们又需要通过网络请求获取最新的数据，那么如何决定缓存的使用时机呢？本章将介绍一些常见的请求策略，以便大家能够更容易地控制缓存的使用时机。
 
-## [#](http://interview.poetries.top/fe-mobile-docs/pwa-docs/action/10-实战篇 5 请求策略.html#常见策略)常见策略
-
-
-
-### [#](http://interview.poetries.top/fe-mobile-docs/pwa-docs/action/10-实战篇 5 请求策略.html#缓存优先)缓存优先
-
 ![img](https://user-gold-cdn.xitu.io/2019/10/30/16e19aae54d26cde?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 首先从缓存中进行匹配，如果存在相关请求的响应，返回该响应，否则通过网络获取。基本实现如下：
@@ -2004,8 +1998,6 @@ self.addEventListener('fetch', event => {
 
 > 该策略主要适用于请求资源不经常变更的情况，比如：Shell 文件、图片、脚本等。
 
-### [#](http://interview.poetries.top/fe-mobile-docs/pwa-docs/action/10-实战篇 5 请求策略.html#网络优先)网络优先
-
 ![img](https://user-gold-cdn.xitu.io/2019/10/30/16e19ab201616ac8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 > 首先通过网络获取，如果请求异常，则从缓存中获取。基本实现如下：
@@ -2028,8 +2020,6 @@ self.addEventListener('fetch', event => {
 
 > 该策略的主要优势是，如果用户处于离线状态，依旧可以为其提供服务，从而为用户提供更好的使用体验。
 
-### [#](http://interview.poetries.top/fe-mobile-docs/pwa-docs/action/10-实战篇 5 请求策略.html#仅使用缓存)仅使用缓存
-
 ![img](https://user-gold-cdn.xitu.io/2019/10/30/16e19ab54b688c84?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 > 所有请求都从缓存中获取，基本实现如下：
@@ -2044,7 +2034,6 @@ self.addEventListener('fetch', event => {
 
 > 该策略的使用场景与缓存优先类似，相对于后者，该策略的主要问题是，如果缓存中不存在相关请求的响应，它将与传统的网络请求一样抛出异常，这可能会导致令人失望的用户体验。
 
-### [#](http://interview.poetries.top/fe-mobile-docs/pwa-docs/action/10-实战篇 5 请求策略.html#仅使用网络)仅使用网络
 
 ![img](https://user-gold-cdn.xitu.io/2019/10/30/16e19ab8a62b7b71?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 

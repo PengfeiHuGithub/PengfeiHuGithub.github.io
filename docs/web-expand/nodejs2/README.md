@@ -2236,7 +2236,7 @@ node index.js
 
 访问[http:localhost:3000 (opens new window)](http://interview.poetries.top/fe-nodejs-docs/nodejs-docs/koa2/localhost:3000)，效果如下
 
-![start-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/start-result-01.b2e9bed6.png)
+![start-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/start-result-01.b2e9bed6.png)
 
 # 1.2 async await使用
 
@@ -2276,7 +2276,7 @@ getData()
 
 ### 在chrome的console中执行结果如下
 
-![async](http://interview.poetries.top/fe-nodejs-docs/assets/img/async.8869f199.png)
+![async](https://interview.poetries.top/fe-nodejs-docs/assets/img/async.8869f199.png)
 
 ### 从上述例子可以看出 async/await 的特点：
 
@@ -2503,7 +2503,7 @@ app.listen(3000, () => {
 
 [http://localhost:3000/getString.json(opens new window)](http://localhost:3000/getString.json)
 
-![test-unit-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/test-unit-result-01.26c6e3fb.png)
+![test-unit-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/test-unit-result-01.26c6e3fb.png)
 
 ### 开始写测试用例
 
@@ -2551,7 +2551,7 @@ describe( '开始测试demo的GET请求', ( ) => {
 > 1. 如果是全局安装了mocha，可以直接在当前项目目录下执行 mocha --harmony 命令
 > 2. 如果当前node.js版本低于7.6，由于7.5.x以下还直接不支持async/awiar就需要加上--harmony
 
-会自动读取执行命令 ./test 目录下的测用例文件 inde.test.js，并执行。测试结果如下 ![test-unit-result-03](http://interview.poetries.top/fe-nodejs-docs/assets/img/test-unit-result-03.e6e0ac18.png)
+会自动读取执行命令 ./test 目录下的测用例文件 inde.test.js，并执行。测试结果如下 ![test-unit-result-03](https://interview.poetries.top/fe-nodejs-docs/assets/img/test-unit-result-03.e6e0ac18.png)
 
 ### 用例详解
 
@@ -2614,11 +2614,11 @@ Debugger listening on ws://127.0.0.1:9229/4c23c723-5197-4d23-9b90-d473f1164abe
 For help see https://nodejs.org/en/docs/inspector
 ```
 
-![debug-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-001.c1c9cb8b.png)
+![debug-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-001.c1c9cb8b.png)
 
 #### 访问chrome浏览器调试server
 
-![debug-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-002.cbdc9f49.png)
+![debug-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-002.cbdc9f49.png)
 
 > 打开浏览器调试窗口会看到一个node.js 的小logo
 
@@ -2626,19 +2626,19 @@ For help see https://nodejs.org/en/docs/inspector
 
 #### 打开chrome浏览器的node调试窗口
 
-![debug-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-004.e04cba67.png)
+![debug-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-004.e04cba67.png)
 
-![debug-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-006.d34cb585.png)
+![debug-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-006.d34cb585.png)
 
 > 注意打开了node的调试窗口后，原来绿色的node按钮会变灰色，同时调试框会显示debug状态
 
-![debug-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-005.b58632fc.png)
+![debug-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-005.b58632fc.png)
 
-![debug-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-008.6db33e88.png)
+![debug-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-008.6db33e88.png)
 
 #### 可以自定义打断点调试了
 
-![debug-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-007.7808a7f2.png)
+![debug-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/debug-result-007.7808a7f2.png)
 
 
 
@@ -2704,7 +2704,7 @@ npm run start_server
 
 [http://localhost:3001/admin(opens new window)](http://localhost:3001/admin)
 
-![project-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/project-result-02.d31821b8.png)
+![project-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/project-result-02.d31821b8.png)
 
 
 
@@ -3288,7 +3288,7 @@ ReactDOM.render( <App />,
 
 ### 页面渲染效果
 
-![project-result-01.png](http://interview.poetries.top/fe-nodejs-docs/assets/img/project-result-00.a12f59c9.png)
+![project-result-01.png](https://interview.poetries.top/fe-nodejs-docs/assets/img/project-result-00.a12f59c9.png)
 
 
 
@@ -3573,7 +3573,7 @@ const routers = router
 
 
 
-登录模式 ![project-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/project-result-01.7864a550.png) 注册模式 ![project-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/project-result-02.d31821b8.png)
+登录模式 ![project-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/project-result-01.7864a550.png) 注册模式 ![project-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/project-result-02.d31821b8.png)
 
 
 
@@ -3964,7 +3964,7 @@ node -harmony index.js
 
 #### 运行效果如下
 
-访问[http://localhost:3000/index (opens new window)](http://localhost:3000/index)![route-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/route-result-01.ad7c6df9.png)
+访问[http://localhost:3000/index (opens new window)](http://localhost:3000/index)![route-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/route-result-01.ad7c6df9.png)
 
 
 
@@ -4096,7 +4096,7 @@ node get.js
 
 > 注意：我是用了chrome的json格式化插件才会显示json的格式化
 
-![request-get](http://interview.poetries.top/fe-nodejs-docs/assets/img/request-get.731f7abf.png)
+![request-get](https://interview.poetries.top/fe-nodejs-docs/assets/img/request-get.731f7abf.png)
 
 
 
@@ -4232,11 +4232,11 @@ node post.js
 
 ### 访问页面
 
-![request-post-form](http://interview.poetries.top/fe-nodejs-docs/assets/img/request-post-form.281c217d.png)
+![request-post-form](https://interview.poetries.top/fe-nodejs-docs/assets/img/request-post-form.281c217d.png)
 
 ### 提交表单发起POST请求结果显示
 
-![request-post-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/request-post-result.3037e1ce.png)
+![request-post-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/request-post-result.3037e1ce.png)
 
 
 
@@ -4312,11 +4312,11 @@ node post-middleware.js
 
 ### 访问页面
 
-![request-post-form](http://interview.poetries.top/fe-nodejs-docs/assets/img/request-post-form.281c217d.png)
+![request-post-form](https://interview.poetries.top/fe-nodejs-docs/assets/img/request-post-form.281c217d.png)
 
 ### 提交表单发起POST请求结果显示
 
-![request-post-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/request-post-result.3037e1ce.png)
+![request-post-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/request-post-result.3037e1ce.png)
 
 
 
@@ -4592,15 +4592,15 @@ node index.js
 
 ##### 访问[http://localhost:3000(opens new window)](http://localhost:3000/)
 
-![static-server-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-01.41418ff5.png)
+![static-server-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-01.41418ff5.png)
 
 ##### 访问[http://localhost:3000/index.html(opens new window)](http://localhost:3000/index.html)
 
-![static-server-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-02.3c44a239.png)
+![static-server-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-02.3c44a239.png)
 
 ##### 访问[http://localhost:3000/js/index.js(opens new window)](http://localhost:3000/js/index.js)
 
-![static-server-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-03.53c88774.png)
+![static-server-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-03.53c88774.png)
 
 # 4.2 koa static中间件
 
@@ -4640,15 +4640,15 @@ app.listen(3000, () => {
 
 ##### 访问[http://localhost:3000(opens new window)](http://localhost:3000/)
 
-![static-server-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-01.41418ff5.png)
+![static-server-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-01.41418ff5.png)
 
 ##### 访问[http://localhost:3000/index.html(opens new window)](http://localhost:3000/index.html)
 
-![static-server-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-02.3c44a239.png)
+![static-server-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-02.3c44a239.png)
 
 ##### 访问[http://localhost:3000/js/index.js(opens new window)](http://localhost:3000/js/index.js)
 
-![static-server-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-03.53c88774.png)
+![static-server-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/static-server-result-03.53c88774.png)
 
 
 
@@ -4717,7 +4717,7 @@ node index.js
 - 可以在控制台的cookie列表中中看到写在页面上的cookie
 - 在控制台的console中使用document.cookie可以打印出在页面的所有cookie（需要是httpOnly设置false才能显示）
 
-![cookie-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/cookie-result-01.a2f8d237.png)
+![cookie-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/cookie-result-01.a2f8d237.png)
 
 # 5.2 koa2实现session
 
@@ -4820,15 +4820,15 @@ node index.js
 
 #### 访问连接设置session
 
-[http://localhost:3000/set (opens new window)](http://localhost:3000/set)![session-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/session-result-01.57116136.png)
+[http://localhost:3000/set (opens new window)](http://localhost:3000/set)![session-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/session-result-01.57116136.png)
 
 #### 查看数据库session是否存储
 
-![session-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/session-result-03.01a0ccd1.png)
+![session-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/session-result-03.01a0ccd1.png)
 
 #### 查看cookie中是否种下了sessionId
 
-[http://localhost:3000 (opens new window)](http://localhost:3000/)![session-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/session-result-02.16f1ad16.png)
+[http://localhost:3000 (opens new window)](http://localhost:3000/)![session-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/session-result-02.16f1ad16.png)
 
 
 
@@ -5165,13 +5165,13 @@ app.listen(3000, () => {
 
 ### 运行结果
 
-![upload-simple-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/upload-simple-result-03.bc8ad88a.png)
+![upload-simple-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/upload-simple-result-03.bc8ad88a.png)
 
-![upload-simple-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/upload-simple-result-02.954eb399.png)
+![upload-simple-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/upload-simple-result-02.954eb399.png)
 
-![upload-simple-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/upload-simple-result-01.28198536.png)
+![upload-simple-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/upload-simple-result-01.28198536.png)
 
-![upload-simple-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/upload-simple-result-04.9058935d.png)
+![upload-simple-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/upload-simple-result-04.9058935d.png)
 
 
 
@@ -5501,7 +5501,7 @@ function uploadAction( options ) {
 
 ### 运行效果
 
-![images/upload-async-result](http://interview.poetries.top/fe-nodejs-docs/assets/img/upload-async-result-01.0406e6d6.png)
+![images/upload-async-result](https://interview.poetries.top/fe-nodejs-docs/assets/img/upload-async-result-01.0406e6d6.png)
 
 # 8.1 mysql模块
 
@@ -5928,11 +5928,11 @@ node index.js
 
 ### 执行结果
 
-![mysql-init-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/mysql-init-result-01.4a39c870.png)
+![mysql-init-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/mysql-init-result-01.4a39c870.png)
 
 ### 查看数据库写入数据
 
-![mysql-init-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/mysql-init-result-02.ed13a703.png)
+![mysql-init-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/mysql-init-result-02.ed13a703.png)
 
 
 
@@ -5989,11 +5989,11 @@ demo地址
 
 #### 同域访问JSON请求
 
-![jsonp-result-01](http://interview.poetries.top/fe-nodejs-docs/assets/img/jsonp-result-01.52a321b6.png)
+![jsonp-result-01](https://interview.poetries.top/fe-nodejs-docs/assets/img/jsonp-result-01.52a321b6.png)
 
 #### 跨域访问JSON请求
 
-![jsonp-result-02](http://interview.poetries.top/fe-nodejs-docs/assets/img/jsonp-result-02.8053e745.png)
+![jsonp-result-02](https://interview.poetries.top/fe-nodejs-docs/assets/img/jsonp-result-02.8053e745.png)
 
 ### 完整demo代码
 
@@ -6688,7 +6688,7 @@ http.post(getUrl(path))
 - `session` 是另一种记录服务器和客户端会话状态的机制
 - `session` 是基于 `cookie` 实现的，`session` 存储在服务器端，`sessionId` 会被存储到客户端的`cookie` 中
 
-![img](http://interview.poetries.top/fe-nodejs-docs/assets/img/session.d9af5647.png)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/session.d9af5647.png)
 
 **session 认证流程：**
 
@@ -6723,7 +6723,7 @@ http.post(getUrl(path))
   - 支持跨程序调用
 - `token` 的身份验证流程：
 
-![img](http://interview.poetries.top/fe-nodejs-docs/assets/img/token.91d0af4c.png)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/token.91d0af4c.png)
 
 1. 客户端使用用户名跟密码请求登录
 2. 服务端收到请求，去验证用户名与密码
@@ -6741,7 +6741,7 @@ http.post(getUrl(path))
 - 另外一种 `token——refresh token`
 - `refresh token` 是专用于刷新 access token 的 token。如果没有 refresh token，也可以刷新 access token，但每次刷新都要用户输入登录用户名与密码，会很麻烦。有了 refresh token，可以减少这个麻烦，客户端直接用 refresh token 去更新 access token，无需用户进行额外的操作。
 
-![img](http://interview.poetries.top/fe-nodejs-docs/assets/img/token2.529aab5c.png)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/token2.529aab5c.png)
 
 - `Access Token` 的有效期比较短，当 Acesss Token 由于过期而失效时，使用 Refresh Token 就可以获取到新的 Token，如果 Refresh Token 也失效了，用户就只能重新登录了。
 - `Refresh Token` 及过期时间是存储在服务器的数据库中，只有在申请新的 Acesss Token 时才会验证，不会对业务接口响应时间造成影响，也不需要向 Session 一样一直保持在内存中以应对大量的请求。
@@ -6772,7 +6772,7 @@ http.post(getUrl(path))
 
 ### JWT 的原理
 
-![img](http://interview.poetries.top/fe-nodejs-docs/assets/img/jwt.989a49ef.png)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/jwt.989a49ef.png)
 
 **JWT 认证流程：**
 
@@ -6849,7 +6849,7 @@ http://www.example.com/user?token=xxx
 
 
 
-![img](http://interview.poetries.top/fe-nodejs-docs/assets/img/sha.b6a155ed.png)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/sha.b6a155ed.png)
 
 - 哈希算法(Hash Algorithm)又称散列算法、散列函数、哈希函数，是一种从任何一种数据中创建小的数字“指纹”的方法。哈希算法将数据重新打乱混合，重新创建一个哈希值。
 - 哈希算法主要用来保障数据真实性(即完整性)，即发信人将原始消息和哈希值一起发送，收信人通过相同的哈希函数来校验原始数据是否真实。
@@ -6941,7 +6941,7 @@ http://www.example.com/user?token=xxx
   - 服务器重启 session 不丢失（不过也要注意 session 在 Redis 中的刷新/失效机制）；
   - 不仅可以跨服务器 session 共享，甚至可以跨平台（例如网页端和 APP 端）
 
-![img](http://interview.poetries.top/fe-nodejs-docs/assets/img/session2.9db60093.png)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/session2.9db60093.png)
 
 ### 4. session 持久化
 
@@ -6994,7 +6994,7 @@ let wsValue = socketConnect('ws://121.40.165.18:8800'); // websocket对象
 
 > 上述栗子中`WebSocket`的接口地址出自：`WebSocket` 在线测试，在开发的时候也可以用于测试后端给的地址是否可用
 
-![img](http://poetries1.gitee.io/img-repo/2019/10/389.png)
+![img](https://poetries1.gitee.io/img-repo/2019/10/389.png)
 
 ### 二、webSocket的class类
 
@@ -7275,7 +7275,7 @@ server.listen(3000,"127.0.0.1",function(){
 > socket对象
 > ```
 
-![img](http://poetries1.gitee.io/img-repo/2019/10/390.png) ![img](http://poetries1.gitee.io/img-repo/2019/10/391.png)
+![img](https://poetries1.gitee.io/img-repo/2019/10/390.png) ![img](https://poetries1.gitee.io/img-repo/2019/10/391.png)
 
 #### 1.3 服务器端通过emit广播，通过on接收广播
 
@@ -7318,7 +7318,7 @@ server.listen(3000,"127.0.0.1",function(){
 });
 ```
 
-![img](http://poetries1.gitee.io/img-repo/2019/10/392.png)
+![img](https://poetries1.gitee.io/img-repo/2019/10/392.png)
 
 > 每一个连接上来的用户，都有一个 `socket`。由于我们的 `emit` 语句，是 `socket.emit()`发 出的，所以指的是向这个客户端发出语句。 广播，就是给所有当前连接的用户发送信息:
 
@@ -7342,7 +7342,7 @@ io.on('connection',function(socket) {
 })
 ```
 
-![img](http://poetries1.gitee.io/img-repo/2019/10/393.png) ![img](http://poetries1.gitee.io/img-repo/2019/10/394.png)
+![img](https://poetries1.gitee.io/img-repo/2019/10/393.png) ![img](https://poetries1.gitee.io/img-repo/2019/10/394.png)
 
 - `io.emit()`可以实现聊天室消息群发
 - `socket.emit()`可以实现聊天机器人，一对一发送

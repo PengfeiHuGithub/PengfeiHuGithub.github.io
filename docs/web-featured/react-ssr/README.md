@@ -8,7 +8,7 @@
 
 本文主要来介绍下`SSR`、`CSR`、`React SSR` 这三种渲染方式以及各自的优缺点。
 
-![image-20210214205624262](http://img-repo.poetries.top/images/image-20210214205624262.png)
+![image-20210214205624262](https://img-repo.poetries.top/images/image-20210214205624262.png)
 
 ## 什么是 SSR
 
@@ -56,7 +56,7 @@
 
 下面这张图，是同一个应用，用两种不同的方式去渲染时页面的加载时序。
 
-![image-20210214205451258](http://img-repo.poetries.top/images/image-20210214205451258.png)
+![image-20210214205451258](https://img-repo.poetries.top/images/image-20210214205451258.png)
 
 - 橙色部分为页面背景色，对应了常规意义上的白屏时间
 
@@ -116,7 +116,7 @@
 
 效果如下
 
-![image-20210214205526745](http://img-repo.poetries.top/images/image-20210214205526745.png)
+![image-20210214205526745](https://img-repo.poetries.top/images/image-20210214205526745.png)
 
 ```text
 const http = require('http');
@@ -209,7 +209,7 @@ console.log('server start...9001');
 
 在动手搭建应用骨架前我们要先了解下`react ssr` 最根本的原理，这是整个技术架构实现的基础，也可以说是基石，可以理解为我们盖房子的地基。
 
-![image-20210214205804054](http://img-repo.poetries.top/images/image-20210214205804054.png)
+![image-20210214205804054](https://img-repo.poetries.top/images/image-20210214205804054.png)
 
 如果你对一些多技术感觉到陌生或者看过很多次仍然会忘记时，主要原因要么是用的少，要么就是不理解其中的原理，导致印象不够深刻。
 
@@ -227,7 +227,7 @@ console.log('server start...9001');
 
 我们上一节说过，传统的`ssr`和目前流行的`csr`方案`spa`都不够完美，所以我们需要能综合这两者优点的技术 - `react ssr (SPA+SSR)`。
 
-![image-20210214205821750](http://img-repo.poetries.top/images/image-20210214205821750.png)
+![image-20210214205821750](https://img-repo.poetries.top/images/image-20210214205821750.png)
 
 每次刷新页面的时候数据是从服务端直出，然后后续的访问就是 `spa` 的体验，即能解决`SEO`问题，也能保持页面切换的效率，服务器的压力要比传统的`ssr`也相对小。
 
@@ -391,7 +391,7 @@ ReactDOMServer.renderToStaticMarkup(element)
 
 因为组件渲染为字符串，是一次性处理完后才开始向浏览器端返回结果。而采用流的话，可以边读边输出，可以要让页面更快的展现，缩短首屏展现时间。
 
-![image-20210214205842755](http://img-repo.poetries.top/images/image-20210214205842755.png)
+![image-20210214205842755](https://img-repo.poetries.top/images/image-20210214205842755.png)
 
 那么`renderToStaticNodeStream`可以结合 `renderToStaticMarkup`理解下，作用应该很明了了。
 
@@ -401,7 +401,7 @@ ReactDOMServer.renderToStaticMarkup(element)
 
 为了加强理解我准备了一张同构应用的流程图。
 
-![image-20210214205908252](http://img-repo.poetries.top/images/image-20210214205908252.png)
+![image-20210214205908252](https://img-repo.poetries.top/images/image-20210214205908252.png)
 
 # 小结
 
@@ -547,13 +547,13 @@ class Index extends React.Component {
 node index-compiled.js
 ```
 
-访问:`http://localhost:9001/`
+访问:`https://localhost:9001/`
 
-![image-20210214210106774](http://img-repo.poetries.top/images/image-20210214210106774.png)
+![image-20210214210106774](https://img-repo.poetries.top/images/image-20210214210106774.png)
 
 查看网页源代码可以看到组件的 `html` 内容
 
-![image-20210214210149308](http://img-repo.poetries.top/images/image-20210214210149308.png)
+![image-20210214210149308](https://img-repo.poetries.top/images/image-20210214210149308.png)
 
 ok，到这里我们就实现了最基本的`react ssr`，当然这很简陋，也仅仅是个 `demo`，不过可以帮助我们具象的理解如何实现直出一个组件。
 
@@ -583,7 +583,7 @@ ok，到这里我们就实现了最基本的`react ssr`，当然这很简陋，�
 
 比如：我想点击页面某个元素的时候给我一个反馈提示。
 
-![image-20210214213314606](http://img-repo.poetries.top/images/image-20210214213314606.png)
+![image-20210214213314606](https://img-repo.poetries.top/images/image-20210214213314606.png)
 
 ok ，这不就是增加一个事件么，这个太简单了吧，代码信手拈来。
 
@@ -644,7 +644,7 @@ export default class Index extends React.Component {
 
 如图
 
-![image-20210214213332426](http://img-repo.poetries.top/images/image-20210214213332426.png)
+![image-20210214213332426](https://img-repo.poetries.top/images/image-20210214213332426.png)
 
 ### 实现思路说明
 
@@ -888,7 +888,7 @@ node ./app.js
 
 元素事件已正常绑定上。
 
-![image-20210214213357192](http://img-repo.poetries.top/images/image-20210214213357192.png)
+![image-20210214213357192](https://img-repo.poetries.top/images/image-20210214213357192.png)
 
 ## 双端对比测试
 
@@ -942,7 +942,7 @@ node ./app.js
 
 比如：我想点击页面某个元素的时候给我一个反馈提示。
 
-![image-20210214213314606](http://img-repo.poetries.top/images/image-20210214213314606.png)
+![image-20210214213314606](https://img-repo.poetries.top/images/image-20210214213314606.png)
 
 ok ，这不就是增加一个事件么，这个太简单了吧，代码信手拈来。
 
@@ -1003,7 +1003,7 @@ export default class Index extends React.Component {
 
 如图
 
-![image-20210214213332426](http://img-repo.poetries.top/images/image-20210214213332426.png)
+![image-20210214213332426](https://img-repo.poetries.top/images/image-20210214213332426.png)
 
 ### 实现思路说明
 
@@ -1247,7 +1247,7 @@ node ./app.js
 
 元素事件已正常绑定上。
 
-![image-20210214213357192](http://img-repo.poetries.top/images/image-20210214213357192.png)
+![image-20210214213357192](https://img-repo.poetries.top/images/image-20210214213357192.png)
 
 ## 双端对比测试
 
@@ -1478,7 +1478,7 @@ ReactDom.hydrate(
 
 到这里，客户端路由已生效，路由改变同时能够渲对应的组件
 
-![image-20210214214106281](http://img-repo.poetries.top/images/image-20210214214106281.png)
+![image-20210214214106281](https://img-repo.poetries.top/images/image-20210214214106281.png)
 
 **现在客户端路由基本上已经配置好，服务端该如何处理？**
 
@@ -1560,7 +1560,7 @@ export default  (ctx,next)=>{
 
 到这里我们已经实现了基本的双端路的同构，是不是很简单呢。^_^
 
-![image-20210214214127569](http://img-repo.poetries.top/images/image-20210214214127569.png)
+![image-20210214214127569](https://img-repo.poetries.top/images/image-20210214214127569.png)
 
 ## 小结
 
@@ -1616,7 +1616,7 @@ export default  (ctx,next)=>{
 
 上面的代码我们都非常熟悉，以上代码也能在 `ssr` 模式中执行，但是无法得到我们期望的效果，数据只能在客户端得到，达不到数据直出的效果，查看网页源代码也没有我们想要的数据。
 
-![image-20210214214245297](http://img-repo.poetries.top/images/image-20210214214245297.png)
+![image-20210214214245297](https://img-repo.poetries.top/images/image-20210214214245297.png)
 
 开始的时候我们介绍过一些原理，`componentDidMount`生命周期只会在浏览器端执行，所以如果想让数据也能在服务端渲染就需要做一些特殊的处理。
 
@@ -1958,13 +1958,13 @@ export default class Index extends React.Component {
 
 到这里，服务端的数据直出就处理完成了，查看网页源代码已经能看到直出的数据。
 
-![image-20210214214310986](http://img-repo.poetries.top/images/image-20210214214310986.png)
+![image-20210214214310986](https://img-repo.poetries.top/images/image-20210214214310986.png)
 
 但是如果查看页面效果的话，页面内容会一闪而过，最终页面只显示一个`暂无数据` 。
 
-![image-20210214214329679](http://img-repo.poetries.top/images/image-20210214214329679.png)
+![image-20210214214329679](https://img-repo.poetries.top/images/image-20210214214329679.png)
 
-![image-20210214214352550](http://img-repo.poetries.top/images/image-20210214214352550.png)
+![image-20210214214352550](https://img-repo.poetries.top/images/image-20210214214352550.png)
 
 ## 数据脱水
 
@@ -2095,7 +2095,7 @@ function App({routeList}) {
 
 到这里，我们进入到`/list`页面,它的渲染结果已经正常，数据也能够正常的显示。
 
-![image-20210214214418209](http://img-repo.poetries.top/images/image-20210214214418209.png)
+![image-20210214214418209](https://img-repo.poetries.top/images/image-20210214214418209.png)
 
 这个将数据和组件调和渲染的过程就是`数据注水`。
 
@@ -2107,9 +2107,9 @@ function App({routeList}) {
 
 上面访问的是`/list`列表页，但是如果我们第一次就访问`/index`路由，再点击列表页链接，列表页的数据竟然消失了。
 
-![image-20210214214433204](http://img-repo.poetries.top/images/image-20210214214433204.png)
+![image-20210214214433204](https://img-repo.poetries.top/images/image-20210214214433204.png)
 
-![image-20210214214442417](http://img-repo.poetries.top/images/image-20210214214442417.png)
+![image-20210214214442417](https://img-repo.poetries.top/images/image-20210214214442417.png)
 
 这是什么原因？
 
@@ -2199,7 +2199,7 @@ TDK
 
 可以参考京东官网的 `tdk`
 
-![image-20210214214707638](http://img-repo.poetries.top/images/image-20210214214707638.png)
+![image-20210214214707638](https://img-repo.poetries.top/images/image-20210214214707638.png)
 
 另外也可以看下`弹个车`的 `tdk`，弹个车整站就是个单页应用，很早之前没有`tdk`,现在已经直出了`tdk`。
 
@@ -2357,7 +2357,7 @@ ctx.body=`<!DOCTYPE html>
 
 上面代码将 `tdk` 内容和 `html` 内容一同返回给浏览器。
 
-![image-20210214214730349](http://img-repo.poetries.top/images/image-20210214214730349.png)
+![image-20210214214730349](https://img-repo.poetries.top/images/image-20210214214730349.png)
 
 ## 动态 tdk - 使用轮子
 
@@ -2435,7 +2435,7 @@ ctx.body=`<!DOCTYPE html>
 
 `react-helmet` 帮我们完成了所需的 `dom` 操作，方便快捷，同时也减少了错误。
 
-![image-20210214214746086](http://img-repo.poetries.top/images/image-20210214214746086.png)
+![image-20210214214746086](https://img-repo.poetries.top/images/image-20210214214746086.png)
 
 ### 本节代码已上传
 
@@ -2575,7 +2575,7 @@ import './index.scss';
 
 结果运行`npm run dev`时，服务端代码打包失败
 
-![image-20210214214921254](http://img-repo.poetries.top/images/image-20210214214921254.png)
+![image-20210214214921254](https://img-repo.poetries.top/images/image-20210214214921254.png)
 
 由于组件会在双端构建，我们在组件内导入了 `css`，而服务端`webpack`配置文件没有配置相关的 `css loader`，所以服务端的代码打包失败了。
 
@@ -2597,7 +2597,7 @@ import './index.scss';
 
 我们先增加一个目录，`babel` 下存放 `plugin` 和 `preset`。
 
-![image-20210214214937167](http://img-repo.poetries.top/images/image-20210214214937167.png)
+![image-20210214214937167](https://img-repo.poetries.top/images/image-20210214214937167.png)
 
 创建一个 `js` 文件为插件文件,插件的名称为`no-require-css`
 
@@ -2653,13 +2653,13 @@ module.exports = function ({ types: babelTypes }) {
 
 服务可以正常启动，`css` 已经内联到了`head` 内。
 
-![image-20210214214957102](http://img-repo.poetries.top/images/image-20210214214957102.png)
+![image-20210214214957102](https://img-repo.poetries.top/images/image-20210214214957102.png)
 
 ## 页面抖动问题
 
 我们已经实现了`css`的渲染，但是有些勉强，效果不够好，当页面刷新或者第一次进入的时候，页面会抖动。
 
-![image-20210214215012251](http://img-repo.poetries.top/images/image-20210214215012251.png)
+![image-20210214215012251](https://img-repo.poetries.top/images/image-20210214215012251.png)
 
 因为第一次进入是服务端直出的 `html` 结构，没有 `css` 。
 
@@ -2732,7 +2732,7 @@ module.exports = function ({ types: babelTypes }) {
 
 经过上面的配置，我们已经将所有的 `css`打包到一个文件内。
 
-![image-20210214215029876](http://img-repo.poetries.top/images/image-20210214215029876.png)
+![image-20210214215029876](https://img-repo.poetries.top/images/image-20210214215029876.png)
 
 在服务端只需将`main.css`作为 `link` 直出即可。
 
@@ -2757,7 +2757,7 @@ module.exports = function ({ types: babelTypes }) {
 
 看下具体效果
 
-![image-20210214215052352](http://img-repo.poetries.top/images/image-20210214215052352.png)
+![image-20210214215052352](https://img-repo.poetries.top/images/image-20210214215052352.png)
 
 ## 小结
 
@@ -2805,9 +2805,9 @@ module.exports = function ({ types: babelTypes }) {
 
 先看下开发环境和生产环境的资源加载情况，然后下面再进行具体的实现。
 
-![image-20210214215247731](http://img-repo.poetries.top/images/image-20210214215247731.png)
+![image-20210214215247731](https://img-repo.poetries.top/images/image-20210214215247731.png)
 
-![image-20210214215257779](http://img-repo.poetries.top/images/image-20210214215257779.png)
+![image-20210214215257779](https://img-repo.poetries.top/images/image-20210214215257779.png)
 
 通过上图可以比较清晰的看到生产环境和开发环境的差别。
 
@@ -2922,7 +2922,7 @@ optimization: {
 
 ### 生成资源映射表，用于服务端使用
 
-![image-20210214215320571](http://img-repo.poetries.top/images/image-20210214215320571.png)
+![image-20210214215320571](https://img-repo.poetries.top/images/image-20210214215320571.png)
 
 ```text
 //生成 manifest 方便定位对应的资源文件
@@ -3255,7 +3255,7 @@ npm run build
 
 到此全部配置完成，具体运行效果看下图
 
-![image-20210214215343090](http://img-repo.poetries.top/images/image-20210214215343090.png)
+![image-20210214215343090](https://img-repo.poetries.top/images/image-20210214215343090.png)
 
 ## 项目部署
 
@@ -3375,7 +3375,7 @@ export default hot(Index);
 
 直接使用`react-dom`，控制台会出现下面的警告
 
-![image-20210214215636524](http://img-repo.poetries.top/images/image-20210214215636524.png)
+![image-20210214215636524](https://img-repo.poetries.top/images/image-20210214215636524.png)
 
 - `webpack`配置入口`entry`调整
 
@@ -3494,7 +3494,7 @@ runWdsServer();
 
  output: {
      //...
-    publicPath: 'http://localhost:9002/'
+    publicPath: 'https://localhost:9002/'
 }
 ```
 
@@ -3505,7 +3505,7 @@ runWdsServer();
 npm run wds:watch
 ```
 
-![image-20210214215704693](http://img-repo.poetries.top/images/image-20210214215704693.png)
+![image-20210214215704693](https://img-repo.poetries.top/images/image-20210214215704693.png)
 
 从上图可以看出编译已经通过，而且支持实时编译，但是热更新还看不出来。
 
@@ -3556,7 +3556,7 @@ if (process.env.NODE_ENV==='development' &&  module.hot) {
 
 看下图，`socket`已成功建立链接,后面只要更新了文件就会自动更新页面，且页面不会刷新,组件的状态也不会丢失。
 
-![image-20210214215733222](http://img-repo.poetries.top/images/image-20210214215733222.png)
+![image-20210214215733222](https://img-repo.poetries.top/images/image-20210214215733222.png)
 
 ## 小结
 
@@ -3765,7 +3765,7 @@ export default [
 
 路由改造完成后，已经可以看效果，同时控制台也能看到按需加载的包。
 
-![image-20210214215955835](http://img-repo.poetries.top/images/image-20210214215955835.png)
+![image-20210214215955835](https://img-repo.poetries.top/images/image-20210214215955835.png)
 
 但是页面效果并不是我们所期望的。
 
@@ -3773,7 +3773,7 @@ export default [
 
 此时查看网页源代码发现并没有具体内容，也就是我们的`ssr`无效了。
 
-![image-20210214220012343](http://img-repo.poetries.top/images/image-20210214220012343.png)
+![image-20210214220012343](https://img-repo.poetries.top/images/image-20210214220012343.png)
 
 ## 处理 ssr 无效问题
 
@@ -4385,7 +4385,7 @@ function App({routeList}) {
 
 之前的小节中我们已经对 `css`做过处理，将所有的`css`打包到一个文件内,然后作为资源`link`和组件的 `html`内容一起直出到客户端。
 
-![image-20210214220307869](http://img-repo.poetries.top/images/image-20210214220307869.png)
+![image-20210214220307869](https://img-repo.poetries.top/images/image-20210214220307869.png)
 
 ## 发现问题
 
@@ -4407,7 +4407,7 @@ function App({routeList}) {
 
 相信大家都用过`style-loader`，该库的作用是将模块引入的 `css`，在客户端渲染的时候以内联的形式动态插入到`head`内。
 
-![image-20210214220322543](http://img-repo.poetries.top/images/image-20210214220322543.png)
+![image-20210214220322543](https://img-repo.poetries.top/images/image-20210214220322543.png)
 
 上图便是我们在单页应用开发中的必然产物。
 
@@ -4540,11 +4540,11 @@ const html = renderToString(<StaticRouter location={path} context={context}>
 
 本地启动服务并运行，查看网页源代码的确能看到`css`直出到了页面。
 
-![image-20210214220404500](http://img-repo.poetries.top/images/image-20210214220404500.png)
+![image-20210214220404500](https://img-repo.poetries.top/images/image-20210214220404500.png)
 
 但是通过审查元素会发现问题，客户端也执行了插入，相当于是两份相同的 `css`。
 
-![image-20210214220418139](http://img-repo.poetries.top/images/image-20210214220418139.png)
+![image-20210214220418139](https://img-repo.poetries.top/images/image-20210214220418139.png)
 
 正常情况下应该是服务端直出了`css`内容，客户端在插入前需要判断是否可以插入。
 
@@ -4552,7 +4552,7 @@ const html = renderToString(<StaticRouter location={path} context={context}>
 根据什么来判断呢？
 ```
 
-![image-20210214220439745](http://img-repo.poetries.top/images/image-20210214220439745.png)
+![image-20210214220439745](https://img-repo.poetries.top/images/image-20210214220439745.png)
 
 上面截图中能看到`style`标签上都有`id`的属性，所以关键就在这里，猜想肯定是通过`id`来判断。
 
@@ -4641,7 +4641,7 @@ exports._getContent = function() { return content; };
 
 经过上一步的处理，目前已经不会重复插入`style`了。
 
-![image-20210214220457978](http://img-repo.poetries.top/images/image-20210214220457978.png)
+![image-20210214220457978](https://img-repo.poetries.top/images/image-20210214220457978.png)
 
 开发环境是 ok 了，不过生产环境中，仍然有坑。
 
@@ -4665,7 +4665,7 @@ exports._getContent = function() { return content; };
 
 构建后，并启动生产环境服务。
 
-![image-20210214220514712](http://img-repo.poetries.top/images/image-20210214220514712.png)
+![image-20210214220514712](https://img-repo.poetries.top/images/image-20210214220514712.png)
 
 从上图中可以看出，在生产环境`style`标签的`id`不再是模块的相对路径，而变成了数字，比如`s19-0`。
 
@@ -4673,7 +4673,7 @@ exports._getContent = function() { return content; };
 
 问题出现了，当我们审查元素的时候发现`style`标签增多了，又出现了重复的插入，客户端排重失败。
 
-![image-20210214220529799](http://img-repo.poetries.top/images/image-20210214220529799.png)
+![image-20210214220529799](https://img-repo.poetries.top/images/image-20210214220529799.png)
 
 原因是：客户端的模块 `id`和服务器的模块`id`值不同。
 
@@ -4708,7 +4708,7 @@ ok，直接上插件。
 
 重新启动服务后，得到了我们期望的结果。
 
-![image-20210214220545056](http://img-repo.poetries.top/images/image-20210214220545056.png)
+![image-20210214220545056](https://img-repo.poetries.top/images/image-20210214220545056.png)
 
 ### 但是最后还有个 bug
 
@@ -4720,7 +4720,7 @@ ok，直接上插件。
 
 > insertCss.js 文件
 
-![image-20210214220606381](http://img-repo.poetries.top/images/image-20210214220606381.png)
+![image-20210214220606381](https://img-repo.poetries.top/images/image-20210214220606381.png)
 
 以上代码中，`id`排重验证没有问题，到后面，也就是我标注的地方，判断是有问题的。
 
@@ -4762,7 +4762,7 @@ ok，直接上插件。
 
 可以参考下图来理解其理念。
 
-![image-20210214220738696](http://img-repo.poetries.top/images/image-20210214220738696.png)
+![image-20210214220738696](https://img-repo.poetries.top/images/image-20210214220738696.png)
 
 可能上面说的有点抽象，用人类的语言再说一下。
 
@@ -5294,9 +5294,9 @@ export default async (ctx, next) => {
 
 代码层面改造已完成，下面看下具体展示
 
-![image-20210214220816548](http://img-repo.poetries.top/images/image-20210214220816548.png)
+![image-20210214220816548](https://img-repo.poetries.top/images/image-20210214220816548.png)
 
-![image-20210214220831449](http://img-repo.poetries.top/images/image-20210214220831449.png)
+![image-20210214220831449](https://img-repo.poetries.top/images/image-20210214220831449.png)
 
 ## 小结
 
@@ -5571,7 +5571,7 @@ function getNetworkAddress() {
         filename: '[name].js',
         path: resolvePath('../dist/static'),
         //设置静态资源地址通过 ip 访问
-        publicPath: `http://${__LOCAL_IP__}:${proConfig.wdsPort}/`
+        publicPath: `https://${__LOCAL_IP__}:${proConfig.wdsPort}/`
     },
 ```
 
@@ -5593,7 +5593,7 @@ module.exports = function (port, publicPath) {
 ```text
 module.exports = {
   proxy: {
-    host: 'http://127.0.0.1:9002', // 本地开发时,代理前端打包出来的静态资源
+    host: 'https://127.0.0.1:9002', // 本地开发时,代理前端打包出来的静态资源
     match: /(\/static)|(\/sockjs-node)|(\/__webpack_dev_server__)|hot-update/
   }
 }
@@ -5692,7 +5692,7 @@ Index.getInitialProps= async ()=>{
 
 ```text
 //获取 a b 值
-http://localhost:9001/list/100?a=1&b=2
+https://localhost:9001/list/100?a=1&b=2
 ```
 
 ### 约定参数
@@ -5930,19 +5930,19 @@ export default PageContainer(Index);
 
 数据直出到页面后，通过`script`标签来进行包裹，且`type="application/json"`，标签内直接是 `json`数据。
 
-![image-20210214221123926](http://img-repo.poetries.top/images/image-20210214221123926.png)
+![image-20210214221123926](https://img-repo.poetries.top/images/image-20210214221123926.png)
 
 - egg-react-ssr
 
 也是作为脚本加载,然后将数据保存在了`window.__INITIAL_DATA__`全局变量内。
 
-![image-20210214221135415](http://img-repo.poetries.top/images/image-20210214221135415.png)
+![image-20210214221135415](https://img-repo.poetries.top/images/image-20210214221135415.png)
 
 - 本应用
 
 为了防止`xss`攻击，将数据放在了`textarea`标签内，客户端使用前先进行一次获取
 
-![image-20210214221159958](http://img-repo.poetries.top/images/image-20210214221159958.png)
+![image-20210214221159958](https://img-repo.poetries.top/images/image-20210214221159958.png)
 
 最后，本应用和他们两个框架的结果相同，只是表现形式不同。
 
@@ -5962,7 +5962,7 @@ export default PageContainer(Index);
 
 该框架是约定式路由，没有路由配置文件，只要在 `pages` 文件夹下创建的文件，都会默认生成以文件名命名的路由,的确很方便，但是有些过度封装了。
 
-![image-20210214221212572](http://img-repo.poetries.top/images/image-20210214221212572.png)
+![image-20210214221212572](https://img-repo.poetries.top/images/image-20210214221212572.png)
 
 - 本骨架和`egg-react-ssr` 直接使用`react-router`,依旧使用传统的`spa`应用的使用方式,手动编写路由规则，更加方便你去控制你的项目结构。
 
@@ -6282,13 +6282,13 @@ function clientRender(routeList) {
 
 该框架采用的是将`css`代码最终打包到一个文件内，作为资源进行加载。
 
-![image-20210214221231029](http://img-repo.poetries.top/images/image-20210214221231029.png)
+![image-20210214221231029](https://img-repo.poetries.top/images/image-20210214221231029.png)
 
 - egg-react-ssr
 
 也是最终将`css`代码提取到一个文件内。
 
-![image-20210214221242918](http://img-repo.poetries.top/images/image-20210214221242918.png)
+![image-20210214221242918](https://img-repo.poetries.top/images/image-20210214221242918.png)
 
 - 本骨架实现方式
 
@@ -6298,7 +6298,7 @@ function clientRender(routeList) {
 
 客户端渲染时会判断当前页面内是否已存在，只有不存在的情况下才会动态的插入样式。
 
-![image-20210214221256113](http://img-repo.poetries.top/images/image-20210214221256113.png)
+![image-20210214221256113](https://img-repo.poetries.top/images/image-20210214221256113.png)
 
 其实`css`同构处理的配置比较繁琐，直接提取为一个`css`文件也不失为一种便捷的处理方式。
 
@@ -6343,15 +6343,15 @@ function clientRender(routeList) {
 
 ## 整体页面效果
 
-![image-20210214221416564](http://img-repo.poetries.top/images/image-20210214221416564.png)
+![image-20210214221416564](https://img-repo.poetries.top/images/image-20210214221416564.png)
 
-![image-20210214221436218](http://img-repo.poetries.top/images/image-20210214221436218.png)
+![image-20210214221436218](https://img-repo.poetries.top/images/image-20210214221436218.png)
 
 ## 相关接口
 
 ```text
 列表接口
-url:http://mockssr.bigerfe.com/list
+url:https://mockssr.bigerfe.com/list
 method:get
 result:
 {
@@ -6367,7 +6367,7 @@ result:
     ]
 }
 小册详情接口
-url:http://mockssr.bigerfe.com/detail/:id
+url:https://mockssr.bigerfe.com/detail/:id
 method:get
 result:
 {
@@ -6387,7 +6387,7 @@ result:
 ```text
 fetch-config.js
 export default {
-    apiHost:'http://mockssr.bigerfe.com'//接口地址
+    apiHost:'https://mockssr.bigerfe.com'//接口地址
 }
 ```
 

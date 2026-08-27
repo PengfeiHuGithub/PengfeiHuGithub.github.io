@@ -2,59 +2,6 @@ module.exports = [{
         text: '进阶',
         link: '/web-advanced/'
     },
-    // {
-    //     text: '基础',
-    //     link: '/web-foundation/',
-    //     items: [{
-    //             text: 'HTML、HTTP、web综合问题',
-    //             link: '/web-foundation/html_foundation/'
-    //         },
-    //         {
-    //             text: 'CSS部分',
-    //             link: '/web-foundation/css_part/'
-    //         },
-    //         {
-    //             text: 'JavaScript部分',
-    //             link: '/web-foundation/javascript_part/'
-    //         },
-    //         {
-    //             text: 'jQuery部分',
-    //             link: '/web-foundation/jquery_part/'
-    //         },
-    //         {
-    //             text: 'BootStrap部分',
-    //             link: '/web-foundation/bootstrap_part/'
-    //         },
-    //         {
-    //             text: '微信小程序部分',
-    //             link: '/web-foundation/wxapplets_part/'
-    //         },
-    //         {
-    //             text: 'Webpack部分',
-    //             link: '/web-foundation/webpack_part/'
-    //         },
-    //         {
-    //             text: '编程题部分',
-    //             link: '/web-foundation/program_part/'
-    //         },
-    //         {
-    //             text: '其他',
-    //             link: '/web-foundation/others_part/'
-    //         },
-    //         {
-    //             text: '综合',
-    //             link: '/web-foundation/comprehensive_part/'
-    //         },
-    //         {
-    //             text: '常见问题',
-    //             link: '/web-foundation/question_part/'
-    //         },
-    //         {
-    //             text: 'HR部分',
-    //             link: '/web-foundation/hr_part/'
-    //         }
-    //     ]
-    // },
     {
         text: '精选',
         link: '/web-featured/',
@@ -224,6 +171,10 @@ module.exports = [{
             {
                 text: '算法专题',
                 link: '/web-expand/algorithm_topic/'
+            },
+            {
+                text: '前端工程',
+                link: '/web-expand/project/'
             }
         ]
     }

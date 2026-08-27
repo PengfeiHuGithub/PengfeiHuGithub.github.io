@@ -3650,7 +3650,7 @@ module.exports = {
 
 > 在 `Docker` 中，实现了强大的网络功能，我们不但能够十分轻松的对每个容器的网络进行配置，还能在容器间建立虚拟网络，将数个容器包裹其中，同时与其他网络环境隔离
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/1.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/1.png)
 
 > `Docker` 能够在容器中营造独立的域名解析环境，这使得我们可以在不修改代码和配置的前提下直接迁移容器，`Docker` 会为我们完成新环境的网络适配。对于这个功能，我们甚至能够在不同的物理服务器间实现，让处在两台物理机上的两个 Docker 所提供的容器，加入到同一个虚拟网络中，形成完全屏蔽硬件的效果...
 
@@ -3676,7 +3676,7 @@ module.exports = {
 2. 社区版和企业版的另一区别就是免费与收费了。对于我们开发者来说，社区版已经提供了 `Docker` 所有核心的功能，足够满足我们在开发、测试中的需求，所以我们直接选择使用社区版进行开发即可。在这本小册中，所有的内容也是围绕着社区版的 `Docker Engine` 展开的...
 3. 从另外一个角度，`Docker Engine` 的迭代版本又会分为稳定版 ( `Stable release` ) 和预览版 ( `Edge release` )。不论是稳定版还是预览版，它们都会以发布时的年月来命名版本号，例如如 17 年 3 月的版本，版本号就是 17.03...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/2.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/2.png)
 
 1. `Docker Engine` 的稳定版固定为每三个月更新一次，而预览版则每月都会更新。在预览版中可以及时掌握到最新的功能特性，不过这对于我们仅是使用 `Docker` 的开发者来说，意义并不是特别重大的，所以我还是更推荐安装更有保障的稳定版本。
 2. 在主要版本之外，`Docker` 官方也以解决 `Bug` 为主要目的，不定期发布次要版本。次要版本的版本号由主要版本和发布序号组成，如：`17.03.2`就是对 `17.03` 版本的第二次修正...
@@ -3881,7 +3881,7 @@ Registry Mirrors:
 - 启动两个软件的方式很简单，我们只需要通过操作系统的快捷访问功能查找到 `Docker for Windows` 或 `Docker for Mac` 并启动即可
 - 打开软件之后，我们会在`Windows` 的任务栏或者 `macOS` 的状态栏中看到 `Docker` 的大鲸鱼图标
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/3.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/3.png)
 
 > `Docker Desktop` 为我们在 `Windows` 和 `macOS` 中使用 `Docker`提供了与 `Linux` 中几乎一致的方法，我们只需要打开 `Windows` 中的 `PowerShell` 获得 `macOS` 中的 Terminal，亦或者 `Git Bash`、`Cmder`、`iTerm`等控制台类软件，输入 `docker` 命令即可...
 
@@ -3903,7 +3903,7 @@ Client:
 - 由于虚拟化在云计算时代的广泛使用，`Windows` 和 `MacOS` 也将虚拟化引入到了系统本身的实现中，这其中就包含了之前我们所提到的通过 `Hypervisor`实现虚拟化的功能。在 `Windows` 中，我们可以通过 `Hyper-V` 实现虚拟化，而在 `macOS` 中，我们可以通过 HyperKit 实现虚拟化...
 - `Docker for Windows` 和 `Docker for Mac` 这里利用了这两个操作系统提供的功能来搭建一个虚拟 `Linux` 系统，并在其之上安装和运行 `docker daemon`。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/4.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/4.png)
 
 > 除了搭建 `Linux` 系统并运行 `docker daemon` 之外，`Docker Desktop` 系列最突出的一项功能就是我们能够直接通过 `PowerShell`、`Terminal` 这类的控制台软件在 `Windows` 和 `macOS` 中直接操作虚拟 Linux 系统中运行的 docker daemon...
 
@@ -3914,7 +3914,7 @@ Client:
 3. 当然，如果只能从虚拟的 Linux 系统中进行挂载，显然不足以达到我们的期望，因为最方便的方式必然是直接从 Windows 和 macOS 里挂载文件了。
 4. 要实现我们所期望的效果，也就是 Docker 容器直接挂载主机系统的目录，我们可以先将目录挂载到虚拟 Linux 系统上，再利用 Docker 挂载到容器之中。这个过程被集成在了 Docker Desktop 系列软件中，我们不需要人工进行任何操作，整个过程已经实现了自动化...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/5.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/5.png)
 
 > `Docker Desktop` 对 `Windows` 和 `macOS` 到虚拟 `Linux` 系统，再到 `Docker` 容器中的挂载进行了实现，我们只需要直接选择能够被挂载的主机目录 ( 这个过程更多也是为了安全所考虑 )，剩下的过程全部由 Docker Desktop 代替我们完成。...
 
@@ -3950,7 +3950,7 @@ cogset/cron         latest              c01d5ac6fc8a        15 months ago       
 - 镜像层的 `ID` 既可以识别每个镜像层，也可以用来直接识别镜像 ( 因为根据最上层镜像能够找出所有依赖的下层镜像，所以最上层进行的镜像层 ID 就能表示镜像的 `ID` )，但是使用这种无意义的超长哈希码显然是违背人性的，所以这里我们还要介绍镜像的命名，通过镜像名我们能够更容易的识别镜像...
 - 在 `docker images` 命令打印出的内容中，我们还能看到两个与镜像命名有关的数据：`REPOSITORY` 和 `TAG`，这两者其实就组成了 `docker` 对镜像的命名规则
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/6.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/6.png)
 
 **准确的来说，镜像的命名我们可以分成三个部分：username、repository 和 tag**
 
@@ -3964,7 +3964,7 @@ cogset/cron         latest              c01d5ac6fc8a        15 months ago       
 
 **容器运行的状态流转图**
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/7.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/7.png)
 
 > 图中展示了几种常见对 `Docker` 容器的操作命令，以及执行它们之后容器运行状态的变化。这里我们撇开命令，着重看看容器的几个核心状态，也就是图中色块表示的：`Created`、`Running`、`Paused`、`Stopped`、`Deleted`
 
@@ -3988,7 +3988,7 @@ cogset/cron         latest              c01d5ac6fc8a        15 months ago       
 
 当然，存储镜像并不是镜像仓库最值得炫耀的功能，其最大的作用是实现了 `Docker` 镜像的分发。借助镜像仓库，我们得到了一个镜像的中转站，我们可以将开发环境上所使用的镜像推送至镜像仓库，并在测试或生产环境上拉取到它们，而这个过程仅需要几个命令，甚至自动化完成...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/8.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/8.png)
 
 ### 5.2 获取镜像
 
@@ -4038,7 +4038,7 @@ openresty/openresty   1.13.6.2-alpine     08d5c926e4b6        3 months ago      
 
 Docker Hub 的地址是：hub.docker.com/
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/9.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/9.png)
 
 - 由于定位是 `Docker` 的中央镜像仓库系统，同时也是 `Docker Engine` 的默认镜像仓库，所以 `Docker Hub` 是开发者共享镜像的首选，那么也就意味着其中的镜像足够丰富
 - 常用服务软件的镜像，我们都能在 `Docker Hub` 中找到，甚至能找到针对它们不同用法的不同镜像。
@@ -4048,7 +4048,7 @@ Docker Hub 的地址是：hub.docker.com/
 
 - 由于 `Docker Hub` 提供了一套完整的 `Web` 操作界面，所以我们搜索其中的镜像会非常方便
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/10.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/10.png)
 
 > 在 Docker Hub 的搜索结果中，有几项关键的信息有助于我们选择合适的镜像：
 
@@ -4174,7 +4174,7 @@ Deleted: sha256:e1a73233e3beffea70442fc2cfae2c2bab0f657c3eebb3bdec1e84b6cc778b75
 
 在了解容器的各项操作之前，我们再来回顾一下之前我们所提及的容器状态流转。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/11.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/11.png)
 
 > 在这幅图中，我们可以看到，Docker 容器的生命周期里分为五种状态，其分别代表着：
 
@@ -4314,7 +4314,7 @@ $ sudo docker attach nginx
 
 > 在之前介绍 `Docker` 核心组成的时候，我们已经简单谈到了容器网络的相关知识。容器网络实质上也是由 `Docker` 为应用程序所创造的虚拟环境的一部分，它能让应用从宿主机操作系统的网络环境中独立出来，形成容器自有的网络设备、IP 协议栈、端口套接字、IP 路由表、防火墙等等与网络相关的模块...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/12.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/12.png)
 
 > 还是回归上面这幅之前展示过的关于 `Docker` 网络的图片。在 Docker 网络中，有三个比较核心的概念，也就是：沙盒 ( Sandbox )、网络 ( Network )、端点 ( Endpoint )
 
@@ -4327,7 +4327,7 @@ $ sudo docker attach nginx
 - 容器网络模型为容器引擎提供了一套标准的网络对接范式，而在 `Docker` 中，实现这套范式的是 `Docker` 所封装的 `libnetwork` 模块。
 - 而对于网络的具体实现，在 `Docker` 的发展过程中也逐渐抽象，形成了统一的抽象定义。进而通过这些抽象定义，便可以对 `Docker` 网络的实现方式进行不同的变化...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/13.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/13.png)
 
 > 目前 `Docker` 官方为我们提供了五种 `Docker`网络驱动，分别是：`Bridge Driver`、`Host Driver`、`Overlay Driver`、`MacLan Driver`、`one Driver`。
 
@@ -4521,7 +4521,7 @@ $ sudo docker run -d --name webapp --link mysql --network individual webapp:late
 
 - 在 `Docker` 中，提供了一个端口映射的功能实现这样的需求...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/14.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/14.png)
 
 - 通过 `Docker` 端口映射功能，我们可以把容器的端口映射到宿主操作系统的端口上，当我们从外部访问宿主操作系统的端口时，数据请求就会自动发送给与之关联的容器端口
 - 要映射端口，我们可以在创建容器时使用 `-p` 或者是 `--publish`选项...
@@ -4548,12 +4548,12 @@ bc79fc5d42a6        nginx:1.12          "nginx -g 'daemon of…"   4 seconds ago
 
 - 解决这种问题的方法很简单，只需要再加一次映射，将虚拟 `Linux` 系统中的端口映射到 `Windows` 或 `macOS` 的端口即可。...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/15.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/15.png)
 
 - 如果我们使用 `Docker for Windows` 或 `Docker for` Mac，这个端口映射的操作程序会自动帮助我们完成，所以我们不需要做任何额外的事情，就能够直接使用 `Windows` 或 `macOS` 的端口访问容器端口了。
 - 而当我们使用 `Docker Toolbox` 时，由于其自动化能力比较差，所以需要我们在 `VirtualBox` 里单独配置这个操作系统端口到 `Linux` 端口的映射关系...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/16.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/16.png)
 
 > 在 `VirtualBox` 配置中的端口转发一栏里，进行相关的配置即可
 
@@ -4577,7 +4577,7 @@ bc79fc5d42a6        nginx:1.12          "nginx -g 'daemon of…"   4 seconds ago
 
 > 基于底层存储实现，`Docker` 提供了三种适用于不同场景的文件系统挂载方式：Bind `Mount`、`Volume` 和 `Tmpfs Mount`
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/17.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/17.png)
 
 - `Bind Mount` 能够直接将宿主操作系统中的目录和文件挂载到容器内的文件系统中，通过指定容器外的路径和容器内的路径，就可以形成挂载映射关系，在容器内外对文件的读写，都是相互可见的。
 - `Volume` 也是从宿主操作系统中挂载目录到容器内，只不过这个挂载的目录由 Docker 进行管理，我们只需要指定容器内的目录，不需要关心具体挂载到了宿主操作系统中的哪里。
@@ -4833,7 +4833,7 @@ $ sudo docker import ./webapp.tar webapp:1.0
 
 > `Dockerfile` 是 `Docker`中用于定义镜像自动化构建流程的配置文件，在 `Dockerfile` 中，包含了构建镜像过程中需要执行的命令和其他操作。通过 `Dockerfile` 我们可以更加清晰、明确的给定 `Docker` 镜像的制作过程，而由于其仅是简单、小体积的文件，在网络等其他介质中传递的速度极快，能够更快的帮助我们实现容器迁移和集群部署...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/18.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/18.png)
 
 > 通常来说，我们对 `Dockerfile` 的定义就是针对一个名为`Dockerfile` 的文件，其虽然没有扩展名，但本质就是一个文本文件，所以我们可以通过常见的文本编辑器或者 `IDE` 创建和编辑它。
 
@@ -5103,7 +5103,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 看似连续的镜像构建过程，其实是由多个小段组成。每当一条能够形成对文件系统改动的指令在被执行前，`Docker` 先会基于上条命令的结果启动一个容器，在容器中运行这条指令的内容，之后将结果打包成一个镜像层，如此反复，最终形成镜像...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/19.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/19.png)
 
 所以说，我们之前谈到镜像是由多个镜像层叠加而得，而这些镜像层其实就是在我们 `Dockerfile`中每条指令所生成的。
 
@@ -5192,11 +5192,11 @@ exec "$@"...
 
 > 要得到镜像的 `Dockerfile` 文件，我们可以进入到镜像的详情页面，在介绍中，镜像作者们通常会直接把 `Dockerfile` 的连接放在那里。...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/20.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/20.png)
 
 除此之外，进入到`Dockerfile` 这个栏目下，我们也能够直接看到镜像 `Dockerfile` 的内容。在页面的右侧，还有进入`Dockerfile` 源文件的连接，如果在 `Dockerfile` 中有引入其他的文件，我们可以通过这个连接访问到。...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/21.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/21.png)
 
 > 另外，我自己也制作了一些软件的镜像，大家可以访问 `GitHub` 上的项目地址，查阅其中的`Dockerfile` 内容：github.com/cogset
 
@@ -5210,7 +5210,7 @@ exec "$@"...
 - 虽然我们常把软件的版本放在 `Tag` 里作为镜像名的一部分，但对于一些复杂的应用，除了版本外，还存在很多的变量，镜像的维护者们也喜欢将这些变量一同组合到镜像的 `Tag` 里，所以我们在使用镜像前，一定要先了解不同 `Tag` 对应的不同内容。
 - 这里我们来看个例子，下面是由 Docker 官方提供的 OpenJDK 镜像的说明页面...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/22.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/22.png)
 
 - 通常来说，镜像的维护者会在镜像介绍中展示出镜像所有的 Tag，如果没有，我们也能够从页面上的 `Tags` 导航里进入到镜像标签列表页面。
 - 在 `OpenJDK` 镜像的 `Tag` 列表里，我们可以看到同样版本号的镜像就存在多种标签。在这些不同的标签上，除了定义 `OpenJDK` 的版本，还有操作系统，软件提供者等信息。
@@ -5250,7 +5250,7 @@ exec "$@"...
 - 好在 `MySQL` 镜像的维护者们为我们打造了一些自动化脚本，通过它们，我们只需要简单的传入几个参数，就能够快速实现对 `MySQL` 数据库的初始化。
 - 在 MySQL 镜像的详情里，描述了我们要如何传入这些参数来启动 MySQL 容器。...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/23.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/23.png)
 
 > 对于 `MySQL` 镜像来说，进行软件配置的方法是通过环境变量的方式来实现的 ( 在其他的镜像里，还有通过启动命令、挂载等方式来实现的 )。我们只需要通过这些给出的环境变量，就可以初始化 `MySQL` 的配置了。
 
@@ -5272,25 +5272,25 @@ $ sudo docker run --name mysql -e MYSQL_DATABASE=webapp -e MYSQL_USER=www -e MYS
 
 要在`Docker Hub` 上共享镜像，我们必须有一个`Docker Hub` 的账号，这自不必说了。在登录到我们账号的控制面板后，我们能够找到创建的按钮，在这里选择 Create Automated Build ( 创建自动构建 )。...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/24.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/24.png)
 
 自动构建镜像是 `Docker Hub`为我们提供的一套镜像构建服务，我们只需要提供 `Dockerfile` 和相关的基本文件，`Docker Hub` 就能够在云端自动将它们构建成镜像，之后便可以让其他开发者通过 docker pull 命令拉取到这一镜像。
 
 自动构建让不需要我们再用本机进行镜像的构建，既能节约时间，又能享受高速的云端机器构建。...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/25.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/25.png)
 
 在 `Docker Hub` 中并不直接存放我们用于构建的 `Dockerfile` 和相关文件，我们必须将 `Docker Hub` 账号授权到 `GitHub` 或是 `Bitbucket` 来从这些代码库中获取 `Dockerfile`和相关文件。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/26.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/26.png)
 
 在连接到 `GitHub` 或 `Bitbucket` 后，我们就可以选择我们存放 `Dockerfile` 和相关文件的代码仓库用来创建自动构建了。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/27.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/27.png)
 
 在基本信息填写完成，点击创建按钮后，`Docker Hub` 就会开始根据我们 `Dockerfile` 的内容构建镜像了。而此时，我们也能够访问我们镜像专有的详情页面了。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/28.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/28.png)
 
 ## 十三、组合操作：使用 Docker Compose 管理容器
 
@@ -5314,7 +5314,7 @@ $ sudo docker run --name mysql -e MYSQL_DATABASE=webapp -e MYSQL_USER=www -e MYS
 - 针对这种情况，我们就不得不引出在我们开发中最常使用的多容器定义和运行软件，也就是 `Docker Compose`了。
 - 如果说 `Dockerfile`是将容器内运行环境的搭建固化下来，那么 `Docker Compose` 我们就可以理解为将多个容器运行的方式和配置固化下来...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/29.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/29.png)
 
 > 在 `Docker Compose` 里，我们通过一个配置文件，将所有与应用系统相关的软件及它们对应的容器进行配置，之后使用 `Docker Compose` 提供的命令进行启动，就能让 `Docker Compose` 将刚才我们所提到的那些复杂问题解决掉...
 
@@ -5632,7 +5632,7 @@ networks:
 - 与搭建一个软件开发项目类似，我们提倡将 `Docker Compose` 项目的组成内容聚集到一个文件目录中，这样更利于我们进行管理和迁移。
 - 这里我已经建立好了一个目录结构，虽然我们在实践的过程中不一定要按照这样的结构，但我相信这个结构一定对你有所启发...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/30.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/30.png)
 
 > 简单说明一下这个结构中主要目录和文件的功能和作用。在这个结构里，我们可以将根目录下的几个目录分为四类
 
@@ -5712,7 +5712,7 @@ services:
 - 在这个例子里，因为需要让 PHP 连接到 MySQL 数据库中，所以我们要为镜像中的 PHP 程序安装和开启 pdo_mysql 这个扩展。
 - 了解如何安装扩展，这就要考验我们之前在 Docker Hub 镜像使用一节中学到的知识了。我们通过阅读 PHP 镜像的介绍页面，可以找到 PHP 镜像中已经为我们准备好了扩展的安装和启用命令，这让我们可以很轻松地在镜像中加入扩展。...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/31.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/31.png)
 
 > 在准备好这些使用方法之后，我们就可以开始编写构建 PHP 镜像的 `Dockerfile` 文件了。这里我已经编写好了一份，供大家参考
 
@@ -5851,7 +5851,7 @@ services:
 - 在介绍`Docker Compose` 的小节里，我们知道了可以通过设置网络别名 ( `alias` ) 的方式来更轻松地连接其他容器，如果我们在服务化开发里也能这么做就能减少很多烦琐操作了。
 - 要实现设置网络别名的目的，自然要先确保所有涉及的容器位于同一个网络中，这时候就需要引出我们之前在网络小节里说到的 `Overlay`网络了...
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/32.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/32.png)
 
 > `Overlay Network` 能够跨越物理主机的限制，让多个处于不同 `Docker daemon` 实例中的容器连接到同一个网络，并且让这些容器感觉这个网络与其他类型的网络没有区别。
 
@@ -5859,7 +5859,7 @@ services:
 
 > 要搭建 `Overlay Network` 网络，我们就要用到 `Docker Swarm` 这个工具了。`Docker Swarm`是 `Docker`内置的集群工具，它能够帮助我们更轻松地将服务部署到 `Docker daemon` 的集群之中。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/docker/33.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/docker/33.png)
 
 - 在真实的服务部署里，我们通常是使用 `Docker Compose` 来定义集群，而通过 `Docker Swarm` 来部署集群。
 - `Docker Swarm`最初是独立的项目，不过目前已经集成到了`Docker` 之中，我们通过 `docker CLI`的命令就能够直接操控它。

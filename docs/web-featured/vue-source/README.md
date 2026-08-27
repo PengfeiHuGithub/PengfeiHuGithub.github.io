@@ -1099,7 +1099,7 @@ export function initRender (vm: Component) {
 
 Virtual DOM 这个概念相信大部分人都不会陌生，它产生的前提是浏览器中的 DOM 是很“昂贵"的，为了更直观的感受，我们可以简单的把一个简单的 div 元素的属性都打印出来，如图所示：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/dom.956fae75.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/dom.956fae75.png)
 
 可以看到，真正的 DOM 元素是非常庞大的，因为浏览器的标准就把 DOM 设计的非常复杂。当我们频繁的去做 DOM 更新，会产生一定的性能问题。
 
@@ -1886,7 +1886,7 @@ export function appendChild (node: Node, child: Node) {
 
 那么至此我们从主线上把模板和数据如何渲染成最终的 DOM 的过程分析完毕了，我们可以通过下图更直观地看到从初始化 Vue 到最终渲染的整个过程。
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/new-vue.9f257f78.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/new-vue.9f257f78.png)
 
 我们这里只是分析了最简单和最基础的场景，在实际项目中，我们是把页面拆成很多组件的，Vue 另一个核心思想就是组件化。那么下一章我们就来分析 Vue 的组件化过程。
 
@@ -3054,7 +3054,7 @@ vm.$options = {
 
 每个 Vue 实例在被创建之前都要经过一系列的初始化过程。例如需要设置数据监听、编译模板、挂载实例到 DOM、在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，给予用户机会在一些特定的场景下添加他们自己的代码。
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/lifecycle.6f2c97f0.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/lifecycle.6f2c97f0.png)
 
 在我们实际项目开发过程中，会非常频繁地和 Vue 组件的生命周期打交道，接下来我们就从源码的角度来看一下这些生命周期的钩子函数是如何被执行的。
 
@@ -5184,7 +5184,7 @@ JS 执行是单线程的，它是基于事件循环的。事件循环大致分�
 
 （4）主线程不断重复上面的第三步。
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/event-loop.d7a6a5fc.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/event-loop.d7a6a5fc.png)
 
 主线程的执行过程就是一个 tick，而所有的异步结果都是通过 “任务队列” 来调度。 消息队列中存放的是一个个的任务（task）。 规范中规定 task 分为两大类，分别是 macro task 和 micro task，并且每个 macro task 结束后，都要清空所有的 micro task。
 
@@ -6714,27 +6714,27 @@ function updateChildren (parentElm, oldCh, newCh, insertedVnodeQueue, removeOnly
 
 第一步：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/update-children-1.877b7fd9.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/update-children-1.877b7fd9.png)
 
 第二步：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/update-children-2.a4ad01cc.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/update-children-2.a4ad01cc.png)
 
 第三步：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/update-children-3.3395a69a.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/update-children-3.3395a69a.png)
 
 第四步：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/update-children-4.aa762b39.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/update-children-4.aa762b39.png)
 
 第五步：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/update-children-5.3c19509a.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/update-children-5.3c19509a.png)
 
 第六步：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/update-children-6.7e3b2e4f.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/update-children-6.7e3b2e4f.png)
 
 ## 总结
 
@@ -7551,7 +7551,7 @@ if (propsData && vm.$options.props) {
 
 # 原理图
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/reactive.c9e2ac37.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/reactive.c9e2ac37.png)
 
 # 编译
 
@@ -8148,7 +8148,7 @@ function advance (n) {
 
 为了更加直观地说明 `advance` 的作用，可以通过一副图表示：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/advance-1.d16179c2.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/advance-1.d16179c2.png)
 
 调用 `advance` 函数：
 
@@ -8158,7 +8158,7 @@ advance(4)
 
 得到结果：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/advance-1.d16179c2.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/advance-1.d16179c2.png)
 
 匹配的过程中主要利用了正则表达式，如下：
 
@@ -8372,7 +8372,7 @@ function parseEndTag (tagName, start, end) {
 
 > `parseEndTag` 的核心逻辑很简单，在介绍之前我们回顾一下在执行 `handleStartTag` 的时候，对于非一元标签（有 endTag）我们都把它构造成一个对象压入到 `stack` 中，如图所示：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/stack.ef5b8727.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/stack.ef5b8727.png)
 
 > 那么对于闭合标签的解析，就是倒序 `stack`，找到第一个和当前 `endTag` 匹配的元素。如果是正常的标签匹配，那么 `stack` 的最后一个元素应该和当前的 `endTag` 匹配，但是考虑到如下错误情况：
 
@@ -8795,7 +8795,7 @@ return {
 
 ## 流程图
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/parse.38cfc72c.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/parse.38cfc72c.png)
 
 ## 总结
 
@@ -15604,7 +15604,7 @@ new Vue({
 
 以下是一个表示“单向数据流”理念的极简示意：
 
-![img](http://interview.poetries.top/fe-vue-docs/assets/img/vuex.983ea11f.png)
+![img](https://interview.poetries.top/fe-vue-docs/assets/img/vuex.983ea11f.png)
 
 但是，当我们的应用遇到多个组件共享状态时，单向数据流的简洁性很容易被破坏：
 

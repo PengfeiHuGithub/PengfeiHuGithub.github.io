@@ -1,7 +1,4 @@
 ## 1 H5的新特性有哪些
-
-
-
 - 画布(`Canvas`) API
 - 地理(`Geolocation`) API
 - 音频、视频API(`audio`,`video`)
@@ -175,7 +172,7 @@ socket.onopen = function(event) {
 - `defer`:浏览器指示脚本在文档被解析后执行，`script`被异步加载后并不会立刻执行，而是等待文档被解析完毕后执 行。
 - `async`:同样是异步加载脚本，区别是脚本加载完毕后立即执行，这导致`async`属性下的脚本是乱序的，对于 `script` 有先后依赖关系的情况，并不适用
 
-![img](http://img-repo.poetries.top/images/20210314221335.png)
+![img](https://img-repo.poetries.top/images/20210314221335.png)
 
 > 蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的;绿色线代表 HTML 解析
 

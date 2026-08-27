@@ -4375,7 +4375,7 @@ iterator.next()
 
 丢进控制台，我们可以看到`next`每次会按顺序帮我们访问一个集合成员：
 
-![img](http://img-repo.poetries.top/images/20210327213037.png)
+![img](https://img-repo.poetries.top/images/20210327213037.png)
 
 > 而`for...of...`做的事情，基本等价于下面这通操作：
 
@@ -4420,7 +4420,7 @@ iterator.next()
 
 丢进控制台，不负众望：
 
-![img](http://img-repo.poetries.top/images/20210327213223.png)
+![img](https://img-repo.poetries.top/images/20210327213223.png)
 
 写一个生成器函数并没有什么难度，但在面试的过程中，面试官往往对生成器这种语法糖背后的实现逻辑更感兴趣。下面我们要做的，不仅仅是写一个迭代器对象，而是用`ES5`去写一个能够生成迭代器对象的迭代器生成函数（解析在注释里）：
 
@@ -4458,7 +4458,7 @@ iterator.next()
 
 运行一下我们自定义的迭代器，结果符合预期：
 
-![img](http://img-repo.poetries.top/images/20210327213700.png)
+![img](https://img-repo.poetries.top/images/20210327213700.png)
 
 ## 75 实现ES6的extends
 
@@ -4482,7 +4482,7 @@ console.log(a);
 
 ## 76 手写常见排序
 
-![img](http://img-repo.poetries.top/images/20210330120838.png)
+![img](https://img-repo.poetries.top/images/20210330120838.png)
 
 ### 冒泡排序
 

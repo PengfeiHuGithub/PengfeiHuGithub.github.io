@@ -9,7 +9,7 @@
 - `HTTP/2` 基于 Google 的 `SPDY` 协议，注重性能改善，但还未普及；
 - `HTTP/3` 基于 Google 的 `QUIC` 协议，是将来的发展方向
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/89.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/89.png)
 
 
 
@@ -22,13 +22,13 @@
 
 > 把这些综合起来，使用递归缩写方式，我们可以把 `HTTP` 定义为“与 `HTTP` 协议相关的所有应用层技术的总和”
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/1.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/1.png)
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/90.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/90.png)
 
 ## HTTP世界全览
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/2.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/2.png)
 
 - 互联网上绝大部分资源都使用 `HTTP` 协议传输；
 - 浏览器是 HTTP 协议里的请求方，即 `User Agent`；
@@ -36,7 +36,7 @@
 - `CDN` 位于浏览器和服务器之间，主要起到缓存加速的作用；
 - 爬虫是另一类 `User Agent`，是自动访问网络资源的程序。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/3.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/3.png)
 
 - `TCP/IP` 是网络世界最常用的协议，`HTTP` 通常运行在 `TCP/IP` 提供的可靠传输基础上
 - `DNS` 域名是 `IP` 地址的等价替代，需要用域名解析实现到 `IP` 地址的映射；
@@ -44,11 +44,11 @@
 - `HTTPS` 相当于“`HTTP+SSL/TLS+TCP/IP`”，为 `HTTP` 套了一个安全的外壳；
 - 代理是 `HTTP` 传输过程中的“中转站”，可以实现缓存加速、负载均衡等功能
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/91.png) ![img](http://poetries1.gitee.io/img-repo/2019/12/92.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/91.png) ![img](https://poetries1.gitee.io/img-repo/2019/12/92.png)
 
 ## HTTP分层
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/4.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/4.png)
 
 - 第一层：物理层，`TCP/IP` 里无对应；
 - 第二层：数据链路层，对应 `TCP/IP` 的链接层；
@@ -66,7 +66,7 @@
 
 > 有一个辨别四层和七层比较好的（但不是绝对的）小窍门，“两个凡是”：凡是由操作系统负责处理的就是四层或四层以下，否则，凡是需要由应用程序（也就是你自己写代码）负责处理的就是七层
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/93.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/93.png)
 
 
 
@@ -78,7 +78,7 @@
 - 为了减少响应时间，整个过程中的每一个环节都会有缓存，能够实现“短路”操作
 - 虽然现实中的 `HTTP` 传输过程非常复杂，但理论上仍然可以简化成实验里的“两点”模型
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/94.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/94.png)
 
 
 
@@ -89,7 +89,7 @@
 - 你也许对 TCP/UDP 的报文格式有所了解，拿 TCP 报文来举例，它在实际要传输的数据之前附加了一个 20 字节的头部数据，存储 TCP 协议必须的额外信息，例如发送方的端口号、接收方的端口号、包序号、标志位等等
 - 有了这个附加的 TCP 头，数据包才能够正确传输，到了目的地后把头部去掉，就可以拿到真正的数据。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/5.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/5.png)
 
 > HTTP 协议也是与 TCP/UDP 类似，同样也需要在实际传输的数据前附加一些头数据，不过与 TCP/UDP 不同的是，它是一个“纯文本”的协议，所以头数据都是 ASCII 码的文本，可以很容易地用肉眼阅读，不用借助程序解析也能够看懂
 
@@ -105,7 +105,7 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 
 所以，一个完整的 HTTP 报文就像是下图的这个样子，注意在 header 和 body 之间有一个“空行”
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/6.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/6.png)
 
 说到这里，我不由得想起了一部老动画片《大头儿子和小头爸爸》，你看，HTTP 的报文结构像不像里面的“大头儿子”？
 
@@ -113,7 +113,7 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 
 看一下我们之前用 Wireshark 抓的包吧。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/7.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/7.png)
 
 在这个浏览器发出的请求报文里，第一行“GET / HTTP/1.1”就是请求行，而后面的“Host”“Connection”等等都属于 header，报文的最后是一个空白行结束，没有 body。
 
@@ -133,7 +133,7 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 
 > 这三个部分通常使用空格（space）来分隔，最后要用 CRLF 换行表示结束。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/8.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/8.png)
 
 ### 状态行
 
@@ -143,13 +143,13 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 - 状态码：一个三位数，用代码的形式表示处理的结果，比如 200 是成功，500 是服务器错误；
 - 原因：作为数字状态码补充，是更详细的解释文字，帮助人理解原因
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/9.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/9.png)
 
 ### 头部字段
 
 请求行或状态行再加上头部字段集合就构成了 HTTP 报文里完整的请求头或响应头，我画了两个示意图，你可以看一下。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/10.png) ![img](http://poetries1.gitee.io/img-repo/2019/12/11.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/10.png) ![img](https://poetries1.gitee.io/img-repo/2019/12/11.png)
 
 请求头和响应头的结构是基本一样的，唯一的区别是起始行，所以我把请求头和响应头里的字段放在一起介绍。
 
@@ -175,7 +175,7 @@ HTTP 头字段非常灵活，不仅可以使用标准里的 Host、Connection �
 - 头部字段是 `key-value` 的形式，用“`:`”分隔，不区分大小写，顺序任意，除了规定的标准头，也可以任意添加自定义字段，实现功能扩展；
 - `HTTP/1.1` 里唯一要求必须提供的头字段是 `Host`，它必须出现在请求头里，标记虚拟主机名
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/95.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/95.png)
 
 ## 理解请求方法
 
@@ -192,7 +192,7 @@ HTTP 头字段非常灵活，不仅可以使用标准里的 Host、Connection �
 - `OPTIONS`：列出可对资源实行的方法；
 - `TRACE`：追踪请求 - 响应的传输路径
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/12.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/12.png)
 
 ### 总结
 
@@ -203,13 +203,13 @@ HTTP 头字段非常灵活，不仅可以使用标准里的 Host、Connection �
 - `PUT` 基本上是 `POST` 的同义词，多用于更新数据；
 - “安全”与“幂等”是描述请求方法的两个重要属性，具有理论指导意义，可以帮助我们设计系统
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/96.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/96.png)
 
 
 
 ## URI
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/13.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/13.png)
 
 - `URI` 是用来唯一标记服务器上资源的一个字符串，通常也称为 URL；
 - `URI` 通常由 `scheme`、`host:port`、`path` 和 `query` 四个部分组成，有的可以省略；
@@ -219,7 +219,7 @@ HTTP 头字段非常灵活，不仅可以使用标准里的 Host、Connection �
 - `query` 表示对资源附加的额外要求；
 - 在 `URI` 里对“`@&/`”等特殊字符和汉字必须要做编码，否则服务器收到 `HTTP`报文后会无法正确处理
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/97.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/97.png)
 
 
 
@@ -233,13 +233,13 @@ HTTP 头字段非常灵活，不仅可以使用标准里的 Host、Connection �
 - `4××`类状态码表示客户端错误，常用的有 `400`、`403`、`404`；
 - `5××`类状态码表示服务器错误，常用的有 `500`、`501`、`502`、`503`
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/98.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/98.png)
 
 
 
 ## HTTP有哪些特点
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/14.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/14.png)
 
 - `HTTP` 是灵活可扩展的，可以任意添加头字段实现任意功能；
 - `HTTP` 是可靠传输协议，基于 `TCP/IP` 协议“尽量”保证数据的送达；
@@ -247,7 +247,7 @@ HTTP 头字段非常灵活，不仅可以使用标准里的 Host、Connection �
 - `HTTP` 使用了请求 - 应答模式，客户端主动发起请求，服务器被动回复请求；
 - `HTTP` 本质上是无状态的，每个请求都是互相独立、毫无关联的，协议不要求客户端或服务器记录请求相关的信息
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/99.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/99.png)
 
 
 
@@ -260,7 +260,7 @@ HTTP 头字段非常灵活，不仅可以使用标准里的 Host、Connection �
 - `HTTP` 是不安全的，无法验证通信双方的身份，也不能判断报文是否被窜改；
 - `HTTP` 的性能不算差，但不完全适应现在的互联网，还有很大的提升空间
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/100.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/100.png)
 
 
 
@@ -287,7 +287,7 @@ HTTP 头字段非常灵活，不仅可以使用标准里的 Host、Connection �
 
 `HTTP` 协议为此定义了两个 `Accept` 请求头字段和两个 `Content` 实体头字段，用于客户端和服务器进行“内容协商”。也就是说，客户端用 `Accept` 头告诉服务器希望接收什么样的数据，而服务器用 `Content` 头告诉客户端实际发送了什么样的数据
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/15.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/15.png)
 
 > `Accept`字段标记的是客户端可理解的 `MIME` type，可以用“,”做分隔符列出多个类型，让服务器有更多的选择余地，例如下面的这个头：
 
@@ -343,7 +343,7 @@ Content-Type: text/html; charset=utf-8
 
 不过现在的浏览器都支持多种字符集，通常不会发送 `Accept-Charset`，而服务器也不会发送 `Content-Language`，因为使用的语言完全可以由字符集推断出来，所以在请求头里一般只会有 `Accept-Language` 字段，响应头里只会有 `Content-Type`字段
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/16.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/16.png)
 
 ### 内容协商的质量值
 
@@ -375,7 +375,7 @@ Vary: Accept-Encoding,User-Agent,Accept
 
 ### 小结
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/17.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/17.png)
 
 - 数据类型表示实体数据的内容是什么，使用的是 `MIME type`，相关的头字段是 `Accept`和 `Content-Type`；
 - 数据编码表示实体数据的压缩方式，相关的头字段是 `Accept-Encoding` 和 `Content-Encoding`；
@@ -418,7 +418,7 @@ Vary: Accept-Encoding,User-Agent,Accept
 - 数据块紧跟在长度头后，最后也用 `CRLF` 结尾，但数据不包含 CRLF；
 - 最后用一个长度为 0 的块表示结束，即“`0\r\n\r\n`”
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/18.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/18.png)
 
 
 
@@ -465,7 +465,7 @@ Range 的格式也很灵活，起点 x 和终点 y 可以省略，能够很方�
 
 多段数据的格式与分块传输也比较类似，但它需要用分隔标记 boundary 来区分不同的片段，可以通过图来对比一下
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/19.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/19.png)
 
 每一个分段必须以“- -boundary”开始（前面加两个“-”），之后要用“Content-Type”和“Content-Range”标记这段数据的类型和所在范围，然后就像普通的响应头一样以回车换行结束，再加上分段数据，最后用一个“- -boundary- -”（前后各有两个“-”）表示所有的分段结束
 
@@ -480,7 +480,7 @@ Range 的格式也很灵活，起点 x 和终点 y 可以省略，能够很方�
 
 > 要注意这四种方法不是互斥的，而是可以混合起来使用，例如压缩后再分块传输，或者分段后再分块
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/101.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/101.png)
 
 
 
@@ -498,7 +498,7 @@ HTTP 协议最初（0.9/1.0）是个非常简单的协议，通信过程也采�
 
 而 HTTP 的一次简单“请求 - 响应”通常只需要 4 个包，如果不算服务器内部的处理时间，最多是 2 个 RTT。这么算下来，浪费的时间就是“3÷5=60%”，有三分之二的时间被浪费掉了，传输效率低得惊人
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/20.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/20.png)
 
 单纯地从理论上讲，TCP 协议你可能还不太好理解，我就拿打卡考勤机来做个形象的比喻吧。
 
@@ -522,7 +522,7 @@ HTTP 协议最初（0.9/1.0）是个非常简单的协议，通信过程也采�
 
 这里我画了一个短连接与长连接的对比示意图。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/21.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/21.png)
 
 在短连接里发送了三次 HTTP“请求 - 应答”，每次都会浪费 60% 的 RTT 时间。而在长连接的情况下，同样发送三次请求，因为只在第一次时建立连接，在最后一次时关闭连接，所以浪费率就是“3÷9≈33%”，降低了差不多一半的时间损耗。显然，如果在这个长连接上发送的请求越多，分母就越大，利用率也就越高。
 
@@ -566,7 +566,7 @@ HTTP 协议最初（0.9/1.0）是个非常简单的协议，通信过程也采�
 
 如果队首的请求因为处理的太慢耽误了时间，那么队列里后面的所有请求也不得不跟着一起等待，结果就是其他的请求承担了不应有的时间成本
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/22.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/22.png)
 
 还是用打卡机做个比喻。
 
@@ -605,7 +605,7 @@ HTTP 协议和浏览器不是限制并发连接数量吗？好，那我就多开
 - 过多的长连接会占用服务器资源，所以服务器会用一些策略有选择地关闭长连接；
 - “队头阻塞”问题会导致性能下降，可以用“并发连接”和“域名分片”技术缓解
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/102.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/102.png)
 
 
 
@@ -619,7 +619,7 @@ HTTP 协议和浏览器不是限制并发连接数量吗？好，那我就多开
 
 我们再来看看第一个请求返回的响应报文：
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/23.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/23.png)
 
 这里出现了一个新的头字段“Location: /index.html”，它就是 301/302 重定向跳转的秘密所在。
 
@@ -631,11 +631,11 @@ HTTP 协议和浏览器不是限制并发连接数量吗？好，那我就多开
 
 > 注意，在重定向时如果只是在站内跳转，你可以放心地使用相对 URI。但如果要跳转到站外，就必须用绝对 URI。
 
-例如，如果想跳转到 Nginx 官网，就必须在“nginx.org”前把“http://”都写出来，否则浏览器会按照相对 URI 去理解，得到的就会是一个不存在的 URI“http://www.chrono.com/nginx.org”
+例如，如果想跳转到 Nginx 官网，就必须在“nginx.org”前把“https://”都写出来，否则浏览器会按照相对 URI 去理解，得到的就会是一个不存在的 URI“https://www.chrono.com/nginx.org”
 
 ```text
-http://www.chrono.com/18-1?dst=nginx.org           # 错误
-http://www.chrono.com/18-1?dst=http://nginx.org    # 正确
+https://www.chrono.com/18-1?dst=nginx.org           # 错误
+https://www.chrono.com/18-1?dst=https://nginx.org    # 正确
 ```
 
 
@@ -716,7 +716,7 @@ http://www.chrono.com/18-1?dst=http://nginx.org    # 正确
 - 重定向可以把一个 `URI` 指向另一个 `URI`，也可以把多个 URI 指向同一个 `URI`，用途很多；
 - 使用重定向时需要当心性能损耗，还要避免出现循环跳转。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/103.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/103.png)
 
 
 
@@ -732,7 +732,7 @@ http://www.chrono.com/18-1?dst=http://nginx.org    # 正确
 
 不过因为服务器的“记忆能力”实在是太差，一张小纸条经常不够用。所以，服务器有时会在响应头里添加多个 Set-Cookie，存储多个“key=value”。但浏览器这边发送时不需要用多个 Cookie 字段，只要在一行里用“;”隔开就行
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/24.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/24.png)
 
 从这张图中我们也能够看到，`Cookie` 是由浏览器负责存储的，而不是操作系统。所以，它是“浏览器绑定”的，只能在本浏览器内生效。
 
@@ -744,7 +744,7 @@ http://www.chrono.com/18-1?dst=http://nginx.org    # 正确
 
 说到这里，你应该知道了，Cookie 就是服务器委托浏览器存储在客户端里的一些数据，而这些数据通常都会记录用户的关键识别信息。所以，就需要在“key=value”外再用一些手段来保护，防止外泄或窃取，这些手段就是 Cookie 的属性。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/25.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/25.png)
 
 首先，我们应该设置 `Cookie` 的生存周期，也就是它的有效期，让它只能在一段时间内可用，就像是食品的“保鲜期”，一旦超过这个期限浏览器就认为是 `Cookie` 失效，在存储里删除，也不会发送给服务器。
 
@@ -804,7 +804,7 @@ Cookie 的另一个常见用途是广告跟踪。
 - 为了保护 `Cookie`，还要给它设置有效期、作用域等属性，常用的有 `Max-Age`、`Expires`、`Domain`、`HttpOnly` 等；
 - `Cookie` 最基本的用途是身份识别，实现有状态的会话事务
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/104.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/104.png)
 
 
 
@@ -822,7 +822,7 @@ Cookie 的另一个常见用途是广告跟踪。
 - 服务器响应请求，返回资源，同时标记资源的有效期；
 - 浏览器缓存资源，等待下次重用。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/26.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/26.png)
 
 服务器标记资源有效期使用的头字段是“Cache-Control”，里面的值“max-age=30”就是资源的有效时间，相当于告诉浏览器，“这个页面只能缓存 30 秒，之后就算是过期，不能用。”
 
@@ -850,7 +850,7 @@ Cookie 的另一个常见用途是广告跟踪。
 
 > 把服务器的缓存控制策略画了一个流程图，对照着它你就可以在今后的后台开发里明确“Cache-Control”的用法了
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/27.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/27.png)
 
 
 
@@ -884,7 +884,7 @@ Cookie 的另一个常见用途是广告跟踪。
 
 如果资源没有变，服务器就回应一个“304 Not Modified”，表示缓存依然有效，浏览器就可以更新一下有效期，然后放心大胆地使用缓存了
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/28.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/28.png)
 
 “Last-modified”很好理解，就是文件的最后修改时间。ETag 是什么呢？
 
@@ -925,7 +925,7 @@ ETag 还有“强”“弱”之分。
 
 > HTTP 缓存看上去很复杂，但基本原理说白了就是一句话：“没有消息就是好消息”，“没有请求的请求，才是最快的请求。”
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/29.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/29.png)
 
 
 
@@ -933,7 +933,7 @@ ETag 还有“强”“弱”之分。
 
 引入 HTTP 代理后，原来简单的双方通信就变复杂了一些，加入了一个或者多个中间人，但整体上来看，还是一个有顺序关系的链条，而且链条里相邻的两个角色仍然是简单的一对一通信，不会出现越级的情况。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/30.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/30.png)
 
 链条的起点还是客户端（也就是浏览器），中间的角色被称为代理服务器（proxy server），链条的终点被称为源服务器（origin server），意思是数据的“源头”“起源”
 
@@ -965,7 +965,7 @@ ETag 还有“强”“弱”之分。
 
 代理最基本的一个功能是负载均衡。因为在面向客户端时屏蔽了源服务器，客户端看到的只是代理服务器，源服务器究竟有多少台、是哪些 IP 地址都不知道。于是代理服务器就可以掌握请求分发的“大权”，决定由后面的哪台服务器来响应请求
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/31.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/31.png)
 
 代理中常用的负载均衡算法你应该也有所耳闻吧，比如轮询、一致性哈希等等，这些算法的目标都是尽量把外部的流量合理地分散到多台源服务器，提高系统的整体资源利用率和性能。
 
@@ -991,7 +991,7 @@ Via 是一个通用字段，请求头或响应头里都可以出现。每当报�
 
 例如下图中有两个代理：proxy1 和 proxy2，客户端发送请求会经过这两个代理，依次添加就是“Via: proxy1, proxy2”，等到服务器返回响应报文的时候就要反过来走，头字段就是“Via: proxy2, proxy1”
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/32.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/32.png)
 
 Via 字段只解决了客户端和源服务器判断是否存在代理的问题，还不能知道对方的真实信息。
 
@@ -1012,7 +1012,7 @@ Via 字段只解决了客户端和源服务器判断是否存在代理的问题�
 - 如果想要知道客户端的真实 IP 地址，可以使用字段“`X-Forwarded-For`”和“`X-Real-IP`”；
 - 专门的“代理协议”可以在不改动原始报文的情况下传递客户端的真实 IP
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/33.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/33.png)
 
 
 
@@ -1036,7 +1036,7 @@ HTTP 的服务器缓存功能主要由代理服务器来实现（即缓存代理
 
 干脆这样吧，给便利店配发一个大冰柜。水果海鲜什么的都可以放在冰柜里，只要产品在保鲜期内，就允许顾客直接从冰柜提货。这样便利店就可以一次进货多次出货，省去了超市之间的运输成本。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/34.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/34.png)
 
 通过这个比喻，你可以看到：在没有缓存的时候，代理服务器每次都是直接转发客户端和服务器的报文，中间不会存储任何数据，只有最简单的中转功能。
 
@@ -1080,7 +1080,7 @@ HTTP 的服务器缓存功能主要由代理服务器来实现（即缓存代理
 
 下面的流程图是完整的服务器端缓存控制策略，可以同时控制客户端和代理
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/35.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/35.png)
 
 > 源服务器在设置完“Cache-Control”后必须要为报文加上“Last-modified”或“ETag”字段。否则，客户端和代理后面就无法使用条件请求来验证缓存是否有效，也就不会有 304 缓存重定向。
 
@@ -1090,7 +1090,7 @@ HTTP 的服务器缓存功能主要由代理服务器来实现（即缓存代理
 
 客户端在 HTTP 缓存体系里要面对的是代理和源服务器，也必须区别对待，这里我就直接上图了，来个“看图说话”
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/36.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/36.png)
 
 > max-age、no_store、no_cache 这三个属性，它们也是同样作用于代理和源服务器
 
@@ -1110,7 +1110,7 @@ HTTP 的服务器缓存功能主要由代理服务器来实现（即缓存代理
 - 缓存代理是增加了缓存功能的代理服务，缓存源服务器的数据，分发给下游的客户端； “`Cache-Control`”字段也可以控制缓存代理，常用的有“`private`”“`s-maxage`”“`no-transform`”等，同样必须配合“`Last-modified`”“`ETag`”等字段才能使用；
 - 缓存代理有时候也会带来负面影响，缓存不良数据，需要及时刷新或删除
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/37.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/37.png)
 
 
 
@@ -1130,7 +1130,7 @@ HTTP 的服务器缓存功能主要由代理服务器来实现（即缓存代理
 
 举个例子，你想要登录某网站，只要事先和它约定好使用一个对称密码，通信过程中传输的全是用密钥加密后的密文，只有你和网站才能解密。黑客即使能够窃听，看到的也只是乱码，因为没有密钥无法解出明文，所以就实现了机密性。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/38.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/38.png)
 
 TLS 里有非常多的对称加密算法可供选择，比如 RC4、DES、3DES、AES、ChaCha20 等，但前三种算法都被认为是不安全的，通常都禁止使用，目前常用的只有 AES 和 ChaCha20。
 
@@ -1181,7 +1181,7 @@ dec   = hello openssl
 
 非对称加密可以解决“密钥交换”的问题。网站秘密保管私钥，在网上任意分发公钥，你想要登录网站只要用公钥加密就行了，密文只能由私钥持有者才能解密。而黑客因为没有私钥，所以就无法破解密文
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/39.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/39.png)
 
 非对称加密算法的设计要比对称算法难得多，在 TLS 里只有很少的几种，比如 DH、DSA、RSA、ECC 等。
 
@@ -1195,7 +1195,7 @@ ECC（Elliptic Curve Cryptography）是非对称加密里的“后起之秀”�
 
 ECC 名字里的“椭圆”经常会引起误解，其实它的曲线并不是椭圆形，只是因为方程很类似计算椭圆周长的公式，实际的形状更像抛物线，比如下面的图就展示了两个简单的椭圆曲线
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/40.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/40.png)
 
 比起 RSA，ECC 在安全强度和性能上都有明显的优势。160 位的 ECC 相当于 1024 位的 RSA，而 224 位的 ECC 则相当于 2048 位的 RSA。因为密钥短，所以相应的计算量、消耗的内存和带宽也就少，加密解密的性能就上去了，对于现在的移动互联网非常有吸引力
 
@@ -1229,7 +1229,7 @@ rsa_2048/aes ratio = 868.13
 
 对方拿到密文后用私钥解密，取出会话密钥。这样，双方就实现了对称密钥的安全交换，后续就不再使用非对称加密，全都使用对称加密。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/41.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/41.png)
 
 这样混合加密就解决了对称加密算法的密钥交换问题，而且安全和性能兼顾，完美地实现了机密性。
 
@@ -1244,7 +1244,7 @@ rsa_2048/aes ratio = 868.13
 - 非对称加密使用两个密钥：公钥和私钥，公钥可以任意分发而私钥保密，解决了密钥交换问题但速度慢，常用的有 RSA 和 ECC；
 - 把对称加密和非对称加密结合起来就得到了“又好又快”的混合加密，也就是 TLS 里使用的加密方式
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/42.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/42.png)
 
 
 
@@ -1266,7 +1266,7 @@ rsa_2048/aes ratio = 868.13
 
 换一个角度，也可以把摘要算法理解成特殊的“单向”加密算法，它只有算法，没有密钥，加密后的数据无法解密，不能从摘要逆推出原文
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/43.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/43.png)
 
 摘要算法实际上是把数据从一个“大空间”映射到了“小空间”，所以就存在“冲突”（collision，也叫碰撞）的可能性，就如同现实中的指纹一样，可能会有两份不同的原文对应相同的摘要。好的摘要算法必须能够“抵抗冲突”，让这种可能性尽量地小。
 
@@ -1302,7 +1302,7 @@ https://www.chrono.com/25-1?algo=sha256
 
 这有个术语，叫哈希消息认证码（HMAC）
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/44.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/44.png)
 
 ### 数字签名
 
@@ -1324,7 +1324,7 @@ https://www.chrono.com/25-1?algo=sha256
 
 签名和公钥一样完全公开，任何人都可以获取。但这个签名只有用私钥对应的公钥才能解开，拿到摘要后，再比对原文验证完整性，就可以像签署文件一样证明消息确实是你发的
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/45.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/45.png)
 
 刚才的这两个行为也有专用术语，叫做“签名”和“验签”。
 
@@ -1358,13 +1358,13 @@ DV 是最低的，只是域名级别的可信，背后是谁不知道。EV 是�
 
 这还是信任链的问题。小一点的 CA 可以让大 CA 签名认证，但链条的最后，也就是Root CA，就只能自己证明自己了，这个就叫“自签名证书”（Self-Signed Certificate）或者“根证书”（Root Certificate）。你必须相信，否则整个证书信任链就走不下去了
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/46.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/46.png)
 
 有了这个证书体系，操作系统和浏览器都内置了各大 CA 的根证书，上网的时候只要服务器发过来它的证书，就可以验证证书里的签名，顺着证书链（Certificate Chain）一层层地验证，直到找到根证书，就能够确定证书是可信的，从而里面的公钥也是可信的。
 
 我们的实验环境里使用的证书是“野路子”的自签名证书（在 Linux 上用 OpenSSL 命令行签发），肯定是不会被浏览器所信任的，所以用 Chrome 访问时就会显示成红色，标记为不安全。但你只要把它安装进系统的根证书存储区里，让它作为信任链的根，就不会再有危险警告。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/47.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/47.png)
 
 ### 证书体系的弱点
 
@@ -1391,7 +1391,7 @@ DV 是最低的，只是域名级别的可信，背后是谁不知道。EV 是�
 - 公钥的分发需要使用数字证书，必须由 CA 的信任链来验证，否则就是不可信的；
 - 作为信任链的源头 CA 有时也会不可信，解决办法有 CRL、OCSP，还有终止信任
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/48.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/48.png)
 
 
 
@@ -1427,13 +1427,13 @@ TLS 包含几个子协议，你也可以理解为它是由几个不同职责的�
 
 下面的这张图简要地描述了 TLS 的握手过程，其中每一个“框”都是一个记录，多个记录组合成一个 TCP 包发送。所以，最多经过两次消息往返（4 个消息）就可以完成握手，然后就可以在安全的通信环境里发送 HTTP 报文，实现 HTTPS 协议
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/49.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/49.png)
 
 ### ECDHE 握手过程
 
 
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/50.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/50.png)
 
 在 TCP 建立连接之后，浏览器会首先发一个“Client Hello”消息，也就是跟服务器“打招呼”。里面有客户端的版本号、支持的密码套件，还有一个随机数（Client Random），用于后续生成会话密钥
 
@@ -1530,7 +1530,7 @@ master_secret = PRF(pre_master_secret, "master secret",
 
 第二个，因为使用了 ECDHE，客户端可以不用等到服务器发回“Finished”确认握手完毕，立即就发出 HTTP 报文，省去了一个消息往返的时间浪费。这个叫“TLS False Start”，意思就是“抢跑”，和“TCP Fast Open”有点像，都是不等连接完全建立就提前发应用数据，提高传输的效率。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/51.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/51.png)
 
 大体的流程没有变，只是“Pre-Master”不再需要用算法生成，而是客户端直接生成随机数，然后用服务器的公钥加密，通过“Client Key Exchange”消息发给服务器。服务器再用私钥解密，这样双方也实现了共享三个随机数，就可以生成主密钥
 
@@ -1555,7 +1555,7 @@ master_secret = PRF(pre_master_secret, "master secret",
 - “Hello”消息交换随机数，“Key Exchange”消息交换“Pre-Master”；
 - “Change Cipher Spec”之前传输的都是明文，之后都是对称密钥加密的密文
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/52.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/52.png)
 
 
 
@@ -1609,7 +1609,7 @@ TLS1.2 在十来年的应用中获得了许多宝贵的经验，陆续发现了�
 
 算法精简后带来了一个意料之中的好处：原来众多的算法、参数组合导致密码套件非常复杂，难以选择，而现在的 TLS1.3 里只有 5 个套件，无论是客户端还是服务器都不会再犯“选择困难症”了
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/53.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/53.png)
 
 这里还要特别说一下废除 RSA 和 DH 密钥交换算法的原因。
 
@@ -1639,7 +1639,7 @@ HTTPS 建立连接时除了要做 TCP 握手，还要做 TLS 握手，在 1.2 �
 
 我为 1.3 的握手过程画了一张图，你可以对比 1.2 看看区别在哪里
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/54.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/54.png)
 
 除了标准的“1-RTT”握手，TLS1.3 还引入了“0-RTT”握手，用“pre_shared_key”和“early_data”扩展，在 TCP 连接后立即就建立安全连接发送加密消息，不过这需要有一些前提条件，今天暂且不说。
 
@@ -1651,7 +1651,7 @@ HTTPS 建立连接时除了要做 TCP 握手，还要做 TLS 握手，在 1.2 �
 
 不过我在 Linux 上用 OpenSSL1.1.1 编译了一个支持 TLS1.3 的 Nginx，用 Wireshark 抓包存到了 GitHub 上，用它就可以分析 TLS1.3 的握手过程。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/55.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/55.png)
 
 在 TCP 建立连接之后，浏览器首先还是发一个“Client Hello”。
 
@@ -1721,7 +1721,7 @@ Handshake Protocol: Server Hello
 - 1.1、1.2 在实践中发现了很多安全隐患，所以 TLS1.3 大幅度删减了加密算法，只保留了 ECDHE、AES、ChaCha20、SHA-2 等极少数算法，强化了安全；
 - TLS1.3 也简化了握手过程，完全握手只需要一个消息往返，提升了性能。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/56.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/56.png)
 
 
 
@@ -1741,7 +1741,7 @@ Handshake Protocol: Server Hello
 
 我画了一张图，把 TLS 握手过程中影响性能的部分都标记了出来，对照着它就可以“有的放矢”地来优化 HTTPS。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/57.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/57.png)
 
 ### 硬件优化
 
@@ -1849,7 +1849,7 @@ Handshake Protocol: Server Hello
 
 通过抓包可以看到，服务器在“ServerHello”消息后直接发送了“Change Cipher Spec”和“Finished”消息，复用会话完成了握手。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/58.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/58.png)
 
 ### 会话票证
 
@@ -1869,7 +1869,7 @@ Handshake Protocol: Server Hello
 
 “False Start”“Session ID”“Session Ticket”等方式只能实现 1-RTT，而 TLS1.3 更进一步实现了“0-RTT”，原理和“Session Ticket”差不多，但在发送 Ticket 的同时会带上应用数据（Early Data），免去了 1.2 里的服务器确认步骤，这种方式叫“Pre-shared Key”，简称为“PSK”。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/59.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/59.png)
 
 但“PSK”也不是完美的，它为了追求效率而牺牲了一点安全性，容易受到“重放攻击”（Replay attack）的威胁。黑客可以截获“PSK”的数据，像复读机那样反复向服务器发送
 
@@ -1882,7 +1882,7 @@ Handshake Protocol: Server Hello
 - 服务器端应当开启“OCSP Stapling”功能，避免客户端访问 CA 去验证证书；
 - 会话复用的效果类似 Cache，前提是客户端必须之前成功建立连接，后面就可以用“Session ID”“Session Ticket”等凭据跳过密钥交换、证书验证等步骤，直接开始加密通信。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/60.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/60.png)
 
 
 
@@ -1991,7 +1991,7 @@ ssl_ciphers
 
 下图就是 GitHub 网站的评分结果
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/61.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/61.png)
 
 ### 服务器名称指示
 
@@ -2124,7 +2124,7 @@ add_header Strict-Transport-Security max-age=15768000; #182.5days
 
 这种做法有点像是“Chunked”分块编码的方式（参见第 16 讲），也是“化整为零”的思路，但 HTTP/2 数据分帧后“Header+Body”的报文结构就完全消失了，协议看到的只是一个个的“碎片”。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/62.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/62.png)
 
 ### 虚拟的“流”
 
@@ -2138,7 +2138,7 @@ HTTP/2 为此定义了一个“流”（Stream）的概念，它是二进制帧�
 
 在“流”的层面上看，消息是一些有序的“帧”序列，而在“连接”的层面上看，消息却是乱序收发的“帧”。多个请求 / 响应之间没有了顺序关系，不需要排队等待，也就不会再出现“队头阻塞”问题，降低了延迟，大幅度提高了连接的利用率
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/63.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/63.png)
 
 为了更好地利用连接，加大吞吐量，HTTP/2 还添加了一些控制帧来管理虚拟的“流”，实现了优先级和流量控制，这些特性也和 TCP 协议非常相似。
 
@@ -2162,7 +2162,7 @@ HTTP/2 还在一定程度上改变了传统的“请求 - 应答”工作模式�
 
 下面的这张图对比了 HTTP/1、HTTPS 和 HTTP/2 的协议栈，你可以清晰地看到，HTTP/2 是建立在“HPack”“Stream”“TLS1.2”基础之上的，比 HTTP/1、HTTPS 复杂了一些
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/64.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/64.png)
 
 虽然 HTTP/2 的底层实现很复杂，但它的“语义”还是简单的 HTTP/1，之前学习的知识不会过时，仍然能够用得上。
 
@@ -2177,7 +2177,7 @@ HTTP/2 还在一定程度上改变了传统的“请求 - 应答”工作模式�
 - HTTP/2 使用虚拟的“流”传输消息，解决了困扰多年的“队头阻塞”问题，同时实现了“多路复用”，提高连接的利用率；
 - HTTP/2 也增强了安全性，要求至少是 TLS1.2，而且禁用了很多不安全的密码套件
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/65.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/65.png)
 
 
 
@@ -2213,7 +2213,7 @@ Google 在推 SPDY 的时候就已经意识到了这个问题，于是就又发�
 
 这里先贴一下 HTTP/3 的协议栈图，让你对它有个大概的了解
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/66.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/66.png)
 
 ### QUIC 协议
 
@@ -2257,7 +2257,7 @@ QUIC 的基本数据传输单位是包（packet）和帧（frame），一个包�
 
 QUIC 使用不透明的“连接 ID”来标记通信的两个端点，客户端和服务器可以自行选择一组 ID 来标记自己，这样就解除了 TCP 里连接对“IP 地址 + 端口”（即常说的四元组）的强绑定，支持“连接迁移”（Connection Migration）
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/67.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/67.png)
 
 比如你下班回家，手机会自动由 4G 切换到 WiFi。这时 IP 地址会发生变化，TCP 就必须重新建立连接。而 QUIC 连接里的两端连接 ID 不会变，所以连接在“逻辑上”没有中断，它就可以在新的 IP 地址上继续使用之前的连接，消除重连的成本，实现连接的无缝迁移。
 
@@ -2265,7 +2265,7 @@ QUIC 的帧里有多种类型，PING、ACK 等帧用于管理连接，而 STREAM
 
 QUIC 里的流与 HTTP/2 的流非常相似，也是帧的序列，你可以对比着来理解。但 HTTP/2 里的流都是双向的，而 QUIC 则分为双向流和单向流。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/68.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/68.png)
 
 QUIC 帧普遍采用变长编码，最少只要 1 个字节，最多有 8 个字节。流 ID 的最大可用位数是 62，数量上比 HTTP/2 的 2^31 大大增加。
 
@@ -2289,7 +2289,7 @@ HTTP/3 里的“双向流”可以完全对应到 HTTP/2 的流，而“单向�
 
 帧头只有两个字段：类型和长度，而且同样都采用变长编码，最小只需要两个字节。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/69.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/69.png)
 
 HTTP/3 里的帧仍然分成数据帧和控制帧两类，HEADERS 帧和 DATA 帧传输数据，但其他一些帧因为在下层的 QUIC 里有了替代，所以在 HTTP/3 里就都消失了，比如 RST_STREAM、WINDOW_UPDATE、PING 等。
 
@@ -2322,7 +2322,7 @@ HTTP/3 里的帧仍然分成数据帧和控制帧两类，HEADERS 帧和 DATA �
 - QUIC 的流与 HTTP/2 的流很相似，但分为双向流和单向流；
 - HTTP/3 没有指定默认端口号，需要用 HTTP/2 的扩展帧“Alt-Svc”来发现
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/70.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/70.png)
 
 
 
@@ -2455,11 +2455,11 @@ http2_push_preload on;
 
 就像下图这样，最优先的是“h2”，其次是“http/1.1”，以前还有“spdy”，以后还可能会有“h3”。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/71.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/71.png)
 
 服务器看到 ALPN 扩展以后就可以从列表里选择一种应用协议，在“Server Hello”里也带上“ALPN”扩展，告诉客户端服务器决定使用的是哪一种。因为我们在 Nginx 配置里使用了 HTTP/2 协议，所以在这里它选择的就是“h2”。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/72.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/72.png)
 
 这样在 TLS 握手结束后，客户端和服务器就通过“ALPN”完成了应用层的协议协商，后面就可以使用 HTTP/2 通信了
 
@@ -2475,7 +2475,7 @@ http2_push_preload on;
 - 如果已经升级到了 HTTPS，那么再升级到 HTTP/2 会很简单；
 - TLS 协议提供“ALPN”扩展，让客户端和服务器协商使用的应用层协议，“发现”HTTP/2 服务。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/73.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/73.png)
 
 
 
@@ -2501,7 +2501,7 @@ http2_push_preload on;
 
 另外不要忘了， 互联网从逻辑上看是一张大网，但实际上是由许多小网络组成的，这其中就有小网络“互连互通”的问题，典型的就是各个电信运营商的网络，比如国内的电信、联通、移动三大家
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/74.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/74.png)
 
 这些小网络内部的沟通很顺畅，但网络之间却只有很少的联通点。如果你在 A 网络，而网站在 C 网络，那么就必须“跨网”传输，和成千上万的其他用户一起去“挤”连接点的“独木桥”。而带宽终究是有限的，能抢到多少只能看你的运气。
 
@@ -2527,7 +2527,7 @@ http2_push_preload on;
 
 于是，用户在上网的时候就不直接访问源站，而是访问离他“最近的”一个 CDN 节点，术语叫“边缘节点”（edge node），其实就是缓存了源站内容的代理服务器，这样一来就省去了“长途跋涉”的时间成本，实现了“网络加速”。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/75.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/75.png)
 
 那么，CDN 都能加速什么样的“内容”呢？
 
@@ -2547,7 +2547,7 @@ CDN，正是把“数据传输”这件看似简单的事情“做大做强”�
 
 全局负载均衡（Global Sever Load Balance）一般简称为 GSLB，它是 CDN 的“大脑”，主要的职责是当用户接入网络的时候在 CDN 专网中挑选出一个“最佳”节点提供服务，解决的是用户如何找到“最近的”边缘节点，对整个 CDN 网络进行“负载均衡”。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/76.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/76.png)
 
 原来没有 CDN 的时候，权威 DNS 返回的是网站自己服务器的实际 IP 地址，浏览器收到 DNS 解析结果后直连网站。
 
@@ -2597,7 +2597,7 @@ CDN 发展到现在已经有二十来年的历史了，早期的 CDN 功能比�
 - GSLB 是 CDN 的“大脑”，使用 DNS 负载均衡技术，智能调度边缘节点提供服务；
 - 缓存系统是 CDN 的“心脏”，使用 HTTP 缓存代理技术，缓存命中就返回给用户，否则就要回源。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/77.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/77.png)
 
 
 
@@ -2669,7 +2669,7 @@ WebSocket 虽然有“帧”，但却没有像 HTTP/2 那样定义“流”，�
 
 下图就是 WebSocket 的帧结构定义，长度不固定，最少 2 个字节，最多 14 字节，看着好像很复杂，实际非常简单。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/78.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/78.png)
 
 开头的两个字节是必须的，也是最关键的。
 
@@ -2691,7 +2691,7 @@ WebSocket 虽然有“帧”，但却没有像 HTTP/2 那样定义“流”，�
 
 下面的截图是其中的一个文本帧，因为它是客户端发出的，所以需要掩码，报文头就在两个字节之外多了四个字节的“Masking-key”，总共是 6 个字节
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/79.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/79.png)
 
 而报文内容经过掩码，不是直接可见的明文，但掩码的安全强度几乎是零，用“Masking-key”简单地异或一下就可以转换出明文。
 
@@ -2713,7 +2713,7 @@ WebSocket 的握手是一个标准的 HTTP GET 请求，但要带上两个协议
 - Sec-WebSocket-Key：一个 Base64 编码的 16 字节随机数，作为简单的认证密钥；
 - Sec-WebSocket-Version：协议的版本号，当前必须是 13。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/80.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/80.png)
 
 服务器收到 HTTP 请求报文，看到上面的四个字段，就知道这不是一个普通的 GET 请求，而是 WebSocket 的升级请求，于是就不走普通的 HTTP 处理流程，而是构造一个特殊的“101 Switching Protocols”响应报文，通知客户端，接下来就不用 HTTP 了，全改用 WebSocket 协议通信。（有点像 TLS 的“Change Cipher Spec”）
 
@@ -2731,7 +2731,7 @@ encode_base64(
 
 握手完成，后续传输的数据就不再是 HTTP 报文，而是 WebSocket 格式的二进制帧了。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/81.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/81.png)
 
 ### 小结
 
@@ -2747,7 +2747,7 @@ encode_base64(
 - WebSocket 使用二进制帧，结构比较简单，特殊的地方是有个“掩码”操作，客户端发数据必须掩码，服务器则不用；
 - WebSocket 利用 HTTP 协议实现连接握手，发送 GET 请求要求“协议升级”，握手过程中有个非常简单的认证机制，目的是防止误连接。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/82.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/82.png)
 
 
 
@@ -2757,7 +2757,7 @@ encode_base64(
 
 还是从 HTTP 最基本的“请求 - 应答”模型来着手吧。在这个模型里有两个角色：客户端和服务器，还有中间的传输链路，考查性能就可以看这三个部分。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/83.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/83.png)
 
 ### HTTP 服务器
 
@@ -2780,7 +2780,7 @@ encode_base64(
 在 Linux 上，最常用的性能测试工具可能就是 ab（Apache Bench）了，比如，下面的命令指定了并发数 100，总共发送 10000 个请求
 
 ```text
-ab -c 100 -n 10000 'http://www.xxx.com'
+ab -c 100 -n 10000 'https://www.xxx.com'
 ```
 
 系统资源监控方面，Linux 自带的工具也非常多，常用的有 uptime、top、vmstat、netstat、sar 等等，可能你比我还要熟悉，我就列几个简单的例子吧：
@@ -2817,13 +2817,13 @@ sar -n DEV 2    # 看所有网卡的流量，定时 2 秒检查
 
 网站测试的最终结果是一个直观的“瀑布图”（Waterfall Chart），清晰地列出了页面中所有资源加载的先后顺序和时间消耗，比如下图就是对 GitHub 首页的一次测试。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/84.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/84.png)
 
 Chrome 等浏览器自带的开发者工具也可以很好地观察客户端延迟指标，面板左边有每个 URI 具体消耗的时间，面板的右边也是类似的瀑布图。
 
 点击某个 URI，在 Timing 页里会显示出一个小型的“瀑布图”，是这个资源消耗时间的详细分解，延迟的原因都列的清清楚楚，比如下面的这张图：
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/85.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/85.png)
 
 **图里面的这些指标都是什么含义呢？我给你解释一下：**
 
@@ -2847,7 +2847,7 @@ Chrome 等浏览器自带的开发者工具也可以很好地观察客户端延�
 
 划分出了几个区域，这就是所谓的“第一公里”“中间一公里”和“最后一公里”（在英语原文中是 mile，英里）。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/86.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/86.png)
 
 “第一公里”是指网站的出口，也就是服务器接入互联网的传输线路，它的带宽直接决定了网站对外的服务能力，也就是吞吐量等指标。显然，优化性能应该在这“第一公里”加大投入，尽量购买大带宽，接入更多的运营商网络。
 
@@ -2869,7 +2869,7 @@ Chrome 等浏览器自带的开发者工具也可以很好地观察客户端延�
 - 从服务器到客户端的传输链路可以分为三个部分，我们能够优化的是前两个部分，也就是“第一公里”和“中间一公里”；
 - 有很多工具可以测量这些指标，服务器端有 ab、top、sar 等，客户端可以使用测试网站，浏览器的开发者工具。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/87.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/87.png)
 
 
 
@@ -2918,7 +2918,7 @@ server {
   }
   
   location ~* \.(php)$ {
-    proxy_pass http://php_back_end;
+    proxy_pass https://php_back_end;
   }
 }
 ```
@@ -2996,5 +2996,5 @@ DNS 解析域名会耗费不少的时间，如果网站拥有多个域名，那�
 - 缓存是无论何时都不能忘记的性能优化利器，应该总使用 Etag 或 Last-modified 字段标记资源；
 - 升级到 HTTP/2 能够直接获得许多方面的性能提升，但要留意一些 HTTP/1 的“反模式”。
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/88.png)
+![img](https://poetries1.gitee.io/img-repo/2019/12/88.png)
 

@@ -2,7 +2,7 @@
 
 这一节来介绍 React 的渲染机制————Reconciliation 过程 (很多人翻译成 "一致化处理过程"，个人觉得不太贴切，直译为 "协调" 反而更好，且看下面分解)。
 
-![image-20210215170925278](http://img-repo.poetries.top/images/image-20210215170925278.png)
+![image-20210215170925278](https://img-repo.poetries.top/images/image-20210215170925278.png)
 
 如上图所示，React 采用的是虚拟 DOM (即 VDOM )，每次属性 (props) 和状态 (state) 发生变化的时候，render 函数返回不同的元素树，React 会检测当前返回的元素树和上次渲染的元素树之前的差异，然后针对差异的地方进行更新操作，最后渲染为真实 DOM，这就是整个 Reconciliation 过程，其核心就是进行新旧 DOM 树对比的 diff 算法。
 
@@ -14,7 +14,7 @@
 
 关键的知识点已经做好了铺垫。现在我们以 React 官方的一个图为例，完整地分析一下 Reconciliation 的流程:
 
-![image-20210215171024258](http://img-repo.poetries.top/images/image-20210215171024258.png)
+![image-20210215171024258](https://img-repo.poetries.top/images/image-20210215171024258.png)
 
 SCU 即 shouldComponentUpdate 的简写，图中的红色节点表示 shouldComponentUpdate 函数返回 true ，需要调用 render 方法，进行新旧 VDOM 树的 diff 过程，绿色节点表示此函数返回 false ，不需要进行 DOM 树的更新。
 
@@ -45,7 +45,7 @@ export default React.memo (Home);
 
 > 思维图 (建议收藏)：
 
-![image-20210215171045327](http://img-repo.poetries.top/images/image-20210215171045327.png)
+![image-20210215171045327](https://img-repo.poetries.top/images/image-20210215171045327.png)
 
 接下来一一地对其中的过程进行拆解。
 
@@ -153,7 +153,7 @@ key 选取的原一般是 `不需要全局唯一，但必须列表中保持唯�
 
 举个例子，现在在五个元素中插入 F
 
-![image-20210215171109479](http://img-repo.poetries.top/images/image-20210215171109479.png)
+![image-20210215171109479](https://img-repo.poetries.top/images/image-20210215171109479.png)
 
 现在由于 F 的插入，后面的 C、D、E 索引值都改变，即 key 值改变，因此后面的节点都得更新。而且，数组乱序或者在头部插入都会导致同样的更新问题。
 
@@ -879,7 +879,7 @@ export default React.memo (Home);
 
 打开页面，现在一个像样的 WebApp 头部就出来了，并且点击不同的 tab 会显示不同的功能组件。
 
-![image-20210215180607313](http://img-repo.poetries.top/images/image-20210215180607313.png)
+![image-20210215180607313](https://img-repo.poetries.top/images/image-20210215180607313.png)
 
 ## 三、redux 准备
 
@@ -948,7 +948,7 @@ export default App;
 
 现在功能依旧能用，但是打开控制台会有这样一段报错:
 
-![img](http://img-repo.poetries.top/images/16ddde922f4d392b.jpeg)
+![img](https://img-repo.poetries.top/images/16ddde922f4d392b.jpeg)
 
 > 因为现在没有开发出具体的 reducer 函数，没关系，随着之后的开发，这个错误会自动消失。
 
@@ -970,7 +970,7 @@ function Recommend () {
 
   //mock 数据
   const bannerList = [1,2,3,4].map (item => {
-    return { imageUrl: "http://p1.music.126.net/ZYLJ2oZn74yUz5x8NBGkVA==/109951164331219056.jpg" }
+    return { imageUrl: "https://p1.music.126.net/ZYLJ2oZn74yUz5x8NBGkVA==/109951164331219056.jpg" }
   });
 
   return (
@@ -1083,11 +1083,11 @@ export const SliderContainer = styled.div`
 
 现在打开页面可以看到这个效果:
 
-![image-20210215181330812](http://img-repo.poetries.top/images/image-20210215181330812.png)
+![image-20210215181330812](https://img-repo.poetries.top/images/image-20210215181330812.png)
 
 轮播的功能已经具备，但是这个效果并不是我们想要的，我们希望它是两边并不是完全空白，而是有一部分红色做衬托，如图:
 
-![image-20210215182012642](http://img-repo.poetries.top/images/image-20210215182012642.png)
+![image-20210215182012642](https://img-repo.poetries.top/images/image-20210215182012642.png)
 
 这个效果如何来实现？如果说单纯去增加 Home 组件的高度，那么其他的组件并不需要下面的这些红色背景，显然不合适，我们只能在 slider 组件上做一些手脚。 我们在 SliderContainer 标签内新建一个 div:
 
@@ -1110,7 +1110,7 @@ function Recommend () {
 
   //mock 数据
   const bannerList = [1,2,3,4].map (item => {
-    return { imageUrl: "http://p1.music.126.net/ZYLJ2oZn74yUz5x8NBGkVA==/109951164331219056.jpg" }
+    return { imageUrl: "https://p1.music.126.net/ZYLJ2oZn74yUz5x8NBGkVA==/109951164331219056.jpg" }
   });
 
   const recommendList = [1,2,3,4,5,6,7,8,9,10].map (item => {
@@ -1702,7 +1702,7 @@ npm install axios --save
 ```text
 import axios from 'axios';
 
-export const baseUrl = 'http://xxx自己填';
+export const baseUrl = 'https://xxx自己填';
 
 //axios 的实例及拦截器配置
 const axiosInstance = axios.create ({
@@ -1917,7 +1917,7 @@ export default connect (mapStateToProps, mapDispatchToProps)(React.memo (Recomme
 
 到这里，一个精美的推荐页面就开发完成了。
 
-![img](http://img-repo.poetries.top/images/16dddf0a5ad3e1ef.jpeg)
+![img](https://img-repo.poetries.top/images/16dddf0a5ad3e1ef.jpeg)
 
 # 性能及体验优化
 
@@ -2103,7 +2103,7 @@ const mapStateToProps = (state) => ({
 
 问题：其实还有一个细节需要我们来优化，就是你现在切换到歌手页面，然后切回到推荐页，你在浏览器的 Network 中会看到又发了两次网络请求，而这两次请求是完全没有必要的，纯属浪费性能。
 
-![image-20210215183137666](http://img-repo.poetries.top/images/image-20210215183137666.png)
+![image-20210215183137666](https://img-repo.poetries.top/images/image-20210215183137666.png)
 
 那如何来优化呢？根据我们这个项目的特点，利用 Redux 的数据来进行页面缓存成本最低，是不二之选。
 
@@ -2135,7 +2135,7 @@ useEffect (() => {
 
 本节最终效果如下所示:
 
-![img](http://img-repo.poetries.top/images/16dddf229c87866a.gif)
+![img](https://img-repo.poetries.top/images/16dddf229c87866a.gif)
 
 ## 接受参数
 
@@ -2675,7 +2675,7 @@ import {
 
 现在你就能看到一个可以滚动的歌手列表啦！
 
-![img](http://img-repo.poetries.top/images/16dddf3919da2c45.gif)
+![img](https://img-repo.poetries.top/images/16dddf3919da2c45.gif)
 
 ## 数据层开发
 
@@ -4017,10 +4017,10 @@ function Album (props) {
   //mock 数据
   const currentAlbum = {
     creator: {
-      avatarUrl: "http://p1.music.126.net/O9zV6jeawR43pfiK2JaVSw==/109951164232128905.jpg",
+      avatarUrl: "https://p1.music.126.net/O9zV6jeawR43pfiK2JaVSw==/109951164232128905.jpg",
       nickname: "浪里推舟"
     },
-    coverImgUrl: "http://p2.music.126.net/ecpXnH13-0QWpWQmqlR0gw==/109951164354856816.jpg",
+    coverImgUrl: "https://p2.music.126.net/ecpXnH13-0QWpWQmqlR0gw==/109951164354856816.jpg",
     subscribedCount: 2010711,
     name: "听完就睡，耳机是天黑以后柔软的梦境",
     tracks:[
@@ -4449,13 +4449,13 @@ export const SongItem = styled.ul`
 
 现在初步的布局效果就有了，让大家瞧一瞧。
 
-![image-20210215201014034](http://img-repo.poetries.top/images/image-20210215201014034.png)
+![image-20210215201014034](https://img-repo.poetries.top/images/image-20210215201014034.png)
 
 ## 滑动时 Header 联动效果
 
 作为一个精美的 WebApp，我们当然不仅仅是考虑静态布局啦，滑动时的体验也要兼顾，大家去项目预览地址可以看到，在滑动的过程中 Header 组件的背景会逐渐变红，而且里面的文字换成了歌单名，并且呈现出一个跑马灯的效果。
 
-![img](http://img-repo.poetries.top/images/16f3bee6ce19d88d.gif)
+![img](https://img-repo.poetries.top/images/16f3bee6ce19d88d.gif)
 
 现在又体现出了封装 Scroll 基础组件的优势了，在 Scroll 组件中，初始化时已经监听了滚动事件并且自动执行回调，因此我们直接编写回调逻辑即可。
 
@@ -6056,7 +6056,7 @@ return (
 
 现在你如果进入到某个页面，比如排行榜页，就能看到 Player 组件了。内容已经出现，样式之后再调整。
 
-![img](http://img-repo.poetries.top/images/16e07fd3ba3ffeb7.jpeg)
+![img](https://img-repo.poetries.top/images/16e07fd3ba3ffeb7.jpeg)
 
 接下来我们来把基础 UI 构建一波。
 
@@ -6224,7 +6224,7 @@ function Player (props) {
 
 现在大家能看到的应该是这个样子了。
 
-![img](http://img-repo.poetries.top/images/16e08012af8aa18f.jpeg)
+![img](https://img-repo.poetries.top/images/16e08012af8aa18f.jpeg)
 
 这里暂停按钮比较单调，因为没有包括进度条，这个组件下一节来开发，现在先用图标代替。
 
@@ -6490,7 +6490,7 @@ export const Operators = styled.div`
 
 现在大家可以看到基本的布局啦。如下图，并且唱片部分正在旋转:
 
-![img](http://img-repo.poetries.top/images/16e07fd7d482ba80.jpeg)
+![img](https://img-repo.poetries.top/images/16e07fd7d482ba80.jpeg)
 
 其实这部分的布局相对之前的几个组件还是相当简单的，不做赘述了，我们把重心放在后面更出彩的部分 ———— 进出场动画。
 
@@ -6687,7 +6687,7 @@ const afterEnter = () => {
 
 现在可以看到这样的进场效果。
 
-![img](http://img-repo.poetries.top/images/16e07fe228d64cc1.gif)
+![img](https://img-repo.poetries.top/images/16e07fe228d64cc1.gif)
 
 但是，这还不够！
 
@@ -6848,7 +6848,7 @@ function ProgressCircle (props) {
 
   return (
     <CircleWrapper>
-      <svg width={radius} height={radius} viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <svg width={radius} height={radius} viewBox="0 0 100 100" version="1.1" xmlns="https://www.w3.org/2000/svg">
         <circle className="progress-background" r="50" cx="50" cy="50" fill="transparent"/>
         <circle className="progress-bar" r="50" cx="50" cy="50" fill="transparent" 
                 strokeDasharray={dashArray}
@@ -6878,7 +6878,7 @@ let percent = 0.2;
 
 现在 20% 的效果就出现了。
 
-![image-20210215203338330](http://img-repo.poetries.top/images/image-20210215203338330.png)
+![image-20210215203338330](https://img-repo.poetries.top/images/image-20210215203338330.png)
 
 ## 线形进度条组件
 
@@ -6964,7 +6964,7 @@ ProgressWrapper 样式组件已经实现，现在只需从 style.js 引入即可
 
 现在，就可以看到基本的进度条的样子了。
 
-![image-20210215203403598](http://img-repo.poetries.top/images/image-20210215203403598.png)
+![image-20210215203403598](https://img-repo.poetries.top/images/image-20210215203403598.png)
 
 ## 进度条交互逻辑开发
 
@@ -7209,7 +7209,7 @@ const playList = [
       al: {
         id: 84991301,
         name: '拾梦纪',
-        picUrl: 'http://p1.music.126.net/M19SOoRMkcHmJvmGflXjXQ==/109951164627180052.jpg',
+        picUrl: 'https://p1.music.126.net/M19SOoRMkcHmJvmGflXjXQ==/109951164627180052.jpg',
         tns: [],
         pic_str: '109951164627180052',
         pic: 109951164627180050
@@ -7492,7 +7492,7 @@ const progressTouchEnd = (e) => {
 
 OK, 进度条被我们改了差不多了，现在就能够对接我们的播放器进度啦！
 
-![img](http://img-repo.poetries.top/images/16fac32f825fb728.gif)
+![img](https://img-repo.poetries.top/images/16fac32f825fb728.gif)
 
 在最后，我们也把mini播放器的进度对接一下:
 
@@ -7744,7 +7744,7 @@ import { playMode } from '../../../api/config';
 
 现在大家打开redux-devtools可以看到数据的变化，下面是随机模式
 
-![img](http://img-repo.poetries.top/images/16fac33621418e87.jpeg)
+![img](https://img-repo.poetries.top/images/16fac33621418e87.jpeg)
 
 可以看到playList现在已经乱序了。
 
@@ -7853,7 +7853,7 @@ return (
 
 效果:
 
-![img](http://img-repo.poetries.top/images/16fac3421b9d1c07.gif)
+![img](https://img-repo.poetries.top/images/16fac3421b9d1c07.gif)
 
 那现在还有最后一个问题需要处理，就是歌曲播放完了之后，紧接着需要怎么处理。
 
@@ -7895,7 +7895,7 @@ OK，到这里，mini/全屏播放器基本的功能都完成了！
 
 话不多说，直接上 gif 效果图：
 
-![img](http://img-repo.poetries.top/images/16dde187ddaf8cf6.gif)
+![img](https://img-repo.poetries.top/images/16dde187ddaf8cf6.gif)
 
 是不是很酷炫？
 
@@ -8180,7 +8180,7 @@ export const Content = styled.div`
 
 如果频繁切换歌曲，会出现这样的异常：
 
-![image-20210215204015438](http://img-repo.poetries.top/images/image-20210215204015438.png)
+![image-20210215204015438](https://img-repo.poetries.top/images/image-20210215204015438.png)
 
 操作过快直接报错，这是完全无法接受的。所以我们必须究根溯源，把这个问题给解了。
 
@@ -9036,7 +9036,7 @@ export const getLyricRequest = id => {
 
 目前打开播放器，点一首歌，便能在控制台看到获取到的歌词信息。
 
-![img](http://img-repo.poetries.top/images/16e0803db83a9fb4.jpeg)
+![img](https://img-repo.poetries.top/images/16e0803db83a9fb4.jpeg)
 
 可以看到，现在能获取到的歌词信息仅仅只是一个字符串，而且格式相对规整，[] 中的内容为时间戳，紧接着的内容是歌词内容。
 
@@ -9107,7 +9107,7 @@ export default class Lyric {
 
 现在解析后的效果如下:
 
-![img](http://img-repo.poetries.top/images/16e0803fc82c001c.jpeg)
+![img](https://img-repo.poetries.top/images/16e0803fc82c001c.jpeg)
 
 ## 开始播放
 
@@ -9182,7 +9182,7 @@ _playRest (isSeek=false) {
 
 画图模拟一下 isSeek 为 true 和 false 的两种情况。
 
-![img](http://img-repo.poetries.top/images/16e08041cfd3ef47.jpeg)
+![img](https://img-repo.poetries.top/images/16e08041cfd3ef47.jpeg)
 
 那触发下一次_playRest 就还剩 00:03.123 - (new Date () - 歌曲开始的时间戳)。即:
 
@@ -9190,7 +9190,7 @@ _playRest (isSeek=false) {
 delay = line.time - (+new Date () - this.startStamp);
 ```
 
-![img](http://img-repo.poetries.top/images/16e0804323d841a4.jpeg)
+![img](https://img-repo.poetries.top/images/16e0804323d841a4.jpeg)
 
 那这个时候触发下一次_playRest 就还剩 00:05.763 - 00:03:123 了。即:
 
@@ -10592,7 +10592,7 @@ module.exports = app.listen (port, function (err) {
     console.log (err)
     return
   }
-  console.log ('Listening at http://localhost:' + port + '\n')
+  console.log ('Listening at https://localhost:' + port + '\n')
 })
 ```
 
@@ -11026,7 +11026,7 @@ _playRest (isSeek=false) {
 
 结果如图所示:
 
-![img](http://img-repo.poetries.top/images/16e080ca6b6c1c07.jpeg)
+![img](https://img-repo.poetries.top/images/16e080ca6b6c1c07.jpeg)
 
 
 

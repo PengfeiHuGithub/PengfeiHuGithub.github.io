@@ -51,17 +51,17 @@
 
 > 第三种方法，很少有人能说出来。这种方式里，`obj3`是实例，`p`是`obj3的`原型（`name`是p原型里的属性），构造函数是`Objecet` 。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/18.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/18.png)
 
 ### 3 原型、构造函数、实例，以及原型链
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/19.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/19.png)
 
 > PS：任何一个函数，如果在前面加了`new`，那就是构造函数。
 
 #### 3.1 原型、构造函数、实例三者之间的关系
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/20.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/20.png)
 
 1. 构造函数通过 `new` 生成实例
 2. 构造函数也是函数，构造函数的`prototype`指向原型。（所有的函数有`prototype`属性，但实例没有 `prototype`属性）
@@ -79,7 +79,7 @@
 
 > 上面的代码中，`Foo.prototype.constructor === Foo`的结果是`true`：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/21.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/21.png)
 
 1. 实例的`__proto__`指向原型。也就是说，`Foo.__proto__ === M.prototype`。
 
@@ -106,7 +106,7 @@
 
 #### 3.3 `instanceof`的原理
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/22.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/22.png)
 
 - `instanceof`的**作用**：用于判断**实例**属于哪个**构造函数**。
 - `instanceof`的**原理**：判断实例对象的`__proto__`属性，和构造函数的`prototype`属性，是否为同一个引用（是否指向同一个地址）。
@@ -179,7 +179,7 @@ class Animal2 {
 
 控制台的效果：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/41.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/41.png)
 
 #### 2.2 实例化
 
@@ -189,7 +189,7 @@ class Animal2 {
 console.log(new Animal1(),new Animal2()); //实例化。如果括号里没有参数，则括号可以省略
 ```
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/41.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/41.png)
 
 ### 3 继承的几种方式
 
@@ -216,7 +216,7 @@ console.log(new Animal1(),new Animal2()); //实例化。如果括号里没有参
 
 打印结果：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/43.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/43.png)
 
 > 上方结果表明：`child`先有了 `parent` 实例的属性（继承得以实现），再有了`child` 实例的属性。
 
@@ -231,7 +231,7 @@ console.log(new Animal1(),new Animal2()); //实例化。如果括号里没有参
 
 > 上面这个方法是无法被 `Child1` 继承的。如下：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/44.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/44.png)
 
 #### 3.2 方法二：通过原型链实现继承
 
@@ -254,7 +254,7 @@ console.log(new Animal1(),new Animal2()); //实例化。如果括号里没有参
 
 打印结果：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/45.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/45.png)
 
 > 【重要】上方代码中，最重要的那行：每个函数都有`prototype`属性，于是，构造函数也有这个属性，这个属性是一个对象。现在，**我们把`Parent`的实例赋值给了`Child`的`prototye`**，从而实现**继承**。此时，`Child`构造函数、`Parent`的实例、`Child`的实例构成一个三角关系。于是：
 
@@ -268,7 +268,7 @@ console.log(new Animal1(),new Animal2()); //实例化。如果括号里没有参
 
 如下：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/46.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/46.png)
 
 > 上面的代码中， `child1`修改了`arr`属性，却发现，`child2`的`arr`属性也跟着改变了。这显然不太好，在业务中，两个子模块应该隔离才对。如果改了一个对象，另一个对象却发生了改变，就不太好。
 
@@ -385,7 +385,7 @@ var child = new Child3();
 2. 目标阶段：事件通过捕获，到达目标元素，这个阶段就是目标阶段。
 3. 冒泡：从**目标元素**传到 `Window` 对象。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/58.png) ![img](http://poetries1.gitee.io/img-repo/2020/07/59.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/58.png) ![img](https://poetries1.gitee.io/img-repo/2020/07/59.png)
 
 **描述DOM事件捕获的具体流程**
 
@@ -393,7 +393,7 @@ var child = new Child3();
 
 **捕获的流程**
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/60.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/60.png)
 
 **说明**：捕获阶段，事件依次传递的顺序是：`window` --> `document` --> `html`--> `body` --> 父元素、子元素、目标元素。
 
@@ -562,7 +562,7 @@ var child = new Child3();
 - 事件触发线程管理一个 任务队列，异步任务触发条件达成，将回调事件放到 任务队列中
 - 执行栈中所有同步任务执行完毕，此时JS引擎线程空闲，系统会读取 任务队列，将可运行的异步任务回调事件添加到 执行栈中，开始执行
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/69.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/69.png)
 
 - 前端开发中我们会通过 `setTimeout/setInterval` 来指定定时任务，会通过 `XHR/fetch`发送网络请求
 - 接下来简述一下 `setTimeout/setInterval`和 `XHR/fetch`到底做了什么事
@@ -573,7 +573,7 @@ var child = new Child3();
 - 而异步`http`请求线程在接收到这个消息后，会在请求成功后，将回调事件放入到由 事件触发线程所管理的 事件队列中
 - 当我们的同步任务执行完，`JS`引擎线程会询问事件触发线程，在 事件队列中是否有待执行的回调函数，如果有就会加入到执行栈中交给 JS引擎线程执行
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/70.png) ![img](http://poetries1.gitee.io/img-repo/20190928/3.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/70.png) ![img](https://poetries1.gitee.io/img-repo/20190928/3.png)
 
 **总结一下：**
 
@@ -601,17 +601,17 @@ var child = new Child3();
 
 我们可以将这段代码放到浏览器的控制台执行以下，看一下效果：
 
-![img](http://poetries1.gitee.io/img-repo/20190928/4.png)
+![img](https://poetries1.gitee.io/img-repo/20190928/4.png)
 
-![img](http://poetries1.gitee.io/img-repo/20190928/5.gif)
+![img](https://poetries1.gitee.io/img-repo/20190928/5.gif)
 
 > 我们会看到的结果是，页面背景会在瞬间变成白色，以上代码属于同一次 宏任务，所以全部执行完才触发 页面渲染，渲染时 GUI线程会将所有UI改动优化合并，所以视觉效果上，只会看到页面变成灰色
 
 **第二个例子：**
 
-![img](http://poetries1.gitee.io/img-repo/20190928/6.png)
+![img](https://poetries1.gitee.io/img-repo/20190928/6.png)
 
-![img](http://poetries1.gitee.io/img-repo/20190928/7.gif)
+![img](https://poetries1.gitee.io/img-repo/20190928/7.gif)
 
 > 我会看到，页面先显示成蓝色背景，然后瞬间变成了黑色背景，这是因为以上代码属于两次 宏任务，第一次 宏任务执行的代码是将背景变成蓝色，然后触发渲染，将页面变成蓝色，再触发第二次宏任务将背景变成黑色
 
@@ -623,14 +623,14 @@ var child = new Child3();
 
 > `Promise`，`process.nextTick`等，属于 微任务。
 
-![img](http://poetries1.gitee.io/img-repo/20190928/8.png)
+![img](https://poetries1.gitee.io/img-repo/20190928/8.png)
 
-![img](http://poetries1.gitee.io/img-repo/20190928/9.gif)
+![img](https://poetries1.gitee.io/img-repo/20190928/9.gif)
 
 - 控制台输出 1 3 2 , 是因为 promise 对象的 then 方法的回调函数是异步执行，所以 2 最后输出
 - 页面的背景色直接变成黑色，没有经过蓝色的阶段，是因为，我们在宏任务中将背景设置为蓝色，但在进行渲染前执行了微任务，在微任务中将背景变成了黑色，然后才执行的渲染
 
-![img](http://poetries1.gitee.io/img-repo/20190928/10.png)
+![img](https://poetries1.gitee.io/img-repo/20190928/10.png)
 
 > 上面代码共包含两个 `setTimeout` ，也就是说除主代码块外，共有两个 宏任务， 其中第一个 宏任务执行中，输出 1 ，并且创建了 微任务队列，所以在下一个 宏任务队列执行前，先执行 微任务，在 微任务执行中，输出 3 ，微任务执行后，执行下一次 宏任务，执行中输出 2
 
@@ -642,7 +642,7 @@ var child = new Child3();
 - 当前 宏任务执行完毕，开始检查渲染，然后 GUI线程接管渲染
 - 渲染完毕后， JS线程继续接管，开始下一个 宏任务（从事件队列中获取）
 
-![img](http://poetries1.gitee.io/img-repo/20190928/11.png)
+![img](https://poetries1.gitee.io/img-repo/20190928/11.png)
 
 ## 五、CSS盒模型及BFC
 
@@ -672,11 +672,11 @@ var child = new Child3();
 
 标准盒子模型：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/47.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/47.png)
 
 `IE`盒子模型：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/48.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/48.png)
 
 上图显示：
 
@@ -758,7 +758,7 @@ window.getComputedStyle(element).width/height;
 
 如下图所示：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/49.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/49.png)
 
 **子元素和父元素之间**
 
@@ -801,11 +801,11 @@ window.getComputedStyle(element).width/height;
 
 儿子这个盒子：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/50.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/50.png)
 
 父亲这个盒子：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/51.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/51.png)
 
 > 上方代码中，如果我们给父亲设置一个属性：`overflow: hidden`，就可以避免这个问题，此时父亲的高度是110px，这个用到的就是BFC（下一段讲解）。
 
@@ -823,11 +823,11 @@ window.getComputedStyle(element).width/height;
 
 > 上面的结构中，我们尝试通过给儿子`p`一个`margin-top:50px;`的属性，让其与父亲保持50px的上边距。结果却看到了下面的奇怪的现象：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/52.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/52.png)
 
 > 此时我们给父亲`div`加一个`border`属性，就正常了：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/53.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/53.png)
 
 > 如果父亲没有`border`，那么儿子的`margin`实际上踹的是“流”，踹的是这“行”。所以，父亲整体也掉下来了。
 
@@ -932,7 +932,7 @@ window.getComputedStyle(element).width/height;
 
 效果如下：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/54.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/54.png)
 
 > 上图中，由于右侧标准流里的元素，比左侧浮动的元素要高，导致右侧有一部分会跑到左边的下面去。
 
@@ -944,7 +944,7 @@ window.getComputedStyle(element).width/height;
     </div>
 ```
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/55.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/55.png)
 
 上图表明，解决之后，`father-layout`的背景色显现出来了，说明问题解决了。
 
@@ -985,13 +985,13 @@ window.getComputedStyle(element).width/height;
 
 效果如下：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/56.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/56.png)
 
 上面的代码中，儿子浮动了，但由于父亲没有设置高度，导致看不到父亲的背景色（此时父亲的高度为0）。正所谓**有高度的盒子，才能关住浮动**。
 
 > 如果想要清除浮动带来的影响，方法一是给父亲设置高度，然后采用隔墙法。方法二是 BFC：给父亲增加 `overflow=hidden`属性即可， 增加之后，效果如下：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/57.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/57.png)
 
 > 为什么父元素成为BFC之后，就有了高度呢？这就回到了**第四条：计算BFC的高度时，浮动元素也参与计算**。意思是，**在计算BFC的高度时，子元素的float box也会参与计算**
 
@@ -1001,7 +1001,7 @@ window.getComputedStyle(element).width/height;
 
 > 问题：假设高度默认`100px` ，请写出三栏布局，其中左栏、右栏各为`300px`，中间自适应。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/25.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/25.png)
 
 分析：
 
@@ -1148,7 +1148,7 @@ window.getComputedStyle(element).width/height;
 
 效果如下：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/26.gif)
+![img](https://poetries1.gitee.io/img-repo/2020/07/26.gif)
 
 **方法3、flexbox布局**
 
@@ -1217,7 +1217,7 @@ window.getComputedStyle(element).width/height;
 
 效果如下：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/27.gif)
+![img](https://poetries1.gitee.io/img-repo/2020/07/27.gif)
 
 **方法4、表格布局 table**
 
@@ -1291,7 +1291,7 @@ window.getComputedStyle(element).width/height;
 </html>
 ```
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/28.gif)
+![img](https://poetries1.gitee.io/img-repo/2020/07/28.gif)
 
 **方法5、网格布局 grid**
 
@@ -1356,7 +1356,7 @@ window.getComputedStyle(element).width/height;
 
 效果：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/29.gif)
+![img](https://poetries1.gitee.io/img-repo/2020/07/29.gif)
 
 **延伸：五种方法的对比**
 
@@ -1443,7 +1443,7 @@ PS：中文名一定要记住。英文全称，如果记不住也拉倒。
 
 #### 2.2 CSRF的攻击原理
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/17.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/17.png)
 
 > 用户是网站A的注册用户，且登录进去，于是网站A就给用户下发`cookie`。
 
@@ -1739,11 +1739,11 @@ PS：中文名一定要记住。英文全称，如果记不住也拉倒。
 
 #### 4.4 事件的触发条件
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/23.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/23.png)
 
 #### 4.5 事件的触发顺序
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/24.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/24.png)
 
 #### 4.6 实际开发中用的 原生Ajax请求
 
@@ -1835,7 +1835,7 @@ PS：中文名一定要记住。英文全称，如果记不住也拉倒。
 > 比如说，客户端这样写：
 
 ```html
-    <script src="http://www.smyhvae.com/?data=name&callback=myjsonp"></script>
+    <script src="https://www.smyhvae.com/?data=name&callback=myjsonp"></script>
 ```
 
 > 上面的`src`中，`data=name`是get请求的参数，`myjsonp`是和后台约定好的函数名。 服务器端这样写：
@@ -2001,7 +2001,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 ```javascript
 	// 窗口A(http:A.com)向跨域的窗口B(http:B.com)发送信息
- 	Bwindow.postMessage('data', 'http://B.com'); //这里强调的是B窗口里的window对象
+ 	Bwindow.postMessage('data', 'https://B.com'); //这里强调的是B窗口里的window对象
 ```
 
 1. 在`B`窗口中操作如下：
@@ -2009,7 +2009,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 ```javascript
     // 在窗口B中监听 message 事件
     Awindow.addEventListener('message', function (event) {   //这里强调的是A窗口里的window对象
-        console.log(event.origin);  //获取 ：url。这里指：http://A.com
+        console.log(event.origin);  //获取 ：url。这里指：https://A.com
         console.log(event.source);  //获取：A window对象
         console.log(event.data);    //获取传过来的数据
     }, false);
@@ -2104,7 +2104,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 > 上面这个`api`，返回的是数组，既然是数组，就可以用`forEach`遍历。打印出来的资源就是**已经成功加载**的资源。；
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/30.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/30.png)
 
 > 再入`document.getElementsByTagName('img')`，就会显示出所有**需要加载**的的img集合。
 
@@ -2116,7 +2116,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 > 源加载错误，虽然会阻止冒泡，但是不会阻止捕获。我们可以在捕获阶段绑定`error`事件。例如：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/31.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/31.png)
 
 > **总结：**如果我们能回答出后面的两种方式，面试官对我们的印象会大大增加。既可以体现出我们对错误监控的了解，还可以体现出我们对事件模型的掌握。
 
@@ -2138,7 +2138,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 <script>
 	//通过Image对象进行错误上报
-    (new Image()).src = 'http://blog.com/myPath?badjs=msg';   // myPath表示上报的路径（我要上报到哪里去）。后面的内容是自己加的参数。
+    (new Image()).src = 'https://blog.com/myPath?badjs=msg';   // myPath表示上报的路径（我要上报到哪里去）。后面的内容是自己加的参数。
 </script>
 </body>
 </html>
@@ -2146,11 +2146,11 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 > 打开浏览器，效果如下：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/32.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/32.png)
 
 上图中，红色那一栏表明，我的请求已经发出去了。点进去看看：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/33.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/33.png)
 
 > 这种方式，不需要借助第三方的库，一行代码即可搞定。
 
@@ -2208,7 +2208,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 ### 3 HTTP报文的组成部分
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/34.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/34.png)
 
 > 在回答此问题时，我们要按照顺序回答：
 
@@ -2218,7 +2218,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 #### 3.1 请求报文包括：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/35.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/35.png)
 
 - 请求行：包括请求方法、请求的`url`、`http`协议及版本。
 - 请求头：一大堆的键值对。
@@ -2227,7 +2227,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 #### 3.2 响应报文包括：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/36.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/36.png)
 
 - 状态行：`http`协议及版本、状态码及状态描述。
 - 响应头
@@ -2252,7 +2252,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 ### 5 get 和 post的区别
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/37.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/37.png)
 
 - 区别有很多，如果记不住，面试时，至少要任意答出其中的三四条。
 - 有一点要强调，**get是相对不隐私的，而post是相对隐私的**。
@@ -2269,11 +2269,11 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 
 > `http`状态码分类：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/38.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/38.png)
 
 > 常见的`http`状态码：
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/39.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/39.png)
 
 **部分解释**：
 
@@ -2282,7 +2282,7 @@ window.onhashchange = function () {  //通过onhashchange方法监听，url中�
 - `302`：重定向（临时）。
 - `304`：我这个服务器告诉客户端，你已经有缓存了，不需要从我这里取了。
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/40.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/40.png)
 
 - `400`和`401`用的不多,未授权。`403`指的是请求被拒绝。`404`指的是资源不存在。
 

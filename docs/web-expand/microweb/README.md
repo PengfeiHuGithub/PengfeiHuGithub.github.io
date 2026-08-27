@@ -12,15 +12,15 @@
 
 在 `web 1.0` 时代，内容基本上是 `静态`、`单向阅读`为主，代表网站比如新浪、搜狐等内容性网站，网站是信息提供者，过程是个单向的过程，从网络到用户，当时网络上所有的内容，都是单一性的，就是网站说这个是什么意思，就是什么意思，这时候的网站是没有什么用户体验之说的，知只是单纯的可以展示内容，保证整体展示是工整的即可；
 
-![image-20210210165815221](http://img-repo.poetries.top/images/image-20210210165815221.png)
+![img](https://img-repo.poetries.top/images/image-20210210165815221.png)
 
 在 `web 2.0` 时代，内容是`人与人`之间的沟通，网站负责提供平台，大家各自发表自己对于信息的了解和去了解别人提供的信息，这个适合对于用户体验的提升，原因是在于用户对于内容上的体验，用户在访问不同的网站获取到不同的内容，去满足自己在网络上所要得到的所有知识；
 
-![image-20210210170004018](http://img-repo.poetries.top/images/image-20210210170004018.png)
+![img](https://img-repo.poetries.top/images/image-20210210170004018.png)
 
 在 `web 3.0` 时代，就是`人与网络与人`之间的通信关系，网络成为了用户的需求理解者和信息提供者，由于提供信息的平台越来越多，内容的种类越来越多，用户对于平台的要求也会越来越高
 
-![image-20210210170020490](http://img-repo.poetries.top/images/image-20210210170020490.png)
+![img](https://img-repo.poetries.top/images/image-20210210170020490.png)
 
 这个时候，用户体验对于我们开发来说，就越发的重要，比如每一个页面的展示、每一个按钮的点击，都可能是影响到用户是否在当前网站留存
 
@@ -376,7 +376,7 @@ export default function(Components, callback) {
 
 假设我们是一整个项目，没有做项目切片，项目做大以后，我们可能很多人要维护着一个项目，按照 `git flow` 的方式，基于 `master` 分支，拉了一个新的分支 `dev1` ，开发过程当中，可能有多个版本，比如开发的一半的时候，我们需要有别人加入来开发新的需求，两者业务逻辑不影响，但是有公共的方法可能需要一起使用，如果我们基于 `dev1` 去拉一个 `dev2` ，这样不合理，毕竟没有相同的需求，而且调试过程当中， `dev1` 的分支可能存在问题，会影响到我们接下来的开发，然而如果从 `master` 分支上拉一个来开发虽然看似没有问题的，但是这两版需求在合并的时候一旦出现冲突，那么这方面要耽误的时间成本就会很长了，一些复杂的逻辑，我们也不可能时时都在合并代码后做逻辑检测，对于前端或者测试来说，都是一项重复性，而又不愿意面对的问题
 
-![image-20210210170547345](http://img-repo.poetries.top/images/image-20210210170547345.png)
+![image-20210210170547345](https://img-repo.poetries.top/images/image-20210210170547345.png)
 
 按照上图的方法，我们是可以规避掉这种问题的，我们的 `dev1` 和 `dev2` 都是独立的服务，维护各自的代码，可以完全避免掉因为某一个需要出现的问题而导致整个项目无法进行使用，线上项目出现类似的问题，是一件很恐怖的事情
 
@@ -406,7 +406,7 @@ export default function(Components, callback) {
 
 一个产品不应该是按照技术团队去做划分的，而是应该按照产品的功能去做划分，在微前端的方案中，不论是 a功能 还是 b功能，他们都是一个独立的团队，a团队的产品和开发去做 a功能；b团队也是如此，这样可以把当前的产品线给无限的向上发展，保证了开发的速度，也保证了因为功能沟通而浪费的时间成本
 
-![image-20210210170613390](http://img-repo.poetries.top/images/image-20210210170613390.png)
+![image-20210210170613390](https://img-repo.poetries.top/images/image-20210210170613390.png)
 
 ## 微前端的缺点
 
@@ -469,13 +469,13 @@ export default function(Components, callback) {
 
 ![img](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/546b2ed9974d47d2832b0bbbcc76c71c~tplv-k3u1fbpfcp-watermark.image)
 
-在我们通过 `single-spa` 对 `微前端` 项目进行本地化构建后，命令行会显示以上信息：1就是我们的正常启动项目；2就是用来测试我们的微前端项目是否可以正常运行，当我们打开2网址后，会自动重定向到 [single-spa-playground.org/ (opens new window)](http://single-spa-playground.org/)，在该网址下展示脚手架安装好的子应用：
+在我们通过 `single-spa` 对 `微前端` 项目进行本地化构建后，命令行会显示以上信息：1就是我们的正常启动项目；2就是用来测试我们的微前端项目是否可以正常运行，当我们打开2网址后，会自动重定向到 [single-spa-playground.org/ (opens new window)](https://single-spa-playground.org/)，在该网址下展示脚手架安装好的子应用：
 
 ![img](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e4935fd586e54785aac08ff7a8f73830~tplv-k3u1fbpfcp-watermark.image)
 
 在右下角会有一个 `playground` 的 `icon` ，点击弹出下图内容：
 
-![image-20210210170853635](http://img-repo.poetries.top/images/image-20210210170853635.png)
+![image-20210210170853635](https://img-repo.poetries.top/images/image-20210210170853635.png)
 
 微应用的运行前检测工具一共分 5 个阶段：
 
@@ -516,7 +516,7 @@ export default function(Components, callback) {
 这里我是用 react 做的微应用构建，vue相关我会在后面的章节做详解
 ```
 
-### [#](http://interview.poetries.top/fe-micro-docs/docs/04-微前端的工具介绍.html#验证微前端应用)验证微前端应用
+### [#](https://interview.poetries.top/fe-micro-docs/docs/04-微前端的工具介绍.html#验证微前端应用)验证微前端应用
 
 ![img](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e419a13213d540bd8126dcf5fdefa674~tplv-k3u1fbpfcp-watermark.image)
 
@@ -647,17 +647,17 @@ export const devtools = {
 
 一个橘黄色的小图标，然后点击打开
 
-![image-20210210171003670](http://img-repo.poetries.top/images/image-20210210171003670.png)
+![image-20210210171003670](https://img-repo.poetries.top/images/image-20210210171003670.png)
 
 通过 `Add new module` 按钮添加当前微应用即可：
 
-![image-20210210171011934](http://img-repo.poetries.top/images/image-20210210171011934.png)
+![image-20210210171011934](https://img-repo.poetries.top/images/image-20210210171011934.png)
 
 一般情况下当通过 `single-spa` 脚手架下载后就会自动存在了，不需要额外手动添加，但是一但出现了什么问题，这里也是一个很好发现问题的地方
 
 当我们微应用配置正确的时候，就可以正常访问我们的微应用了：
 
-![image-20210210171019827](http://img-repo.poetries.top/images/image-20210210171019827.png)
+![image-20210210171019827](https://img-repo.poetries.top/images/image-20210210171019827.png)
 
 上图红色框内的内容就是当前应用内所有微应用的名称、状态、动作、import 路径等，因为是基础讲解我就创建了一个项目，所以 `App Name` 只有一项
 
@@ -1744,13 +1744,13 @@ yarn add single-spa-react
 
 这里我更建议使用 `npm init single-spa --framework react` 脚手架安装，对于初学者来说会省很多事情
 
-![image-20210210171940641](http://img-repo.poetries.top/images/image-20210210171940641.png)
+![image-20210210171940641](https://img-repo.poetries.top/images/image-20210210171940641.png)
 
 安装完成后的提示在之前的章节有过讲解了，就不多做赘述了
 
 项目的初始化的目录结构基本就是下图：
 
-![image-20210210171949684](http://img-repo.poetries.top/images/image-20210210171949684.png)
+![image-20210210171949684](https://img-repo.poetries.top/images/image-20210210171949684.png)
 
 ## 项目结构
 
@@ -2014,7 +2014,7 @@ export default {
 
 
 
-要实现不同应用间的依赖共享，添加你想要共享的依赖作为 [webpack externals (opens new window)](https://webpack.js.org/configuration/externals/)。然后使用 一个工作在浏览器中的模块加载工具，比如 [systemjs (opens new window)](https://github.com/systemjs/systemjs)，来为 `single-spa` 中的每个项目提供这些共享的依赖，将 `vue` 以及其他库添加到 [import map (opens new window)](http://single-spa-playground.org/playground/import-map)中。
+要实现不同应用间的依赖共享，添加你想要共享的依赖作为 [webpack externals (opens new window)](https://webpack.js.org/configuration/externals/)。然后使用 一个工作在浏览器中的模块加载工具，比如 [systemjs (opens new window)](https://github.com/systemjs/systemjs)，来为 `single-spa` 中的每个项目提供这些共享的依赖，将 `vue` 以及其他库添加到 [import map (opens new window)](https://single-spa-playground.org/playground/import-map)中。
 
 如下案例给出一个 `import map` 的案例，可以作为参考： [coexisting-vue-microfrontends (opens new window)](https://github.com/joeldenning/coexisting-vue-microfrontends/blob/master/root-html-file/index.html)的 index.html 文件。
 
@@ -2130,7 +2130,7 @@ export default {
       /*
         mountParcel (function, required)
         mountParcel 函数可以是当前Vue应用程序的 mountParcel 属性，也可以是全局可用的mount RootParcel 函数。更多信息请访问
-        http://localhost:3000/docs/parcels-api#mountparcel
+        https://localhost:3000/docs/parcels-api#mountparcel
       */
       mountParcel: mountRootParcel,
       /*
@@ -2497,7 +2497,7 @@ http.createServer((req, res) => {
   bodyStream.pipe(res);
 }).listen(9000)
 async function fetchMicrofrontend(props) {
-  fetch(`http://${props.name}`, {
+  fetch(`https://${props.name}`, {
     headers: props
   }).then(r => {
     if (r.ok) {

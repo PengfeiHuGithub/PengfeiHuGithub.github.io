@@ -10,7 +10,7 @@
 
 JavaScript 的数据类型有下图所示
 
-![img](http://img-repo.poetries.top/images/20210414100319.png)
+![img](https:////img-repo.poetries.top/images/20210414100319.png)
 
 > 其中，前 7 种类型为基础类型，最后 `1 种（Object）为引用类型`，也是你需要重点关注的，因为它在日常工作中是使用得最频繁，也是需要关注最多技术细节的数据类型
 
@@ -581,7 +581,7 @@ foo.bind(a)() // => 'poetries'
 
 > 首先，`new` 的方式优先级最高，接下来是 `bind` 这些函数，然后是 `obj.foo()` 这种调用方式，最后是 `foo` 这种调用方式，同时，箭头函数的 `this` 一旦被绑定，就不会再被任何方式所改变。
 
-![image.png](https://poetries1.gitee.io/img-repo/2020/07/2.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/2.png)
 
 **函数执行改变this**
 
@@ -600,7 +600,7 @@ foo.bind(a)() // => 'poetries'
 
 ### 3 apply/call/bind 原理
 
-![img](http://img-repo.poetries.top/images/20210414155100.png)
+![img](https:////img-repo.poetries.top/images/20210414155100.png)
 
 > `call、apply` 和 `bind` 是挂在 `Function` 对象上的三个方法，调用这三个方法的必须是一个函数。
 
@@ -955,7 +955,7 @@ delete Scope[0]; // remove specialObject from the front of scope chain
 - 首先作用域链是在定义时就被确定下来的，和箭头函数里的 this 一样，后续不会改变，JS 会一层层往上寻找需要的内容。
 - 其实作用域链这个东西我们在闭包小结中已经看到过它的实体了：`[[Scopes]]`
 
-![img](http://img-repo.poetries.top/images/20210406201055.png)
+![img](https:////img-repo.poetries.top/images/20210406201055.png)
 
 图中的 `[[Scopes]]` 是个数组，作用域的一层层往上寻找就等同于遍历 `[[Scopes]]`。
 
@@ -1019,7 +1019,7 @@ console.log(a) //a is not defined
 
 > 闭包其实就是一个可以访问其他函数内部变量的函数。创建闭包的最常见的方式就是在一个函数内创建另一个函数，创建的函数可以 访问到当前函数的局部变量。
 
-![img](http://img-repo.poetries.top/images/20210414160103.png)
+![img](https:////img-repo.poetries.top/images/20210414160103.png)
 
 因为通常情况下，函数内部变量是无法在外部访问的（即全局变量和局部变量的区别），因此使用闭包的作用，就具备实现了能在外部访问某个函数内部变量的功能，让这些内部变量的值始终可以保存在内存中。下面我们通过代码先来看一个简单的例子
 
@@ -1066,7 +1066,7 @@ fn2()
 - 接下来笔者会根据浏览器的表现来重新理解关于原始类型存放位置的说法。
 - 先来说下数据存放的正确规则是：局部、占用空间确定的数据，一般会存放在栈中，否则就在堆中（也有例外）。 那么接下来我们可以通过 Chrome 来帮助我们验证这个说法说法。
 
-![img](http://img-repo.poetries.top/images/20210406200721.png)
+![img](https:////img-repo.poetries.top/images/20210406200721.png)
 
 > 上图中画红框的位置我们能看到一个内部的对象 `[[Scopes]]`，其中存放着变量 a，该对象是被存放在堆上的，其中包含了闭包、全局对象等等内容，因此我们能通过闭包访问到本该销毁的变量。
 
@@ -1081,7 +1081,7 @@ function fn() {
 }
 ```
 
-![img](http://img-repo.poetries.top/images/20210406200756.png)
+![img](https:////img-repo.poetries.top/images/20210406200756.png)
 
 从上图我们能发现全局下声明的变量，如果是 var 的话就直接被挂到 globe 上，如果是其他关键字声明的话就被挂到 Script 上。虽然这些内容同样还是存在 `[[Scopes]]`，但是全局变量应该是存放在静态区域的，因为全局变量无需进行垃圾回收，等需要回收的时候整个应用都没了。
 
@@ -1089,7 +1089,7 @@ function fn() {
 
 > 这里为什么要说可能，是因为 JS 是门动态类型语言，一个变量声明时可以是原始类型，马上又可以赋值为对象类型，然后又回到原始类型。这样频繁的在堆栈上切换存储位置，内部引擎是不是也会有什么优化手段，或者干脆全部都丢堆上？只有 const 声明的原始类型才一定存在栈上？当然这只是笔者的一个推测，暂时没有深究，读者可以忽略这段瞎想
 
-![img](http://img-repo.poetries.top/images/20210406200826.png)
+![img](https:////img-repo.poetries.top/images/20210406200826.png)
 
 因此笔者对于原始类型存储位置的理解为：局部变量才是被存储在栈上，全局变量存在静态区域上，其它都存储在堆上。
 
@@ -1342,7 +1342,7 @@ console.log(p.name) // Jack
 
 > 因此我们总结一下：`new 关键词执行之后总是会返回一个对象，要么是实例对象，要么是 return 语句指定的对象`
 
-![img](http://img-repo.poetries.top/images/20210414151626.png)
+![img](https:////img-repo.poetries.top/images/20210414151626.png)
 
 **手工实现New的过程**
 
@@ -1473,7 +1473,7 @@ const prototype = Object.prototype
 
 ### 10 继承
 
-![img](http://img-repo.poetries.top/images/20210414142754.png)
+![img](https:////img-repo.poetries.top/images/20210414142754.png)
 
 > 涉及面试题：原型如何实现继承？`Class` 如何实现继承？`Class` 本质是什么？
 
@@ -1634,7 +1634,7 @@ console.log(s1.play, s2.play);
 
 可以看到控制台：
 
-![img](http://img-repo.poetries.top/images/20210309103243.png)
+![img](https:////img-repo.poetries.top/images/20210309103243.png)
 
 > 明明我只改变了s1的play属性，为什么s2也跟着变了呢？很简单，因为两个实例使用的是同一个原型对象。
 
@@ -1660,7 +1660,7 @@ console.log(s1.play, s2.play);
 
 可以看到控制台：
 
-![img](http://img-repo.poetries.top/images/20210309103312.png)
+![img](https:////img-repo.poetries.top/images/20210309103312.png)
 
 > 之前的问题都得以解决。但是这里又徒增了一个新问题，那就是`Parent3`的构造函数会多执行了一次（`Child3.prototype = new Parent3();`）。这是我们不愿看到的。那么如何解决这个问题？
 
@@ -1686,7 +1686,7 @@ var s4 = new Child4();
 console.log(s3)
 ```
 
-![img](http://img-repo.poetries.top/images/20210309103358.png)
+![img](https:////img-repo.poetries.top/images/20210309103358.png)
 
 > 子类实例的构造函数是Parent4，显然这是不对的，应该是Child4。
 
@@ -2436,7 +2436,7 @@ for (let key of obj) {
 }
 ```
 
-![img](http://img-repo.poetries.top/images/20210407141323.png)
+![img](https:////img-repo.poetries.top/images/20210407141323.png)
 
 ### 15 Promise
 
@@ -2460,7 +2460,7 @@ for (let key of obj) {
 
 关于 Promise 的状态流转情况，有一点值得注意的是，内部状态改变之后不可逆，你需要在编程过程中加以注意。文字描述比较晦涩，我们直接通过一张图就能很清晰地看出 Promise 内部状态流转的情况
 
-![img](http://img-repo.poetries.top/images/20210414175500.png)
+![img](https:////img-repo.poetries.top/images/20210414175500.png)
 
 从上图可以看出，我们最开始创建一个新的 `Promise` 返回给 `p1` ，然后开始执行，状态是 pending，当执行 `resolve`之后状态就切换为 `fulfilled`，执行 `reject` 之后就变为 `rejected` 的状态
 
@@ -2613,7 +2613,7 @@ function requestImg(){
   var p = new Promise(function(resolve, reject){
     var img = new Image();
     img.onload = function(){ resolve(img); }
-    img.src = 'http://www.baidu.com/img/flexible/logo/pc/result.png';
+    img.src = 'https:////www.baidu.com/img/flexible/logo/pc/result.png';
   });
   return p;
 }
@@ -2636,7 +2636,7 @@ Promise.race([requestImg(), timeout()])
 // 从上面的代码中可以看出，采用 Promise 的方式来判断图片是否加载成功，也是针对 Promise.race 方法的一个比较好的业务场景
 ```
 
-![img](http://img-repo.poetries.top/images/20210414210720.png)
+![img](https:////img-repo.poetries.top/images/20210414210720.png)
 
 **promise手写实现，面试够用版：**
 
@@ -2711,7 +2711,7 @@ console.log(it.next(13)) // => {value: 42, done: true}
 
 `yield`实际就是暂缓执行的标示，每执行一次`next()`，相当于指针移动到下一个`yield`位置
 
-![img](http://img-repo.poetries.top/images/20210408100806.png)
+![img](https:////img-repo.poetries.top/images/20210408100806.png)
 
 > **总结一下**，`Generator`函数是`ES6`提供的一种异步编程解决方案。通过`yield`标识位和`next()`方法调用，实现函数的分段执行
 
@@ -2886,7 +2886,7 @@ asyncFun(func);
 
 ### 18 事件循环
 
-![img](http://img-repo.poetries.top/images/20210516161332.png)
+![img](https:////img-repo.poetries.top/images/20210516161332.png)
 
 - 默认代码从上到下执行，执行环境通过`script`来执行（宏任务）
 - 在代码执行过程中，调用定时器 `promise` `click`事件...不会立即执行，需要等待当前代码全部执行完毕
@@ -2898,15 +2898,15 @@ asyncFun(func);
 
 **例子**
 
-![img](http://img-repo.poetries.top/images/20210516162034.png) ![img](http://img-repo.poetries.top/images/20210516162330.png)
+![img](https:////img-repo.poetries.top/images/20210516162034.png) ![img](https:////img-repo.poetries.top/images/20210516162330.png)
 
 > 自动执行的情况 会输出 listener1 listener2 task1 task2
 
-![img](http://img-repo.poetries.top/images/20210516162704.png) ![img](http://img-repo.poetries.top/images/20210516163038.png)
+![img](https:////img-repo.poetries.top/images/20210516162704.png) ![img](https:////img-repo.poetries.top/images/20210516163038.png)
 
 > 如果手动点击click 会一个宏任务取出来一个个执行，先执行click的宏任务，取出微任务去执行。会输出 listener1 task1 listener2 task2
 
-![img](http://img-repo.poetries.top/images/20210516163647.png)
+![img](https:////img-repo.poetries.top/images/20210516163647.png)
 
 ```js
 console.log(1)
@@ -3042,7 +3042,7 @@ console.log('script end');
   MutationObserver
   ```
 
-  - ![img](http://img-repo.poetries.top/images/20210516165328.png)
+  - ![img](https:////img-repo.poetries.top/images/20210516165328.png)
 
 **宏任务**
 
@@ -3056,7 +3056,7 @@ console.log('script end');
 
 > 宏任务中包括了 `script` ，浏览器会先执行一个宏任务，接下来有异步代码的话就先执行微任务
 
-![img](http://img-repo.poetries.top/images/20210414213126.png)
+![img](https:////img-repo.poetries.top/images/20210414213126.png)
 
 **所以正确的一次 Event loop 顺序是这样的**
 
@@ -3072,7 +3072,7 @@ console.log('script end');
 - 执行完毕后，再将微任务（microtask queue）中的所有任务取出，按照顺序分别全部执行（这里包括不仅指开始执行时队列里的微任务），如果在这一步过程中产生新的微任务，也需要执行；
 - 然后再从宏任务队列中取下一个，执行完毕后，再次将 microtask queue 中的全部取出，循环往复，直到两个 queue 中的任务都取完。
 
-![img](http://img-repo.poetries.top/images/20210414211816.png)
+![img](https:////img-repo.poetries.top/images/20210414211816.png)
 
 > 总结起来就是：`一次 Eventloop 循环会处理一个宏任务和所有这次循环中产生的微任务`。
 
@@ -3083,7 +3083,7 @@ console.log('script end');
 - `Node` 中的 `Event loop` 和浏览器中的不相同。
 - `Node` 的 `Event loop` 分为`6`个阶段，它们会按照顺序反复运行
 
-![img](http://img-repo.poetries.top/images/20210414211850.png) ![img](http://img-repo.poetries.top/images/20210516214402.png) ![img](http://img-repo.poetries.top/images/20210516221825.png)
+![img](https:////img-repo.poetries.top/images/20210414211850.png) ![img](https:////img-repo.poetries.top/images/20210516214402.png) ![img](https:////img-repo.poetries.top/images/20210516221825.png)
 
 - 每次执行执行一个宏任务后会清空微任务（执行顺序和浏览器一致，在node11版本以上）
 - `process.nextTick` node中的微任务，当前执行栈的底部，优先级比`promise`要高
@@ -3095,7 +3095,7 @@ console.log('script end');
 - **idle，prepare 阶段**：仅系统内部使用，你只需要知道有这 2 个阶段就可以。
 - **poll 阶段**：`poll` 阶段是一个重要且复杂的阶段，几乎所有 `I/O` 相关的回调，都在这个阶段执行（除了`setTimeout`、`setInterval`、`setImmediate` 以及一些因为 `exception` 意外关闭产生的回调）。`检索新的 I/O 事件，执行与 I/O 相关的回调`，其他情况 Node.js 将在适当的时候在此阻塞。这也是最复杂的一个阶段，所有的事件循环以及回调处理都在这个阶段执行。这个阶段的主要流程如下图所示。
 
-![img](http://img-repo.poetries.top/images/20210414212124.png)
+![img](https:////img-repo.poetries.top/images/20210414212124.png)
 
 - **check 阶段**：`setImmediate()` 回调函数在这里执行，`setImmediate` 并不是立马执行，而是当事件循环 `poll 中没有新的事件处理时就执行该部分`，如下代码所示。
 
@@ -3136,7 +3136,7 @@ console.log('2');
 
 **事件循环的主要包含微任务和宏任务。具体是怎么进行循环的呢**
 
-![img](http://img-repo.poetries.top/images/20210424174311.png)
+![img](https:////img-repo.poetries.top/images/20210424174311.png)
 
 - **微任务**：在 Node.js 中微任务包含 2 种——`process.nextTick` 和 `Promise`。`微任务在事件循环中优先级是最高的`，因此在同一个事件循环中有其他任务存在时，优先执行微任务队列。并且`process.nextTick 和 Promise`也存在优先级，`process.nextTick` 高于 `Promise`
 - **宏任务**：在 Node.js 中宏任务包含 4 种——`setTimeout`、`setInterval`、`setImmediate` 和 `I/O`。宏任务在微任务执行之后执行，因此在同一个事件循环周期内，如果既存在微任务队列又存在宏任务队列，那么优先将微任务队列清空，再执行宏任务队列
@@ -3189,7 +3189,7 @@ setTimeout
 read file success
 ```
 
-![img](http://img-repo.poetries.top/images/20210516224232.png)
+![img](https:////img-repo.poetries.top/images/20210516224232.png)
 
 > 当微任务和宏任务又产生新的微任务和宏任务时，又应该如何处理呢？如下代码所示：
 
@@ -3233,7 +3233,7 @@ read file sync success
 
 **Process.nextick() 和 Vue 的 nextick**
 
-![img](http://img-repo.poetries.top/images/20210414213602.png)
+![img](https:////img-repo.poetries.top/images/20210414213602.png)
 
 > `Node.js` 和浏览器端宏任务队列的另一个很重要的不同点是，浏览器端任务队列每轮事件循环仅出队一个回调函数接着去执行微任务队列；而 `Node.js` 端只要轮到执行某个宏任务队列，则会执行完队列中所有的当前任务，但是当前轮次新添加到队尾的任务则会等到下一轮次才会执行。
 
@@ -3277,7 +3277,7 @@ setTimeout(()=>{
 
 > `Node` 中的 `process.nextTick` 会先于其他 `microtask` 执行
 
-![img](http://img-repo.poetries.top/images/20210529172258.png)
+![img](https:////img-repo.poetries.top/images/20210529172258.png)
 
 ```js
 setTimeout(() => {
@@ -3354,7 +3354,7 @@ process.nextTick(() => {
 
 但是 `requestIdlecallback` 却是一个更好理解的概念。当宏任务队列中没有任务可以处理时，浏览器可能存在“空闲状态”。这段空闲时间可以被 `requestIdlecallback` 利用起来执行一些优先级不高、不必立即执行的任务，如下图所示：
 
-![img](http://img-repo.poetries.top/images/20210414212916.png)
+![img](https:////img-repo.poetries.top/images/20210414212916.png)
 
 ### 19 垃圾回收
 
@@ -3403,7 +3403,7 @@ process.nextTick(() => {
 
 ### 21 深浅拷贝
 
-![img](http://img-repo.poetries.top/images/20210414142630.png)
+![img](https:////img-repo.poetries.top/images/20210414142630.png)
 
 **1. 浅拷贝的原理和实现**
 
@@ -3445,7 +3445,7 @@ console.log('obj1',obj1);
 console.log('obj2',obj2);
 ```
 
-![img](http://img-repo.poetries.top/images/20210414134752.png)
+![img](https:////img-repo.poetries.top/images/20210414134752.png)
 
 > 从上面的样例代码中可以看到，利用 `object.assign` 也可以拷贝 `Symbol` 类型的对象，但是如果到了对象的第二层属性 obj1.a.b 这里的时候，前者值的改变也会影响后者的第二层属性的值，说明其中`依旧存在着访问共同堆内存的问题`，也就是说`这种方法还不能进一步复制，而只是完成了浅拷贝的功能`
 
@@ -3579,7 +3579,7 @@ let obj2 = JSON.parse(str);
 console.log('obj2',obj2);
 ```
 
-![img](http://img-repo.poetries.top/images/20210414141731.png)
+![img](https:////img-repo.poetries.top/images/20210414141731.png)
 
 > 使用 `JSON.stringify` 方法实现深拷贝对象，虽然到目前为止还有很多无法实现的功能，但是这种方法足以满足日常的开发需求，并且是最简单和快捷的。而对于其他的也要实现深拷贝的，比较麻烦的属性对应的数据类型，`JSON.stringify` 暂时还是无法满足的，那么就需要下面的几种方法了
 
@@ -3688,7 +3688,7 @@ console.log('cloneObj', cloneObj)
 
 我们看一下结果，`cloneObj` 在 `obj` 的基础上进行了一次深拷贝，`cloneObj` 里的 `arr` 数组进行了修改，并未影响到 `obj.arr` 的变化，如下图所示
 
-![img](http://img-repo.poetries.top/images/20210414142525.png)
+![img](https:////img-repo.poetries.top/images/20210414142525.png)
 
 ### 22 节流与防抖
 
@@ -4211,7 +4211,7 @@ console.log(iterator.next().value);//xyz
 
 **7. 总结**
 
-![img](http://img-repo.poetries.top/images/20210414163215.png)
+![img](https:////img-repo.poetries.top/images/20210414163215.png)
 
 > 这些方法之间存在很多共性，如下：
 
@@ -4246,7 +4246,7 @@ foo('jack', '18', 'male');
 
 这段代码比较容易，就是直接将这个函数的 arguments 在函数内部打印出来，那么我们看下这个 arguments 打印出来的结果，请看控制台的这张截图。
 
-![img](http://img-repo.poetries.top/images/20210414164546.png)
+![img](https:////img-repo.poetries.top/images/20210414164546.png)
 
 > 从结果中可以看到，`typeof` 这个 `arguments` 返回的是 `object`，通过 `Object.prototype.toString.call` 返回的结果是 `'[object arguments]'`，可以看出来返回的不是 `'[object array]'`，说明 `arguments` 和数组还是有区别的。
 
@@ -4293,7 +4293,7 @@ function foo(name, age, sex) {
 foo('jack', '18', 'male');
 ```
 
-![img](http://img-repo.poetries.top/images/20210414164425.png)
+![img](https:////img-repo.poetries.top/images/20210414164425.png)
 
 > 从控制台可以看到，输出的就是函数自身，如果在函数内部直接执行调用 `callee` 的话，那它就会不停地执行当前函数，直到执行到内存溢出
 
@@ -4316,7 +4316,7 @@ console.log(Object.prototype.toString.call(elem1));
 
 在这个有 form 表单的页面执行上面的代码，得到的结果如下。
 
-![img](http://img-repo.poetries.top/images/20210414164820.png)
+![img](https:////img-repo.poetries.top/images/20210414164820.png)
 
 可以看到，这里打印出来了页面第一个 form 表单元素，同时也打印出来了判断类型的结果，说明打印的判断的类型和 arguments 返回的也比较类似，typeof 返回的都是 'object'，和上面的类似。
 
@@ -4338,7 +4338,7 @@ console.log(Object.prototype.toString.call(list));
 
 > 从上面的代码执行的结果中可以发现，我们是通过有 CheckBox 的页面执行的代码，在结果可中输出了一个 NodeList 类数组，里面有一个 CheckBox 元素，并且我们判断了它的类型，和上面的 arguments 与 HTMLCollection 其实是类似的，执行结果如下图所示。
 
-![img](http://img-repo.poetries.top/images/20210414164939.png)
+![img](https:////img-repo.poetries.top/images/20210414164939.png)
 
 **4. 类数组应用场景**
 
@@ -4435,7 +4435,7 @@ sum(1, 2);    // 3
 
 类数组和数组的异同点
 
-![img](http://img-repo.poetries.top/images/20210414165705.png)
+![img](https:////img-repo.poetries.top/images/20210414165705.png)
 
 > 在前端工作中，开发者往往会忽视对类数组的学习，其实在高级 JavaScript 编程中经常需要将类数组向数组转化，尤其是一些比较复杂的开源项目，经常会看到函数中处理参数的写法，例如：`[].slice.call(arguments)` 这行代码。
 
@@ -4555,11 +4555,11 @@ console.log(flatten(arr)); //  [1, 2, 3, 4，5]
 
 可以看到，其中先把传入的数组转换成字符串，然后通过正则表达式的方式把括号过滤掉，这部分正则的表达式你不太理解的话，可以看看下面的图片
 
-![img](http://img-repo.poetries.top/images/20210414170410.png)
+![img](https:////img-repo.poetries.top/images/20210414170410.png)
 
 > 通过这个在线网站 https://regexper.com/ 可以把正则分析成容易理解的可视化的逻辑脑图。其中我们可以看到，匹配规则是：全局匹配（g）左括号或者右括号，将它们替换成空格，最后返回处理后的结果。之后拿着正则处理好的结果重新在外层包裹括号，最后通过 JSON.parse 转换成数组返回。
 
-![img](http://img-repo.poetries.top/images/20210414170438.png)
+![img](https:////img-repo.poetries.top/images/20210414170438.png)
 
 **四、如何用 JS 实现各种数组排序**
 
@@ -4570,7 +4570,7 @@ console.log(flatten(arr)); //  [1, 2, 3, 4，5]
 
 我们通过一张图片来看看这两种分类方式分别包括哪些排序方法。
 
-![img](http://img-repo.poetries.top/images/20210414170747.png)
+![img](https:////img-repo.poetries.top/images/20210414170747.png)
 
 非比较类的排序在实际情况中用的比较少
 
@@ -4775,7 +4775,7 @@ mergeSort(a); // [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
 
 归并排序是一种稳定的排序方法，和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好得多，因为始终都是 O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 
-![img](http://img-repo.poetries.top/images/20210414171508.png)
+![img](https:////img-repo.poetries.top/images/20210414171508.png)
 
 其中你可以看到排序相关的时间复杂度和空间复杂度以及稳定性的情况，如果遇到需要自己实现排序的时候，可以根据它们的空间和时间复杂度综合考量，选择最适合的排序方法
 
@@ -4877,7 +4877,7 @@ mergeSort(a); // [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
 - `defer 属性`。立即请求文件，但不阻塞渲染引擎，`等到解析完 HTML 之后再执行`文件内容
 - HTML5 标准 type 属性，对应值为“module”。让浏览器按照 ECMA Script 6 标准将文件当作模块进行解析，默认阻塞效果同 defer，也可以配合 async 在请求完成后立即执行。
 
-![img](http://img-repo.poetries.top/images/20210421163450.png)
+![img](https:////img-repo.poetries.top/images/20210421163450.png)
 
 > 绿色的线表示执行解析 HTML ，蓝色的线表示请求文件，红色的线表示执行文件
 
@@ -4887,14 +4887,14 @@ mergeSort(a); // [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
 
 在我们对大型单页应用进行性能优化时，也许会用到按需懒加载的方式，来加载对应的模块，但如果能合理利用 `link` 标签的 `rel` 属性值来进行预加载，就能进一步提升渲染速度。
 
-- `dns-prefetch`。当 `link` 标签的 `rel` 属性值为“dns-prefetch”时，`浏览器会对某个域名预先进行 DNS 解析并缓存`。这样，当浏览器在请求同域名资源的时候，能省去从域名查询 IP 的过程，从而`减少时间损耗`。下图是淘宝网设置的 DNS 预解析 ![img](http://img-repo.poetries.top/images/20210421163848.png)
+- `dns-prefetch`。当 `link` 标签的 `rel` 属性值为“dns-prefetch”时，`浏览器会对某个域名预先进行 DNS 解析并缓存`。这样，当浏览器在请求同域名资源的时候，能省去从域名查询 IP 的过程，从而`减少时间损耗`。下图是淘宝网设置的 DNS 预解析 ![img](https:////img-repo.poetries.top/images/20210421163848.png)
 - `preconnect`。让浏览器在一个 HTTP 请求正式发给服务器前预先执行一些操作，这包括`DNS 解析、TLS 协商、TCP 握手`，通过消除往返延迟来为用户节省时间
 - `prefetch/preload`。两个值都是`让浏览器预先下载并缓存某个资源`，但不同的是，`prefetch 可能会在浏览器忙时被忽略`，而 `preload 则是一定会被预先下载`。
 - `prerender`。浏览器不仅会加载资源，还会解析执行页面，进行预渲染
 
 这几个属性值恰好反映了浏览器获取资源文件的过程，在这里我绘制了一个流程简图，方便你记忆。
 
-![img](http://img-repo.poetries.top/images/20210421164758.png)
+![img](https:////img-repo.poetries.top/images/20210421164758.png)
 
 **3. 搜索优化**
 
@@ -5482,7 +5482,7 @@ eg:
 
 
 
-![img](http://img-repo.poetries.top/images/20210415090353.png)
+![img](https:////img-repo.poetries.top/images/20210415090353.png)
 
 ### 1 浏览器架构
 
@@ -5490,7 +5490,7 @@ eg:
 
 > 单进程浏览器是指浏览器的所有功能模块都是运行在同一个进程里，这些模块包含了网络、插件、JavaScript运行环境、渲染引擎和页面等。其实早在2007年之前，市面上浏览器都是单进程的
 
-![img](http://img-repo.poetries.top/images/20210415092040.png)
+![img](https:////img-repo.poetries.top/images/20210415092040.png)
 
 - 缺点
   - 不稳定：一个插件的意外崩溃会引起整个浏览器的崩溃
@@ -5504,7 +5504,7 @@ eg:
 - JavaScript也是运行在渲染进程中的，所以即使JavaScript阻塞了渲染进程，影响到的也只是当前的渲染页面，而并不会影响浏览器和其他页面，因为其他页面的脚本是运行在它们自己的渲染进程中的
 - Chrome把插件进程和渲染进程锁在沙箱里面，这样即使在渲染进程或者插件进程里面执行了恶意程序，恶意程序也无法突破沙箱去获取系统权限。
 
-![img](http://img-repo.poetries.top/images/20210415092356.png)
+![img](https:////img-repo.poetries.top/images/20210415092356.png)
 
 > 最新的Chrome浏览器包括：`1个浏览器（Browser）主进程`、`1个 GPU 进程`、`1个网络（NetWork）进程`、`多个渲染进程`和`多个插件进程`
 
@@ -6022,7 +6022,7 @@ If-None-Match: "15f0fff99ed5aae4edffdd6496d7131f"
 | `secure`    | 只能在协议为 `HTTPS` 的请求中携带                            |
 | `same-site` | 规定浏览器不能在跨域请求中携带 `Cookie`，减少 `CSRF` 攻击    |
 
-![img](http://img-repo.poetries.top/images/20210421172522.png)
+![img](https:////img-repo.poetries.top/images/20210421172522.png)
 
 - `Name`，即该 `Cookie` 的名称。`Cookie` 一旦创建，名称便不可更改。
 - `Value`，即该 `Cookie` 的值。如果值为 `Unicode` 字符，需要为字符编码。如果值为二进制数据，则需要使用 `BASE64` 编码。
@@ -6059,7 +6059,7 @@ If-None-Match: "15f0fff99ed5aae4edffdd6496d7131f"
 
 ```js
 '/api': {
-  target: 'http://www.example.com', // your target host
+  target: 'https:////www.example.com', // your target host
   changeOrigin: true, // needed for virtual hosted sites
   pathRewrite: {
     '^/api': ''  // rewrite path
@@ -6102,7 +6102,7 @@ location / {
 
 ### 8 XSS 和 CSRF
 
-![img](http://img-repo.poetries.top/images/20210415090547.png)
+![img](https:////img-repo.poetries.top/images/20210415090547.png)
 
 **1. XSS**
 
@@ -6114,7 +6114,7 @@ location / {
 
 > 举个例子，对于评论功能来说，就得防范持久型 `XSS` 攻击，因为我可以在评论中输入以下内容
 
-![image.png](https://poetries1.gitee.io/img-repo/2020/07/4.png)
+![img](https://poetries1.gitee.io/img-repo/2020/07/4.png)
 
 - 这种情况如果前后端没有做好防御的话，这段评论就会被存储到数据库中，这样每个打开该页面的用户都会被攻击到。
 - 非持久型相比于前者危害就小的多了，一般通过修改 `URL` 参数的方式加入攻击代码，诱导用户访问链接从而进行攻击。
@@ -6122,7 +6122,7 @@ location / {
 > 举个例子，如果页面需要从 `URL` 中获取某些参数作为内容的话，不经过过滤就会导致攻击代码被执行
 
 ```html
-<!-- http://www.domain.com?name=<script>alert(1)</script> -->
+<!-- https:////www.domain.com?name=<script>alert(1)</script> -->
 <div>{{name}}</div>                                                  
 ```
 
@@ -6213,10 +6213,10 @@ Content-Security-Policy: child-src 'none'
 > 假设网站中有一个通过 Get 请求提交用户评论的接口，那么攻击者就可以在钓鱼网站中加入一个图片，图片的地址就是评论接口
 
 ```text
-<img src="http://www.domain.com/xxx?comment='attack'"/>
+<img src="https:////www.domain.com/xxx?comment='attack'"/>
 ```
 
-![img](http://img-repo.poetries.top/images/20210506174602.png)
+![img](https:////img-repo.poetries.top/images/20210506174602.png)
 
 ```js
 res.setHeader('Set-Cookie', `username=poetry2;sameSite = strict;path=/;httpOnly;expires=${getCookirExpires()}`)
@@ -6229,14 +6229,14 @@ res.setHeader('Set-Cookie', `username=poetry2;sameSite = strict;path=/;httpOnly;
 <html>
   <body>
   <!-- 利用img自动发送请求 -->
-    <img src="http://localhost:8000/api/user/login" />
+    <img src="https:////localhost:8000/api/user/login" />
   </body>
 </html>
 ```
 
 会带上A网站的cookie
 
-![img](http://img-repo.poetries.top/images/20210506174856.png)
+![img](https:////img-repo.poetries.top/images/20210506174856.png)
 
 ```js
 // 在A网站下发cookie的时候，加上sameSite=strict，这样B网站在发送A网站请求，不会自动带上A网站的cookie，保证了安全
@@ -6253,7 +6253,7 @@ res.setHeader('Set-Cookie', `username=poetry2;sameSite = strict;path=/;httpOnly;
 res.setHeader('Set-Cookie', `username=poetry;sameSite=strict;path=/;httpOnly;expires=${getCookirExpires()}`)
 ```
 
-![img](http://img-repo.poetries.top/images/20210506175834.png)
+![img](https:////img-repo.poetries.top/images/20210506175834.png)
 
 **如何防御**
 
@@ -6437,7 +6437,7 @@ removeAttribute(key);
 - 给 js 脚本添加 `async`属性，这个属性会使脚本异步加载，不会阻塞页面的解析过程，但是当脚本加载完成后立即执行 js脚本，这个时候如果文档没有解析完成的话同样会阻塞。多个 `async` 属性的脚本的执行顺序是不可预测的，一般不会按照代码的顺序依次执行
 - 动态创建 `DOM` 标签的方式，我们可以对文档的加载事件进行监听，当文档加载完成后再动态的创建 `script` 标签来引入 js 脚本
 
-![img](http://img-repo.poetries.top/images/20210420215756.png)
+![img](https:////img-repo.poetries.top/images/20210420215756.png)
 
 **怎么判断页面是否加载完成**
 
@@ -6446,11 +6446,11 @@ removeAttribute(key);
 
 ### 12 从输入URL到页面展示过程
 
-![img](http://img-repo.poetries.top/images/20210504134355.png)
+![img](https:////img-repo.poetries.top/images/20210504134355.png)
 
 **1. DNS域名解析**
 
-![img](http://img-repo.poetries.top/images/20210504134816.png)
+![img](https:////img-repo.poetries.top/images/20210504134816.png)
 
 - 根 DNS 服务器 ：返回顶级域 DNS 服务器的 IP 地址
 - 顶级域 DNS 服务器：返回权威 DNS 服务器的 IP 地址
@@ -6458,17 +6458,17 @@ removeAttribute(key);
 
 > DNS的域名查找，在客户端和浏览器，本地DNS之间的查询方式是递归查询；在本地DNS服务器与根域及其子域之间的查询方式是迭代查询；
 
-![img](http://img-repo.poetries.top/images/20210504134850.png)
+![img](https:////img-repo.poetries.top/images/20210504134850.png)
 
 在客户端输入 URL 后，会有一个递归查找的过程，从`浏览器缓存中查找->本地的hosts文件查找->找本地DNS解析器缓存查找->本地DNS服务器查找`，这个过程中任何一步找到了都会结束查找流程。
 
 如果本地DNS服务器无法查询到，则根据本地DNS服务器设置的转发器进行查询。若未用转发模式，则迭代查找过程如下图：
 
-![img](http://img-repo.poetries.top/images/20210504134913.png)
+![img](https:////img-repo.poetries.top/images/20210504134913.png)
 
 结合起来的过程，可以用一个图表示：
 
-![img](http://img-repo.poetries.top/images/20210504134925.png)
+![img](https:////img-repo.poetries.top/images/20210504134925.png)
 
 **在查找过程中，有以下优化点：**
 
@@ -6500,7 +6500,7 @@ removeAttribute(key);
 
 这里有发生的一个过程是HTTP缓存，是一个常考的考点，大致过程如图：
 
-![img](http://img-repo.poetries.top/images/20210504135417.png)
+![img](https:////img-repo.poetries.top/images/20210504135417.png)
 
 **3. 关闭TCP连接**
 
@@ -6508,7 +6508,7 @@ removeAttribute(key);
 
 > 按照渲染的时间顺序，流水线可分为如下几个子阶段：构建 DOM 树、样式计算、布局阶段、分层、栅格化和显示。如图：
 
-![img](http://img-repo.poetries.top/images/20210504135549.png)
+![img](https:////img-repo.poetries.top/images/20210504135549.png)
 
 - 渲染进程将 HTML 内容转换为能够读懂DOM 树结构。
 - 渲染引擎将 CSS 样式表转化为浏览器可以理解的 `styleSheets`，计算出 `DOM` 节点的样式。
@@ -6519,7 +6519,7 @@ removeAttribute(key);
 
 **构建 DOM 树**
 
-![img](http://img-repo.poetries.top/images/20210504135701.png)
+![img](https:////img-repo.poetries.top/images/20210504135701.png)
 
 - 转码（Bytes -> Characters）—— 读取接收到的 HTML 二进制数据，按指定编码格式将字节转换为 HTML 字符串
 - Tokens 化（Characters -> Tokens）—— 解析 HTML，将 HTML 字符串转换为结构清晰的 Tokens，每个 Token 都有特殊的含义同时有自己的一套规则
@@ -6536,7 +6536,7 @@ removeAttribute(key);
 
 > 布局过程，即`排除 script、meta 等功能化、非视觉节点`，排除 `display: none` 的节点，计算元素的位置信息，确定元素的位置，构建一棵只包含可见元素布局树。如图：
 
-![img](http://img-repo.poetries.top/images/20210504135900.png)
+![img](https:////img-repo.poetries.top/images/20210504135900.png)
 
 > 其中，这个过程需要注意的是回流和重绘
 
@@ -6548,7 +6548,7 @@ removeAttribute(key);
 
 > 合成线程会按照视口附近的图块来优先生成位图，实际生成位图的操作是由栅格化来执行的。所谓栅格化，是指将图块转换为位图
 
-![img](http://img-repo.poetries.top/images/20210504140042.png)
+![img](https:////img-repo.poetries.top/images/20210504140042.png)
 
 通常一个页面可能很大，但是用户只能看到其中的一部分，我们把用户可以看到的这个部分叫做视口（viewport）。在有些情况下，有的图层可以很大，比如有的页面你使用滚动条要滚动好久才能滚动到底部，但是通过视口，用户只能看到页面的很小一部分，所以在这种情况下，要绘制出所有图层内容的话，就会产生太大的开销，而且也没有必要。
 
@@ -6629,7 +6629,7 @@ btn.onclick = function(){
 
 > 击该按钮后，首先将`onclick`事件处理程序加入队列。该程序执行后才设置定时器，再有`250ms`后，指定的代码才被添加到队列中等待执行。 如果上面代码中的`onclick`事件处理程序执行了`300ms`，那么定时器的代码至少要在定时器设置之后的`300ms`后才会被执行。队列中所有的代码都要等到javascript进程空闲之后才能执行，而不管它们是如何添加到队列中的。
 
-![img](http://img-repo.poetries.top/images/20210504201448.png)
+![img](https:////img-repo.poetries.top/images/20210504201448.png)
 
 如图所示，尽管在`255ms`处添加了定时器代码，但这时候还不能执行，因为`onclick`事件处理程序仍在运行。定时器代码最早能执行的时机是在`300ms`处，即`onclick`事件处理程序结束之后。
 
@@ -6644,7 +6644,7 @@ JavaScript中使用 `setInterval` 开启轮询。定时器代码可能在代码�
 
 假设，某个`onclick`事件处理程序使用`setInterval()`设置了`200ms`间隔的定时器。如果事件处理程序花了`300ms`多一点时间完成，同时定时器代码也花了差不多的时间，就会同时出现跳过某间隔的情况
 
-![img](http://img-repo.poetries.top/images/20210504201623.png)
+![img](https:////img-repo.poetries.top/images/20210504201623.png)
 
 例子中的第一个定时器是在`205ms`处添加到队列中的，但是直到过了`300ms`处才能执行。当执行这个定时器代码时，在405ms处又给队列添加了另一个副本。在下一个间隔，即605ms处，第一个定时器代码仍在运行，同时在队列中已经有了一个定时器代码的实例。结果是，在这个时间点上的定时器代码不会被添加到队列中
 
@@ -6715,7 +6715,7 @@ window.requestAnimFrame = (function(){
 
 `requestAnimationFrame`会在每次屏幕刷新的时候被调用，而`requestIdleCallback`则会在每次屏幕刷新时，判断当前帧是否还有多余的时间，如果有，则会调用`requestAnimationFrame`的回调函数，
 
-![img](http://img-repo.poetries.top/images/20210504202154.png)
+![img](https:////img-repo.poetries.top/images/20210504202154.png)
 
 图片中是两个连续的执行帧，大致可以理解为两个帧的持续时间大概为16.67，图中黄色部分就是空闲时间。所以，`requestIdleCallback` 中的回调函数仅会在每次屏幕刷新并且有空闲时间时才会被调用.
 
@@ -6733,7 +6733,7 @@ window.requestAnimFrame = (function(){
 
 
 
-[框架通识(opens new window)](http://interview.poetries.top/excellent-docs/16-框架通识.html)
+[框架通识(opens new window)](https:////interview.poetries.top/excellent-docs/16-框架通识.html)
 
 ## 六、Vue
 
@@ -6754,7 +6754,7 @@ window.requestAnimFrame = (function(){
 
 > 总结：Vue 采用数据劫持结合发布—订阅模式的方法，通过 `Object.defineProperty()` 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
 
-![img](http://poetries1.gitee.io/img-repo/20190922/vue.jpeg)
+![img](https:////poetries1.gitee.io/img-repo/20190922/vue.jpeg)
 
 - `Observer` 遍历数据对象，给所有属性加上 `setter` 和 `getter`，监听数据的变化
 - `compile` 解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图
@@ -6886,7 +6886,7 @@ p.a // -> Get 'a' = 2
 
 **总结**
 
-![img](http://img-repo.poetries.top/images/20210408091523.png)
+![img](https:////img-repo.poetries.top/images/20210408091523.png)
 
 - Vue
 
@@ -7074,7 +7074,7 @@ dep.notify()
 - **观察者模式**是由具体目标调度，比如当事件触发，`Dep` 就会去调用观察者的方法，所以观察者模 式的订阅者与发布者之间是存在依赖的
 - **发布/订阅模式**由统一调度中心调用，因此发布者和订阅者不需要知道对方的存在
 
-![img](http://img-repo.poetries.top/images/20210328214834.png)
+![img](https:////img-repo.poetries.top/images/20210328214834.png)
 
 ### 3 为什么使用 Virtual DOM
 
@@ -7091,7 +7091,7 @@ dep.notify()
 - 复杂视图情况下提升渲染性能
 - 除了渲染 `DOM` 以外，还可以实现 `SSR(Nuxt.js/Next.js)`、原生应用(`Weex/React Native`)、小程序(`mpvue/uni-app`)等
 
-![img](http://img-repo.poetries.top/images/20210328112610.png)
+![img](https:////img-repo.poetries.top/images/20210328112610.png)
 
 ### 4 VDOM：三个 part
 
@@ -7151,7 +7151,7 @@ dep.notify()
 
 ### 7 生命周期
 
-![img](http://img-repo.poetries.top/images/20210408093135.png)
+![img](https:////img-repo.poetries.top/images/20210408093135.png)
 
 ***init\***
 
@@ -7752,7 +7752,7 @@ export default defineComponent({
 <div id="container"></div>
 ```
 
-![img](http://img-repo.poetries.top/images/20210407162653.png)
+![img](https:////img-repo.poetries.top/images/20210407162653.png)
 
 **Suspense**
 
@@ -7868,7 +7868,7 @@ export default defineComponent({
 
 ### 14 vue 渲染过程
 
-![img](http://img-repo.poetries.top/images/20210504211204.png)
+![img](https:////img-repo.poetries.top/images/20210504211204.png)
 
 - 调用
 
@@ -7999,7 +7999,7 @@ function proxy( target, prop, key ) {
 
 其实我最终希望你明白的事情只有一件：`虚拟 DOM 的价值不在性能，而在别处`。因此想要从性能角度来把握虚拟 DOM 的优势，无异于南辕北辙。偏偏在面试场景下，10 个人里面有 9 个都走这条歧路，最后9个人里面自然没有一个能自圆其说，实在让人惋惜。
 
-[真正理解虚拟DOM(opens new window)](http://interview.poetries.top/principle-docs/react/15-真正理解虚拟DOM.html)
+[真正理解虚拟DOM(opens new window)](https:////interview.poetries.top/principle-docs/react/15-真正理解虚拟DOM.html)
 
 ### 1 谈谈你对React的理解
 
@@ -8017,15 +8017,15 @@ function proxy( target, prop, key ) {
 
 **16.3版本**
 
-![img](http://img-repo.poetries.top/images/20210409153251.png)
+![img](https:////img-repo.poetries.top/images/20210409153251.png)
 
 **>=16.4版本**
 
-![img](http://img-repo.poetries.top/images/20210409153312.png)
+![img](https:////img-repo.poetries.top/images/20210409153312.png)
 
 **在线查看**：[https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram(opens new window)](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram)
 
-![img](http://img-repo.poetries.top/images/20210425121355.png)
+![img](https:////img-repo.poetries.top/images/20210425121355.png)
 
 - 避免生命周期中的坑需要做好两件事：不在恰当的时候调用了不该调用的代码；在需要调用时，不要忘了调用。
 - 那么主要有这么 7 种情况容易造成生命周期的坑
@@ -8053,19 +8053,19 @@ Fiber 架构简析
 
 在 React 16 之前，每当我们触发一次组件的更新，React 都会构建一棵新的虚拟 DOM 树，通过与上一次的虚拟 DOM 树进行 diff，实现对 DOM 的定向更新。这个过程，是一个递归的过程。下面这张图形象地展示了这个过程的特征：
 
-![img](http://img-repo.poetries.top/images/20210426200953.png)
+![img](https:////img-repo.poetries.top/images/20210426200953.png)
 
 如图所示，`同步渲染的递归调用栈是非常深的，只有最底层的调用返回了，整个渲染过程才会开始逐层返回`。这个漫长且不可打断的更新过程，将会带来用户体验层面的巨大风险：`同步渲染一旦开始，便会牢牢抓住主线程不放，直到递归彻底完成`。在这个过程中，浏览器没有办法处理任何渲染之外的事情，会进入一种无法处理用户交互的状态。因此若渲染时间稍微长一点，页面就会面临卡顿甚至卡死的风险。
 
 而 React 16 引入的 Fiber 架构，恰好能够解决掉这个风险：`Fiber 会将一个大的更新任务拆解为许多个小任务`。`每当执行完一个小任务时，渲染线程都会把主线程交回去`，看看有没有优先级更高的工作要处理，确保不会出现其他任务被“饿死”的情况，进而避免同步渲染带来的卡顿。在这个过程中，渲染线程不再“一去不回头”，而是可以被打断的，这就是所谓的“异步渲染”，它的执行过程如下图所示：
 
-![img](http://img-repo.poetries.top/images/20210426201045.png)
+![img](https:////img-repo.poetries.top/images/20210426201045.png)
 
 **换个角度看生命周期工作流**
 
 Fiber 架构的重要特征就是可以被打断的异步渲染模式。但这个“打断”是有原则的，根据“能否被打断”这一标准，`React 16 的生命周期被划分为了 render 和 commit 两个阶段`，而 commit 阶段又被细分为了 `pre-commit 和 commit`。每个阶段所涵盖的生命周期如下图所示：
 
-![img](http://img-repo.poetries.top/images/20210426201155.png)
+![img](https:////img-repo.poetries.top/images/20210426201155.png)
 
 我们先来看下三个阶段各自有哪些特征
 
@@ -8079,8 +8079,8 @@ Fiber 架构的重要特征就是可以被打断的异步渲染模式。但这�
 
 **为什么 React 16 要更改组件的生命周期详解**
 
-> - [React16为什么要更改生命周期(opens new window)](http://interview.poetries.top/principle-docs/react/12-React16为什么要更改生命周期(上).html)
-> - [React16为什么要更改生命周期(opens new window)](http://interview.poetries.top/principle-docs/react/12-React16为什么要更改生命周期(下).html)
+> - [React16为什么要更改生命周期(opens new window)](https:////interview.poetries.top/principle-docs/react/12-React16为什么要更改生命周期(上).html)
+> - [React16为什么要更改生命周期(opens new window)](https:////interview.poetries.top/principle-docs/react/12-React16为什么要更改生命周期(下).html)
 
 ### 3 React Fiber架构
 
@@ -8137,7 +8137,7 @@ Fiber 架构的重要特征就是可以被打断的异步渲染模式。但这�
 
 > 我们都知道，页面的内容都是一帧一帧绘制出来的，浏览器刷新率代表浏览器一秒绘制多少帧。原则上说 1s 内绘制的帧数也多，画面表现就也细腻。目前浏览器大多是 60Hz（60帧/s），每一帧耗时也就是在 16.6ms 左右。那么在这一帧的（16.6ms） 过程中浏览器又干了些什么呢
 
-![img](http://img-repo.poetries.top/images/20210407173320.png)
+![img](https:////img-repo.poetries.top/images/20210407173320.png)
 
 通过上面这张图可以清楚的知道，浏览器一帧会经过下面这几个过程：
 
@@ -8212,7 +8212,7 @@ function unImportWork(deadline) {
 
 > 假如有A,B,C,D组件，层级结构为：
 
-![img](http://img-repo.poetries.top/images/20210407174007.png)
+![img](https:////img-repo.poetries.top/images/20210407174007.png)
 
 我们知道组件的生命周期为：
 
@@ -8235,7 +8235,7 @@ function unImportWork(deadline) {
 
 那么在挂载阶段，A,B,C,D的生命周期渲染顺序是如何的呢？
 
-![img](http://img-repo.poetries.top/images/20210407173933.png)
+![img](https:////img-repo.poetries.top/images/20210407173933.png)
 
 > 以`render()`函数为分界线。从顶层组件开始，一直往下，直至最底层子组件。然后再往上
 
@@ -8249,7 +8249,7 @@ function unImportWork(deadline) {
 
 > 看一下fiber架构 组建的渲染顺序
 
-![img](http://img-repo.poetries.top/images/20210407173949.png)
+![img](https:////img-repo.poetries.top/images/20210407173949.png)
 
 > 加入`fiber`的`react`将组件更新分为两个时期
 
@@ -8561,7 +8561,7 @@ var child1 = React.createElement('li', null, 'one');
 - 保持内部一致性。如果将 state 改为同步更新，那尽管 state 的更新是同步的，但是 props不是。
 - 启用并发更新，完成异步渲染。
 
-![img](http://img-repo.poetries.top/images/20210425140749.png)
+![img](https:////img-repo.poetries.top/images/20210425140749.png)
 
 1. `setState` 只有在 React 自身的合成事件和钩子函数中是异步的，在原生事件和 setTimeout 中都是同步的
 2. `setState` 的异步并不是说内部由异步代码实现，其实本身执行的过程和代码都是同步的，只是合成事件和钩子函数中没法立马拿到更新后的值，形成了所谓的异步。当然可以通过 setState 的第二个参数中的 callback 拿到更新后的结果
@@ -8572,7 +8572,7 @@ var child1 = React.createElement('li', null, 'one');
 - 原生事件中是同步
 - setTimeout中是同步
 
-![img](http://img-repo.poetries.top/images/20210409153900.png) ![img](http://img-repo.poetries.top/images/20210409153914.png) ![img](http://img-repo.poetries.top/images/20210409153926.png) ![img](http://img-repo.poetries.top/images/20210409153942.png) ![img](http://img-repo.poetries.top/images/20210409154004.png) ![img](http://img-repo.poetries.top/images/20210409154015.png)
+![img](https:////img-repo.poetries.top/images/20210409153900.png) ![img](https:////img-repo.poetries.top/images/20210409153914.png) ![img](https:////img-repo.poetries.top/images/20210409153926.png) ![img](https:////img-repo.poetries.top/images/20210409153942.png) ![img](https:////img-repo.poetries.top/images/20210409154004.png) ![img](https:////img-repo.poetries.top/images/20210409154015.png)
 
 **这是一道经常会出现的 React setState 笔试题：下面的代码输出什么呢？**
 
@@ -8789,7 +8789,7 @@ componentDidUpdate(){
 
 ### 8 React事务机制
 
-![img](http://img-repo.poetries.top/images/20210409154118.png) ![img](http://img-repo.poetries.top/images/20210409154127.png) ![img](http://img-repo.poetries.top/images/20210409154136.png)
+![img](https:////img-repo.poetries.top/images/20210409154118.png) ![img](https:////img-repo.poetries.top/images/20210409154127.png) ![img](https:////img-repo.poetries.top/images/20210409154136.png)
 
 ### 9 React组件和渲染更新过程
 
@@ -8819,7 +8819,7 @@ componentDidUpdate(){
 
 ### 10 如何解释 React 的渲染流程
 
-![img](http://img-repo.poetries.top/images/20210425210718.png)
+![img](https:////img-repo.poetries.top/images/20210425210718.png)
 
 - React 的渲染过程大致一致，但协调并不相同，以 `React 16` 为分界线，分为 `Stack Reconciler` 和 `Fiber Reconciler`。这里的协调从狭义上来讲，特指 React 的 diff 算法，广义上来讲，有时候也指 React 的 `reconciler` 模块，它通常包含了 `diff` 算法和一些公共逻辑。
 - 回到 `Stack Reconciler` 中，`Stack Reconciler` 的`核心调度方式是递归`。`调度的基本处理单位是事务`，它的事务基类是 `Transaction`，这里的`事务是 React 团队从后端开发中加入的概念`。在 React 16 以前，`挂载主要通过 ReactMount 模块完成`，更新通过 `ReactUpdate` 模块完成，模块之间相互分离，落脚执行点也是事务。
@@ -8865,7 +8865,7 @@ componentDidUpdate(){
 - 第一轮遍历：处理`更新`的节点。
 - 第二轮遍历：处理剩下的不属于`更新`的节点。
 
-![img](http://img-repo.poetries.top/images/20210307225249.png)
+![img](https:////img-repo.poetries.top/images/20210307225249.png)
 
 **diff算法的作用**
 
@@ -8908,13 +8908,13 @@ componentDidUpdate(){
 - 对树分层比较，两棵树 只对同一层次节点 进行比较。如果该节点不存在时，则该节点及其子节点会被完全删除，不会再进一步比较。
 - 只需遍历一次，就能完成整棵DOM树的比较。
 
-![image-20210307224725566](http://img-repo.poetries.top/images/image-20210307224725566.png)
+![img](https:////img-repo.poetries.top/images/image-20210307224725566.png)
 
 那么问题来了，如果DOM节点出现了跨层级操作,diff会咋办呢？
 
 > 答：diff只简单考虑同层级的节点位置变换，如果是跨层级的话，只有创建节点和删除节点的操作。
 
-![image-20210307224829092](http://img-repo.poetries.top/images/image-20210307224829092.png)
+![img](https:////img-repo.poetries.top/images/image-20210307224829092.png)
 
 > 如上图所示，以A为根节点的整棵树会被重新创建，而不是移动，因此 官方建议不要进行DOM节点跨层级操作，可以通过CSS隐藏、显示节点，而不是真正地移除、添加DOM节点
 
@@ -8946,13 +8946,13 @@ componentDidUpdate(){
 
 这样只需要对树进行一次遍历，便能完成整个 DOM 树的比较。
 
-![image-20210302195610674](http://img-repo.poetries.top/images/image-20210302195610674.png)
+![img](https:////img-repo.poetries.top/images/image-20210302195610674.png)
 
 这就意味着，如果 dom 节点发生了跨层级移动，react 会删除旧的节点，生成新的节点，而不会复用。
 
 1. `component diff`：如果不是同一类型的组件，会删除旧的组件，创建新的组件
 
-![image-20210302195654736](http://img-repo.poetries.top/images/image-20210302195654736.png)
+![img](https:////img-repo.poetries.top/images/image-20210302195654736.png)
 
 1. `element diff`：对于同一层级的一组子节点，需要通过唯一 id 进行来区分
 
@@ -8965,11 +8965,11 @@ componentDidUpdate(){
 
 **与其他框架相比，React 的 diff 算法有何不同？**
 
-![img](http://img-repo.poetries.top/images/20210425203918.png)
+![img](https:////img-repo.poetries.top/images/20210425203918.png)
 
 > diff 算法探讨的就是虚拟 DOM 树发生变化后，生成 DOM 树更新补丁的方式。它通过对比新旧两株虚拟 DOM 树的变更差异，将更新补丁作用于真实 DOM，以最小成本完成视图更新
 
-![img](http://img-repo.poetries.top/images/20210425204127.png)
+![img](https:////img-repo.poetries.top/images/20210425204127.png)
 
 具体的流程是这样的：
 
@@ -8977,7 +8977,7 @@ componentDidUpdate(){
 - 当虚拟 DOM 发生变化后，就会根据差距计算生成 patch，这个 patch 是一个结构化的数据，内容包含了增加、更新、移除等；
 - 最后再根据 patch 去更新真实的 DOM，反馈到用户的界面上。
 
-![img](http://img-repo.poetries.top/images/20210425204151.png)
+![img](https:////img-repo.poetries.top/images/20210425204151.png)
 
 在回答有何不同之前，首先需要说明下什么是 diff 算法。
 
@@ -9029,13 +9029,13 @@ componentDidUpdate(){
 
 **React 17 之前的事件冒泡流程图**
 
-![img](http://img-repo.poetries.top/images/20210425135711.png)
+![img](https:////img-repo.poetries.top/images/20210425135711.png)
 
 > 所以这就造成了，在一个页面中，只能有一个版本的 React。如果有多个版本，事件就乱套了。值得一提的是，这个问题在 React 17 中得到了解决，事件委托不再挂在 document 上，而是挂在 DOM 容器上，也就是 `ReactDom.Render` 所调用的节点上。
 
 **React 17 后的事件冒泡流程图**
 
-![img](http://img-repo.poetries.top/images/20210425135751.png)
+![img](https:////img-repo.poetries.top/images/20210425135751.png)
 
 > 那到底哪些事件会被捕获生成合成事件呢？可以从 React 的源码测试文件中一探究竟。下面的测试快照中罗列了大量的事件名，也只有在这份快照中的事件，才会被捕获生成合成事件。
 
@@ -9135,7 +9135,7 @@ Array [
 2. 而是在document处监听所有支持的事件,当事件发生并冒泡至document处时,React将事件内容封装交给中间层 SyntheticEvent (负责所有事件合成)
 3. 所以当事件触发的时候, 对使用统一的分发函数 dispatchEvent 将指定函数执行
 
-![img](http://img-repo.poetries.top/images/20210409153648.png)
+![img](https:////img-repo.poetries.top/images/20210409153648.png)
 
 **为何要合成事件**
 
@@ -9152,7 +9152,7 @@ Array [
 - 然后这个函数执行完后，会返回一个`vnode`
 - 通过vdom的patch或者是其他的一个方法，最后渲染一个页面
 
-![img](http://img-repo.poetries.top/images/20210407215708.png) ![img](http://img-repo.poetries.top/images/20210407215721.png)
+![img](https:////img-repo.poetries.top/images/20210407215708.png) ![img](https:////img-repo.poetries.top/images/20210407215721.png)
 
 > script标签中不添加`text/babel`解析jsx语法的情况下
 
@@ -9165,7 +9165,7 @@ Array [
 
 **JSX的本质是React.createElement()函数**
 
-![img](http://img-repo.poetries.top/images/20210407215754.png)
+![img](https:////img-repo.poetries.top/images/20210407215754.png)
 
 > `createElement`函数返回的对象是`ReactEelement`对象。
 
@@ -9189,7 +9189,7 @@ class App extends React.Component {
                             React.createElement("h2", null, "\u6211\u662F\u9875\u9762\u7684\u5185\u5BB9"),
                             React.createElement("button", null, "\u6309\u94AE"),
                             React.createElement("button", null, "+1"),
-                            React.createElement("a", { href: "http://www.baidu.com" },
+                            React.createElement("a", { href: "https:////www.baidu.com" },
                                                 "\u767E\u5EA6\u4E00\u4E0B")
                           ),
         /*第三个子元素，footer*/
@@ -9218,7 +9218,7 @@ render() {
         <h2>我是页面的内容</h2>
         <button>按钮</button>
         <button>+1</button>
-        <a href="http://www.baidu.com">百度一下</a>
+        <a href="https:////www.baidu.com">百度一下</a>
       </div>
       <div className="footer">
         <p>我是尾部的内容</p>
@@ -9230,13 +9230,13 @@ render() {
 }
 ```
 
-![img](http://img-repo.poetries.top/images/20210407220013.png)
+![img](https:////img-repo.poetries.top/images/20210407220013.png)
 
 > react通过babel把JSX转成`createElement`函数，生成`ReactElement`对象，然后通过`ReactDOM.render函`数把`ReactElement`渲染成真实的`DOM`元素
 
 **为什么 React 使用 JSX**
 
-![img](http://img-repo.poetries.top/images/20210425120721.png)
+![img](https:////img-repo.poetries.top/images/20210425120721.png)
 
 - 在回答问题之前，我首先解释下什么是 JSX 吧。JSX 是一个 `JavaScript` 的语法扩展，结构类似 XML。
 - JSX 主要用于声明 `React` 元素，但 React 中并不强制使用 `JSX`。即使使用了 `JSX`，也会在构建过程中，通过 Babel 插件编译为 `React.createElement`。所以 JSX 更像是 `React.createElement` 的一种语法糖
@@ -9390,11 +9390,11 @@ React.createElement("ul", {
 
 **createElement 函数体拆解**
 
-![img](http://img-repo.poetries.top/images/20210426192237.png)
+![img](https:////img-repo.poetries.top/images/20210426192237.png)
 
 > createElement 中并没有十分复杂的涉及算法或真实 DOM 的逻辑，它的每一个步骤几乎都是在格式化数据。
 
-![img](http://img-repo.poetries.top/images/20210426192648.png)
+![img](https:////img-repo.poetries.top/images/20210426192648.png)
 
 > 现在看来，`createElement` 原来只是个“参数中介”。此时我们的注意力自然而然地就聚焦在了 `ReactElement` 上
 
@@ -9429,7 +9429,7 @@ const ReactElement = function(type, key, ref, self, source, owner, props) {
 
 > `ReactElement` 其实只做了一件事情，那就是“创建”，说得更精确一点，是“组装”：`ReactElement` 把传入的参数按照一定的规范，“组装”进了 `element` 对象里，并把它返回给了 `eact.createElement`，最终 `React.createElement` 又把它交回到了开发者手中
 
-![img](http://img-repo.poetries.top/images/20210426193812.png)
+![img](https:////img-repo.poetries.top/images/20210426193812.png)
 
 ```js
 const AppJSX = (<div className="App">
@@ -9442,13 +9442,13 @@ console.log(AppJSX)
 
 你会发现它确实是一个标准的 `ReactElement` 对象实例
 
-![img](http://img-repo.poetries.top/images/20210426193901.png)
+![img](https:////img-repo.poetries.top/images/20210426193901.png)
 
 这个 `ReactElement` 对象实例，本质上是以 JavaScript 对象形式存在的对 `DOM` 的描述，也就是老生常谈的“虚拟 DOM”（准确地说，是虚拟 `DOM` 中的一个节点)
 
 ### 14 为什么 React 元素有一个 $$typeof 属性
 
-![image-20210302200213923](http://img-repo.poetries.top/images/image-20210302200213923.png)
+![img](https:////img-repo.poetries.top/images/image-20210302200213923.png)
 
 > 目的是为了防止 XSS 攻击。因为 Synbol 无法被序列化，所以 React 可以通过有没有 $$typeof 属性来断出当前的 element 对象是从数据库来的还是自己生成的。
 
@@ -9476,7 +9476,7 @@ let message = { text: expectedTextButGotJSON };
 
 ### 15 Virtual DOM 的工作原理是什么
 
-![img](http://img-repo.poetries.top/images/20210425201821.png)
+![img](https:////img-repo.poetries.top/images/20210425201821.png)
 
 - 虚拟 DOM 的工作原理是`通过 JS 对象模拟 DOM 的节点`。在 Facebook 构建 React 初期时，考虑到要提升代码抽象能力、避免人为的 DOM 操作、降低代码整体风险等因素，所以引入了虚拟 DOM
 - 虚拟 DOM 在实现上通常是 `Plain Object`，以 React 为例，在 `render` 函数中写的 `JSX` 会在 `Babel` 插件的作用下，编译为 `React.createElement` 执行 `JSX` 中的属性参数
@@ -9560,7 +9560,7 @@ export default class CallingLazyComponents extends React.Component {
 
 > `Redux`是将整个应用状态存储到一个地方上称为`store`,里面保存着一个状态树`store tree`,组件可以派发(`dispatch`)行为(`action`)给`store`,而不是直接通知其他组件，组件内部通过订阅`store`中的状态`state`来刷新自己的视图
 
-![img](http://poetries1.gitee.io/img-repo/2020/07/68.png)
+![img](https:////poetries1.gitee.io/img-repo/2020/07/68.png)
 
 > 如果你想对数据进行修改，`只有一种途径：派发 action`。action 会被 reducer 读取，进而根据 action 内容的不同对数据进行修改、生成新的 state（状态），这个新的 state 会更新到 store 对象里，进而驱动视图层面做出对应的改变。
 
@@ -9654,7 +9654,7 @@ store.dispatch(action)
 
 以上这段代码，是从编码角度对 Redux 主要工作流的概括，这里我同样为你总结了一张对应的流程图：
 
-![img](http://img-repo.poetries.top/images/20210426215948.png)
+![img](https:////img-repo.poetries.top/images/20210426215948.png)
 
 **Redux源码**
 
@@ -9744,7 +9744,7 @@ function applyMiddleware(middlewares) {
 
 > 上面的`middleware(store)(dispatch)` 就相当于是 `const logger = store => next => {}`，这就是构造后的dispatch，继续向下传递。这里`middlewares.reverse()`，进行数组反转的原因，是最后构造的`dispatch`，实际上是最先执行的。因为在`applyMiddleware`串联的时候，每个中间件只是返回一个新的`dispatch`函数给下一个中间件，实际上这个`dispatch`并不会执行。只有当我们在程序中通过`store.dispatch(action)`，真正派发的时候，才会执行。而此时的`dispatch`是最后一个中间件返回的包装函数。然后依次向前递推执行。
 
-[浅析中间件(opens new window)](http://interview.poetries.top/principle-docs/react/08-浅析中间件.html)
+[浅析中间件(opens new window)](https:////interview.poetries.top/principle-docs/react/08-浅析中间件.html)
 
 **action、store、reducer分析**
 
@@ -9998,7 +9998,7 @@ function promiseAction(name){
 
 1. redux异步流程
 
-![img](http://img-repo.poetries.top/images/20210427115241.png)
+![img](https:////img-repo.poetries.top/images/20210427115241.png)
 
 - 首先发起一个action，然后通过中间件，这里为什么要用中间件呢，因为这样`dispatch`的返回值才能是一个函数。
 - 通过`store.dispatch`，将状态的的改变传给`store`的小弟`reducer`，`reducer`根据`action`的改变，传递新的状态`state`。
@@ -10227,7 +10227,7 @@ function fetchPosts(subreddit) {
 
   return function (dispatch) {
     
-    return fetch(`http://www.subreddit.com/r/${subreddit}.json`)
+    return fetch(`https:////www.subreddit.com/r/${subreddit}.json`)
       .then(response => response.json())
       .then(json =>
         dispatch(receivePosts(subreddit, json))
@@ -10349,7 +10349,7 @@ render(
 
 > 这样就完成了`redux`的异步操作。其实最主要的区别还是`action`里面还有中间件的调用，其他的地方基本跟同步的`redux`差不多的。搞懂了中间件，就基本搞懂了`redux`的异步操作
 
-![img](http://img-repo.poetries.top/images/20210427115322.png)
+![img](https:////img-repo.poetries.top/images/20210427115322.png)
 
 ### 18 谈谈你对状态管理的理解
 
@@ -10372,7 +10372,7 @@ render(
 - `最后是 Mobx`，Mobx 通过监听数据的属性变化，可以直接在数据上更改触发UI 的渲染。在使用上更接近 Vue，比起 `Flux 与 Redux` 的手动挡的体验，更像开自动挡的汽车。`Mobx 的响应式实现原理与 Vue 相同`，以 `Mobx 5` 为分界点，5 以前采用 `Object.defineProperty` 的方案，5 及以后使用 `Proxy` 的方案。`它的优点是样板代码少、简单粗暴、用户学习快、响应式自动更新数据`让开发者的心智负担更低。
 - Mobx 在开发项目时简单快速，但应用 Mobx 的场景 ，其实完全可以用 Vue 取代。如果纯用 Vue，体积还会更小巧
 
-![img](http://img-repo.poetries.top/images/20210425201200.png)
+![img](https:////img-repo.poetries.top/images/20210425201200.png)
 
 ### 19 connect组件原理分析
 
@@ -10650,7 +10650,7 @@ function Home() {
 
 **React Hooks 的限制**
 
-![img](http://img-repo.poetries.top/images/20210425213051.png)
+![img](https:////img-repo.poetries.top/images/20210425213051.png)
 
 - 不要在`循环、条件`或`嵌套函数中调用 Hook`；
 - 在 React 的函数组件中调用 `Hook`
@@ -10669,7 +10669,7 @@ function Home() {
 
 **useEffect 与 useLayoutEffect 区别在哪里**
 
-![img](http://img-repo.poetries.top/images/20210425213302.png)
+![img](https:////img-repo.poetries.top/images/20210425213302.png)
 
 - 它们的共同点很简单，底层的函数签名是完全一致的，都是调用的 `mountEffectImpl`，在使用上也没什么差异，基本可以直接替换，也都是用于处理副作用。
 - 那不同点就很大了，`useEffect` 在 React 的渲染过程中是被异步调用的，用于绝大多数场景，而 `LayoutEffect` 会在所有的 DOM 变更之后同步调用，主要用于处理 DOM 操作、调整样式、避免页面闪烁等问题。也正因为是同步处理，所以需要避免在 `LayoutEffect` 做计算量较大的耗时任务从而造成阻塞。
@@ -10719,7 +10719,7 @@ function Home() {
   - 第二个是使用全局变量与事件。
   - 第三个是使用状态管理框架，比如 Flux、Redux 及 Mobx。优点是由于引入了状态管理，使得项目的开发模式与代码结构得以约束，缺点是学习成本相对较高
 
-![img](http://img-repo.poetries.top/images/20210425145857.png)
+![img](https:////img-repo.poetries.top/images/20210425145857.png)
 
 ### 24 类组件与函数组件有什么区别呢？
 
@@ -10732,7 +10732,7 @@ function Home() {
 - 从上手程度而言，类组件更容易上手，从未来趋势上看，由于React Hooks 的推出，函数组件成了社区未来主推的方案。
 - 类组件在未来时间切片与并发模式中，由于生命周期带来的复杂度，并不易于优化。而函数组件本身轻量简单，且在 Hooks 的基础上提供了比原先更细粒度的逻辑组织与复用，更能适应 React 的未来发展。
 
-![img](http://img-repo.poetries.top/images/20210425134417.png)
+![img](https:////img-repo.poetries.top/images/20210425134417.png)
 
 ### 25 如何设计React组件
 
@@ -10743,7 +10743,7 @@ React 组件应从`设计与工程实践`两个方向进行探讨
 - `展示组件内部没有状态管理，仅仅用于最简单的展示表达`。展示组件中最基础的一类组件称作代理组件。代理组件常用于封装常用属性、减少重复代码。很经典的场景就是引入 Antd 的 Button 时，你再自己封一层。如果未来需要替换掉 Antd 或者需要在所有的 Button 上添加一个属性，都会非常方便。基于代理组件的思想还可以继续分类，分为样式组件与布局组件两种，分别是将样式与布局内聚在自己组件内部。
 - 从工程实践而言，通过文件夹划分的方式切分代码。我初步常用的分割方式是将页面单独建立一个目录，将复用性略高的 components 建立一个目录，在下面分别建立 basic、container 和 hoc 三类。这样可以保证无法复用的业务逻辑代码尽量留在 Page 中，而可以抽象复用的部分放入 components 中。其中 basic 文件夹放展示组件，由于展示组件本身与业务关联性较低，所以可以使用 Storybook 进行组件的开发管理，提升项目的工程化管理能力
 
-![img](http://img-repo.poetries.top/images/20210425134939.png)
+![img](https:////img-repo.poetries.top/images/20210425134939.png)
 
 ### 26 组件的协同及（不）可控组件
 
@@ -10751,7 +10751,7 @@ React 组件应从`设计与工程实践`两个方向进行探讨
 
 - 我们在实际的开发项目的时候，不会只用几个组件，有时候遇到大型的项目，可能会有成千上百的组件，难免会遇到有功能重复的组件。要进行修改，就会修改大部分的文件。所以我们需要进行组件的协同开发。
 
-![img](http://img-repo.poetries.top/images/20210427114453.png)
+![img](https:////img-repo.poetries.top/images/20210427114453.png)
 
 **什么是组件的协同使用？**
 
@@ -10771,7 +10771,7 @@ React 组件应从`设计与工程实践`两个方向进行探讨
 
 - 组件嵌套的本质是父子关系
 
-![img](http://img-repo.poetries.top/images/20210427114544.png)
+![img](https:////img-repo.poetries.top/images/20210427114544.png)
 
 **组件嵌套的优缺点**
 
@@ -10790,7 +10790,7 @@ React 组件应从`设计与工程实践`两个方向进行探讨
 - `Mixin=一组方法`。
 - 他的目的是横向抽离出组件的相似代码，把组件的共同作用以及效果的代码提出来
 
-![img](http://img-repo.poetries.top/images/20210427114655.png)
+![img](https:////img-repo.poetries.top/images/20210427114655.png)
 
 **Mixin的优缺点**
 
@@ -10804,14 +10804,14 @@ React 组件应从`设计与工程实践`两个方向进行探讨
 
 **不可控组件**
 
-![img](http://img-repo.poetries.top/images/20210427114820.png)
+![img](https:////img-repo.poetries.top/images/20210427114820.png)
 
 - 上图：`defaultValue`的值是固定的，这就是一个不可控组件
 - 如果要获取`input`的`value`值，只有使用`ref`获取节点来获取值
 
 **可控组件**
 
-![img](http://img-repo.poetries.top/images/20210427114833.png)
+![img](https:////img-repo.poetries.top/images/20210427114833.png)
 
 - `defaultValue`的值是根据状态确定了，只需要拿到`this.state.value`的值就可以了
 - 这里需要注意一下：使用`value`的值是不可修改的，`defaultValue`的值是可以修改的
@@ -10829,11 +10829,11 @@ React 组件应从`设计与工程实践`两个方向进行探讨
 - `React Router` 的工作方式可以分为设计模式与关键模块两个部分。从设计模式的角度出发，在架构上通过 `Monorepo`进行库的管理。`Monorepo` 具有团队间透明、迭代便利的优点。其次在整体的数据通信上使用了 Context API 完成上下文传递。
 - 在关键模块上，主要分为三类组件：`第一类是 Context 容器`，比如 Router 与 MemoryRouter；`第二类是消费者组件，用以匹配路由`，主要有 Route、Redirect、Switch 等；`第三类是与平台关联的功能组件`，比如 `Link、NavLink、DeepLinking` 等。
 
-![img](http://img-repo.poetries.top/images/20210425214114.png)
+![img](https:////img-repo.poetries.top/images/20210425214114.png)
 
-![img](http://img-repo.poetries.top/images/20210409164620.png)
+![img](https:////img-repo.poetries.top/images/20210409164620.png)
 
-[React router原理分析(opens new window)](http://interview.poetries.top/principle-docs/react/01-React-router原理.html)
+[React router原理分析(opens new window)](https:////interview.poetries.top/principle-docs/react/01-React-router原理.html)
 
 ### 28 React 17 带来了哪些改变
 
@@ -11014,7 +11014,7 @@ ETag` 和 `If-None-Match
 - 预加载其实是声明式的 `fetch` ，强制浏览器请求资源，并且不会阻塞 `onload` 事件，可以使用以下代码开启预加载
 
 ```html
-<link rel="preload" href="http://example.com">
+<link rel="preload" href="https:////example.com">
 ```
 
 > 预加载可以一定程度上降低首屏的加载时间，因为可以将一些不影响首屏但重要的文件延后加载，唯一缺点就是兼容性不好
@@ -11024,7 +11024,7 @@ ETag` 和 `If-None-Match
 > 可以通过预渲染将下载的文件预先在后台渲染，可以使用以下代码开启预渲染
 
 ```html
-<link rel="prerender" href="http://poetries.com">
+<link rel="prerender" href="https:////poetries.com">
 ```
 
 - 预渲染虽然可以提高页面的加载速度，但是要确保该页面百分百会被用户在之后打开，否则就白白浪费资源去渲染
@@ -11120,7 +11120,7 @@ ETag` 和 `If-None-Match
 
 **前端指标**
 
-![image-20210307184052955](http://img-repo.poetries.top/images/image-20210307184052955.png)
+![img](https:////img-repo.poetries.top/images/image-20210307184052955.png)
 
 ```js
 window.onload = function(){
@@ -11230,7 +11230,7 @@ window.onload = function(){
 
 **PS：过度压缩图片大小影响图片显示效果**
 
-- a）使用智图（ http://zhitu.tencent.com/ ）
+- a）使用智图（ https:////zhitu.tencent.com/ ）
 - b）使用其它方式代替图片(1. 使用`CSS3` 2. 使用`SVG` 3. 使用`IconFont`）
 - c）使用`Srcset`
 - d）选择合适的图片(1. `webP`优于`JPG`2. `PNG8`优于`GIF`）
@@ -11360,7 +11360,7 @@ Float在渲染时计算量比较大，尽量减少使用
 - webpack 通过入口点（`entry point`）递归处理各模块引用关系，最后输出为一个或多个产物包 `js(bundle)` 文件。
 - 每一个入口点都是一个块组（`chunk group`），在不考虑分包的情况下，一个 `chunk group` 中只有一个 `chunk`，该 chunk 包含递归分析后的所有模块。每一个 `chunk` 都有对应的一个打包后的输出文件（`asset/bundle`）
 
-![img](http://img-repo.poetries.top/images/20210422211832.png)
+![img](https:////img-repo.poetries.top/images/20210422211832.png)
 
 **打包流程**
 
@@ -11372,7 +11372,7 @@ Float在渲染时计算量比较大，尽量减少使用
 6. 输出资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 `chunk`，再把每个 `chunk` 转换成一个单独的文件加入到输出列表，这一步是可以修改输出内容的最后机会。
 7. 输出完成：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统。
 
-![img](http://img-repo.poetries.top/images/20210517175408.png)
+![img](https:////img-repo.poetries.top/images/20210517175408.png)
 
 **简版**
 
@@ -11434,11 +11434,11 @@ Float在渲染时计算量比较大，尽量减少使用
 })
 ```
 
-![img](http://img-repo.poetries.top/images/20210503212144.png)
+![img](https:////img-repo.poetries.top/images/20210503212144.png)
 
 **webpack详细工作流程**
 
-![img](http://img-repo.poetries.top/images/20210517174932.png)
+![img](https:////img-repo.poetries.top/images/20210517174932.png)
 
 ### 2 介绍 Loader
 
@@ -11550,11 +11550,11 @@ hook.call('event-hook')
 
 ### 4 webpack 热更新实现原理
 
-![img](http://img-repo.poetries.top/images/20210319101659.png)
+![img](https:////img-repo.poetries.top/images/20210319101659.png)
 
 **HMR 的基本流程图**
 
-![img](http://img-repo.poetries.top/images/20210422211446.png)
+![img](https:////img-repo.poetries.top/images/20210422211446.png)
 
 - 当修改了一个或多个文件；
 - 文件系统接收更改并通知 `webpack`；
@@ -11744,7 +11744,7 @@ var fn = function() {
   - 创建函数作用域更小
   - 代码可读性更好
 
-![img](http://img-repo.poetries.top/images/20210409165629.png) ![img](http://img-repo.poetries.top/images/20210409165723.png)
+![img](https:////img-repo.poetries.top/images/20210409165629.png) ![img](https:////img-repo.poetries.top/images/20210409165723.png)
 
 ### 6 介绍一下 Tree Shaking
 
@@ -11857,7 +11857,7 @@ module.exports = {
 
 举个例子：
 
-在开发阶段，本地地址为`http://localhost:3000`，该浏览器发送一个前缀带有`/api`标识的请求到服务端获取数据，但响应这个请求的服务器只是将请求转发到另一台服务器中
+在开发阶段，本地地址为`https:////localhost:3000`，该浏览器发送一个前缀带有`/api`标识的请求到服务端获取数据，但响应这个请求的服务器只是将请求转发到另一台服务器中
 
 ```js
 const express = require('express');
@@ -11865,10 +11865,10 @@ const proxy = require('http-proxy-middleware');
 
 const app = express();
 
-app.use('/api', proxy({target: 'http://www.example.org', changeOrigin: true}));
+app.use('/api', proxy({target: 'https:////www.example.org', changeOrigin: true}));
 app.listen(3000);
 
-// http://localhost:3000/api/foo/bar -> http://www.example.org/api/foo/bar
+// https:////localhost:3000/api/foo/bar -> https:////www.example.org/api/foo/bar
 ```
 
 **3. 跨域**
@@ -11881,7 +11881,7 @@ app.listen(3000);
 
 当本地发送请求的时候，代理服务器响应该请求，并将请求转发到目标服务器，目标服务器响应数据后再将数据返回给代理服务器，最终再由代理服务器将数据响应给本地
 
-![img](http://img-repo.poetries.top/images/20210507090546.png)
+![img](https:////img-repo.poetries.top/images/20210507090546.png)
 
 在代理服务器传递数据给本地浏览器的过程中，两者同源，并不存在跨域行为，这时候浏览器就能正常接收数据
 
@@ -11896,7 +11896,7 @@ app.listen(3000);
 3. `plugin` 用 `babel-traverse` 对 `AST`树进行遍历编译，得到新的 `AST`树；
 4. 用 `babel-generator` 通过 `AST`树生成 `ES5` 代码。
 
-[Babel原理及其使用(opens new window)](http://interview.poetries.top/principle-docs/webpack/05-Babel原理及其使用.html)
+[Babel原理及其使用(opens new window)](https:////interview.poetries.top/principle-docs/webpack/05-Babel原理及其使用.html)
 
 ### 10 介绍一下Rollup
 
@@ -11923,7 +11923,7 @@ app.listen(3000);
 
 不过这并不是绝对的标准，只是经验法则。因为 Rollup 也可用于构建绝大多数应用程序，而 Webpack 同样也可以构建类库或者框架。
 
-![img](http://img-repo.poetries.top/images/20210704203811.png)
+![img](https:////img-repo.poetries.top/images/20210704203811.png)
 
 ## 十、HTTP
 
@@ -11956,7 +11956,7 @@ app.listen(3000);
 
 ### 1 HTTP前生今世
 
-![img](http://img-repo.poetries.top/images/20210421175226.png)
+![img](https:////img-repo.poetries.top/images/20210421175226.png)
 
 - `HTTP` 协议始于三十年前蒂姆·伯纳斯 - 李的一篇论文
 - `HTTP/0.9` 是个简单的文本协议，只能获取文本资源；
@@ -11967,7 +11967,7 @@ app.listen(3000);
 
 ### 2 HTTP世界全览
 
-![img](http://img-repo.poetries.top/images/20210503202857.png)
+![img](https:////img-repo.poetries.top/images/20210503202857.png)
 
 - 互联网上绝大部分资源都使用 `HTTP` 协议传输；
 - 浏览器是 HTTP 协议里的请求方，即 `User Agent`；
@@ -11982,7 +11982,7 @@ app.listen(3000);
 
 ### 3 HTTP分层
 
-![img](http://img-repo.poetries.top/images/20210503203408.png) ![img](http://img-repo.poetries.top/images/20210507090818.png)
+![img](https:////img-repo.poetries.top/images/20210503203408.png) ![img](https:////img-repo.poetries.top/images/20210507090818.png)
 
 - 第一层：物理层，`TCP/IP` 里无对应；
 - 第二层：数据链路层，对应 `TCP/IP` 的链接层；
@@ -12012,13 +12012,13 @@ app.listen(3000);
 
 一个完整的 HTTP 报文就像是下图的这个样子，注意在 header 和 body 之间有一个“空行”
 
-![img](http://img-repo.poetries.top/images/20210503203917.png)
+![img](https:////img-repo.poetries.top/images/20210503203917.png)
 
-![img](http://img-repo.poetries.top/images/20210503203927.png)
+![img](https:////img-repo.poetries.top/images/20210503203927.png)
 
 ### 5 HTTP之URL
 
-![img](http://img-repo.poetries.top/images/20210503204105.png)
+![img](https:////img-repo.poetries.top/images/20210503204105.png)
 
 - `URI` 是用来唯一标记服务器上资源的一个字符串，通常也称为 URL；
 - `URI` 通常由 `scheme`、`host:port`、`path` 和 `query` 四个部分组成，有的可以省略；
@@ -12051,7 +12051,7 @@ app.listen(3000);
 
 `HTTP` 协议为此定义了两个 `Accept` 请求头字段和两个 `Content` 实体头字段，用于客户端和服务器进行“内容协商”。也就是说，客户端用 `Accept` 头告诉服务器希望接收什么样的数据，而服务器用 `Content` 头告诉客户端实际发送了什么样的数据
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/15.png)
+![img](https:////poetries1.gitee.io/img-repo/2019/12/15.png)
 
 > `Accept`字段标记的是客户端可理解的 `MIME` type，可以用“,”做分隔符列出多个类型，让服务器有更多的选择余地，例如下面的这个头：
 
@@ -12107,7 +12107,7 @@ Content-Type: text/html; charset=utf-8
 
 不过现在的浏览器都支持多种字符集，通常不会发送 `Accept-Charset`，而服务器也不会发送 `Content-Language`，因为使用的语言完全可以由字符集推断出来，所以在请求头里一般只会有 `Accept-Language` 字段，响应头里只会有 `Content-Type`字段
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/16.png)
+![img](https:////poetries1.gitee.io/img-repo/2019/12/16.png)
 
 **4. 内容协商的质量值**
 
@@ -12139,7 +12139,7 @@ Vary: Accept-Encoding,User-Agent,Accept
 
 **6. 小结**
 
-![img](http://poetries1.gitee.io/img-repo/2019/12/17.png)
+![img](https:////poetries1.gitee.io/img-repo/2019/12/17.png)
 
 - 数据类型表示实体数据的内容是什么，使用的是 `MIME type`，相关的头字段是 `Accept`和 `Content-Type`；
 - 数据编码表示实体数据的压缩方式，相关的头字段是 `Accept-Encoding` 和 `Content-Encoding`；
@@ -12337,7 +12337,7 @@ session` 的常见实现要借助`cookie`来发送 `sessionID
 
 **HTTPS 就是身披了一层 SSL 的 HTTP**。
 
-![img](http://img-repo.poetries.top/images/20210409105003.png)
+![img](https:////img-repo.poetries.top/images/20210409105003.png)
 
 那么区别有哪些呢👇
 
@@ -12402,7 +12402,7 @@ session` 的常见实现要借助`cookie`来发送 `sessionID
 
 梳理起来，可以把**TLS 1.2 握手过程**分为主要的五步👇
 
-![img](http://img-repo.poetries.top/images/20210409105413.png)
+![img](https:////img-repo.poetries.top/images/20210409105413.png)
 
 - 步骤一：Client发起一个HTTPS请求，连接443端口。这个过程可以理解成是**请求公钥的过程**。
 - 步骤二：Server端收到请求后，通过第三方机构私钥加密，会把数字证书（也可以认为是公钥证书）发送给Client。
@@ -12420,7 +12420,7 @@ session` 的常见实现要借助`cookie`来发送 `sessionID
 
 接下来考虑一个问题，**如果公钥被中间人拿到纂改怎么办呢？**
 
-![img](http://img-repo.poetries.top/images/20210409105827.png)
+![img](https:////img-repo.poetries.top/images/20210409105827.png)
 
 **客户端可能拿到的公钥是假的，解决办法是什么呢？**
 
@@ -12430,7 +12430,7 @@ session` 的常见实现要借助`cookie`来发送 `sessionID
 
 在HTTPS中，通过 **证书** + **数字签名**来解决这个问题。
 
-![img](http://img-repo.poetries.top/images/20210409105910.png)
+![img](https:////img-repo.poetries.top/images/20210409105910.png)
 
 这里唯一不同的是，假设对网站信息加密的算法是MD5，通过MD5加密后，**然后通过第三方机构的私钥再次对其加密，生成数字签名**。
 
@@ -12452,7 +12452,7 @@ session` 的常见实现要借助`cookie`来发送 `sessionID
 
 如果没有数字签名的话，这样子可以就会有下面情况👇
 
-![img](http://img-repo.poetries.top/images/20210409110016.png)
+![img](https:////img-repo.poetries.top/images/20210409110016.png)
 
 从上面我们知道，如果**只是对网站信息进行第三方机构私钥加密**的话，还是会受到欺骗。
 
@@ -12600,17 +12600,17 @@ HTTP2中：
 - 接下来查询 `www.google.com` 这个三级域名的地址
 - 返回给 DNS 客户端并缓存起来
 
-![img](http://img-repo.poetries.top/images/20210503210054.png)
+![img](https:////img-repo.poetries.top/images/20210503210054.png)
 
 **我们通过一张图来看看它的查询过程吧**👇
 
-![img](http://img-repo.poetries.top/images/20210409102754.png)
+![img](https:////img-repo.poetries.top/images/20210409102754.png)
 
 这张图很生动的展示了DNS在本地DNS服务器是如何查询的，**一般向本地DNS服务器发送请求是递归查询的**
 
 本地 DNS 服务器向其他域名服务器请求的过程是迭代查询的过程👇
 
-![img](http://img-repo.poetries.top/images/20210409102812.png)
+![img](https:////img-repo.poetries.top/images/20210409102812.png)
 
 **递归查询和迭代查询**
 
@@ -12706,7 +12706,7 @@ HTTP2中：
 
 keep-alive技术的创建目的，能在多次HTTP之前重用同一个TCP连接，从而减少创建/关闭多个 TCP 连接的开销（包括响应时间、CPU 资源、减少拥堵等），参考如下示意图
 
-![img](http://img-repo.poetries.top/images/20210409103238.png)
+![img](https:////img-repo.poetries.top/images/20210409103238.png)
 
 **客户端如何开启**
 
@@ -12836,11 +12836,11 @@ Connection: close
 - 第二次握手成功让客户端知道了服务端具有接收和发送能力，但此时服务端并不知道客户端是否接收到了自己发送的消息
 - 所以第三次握手就起到了这个作用。`经过三次通信后，服务端
 
-![img](http://img-repo.poetries.top/images/20210426214034.png)
+![img](https:////img-repo.poetries.top/images/20210426214034.png)
 
 > 你可以能会问，2 次握手就足够了？。但其实不是，因为服务端还没有确定客户端是否准备好了。比如步骤 3 之后，服务端马上给客户端发送数据，这个时候客户端可能还没有准备好接收数据。因此还需要增加一个过程
 
-![img](http://img-repo.poetries.top/images/20210421174925.png)
+![img](https:////img-repo.poetries.top/images/20210421174925.png)
 
 ![img](https://user-images.githubusercontent.com/34148615/53062591-3d846300-34fc-11e9-8d0f-4063d9ff3398.png)
 
@@ -12867,7 +12867,7 @@ Connection: close
 - 其实这个时候服务端不能马上传 FIN，因为断开连接要处理的问题比较多，比如说服务端可能还有发送出去的消息没有得到 ACK；也有可能服务端自己有资源要释放。因此断开连接不能像握手那样操作——将两条消息合并。所以，`服务端经过一个等待，确定可以关闭连接了，再发一条 FIN 给客户端`。
 - 客户端收到服务端的 FIN，同时客户端也可能有自己的事情需要处理完，比如客户端有发送给服务端没有收到 ACK 的请求，客户端自己处理完成后，再给服务端发送一个 ACK。
 
-![img](http://img-repo.poetries.top/images/20210426214118.png)
+![img](https:////img-repo.poetries.top/images/20210426214118.png)
 
 > 为了确保数据能够完成传输。因为当服务端收到客户端的 FIN 报文后，发送的 ACK 报文只是用来应答的，并不表示服务端也希望立即关闭连接。
 
@@ -12920,7 +12920,7 @@ WebSocket 的握手是一个标准的 HTTP GET 请求，但要带上两个协议
 - `Sec-WebSocket-Key`：一个 Base64 编码的 16 字节随机数，作为简单的认证密钥；
 - `Sec-WebSocket-Version`：协议的版本号，当前必须是 13。
 
-![img](http://img-repo.poetries.top/images/20210503205601.png)
+![img](https:////img-repo.poetries.top/images/20210503205601.png)
 
 > 服务器收到 HTTP 请求报文，看到上面的四个字段，就知道这不是一个普通的 GET 请求，而是 WebSocket 的升级请求，于是就不走普通的 HTTP 处理流程，而是构造一个特殊的“101 Switching Protocols”响应报文，通知客户端，接下来就不用 HTTP 了，全改用 WebSocket 协议通信
 
@@ -12945,7 +12945,7 @@ WebSocket 的握手是一个标准的 HTTP GET 请求，但要带上两个协议
 - TCP协议的发送方要确认接收方是否收到数据段（3次握手协议）
 - TCP协议采用窗口技术和流控制
 
-![img](http://img-repo.poetries.top/images/20210504140502.png)
+![img](https:////img-repo.poetries.top/images/20210504140502.png)
 
 ## 十一、9种前端常见的设计模式
 
@@ -13193,7 +13193,7 @@ console.log(fooService1 === fooService2); // true
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 </head>
 <body>
-    <form id = "registerForm" method="post" action="http://xxxx.com/api/register">
+    <form id = "registerForm" method="post" action="https:////xxxx.com/api/register">
         用户名：<input type="text" name="userName">
         密码：<input type="text" name="password">
         手机号码：<input type="text" name="phoneNumber">
@@ -13724,7 +13724,7 @@ console.log(employee.getSalary());//输出：2000
 
 下面通过曲线图的形式来展示拉勾网 HR 的工作作息表：
 
-![img](http://img-repo.poetries.top/images/20210414092128.png)
+![img](https:////img-repo.poetries.top/images/20210414092128.png)
 
 由上图可知，每天 HR 最活跃的时间段为`上午 11 ~ 12 点、下午 4 点 ~ 5 点`。也就是说在这两个时间段里，我们的招聘小伙伴在疯狂的筛选简历，即在招聘平台上筛选来自不同候选人的简历。
 
@@ -13736,7 +13736,7 @@ console.log(employee.getSalary());//输出：2000
 
 下面通过曲线图的形式来展示候选人投递简历的时间表：
 
-![img](http://img-repo.poetries.top/images/20210414092111.png)
+![img](https:////img-repo.poetries.top/images/20210414092111.png)
 
 > 由上图可知，候选人投递简历的高峰期是在`上午 11 点和下午 4 点`这两个时间段，也就是说和 HR 筛选简历的时间段完全重合。相信你也有过类似的体验：当专心做某一件事情的时候，肯定不会注意到投递来的新简历，这就是为什么简历石沉大海的原因。
 

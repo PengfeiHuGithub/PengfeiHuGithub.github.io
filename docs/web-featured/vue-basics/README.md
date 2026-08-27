@@ -74,8 +74,6 @@ vue create my-project
 
 如果你只想构建一个基础的 Vue 项目，那么使用 `Babel`、`Router`、`Vuex`、`CSS Pre-processors` 就足够了，最后选择你喜欢的包管理工具 npm or yarn。
 
-#### [#](http://interview.poetries.top/fe-vue-docs/learn-vue-base/base/1-Vue CLI 3 项目构建基础.html#c-启动)c. 启动
-
 等待构建完成后你便可以运行命令来启动你的 Vue 项目：
 
 ```text

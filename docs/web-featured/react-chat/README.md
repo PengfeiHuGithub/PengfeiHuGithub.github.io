@@ -26,29 +26,29 @@
 
 HTML的渲染过程中，DOM 和 CSSOM 结构可以并行渲染。
 
-![img](http://img-repo.poetries.top/images/20210210204723.png)
+![img](https://img-repo.poetries.top/images/20210210204723.png)
 
 ### 第一步 HTML 转换成 DOM
 
 > 服务端返回 `text/html` 格式的文档流， HTML 字符串描述了一个页面的结构，浏览器会把 HTML 字符串解析成 DOM 树形结构。
 
-![img](http://img-repo.poetries.top/images/20210210204744.png)
+![img](https://img-repo.poetries.top/images/20210210204744.png)
 
 ### 第二步 生成 CSSOM 结构
 
 > CSS 样式可以在 WEB 页面里映射成 CSSOM（CSS对象模型），它和 DOM 结构比较像, 不是增量模式，而是组合模式。
 
-![img](http://img-repo.poetries.top/images/20210210204845.png)
+![img](https://img-repo.poetries.top/images/20210210204845.png)
 
 ### 第三步 CSSOM 树和 DOM 树合并成渲染树
 
-![img](http://img-repo.poetries.top/images/20210210204903.png)
+![img](https://img-repo.poetries.top/images/20210210204903.png)
 
 ### 第四步 完整 DOM 结构
 
 > DOM 结构有两个规则：一个是 HTML 文档对象，一个是通过接口获取 DOM 元素。通过 `document.getElementById()` 以获取元素节点
 
-![img](http://img-repo.poetries.top/images/20210210204920.png)
+![img](https://img-repo.poetries.top/images/20210210204920.png)
 
 ## 性能优化策略
 
@@ -132,7 +132,7 @@ HTML的渲染过程中，DOM 和 CSSOM 结构可以并行渲染。
 
 **缩合上述的几个概念，用一张图来解释：**
 
-![img](http://img-repo.poetries.top/images/20210210205134.png)
+![img](https://img-repo.poetries.top/images/20210210205134.png)
 
 ## CSS布局
 
@@ -146,7 +146,7 @@ Flex布局主要思想是具有伸缩性特点，可以取向改变、缩放、�
 
 在Flexbox布局中有主轴（Main Axis）和侧轴（Cross Axis）两个概念：
 
-![img](http://img-repo.poetries.top/images/20210210205145.png)
+![img](https://img-repo.poetries.top/images/20210210205145.png)
 
 [Flex 参考资料下载(opens new window)](https://github.com/dkypooh/front-end-develop-demo/tree/master/download/css)
 
@@ -175,7 +175,7 @@ Flex布局主要思想是具有伸缩性特点，可以取向改变、缩放、�
 
 [Grid 参考资料下载(opens new window)](https://github.com/dkypooh/front-end-develop-demo/tree/master/download/css)
 
-![img](http://img-repo.poetries.top/images/20210210205220.png)
+![img](https://img-repo.poetries.top/images/20210210205220.png)
 
 ## CSS 面向对象
 
@@ -185,13 +185,13 @@ OOCSS [“Object Oriented CSS（面向对象的CSS）” (opens new window)](htt
 
 ### BEM
 
-[BEM(Block-Element-Modifier) (opens new window)](http://getbem.com/)，是一种用于 HTML 和 CSS 类名的命名约定。BEM 最初是由 Yandex 提出的，拥有巨大的代码库和可伸缩性。 BEM 是 `Block`，`Element`和 `Modifier` 的缩写。
+[BEM(Block-Element-Modifier) (opens new window)](https://getbem.com/)，是一种用于 HTML 和 CSS 类名的命名约定。BEM 最初是由 Yandex 提出的，拥有巨大的代码库和可伸缩性。 BEM 是 `Block`，`Element`和 `Modifier` 的缩写。
 
 - `Block`： 有实际意义的独立元素，例如：header, container, menu, checkbox, input
 - `Element`： Block 的子元素，没有独立的含义，例如：`menu item`, `list item`等定义成 `menu__item`, `list_item`
 - `Modifier`： 表示 Blcok 和 Element 元素的不同行为和状态。例如：`disable`, `highlighted`等定义成 `menu-diable`，`menu_item-highlighted`。
 
-![img](http://img-repo.poetries.top/images/20210210205244.png)
+![img](https://img-repo.poetries.top/images/20210210205244.png)
 
 **CSS定义**
 
@@ -272,7 +272,7 @@ Promise原理是通过 `Promise.prototype.then` 和 `Promise.prototype.catch` �
 
 Promise 内部进行 `等待态（Pending）`、`执行态（Fulfilled）`和`拒绝态（Rejected）` 的状态流转。
 
-![img](http://img-repo.poetries.top/images/20210210205305.png)
+![img](https://img-repo.poetries.top/images/20210210205305.png)
 
 ### 三种回调比较 JS Callback VS Promise VS Async await
 
@@ -290,11 +290,11 @@ S7 标准 Async 原先需要 Babel编译，在Chrome55可以直接使用，不�
 
 #### Promise支持情况
 
-![img](http://img-repo.poetries.top/images/20210210205319.png)
+![img](https://img-repo.poetries.top/images/20210210205319.png)
 
 #### Async await支持情况
 
-![img](http://img-repo.poetries.top/images/20210210205331.png)
+![img](https://img-repo.poetries.top/images/20210210205331.png)
 
 ### Ajax 封装案例实践
 
@@ -382,7 +382,7 @@ async function getGithubHooks() {
 
 前端开发涉及的基础知识点非常多，非常杂，本章带精选了项目开发实践中的核心知识点，带大家进行了结构化的梳理。
 
-这是基础到进阶重要的一步，后面一章会和大家一起学习 Typescript 知识，如果对 ES6 语法 还不是很熟悉的话，可以参考阅读 [ECMAScript 6 入门(opens new window)](http://es6.ruanyifeng.com/)
+这是基础到进阶重要的一步，后面一章会和大家一起学习 Typescript 知识，如果对 ES6 语法 还不是很熟悉的话，可以参考阅读 [ECMAScript 6 入门(opens new window)](https://es6.ruanyifeng.com/)
 
 ## 思考题
 
@@ -394,7 +394,7 @@ async function getGithubHooks() {
 
 - [渲染树构建、布局及绘制(opens new window)](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=zh-cn)
 - [通过rel="preload"进行内容预加载(opens new window)](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content)
-- [阮一峰-Flex布局教程(opens new window)](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+- [阮一峰-Flex布局教程(opens new window)](https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 - [Promises/A+标准(opens new window)](https://promisesaplus.com/)
 - [使用Flexible实现手淘H5页面的终端适配(opens new window)](https://github.com/amfe/article/issues/17)
 
@@ -447,7 +447,7 @@ tsc helloworld.ts               // 编译ts文件，默认ES3标准
 
 ### 命令行说明
 
-![image-20210210220611441](http://img-repo.poetries.top/images/image-20210210220611441.png)
+![image-20210210220611441](https://img-repo.poetries.top/images/image-20210210220611441.png)
 
 ```text
 ### 初始化tsconfig配置
@@ -497,7 +497,7 @@ tsc index.ts -d -t es6
 
 变量声明语法有四部分组成：变量，分隔符( `:` ), 类型 (`number`, `string`) 和 值（ `value` ）。
 
-![image-20210210220644275](http://img-repo.poetries.top/images/image-20210210220644275.png)
+![image-20210210220644275](https://img-repo.poetries.top/images/image-20210210220644275.png)
 
 ### 变量语法实例
 
@@ -516,7 +516,7 @@ let x: [string, number] = ['1', 2];                     // 元组Tuple
 
 函数声明语法也有四部分组成：函数名，变量，变量类型 (`基础类型(String)` 和 `自定义类型(UserInfoObject)` ) 和 返回类型 (`void`)
 
-![image-20210210220656149](http://img-repo.poetries.top/images/image-20210210220656149.png)
+![image-20210210220656149](https://img-repo.poetries.top/images/image-20210210220656149.png)
 
 ### 函数声明实例
 
@@ -644,7 +644,7 @@ declare namespace myLib {
 }
 ```
 
-#### TS模块搜索 [microsoft.github.io/TypeSearch/(opens new window)](http://microsoft.github.io/TypeSearch/)
+#### TS模块搜索 [microsoft.github.io/TypeSearch/(opens new window)](https://microsoft.github.io/TypeSearch/)
 
 #### NPM的TS组织 [www.npmjs.com/~types(opens new window)](https://www.npmjs.com/~types)
 
@@ -836,7 +836,7 @@ Linux 内核开源项目有着为数众多的参与者。 绝大多数的 Linux 
 
 ### 版本管理策略
 
-![image-20210210220937003](http://img-repo.poetries.top/images/image-20210210220937003.png)
+![image-20210210220937003](https://img-repo.poetries.top/images/image-20210210220937003.png)
 
 **master分支：** 一般会以此分支为主分支（发布分支）。主分支的意思是说开发者不会在主分支上开发， 主分支只接受外分支的合并。合并完之后，验证通过，打 `tag` 上线。
 
@@ -854,7 +854,7 @@ Git 是分布式版本控制系统，SVN 是集中化版本控制系统。 Git �
 
 Git 的文件操作原理都是基于 `Workspace` （工作区），`Index / Stage` （暂存区）, `Repository` （仓库区） 和 `Remote`（远程仓库）四个工作区来进行流转。
 
-![image-20210210220952669](http://img-repo.poetries.top/images/image-20210210220952669.png)
+![image-20210210220952669](https://img-repo.poetries.top/images/image-20210210220952669.png)
 
 **Workspace工作区：** 平时存放编辑项目代码的空间
 
@@ -879,7 +879,7 @@ Git 的文件操作原理都是基于 `Workspace` （工作区），`Index / Sta
 
 要理解 Git 内部构造的核心，我们应理解三个东西：**实体（objects）、引用（refs）、索引(index)。**，这些都会在 Git 的 `.git` 文件结构目录下找到对应的目录。
 
-![image-20210210221005961](http://img-repo.poetries.top/images/image-20210210221005961.png)
+![image-20210210221005961](https://img-repo.poetries.top/images/image-20210210221005961.png)
 
 **实体：** 提交到一个 Git 代码仓库中的所有文件，包括每个提交的说明信息（the commit info）都在目录 `.git/objects/` 中存储为实体。一个实体以一个 40 字符长度的字符串（该实体内容的 SHA1 哈希值）来标识。
 
@@ -924,7 +924,7 @@ git clone <url> -b <branch>
 
 ### Git忽略不应该跟踪的文件
 
-`.gitignore` 文件显式地指定了哪些文件不应被 Git 追踪，即被 Git 忽略掉。例如开发过程中 node_module，.vscode 等文件不需要被跟踪和提交，可以在初始化的忽略它们。http://interview.poetries.top/fe-react-docs/im-chat/docs/03-Git项目管理.html#git配置)Git配置
+`.gitignore` 文件显式地指定了哪些文件不应被 Git 追踪，即被 Git 忽略掉。例如开发过程中 node_module，.vscode 等文件不需要被跟踪和提交，可以在初始化的忽略它们。https://interview.poetries.top/fe-react-docs/im-chat/docs/03-Git项目管理.html#git配置)Git配置
 
 ### 修改用户信息
 
@@ -982,7 +982,7 @@ git push origin master
 - git pull : git fetch + git merge
 - git pull --rebase: git fetch + git rebase
 
-![image-20210210221025222](http://img-repo.poetries.top/images/image-20210210221025222.png)
+![image-20210210221025222](https://img-repo.poetries.top/images/image-20210210221025222.png)
 
 ### 分支管理
 
@@ -1041,7 +1041,7 @@ git log --pretty=oneline
 
 下图列举了三种操作的使用场景和差异，并且举例了具体操作实例。
 
-![image-20210210221041452](http://img-repo.poetries.top/images/image-20210210221041452.png)
+![image-20210210221041452](https://img-repo.poetries.top/images/image-20210210221041452.png)
 
 ### 删除 Git 缓存文件
 
@@ -1157,8 +1157,8 @@ Q: [Learning Git Branching网站 (opens new window)](https://learngitbranching.j
 
 - [Git Pro Book(opens new window)](https://git-scm.com/book/zh/v2)
 - [Git workflow 问题集合(opens new window)](https://stackoverflow.com/search?q=git+workflow)
-- [常用 Git 命令清单(opens new window)](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
-- [Git远程操作详解(opens new window)](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
+- [常用 Git 命令清单(opens new window)](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
+- [Git远程操作详解(opens new window)](https://www.ruanyifeng.com/blog/2014/06/git_remote.html)
 - [Learning Git Branching网站
 
 
@@ -1192,7 +1192,7 @@ Q: [Learning Git Branching网站 (opens new window)](https://learngitbranching.j
 
 ### lerna的使用策略
 
-![image-20210214183010777](http://img-repo.poetries.top/images/image-20210214183010777.png)
+![image-20210214183010777](https://img-repo.poetries.top/images/image-20210214183010777.png)
 
 我们一般会把一个大型项目才分两大部分：业务模块 + 通用模块。 由于通用模块会被多个业务模块使用，往往是通过 NPM 包提供服务。lerna 很好的管理多个包以及他们的依赖关系。
 
@@ -1206,7 +1206,7 @@ Q: [Learning Git Branching网站 (opens new window)](https://learngitbranching.j
 
 **multrepo：** 将项目分化成为多个模块，并针对每一个模块单独的开辟一个reporsitory来进行管理。
 
-![image-20210214183056616](http://img-repo.poetries.top/images/image-20210214183056616.png)
+![image-20210214183056616](https://img-repo.poetries.top/images/image-20210214183056616.png)
 
 ### lerna 如何实现软链
 
@@ -1214,7 +1214,7 @@ lerna 是如何做到内部模块的软链和管理，对于作者来说是一�
 
 作者阅读源码发现 lerna 实现软链使用了 `symlink-dependencies` 包。最终使用 `fs.symlink` 函数实现了文件软链。
 
-![image-20210214183116689](http://img-repo.poetries.top/images/image-20210214183116689.png)
+![image-20210214183116689](https://img-repo.poetries.top/images/image-20210214183116689.png)
 
 源码解析如下：
 
@@ -1256,7 +1256,7 @@ lerna init 					// 初始化lerna目录
 
 ### lerna 目录结构
 
-![image-20210214183137937](http://img-repo.poetries.top/images/image-20210214183137937.png)
+![image-20210214183137937](https://img-repo.poetries.top/images/image-20210214183137937.png)
 
 使用 Lerna 注意事项：
 
@@ -1374,7 +1374,7 @@ Q: 简单搭建一个 Lerna 管理项目，如果两个包互相依赖，可以�
 
 ### React 生命周期
 
-![image-20210214183554159](http://img-repo.poetries.top/images/image-20210214183554159.png)
+![image-20210214183554159](https://img-repo.poetries.top/images/image-20210214183554159.png)
 
 > 从 React 生命周期中可以看出 shouldComponentUpdate 这个节点的生命周期关系到是否重新 Render 组件。对 shouldComponentUpdate 的手动触发也是组件性能优化的一个重要手段。
 
@@ -1734,7 +1734,7 @@ function HOC(WrappedComponent) {
 
 Q: 编写一个 HOC 组件之消息流 HOC 组件，UI 如下，传入不同的 wrapper 组件，展示不同消息项。
 
-![image-20210214183622811](http://img-repo.poetries.top/images/image-20210214183622811.png)
+![image-20210214183622811](https://img-repo.poetries.top/images/image-20210214183622811.png)
 
 ## 参考文档
 
@@ -1785,7 +1785,7 @@ Mobx 缺点是状态不能回溯，Mobx 相对比较自由，是优点也是缺�
 
 ## Redux状态管理
 
-![img](http://img-repo.poetries.top/images/169807b65b0b902d.gif)
+![img](https://img-repo.poetries.top/images/169807b65b0b902d.gif)
 
 Redux 是一种 数据的管理 方式， 所有的状态都要遵循统一的流程才能更改状态。 界面操作 Action ，然后 Dispatcher 到 Store 更新状态 State，推送新状态到视图 View（重点）
 
@@ -1949,7 +1949,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 ## Mobx状态管理
 
-![img](http://img-repo.poetries.top/images/169848d298bc5d09.png)
+![img](https://img-repo.poetries.top/images/169848d298bc5d09.png)
 
 Mobx 通过透明的函数响应式编程(transparently applying functional reactive programming - TFRP)使得状态管理变得简单和可扩展。
 
@@ -2073,7 +2073,7 @@ trim_trailing_whitespace = false    # 取消去掉末尾空格
 
 在 VSCode 编辑器下要首先要下载 `EditorConfig` 插件，然后配置代码样式规划：
 
-![img](http://img-repo.poetries.top/images/1689ccd2dad80ad8.png)
+![img](https://img-repo.poetries.top/images/1689ccd2dad80ad8.png)
 
 ## Babel编译原理
 
@@ -2081,13 +2081,13 @@ trim_trailing_whitespace = false    # 取消去掉末尾空格
 
 通过 AST 树形描述了表达式的语法结构。例如变量声明 （`VariableDeclaration`），字符穿字面量 （`StringLiteral`） 及值 （`value`）等等。
 
-![img](http://img-repo.poetries.top/images/1689dd0d152cfcd8.png)
+![img](https://img-repo.poetries.top/images/1689dd0d152cfcd8.png)
 
 如下是 AST 编译器地址：[AST链接地址(opens new window)](https://astexplorer.net/#/gist/e6af3d)
 
 ### Babel编译过程
 
-![img](http://img-repo.poetries.top/images/1689d6f652979726.png)
+![img](https://img-repo.poetries.top/images/1689d6f652979726.png)
 
 abel 的三个主要处理步骤分别是： **解析（parse）**，**转换（transform）**，**生成（generate）**。原理不是本章重点，具体可以查看参考文档[Babel插件指南]。
 
@@ -2240,7 +2240,7 @@ eslint --config .eslintrc.js ./src/*  --fix
 
 ESLint Rules 配置是ESLint的核心概念，规定了多人协作开发过程的代码规范。如下讲解下 ESLint Rules 配置语法。
 
-![image-20210214194314985](http://img-repo.poetries.top/images/image-20210214194314985.png)
+![image-20210214194314985](https://img-repo.poetries.top/images/image-20210214194314985.png)
 
 Rules 属性可以做下面的任何事情以扩展（或覆盖）规则：
 
@@ -2281,13 +2281,13 @@ eslint --init       // 生成.eslint.js
 
 `editorconfig`和`babel`可以参考上文配置。
 
-![image-20210214194343164](http://img-repo.poetries.top/images/image-20210214194343164.png)
+![image-20210214194343164](https://img-repo.poetries.top/images/image-20210214194343164.png)
 
 **Package依赖** 主要有三大方面：Babel依赖，ESLint依赖 和 Webpack配置
 
 ### 编写React组件
 
-![image-20210214194439327](http://img-repo.poetries.top/images/image-20210214194439327.png)
+![image-20210214194439327](https://img-repo.poetries.top/images/image-20210214194439327.png)
 
 ### NPM Script命令行
 
@@ -2300,7 +2300,7 @@ $ npm run lint              // ESLint检查
 
 ### 输出页面
 
-![image-20210214194504873](http://img-repo.poetries.top/images/image-20210214194504873.png)
+![image-20210214194504873](https://img-repo.poetries.top/images/image-20210214194504873.png)
 
 ## Babel6 迁移 Babel7
 
@@ -2330,7 +2330,7 @@ Q：通过 AST Explorer [astexplorer.net/# (opens new window)](https://astexplor
 
 - [Babel 插件开发指南(opens new window)](https://github.com/brigand/babel-plugin-handbook/blob/master/translations/zh-Hans/README.md#babylon)
 - [AST测试地址(opens new window)](https://github.com/brigand/babel-plugin-handbook/blob/master/translations/zh-Hans/README.md#babylon)
-- [Babel入门规则(opens new window)](http://www.ruanyifeng.com/blog/2016/01/babel.html)
+- [Babel入门规则(opens new window)](https://www.ruanyifeng.com/blog/2016/01/babel.html)
 - [ESLint规则配置列表(opens new window)](https://cn.eslint.org/docs/rules/)
 - [EditorConfig官网(opens new window)](https://editorconfig.org/)
 - [Babel7升级(opens new window)](https://babel.docschina.org/docs/en/7.0.0/v7-migration)
@@ -2357,7 +2357,7 @@ Webpack 是一个现代 JavaScript 应用程序的静态模块打包器 (module 
 
 当前前端主流构建工具有 `Browserify`, `Grunt`, `Gulp`,`Webpack` 和 `Rollup`
 
-![image-20210214195217677](http://img-repo.poetries.top/images/image-20210214195217677.png)
+![image-20210214195217677](https://img-repo.poetries.top/images/image-20210214195217677.png)
 
 数据采集到2019年2月2日，最近半年数据指标
 
@@ -2672,7 +2672,7 @@ module.export = {
 
 我们使用原始的打包方式，所有的资源文件都会打包到 `bundlejs` 里面，导致 `bunldejs` 很大，如下图所示
 
-![image-20210214195508829](http://img-repo.poetries.top/images/image-20210214195508829.png)
+![image-20210214195508829](https://img-repo.poetries.top/images/image-20210214195508829.png)
 
 ### 提取公共文件
 
@@ -2699,7 +2699,7 @@ module.exports = {
 
 #### 优化后的效果如下
 
-![image-20210214195613516](http://img-repo.poetries.top/images/image-20210214195613516.png)
+![image-20210214195613516](https://img-repo.poetries.top/images/image-20210214195613516.png)
 
 可以看到公共文件被提取到 `vendor.js` 文件中了， `bundle.js` 文件大小 94KB 左右
 
@@ -2717,7 +2717,7 @@ module.exports  = {
 
 #### 优化后的效果
 
-![image-20210214195728158](http://img-repo.poetries.top/images/image-20210214195728158.png)
+![image-20210214195728158](https://img-repo.poetries.top/images/image-20210214195728158.png)
 
 可以看到 `bundle.js` 文件大小有原先的 `94KB` 压缩到 `70KB`, 通过 gzip 压缩后的大小为 `14KB`。
 
@@ -2725,7 +2725,7 @@ module.exports  = {
 
 Tree shaking 是一个术语，通常用于描述移除 JavaScript 上下文中的未引用代码(dead-code)。执行生产编译 （mode = production）默认已开启Tree Shaking。
 
-#### [](http://interview.poetries.top/fe-react-docs/im-chat/docs/08-Webpack环境搭建.html#webpack-配置-3)webpack 配置
+#### [](https://interview.poetries.top/fe-react-docs/im-chat/docs/08-Webpack环境搭建.html#webpack-配置-3)webpack 配置
 
 ```text
 module.exports  = {
@@ -2830,7 +2830,7 @@ $ npx jest -c jest.config.js --colors
 
 在您的测试文件，Jest 将这些方法和对象放入全局环境。你不必导入即可使用它们
 
-![image-20210214200043550](http://img-repo.poetries.top/images/image-20210214200043550.png)
+![image-20210214200043550](https://img-repo.poetries.top/images/image-20210214200043550.png)
 
 #### afterAll 测试用例
 
@@ -2969,7 +2969,7 @@ it('CheckboxWithLabel changes the text after click', () => {
 ```text
 it('renders correctly', () => {
   const tree = renderer
-    .create(<Link page="http://www.facebook.com">Facebook</Link>)
+    .create(<Link page="https://www.facebook.com">Facebook</Link>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
@@ -2983,8 +2983,8 @@ it('renders correctly', () => {
 
   <a
     className="normal"
--   href="http://www.facebook.com"
-+   href="http://www.taobao.com"
+-   href="https://www.facebook.com"
++   href="https://www.taobao.com"
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
@@ -2994,7 +2994,7 @@ it('renders correctly', () => {
 
 ## Code Review
 
-![image-20210214200113546](http://img-repo.poetries.top/images/image-20210214200113546.png)
+![image-20210214200113546](https://img-repo.poetries.top/images/image-20210214200113546.png)
 
 `Code Review` 是阿里巴巴最为看重保证质量的环节。 尤其在双十一期间上线需求都需要多人多次 `Code Review` 保证上线质量。
 
@@ -3025,7 +3025,7 @@ Q: 使用上文Jest项目，实现一个UI快照用例？ 参考地址：[jestjs
 
 ## 前言
 
-[JSDoc (opens new window)](http://usejsdoc.org/)是一个根据 Javascript 文件中注释信息，生成 JavaScript 应用程序或库、模块的 API 文档 的工具。你可以使用他记录如：命名空间，类，方法，方法参数等。
+[JSDoc (opens new window)](https://usejsdoc.org/)是一个根据 Javascript 文件中注释信息，生成 JavaScript 应用程序或库、模块的 API 文档 的工具。你可以使用他记录如：命名空间，类，方法，方法参数等。
 
 JSDoc 可以帮助开发者将标准化的注释转化为文档，协同开发其他开发者可以快速了解整个类和其中的属性和方法，并且快速知道如何使用，从而提高开发效率，降低维护成本。
 
@@ -3051,7 +3051,7 @@ $ npm i ink-docstrap -D // 主题安装
 
 ### 配置信息
 
-参考 [JSDOC文档 (opens new window)](http://usejsdoc.org/about-configuring-jsdoc.html)默认配置项。如下解释说明
+参考 [JSDOC文档 (opens new window)](https://usejsdoc.org/about-configuring-jsdoc.html)默认配置项。如下解释说明
 
 - **plugins：** 添加 `markdown` 插件
 - **includePattern：** 正则匹配 `js` 和 `md` 文件
@@ -3166,7 +3166,7 @@ IMSDK文档 会在 《项目最佳实践》章节中作为标准化文档使用�
 
 ## 参考文档
 
-- [JSDoc 中文文档(opens new window)](http://www.shouce.ren/api/view/a/13232)
+- [JSDoc 中文文档(opens new window)](https://www.shouce.ren/api/view/a/13232)
 - [JSDoc 常用属性(opens new window)](https://www.jianshu.com/p/f2a363513d67)
 - [JSDoc 插件介绍(opens new window)](https://www.html.cn/doc/jsdoc/about-plugins.html)
 
@@ -3184,7 +3184,7 @@ IMSDK文档 会在 《项目最佳实践》章节中作为标准化文档使用�
 
 作者把这部分能力称为前端高阶能力，把这部分的能力设计模式、流程抽象及领域模型、组件通信、开发工作流划分了四个维度来探讨。
 
-![image-20210214200452844](http://img-repo.poetries.top/images/image-20210214200452844.png)
+![image-20210214200452844](https://img-repo.poetries.top/images/image-20210214200452844.png)
 
 ## 目标
 
@@ -3317,7 +3317,7 @@ JavaScript高级程序设计上讲：事件委托就是利用事件冒泡，只�
 
 ### 适用场景
 
-![image-20210214200609476](http://img-repo.poetries.top/images/image-20210214200609476.png)
+![image-20210214200609476](https://img-repo.poetries.top/images/image-20210214200609476.png)
 
 事件冒泡 和 事件捕获 分别由 微软 和 网景 公司提出，后来 W3C 将两者结合，制定了统一的标准 —— 先捕获再冒泡。
 
@@ -3379,7 +3379,7 @@ $t3.addEventListener("click", function(){
 
 > 在发布-订阅模式，消息的发送方，叫做发布者（publishers），消息不会直接发送给特定的接收者，需要有个一个中间媒介做集中化处理。
 
-![image-20210214200722364](http://img-repo.poetries.top/images/image-20210214200722364.png)
+![image-20210214200722364](https://img-repo.poetries.top/images/image-20210214200722364.png)
 
 上图解释：一个发布者发布一条消息，通过订阅-发布模型，可以被多的接收者收到。
 
@@ -3387,7 +3387,7 @@ $t3.addEventListener("click", function(){
 
 读者开始会对这两者模式差异存在疑惑，作者认为在前端领域，这两种存在一些细微差别，使用功能来说可以等同。我们同样可以成为观察者模式 为 发布-订阅模式。 它们细小的差别在于，发布-订阅模式相比较于观察者模式，有一个中心管控（或者中介者）的模块。如下图所示：
 
-![image-20210214200741722](http://img-repo.poetries.top/images/image-20210214200741722.png)
+![image-20210214200741722](https://img-repo.poetries.top/images/image-20210214200741722.png)
 
 ### 应用场景
 
@@ -3818,7 +3818,7 @@ Time:        1.421s
 
 本小节以 `React` 组件框架为例，和大家一起探讨学习几种通用的组件通信模型。
 
-![image-20210214200953207](http://img-repo.poetries.top/images/image-20210214200953207.png)
+![image-20210214200953207](https://img-repo.poetries.top/images/image-20210214200953207.png)
 
 - **父组件到子组件：** `props` 属性 ， `instance methods` 实例方法
 - **子组件到父组件：** `callback`回调方法， `event bubbles` 事件冒泡
@@ -4020,7 +4020,7 @@ class ThemedButton extends React.Component {d
 
 本小节和大家一起探讨学习，通过中介者模式实现组件元素之间跨级通信。同理 `Redux` 状态管理也是采用中介者模式实现 **数据状态扁平化管理**
 
-![image-20210214201012024](http://img-repo.poetries.top/images/image-20210214201012024.png)
+![image-20210214201012024](https://img-repo.poetries.top/images/image-20210214201012024.png)
 
 不需要考虑A，B，C组件的树形关系，这样就可以实现扁平化通信，如图：A组件的行为就可以被B和C组件响应。
 
@@ -4127,7 +4127,7 @@ export default class extends React.PureComponent {
 ## 参考文档
 
 - [EventEmitter(opens new window)](https://github.com/Olical/EventEmitter)
-- [React 组件间通讯(opens new window)](http://taobaofed.org/blog/2016/11/17/react-components-communication/)
+- [React 组件间通讯(opens new window)](https://taobaofed.org/blog/2016/11/17/react-components-communication/)
 
 
 
@@ -4287,7 +4287,7 @@ $ yo generator
 
 #### 生命周期回调
 
-![image-20210214201341362](http://img-repo.poetries.top/images/image-20210214201341362.png)
+![image-20210214201341362](https://img-repo.poetries.top/images/image-20210214201341362.png)
 
 - **initializing** - Your initialization methods (checking current project state, getting configs, etc)
   - 初始化方法（检验当前项目状态、获取configs、等）
@@ -4465,7 +4465,7 @@ IM的应用非常广泛，如钉钉，微信、淘宝聊天、淘宝直播、虎
 
 本层讲解的思路和一个大型项目开发保持一致，包含了项目的前期，开发中期，后期三个维度。
 
-![image-20210214202813430](http://img-repo.poetries.top/images/image-20210214202813430.png)
+![image-20210214202813430](https://img-repo.poetries.top/images/image-20210214202813430.png)
 
 ## 目标
 
@@ -4487,7 +4487,7 @@ IM的应用场景非常广泛，除了传统的图文聊天外，时下流行的
 
 在阿里巴巴集团里面应用场景也很广泛， 例如淘宝聊天(BC店铺/CC淘友)，淘宝直播，即时互动场景。
 
-![image-20210214203008916](http://img-repo.poetries.top/images/image-20210214203008916.png)
+![image-20210214203008916](https://img-repo.poetries.top/images/image-20210214203008916.png)
 
 在阿里巴巴以外也有很多优秀的产品，下面列举了一些产品简介：
 
@@ -4497,7 +4497,7 @@ IM的应用场景非常广泛，除了传统的图文聊天外，时下流行的
 
 > 调研IM行业领域，大体的产品可以分为两个部分：第一分部为IM即时通讯能力，做消息开放。例如网易云信，腾讯IM云，阿里系的百川。 例如：子弹短信和网易七鱼是在网易云信上面搭建的产品；QQ，微信和微视是在腾讯IM云上搭建的产品。 第二部分IM产品。例如：上文提到的子弹短信，网易七鱼，QQ和微信
 
-![image-20210214203051683](http://img-repo.poetries.top/images/image-20210214203051683.png)
+![image-20210214203051683](https://img-repo.poetries.top/images/image-20210214203051683.png)
 
 
 
@@ -4589,7 +4589,7 @@ IM SDK内的消息可以分为两类：会话内消息和系统消息。
 
 IM即时通讯是不同用户之间交流的双通通道，如下是收发消息的简单模型。
 
-![image-20210214203248788](http://img-repo.poetries.top/images/image-20210214203248788.png)
+![image-20210214203248788](https://img-repo.poetries.top/images/image-20210214203248788.png)
 
 客户端A向客户端B发消息，内部流程应该如下：
 
@@ -4723,7 +4723,7 @@ IM聊天系统技术选型考虑通用性，复用性。主要有如下划分：
 
 本章主要和大家一起实现一个具有中间件，事件等功能的可扩展的SDK，基于此基础SDK， 从而实现云信聊天SDK模块。
 
-![image-20210214203903585](http://img-repo.poetries.top/images/image-20210214203903585.png)
+![image-20210214203903585](https://img-repo.poetries.top/images/image-20210214203903585.png)
 
 上图是这样和大家讲解的核心模块，具体源码可以参考如下仓库地址，对应的NPM安装包如下：`tbms-middleware`、 `tbms-sdk`、`tbms-brandsdk-yunxin` 和 `generator-typescript-jest-sdk`。
 
@@ -4740,7 +4740,7 @@ IM聊天系统技术选型考虑通用性，复用性。主要有如下划分：
 
 在context中会集成 `message(消息)` , `session(会话)` , `app(如用户，初始化sdk信息等其他信息)`
 
-![image-20210214203931439](http://img-repo.poetries.top/images/image-20210214203931439.png)
+![image-20210214203931439](https://img-repo.poetries.top/images/image-20210214203931439.png)
 
 解释说明：websocket 接受一条数据流，通过 `action` 触发 `dispatch` 方法， `dispatch` 会触发各个 `middleware` 模块，同时一直保存着 `context`执行上下文。在视图层同样通过 `action` 触发 `dispatch`, 回流到 `view` 层。
 
@@ -4883,7 +4883,7 @@ test('await async function ', (done) => {
 
 我们可以在源码 tbms-middleware 目录下运行 `npm run test` 查看结果。结果如下：
 
-![image-20210214203954279](http://img-repo.poetries.top/images/image-20210214203954279.png)
+![image-20210214203954279](https://img-repo.poetries.top/images/image-20210214203954279.png)
 
 测试结果解析：同步的方法先执行（从外到内），异步的方法（从内到外），洋葱圈模型。
 
@@ -4891,7 +4891,7 @@ test('await async function ', (done) => {
 
 tbms-sdk 是一个标准的IM-SDK模块，tbms-sdk 继承与 tbms-middlware 模块，因此它同时具有 中间件 和 事件监听发布 能力。在此模块主要实现统一的API接口以及标准事件回调，初始化聊天的参数配置以及一些通用的业务逻辑处理。 如图是标准API接口 和 tbms-sdk测试用例（测试用例）
 
-![image-20210214204020363](http://img-repo.poetries.top/images/image-20210214204020363.png)
+![image-20210214204020363](https://img-repo.poetries.top/images/image-20210214204020363.png)
 
 ### 初始化参数配置
 
@@ -5136,7 +5136,7 @@ init() {
 
 ## 需求交互
 
-![image-20210214204151439](http://img-repo.poetries.top/images/image-20210214204151439.png)
+![image-20210214204151439](https://img-repo.poetries.top/images/image-20210214204151439.png)
 
 针对交互稿我们有如下业务诉求分析：
 
@@ -5146,7 +5146,7 @@ init() {
 
 ## 组件化架构框图
 
-![image-20210214204210479](http://img-repo.poetries.top/images/image-20210214204210479.png)
+![image-20210214204210479](https://img-repo.poetries.top/images/image-20210214204210479.png)
 
 对聊天消息组件化能力划分三个层级：基础消息组件，自定义消息组件和业务组件。
 
@@ -5265,7 +5265,7 @@ import { TextMsg } from 'rax-tbms-basemsg';
 
 ### 设计框图
 
-![image-20210214204231613](http://img-repo.poetries.top/images/image-20210214204231613.png)
+![image-20210214204231613](https://img-repo.poetries.top/images/image-20210214204231613.png)
 
 上一章我们通过中间件的方式，整合输出了标准 IM 数据结构：消息和会话。 这章我们要介绍下一条消息如何通过 pipline 表现出标准化UI，原理图如上所示。
 
@@ -5405,7 +5405,7 @@ componentParser.dispatch(msg, conversation).then(ctx => {
 
 > 数据层 + UI层 => 聊天系统
 
-![image-20210214204409184](http://img-repo.poetries.top/images/image-20210214204409184.png)
+![image-20210214204409184](https://img-repo.poetries.top/images/image-20210214204409184.png)
 
 聊天系统源码地址：
 
@@ -5617,4 +5617,4 @@ class App extends Component {
 
 如下图所示：原先我们是发散性思维模式到现在的体系化思维模式。
 
-![image-20210214204431618](http://img-repo.poetries.top/images/image-20210214204431618.png)
+![image-20210214204431618](https://img-repo.poetries.top/images/image-20210214204431618.png)

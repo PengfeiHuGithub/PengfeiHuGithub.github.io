@@ -61,7 +61,7 @@ const arr = new Array(7)
 
 这样的写法就可以得到一个长度为7的数组：
 
-![img](http://img-repo.poetries.top/images/20210905105944.png)
+![img](https://img-repo.poetries.top/images/20210905105944.png)
 
 > 在一些场景中，这个需求会稍微变得有点复杂—— “创建一个长度确定、同时每一个元素的值也都确定的数组”。这时我们可以调用 fill 方法，假设需求是每个坑里都填上一个1，只需给它 fill 一个1：
 
@@ -71,7 +71,7 @@ const arr = (new Array(7)).fill(1)
 
 如此便可以得到一个长度为7，且每个元素都初始化为1的数组：
 
-![img](http://img-repo.poetries.top/images/20210905105957.png)
+![img](https://img-repo.poetries.top/images/20210905105957.png)
 
 ### 数组的访问和遍历
 
@@ -138,7 +138,7 @@ const arr = [1,2,3,4,5]
 
 这个数组在逻辑上的分布就是这样式儿的：
 
-![img](http://img-repo.poetries.top/images/20210905110008.png)
+![img](https://img-repo.poetries.top/images/20210905110008.png)
 
 像图上这样，数组的元素是数字而非数组。整个数组的结构看上去宛如一条“线”，这就是一维数组。 而“每个元素都是数组的数组”，代码里看是这样：
 
@@ -154,7 +154,7 @@ const arr = [
 
 直接把它的逻辑结构画出来看，是这样：
 
-![img](http://img-repo.poetries.top/images/20210905110019.png)
+![img](https://img-repo.poetries.top/images/20210905110019.png)
 
 - 图中的每一行，就代表着一个数组元素。比如第 0 行，就代表着数组中 `arr[0]` 这个数组元素，其内容是 `[1,2,3,4,5]`。
 - 每一行中的每一列，则代表一个确切的“坑”。比如第 0 行第 1 列，就代表着数组中 arr[0][1] 这个元素，其值为2，是一个确切的 number。
@@ -177,7 +177,7 @@ const arr =(new Array(7)).fill([])
 
 乍一看没啥毛病，7个坑都被乖乖地填上了数组元素
 
-![img](http://img-repo.poetries.top/images/20210905110041.png)
+![img](https://img-repo.poetries.top/images/20210905110041.png)
 
 但是当你想修改某一个坑里的数组的值的时候：
 
@@ -187,13 +187,13 @@ arr[0][0] = 1
 
 你会发现一整列的元素都被设为了 1：
 
-![img](http://img-repo.poetries.top/images/20210905110054.png)
+![img](https://img-repo.poetries.top/images/20210905110054.png)
 
 这是什么骚操作？？？
 
 > 这就要从 fill 的工作机制讲起了。各位要清楚，当你给 fill 传递一个入参时，如果这个入参的类型是引用类型，那么 fill 在填充坑位时填充的其实就是入参的引用。也就是说下图中虽然看似我们给7个坑位各初始化了一个数组：
 
-![img](http://img-repo.poetries.top/images/20210905110108.png)
+![img](https://img-repo.poetries.top/images/20210905110108.png)
 
 > 其实这7个数组对应了同一个引用、指向的是同一块内存空间，它们本质上是同一个数组。因此当你修改第0行第0个元素的值时，第1-6行的第0个元素的值也都会跟着发生改变。
 
@@ -298,7 +298,7 @@ arr.splice(1,0,3) // [1,3,2]
 
 > 因为删掉的元素是0个，所以说 arr[1] 中原有的元素值“2”仍然会被保留下来；同时因为我们后面又指定了 arr[1] 处需要新增一个元素3，那么这个3就会把原来arr[1]这个地方的元素给“挤到后面去”。这样我们就做到了在数组中任意位置进行元素的新增。这个过程如下图：
 
-![img](http://img-repo.poetries.top/images/20210905110223.png)
+![img](https://img-repo.poetries.top/images/20210905110223.png)
 
 **数组中删除元素的三种方法**
 
@@ -322,9 +322,9 @@ arr.pop() // [1,2]
 
 小卖部老板往里面摆置冰淇淋的时候，最先摆进去的会落在冰柜的底部，最后摆置进去的留在冰柜的顶部。如果这时候咱们去买冰淇淋，老板就会把冰柜顶部的那个取出来给我们。在冰淇淋不断被取出的这个过程里，越是后来放进去的，越是先被取出来；越是先放进去的，越是最后被取出来。这个过程，就是所谓的“后进先出”：
 
-![img](http://img-repo.poetries.top/images/20210905110247.png)
+![img](https://img-repo.poetries.top/images/20210905110247.png)
 
-![img](http://img-repo.poetries.top/images/20210905110256.png)
+![img](https://img-repo.poetries.top/images/20210905110256.png)
 
 **我们看到这个过程有两个特征：**
 
@@ -362,7 +362,7 @@ stack // []
 
 丢到控制台运行，冰淇淋就会按照后进先出的顺序被取出：
 
-![img](http://img-repo.poetries.top/images/20210905110308.png)
+![img](https://img-repo.poetries.top/images/20210905110308.png)
 
 **队列（Queue）——只用 push 和 shift 完成增删的“数组”**
 
@@ -370,7 +370,7 @@ stack // []
 
 它比较像咱们去肯德基排队点餐。先点餐的人先出餐，后点餐的人后出餐：
 
-![img](http://img-repo.poetries.top/images/20210905110323.png) ![img](http://img-repo.poetries.top/images/20210905110346.png)
+![img](https://img-repo.poetries.top/images/20210905110323.png) ![img](https://img-repo.poetries.top/images/20210905110346.png)
 
 这个过程的规律也很明显：
 
@@ -403,7 +403,7 @@ queue // []
 
 把上面代码丢进控制台运行，我们可以看到小册姐一个接一个地乖乖去取餐了：
 
-![img](http://img-repo.poetries.top/images/20210905110358.png)
+![img](https://img-repo.poetries.top/images/20210905110358.png)
 
 ## 链表
 
@@ -413,13 +413,13 @@ queue // []
 
 这个“离散”是相对于数组的“连续”来说的。上一节咱们给大家画过数组的元素分布示意图：
 
-![img](http://img-repo.poetries.top/images/20210905110407.png)
+![img](https://img-repo.poetries.top/images/20210905110407.png)
 
 数组在内存中最为关键的一个特征，就是它一般是对应一段位于自己上界和下界之间的、一段连续的内存空间。元素与元素之间，紧紧相连（当然啦，还有二般情况，我们在下文的辨析环节会提到）。
 
 而链表中的结点，则允许散落在内存空间的各个角落里。一个内容为1->2->3->4->5的链表，在内存中的形态可以是散乱如下的：
 
-![img](http://img-repo.poetries.top/images/20210905110415.png)
+![img](https://img-repo.poetries.top/images/20210905110415.png)
 
 正是由于数组中的元素是连续的，每个元素的内存地址可以根据其索引距离数组头部的距离来计算出来。因此对数组来说，每一个元素都可以通过数组的索引下标直接定位。
 
@@ -443,15 +443,15 @@ queue // []
 
 > 数据域存储的是当前结点所存储的数据值，而指针域则代表下一个结点（后继结点）的引用。 有了 next 指针来记录后继结点的引用，每一个结点至少都能知道自己后面的同学是哪位了，原本相互独立的结点之间就有了如下的联系：
 
-![img](http://img-repo.poetries.top/images/20210905110430.png)
+![img](https://img-repo.poetries.top/images/20210905110430.png)
 
 我们把这个关系给简化一下：
 
-![img](http://img-repo.poetries.top/images/20210905110440.png)
+![img](https://img-repo.poetries.top/images/20210905110440.png)
 
 要想访问链表中的任何一个元素，我们都得从起点结点开始，逐个访问 next，一直访问到目标结点为止。为了确保起点结点是可抵达的，我们有时还会设定一个 head 指针来专门指向链表的开始位置：
 
-![img](http://img-repo.poetries.top/images/20210905110546.png)
+![img](https://img-repo.poetries.top/images/20210905110546.png)
 
 以上，就是链表的基本形态啦。
 
@@ -475,7 +475,7 @@ node.next = new ListNode(2)
 
 以上，就创建出了一个数据域值为1，next 结点数据域值为2的链表结点：
 
-![img](http://img-repo.poetries.top/images/20210905110601.png)
+![img](https://img-repo.poetries.top/images/20210905110601.png)
 
 ### 链表元素的添加
 
@@ -483,17 +483,17 @@ node.next = new ListNode(2)
 
 > 先来说说添加，直接在尾部添加结点相对比较简单，我们改变一个 next 指针就行。这里记值为2的 node 结点为 node2（假设 node2 是现在的尾部结点），值为3的 node 结点为 node3。假如我要把 node3 添加到 node2 所在链表的尾部，直接把 node2 的 next 指针指向 node3 即可：
 
-![img](http://img-repo.poetries.top/images/20210905110715.png)
+![img](https://img-repo.poetries.top/images/20210905110715.png)
 
 需要大家引起重视的是另一种添加操作：如何在两个结点间插入一个结点？注意，由于链表有时会有头结点，这时即便你是往链表头部增加结点，其本质也是“在头结点和第一个结点之间插入一个新结点”。所以说，任意两结点间插入一个新结点这种类型的增加操作，将会是链表基础中的一个关键考点。
 
 要想完成这个动作，我们需要变更的是前驱结点和目标结点的 next 指针指向，过程如下图： 插入前：
 
-![img](http://img-repo.poetries.top/images/20210905110724.png)
+![img](https://img-repo.poetries.top/images/20210905110724.png)
 
 插入后：
 
-![img](http://img-repo.poetries.top/images/20210905110743.png)
+![img](https://img-repo.poetries.top/images/20210905110743.png)
 
 注意我圈红的地方，就是咱们要动手脚的地方。下面我用代码来表述一下这个改变。：
 
@@ -512,7 +512,7 @@ node1.next = node3
 
 > 注意，删除的标准是：在链表的遍历过程中，无法再遍历到某个结点的存在。按照这个标准，要想遍历不到 node3，我们直接让它的前驱结点 node1 的 next 指针跳过它、指向 node3 的后继即可
 
-![img](http://img-repo.poetries.top/images/20210905110754.png)
+![img](https://img-repo.poetries.top/images/20210905110754.png)
 
 如此一来，node3 就成为了一个完全不可抵达的结点了，它会被 JS 的垃圾回收器自动回收掉。这个过程用代码表述如下：
 
@@ -605,15 +605,15 @@ arr[9]
 
 > 在理解计算机世界的树结构之前，大家不妨回忆一下现实世界中的树有什么特点：一棵树往往只有一个树根，向上生长后，却可以伸展出无数的树枝、树枝上会长出树叶。由树根从泥土中吸收水、无机盐等营养物质，源源不断地输送到树枝与树叶的那一端。一棵树往往呈现这样的基本形态：
 
-![img](http://img-repo.poetries.top/images/20210905110816.png)
+![img](https://img-repo.poetries.top/images/20210905110816.png)
 
 > 数据结构中的树，首先是对现实世界中树的一层简化：把树根抽象为“根结点”，树枝抽象为“边”，树枝的两个端点抽象为“结点”，树叶抽象为“叶子结点”。抽象后的树结构如下：
 
-![img](http://img-repo.poetries.top/images/20210905110830.png)
+![img](https://img-repo.poetries.top/images/20210905110830.png)
 
 把这棵抽象后的树颠倒一下，就得到了计算机中的树结构：
 
-![img](http://img-repo.poetries.top/images/20210905110841.png)
+![img](https://img-repo.poetries.top/images/20210905110841.png)
 
 结合这张图，我们来讲解树的关键特性和重点概念。希望大家可以牢记以下几点：
 
@@ -631,7 +631,7 @@ arr[9]
 - 它可以没有根结点，作为一棵空树存在
 - 如果它不是空树，那么必须由根结点、左子树和右子树组成，且左右子树都是二叉树。如下图：
 
-![img](http://img-repo.poetries.top/images/20210905110850.png)
+![img](https://img-repo.poetries.top/images/20210905110850.png)
 
 > 注意，二叉树不能被简单定义为每个结点的度都是2的树。普通的树并不会区分左子树和右子树，但在二叉树中，左右子树的位置是严格约定、不能交换的。对应到图上来看，也就意味着 B 和 C、D 和 E、F 和 G 是不能互换的。
 
@@ -663,11 +663,11 @@ const node  = new TreeNode(1)
 
 > 如此便能得到一个值为 1 的二叉树结点，从结构上来说，它长这样：
 
-![img](http://img-repo.poetries.top/images/20210905110900.png)
+![img](https://img-repo.poetries.top/images/20210905110900.png)
 
 > 以这个结点为根结点，我们可以通过给 `left/right` 赋值拓展其子树信息，延展出一棵二叉树。因此从更加细化的角度来看，一棵二叉树的形态实际是这样的：
 
-![img](http://img-repo.poetries.top/images/20210905110908.png)
+![img](https://img-repo.poetries.top/images/20210905110908.png)
 
 > 现在各位已经掌握了做二叉树面试题所需要的一系列前置知识。接下来我会带大家一起通过写代码的方式，来搞定二叉树系列里最首当其冲、同时相当热门的考点——二叉树的遍历。
 
@@ -716,7 +716,7 @@ const node  = new TreeNode(1)
 
 结合这个定义来看，每一棵二叉树都应该由这三部分组成：
 
-![img](http://img-repo.poetries.top/images/20210905110927.png)
+![img](https://img-repo.poetries.top/images/20210905110927.png)
 
 > 对树的遍历，就可以看做是对这三个部分的遍历。这里就引出一个问题：三个部分中，到底先遍历哪个、后遍历哪个呢？我们此处其实可以穷举一下，假如在保证“左子树一定先于右子树遍历”这个前提，那么遍历的可能顺序也不过三种：
 
@@ -738,7 +738,7 @@ const node  = new TreeNode(1)
 
 先序遍历的“旅行路线”如下图红色数字 所示：
 
-![img](http://img-repo.poetries.top/images/20210905110939.png)
+![img](https://img-repo.poetries.top/images/20210905110939.png)
 
 如果说有 N 多个子树，那么我们在每一棵子树内部，都要重复这个“旅行路线”，动画演示如下：
 
@@ -809,39 +809,39 @@ function preorder(root) {
 
 各位现在完全可以再回过头来看一下我们前面示例的这棵二叉树：
 
-![img](http://img-repo.poetries.top/images/20210905111045.png)
+![img](https://img-repo.poetries.top/images/20210905111045.png)
 
 > 我们直接把它套进 preorder 函数里，一步一步来认清楚先序遍历的每一步做了什么：
 
 1. 调用 `preorder(root)`，这里 root 就是 A，它非空，所以进入递归式，输出 A 值。接着优先遍历左子树，`preorder(root.left)`此时为 `preorder(B)` ：
 
-![img](http://img-repo.poetries.top/images/20210905111053.png)
+![img](https://img-repo.poetries.top/images/20210905111053.png)
 
 1. 进入 `preorder(B)` 的逻辑： 入参为结点 B，非空，进入递归式，输出 B 值。接着优先遍历 B 的左子树，`preorder(root.left)` 此时为 `preorder(D)` ：
 
-![img](http://img-repo.poetries.top/images/20210905111106.png)
+![img](https://img-repo.poetries.top/images/20210905111106.png)
 
 1. 进入 `preorder(D)` 的逻辑： 入参为结点 D，非空，进入递归式，输出 D 值。接着优先遍历 D 的左子树，`preorder(root.left)` 此时为 `preorder(null)`：
 
-![img](http://img-repo.poetries.top/images/20210905111116.png)
+![img](https://img-repo.poetries.top/images/20210905111116.png)
 
 1. 进入`preorder(null)` ，发现抵达了递归边界，直接 return 掉。紧接着是 `preorder(D)` 的逻辑往下走，走到了 `preorder(root.right)` ：
 
-![img](http://img-repo.poetries.top/images/20210905111125.png)
+![img](https://img-repo.poetries.top/images/20210905111125.png)
 
 1. 再次进入`preorder(null)` ，发现抵达了递归边界，直接 `return` 掉，回到`preorder(D)` 里。接着 `preorder(D)` 的逻辑往下走，发现 preorder(D) 已经执行完了。于是返回，回到`preorder(B)` 里，接着`preorder(B)` 往下走，进入 `preorder(root.right)` ，也就是 `preorder(E)`
 
-![img](http://img-repo.poetries.top/images/20210905111137.png)
+![img](https://img-repo.poetries.top/images/20210905111137.png)
 
 > E 不为空，进入递归式，输出 E 值。接着优先遍历 E 的左子树，preorder(root.left) 此时为 preorder(null)，触碰递归边界，直接返回 preorder(E)；继续preorder(E)执行下去，是preorder(root.right) ，这里 E 的 right 同样是 null，故直接返回。如此一来，preorder(E)就执行完了，回到preorder(B)里去；发现preorder(B)也执行完了，于是回到preorder(A)里去，执行preorder(A)中的 preorder(root.right)。
 
 1. root 是A，`root.right` 就是 C 了，进入`preorder(C)`的逻辑：
 
-![img](http://img-repo.poetries.top/images/20210905111145.png)
+![img](https://img-repo.poetries.top/images/20210905111145.png)
 
 > C 不为空，进入递归式，输出 C 值。接着优先遍历 C 的左子树，preorder(root.left) 此时为 preorder(null)，触碰递归边界，直接返回。继续preorder(C)执行下去，是preorder(root.right) ，这里 C 的 right 是 F：
 
-![img](http://img-repo.poetries.top/images/20210905111154.png)
+![img](https://img-repo.poetries.top/images/20210905111154.png)
 
 1. 进入`preorder(F)`的逻辑，F 不为空，进入递归式，输出 F 值。接着优先遍历 F 的左子树，preorder(root.left) 此时为 preorder(null)，触碰递归边界，直接返回 `preorder(F)`；继续preorder(F)执行下去，是preorder(root.right) ，这里 F 的 right 同样是 null，故直接返回preorder(F)。此时preorder(F)已经执行完了，返回preorder(C)；发现preorder(C)也执行完了，就回到 preorder(A)；发现preorder(A)作为递归入口，它的逻辑也已经执行完了，于是我们的递归活动就正式画上了句号。到此为止，6个结点也已全部按照先序遍历顺序输出：
 
@@ -858,7 +858,7 @@ function preorder(root) {
 
 理解了先序遍历的过程，中序遍历就不是什么难题。唯一的区别只是把遍历顺序调换了`左子树 -> 根结点 -> 右子树`：
 
-![img](http://img-repo.poetries.top/images/20210905111204.png)
+![img](https://img-repo.poetries.top/images/20210905111204.png)
 
 > 若有多个子树，那么我们在每一棵子树内部，都要重复这个“旅行路线”，这个过程用动画表示如下：
 
@@ -898,7 +898,7 @@ function inorder(root) {
 
 在后序遍历中，我们`先访问左子树`，`再访问右子树`，`最后访问根结点`：
 
-![img](http://img-repo.poetries.top/images/20210905111309.png)
+![img](https://img-repo.poetries.top/images/20210905111309.png)
 
 若有多个子树，那么我们在每一棵子树内部，都要重复这个“旅行路线”：
 
@@ -1034,7 +1034,7 @@ console.log(arr[i][j])
 
 其它语句的计算思路和咱们第一个🌰区别不大，这里我就不重复讲了，直接给出大家答案：
 
-![img](http://img-repo.poetries.top/images/20210905111506.png)
+![img](https://img-repo.poetries.top/images/20210905111506.png)
 
 继续来做个求总执行次数 T(n) 的加法看看：
 
@@ -1109,7 +1109,7 @@ function fn(arr) {
 
 > `x`解出来，就是要大于等于以 `2` 为底数的 `n` 的对数：
 
-![img](http://img-repo.poetries.top/images/20210905111520.png)
+![img](https://img-repo.poetries.top/images/20210905111520.png)
 
 > 也就是说，只有当 x 小于 log2n 的时候，循环才是成立的、循环体才能执行。注意涉及到对数的时间复杂度，底数和系数都是要被简化掉的。那么这里的 O(n) 就可以表示为：
 
@@ -1123,7 +1123,7 @@ O(n) = logn
 
 常见的时间复杂度按照从小到大的顺序排列，有以下几种：
 
-![img](http://img-repo.poetries.top/images/20210905111527.png)
+![img](https://img-repo.poetries.top/images/20210905111527.png)
 
 ## 空间复杂度
 
@@ -1237,15 +1237,15 @@ i
 
 第一次遍历到 `2`，此时 `Map` 为空：
 
-![img](http://img-repo.poetries.top/images/20210905111542.png)
+![img](https://img-repo.poetries.top/images/20210905111542.png)
 
 以 `2` 为 `key`，索引 0 为 value 作存储，继续往下走；遇到了 7：
 
-![img](http://img-repo.poetries.top/images/20210905111602.png)
+![img](https://img-repo.poetries.top/images/20210905111602.png)
 
 计算 targetNum 和 7 的差值为2，去 Map 中检索 2 这个 key，发现是之前出现过的值：
 
-![img](http://img-repo.poetries.top/images/20210905111610.png)
+![img](https://img-repo.poetries.top/images/20210905111610.png)
 
 那么 2 和 7 的索引组合就是这道题的答案啦。
 
@@ -1304,11 +1304,11 @@ nums2 = [2,5,6], n = 3
 
 这道题没有太多的弯弯绕绕，标准解法就是双指针法。首先我们定义两个指针，各指向两个数组生效部分的尾部：
 
-![img](http://img-repo.poetries.top/images/20210905111643.png)
+![img](https://img-repo.poetries.top/images/20210905111643.png)
 
 每次只对指针所指的元素进行比较。取其中较大的元素，把它从 nums1 的末尾往前面填补：
 
-![img](http://img-repo.poetries.top/images/20210905111650.png)
+![img](https://img-repo.poetries.top/images/20210905111650.png)
 
 **这里有一点需要解释一下：**
 
@@ -1398,7 +1398,7 @@ nums = nums.sort((a,b)=>{
 
 然后，对数组进行遍历，每次遍历到哪个数字，就固定哪个数字。然后把左指针指向该数字后面一个坑里的数字，把右指针指向数组末尾，让左右指针从起点开始，向中间前进：
 
-![img](http://img-repo.poetries.top/images/20210905111714.png)
+![img](https://img-repo.poetries.top/images/20210905111714.png)
 
 每次指针移动一次位置，就计算一下两个指针指向数字之和加上固定的那个数之后，是否等于0。如果是，那么我们就得到了一个目标组合；否则，分两种情况来看：
 
@@ -1584,15 +1584,15 @@ function isPalindrome(str) {
 
 回到这道题上来，我们首先是初始化两个指针，一个指向字符串头部，另一个指向尾部：
 
-![img](http://img-repo.poetries.top/images/20210905114114.png)
+![img](https://img-repo.poetries.top/images/20210905114114.png)
 
 如果两个指针所指的字符恰好相等，那么这两个字符就符合了回文字符串对对称性的要求，跳过它们往下走即可。如果两个指针所指的字符串不等，比如这样：
 
-![img](http://img-repo.poetries.top/images/20210905114121.png)
+![img](https://img-repo.poetries.top/images/20210905114121.png)
 
 那么就意味着不对称发生了，意味着这是一个可以“删掉试试看”的操作点。我们可以分别对左指针字符和右指针字符尝试进行“跳过”，看看区间在 `[left+1, right]` 或 `[left, right-1]` 的字符串是否回文。如果是的话，那么就意味着如果删掉被“跳过”那个字符，整个字符串都将回文：
 
-![img](http://img-repo.poetries.top/images/20210905114132.png)
+![img](https://img-repo.poetries.top/images/20210905114132.png)
 
 > 比如说这里我们跳过了 b，[left+1, right] 的区间就是 [2, 2]，它对应 c 这个字符，单个字符一定回文。这样一来，删掉 b 之后，左右指针所指的内部区间是回文的，外部区间也是回文的，可以认为整个字符串就是一个回文字符串了。
 
@@ -1930,16 +1930,16 @@ const myAtoi = function(str) {
 
 这道题也不例外，我们先来看看处理前两个链表的情况：
 
-![img](http://img-repo.poetries.top/images/20210905114154.png)
+![img](https://img-repo.poetries.top/images/20210905114154.png)
 
 - 两个链表如果想要合并为一个链表，我们恰当地补齐双方之间结点 next 指针的指向关系，就能达到目的。
 - 如果这么说仍然让你觉得抽象，那么大家不妨把图上的6个结点想象成6个扣子：现在的情况是，6个扣子被分成了两拨，各自由一根线把它们穿起来。而我们的目的是让这六个扣子按照一定的顺序，串到一根线上去。这时候需要咱们做的就是一个穿针引线的活儿，现在线有了，咱缺的是一根针
 
-![img](http://img-repo.poetries.top/images/20210905114202.png)
+![img](https://img-repo.poetries.top/images/20210905114202.png)
 
 这根针每次钻进扣子眼儿之前，要先比较一下它眼前的两个扣子，选择其中值较小的那个，优先把它串进去。一次串一个，直到所有的扣子都被串进一条线为止（下图中红色箭头表明穿针的过程与方向）：
 
-![img](http://img-repo.poetries.top/images/20210905114209.png)
+![img](https://img-repo.poetries.top/images/20210905114209.png)
 
 > 同时我们还要考虑 l1 和 l2 两个链表长度不等的情况：若其中一个链表已经完全被串进新链表里了，而另一个链表还有剩余结点，考虑到该链表本身就是有序的，我们可以直接把它整个拼到目标链表的尾部。
 
@@ -2056,23 +2056,23 @@ const deleteDuplicates = function(head) {
 
 这带来了一个什么问题呢？我们回顾一下前面咱们是怎么做删除的：在遍历的过程中判断当前结点和后继结点之间是否存在值相等的情况，若有，直接对后继结点进行删除：
 
-![img](http://img-repo.poetries.top/images/20210905114238.png)
+![img](https://img-repo.poetries.top/images/20210905114238.png)
 
 这个过程非常自然，为啥？因为咱们要删除某一个目标结点时，必须知道它的前驱结点。在上图中，我们本来就是站在前驱结点的位置，对其后继结点进行删除，只需要将前驱结点的 next 指针往后挪一位就行了。
 
 但是现在，咱们要做的事情变成了把前驱和后继一起删掉，前面两个值为1的结点要一起狗带才行，起始结点直接变成了第三个：
 
-![img](http://img-repo.poetries.top/images/20210905114246.png) 如果继续沿用刚才的思路，我们会发现完全走不通。因为我们的 cur 指针就是从图中第一个结点出发开始遍历的，无法定位到第一个结点的前驱结点，删除便无法完成。
+![img](https://img-repo.poetries.top/images/20210905114246.png) 如果继续沿用刚才的思路，我们会发现完全走不通。因为我们的 cur 指针就是从图中第一个结点出发开始遍历的，无法定位到第一个结点的前驱结点，删除便无法完成。
 
 其实在链表题中，经常会遇到这样的问题：链表的第一个结点，因为没有前驱结点，导致我们面对它无从下手。这时我们就可以用一个 dummy 结点来解决这个问题。 所谓 dummy 结点，就是咱们人为制造出来的第一个结点的前驱结点，这样链表中所有的结点都能确保有一个前驱结点，也就都能够用同样的逻辑来处理了。 dummy 结点能够帮助我们降低链表处理过程的复杂度，处理链表时，不设 dummy 结点思路可能会打不开；设了 dummy 结点的话，就算不一定用得上，也不会出错。所以笔者个人非常喜欢用 dummy 结点。有心的同学可能也会注意到，在本节的第一题“链表的合并”中，其实也有 dummy 结点的身影。
 
 回到这道题上来，我们首先要做的就是定义一个 dummy 结点，指向链表的起始位置：
 
-![img](http://img-repo.poetries.top/images/20210905114254.png)
+![img](https://img-repo.poetries.top/images/20210905114254.png)
 
 > 这样一来，如果想要删除两个连续重复的值为 1 的结点，我们只需要把 dummy 结点的 next 指针直接指向 2：
 
-![img](http://img-repo.poetries.top/images/20210905114301.png)
+![img](https://img-repo.poetries.top/images/20210905114301.png)
 
 如此一来，就大功告成啦~
 
@@ -2178,23 +2178,23 @@ dummy.next = head
 
 按照我们已经预告过的思路，首先两个指针 slow 和 fast，全部指向链表的起始位——dummy 结点：
 
-![img](http://img-repo.poetries.top/images/20210905114323.png)
+![img](https://img-repo.poetries.top/images/20210905114323.png)
 
 > 快指针先出发！闷头走上 n 步，在第 n 个结点处打住，这里 n=2：
 
-![img](http://img-repo.poetries.top/images/20210905114335.png)
+![img](https://img-repo.poetries.top/images/20210905114335.png)
 
 然后，快慢指针一起前进，当快指针前进到最后一个结点处时，两个指针再一起停下来：
 
-![img](http://img-repo.poetries.top/images/20210905114400.png) ![img](http://img-repo.poetries.top/images/20210905114410.png)
+![img](https://img-repo.poetries.top/images/20210905114400.png) ![img](https://img-repo.poetries.top/images/20210905114410.png)
 
 此时，慢指针所指的位置，就是倒数第 n 个结点的前一个结点：
 
-![img](http://img-repo.poetries.top/images/20210905114536.png)
+![img](https://img-repo.poetries.top/images/20210905114536.png)
 
 我们基于这个结点来做删除，可以说是手到擒来：
 
-![img](http://img-repo.poetries.top/images/20210905114546.png)
+![img](https://img-repo.poetries.top/images/20210905114546.png)
 
 到这里，我们总结一下：
 
@@ -2260,27 +2260,27 @@ const removeNthFromEnd = function(head, n) {
 
 我啥也不说，就给你一张链表的结构图：
 
-![img](http://img-repo.poetries.top/images/20210905122437.png)
+![img](https://img-repo.poetries.top/images/20210905122437.png)
 
 来，你告诉我，我如何把这货颠倒个顺序呢？
 
 是不是想办法把每个结点 next 指针的指向给反过来就行了：
 
-![img](http://img-repo.poetries.top/images/20210905122445.png)
+![img](https://img-repo.poetries.top/images/20210905122445.png)
 
 你只要能想到这一步，就说明你对链表操作类题目已经有了最关键的感知，给你双击666~
 
 接下来我们需要琢磨的是如何去反转指针的指向，这里我们需要用到三个指针，它们分别指向目标结点（cur）、目标结点的前驱结点（pre）、目标结点的后继结点（next）。这里咱们随便找个结点来开刀：
 
-![img](http://img-repo.poetries.top/images/20210905122455.png)
+![img](https://img-repo.poetries.top/images/20210905122455.png)
 
 这里我只需要一个简单的cur.next = pre，就做到了 next 指针的反转：
 
-![img](http://img-repo.poetries.top/images/20210905122502.png)
+![img](https://img-repo.poetries.top/images/20210905122502.png)
 
 有同学会说：那 next 不是完全没用到吗？当然有用，你瞅瞅，咱们反转完链表变成啥样了：
 
-![img](http://img-repo.poetries.top/images/20210905122509.png)
+![img](https://img-repo.poetries.top/images/20210905122509.png)
 
 这会儿我要是不用 next 给你指着 cur 原本的后继结点，你上哪去定位下一个结点呢？遍历都没法继续了嗷。
 
@@ -2331,19 +2331,19 @@ const reverseList = function(head) {
 
 我们仍然是从指针反转来入手：
 
-![img](http://img-repo.poetries.top/images/20210905122523.png)
+![img](https://img-repo.poetries.top/images/20210905122523.png)
 
 按照题中的示例，假如我们需要反转的是链表的第 2-4 之间的结点，那么对应的指针逆序后会是这个样子：
 
-![img](http://img-repo.poetries.top/images/20210905122529.png)
+![img](https://img-repo.poetries.top/images/20210905122529.png)
 
 4指3，3指2，这都没问题，关键在于，如何让1指向4、让2指向5呢？这就要求我们在单纯的重复“逆序”这个动作之外，还需要对被逆序的区间前后的两个结点做额外的处理：
 
-![img](http://img-repo.poetries.top/images/20210905122536.png)
+![img](https://img-repo.poetries.top/images/20210905122536.png)
 
 由于我们遍历链表的顺序是从前往后遍历，那么为了避免结点1和结点2随着遍历向后推进被遗失，我们需要提前把1结点缓存下来。而结点5就没有这么麻烦了：随着遍历的进行，当我们完成了结点4的指针反转后，此时 cur 指针就恰好指在结点5上：
 
-![img](http://img-repo.poetries.top/images/20210905122543.png)
+![img](https://img-repo.poetries.top/images/20210905122543.png)
 
 > 此时我们直接将结点2的 next 指针指向 cur、将结点1的 next 指针指向 pre 即可。
 
@@ -2412,7 +2412,7 @@ const reverseBetween = function(head, m, n) {
 
 解释：链表中存在一个环
 
-![img](http://img-repo.poetries.top/images/20210905122601.png)
+![img](https://img-repo.poetries.top/images/20210905122601.png)
 
 **思路解读**
 
@@ -2420,11 +2420,11 @@ const reverseBetween = function(head, m, n) {
 
 假如现实中有一个长跑爱好者李雷，这货很狂，他立了一个 flag，说要徒步环游世界：
 
-![img](http://img-repo.poetries.top/images/20210905122609.png)
+![img](https://img-repo.poetries.top/images/20210905122609.png)
 
 地球的周长围出来的这个圆，它就是一个“环”。李雷现在就想围着这个环跑上一圈，说他狂，他也没那么狂——他觉得自己最多跑一圈，为了防止自己跑过界，他决定在出发的地方立一个 flag：
 
-![img](http://img-repo.poetries.top/images/20210905122618.png)
+![img](https://img-repo.poetries.top/images/20210905122618.png)
 
 这样，不管李雷走完这个环用了多少年，世事如何变迁，只要他的 flag 还没有倒，那么李雷就一定能回到自己梦开始的地方：）。
 
@@ -2432,7 +2432,7 @@ const reverseBetween = function(head, m, n) {
 
 回到链表的世界里，也是一个道理。一个环形链表的基本修养，是能够让遍历它的游标回到原点
 
-![img](http://img-repo.poetries.top/images/20210905122629.png)
+![img](https://img-repo.poetries.top/images/20210905122629.png)
 
 > 从 flag 出发，只要我能够再回到 flag 处，那么就意味着，我正在遍历一个环形链表。
 
@@ -2471,14 +2471,14 @@ const hasCycle = function(head) {
 
 > 输入：head = [3,2,0,-4]（如下图） 输出：tail connects to node index 1 解释：链表中有一个环，其尾部连接到第二个结点。
 
-![img](http://img-repo.poetries.top/images/20210905122641.png)
+![img](https://img-repo.poetries.top/images/20210905122641.png)
 
 示例 2：
 
 - 输入：head = [1,2]（如下图）
 - 输出：tail connects to node index 0
 
-![img](http://img-repo.poetries.top/images/20210905122705.png)
+![img](https://img-repo.poetries.top/images/20210905122705.png)
 
 > 解释：链表中有一个环，其尾部连接到第一个结点。 链表成环2
 
@@ -2489,13 +2489,13 @@ const hasCycle = function(head) {
 
 解释：链表中没有环。
 
-![img](http://img-repo.poetries.top/images/20210905122716.png)
+![img](https://img-repo.poetries.top/images/20210905122716.png)
 
 **思路解读**
 
 > 这道题在上道题的基础上，仅仅增加了一个“返回链表的成环起点”，其难度定义就从 easy 上升到了 medium。不过对于掌握了关键解题思路的各位来说，这道题仍然是 easy——因为如果一个结点是环形链表成环的起点，那么它一定是第一个被发现 flag 标志已存在的结点：
 
-![img](http://img-repo.poetries.top/images/20210905122722.png)
+![img](https://img-repo.poetries.top/images/20210905122722.png)
 
 这一点不难理解，我们试想如果从头开始遍历一个链表，假如途中进入了一个环，那么首先被打上 flag 标签的其实就是环的起点。待我们遍历完这个环时，即便环上所有的结点都已经被立了 flag，但起点处的 flag 一定最先被我们定位到。因此，我们只需要在第一次发现 flag 已存在时，将对应的结点返回即可：
 
@@ -2701,7 +2701,7 @@ const isValid = function(s) {
 
 当遍历过的温度，维持的是一个单调递减的态势时，我们就对这些温度的索引下标执行入栈操作；只要出现了一个数字，它打破了这种单调递减的趋势，也就是说它比前一个温度值高，这时我们就对前后两个温度的索引下标求差，得出前一个温度距离第一次升温的目标差值。这么说可能有点抽象，我们用一张动图来理解一下这个过程
 
-![img](http://img-repo.poetries.top/images/20210905122755.png)
+![img](https://img-repo.poetries.top/images/20210905122755.png)
 
 > 在这个过程中，我们仅对每一个温度执行最多一次入栈操作、一次出栈操作，整个数组只会被遍历一次，因此时间复杂度就是O(n)。相对于两次遍历带来的 O(n^2)的开销来看，栈结构真是帮了咱们大忙了。
 
@@ -2953,16 +2953,16 @@ MinStack.prototype.getMin = function() {
 
 首先，准备两个栈：
 
-![img](http://img-repo.poetries.top/images/20210905122814.png)
+![img](https://img-repo.poetries.top/images/20210905122814.png)
 
 现在问题是，怎么把第一个栈底下的那个 1 给撬出来。仔细想想，阻碍我们接触到 1 的是啥？是不是它头上的 3 和 2？那么如何让 3 和 2 给 1 让路呢？实际上咱们完全可以把这三个元素按顺序从 stack1 中出栈、然后入栈到 stack 2 里去：
 
-![img](http://img-repo.poetries.top/images/20210905122822.png)
+![img](https://img-repo.poetries.top/images/20210905122822.png)
 
 - 此时 1 变得触手可及。不仅如此，下一次我们试图出队 2 的时候，可以继续直接对 stack2 执行出栈操作——因为转移 2 和 3 的时候已经做过一次逆序了，此时 stack2 的出栈序列刚好就对应队列的出队序列。
 - 有同学会问，那如果 stack1 里入栈新元素怎么办？比如这样：
 
-![img](http://img-repo.poetries.top/images/20210905122830.png)
+![img](https://img-repo.poetries.top/images/20210905122830.png)
 
 > 你会发现这个4按照顺序应该在 1、2、3 后出栈。当 4 需要被出栈时，stack2 一定已经空掉了。当 stack2 为空、而 stack1 不为空时，我们需要继续把 stack1 中的元素转移到 stack2 中去，然后再从 stack2 里取元素。也就是说，所有的出队操作都只能依赖 stack2 来完成——只要我们坚持这个原则，就可以确保 stack1 里的元素都能够按照正确的顺序（逆序）出栈。
 
@@ -3101,13 +3101,13 @@ queue.unshift(1) // 双端队列头部入队
 
 我们前面学过，约束范围，可以用双指针。因此我这里定义一个 left 左指针、定义一个 right 右指针，分别指向窗口的两端即可：
 
-![img](http://img-repo.poetries.top/images/20210905122848.png)
+![img](https://img-repo.poetries.top/images/20210905122848.png)
 
 接下来我们可以把这个窗口里的数字取出来，直接遍历一遍、求出最大值，然后把最大值存进结果数组。这样第一个窗口的最大值就有了。
 
 接着按照题意，窗口每次前进一步（左右指针每次一起往前走一步），此时的范围变成了这样：
 
-![img](http://img-repo.poetries.top/images/20210905122855.png)
+![img](https://img-repo.poetries.top/images/20210905122855.png)
 
 我们要做的仍然是取出当前范围的所有元素、遍历一遍求出最大值，然后将最大值存进结果数组。
 
@@ -3190,7 +3190,7 @@ k 之所以会产生，是因为我们现在只能通过遍历来更新最大值
 
 大家仔细想想，当滑动窗口往后前进一步的时候，比如我从初始位置前进到第二个位置：
 
-![img](http://img-repo.poetries.top/images/20210905122906.png)
+![img](https://img-repo.poetries.top/images/20210905122906.png)
 
 （图中红色的范围是初始位置时，滑动窗口覆盖到的元素）
 
@@ -3202,7 +3202,7 @@ k 之所以会产生，是因为我们现在只能通过遍历来更新最大值
 
 在遍历数组的前期，我们尝试将遍历到的每一个元素都推入队列内部（下图是第一个元素入队的示意图）：
 
-![img](http://img-repo.poetries.top/images/20210905122914.png)
+![img](https://img-repo.poetries.top/images/20210905122914.png)
 
 > 每尝试推入一个元素前，都把这个元素与队列尾部的元素作对比。根据对比结果的不同，采取不同的措施：
 
@@ -3217,17 +3217,17 @@ k 之所以会产生，是因为我们现在只能通过遍历来更新最大值
 
 > 当遍历到的元素个数达到了 k 个时，意味着滑动窗口的第一个最大值已经产生了，我们把它 push 进结果数组里：
 
-![img](http://img-repo.poetries.top/images/20210905122939.png)
+![img](https://img-repo.poetries.top/images/20210905122939.png)
 
 然后继续前进，我们发现数组索引 0 处的元素（1）已经被踢出滑动窗口了（图中红色方块对应的是当前滑动窗口覆盖到的元素们）：
 
-![img](http://img-repo.poetries.top/images/20210905122950.png)
+![img](https://img-repo.poetries.top/images/20210905122950.png)
 
 为了确保队列的有效性，需要及时地去队列检查下 1 这个元素在不在队列里（在的话要及时地踢出去，因为队列本身只维护当前滑动窗口内的元素）。
 
 > 这里大家思考一下，我在查找 1 的时候，需不需要遍历整个队列？答案是不需要，因为 1 是最靠前的一个元素，如果它在，那么它一定是队头元素。这里我们只需要检查队头元素是不是 1 就行了。 此时我们检查队头，发现是 3：
 
-![img](http://img-repo.poetries.top/images/20210905122957.png)
+![img](https://img-repo.poetries.top/images/20210905122957.png)
 
 没错，1早就因为不符合递减趋势被从队头干掉了。此时我们可以断定，当前双端队列里的元素都是滑动窗口已经覆盖的有效元素——没毛病，继续往下走就行了。
 
@@ -3298,7 +3298,7 @@ const maxSlidingWindow = function (nums, k) {
 
 20世纪90年代，小霸王学习机风靡全国。没有哪个小学生，不想拥有一台自己的小霸王学习机——我，也不例外；没有哪个小学生在拥有了小霸王学习机之后，会真的用它来搞学习——我，也不例外。在那个没有王者也没有吃鸡的年代里，小霸王里让我欲罢不能的除了魂斗罗、超级玛丽，还有它——迷宫游戏：
 
-![img](http://img-repo.poetries.top/images/20210905123013.png)
+![img](https://img-repo.poetries.top/images/20210905123013.png)
 
 很多同学跟我说他入门算法的时候就挂在 DFS 这里，觉得太高深了，学不动。傻孩子，今天你就会知道，深度优先搜索也不过是在用编码的方式玩一场迷宫游戏。
 
@@ -3318,7 +3318,7 @@ const maxSlidingWindow = function (nums, k) {
 
 > 那么如何使用编码来实现深度优先搜索呢？我们继续讨论迷宫问题，这里我给大家一个抽象过后的简单迷宫结构：
 
-![img](http://img-repo.poetries.top/images/20210905123023.png)
+![img](https://img-repo.poetries.top/images/20210905123023.png)
 
 图中蓝色的是入口，灰色的是岔路口，黑色的是死胡同，绿色的是出口。
 
@@ -3393,25 +3393,25 @@ function preorder(root) {
 
 我们回头再来看看这个迷宫结构：
 
-![img](http://img-repo.poetries.top/images/20210905123045.png)
+![img](https://img-repo.poetries.top/images/20210905123045.png)
 
 当我们使用深度优先搜索来寻找迷宫出口时，会走出图示这样一条一条的完整路径
 
-![img](http://img-repo.poetries.top/images/20210905123052.png)
+![img](https://img-repo.poetries.top/images/20210905123052.png)
 
 其中红色的圆点意味着路径的起点，红色箭头意味着路径的终点。我们看到从起点开始，一共探索出了 5 条完整的路径。
 
 与深度优先搜索不同的是，广度优先搜索（BFS）并不执着于“一往无前”这件事情。它关心的是眼下自己能够直接到达的所有坐标，其动作有点类似于“扫描”——比如说站在 B 这个岔路口，它会只关注 C、D、E 三个坐标，至于 F、G、H、I这些遥远的坐标，现在不在它的关心范围内：
 
-![img](http://img-repo.poetries.top/images/20210905123100.png)
+![img](https://img-repo.poetries.top/images/20210905123100.png)
 
 只有在走到了 E处时，它发现此时可以触达的坐标变成了 F、G，此时才会去扫描F、G：
 
-![img](http://img-repo.poetries.top/images/20210905123108.png)
+![img](https://img-repo.poetries.top/images/20210905123108.png)
 
 > 按照这个思路，广度优先搜索每次以“广度”为第一要务、雨露均沾，一层一层地扫描，最后也能够将所有的坐标扫描完全：
 
-![img](http://img-repo.poetries.top/images/20210905123116.png)
+![img](https://img-repo.poetries.top/images/20210905123116.png)
 
 当扫描到 I 的时候，发现 I 是出口，照样能够找到答案。
 
@@ -3478,7 +3478,7 @@ const top = queue.shift()
 
 大家现在回顾一下我们在第 5 节展示过的这个二叉树实例：
 
-![img](http://img-repo.poetries.top/images/20210905123129.png)
+![img](https://img-repo.poetries.top/images/20210905123129.png)
 
 这棵二叉树的编码实现如下：
 
@@ -3505,7 +3505,7 @@ const root = {
 
 > 现在我们要做的是对这个二叉树进行层序遍历。层序遍历的概念很好理解：按照层次的顺序，从上到下，从左到右地遍历一个二叉树，如图所示（红色数字即为遍历的序号）：
 
-![img](http://img-repo.poetries.top/images/20210905123138.png)
+![img](https://img-repo.poetries.top/images/20210905123138.png)
 
 正确的遍历序列为：
 
@@ -3551,7 +3551,7 @@ BFS(root)
 
 输出结果符合预期：
 
-![img](http://img-repo.poetries.top/images/20210905123151.png)
+![img](https://img-repo.poetries.top/images/20210905123151.png)
 
 ## 结语
 
@@ -3618,7 +3618,7 @@ BFS(root)
 做完下面一系列的题目之后，我会跟大家介绍这类题目的关键特征，到时候会有更直白的套路可以用。现在先不要慌，跟着我的思路往下走，好好敲代码
 怎么做呢？大家仔细想想，在这个变化的序列中，不变的是什么——是不是坑位的数量？拿示例来说，不管我怎么调整数字的顺序，它们都只能围着这 3 个坑打转。当我们感到变化难以把握时，不如尝试先从不变的东西入手。这里我把坑位给大家画出来：
 
-![img](http://img-repo.poetries.top/images/20210905123214.png)
+![img](https://img-repo.poetries.top/images/20210905123214.png)
 
 > 现在问题变成了，我手里有 3 个数，要往这 3 个坑里填，有几种填法？我们一个一个坑来看：
 
@@ -3628,7 +3628,7 @@ BFS(root)
 
 > 我们把三个坑的情况统筹起来，那么全排列就一共有 3x2x1=6 种可能。可惜这道题问的不是全排列的可能性有多少种，而是要求你把每一种可能性都穷举出来。这其实有点类似于我们上一节玩迷宫游戏的时候，游戏规则不仅要求你回答出迷宫的通关方法有几种，还要求你列举出每一条路的路径。列举“路径”，我们首先要找到“坐标”。在这道题里，“坐标”就是每一个坑里可能填进的数字。我把它画出来，你就明白了：
 
-![img](http://img-repo.poetries.top/images/20210905123223.png)
+![img](https://img-repo.poetries.top/images/20210905123223.png)
 
 root 是一个空坐标，是我们分配数字的起点。
 
@@ -3636,21 +3636,21 @@ root 是一个空坐标，是我们分配数字的起点。
 
 你说：“不好说，这里有 3 种可能”。第一个坑里可以填的数字，对应的是以下三种情况：
 
-![img](http://img-repo.poetries.top/images/20210905123231.png)
+![img](https://img-repo.poetries.top/images/20210905123231.png)
 
 接着，你走到了第二个坑。第二个坑问你：“小哥，你打算给我哪个数字呢？”。
 
 你仔细想想，说：“不好说，这要看我给了 1 号坑哪个数字。但可以确定的是，不管我给了 1 号坑哪个数字，到你这里的时候，都只有 2 个数字可选了”。基于 1 号坑的分配结果，2 号坑分别有以下可能：
 
-![img](http://img-repo.poetries.top/images/20210905123245.png)
+![img](https://img-repo.poetries.top/images/20210905123245.png)
 
 终于，你走到了第三个坑。此时，你手里只剩下 1 个数，还没等第 3 个坑问你要，你就对它说：“哥，别挑了，我就剩一个了，你没得选”。说着，你把 1 号坑和 2 号坑挑完剩下的最后 1 个数给了 3 号坑
 
-![img](http://img-repo.poetries.top/images/20210905123254.png)
+![img](https://img-repo.poetries.top/images/20210905123254.png)
 
 有没有发现，不知不觉中，我们构造出了一个树结构。 从这个树结构里我们可以清晰地看出，全排列的所有可能性：
 
-![img](http://img-repo.poetries.top/images/20210905123304.png)
+![img](https://img-repo.poetries.top/images/20210905123304.png)
 
 图中以圆点为起点，以箭头为终点，起点和终点之间就是一个完整的排列。
 
@@ -3764,7 +3764,7 @@ const permute = function(nums) {
 
 换汤不换药，这里我们仍然采取树形思维模型：
 
-![img](http://img-repo.poetries.top/images/20210905123321.png)
+![img](https://img-repo.poetries.top/images/20210905123321.png)
 
 为了使存在性凸显得更具体，这里我直接把树形结构中每一层对应的可能组合给大家列出来：
 
@@ -3851,11 +3851,11 @@ const subsets = function(nums) {
 
 这是一道复杂化的组合问题，它追加了一个限定条件——只返回 n 个数中 k 个数的组合。在普通的组合问题中，树形逻辑是这样的：
 
-![img](http://img-repo.poetries.top/images/20210905123333.png)
+![img](https://img-repo.poetries.top/images/20210905123333.png)
 
 而在这道题里，树形逻辑被“截胡”了，它要求我们只输出其中的一部分。假如 n=3， k=2，那么需要输出的内容就如下图的红色箭头所示：
 
-![img](http://img-repo.poetries.top/images/20210905123344.png)
+![img](https://img-repo.poetries.top/images/20210905123344.png)
 
 我们发现，只有双向箭头所指的结点组合被认为是有效结果，其它结点都被丢弃了。在寻找这三对结点组合的过程中，我们一旦找到一对，就停止继续往深处搜索，这就意味着一些结点压根没有机会被遍历到。
 
@@ -4246,7 +4246,7 @@ const postorderTraversal = function(root) {
 
 途径过的每一个结点，我们都要及时地把它入栈。这样当最左的叶子结点出栈时，第一个回溯到的就是它的父结点：
 
-![img](http://img-repo.poetries.top/images/20210905123421.png)
+![img](https://img-repo.poetries.top/images/20210905123421.png)
 
 有了父结点，就不愁找不到兄弟结点，遍历结果就变得唾手可得了~
 
@@ -4476,7 +4476,7 @@ const invertTree = function(root) {
 
 > 从这个定义我们可以看出，二叉搜索树强调的是数据域的有序性。也就是说，二叉搜索树上的每一棵子树，都应该满足 `左孩子 <= 根结点 <= 右孩子` 这样的大小关系。下图我给出了几个二叉搜索树的示例
 
-![img](http://img-repo.poetries.top/images/20210905123444.png)
+![img](https://img-repo.poetries.top/images/20210905123444.png)
 
 以第三棵树为例，根结点的数据域为6，它的左子树的所有结点都小于等于6、右子树的所有结点都大于等于6。同时在任意子树的内部，也满足这个条件——比如左子树中，根结点值为3，根结点对应左子树的所有结点都小于等于3、右子树的所有结点都大于等于3。
 
@@ -4866,7 +4866,7 @@ const sortedArrayToBST = function(nums) {
 
 > 从这个定义我们可以看出，二叉搜索树强调的是数据域的有序性。也就是说，二叉搜索树上的每一棵子树，都应该满足 `左孩子 <= 根结点 <= 右孩子` 这样的大小关系。下图我给出了几个二叉搜索树的示例
 
-![img](http://img-repo.poetries.top/images/20210905123444.png)
+![img](https://img-repo.poetries.top/images/20210905123444.png)
 
 以第三棵树为例，根结点的数据域为6，它的左子树的所有结点都小于等于6、右子树的所有结点都大于等于6。同时在任意子树的内部，也满足这个条件——比如左子树中，根结点值为3，根结点对应左子树的所有结点都小于等于3、右子树的所有结点都大于等于3。
 
@@ -5256,7 +5256,7 @@ const sortedArrayToBST = function(nums) {
 
 > 从这个定义我们可以看出，二叉搜索树强调的是数据域的有序性。也就是说，二叉搜索树上的每一棵子树，都应该满足 `左孩子 <= 根结点 <= 右孩子` 这样的大小关系。下图我给出了几个二叉搜索树的示例
 
-![img](http://img-repo.poetries.top/images/20210905123444.png)
+![img](https://img-repo.poetries.top/images/20210905123444.png)
 
 以第三棵树为例，根结点的数据域为6，它的左子树的所有结点都小于等于6、右子树的所有结点都大于等于6。同时在任意子树的内部，也满足这个条件——比如左子树中，根结点值为3，根结点对应左子树的所有结点都小于等于3、右子树的所有结点都大于等于3。
 
@@ -6566,7 +6566,7 @@ f(n) = f(n-1) + f(n-2)
 
 > 这个关系用树形结构表示会更加形象
 
-![img](http://img-repo.poetries.top/images/20210905123806.png)
+![img](https://img-repo.poetries.top/images/20210905123806.png)
 
 > 现在我们不难看出，要想求出 f(n)，必须求出f(n-1) 和f(n-2)（我们假设 n 是一个大于 5 的数字）。
 
@@ -6584,7 +6584,7 @@ f(n-2) = f(n-3) + f(n-4)
 
 现在我们的树结构渐渐丰满起来了：
 
-![img](http://img-repo.poetries.top/images/20210905123811.png)
+![img](https://img-repo.poetries.top/images/20210905123811.png)
 
 > 随着拆分的进行，一定会有一个时刻，求解到了 f(1) 或 f(2)。按照题设规则，第 1 阶楼梯只能走 1 步抵达，第 2 阶楼梯可以走 1 步或者走 2 步抵达，因此我们不难得出 f(1) 和 f(2) 的值：
 
@@ -6615,11 +6615,11 @@ const climbStairs = function(n) {
 
 但是这个解法问题比较大，丢进 OJ 会直接超时。我们一起来看看原因，回到我们上面这张树形结构图上来：
 
-![img](http://img-repo.poetries.top/images/20210905123818.png)
+![img](https://img-repo.poetries.top/images/20210905123818.png)
 
 > 这次我把 f(n-2) 和f(n-3)给标红了。大家不难看出，我们在图中对 f(n-2)和f(n-3) 进行了重复的计算。事实上，随着我们递归层级的加深，这个重复的问题会越来越严重：
 
-![img](http://img-repo.poetries.top/images/20210905123827.png)
+![img](https://img-repo.poetries.top/images/20210905123827.png)
 
 （图上标红的均为发生过重复计算的结点）
 
@@ -6666,7 +6666,7 @@ const climbStairs = function(n) {
 
 > 先说记忆化搜索，记忆化搜索可以理解为优化过后的递归。递归往往可以基于树形思维模型来做，以这道题为例：
 
-![img](http://img-repo.poetries.top/images/20210905123835.png)
+![img](https://img-repo.poetries.top/images/20210905123835.png)
 
 我们基于树形思维模型来解题时，实际上是站在了一个比较大的未知数量级（也就是最终的那个n），来不断进行拆分，最终拆回较小的已知数量级（f(1)、f(2)）。这个过程是一个明显的自顶向下的过程。
 
@@ -6716,7 +6716,7 @@ const climbStairs = function(n) {
 - 重叠子问题
 - 拿这道题的分析过程来说：
 
-![img](http://img-repo.poetries.top/images/20210905123842.png)
+![img](https://img-repo.poetries.top/images/20210905123842.png)
 
 - **最优子结构**，它指的是问题的最优解包含着子问题的最优解——不管前面的决策如何，此后的状态必须是基于当前状态（由上次决策产生）的最优决策。就这道题来说，f(n)和f(n-1)、f(n-2)之间的关系印证了这一点（这玩意儿叫状态转移方程，大家记一下）。
 - **重叠子问题**，它指的是在递归的过程中，出现了反复计算的情况。就这道题来说，图上标红的一系列重复计算的结点印证了这一点。 因此，这道题适合用动态规划来做。
@@ -6779,7 +6779,7 @@ const climbStairs = function(n) {
 
 > 重复往前推导这个“拿走”的过程，我们可以得到以下的树形思维模型：
 
-![img](http://img-repo.poetries.top/images/20210905123851.png)
+![img](https://img-repo.poetries.top/images/20210905123851.png)
 
 > 假如用 f(x）表示每一个总额数字对应的最少硬币数，那么我们可以得到以下的对应关系：
 
@@ -6910,7 +6910,7 @@ for(let i=1;i<=n;i++) {
 
 > 现在，时间复杂度已经被我们优化到了 O(n)的水平，相当不错。但是空间复杂度其实还可以抢救一下。不过不着急，初学背包问题，我们先站在巩固思路的角度，重现一下这个二维数组的填充过程
 
-![img](http://img-repo.poetries.top/images/20210905123925.png)
+![img](https://img-repo.poetries.top/images/20210905123925.png)
 
 > - 从图中我们可以看出，计算 dp[i][v] 的时候，其实只需要图中标红位置的数据就可以了（这与我们前面讲解过的最优子结构特性不谋而合），也就是说未标红的地方对于 dp[i][v] 的计算来说都属于冗余数据。实际上，对于第 i 行的计算来说，只有第 i-1 行的数据是有意义的，更早的数据它都不关心。也就是说我们其实根本不需要记录所有的数据，理论上只要保留当前行和上一行的数据就足够了。
 > - 一些教材或许会教你通过优化二位数组来节省空间上的开销，但这种手段在笔者看来无异于隔靴搔痒——要优化就优化到底，我们干脆把二维数组干掉，用一维数组来做。
@@ -6935,11 +6935,11 @@ for(let i=1;i<=n;i++) {
 
 拿第 i-1行和第i行来举例，首先我肯定是刷刷刷地用第 i-1 行的数据把一维数组给填满了（这里我保留了对关键计算线索的高亮）：
 
-![img](http://img-repo.poetries.top/images/20210905123932.png)
+![img](https://img-repo.poetries.top/images/20210905123932.png)
 
 > 接下来我尝试用第 i 行的数据更新它。当数据更新走到 dp[i][v] 这里的时候，dp[i-1][v] 和 dp[i-1][v-w[i]] 都是存在的状态（分别对应一维数组中现在的 dp[v]和dp[v-w[i]]的值，完全可以满足我们的计算需要：
 
-![img](http://img-repo.poetries.top/images/20210905123944.png)
+![img](https://img-repo.poetries.top/images/20210905123944.png)
 
 > 当我们计算出 dp[i][v] 的值以后，dp[i-1][v-w[i]]可能还会在以后的计算中用到，但dp[i-1][v]其实已经完全用不到了（这个点对初学的同学来说可能会有点绕，不要慌，你品，你细品。注意这里dp[i][v]已经求解出来了，对于 i 这个索引来说只需要求解 dp[i][v-1]到dp[i][w[i]]之间的值，仔细想想，求解这些值是不是完全用不到dp[i-1][v]？）。
 
@@ -7017,7 +7017,7 @@ function knapsack(n, c, w, value) {
 
 > 拿我们题目示例中的数组[10,9,2,5,3,7,101,18] 来举例。在算法的初始态，我们还没有进行任何的遍历和计算，此时对于每一个索引位来说，它都只与一个长度为1的子序列有关——那就是只有它自己存在的子序列。因此每一个索引位对应的状态初始值都是1：
 
-![img](http://img-repo.poetries.top/images/20210905123955.png)
+![img](https://img-repo.poetries.top/images/20210905123955.png)
 
 > 同时对于索引位为0的元素来说，由于以它为结尾的子序列有且仅有 [10] 这一个，因此它的状态值时一开始就明确的，那就是1：
 
@@ -7027,13 +7027,13 @@ f(0) = 1
 
 > 下面基于 f(0) 对 f(1) 求解，比较两个索引位上元素的大小：
 
-![img](http://img-repo.poetries.top/images/20210905124008.png)
+![img](https://img-repo.poetries.top/images/20210905124008.png)
 
 发现9比10小，没办法延长原有的子序列，因此啥也不干。继续往下遍历，遇到了2，发现2比前两个数都小，仍然没法延长任何一个子序列，继续啥也不干。
 
 再往下遍历，遇到了5，对比5和前面三个元素，发现它比2大，可以延长2所在的那个最长上升子序列，延长后，以 5 为结尾的最长上升子序列的长度就得到了更新：
 
-![img](http://img-repo.poetries.top/images/20210905124017.png)
+![img](https://img-repo.poetries.top/images/20210905124017.png)
 
 重复上面这个“遍历新元素+回头看”的逻辑，直到整个数组被完全遍历，我们就能拿到以每一个索引位元素为结尾的最长上升子序列的长度值。从这些长度值中筛选出最大值，我们也就得到了问题的解。
 

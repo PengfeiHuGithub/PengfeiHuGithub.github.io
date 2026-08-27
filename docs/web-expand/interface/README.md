@@ -566,7 +566,7 @@ backlog 用于设置客户端与服务端 `ESTABLISHED` 之后等待 accept 的�
 
 ### 状态机
 
-![tcpfsm.png](http://interview.poetries.top/fe-nodejs-docs/assets/img/tcpfsm.665b70b4.png)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/tcpfsm.665b70b4.png)
 
 关于网络连接的建立以及断开, 存在着一个复杂的状态转换机制, 完整的状态表参见 [《The TCP/IP Guide》(opens new window)](http://www.tcpipguide.com/free/t_TCPOperationalOverviewandtheTCPFiniteStateMachineF-2.htm)
 
@@ -1421,7 +1421,7 @@ glob("**/*.js", (err, files) => {
 
 
 
-![callback-hell](http://interview.poetries.top/fe-nodejs-docs/assets/img/callback-hell.a2869110.jpg)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/callback-hell.a2869110.jpg)
 
 相信很多同学在面试的时候都碰到过这样一个问题, `如何处理 Callback Hell`. 在早些年的时候, 大家会看到有很多的解决方案例如 [Q (opens new window)](https://www.npmjs.com/package/q), [async (opens new window)](https://www.npmjs.com/package/async), [EventProxy (opens new window)](https://www.npmjs.com/package/eventproxy)等等. 最后从流行程度来看 `Promise` 当之无愧的独领风骚, 并且是在 ES6 的 JavaScript 标准上赢得了支持.
 
@@ -1633,7 +1633,7 @@ function sleep(ms) {
 
 可以看 Erlang 作者 Joe Armstrong 的博客 ([Concurrent and Parallel (opens new window)](http://joearms.github.io/2013/04/05/concurrent-and-parallel-programming.html))
 
-![con_and_par](http://joearms.github.io/images/con_and_par.jpg)
+![img](https://joearms.github.io/images/con_and_par.jpg)
 
 并发 (Concurrent) = 2 队列对应 1 咖啡机.
 
@@ -1709,7 +1709,7 @@ SQL (Structured Query Language) 是[关系式数据库管理系统 (opens new wi
 
 关于数据库基于各种模式的特点全部可以通过以下图片分清:
 
-![storage](http://interview.poetries.top/fe-nodejs-docs/assets/img/storage.61bcc00e.jpeg)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/storage.61bcc00e.jpeg)
 
 图片出处：Google App Engine 的 co-founder Ryan Barrett 在 2009 年的 google i/o 上的演讲 [《Transaction Across DataCenter》 (opens new window)](http://snarfed.org/transactions_across_datacenters_io.html)（视频： http://www.youtube.com/watch?v=srOgpXECblk）
 
@@ -2865,7 +2865,7 @@ domain 本身是一个 EventEmitter 对象, 其中文意思是 "域" 的意思, 
 
 
 
-![node-js-survey-debug](http://interview.poetries.top/fe-nodejs-docs/assets/img/node-js-survey-debug.07e7e47c.png)
+![img](https://interview.poetries.top/fe-nodejs-docs/assets/img/node-js-survey-debug.07e7e47c.png)
 
 类似 gdb 的命令行下 debug 工具 (上图中的 build-in debugger), 同时也支持远程 debug (类似 [node-inspector (opens new window)](https://github.com/node-inspector/node-inspector), 目前处于试验状态). 当然, 目前有不少同学觉得 [vscode (opens new window)](https://code.visualstudio.com/)对 debug 工具集成的比较好.
 

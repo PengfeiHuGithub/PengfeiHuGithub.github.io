@@ -368,8 +368,6 @@ class App extends Component {
 
 ![img](https://poetries1.gitee.io/img-repo/2020/09/241.png) ![img](https://poetries1.gitee.io/img-repo/2020/09/242.png)
 
-### [#](http://interview.poetries.top/fe-mobile-docs/docs/taro.html#_2-5-最佳编码方式)2.5 最佳编码方式
-
 **组件传递函数属性名以 on 开头**
 
 > 在 `Taro` 中，父组件要往子组件传递函数，属性名必须以`on` 开头
