@@ -294,7 +294,7 @@ console.log(obj + 200); // 这里打印出来是多少？
 - 转换为数字
 - 转换为字符串
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/1.png)
+![img](https://s.poetries.top/gitee/2020/07/1.png)
 
 **转Boolean**
 
@@ -581,7 +581,7 @@ foo.bind(a)() // => 'poetries'
 
 > 首先，`new` 的方式优先级最高，接下来是 `bind` 这些函数，然后是 `obj.foo()` 这种调用方式，最后是 `foo` 这种调用方式，同时，箭头函数的 `this` 一旦被绑定，就不会再被任何方式所改变。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/2.png)
+![img](https://s.poetries.top/gitee/2020/07/2.png)
 
 **函数执行改变this**
 
@@ -617,7 +617,7 @@ func.bind(thisArg, param1, param2, ...)
 - 箭头函数中this比较特殊,箭头函数this为父作用域的this，不是调用时的this.要知道前四种方式,都是调用时确定,也就是动态的,而箭头函数的this指向是静态的,声明的时候就确定了下来；
 - `apply、call、bind`都是js给函数内置的一些API，调用他们可以为函数指定this的执行,同时也可以传参。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/6.png)
+![img](https://s.poetries.top/gitee/2020/09/6.png)
 
 ```js
 let a = {
@@ -1448,7 +1448,7 @@ const prototype = Object.prototype
 实例.constructor === 构造函数
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/112.png)
+![img](https://s.poetries.top/gitee/2020/09/112.png)
 
 **原型链**
 
@@ -1465,7 +1465,7 @@ const prototype = Object.prototype
 
 **总结**
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/105.png)
+![img](https://s.poetries.top/gitee/2020/09/105.png)
 
 - 每个函数都有 `prototype` 属性，除了 `Function.prototype.bind()`，该属性指向原型。
 - 每个对象都有 `__proto__` 属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 `[[prototype]]`，但是 `[[prototype]]`是内部属性，我们并不能访问到，所以使用 `_proto_`来访问。
@@ -2133,7 +2133,7 @@ l.init(); //Uncaught Error: Error
 
 无论是事件捕获还是事件冒泡，它们都有一个共同的行为，就是事件传播
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/319.png)
+![img](https://s.poetries.top/gitee/2019/10/319.png)
 
 **2. 捕获和冒泡**
 
@@ -2163,7 +2163,7 @@ l.init(); //Uncaught Error: Error
 
 **3. 事件对象**
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/320.png)
+![img](https://s.poetries.top/gitee/2019/10/320.png)
 
 **4. 事件流阻止**
 
@@ -2952,7 +2952,7 @@ console.log(8)
 
 > 当我们打开网站时，网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染。而像加载图片音乐之类占用资源大耗时久的任务，就是异步任务。，我们用导图来说明：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/10.png)
+![img](https://s.poetries.top/gitee/2020/09/10.png)
 
 **我们解释一下这张图：**
 
@@ -2994,7 +2994,7 @@ console.log(5)
 
 > `JS` 在执行的过程中会产生执行环境，这些执行环境会被顺序的加入到执行栈中。如果遇到异步的代码，会被挂起并加入到 `Task`（有多种 `task`） 队列中。一旦执行栈为空，`Event` `Loop` 就会从 `Task` 队列中拿出需要执行的代码并放入执行栈中执行，所以本质上来说 `JS` 中的异步还是同步行为
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/4.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/4.png)
 
 ```js
 console.log('script start');
@@ -3303,7 +3303,7 @@ process.nextTick(() => {
 
 > 对于 `microtask` 来说，它会在以上每个阶段完成前清空 `microtask` 队列，下图中的 `Tick` 就代表了 `microtask`
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/5.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/5.png)
 
 **谁来启动这个循环过程，循环条件是什么？**
 
@@ -3880,7 +3880,7 @@ const myProxy = new proxyPolyfill(...);
 
 > 它是一种异步通信的方法，通过直接由 js 脚本向服务器发起 http 通信，然后根据服务器返回的数据，更新网页的相应部分，而不用刷新整个页面的一种方法。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/9.png)
+![img](https://s.poetries.top/gitee/2020/09/9.png)
 
 **面试手写（原生）：**
 
@@ -4221,7 +4221,7 @@ console.log(iterator.next().value);//xyz
 
 > 数组和字符串方法
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/7.png) ![img](https://poetries1.gitee.io/img-repo/2020/09/8.png)
+![img](https://s.poetries.top/gitee/2020/09/7.png) ![img](https://s.poetries.top/gitee/2020/09/8.png)
 
 **二、理解JS的类数组**
 
@@ -5066,7 +5066,7 @@ console.timeEnd('innerHTML')
 - 在同一层叠上下文中，层叠等级才有意义
 - `z-index`的优先级最高
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/111.png)
+![img](https://s.poetries.top/gitee/2020/09/111.png)
 
 ### 4 左右居中方案
 
@@ -5584,9 +5584,9 @@ eg:
 
 具体如下图过程如下图所示
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/19.png)
+![img](https://s.poetries.top/gitee/2019/10/19.png)
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/20.png)
+![img](https://s.poetries.top/gitee/2019/10/20.png)
 
 **渲染**
 
@@ -5635,7 +5635,7 @@ eg:
 
 **2.3 第三步：把DOM和CSSOM组合成渲染树（render tree）**
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/21.png)
+![img](https://s.poetries.top/gitee/2019/10/21.png)
 
 **2.4 第四步：在渲染树的基础上进行布局，计算每个节点的几何结构**
 
@@ -5791,9 +5791,9 @@ for(let i = 0; i < 1000; i++) {
 - `CSS`选择符从右往左匹配查找，避免 `DOM`深度过深
 - 将频繁运行的动画变为图层，图层能够阻止该节点回流影响别的元素。比如对于 `video`标签，浏览器会自动将该节点变为图层。
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/22.png)
+![img](https://s.poetries.top/gitee/2019/10/22.png)
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/23.png)
+![img](https://s.poetries.top/gitee/2019/10/23.png)
 
 ### [#](https://blog.poetries.top/FE-Interview-Questions/docs/simply.html#_5-缓存机制)5 缓存机制
 
@@ -6114,7 +6114,7 @@ location / {
 
 > 举个例子，对于评论功能来说，就得防范持久型 `XSS` 攻击，因为我可以在评论中输入以下内容
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/4.png)
+![img](https://s.poetries.top/gitee/2020/07/4.png)
 
 - 这种情况如果前后端没有做好防御的话，这段评论就会被存储到数据库中，这样每个打开该页面的用户都会被攻击到。
 - 非持久型相比于前者危害就小的多了，一般通过修改 `URL` 参数的方式加入攻击代码，诱导用户访问链接从而进行攻击。
@@ -6128,7 +6128,7 @@ location / {
 
 > 但是对于这种攻击方式来说，如果用户使用 `Chrome` 这类浏览器的话，浏览器就能自动帮助用户防御攻击。但是我们不能因此就不防御此类攻击了，因为我不能确保用户都使用了该类浏览器。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/19.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/19.png)
 
 > 对于 `XSS` 攻击来说，通常有两种方式可以用来防御。
 
@@ -6200,7 +6200,7 @@ Content-Security-Policy: child-src 'none'
 
 > 对于这种方式来说，只要开发者配置了正确的规则，那么即使网站存在漏洞，攻击者也不能执行它的攻击代码，并且 `CSP` 的兼容性也不错。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/20.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/20.png)
 
 **2 CSRF**
 
@@ -6349,11 +6349,11 @@ self.addEventListener("fetch", e => {
 
 > 打开页面，可以在开发者工具中的 `Application` 看到 `Service Worker` 已经启动了
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/96.png)
+![img](https://s.poetries.top/gitee/2020/09/96.png)
 
 > 在 Cache 中也可以发现我们所需的文件已被缓存
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/97.png)
+![img](https://s.poetries.top/gitee/2020/09/97.png)
 
 > 当我们重新刷新页面可以发现我们缓存的数据是从 `Service` `Worker` 中读取的
 
@@ -6743,12 +6743,12 @@ window.requestAnimFrame = (function(){
 
 > Vue 的响应式原理是核心是通过 ES5 的保护对象的 `Object.defindeProperty` 中的访问器属性中的 get 和 set 方法，data 中声明的属性都被添加了访问器属性，当读取 data 中的数据时自动调用 get 方法，当修改 data 中的数据时，自动调用 set 方法，检测到数据的变化，会通知观察者 Wacher，观察者 Wacher自动触发重新render 当前组件（子组件不会重新渲染）,生成新的虚拟 DOM 树，Vue 框架会遍历并对比新虚拟 DOM 树和旧虚拟 DOM 树中每个节点的差别，并记录下来，最后，加载操作，将所有记录的不同点，局部修改到真实 DOM树上。
 
-![img](https://poetries1.gitee.io/img-repo/2021/01/15.png)
+![img](https://s.poetries.top/gitee/2021/01/15.png)
 
 - 虚拟DOM (Virtaul DOM): 用 js 对象模拟的，保存当前视图内所有 DOM 节点对象基本描述属性和节点间关系的树结构。用 js 对象，描述每个节点，及其父子关系，形成虚拟 DOM 对象树结构。
 - 因为只要在 `data` 中声明的基本数据类型的数据，基本不存在数据不响应问题，所以重点介绍数组和对象在`vue`中的数据响应问题，vue可以检测对象属性的修改，但无法监听数组的所有变动及对象的新增和删除，只能使用数组变异方法及`$set`方法。
 
-![img](https://poetries1.gitee.io/img-repo/2021/01/16.png)
+![img](https://s.poetries.top/gitee/2021/01/16.png)
 
 > 可以看到，`arrayMethods` 首先继承了 `Array`，然后对数组中所有能改变数组自身的方法，如 `push`、`pop` 等这些方法进行重写。重写后的方法会先执行它们本身原有的逻辑，并对能增加数组长度的 3 个方法 `push`、`unshift`、`splice` 方法做了判断，获取到插入的值，然后把新添加的值变成一个响应式对象，并且再调用 `ob.dep.notify()` 手动触发依赖通知，这就很好地解释了用 `vm.items.splice`(`newLength`) 方法可以检测到变化
 
@@ -8712,11 +8712,11 @@ class Test extends Component {
 - 我们都知道，`React`通过`this.state`来访问`state`，通过`this.setState()`方法来更新`state`。当`this.setState()`方法被调用的时候，`React`会重新调用`render`方法来重新渲染`UI`
 - 首先如果直接在`setState`后面获取`state`的值是获取不到的。在`React`内部机制能检测到的地方， `setState`就是异步的；`在React`检测不到的地方，例如`setInterval`,`setTimeout`，`setState`就是同步更新的
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/431.png)
+![img](https://s.poetries.top/gitee/2019/10/431.png)
 
 > 因为`setState`是可以接受两个参数的，一个`state`，一个回调函数。因此我们可以在回调函数里面获取值
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/432.png)
+![img](https://s.poetries.top/gitee/2019/10/432.png)
 
 - `setState`方法通过一个队列机制实现`state`更新，当执行`setState`的时候，会将需要更新的`state`合并之后放入状态队列，而不会立即更新`this.state`
 - 如果我们不使用`setState`而是使用`this.state.key`来修改，将不会触发组件的`re-render`。
@@ -8729,7 +8729,7 @@ class Test extends Component {
 - `isBatchingUpdates`变量置为`true`，则会走批量更新分支，`setState`的更新会被存入队列中，待同步代码执行完后，再执行队列中的`state`更新。 `isBatchingUpdates`为 `true`，则把当前组件（即调用了 `setState`的组件）放入 `dirtyComponents` 数组中；否则 `batchUpdate` 所有队列中的更新
 - 而在原生事件和异步操作中，不会执行`pre`钩子，或者生命周期的中的异步操作之前执行了`pre`钩子，但是`pos`钩子也在异步操作之前执行完了，`isBatchingUpdates`必定为`false`，也就不会进行批量更新
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/434.png)
+![img](https://s.poetries.top/gitee/2019/10/434.png)
 
 > `enqueueUpdate`包含了`React`避免重复`render`的逻辑。`mountComponent`和`updateComponent`方法在执行的最开始，会调用到`batchedUpdates`进行批处理更新，此时会将`isBatchingUpdates`设置为`true`，也就是将状态标记为现在正处于更新阶段了。 `isBatchingUpdates`为 `true`，则把当前组件（即调用了 `setState` 的组件）放入`dirtyComponents` 数组中；否则 `batchUpdate` 所有队列中的更新
 

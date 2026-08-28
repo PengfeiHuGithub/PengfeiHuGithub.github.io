@@ -13,7 +13,7 @@
 - 这个问题非常重要，因为我们后续的内容都将以这个问题的答案为骨架展开。我希望正在阅读这本小册的各位可以在心里琢磨一下这个问题——无须你调动太多计算机的专业知识，只需要你用最快的速度在脑海中架构起这个抽象的过程——我们接下来所有的工作，就是围绕这个过程来做文章。
 - 我们现在站在性能优化的角度，一起简单地复习一遍这个经典的过程：首先我们需要通过 DNS（域名解析系统）将 URL 解析为对应的 IP 地址，然后与这个 IP 地址确定的那台服务器建立起 TCP 网络连接，随后我们向服务端抛出我们的 HTTP 请求，服务端处理完我们的请求之后，把目标数据放在 HTTP 响应里返回给客户端，拿到响应数据的浏览器就可以开始走一个渲染的流程。渲染完毕，页面便呈现给了用户，并时刻等待响应用户的操作（如下图所示）。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/1.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/1.png)
 
 **我们将这个过程切分为如下的过程片段：**
 
@@ -35,7 +35,7 @@
 
 我们整个的知识图谱，用思维导图展示如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/2.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/2.png)
 
 ## 二、网络篇 1：webpack 性能调优与 Gzip 原理
 
@@ -251,7 +251,7 @@ module.exports = {
 
 这里为大家介绍一个非常好用的包组成可视化工具——[webpack-bundle-analyzer (opens new window)](https://www.npmjs.com/package/webpack-bundle-analyzer)，配置方法和普通的 plugin 无异，它会以矩形树图的形式将包内各个模块的大小和依赖关系呈现出来，格局如官方所提供这张图所示：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/3.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/3.png)
 
 在使用时，我们只需要将其以插件的形式引入：
 
@@ -453,11 +453,11 @@ accept-encoding:gzip
 
 截止到 2018 年 8 月，过去一年**总的 web 资源**的平均请求体积是这样的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/109.png)
+![img](https://s.poetries.top/gitee/2020/09/109.png)
 
 而具体到**图片**这一类的资源，平均请求体积是这样的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/110.png)
+![img](https://s.poetries.top/gitee/2020/09/110.png)
 
 当然，随着我们工程师在性能方面所做的努力越来越有成效，平均来说，不管是资源总量还是图片体积，都在往越来越轻量的方向演化。这是一种值得肯定的进步。
 
@@ -488,11 +488,11 @@ accept-encoding:gzip
 - 两大电商网站对大图的处理，是 JPG 图片应用场景的最佳写照：
 - 打开淘宝首页，我们可以发现页面中最醒目、最庞大的图片，一定是以 .jpg 为后缀的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/4.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/4.png)
 
 京东首页也不例外：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/5.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/5.png)
 
 > 使用 JPG 呈现大图，既可以保住图片的质量，又不会带来令人头疼的图片体积，是当下比较推崇的一种方案。
 
@@ -526,15 +526,15 @@ accept-encoding:gzip
 
 主 Logo：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/6.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/6.png)
 
 较小的 Logo：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/7.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/7.png)
 
 颜色简单、对比度较强的透明小图也在 PNG 格式下有着良好的表现：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/8.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/8.png)
 
 **4. SVG**
 
@@ -597,7 +597,7 @@ MDN 对雪碧图的解释已经非常到位：
 
 我们几乎可以在每一个有小图标出现的网站里找到雪碧图的影子（下图截取自京东首页）：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/9.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/9.png)
 
 > 和雪碧图一样，Base64 图片的出现，也是为了减少加载网页图片时对服务器的请求次数，从而提升网页性能。**Base64 是作为雪碧图的补充而存在的。**
 
@@ -609,7 +609,7 @@ MDN 对雪碧图的解释已经非常到位：
 
 我们来一起看一个实例，现在我有这么一个小小的放大镜 Logo：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/10.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/10.png)
 
 它对应的链接如下：
 
@@ -671,7 +671,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAMJGlDQ1BJQ0
 
 > `WebP` 纵有千般好，但它毕竟**太年轻**。我们知道，任何新生事物，都逃不开兼容性的大坑。现在是 2018 年 9 月，WebP 的支持情况是这样的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/11.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/11.png)
 
 坦白地说，虽然没有特别惨（毕竟还有亲爹 Chrome 在撑腰），但也足够让人望而却步了。
 
@@ -682,7 +682,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAMJGlDQ1BJQ0
 - 现在限制我们使用 WebP 的最大问题不是“这个图片是否适合用 WebP 呈现”的问题，而是“浏览器是否允许 WebP”的问题，即我们上文谈到的兼容性问题。具体来说，一旦我们选择了 WebP，就要考虑在 Safari 等浏览器下它无法显示的问题，也就是说我们需要准备 PlanB，准备降级方案。
 - 目前真正把 WebP 格式落地到网页中的网站并不是很多，这其中淘宝首页对 WebP 兼容性问题的处理方式就非常有趣。我们可以打开 Chrome 的开发者工具搜索其源码里的 WebP 关键字：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/12.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/12.png)
 
 我们会发现检索结果还是挺多的（单就图示的加载结果来看，足足有 200 多条），下面大家注意一下这些 WebP 图片的链接地址（以其中一个为例）：
 
@@ -694,7 +694,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAMJGlDQ1BJQ0
 
 我们现在先大胆地猜测，这个图片应该至少存在 `jpg` 和 `webp` 两种格式，程序会根据浏览器的型号、以及该型号是否支持 WebP 这些信息来决定当前浏览器显示的是 `.webp` 后缀还是 `.jpg` 后缀。带着这个预判，我们打开并不支持 WebP 格式的 Safari 来进入同样的页面，再次搜索 `WebP` 关键字：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/13.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/13.png)
 
 Safari 提示我们找不到，这也是情理之中。我们定位到刚刚示例的 WebP 图片所在的元素，查看一下它在 Safari 里的图片链接：
 
@@ -731,11 +731,11 @@ Safari 提示我们找不到，这也是情理之中。我们定位到刚刚示�
 
 > 大家对 `HTTP Cache`（即 `Cache-Control`、`expires` 等字段控制的缓存）应该比较熟悉，如果对其它几种缓存可能还没什么概念，我们可以先来看一张线上网站的 `Network` 面板截图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/14.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/14.png)
 
 我们给 `size` 这一栏一个特写：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/15.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/15.png)
 
 > 大家注意一下非数字——即形如“（`from xxx`）”这样的描述——对应的资源，这些资源就是我们通过缓存获取到的。其中，“from memory cache”对标到 `Memory Cache` 类型，“`from ServiceWorker`”对标到 `Service Worker Cache` 类型。至于 `Push Cache`，这个比较特殊，是 `HTTP2` 的新特性。
 
@@ -751,14 +751,14 @@ HTTP 缓存是我们日常开发中最为熟悉的一种缓存机制。它又分
 
 命中强缓存的情况下，返回的 `HTTP` 状态码为 `200` （如下图）。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/16.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/16.png)
 
 **2. 强缓存的实现：从 expires 到 cache-control**
 
 - 实现强缓存，过去我们一直用 `expires`。
 - 当服务器返回响应时，在 `Response Headers` 中将过期时间写入 `expires` 字段。像这样：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/17.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/17.png)
 
 我们给 `expires` 一个特写：
 
@@ -801,7 +801,7 @@ cache-control: max-age=3600, s-maxage=31536000
 - `public` 与 `private` 是针对资源是否能够被代理服务缓存而存在的一组对立概念。
 - 如果我们为资源设置了 `public`，那么它既可以被浏览器缓存，也可以被代理服务器缓存；如果我们设置了 `private`，则该资源只能被浏览器缓存。`private` 为**默认值**。但多数情况下，`public` 并不需要我们手动设置，比如有很多线上网站的 `cache-control` 是这样的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/18.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/18.png)
 
 > 设置了 `s-maxage`，没设置 `public`，那么 `CDN` 还可以缓存这个资源吗？答案是肯定的。因为明确的缓存信息（例如“`max-age`”）已表示响应是可以缓存的。
 
@@ -818,7 +818,7 @@ cache-control: max-age=3600, s-maxage=31536000
 
 如果服务端提示缓存资源未改动（`Not Modified`），资源会被**重定向**到浏览器缓存，**这种情况下网络请求对应的状态码是 304**（如下图）。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/19.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/19.png)
 
 **5. 协商缓存的实现：从 Last-Modified 到 Etag**
 
@@ -864,7 +864,7 @@ If-None-Match: W/"2a3b-1602480f459"
 
 走到决策建议这一步，我本来想给大家重新画一个流程图。但是画来画去终究不如 Chrome 官方给出的这张清晰、权威：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/20.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/20.png)
 
 **我们现在一起解读一下这张流程图：**
 
@@ -982,7 +982,7 @@ self.addEventListener('fetch', event => {
 
 关于 Cookie 的详细内容，我们可以在 Chrome 的 Application 面板中查看到：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/21.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/21.png)
 
 如大家所见，**Cookie 以键值对的形式存在**。
 
@@ -1058,7 +1058,7 @@ localStorage.clear()
 
 这里给大家举个例子，考虑到 `Local Storage` 的特点之一是**持久**，有时我们更倾向于用它来存储一些内容稳定的资源。比如图片内容丰富的电商网站会用它来存储 `Base64` 格式的图片字符串：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/22.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/22.png)
 
 有的网站还会用它存储一些不经常更新的 CSS、JS 等静态资源。
 
@@ -1066,7 +1066,7 @@ localStorage.clear()
 
 > `Session Storage` 更适合用来存储生命周期和它同步的**会话级别**的信息。这些信息只适用于当前会话，当你开启新的会话时，它也需要相应的更新或释放。比如微博的 `Session Storage` 就主要是存储你本次会话的浏览足迹：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/23.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/23.png)
 
 - `lasturl` 对应的就是你上一次访问的 `URL` 地址，这个地址是即时的。当你切换 `URL` 时，它随之更新，当你关闭页面时，留着它也确实没有什么意义了，干脆释放吧。这样的数据用 `Session Storage` 来处理再合适不过。
 - 这样看来，`Web Storage` 确实也够强大了。那么 `Web Storage` 是否能 hold 住所有的存储场景呢？
@@ -1162,7 +1162,7 @@ request.onupgradeneeded = function(event){
 
 借中国地图一角来给大家举一个简单的🌰：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/24.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/24.png)
 
 假设我的根服务器在杭州，同时在图示的五个城市里都有自己可用的机房。
 
@@ -1196,21 +1196,21 @@ request.onupgradeneeded = function(event){
 比如以淘宝为代表的阿里系产品，就遵循着这个“规定”。
 打开淘宝首页，我们可以在 Network 面板中看到，“非纯静态”的 HTML 页面，是向业务服务器请求来的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/25.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/25.png)
 
 我们点击 preview，可以看到业务服务器确实是返回给了我们一个尚未被静态资源加持过的简单 HTML 页面，所有的图片内容都是先以一个 div 占位：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/26.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/26.png)
 
 相应地，我们随便点开一个静态资源，可以看到它都是从 CDN 服务器上请求来的。
 
 比如说图片：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/27.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/27.png)
 
 再比如 JS、CSS 文件：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/28.png) ![img](https://poetries1.gitee.io/img-repo/2020/07/performance/29.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/28.png) ![img](https://s.poetries.top/gitee/2020/07/performance/29.png)
 
 ### CDN 优化细节
 
@@ -1279,7 +1279,7 @@ g.alicdn.com
 
 比如知乎就是典型的服务端渲染案例：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/30.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/30.png)
 
 > zhihu.com 返回的 HTML 文件已经是可以直接进行渲染的内容了。
 
@@ -1343,7 +1343,7 @@ const server = app.listen(8000)
 
 根据我们的路由配置，当我访问 [https://localhost:8000/index (opens new window)](https://localhost:8000/index)时，就可以呈现出服务端渲染的结果了：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/31.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/31.png)
 
 > 我们可以看到，`VDom` 组件已经被 `renderToString` 转化为了一个内容为`<div data-reactroot="">我是一个被渲染为真实DOM的虚拟DOM</div>`的字符串，这个字符串被插入 HTML 代码，成为了真实 DOM 树的一部分。
 
@@ -1417,7 +1417,7 @@ server.listen(8080)
 - 开篇提到许多工程师因为业务需要，免不了需要去处理不同浏览器下代码渲染结果的差异性。这些差异性正是因为浏览器内核的不同而导致的——浏览器内核决定了浏览器解释网页语法的方式。
   浏览器内核可以分成两部分：渲染引擎（Layout Engine 或者 Rendering Engine）和 JS 引擎。早期渲染引擎和 JS 引擎并没有十分明确的区分，但随着 JS 引擎越来越独立，内核也成了渲染引擎的代称（**下文我们将沿用这种叫法**）。渲染引擎又包括了 HTML 解释器、CSS 解释器、布局、网络、存储、图形、音视频、图片解码器等等零部件。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/32.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/32.png)
 
 目前市面上常见的浏览器内核可以分为这四种：Trident（IE）、Gecko（火狐）、Blink（Chrome、Opera）、Webkit（Safari）。
 
@@ -1429,7 +1429,7 @@ server.listen(8080)
 
 什么是渲染过程？简单来说，渲染引擎根据 HTML 文件描述构建相应的数学模型，调用浏览器各个零部件，从而将网页资源代码转换为图像结果，这个过程就是渲染过程（如下图）。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/33.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/33.png)
 
 > 从这个流程来看，浏览器呈现网页这个过程，宛如一个黑盒。在这个神秘的黑盒中，有许多功能模块，内核内部的实现正是这些功能模块相互配合协同工作进行的。其中我们最需要关注的，就是**HTML 解释器**、**CSS 解释器**、**图层布局计算模块**、**视图绘制模块**与**JavaScript 引擎**这几大模块：
 
@@ -1443,7 +1443,7 @@ server.listen(8080)
 
 > 有了对零部件的了解打底，我们就可以一起来走一遍浏览器的渲染流程了。在浏览器里，每一个页面的首次渲染都经历了如下阶段（图中箭头不代表串行，有一些操作是并行进行的，下文会说明）：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/34.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/34.png)
 
 - **解析 HTML**
 
@@ -1471,7 +1471,7 @@ server.listen(8080)
 
 为了使渲染过程更明晰一些，我们需要给这些”树“们一个特写:
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/35.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/35.png)
 
 - DOM 树：解析 HTML 以创建的是 DOM 树（DOM tree ）：渲染引擎开始解析 HTML 文档，转换树中的标签到 DOM 节点，它被称为“内容树”。
 - CSSOM 树：解析 CSS（包括外部 CSS 文件和样式元素）创建的是 CSSOM 树。CSSOM 的解析过程与 DOM 的解析过程是**并行的**。
@@ -1611,7 +1611,7 @@ HTML 阻塞，天经地义——没有 HTML，何来 DOM？没有 DOM，渲染�
 
 三个 console 的结果分别为：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/36.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/36.png)
 
 - 注：本例仅使用了内联 JS 做测试。感兴趣的同学可以把这部分 JS 当做外部文件引入看看效果——它们的表现一致。
 - 第一次尝试获取 id 为 container 的 DOM 失败，这说明 JS 执行时阻塞了 DOM，后续的 DOM 无法构建；第二次才成功，这说明脚本块只能找到在它前面构建好的元素。这两者结合起来，“阻塞 DOM”得到了验证。再看第三个 console，尝试获取 CSS 样式，获取到的是在 JS 代码执行前的背景色（yellow），而非后续设定的新样式（blue），说明 CSSOM 也被阻塞了。那么在阻塞的背后，到底发生了什么呢？
@@ -1674,7 +1674,7 @@ JS 是很快的，在 JS 中修改 DOM 对象也是很快的。在JS的世界里
 
 上一节我们提到，JS 引擎和渲染引擎（浏览器内核）是独立实现的。当我们用 JS 去操作 DOM 时，本质上是 JS 引擎和渲染引擎之间进行了“跨界交流”。这个“跨界交流”的实现并不简单，它依赖了桥接接口作为“桥梁”（如下图）。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/37.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/37.png)
 
 过“桥”要收费——这个开销本身就是不可忽略的。我们每操作一次 DOM（不管是为了修改还是仅仅为了访问其值），都要过一次“桥”。过“桥”的次数一多，就会产生比较明显的性能问题。因此“减少 DOM 操作”的建议，并非空穴来风。
 
@@ -1684,7 +1684,7 @@ JS 是很快的，在 JS 中修改 DOM 对象也是很快的。在JS的世界里
 - 很多时候，我们对 DOM 的操作都不会局限于访问，而是为了修改它。当我们对 DOM 的修改会引发它外观（样式）上的改变时，就会触发**回流**或**重绘**。
 - 这个过程本质上还是因为我们对 DOM 的修改触发了渲染树（Render Tree）的变化所导致的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/38.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/38.png)
 
 - 回流：当我们对 DOM 的修改引发了 DOM 几何尺寸的变化（比如修改元素的宽、高或隐藏元素等）时，浏览器需要重新计算元素的几何属性（其他元素的几何属性和位置也会因此受到影响），然后再将计算的结果绘制出来。这个过程就是回流（也叫重排）。
 - 重绘：当我们对 DOM 的修改导致了样式的变化、却并未影响其几何属性（比如修改了颜色或背景色）时，浏览器不需重新计算元素的几何属性、直接为该元素绘制新的样式（跳过了上图所示的回流环节）。这个过程叫做重绘。
@@ -1807,7 +1807,7 @@ container.appendChild(content)
 - 全局上下文（`script` 标签）被推入调用栈，同步代码执行。在执行的过程中，通过对一些接口的调用，可以产生新的 `macro-task` 与 `micro-task`，它们会分别被推入各自的任务队列里。同步代码执行完了，`script` 脚本会被移出 `macro` 队列，**这个过程本质上是队列的 macro-task 的执行和出队的过程**。
 - 上一步我们出队的是一个 `macro-task`，这一步我们处理的是 `micro-task`。但需要注意的是：当 `macro-task` 出队时，任务是**一个一个**执行的；而 `micro-task` 出队时，任务是**一队一队**执行的（如下图所示）。因此，我们处理 `micro` 队列这一步，会逐个执行队列中的任务并把它出队，直到队列被清空。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/39.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/39.png)
 
 - **执行渲染操作，更新界面**（敲黑板划重点）。
 - 检查是否存在 `Web worker` 任务，如果有，则对其进行处理 。
@@ -1815,7 +1815,7 @@ container.appendChild(content)
 
 我们总结一下，每一次循环都是一个这样的过程：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/40.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/40.png)
 
 ### 渲染的时机
 
@@ -2165,7 +2165,7 @@ container.style.color = 'red'
 
 > “`width`、`height`、`border`是几何属性，各触发一次回流；`color`只造成外观的变化，会触发一次重绘。”——如果你立刻这么想了，说明你是个能力不错的同学，认真阅读了前面的内容。那么我们现在立刻跑一跑这段代码，看看浏览器怎么说：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/41.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/41.png)
 
 - 这里为大家截取有“`Layout`”和“`Paint`”出镜的片段（这个图是通过 Chrome 的 `Performance` 面板得到的，后面会教大家用这个东西）。我们看到浏览器只进行了一次回流和一次重绘——和我们想的不一样啊，为啥呢？
 - 因为现代浏览器是很聪明的。浏览器自己也清楚，如果每次 DOM 操作都即时地反馈一次回流或重绘，那么性能上来说是扛不住的。于是它自己缓存了一个 flush 队列，把我们触发的回流与重绘任务都塞进去，待到队列里的任务多起来、或者达到了一定的时间间隔，或者“不得已”的时候，再将这些任务一口气出队。因此我们看到，上面就算我们进行了 4 次 DOM 更改，也只触发了一次 `Layout` 和一次 `Paint`。
@@ -2193,15 +2193,15 @@ container.style.color = 'red'
 
 现在我们打开掘金首页：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/42.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/42.png)
 
 大家留意一栏文章右侧可能会出现的图片，这里咱们给个特写：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/43.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/43.png)
 
 大家现在以尽可能快的速度，疯狂向下拉动页面。发现什么？是不是发现我们图示的这个图片的位置，会出现闪动——有时候我们明明已经拉到目标位置了，文字也呈现完毕了，图片却慢半拍才显示出来。这是因为，掘金首页也采用了懒加载策略。当我们的页面并未滚动至包含图片的 div 元素所在的位置时，它的样式是这样的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/44.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/44.png)
 
 我们把代码提出来看一下：
 
@@ -2218,12 +2218,12 @@ container.style.color = 'red'
 - 我们注意到 `style` 内联样式中，背景图片设置为了 `none`。也就是说这个 `div` 是没有内容的，它只起到一个**占位**的作用。
 - 这个“占位”的概念，在这个例子里或许体现得不够直观。最直观的应该是淘宝首页的 HTML Preview 效果：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/45.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/45.png)
 
 - 我们看到，这个还没来得及被图片填充完全的网页，是用大大小小的空 `div` 元素来占位的。掘金首页也是如此。
 - 一旦我们通过滚动使得这个 `div` 出现在了可见范围内，那么 `div` 元素的内容就会发生变化，呈现如下的内容：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/46.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/46.png)
 
 我们给 `style` 一个特写：
 
@@ -2241,7 +2241,7 @@ style="background-image: url(&quot;https://user-gold-cdn.xitu.io/2018/9/27/16619
 
 首先新建一个空项目，目录结构如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/47.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/47.png)
 
 - 大家可以往 `images` 文件夹里塞入各种各样自己喜欢的图片。
 - 我们在 `index.html` 中，为这些图片预置 `img` 标签：
@@ -2318,7 +2318,7 @@ const viewHeight = window.innerHeight || document.documentElement.clientHeight
 
 其中需要引起我们注意的就是 `left`、`top`、`right` 和 `bottom`，它们对应到元素上是这样的：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/48.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/48.png)
 
 可以看出，`top` 属性代表了元素距离可视区域顶部的高度，正好可以为我们所用！
 
@@ -2515,22 +2515,22 @@ document.addEventListener('scroll', better_scroll)
 
 右键打开开发者工具，选中我们的 `Performance` 面板：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/49.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/49.png)
 
 - 当我们选中图中所标示的实心圆按钮，`Performance` 会开始帮我们记录我们后续的交互操作；当我们选中圆箭头按钮，`Performance` 会将页面重新加载，计算加载过程中的性能表现。
 - tips：使用 `Performance` 工具时，为了规避其它 Chrome 插件对页面的性能影响，我们最好在无痕模式下打开页面：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/50.png) ![img](https://poetries1.gitee.io/img-repo/2020/07/performance/51.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/50.png) ![img](https://s.poetries.top/gitee/2020/07/performance/51.png)
 
 **2. 简要分析**
 
 这里我打开掘金首页，选中 `Performance` 面板中的圆箭头，来看一下页面加载过程中的性能表现：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/52.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/52.png)
 
 从上到下，依次为概述面板、详情面板。下我们先来观察一下概述面板，了解页面的基本表现：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/53.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/53.png)
 
 我们看右上角的三个栏目：FPS、CPU 和 NET。
 
@@ -2544,7 +2544,7 @@ document.addEventListener('scroll', better_scroll)
 
 > 详情面板中的内容有很多。但一般来说，我们会主要去看 `Main` 栏目下的火焰图和 `Summary` 提供给我们的饼图——这两者和概述面板中的 `CPU` 一栏结合，可以帮我们迅速定位性能瓶颈（如下图）。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/55.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/55.png)
 
 - 先看 `CPU` 图表和 `Summary` 饼图。`CPU` 图表中，我们可以根据颜色填充的饱满程度，确定 `CPU` 的忙闲，进而了解该页面的总的任务量。而 `Summary` 饼图则以一种直观的方式告诉了我们，哪个类型的任务最耗时（从本例来看是脚本执行过程）。这样我们在优化的时候，就可以抓到“主要矛盾”，进而有的放矢地开展后续的工作了。
 - 再看 `Main` 提供给我们的火焰图。这个火焰图非常关键，它展示了整个运行时主进程所做的每一件事情（包括加载、脚本运行、渲染、布局、绘制等）。`x` 轴表示随时间的记录。每个长条就代表一个活动。更宽的条形意味着事件需要更长时间。`y` 轴表示调用堆栈，我们可以看到事件是相互堆叠的，上层的事件触发了下层的事件。
@@ -2556,7 +2556,7 @@ document.addEventListener('scroll', better_scroll)
 
 程序员们许了个愿：如果工具能帮助我们把页面的问题也分析出来就好了！上帝听到了这个愿望，于是给了我们 `LightHouse`：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/56.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/56.png)
 
 > `Lighthouse` 是一个开源的自动化工具，用于改进网络应用的质量。 你可以将其作为一个 Chrome 扩展程序运行，或从命令行运行。 为`Lighthouse`提供一个需要审查的网址，它将针对此页面运行一连串的测试，然后生成一个有关页面性能的报告。
 
@@ -2564,23 +2564,23 @@ document.addEventListener('scroll', better_scroll)
 
 首先在 `Chrome` 的应用商店里下载一个 `LightHouse`。这一步 OK 之后，我们浏览器右上角会出现一个小小的灯塔 `ICON`。打开我们需要测试的那个页面，点击这个 `ICON`，唤起如下的面板：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/57.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/57.png)
 
 然后点击“Generate report”按钮，只需静候数秒，`LightHouse` 就会为我们输出一个完美的性能报告。
 
 这里我拿掘金首页“开刀”：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/58.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/58.png)
 
 稍事片刻，`Report` 便输出成功了，`LightHouse` 默认会帮我们打开一个新的标签页来展示报告内容。报告内容非常丰富，首先我们看到的是整体的跑分情况：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/59.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/59.png)
 
 上述分别是页面性能、`PWA`（渐进式 Web 应用）、可访问性（无障碍）、最佳实践、`SEO` 五项指标的跑分。孰强孰弱，我们一看便知。
 
 向下拉动 `Report` 页，我们还可以看到每一个指标的细化评估：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/60.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/60.png)
 
 - 在“Opportunities”中，`LightHouse` 甚至针对我们的性能问题给出了可行的建议、以及每一项优化操作预期会帮我们节省的时间。这份报告的可操作性是很强的——我们只需要对着 `LightHouse` 给出的建议，一条一条地去尝试，就可以看到自己的页面，在一秒一秒地变快。
 - 除了直接下载，我们还可以通过命令行使用 `LightHouse`：
@@ -2594,7 +2594,7 @@ lighthouse https://juejin.im/books
 
 此外，从 `Chrome 60` 开始，`DevTools` 中直接加入了基于 `LightHouse` 的 `Audits` 面板：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/61.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/61.png)
 
 > `LightHouse` 因此变得更加触手可及了，这一操作也足以证明 `Chrome` 团队对 `LightHouse` 的推崇。
 
@@ -2609,17 +2609,17 @@ lighthouse https://juejin.im/books
 
 > `performance` 是一个全局对象。我们在控制台里输入 `window.performance`，就可一窥其全貌：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/62.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/62.png)
 
 **2. 关键时间节点**
 
 在 `performance` 的 `timing` 属性中，我们可以查看到如下的时间戳：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/63.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/63.png)
 
 这些时间戳与页面整个加载流程中的关键时间节点有着一一对应的关系：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/performance/64.png)
+![img](https://s.poetries.top/gitee/2020/07/performance/64.png)
 
 通过求两个时间点之间的差值，我们可以得出某个过程花费的时间，举个🌰：
 

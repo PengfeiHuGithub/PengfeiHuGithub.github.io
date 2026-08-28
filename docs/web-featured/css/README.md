@@ -74,7 +74,7 @@ content（元素内容） + padding（内边距） + border（边框） + margin
 - 在同一层叠上下文中，层叠等级才有意义
 - `z-index`的优先级最高
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/111.png)
+![img](https://s.poetries.top/gitee/2020/09/111.png)
 
 ## 4 居中布局
 
@@ -732,7 +732,7 @@ body {
 
 
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/4.png)
+![img](https://s.poetries.top/gitee/2020/09/4.png)
 
 ## 29 移动端中css你是使用什么单位
 

@@ -87,7 +87,7 @@ npm init -f
 - 在终端中运行 `npm run test`，能看到 `Error: no test specified` 的输出。`npm run test` 可以简写为 `npm test`，或更简单的 `npm t`，得到的结果是几乎相同的。`npm test` 顾名思义，就是运行项目测试，实际用法在实战环节会有介绍。
 - 和 `test` 类似，`start` 也是 `npm` 内置支持的命令，但是需要先在 `scripts` 字段中声明该脚本的实际内容，如果没声明就执行 `npm start`，会直接报错。如下图所示：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/1.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/1.png)
 
 > 那么，`npm` 是如何管理和执行各种 `scripts` 的呢？作为 `npm` 内置的核心功能之一，`npm run` 实际上是 `npm run-script` 命令的简写。当我们运行 `npm run xxx` 时，基本步骤如下：
 
@@ -161,7 +161,7 @@ npm install eslint -D
 
 在命令行提示中选择 `Answer questions about your style`，如下图回答几个问题，答案可以根据自己的偏好：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/2.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/2.png)
 
 回车后根目录下就有了 `.eslintrc.js` 配置文件：
 
@@ -200,7 +200,7 @@ module.exports = {
 
 > 执行 `npm run eslint`，可以看到，按照官方推荐规则代码里有 3 处不符合规范的地方：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/3.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/3.png)
 
 如果读到这里，相信你已经完成 `npm script` 上手，接下来我们去探索更高级的话题。
 
@@ -308,7 +308,7 @@ index c904250..023d71e 100644
 > eslint ==> stylelint ==> jsonlint ==> markdownlint ==> mocha
 > ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/4.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/4.png)
 
 需要注意的是，串行执行的时候如果前序命令失败（通常进程退出码非0），后续全部命令都会终止，我们可以尝试在 `index.js` 中引入错误（删掉行末的分号）：
 
@@ -329,7 +329,7 @@ index ab8bd0e..b817ea4 100644
 
 然后重新运行 `npm t`，结果如下，`npm run lint:js` 失败之后，后续命令都没有执行：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/5.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/5.png)
 
 ### 让多个 npm script 并行？
 
@@ -350,7 +350,7 @@ index 023d71e..2d9bd6f 100644
 
 重新运行 `npm t`，我们得到如下结果：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/6.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/6.png)
 
 > 细心的同学可能已经发现上图中哪里不对，`npm run lint:js` 的结果在进程退出之后才输出，如果你自己运行，不一定能稳定复现这个问题，但 `npm` 内置支持的多条命令并行跟 `js` 里面同时发起多个异步请求非常类似，它只负责触发多条命令，而不管结果的收集，如果并行的命令执行时间差异非常大，上面的问题就会稳定复现。怎么解决这个问题呢？
 
@@ -450,7 +450,7 @@ diff --git a/package.json b/package.json
 
 运行效果如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/7.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/7.png)
 
 上图第2个红色框里面是实际执行的命令，可以看到 `--fix` 参数附加在了后面。
 
@@ -478,7 +478,7 @@ diff --git a/package.json b/package.json
 
 这种方式的明显不足是，`npm run` 列出来的命令列表不能把注释和实际命令对应上，如果你声明了多个，`npm run` 只会列出最后那个，如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/8.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/8.png)
 
 > 另外一种方式是直接在 `script` 声明中做手脚，因为命令的本质是 `shell` 命令（适用于 linux 平台），我们可以在命令前面加上注释，具体做法如下：
 
@@ -494,7 +494,7 @@ diff --git a/package.json b/package.json
 
 > 注意注释后面的换行符 `\n` 和多余的空格，换行符是用于将注释和命令分隔开，这样命令就相当于微型的 shell 脚本，多余的空格是为了控制缩进，也可以用制表符 `\t` 替代。这种做法能让 `npm run` 列出来的命令更美观，但是 `scripts` 声明阅读起来不那么整齐美观。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/9.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/9.png)
 
 上面两种方式都有明显的缺陷，个人建议的更优方案还是把复杂的命令剥离到单独的文件中管理，在单独的文件中可以自由给它添加注释，详见后续章节。
 
@@ -512,7 +512,7 @@ diff --git a/package.json b/package.json
 
 > 结合其他工具调用 `npm script` 的时候比较有用，需要使用 `--loglevel silent`，或者 `--silent`，或者更简单的 `-s` 来控制，这个日志级别的输出实例如下（只有命令本身的输出，读起来非常的简洁）：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/10.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/10.png)
 
 > 如果执行各种 `lint script` 的时候启用了 `-s` 配置，代码都符合规范的话，你不会看到任何输出，这就是**没有消息是最好的消息**的由来，哈哈！
 
@@ -520,7 +520,7 @@ diff --git a/package.json b/package.json
 
 > 排查脚本问题的时候比较有用，需要使用 `--loglevel verbose`，或者 `--verbose`，或者更简单的 `-d` 来控制，这个日志级别的输出实例如下（详细打印出了每个步骤的参数、返回值，下面的截图只是部分）：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/11.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/11.png)
 
 ## 4 使用 npm script 的钩子
 
@@ -566,7 +566,7 @@ index 8f67810..d297f2e 100644
 
 > 当我们运行 `npm test` 的时候，会先自动执行 `pretest` 里面的 `lint`，实际输出如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/12.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/12.png)
 
 ### 增加覆盖率收集
 
@@ -619,7 +619,7 @@ index 8f67810..d297f2e 100644
 
 > 改完之后，我们可以直接运行 `npm run cover`，运行的详细截图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/13.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/13.png)
 
 > **TIP#7**：到目前为止，我们的工作流中已经包含代码检查、测试运行、覆盖率收集、覆盖率查看等功能，你是不是可以用来改进下自己的工作流呢？
 
@@ -707,7 +707,7 @@ index d297f2e..d86f65c 100644
 
 配置好之后，我们直接运行 `npm run cover`，最后的目录结构如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/14.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/14.png)
 
 ### 使用自定义变量
 
@@ -759,11 +759,11 @@ index d86f65c..abc9d01 100644
 
 修改完之后，我们再次运行 `npm run cover`，终端会在 `cover:serve` 之后进入等待状态：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/15.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/15.png)
 
 同时浏览器会打开覆盖率报告，如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/16.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/16.png)
 
 **好，关于 npm script 里面的变量使用就介绍到这里，留给你的问题是，在你的项目里面怎么用起来呢？如果想到了，什么时候落地？**
 
@@ -781,11 +781,11 @@ index d86f65c..abc9d01 100644
 
 > 比如，我们在项目中执行：`npm run | less`，得到如下结果，注意截图左下方的红框，按空格能翻页：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/17.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/17.png)
 
 在这个结果里面，我们可以进行类似于 Vim 中的搜索，先按 `/` 进入搜索模式，然后输入 `markdown`，搜索结果如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/18.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/18.png)
 
 ### 把 npm completion 集成到 shell 中
 
@@ -829,15 +829,15 @@ echo "[ -f ~/.npm-completion.bash ] && source ~/.npm-completion.bash;" >> ~/.zsh
 
 **1. 在 npm install 时自动根据历史安装过的包给出补全建议**
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/19.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/19.png)
 
 **2. 在 npm uninstall 时候根据 package.json 里面的声明给出补全建议**
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/20.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/20.png)
 
 **3. 在 npm run 时补全建议中列出命令细节**
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/21.png) ![img](https://poetries1.gitee.io/img-repo/2020/07/npm/22.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/21.png) ![img](https://s.poetries.top/gitee/2020/07/npm/22.png)
 
 看到这里，是不是心痒痒？具体的安装方法参照官方 [README.md (opens new window)](https://github.com/lukechilds/zsh-better-npm-completion)文件就好，我就不在这里啰嗦了。
 
@@ -1101,7 +1101,7 @@ opn http://localhost:$npm_package_config_port
 
 修改完毕之后，重新运行 `npm run cover`，不出意外的话，我们能得到和原来完全相同的结果，仔细观察运行的日志，会发现在代码执行前有段额外的输出，如下图中红色框中的内容，`scripty` 在实际执行的时候会把执行的命令内容打印出来，方便调试：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/23.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/23.png)
 
 ### 高级技巧
 
@@ -1187,7 +1187,7 @@ exec('npm-run-all --parallel cover:serve cover:open');
 
 重新运行 `npm run cover` 命令，不出意外的话，基本功能是正常的，除了我们新加的绿色输出，如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/24.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/24.png)
 
 以上，本小节完，这里只是简单展示了如何组织 Node.js 脚本并且让其与 npm script 关联起来，至于具体在脚本中做什么事情，请你自由发挥吧。
 
@@ -1249,7 +1249,7 @@ npm i onchange -D
 
 > `onchange` 有个不太醒目的特性是，文件系统发生变化之后，他在运行指定命令之前输出哪个文件发生了哪些变化，如下图红框中的内容：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/25.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/25.png)
 
 读到这里，有没有觉得 `onchange` 可以和 `gulp`、`grunt` 的 `watch` 一样强大。
 
@@ -1317,7 +1317,7 @@ npm i livereload http-server -D
 
 最后，运行 `npm run client` 之后，截图如下，注意两个红框里面的输出表示服务启动成功：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/26.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/26.png)
 
 然后，打开浏览器访问：`http://localhost:8080`，接着修改 `client/main.css` 并保存（**别忘了保存**），你会发现浏览器自动刷新了
 
@@ -1366,7 +1366,7 @@ npm i husky lint-staged -D
 
 然后再检查我们仓库的 `.git/hooks` 目录，会发现里面的钩子都被 `husky` 替换掉了，注意下图中三个红色框中的内容：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/27.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/27.png)
 
 ### 添加 npm script
 
@@ -1384,7 +1384,7 @@ npm i husky lint-staged -D
 
 然后尝试提交代码：`git commit -am 'add husky hooks'`，能看到 `pre-commit` 钩子已经生效：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/28.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/28.png)
 
 ### 用 lint-staged 改进 pre-commit
 
@@ -1418,7 +1418,7 @@ npm i husky lint-staged -D
 
 然后尝试提交这个文件：`git commit -m 'try to add eslint error' index.js`，结果如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/29.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/29.png)
 
 上图中带有 `Running Tasks` 字样的列表就是 `lint-staged` 根据当前要提交的文件和 `package.json` 中配置的检查命令去执行的动态输出。红色框里面提示 `husky` 的 `pre-commit` 钩子执行失败，提交也就没有成功。
 
@@ -1426,7 +1426,7 @@ npm i husky lint-staged -D
 
 撤销掉有错误的修改，提交之后，我们往远程 `push` 新分支，结果如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/30.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/30.png)
 
 > 读过我其他文章的同学可能已经想到，本小节的内容部分和我早期的文章[《用 husky 和 lint-staged 构建超溜的代码检查工作流》 (opens new window)](https://juejin.im/post/592615580ce463006bf19aa0)有部分内容是重叠的。
 
@@ -1654,17 +1654,17 @@ done
 
 然后我们尝试运行 `npm run build`，完整的过程输出如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/31.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/31.png)
 
 构建完成的 `dist` 目录内容如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/32.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/32.png)
 
 可以看到，所有的静态资源都加上了版本号。
 
 构建完成的 `dist/index.html` 内容如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/33.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/33.png)
 
 > 可以看到，静态资源的版本号被正确替换了，为了验证构建出来的页面是否正常运行，可以运行 `./node_modules/.bin/http-server dist`，然后浏览器打开：`http://127.0.0.1:8080`
 
@@ -1693,7 +1693,7 @@ done
 
 这 3 条命令遵循 [semver (opens new window)](https://semver.org/)的版本号规范来方便你管理版本，`patch` 是更新补丁版本，`minor`是更新小版本，major 是更新大版本。在必要的时候，可以通过运行 `npm run version:patch` 来升补丁版本，运行输出如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/34.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/34.png)
 
 > 如果要求所有的版本号不超过 `10`，即 `0.0.9` 的下个版本是 `0.1.0` 而不是 `0.0.10`，可以编写简单的 shell 脚本来实现（**注意这样会破坏 semver 的约定**），具体步骤如下：
 
@@ -1738,7 +1738,7 @@ npm run release:$release
 
 在必要的时候执行 `npm run bump`，输出示例如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/35.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/35.png)
 
 ### 使用 npm script 进行服务进程和日志管理
 
@@ -1851,7 +1851,7 @@ npm i pm2 -D
 
 每次需要部署服务时只需要运行 `npm run deploy` 就行了，运行成功输出如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/36.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/36.png)
 
 **5. 配置日志查看命令**
 
@@ -1864,7 +1864,7 @@ npm i pm2 -D
 
 需要查看日志时，直接运行 `npm run logs`，运行输入如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/npm/37.png)
+![img](https://s.poetries.top/gitee/2020/07/npm/37.png)
 
 当然如果你有更复杂的日志查看需求，直接用 `cat`、`grep` 之类的命令好了。
 
@@ -1896,7 +1896,7 @@ webpack --help
 
 > webpack 本质上是一个打包工具，它会根据代码的内容解析模块依赖，帮助我们把多个模块的代码打包
 
-![img](https://poetries1.gitee.io/img-repo/2019/10/638.png)
+![img](https://s.poetries.top/gitee/2019/10/638.png)
 
 > webpack 会把我们项目中使用到的多个代码模块（可以是不同文件类型），打包构建成项目运行仅需要的几个静态文件
 
@@ -3650,7 +3650,7 @@ module.exports = {
 
 > 在 `Docker` 中，实现了强大的网络功能，我们不但能够十分轻松的对每个容器的网络进行配置，还能在容器间建立虚拟网络，将数个容器包裹其中，同时与其他网络环境隔离
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/1.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/1.png)
 
 > `Docker` 能够在容器中营造独立的域名解析环境，这使得我们可以在不修改代码和配置的前提下直接迁移容器，`Docker` 会为我们完成新环境的网络适配。对于这个功能，我们甚至能够在不同的物理服务器间实现，让处在两台物理机上的两个 Docker 所提供的容器，加入到同一个虚拟网络中，形成完全屏蔽硬件的效果...
 
@@ -3676,7 +3676,7 @@ module.exports = {
 2. 社区版和企业版的另一区别就是免费与收费了。对于我们开发者来说，社区版已经提供了 `Docker` 所有核心的功能，足够满足我们在开发、测试中的需求，所以我们直接选择使用社区版进行开发即可。在这本小册中，所有的内容也是围绕着社区版的 `Docker Engine` 展开的...
 3. 从另外一个角度，`Docker Engine` 的迭代版本又会分为稳定版 ( `Stable release` ) 和预览版 ( `Edge release` )。不论是稳定版还是预览版，它们都会以发布时的年月来命名版本号，例如如 17 年 3 月的版本，版本号就是 17.03...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/2.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/2.png)
 
 1. `Docker Engine` 的稳定版固定为每三个月更新一次，而预览版则每月都会更新。在预览版中可以及时掌握到最新的功能特性，不过这对于我们仅是使用 `Docker` 的开发者来说，意义并不是特别重大的，所以我还是更推荐安装更有保障的稳定版本。
 2. 在主要版本之外，`Docker` 官方也以解决 `Bug` 为主要目的，不定期发布次要版本。次要版本的版本号由主要版本和发布序号组成，如：`17.03.2`就是对 `17.03` 版本的第二次修正...
@@ -3881,7 +3881,7 @@ Registry Mirrors:
 - 启动两个软件的方式很简单，我们只需要通过操作系统的快捷访问功能查找到 `Docker for Windows` 或 `Docker for Mac` 并启动即可
 - 打开软件之后，我们会在`Windows` 的任务栏或者 `macOS` 的状态栏中看到 `Docker` 的大鲸鱼图标
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/3.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/3.png)
 
 > `Docker Desktop` 为我们在 `Windows` 和 `macOS` 中使用 `Docker`提供了与 `Linux` 中几乎一致的方法，我们只需要打开 `Windows` 中的 `PowerShell` 获得 `macOS` 中的 Terminal，亦或者 `Git Bash`、`Cmder`、`iTerm`等控制台类软件，输入 `docker` 命令即可...
 
@@ -3903,7 +3903,7 @@ Client:
 - 由于虚拟化在云计算时代的广泛使用，`Windows` 和 `MacOS` 也将虚拟化引入到了系统本身的实现中，这其中就包含了之前我们所提到的通过 `Hypervisor`实现虚拟化的功能。在 `Windows` 中，我们可以通过 `Hyper-V` 实现虚拟化，而在 `macOS` 中，我们可以通过 HyperKit 实现虚拟化...
 - `Docker for Windows` 和 `Docker for Mac` 这里利用了这两个操作系统提供的功能来搭建一个虚拟 `Linux` 系统，并在其之上安装和运行 `docker daemon`。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/4.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/4.png)
 
 > 除了搭建 `Linux` 系统并运行 `docker daemon` 之外，`Docker Desktop` 系列最突出的一项功能就是我们能够直接通过 `PowerShell`、`Terminal` 这类的控制台软件在 `Windows` 和 `macOS` 中直接操作虚拟 Linux 系统中运行的 docker daemon...
 
@@ -3914,7 +3914,7 @@ Client:
 3. 当然，如果只能从虚拟的 Linux 系统中进行挂载，显然不足以达到我们的期望，因为最方便的方式必然是直接从 Windows 和 macOS 里挂载文件了。
 4. 要实现我们所期望的效果，也就是 Docker 容器直接挂载主机系统的目录，我们可以先将目录挂载到虚拟 Linux 系统上，再利用 Docker 挂载到容器之中。这个过程被集成在了 Docker Desktop 系列软件中，我们不需要人工进行任何操作，整个过程已经实现了自动化...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/5.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/5.png)
 
 > `Docker Desktop` 对 `Windows` 和 `macOS` 到虚拟 `Linux` 系统，再到 `Docker` 容器中的挂载进行了实现，我们只需要直接选择能够被挂载的主机目录 ( 这个过程更多也是为了安全所考虑 )，剩下的过程全部由 Docker Desktop 代替我们完成。...
 
@@ -3950,7 +3950,7 @@ cogset/cron         latest              c01d5ac6fc8a        15 months ago       
 - 镜像层的 `ID` 既可以识别每个镜像层，也可以用来直接识别镜像 ( 因为根据最上层镜像能够找出所有依赖的下层镜像，所以最上层进行的镜像层 ID 就能表示镜像的 `ID` )，但是使用这种无意义的超长哈希码显然是违背人性的，所以这里我们还要介绍镜像的命名，通过镜像名我们能够更容易的识别镜像...
 - 在 `docker images` 命令打印出的内容中，我们还能看到两个与镜像命名有关的数据：`REPOSITORY` 和 `TAG`，这两者其实就组成了 `docker` 对镜像的命名规则
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/6.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/6.png)
 
 **准确的来说，镜像的命名我们可以分成三个部分：username、repository 和 tag**
 
@@ -3964,7 +3964,7 @@ cogset/cron         latest              c01d5ac6fc8a        15 months ago       
 
 **容器运行的状态流转图**
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/7.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/7.png)
 
 > 图中展示了几种常见对 `Docker` 容器的操作命令，以及执行它们之后容器运行状态的变化。这里我们撇开命令，着重看看容器的几个核心状态，也就是图中色块表示的：`Created`、`Running`、`Paused`、`Stopped`、`Deleted`
 
@@ -3988,7 +3988,7 @@ cogset/cron         latest              c01d5ac6fc8a        15 months ago       
 
 当然，存储镜像并不是镜像仓库最值得炫耀的功能，其最大的作用是实现了 `Docker` 镜像的分发。借助镜像仓库，我们得到了一个镜像的中转站，我们可以将开发环境上所使用的镜像推送至镜像仓库，并在测试或生产环境上拉取到它们，而这个过程仅需要几个命令，甚至自动化完成...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/8.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/8.png)
 
 ### 5.2 获取镜像
 
@@ -4038,7 +4038,7 @@ openresty/openresty   1.13.6.2-alpine     08d5c926e4b6        3 months ago      
 
 Docker Hub 的地址是：hub.docker.com/
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/9.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/9.png)
 
 - 由于定位是 `Docker` 的中央镜像仓库系统，同时也是 `Docker Engine` 的默认镜像仓库，所以 `Docker Hub` 是开发者共享镜像的首选，那么也就意味着其中的镜像足够丰富
 - 常用服务软件的镜像，我们都能在 `Docker Hub` 中找到，甚至能找到针对它们不同用法的不同镜像。
@@ -4048,7 +4048,7 @@ Docker Hub 的地址是：hub.docker.com/
 
 - 由于 `Docker Hub` 提供了一套完整的 `Web` 操作界面，所以我们搜索其中的镜像会非常方便
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/10.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/10.png)
 
 > 在 Docker Hub 的搜索结果中，有几项关键的信息有助于我们选择合适的镜像：
 
@@ -4174,7 +4174,7 @@ Deleted: sha256:e1a73233e3beffea70442fc2cfae2c2bab0f657c3eebb3bdec1e84b6cc778b75
 
 在了解容器的各项操作之前，我们再来回顾一下之前我们所提及的容器状态流转。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/11.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/11.png)
 
 > 在这幅图中，我们可以看到，Docker 容器的生命周期里分为五种状态，其分别代表着：
 
@@ -4314,7 +4314,7 @@ $ sudo docker attach nginx
 
 > 在之前介绍 `Docker` 核心组成的时候，我们已经简单谈到了容器网络的相关知识。容器网络实质上也是由 `Docker` 为应用程序所创造的虚拟环境的一部分，它能让应用从宿主机操作系统的网络环境中独立出来，形成容器自有的网络设备、IP 协议栈、端口套接字、IP 路由表、防火墙等等与网络相关的模块...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/12.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/12.png)
 
 > 还是回归上面这幅之前展示过的关于 `Docker` 网络的图片。在 Docker 网络中，有三个比较核心的概念，也就是：沙盒 ( Sandbox )、网络 ( Network )、端点 ( Endpoint )
 
@@ -4327,7 +4327,7 @@ $ sudo docker attach nginx
 - 容器网络模型为容器引擎提供了一套标准的网络对接范式，而在 `Docker` 中，实现这套范式的是 `Docker` 所封装的 `libnetwork` 模块。
 - 而对于网络的具体实现，在 `Docker` 的发展过程中也逐渐抽象，形成了统一的抽象定义。进而通过这些抽象定义，便可以对 `Docker` 网络的实现方式进行不同的变化...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/13.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/13.png)
 
 > 目前 `Docker` 官方为我们提供了五种 `Docker`网络驱动，分别是：`Bridge Driver`、`Host Driver`、`Overlay Driver`、`MacLan Driver`、`one Driver`。
 
@@ -4521,7 +4521,7 @@ $ sudo docker run -d --name webapp --link mysql --network individual webapp:late
 
 - 在 `Docker` 中，提供了一个端口映射的功能实现这样的需求...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/14.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/14.png)
 
 - 通过 `Docker` 端口映射功能，我们可以把容器的端口映射到宿主操作系统的端口上，当我们从外部访问宿主操作系统的端口时，数据请求就会自动发送给与之关联的容器端口
 - 要映射端口，我们可以在创建容器时使用 `-p` 或者是 `--publish`选项...
@@ -4548,12 +4548,12 @@ bc79fc5d42a6        nginx:1.12          "nginx -g 'daemon of…"   4 seconds ago
 
 - 解决这种问题的方法很简单，只需要再加一次映射，将虚拟 `Linux` 系统中的端口映射到 `Windows` 或 `macOS` 的端口即可。...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/15.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/15.png)
 
 - 如果我们使用 `Docker for Windows` 或 `Docker for` Mac，这个端口映射的操作程序会自动帮助我们完成，所以我们不需要做任何额外的事情，就能够直接使用 `Windows` 或 `macOS` 的端口访问容器端口了。
 - 而当我们使用 `Docker Toolbox` 时，由于其自动化能力比较差，所以需要我们在 `VirtualBox` 里单独配置这个操作系统端口到 `Linux` 端口的映射关系...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/16.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/16.png)
 
 > 在 `VirtualBox` 配置中的端口转发一栏里，进行相关的配置即可
 
@@ -4577,7 +4577,7 @@ bc79fc5d42a6        nginx:1.12          "nginx -g 'daemon of…"   4 seconds ago
 
 > 基于底层存储实现，`Docker` 提供了三种适用于不同场景的文件系统挂载方式：Bind `Mount`、`Volume` 和 `Tmpfs Mount`
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/17.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/17.png)
 
 - `Bind Mount` 能够直接将宿主操作系统中的目录和文件挂载到容器内的文件系统中，通过指定容器外的路径和容器内的路径，就可以形成挂载映射关系，在容器内外对文件的读写，都是相互可见的。
 - `Volume` 也是从宿主操作系统中挂载目录到容器内，只不过这个挂载的目录由 Docker 进行管理，我们只需要指定容器内的目录，不需要关心具体挂载到了宿主操作系统中的哪里。
@@ -4833,7 +4833,7 @@ $ sudo docker import ./webapp.tar webapp:1.0
 
 > `Dockerfile` 是 `Docker`中用于定义镜像自动化构建流程的配置文件，在 `Dockerfile` 中，包含了构建镜像过程中需要执行的命令和其他操作。通过 `Dockerfile` 我们可以更加清晰、明确的给定 `Docker` 镜像的制作过程，而由于其仅是简单、小体积的文件，在网络等其他介质中传递的速度极快，能够更快的帮助我们实现容器迁移和集群部署...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/18.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/18.png)
 
 > 通常来说，我们对 `Dockerfile` 的定义就是针对一个名为`Dockerfile` 的文件，其虽然没有扩展名，但本质就是一个文本文件，所以我们可以通过常见的文本编辑器或者 `IDE` 创建和编辑它。
 
@@ -5103,7 +5103,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 看似连续的镜像构建过程，其实是由多个小段组成。每当一条能够形成对文件系统改动的指令在被执行前，`Docker` 先会基于上条命令的结果启动一个容器，在容器中运行这条指令的内容，之后将结果打包成一个镜像层，如此反复，最终形成镜像...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/19.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/19.png)
 
 所以说，我们之前谈到镜像是由多个镜像层叠加而得，而这些镜像层其实就是在我们 `Dockerfile`中每条指令所生成的。
 
@@ -5192,11 +5192,11 @@ exec "$@"...
 
 > 要得到镜像的 `Dockerfile` 文件，我们可以进入到镜像的详情页面，在介绍中，镜像作者们通常会直接把 `Dockerfile` 的连接放在那里。...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/20.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/20.png)
 
 除此之外，进入到`Dockerfile` 这个栏目下，我们也能够直接看到镜像 `Dockerfile` 的内容。在页面的右侧，还有进入`Dockerfile` 源文件的连接，如果在 `Dockerfile` 中有引入其他的文件，我们可以通过这个连接访问到。...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/21.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/21.png)
 
 > 另外，我自己也制作了一些软件的镜像，大家可以访问 `GitHub` 上的项目地址，查阅其中的`Dockerfile` 内容：github.com/cogset
 
@@ -5210,7 +5210,7 @@ exec "$@"...
 - 虽然我们常把软件的版本放在 `Tag` 里作为镜像名的一部分，但对于一些复杂的应用，除了版本外，还存在很多的变量，镜像的维护者们也喜欢将这些变量一同组合到镜像的 `Tag` 里，所以我们在使用镜像前，一定要先了解不同 `Tag` 对应的不同内容。
 - 这里我们来看个例子，下面是由 Docker 官方提供的 OpenJDK 镜像的说明页面...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/22.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/22.png)
 
 - 通常来说，镜像的维护者会在镜像介绍中展示出镜像所有的 Tag，如果没有，我们也能够从页面上的 `Tags` 导航里进入到镜像标签列表页面。
 - 在 `OpenJDK` 镜像的 `Tag` 列表里，我们可以看到同样版本号的镜像就存在多种标签。在这些不同的标签上，除了定义 `OpenJDK` 的版本，还有操作系统，软件提供者等信息。
@@ -5250,7 +5250,7 @@ exec "$@"...
 - 好在 `MySQL` 镜像的维护者们为我们打造了一些自动化脚本，通过它们，我们只需要简单的传入几个参数，就能够快速实现对 `MySQL` 数据库的初始化。
 - 在 MySQL 镜像的详情里，描述了我们要如何传入这些参数来启动 MySQL 容器。...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/23.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/23.png)
 
 > 对于 `MySQL` 镜像来说，进行软件配置的方法是通过环境变量的方式来实现的 ( 在其他的镜像里，还有通过启动命令、挂载等方式来实现的 )。我们只需要通过这些给出的环境变量，就可以初始化 `MySQL` 的配置了。
 
@@ -5272,25 +5272,25 @@ $ sudo docker run --name mysql -e MYSQL_DATABASE=webapp -e MYSQL_USER=www -e MYS
 
 要在`Docker Hub` 上共享镜像，我们必须有一个`Docker Hub` 的账号，这自不必说了。在登录到我们账号的控制面板后，我们能够找到创建的按钮，在这里选择 Create Automated Build ( 创建自动构建 )。...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/24.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/24.png)
 
 自动构建镜像是 `Docker Hub`为我们提供的一套镜像构建服务，我们只需要提供 `Dockerfile` 和相关的基本文件，`Docker Hub` 就能够在云端自动将它们构建成镜像，之后便可以让其他开发者通过 docker pull 命令拉取到这一镜像。
 
 自动构建让不需要我们再用本机进行镜像的构建，既能节约时间，又能享受高速的云端机器构建。...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/25.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/25.png)
 
 在 `Docker Hub` 中并不直接存放我们用于构建的 `Dockerfile` 和相关文件，我们必须将 `Docker Hub` 账号授权到 `GitHub` 或是 `Bitbucket` 来从这些代码库中获取 `Dockerfile`和相关文件。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/26.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/26.png)
 
 在连接到 `GitHub` 或 `Bitbucket` 后，我们就可以选择我们存放 `Dockerfile` 和相关文件的代码仓库用来创建自动构建了。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/27.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/27.png)
 
 在基本信息填写完成，点击创建按钮后，`Docker Hub` 就会开始根据我们 `Dockerfile` 的内容构建镜像了。而此时，我们也能够访问我们镜像专有的详情页面了。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/28.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/28.png)
 
 ## 十三、组合操作：使用 Docker Compose 管理容器
 
@@ -5314,7 +5314,7 @@ $ sudo docker run --name mysql -e MYSQL_DATABASE=webapp -e MYSQL_USER=www -e MYS
 - 针对这种情况，我们就不得不引出在我们开发中最常使用的多容器定义和运行软件，也就是 `Docker Compose`了。
 - 如果说 `Dockerfile`是将容器内运行环境的搭建固化下来，那么 `Docker Compose` 我们就可以理解为将多个容器运行的方式和配置固化下来...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/29.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/29.png)
 
 > 在 `Docker Compose` 里，我们通过一个配置文件，将所有与应用系统相关的软件及它们对应的容器进行配置，之后使用 `Docker Compose` 提供的命令进行启动，就能让 `Docker Compose` 将刚才我们所提到的那些复杂问题解决掉...
 
@@ -5632,7 +5632,7 @@ networks:
 - 与搭建一个软件开发项目类似，我们提倡将 `Docker Compose` 项目的组成内容聚集到一个文件目录中，这样更利于我们进行管理和迁移。
 - 这里我已经建立好了一个目录结构，虽然我们在实践的过程中不一定要按照这样的结构，但我相信这个结构一定对你有所启发...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/30.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/30.png)
 
 > 简单说明一下这个结构中主要目录和文件的功能和作用。在这个结构里，我们可以将根目录下的几个目录分为四类
 
@@ -5712,7 +5712,7 @@ services:
 - 在这个例子里，因为需要让 PHP 连接到 MySQL 数据库中，所以我们要为镜像中的 PHP 程序安装和开启 pdo_mysql 这个扩展。
 - 了解如何安装扩展，这就要考验我们之前在 Docker Hub 镜像使用一节中学到的知识了。我们通过阅读 PHP 镜像的介绍页面，可以找到 PHP 镜像中已经为我们准备好了扩展的安装和启用命令，这让我们可以很轻松地在镜像中加入扩展。...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/31.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/31.png)
 
 > 在准备好这些使用方法之后，我们就可以开始编写构建 PHP 镜像的 `Dockerfile` 文件了。这里我已经编写好了一份，供大家参考
 
@@ -5851,7 +5851,7 @@ services:
 - 在介绍`Docker Compose` 的小节里，我们知道了可以通过设置网络别名 ( `alias` ) 的方式来更轻松地连接其他容器，如果我们在服务化开发里也能这么做就能减少很多烦琐操作了。
 - 要实现设置网络别名的目的，自然要先确保所有涉及的容器位于同一个网络中，这时候就需要引出我们之前在网络小节里说到的 `Overlay`网络了...
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/32.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/32.png)
 
 > `Overlay Network` 能够跨越物理主机的限制，让多个处于不同 `Docker daemon` 实例中的容器连接到同一个网络，并且让这些容器感觉这个网络与其他类型的网络没有区别。
 
@@ -5859,7 +5859,7 @@ services:
 
 > 要搭建 `Overlay Network` 网络，我们就要用到 `Docker Swarm` 这个工具了。`Docker Swarm`是 `Docker`内置的集群工具，它能够帮助我们更轻松地将服务部署到 `Docker daemon` 的集群之中。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/docker/33.png)
+![img](https://s.poetries.top/gitee/2020/07/docker/33.png)
 
 - 在真实的服务部署里，我们通常是使用 `Docker Compose` 来定义集群，而通过 `Docker Swarm` 来部署集群。
 - `Docker Swarm`最初是独立的项目，不过目前已经集成到了`Docker` 之中，我们通过 `docker CLI`的命令就能够直接操控它。

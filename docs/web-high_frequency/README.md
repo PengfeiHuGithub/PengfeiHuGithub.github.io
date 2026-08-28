@@ -50,7 +50,7 @@ str1 instanceof String // true
 - 转换为数字
 - 转换为字符串
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/1.png)
+![img](https://s.poetries.top/gitee/2020/07/1.png)
 
 **转Boolean**
 
@@ -208,7 +208,7 @@ foo.bind(a)() // => 'poetries'
 
 > 首先，`new` 的方式优先级最高，接下来是 `bind` 这些函数，然后是 `obj.foo()` 这种调用方式，最后是 `foo` 这种调用方式，同时，箭头函数的 `this` 一旦被绑定，就不会再被任何方式所改变。
 
-![image.png](https://poetries1.gitee.io/img-repo/2020/07/2.png)
+![image.png](https://s.poetries.top/gitee/2020/07/2.png)
 
 ## 4 == 和 === 有什么区别
 
@@ -247,7 +247,7 @@ foo.bind(a)() // => 'poetries'
 '1' == '[object Object]'
 ```
 
-![image.png](https://poetries1.gitee.io/img-repo/2020/07/3.png)
+![image.png](https://s.poetries.top/gitee/2020/07/3.png)
 
 > 对于 `===` 来说就简单多了，就是判断两者类型和值是否相同
 
@@ -414,7 +414,7 @@ console.log(newObj)
 
 > 原型链就是多个对象通过 `__proto__` 的方式连接了起来。为什么 `obj` 可以访问到 `valueOf` 函数，就是因为 `obj` 通过原型链找到了 `valueOf` 函数
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/1.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/1.png)
 
 - `Object` 是所有对象的爸爸，所有对象都可以通过 `__proto__`找到它
 - `Function` 是所有函数的爸爸，所有函数都可以通过 `__proto__` 找到它
@@ -722,7 +722,7 @@ MyPromise.prototype.then = function(onFulfilled,onRejected){
 
 可以把执行栈认为是一个存储函数调用的栈结构，遵循先进后出的原则
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/102.png)
+![img](https://s.poetries.top/gitee/2020/09/102.png)
 
 > 当开始执行 `JS` 代码时，首先会执行一个 `main` 函数，然后执行我们的代码。根据先进后出的原则，后执行的函数会先弹出栈，在图中我们也可以发现，`foo` 函数后执行，当执行完毕后就从栈中弹出了
 
@@ -738,7 +738,7 @@ function bar() {
 bar()
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/2.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/2.png)
 
 > 大家可以在上图清晰的看到报错在 `foo` 函数，`foo` 函数又是在 `bar` 函数中调用的
 
@@ -751,7 +751,7 @@ function bar() {
 bar()
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/1.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/1.png)
 
 ### 12.3 浏览器中的 Event Loop
 
@@ -761,7 +761,7 @@ bar()
 
 - `JS` 在执行的过程中会产生执行环境，这些执行环境会被顺序的加入到执行栈中。如果遇到异步的代码，会被挂起并加入到 `Task`（有多种 `task`） 队列中。一旦执行栈为空，`Event` `Loop` 就会从 `Task` 队列中拿出需要执行的代码并放入执行栈中执行，所以本质上来说 `JS` 中的异步还是同步行为
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/4.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/4.png)
 
 ```js
 console.log('script start');
@@ -938,7 +938,7 @@ process.nextTick(() => {
 
 > 对于 `microtask` 来说，它会在以上每个阶段完成前清空 `microtask` 队列，下图中的 `Tick` 就代表了 `microtask`
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/5.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/5.png)
 
 ## 13 手写 call、apply 及 bind 函数
 
@@ -1428,7 +1428,7 @@ self.addEventListener('fetch', e => {
 
 > 在 `Cache` 中也可以发现我们所需的文件已被缓存
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/6.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/6.png)
 
 > 当我们重新刷新页面可以发现我们缓存的数据是从 `Service Worker` 中读取的
 
@@ -1467,7 +1467,7 @@ self.addEventListener('fetch', e => {
 - `Memory Cache` 也就是内存中的缓存，读取内存中的数据肯定比磁盘快。但是内存缓存虽然读取高效，可是缓存持续性很短，会随着进程的释放而释放。 一旦我们关闭 `Tab` 页面，内存中的缓存也就被释放了。
 - 当我们访问过页面以后，再次刷新页面，可以发现很多数据都来自于内存缓存
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/7.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/7.png)
 
 > 那么既然内存缓存这么高效，我们是不是能让数据都存放在内存中呢？
 
@@ -1525,20 +1525,20 @@ Cache-control: max-age=30
 - `Cache-Control` 出现于 `HTTP/1.1`，优先级高于 `Expires` 。该属性值表示资源会在 `30` 秒后过期，需要再次请求。
 - `Cache-Control` 可以在请求头或者响应头中设置，并且可以组合使用多种指令
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/8.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/8.png)
 
 > 从图中我们可以看到，我们可以将多个指令配合起来一起使用，达到多个目的。比如说我们希望资源能被缓存下来，并且是客户端和代理服务器都能缓存，还能设置缓存失效时间等
 
 **一些常见指令的作用**
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/9.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/9.png)
 
 #### [#](https://blog.poetries.top/FE-Interview-Questions/docs/excellent.html#_20-2-2-协商缓存)20.2.2 协商缓存
 
 - 如果缓存过期了，就需要发起请求验证资源是否有更新。协商缓存可以通过设置两种 `HTTP Header` 实现：`Last-Modified` 和 `ETag`
 - 当浏览器发起请求验证资源时，如果资源没有做改变，那么服务端就会返回 `304` 状态码，并且更新浏览器缓存有效期。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/10.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/10.png)
 
 **Last-Modified 和 If-Modified-Since**
 
@@ -1583,23 +1583,23 @@ Cache-control: max-age=30
 
 > 当我们打开一个网页时，浏览器都会去请求对应的 `HTML` 文件。虽然平时我们写代码时都会分为 `JS`、`CSS`、`HTML` 文件，也就是字符串，但是计算机硬件是不理解这些字符串的，所以在网络中传输的内容其实都是 `0` 和 `1` 这些字节数据。当浏览器接收到这些字节数据以后，它会将这些字节数据转换为字符串，也就是我们写的代码。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/11.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/11.png)
 
 > 当数据转换为字符串以后，浏览器会先将这些字符串通过词法分析转换为标记（`token`），这一过程在词法分析中叫做标记化（`tokenization`）
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/12.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/12.png)
 
 > 那么什么是标记呢？这其实属于编译原理这一块的内容了。简单来说，标记还是字符串，是构成代码的最小单位。这一过程会将代码分拆成一块块，并给这些内容打上标记，便于理解这些最小单位的代码是什么意思
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/13.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/13.png)
 
 > 当结束标记化后，这些标记会紧接着转换为 `Node`，最后这些 `Node` 会根据不同 `Node` 之前的联系构建为一颗 `DOM` 树
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/14.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/14.png)
 
 > 以上就是浏览器从网络中接收到 `HTML` 文件然后一系列的转换过程
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/15.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/15.png)
 
 > 当然，在解析 `HTML` 文件的时候，浏览器还会遇到 `CSS` 和 `JS` 文件，这时候浏览器也会去下载并解析这些文件，接下来就让我们先来学习浏览器如何解析 `CSS` 文件
 
@@ -1607,7 +1607,7 @@ Cache-control: max-age=30
 
 > 其实转换 `CSS` 到 `CSSOM` 树的过程和上一小节的过程是极其类似的
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/16.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/16.png)
 
 - 在这一过程中，浏览器会确定下每一个节点的样式到底是什么，并且这一过程其实是很消耗资源的。因为样式你可以自行设置给某个节点，也可以通过继承获得。在这一过程中，浏览器得递归 `CSSOM` 树，然后确定具体的元素到底是什么样式。
 
@@ -1633,7 +1633,7 @@ Cache-control: max-age=30
 
 > 当我们生成 `DOM` 树和 `CSSOM` 树以后，就需要将这两棵树组合为渲染树
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/17.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/17.png)
 
 - 在这一过程中，不是简单的将两者合并就行了。渲染树只会包括需要显示的节点和这些节点的样式信息，如果某个节点是 `display: none` 的，那么就不会在渲染树中显示。
 - 当浏览器生成渲染树以后，就会根据渲染树来进行布局（也可以叫做回流），然后调用 `GPU`绘制，合成图层，显示在屏幕上。对于这一部分的内容因为过于底层，还涉及到了硬件相关的知识，这里就不再继续展开内容了。
@@ -1649,7 +1649,7 @@ Cache-control: max-age=30
 - 对于这道题目来说，首先我们肯定不能一次性把几万个 `DOM` 全部插入，这样肯定会造成卡顿，所以解决问题的重点应该是如何分批次部分渲染 `DOM`。大部分人应该可以想到通过 `requestAnimationFrame` 的方式去循环的插入 `DOM`，其实还有种方式去解决这个问题：虚拟滚动（`virtualized scroller`）。
 - 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/18.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/18.png)
 
 > 从上图中我们可以发现，即使列表很长，但是渲染的 `DOM` 元素永远只有那么几个，当我们滚动页面的时候就会实时去更新 `DOM`，这个技术就能顺利解决这道经典面试题
 
@@ -1746,7 +1746,7 @@ for(let i = 0; i < 1000; i++) {
 
 > 举个例子，对于评论功能来说，就得防范持久型 `XSS` 攻击，因为我可以在评论中输入以下内容
 
-![image.png](https://poetries1.gitee.io/img-repo/2020/07/4.png)
+![image.png](https://s.poetries.top/gitee/2020/07/4.png)
 
 - 这种情况如果前后端没有做好防御的话，这段评论就会被存储到数据库中，这样每个打开该页面的用户都会被攻击到。
 - 非持久型相比于前者危害就小的多了，一般通过修改 `URL` 参数的方式加入攻击代码，诱导用户访问链接从而进行攻击。
@@ -1760,7 +1760,7 @@ for(let i = 0; i < 1000; i++) {
 
 > 但是对于这种攻击方式来说，如果用户使用 `Chrome` 这类浏览器的话，浏览器就能自动帮助用户防御攻击。但是我们不能因此就不防御此类攻击了，因为我不能确保用户都使用了该类浏览器。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/19.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/19.png)
 
 > 对于 `XSS` 攻击来说，通常有两种方式可以用来防御。
 
@@ -1832,7 +1832,7 @@ Content-Security-Policy: child-src 'none'
 
 > 对于这种方式来说，只要开发者配置了正确的规则，那么即使网站存在漏洞，攻击者也不能执行它的攻击代码，并且 `CSP` 的兼容性也不错。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/20.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/20.png)
 
 ### 22.2 CSRF
 
@@ -1873,7 +1873,7 @@ Content-Security-Policy: child-src 'none'
 
 > 点击劫持是一种视觉欺骗的攻击手段。攻击者将需要攻击的网站通过 `iframe` 嵌套的方式嵌入自己的网页中，并将 `iframe` 设置为透明，在页面中透出一个按钮诱导用户点击
 
-![image.png](https://poetries1.gitee.io/img-repo/2020/07/5.png)
+![image.png](https://s.poetries.top/gitee/2020/07/5.png)
 
 > 对于这种攻击方式，推荐防御的方法有两种
 
@@ -1925,19 +1925,19 @@ Content-Security-Policy: child-src 'none'
 > Chrome` 已经提供了一个大而全的性能测试工具 `Audits
 > ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/21.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/21.png)
 
 > 点我们点击 `Audits` 后，可以看到如下的界面
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/22.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/22.png)
 
 > 在这个界面中，我们可以选择想测试的功能然后点击 `Run audits` ，工具就会自动运行帮助我们测试问题并且给出一个完整的报告
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/23.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/23.png)
 
 > 上图是给掘金首页测试性能后给出的一个报告，可以看到报告中分别为性能、体验、SEO 都给出了打分，并且每一个指标都有详细的评估
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/24.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/24.png)
 
 评估结束后，工具还提供了一些建议便于我们提高这个指标的分数
 
@@ -1945,7 +1945,7 @@ Content-Security-Policy: child-src 'none'
 
 > 除了 `Audits` 工具之外，还有一个 `Performance`工具也可以供我们使用。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/25.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/25.png)
 
 > 在这张图中，我们可以详细的看到每个时间段中浏览器在处理什么事情，哪个过程最消耗时间，便于我们更加详细的了解性能瓶颈
 
@@ -1957,7 +1957,7 @@ Content-Security-Policy: child-src 'none'
 
 > 在这一过程中，`JS` 代码首先会解析为抽象语法树（`AST`），然后会通过解释器或者编译器转化为 `Bytecode` 或者`Machine Code`
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/26.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/26.png)
 
 > 从上图中我们可以发现，`JS` 会首先被解析为 `AST`，解析的过程其实是略慢的。代码越多，解析的过程也就耗费越长，这也是我们需要压缩代码的原因之一。另外一种减少解析时间的方式是预解析，会作用于未执行的函数，这个我们下面再谈
 
@@ -2621,17 +2621,17 @@ exports.default = a
 
 > 传统的 `MVC` 架构通常是使用控制器更新模型，视图从模型中获取数据去渲染。当用户有输入时，会通过控制器去更新模型，并且通知视图进行更新
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/27.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/27.png)
 
 - 但是 `MVC` 有一个巨大的缺陷就是控制器承担的责任太大了，随着项目愈加复杂，控制器中的代码会越来越臃肿，导致出现不利于维护的情况。
 - 在 `MVVM` 架构中，引入了 `ViewModel` 的概念。`ViewModel` 只关心数据和业务的处理，不关心 `View` 如何处理数据，在这种情况下，`View`和 `Model` 都可以独立出来，任何一方改变了也不一定需要改变另一方，并且可以将一些可复用的逻辑放在一个 `ViewModel` 中，让多个 `View` 复用这个 `ViewModel`。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/28.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/28.png)
 
 - 以 `Vue` 框架来举例，`ViewModel` 就是组件的实例。`View` 就是模板，`Model` 的话在引入 `Vuex` 的情况下是完全可以和组件分离的。
 - 除了以上三个部分，其实在 `MVVM` 中还引入了一个隐式的 `Binder` 层，实现了 `View` 和 `ViewModel` 的绑定
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/29.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/29.png)
 
 - 同样以 `Vue` 框架来举例，这个隐式的 `Binder` 层就是 `Vue` 通过解析模板中的插值和指令从而实现 `View` 与 `ViewModel` 的绑定。
 - 对于 `MVVM`来说，其实最重要的并不是通过双向绑定或者其他的方式将 `View` 与 `ViewModel` 绑定起来，而是通过 `ViewModel` 将视图中的状态和用户的行为分离出一个抽象，这才是 `MVVM` 的精髓
@@ -3226,12 +3226,12 @@ if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
 
 > 在之前的版本中，如果你拥有一个很复杂的复合组件，然后改动了最上层组件的 `state`，那么调用栈可能会很长
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/30.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/30.png)
 
 - 调用栈过长，再加上中间进行了复杂的操作，就可能导致长时间阻塞主线程，带来不好的用户体验。`Fiber` 就是为了解决该问题而生
 - `Fiber` 本质上是一个虚拟的堆栈帧，新的调度器会按照优先级自由调度这些帧，从而将之前的同步渲染改成了异步渲染，在不影响体验的情况下去分段计算更新
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/31.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/31.png)
 
 - 对于如何区别优先级，`React` 有自己的一套逻辑。对于动画这种实时性很高的东西，也就是 `16 ms` 必须渲染一次保证不卡顿的情况下，`React` 会每 `16 ms`（以内） 暂停一下更新，返回来继续渲染动画
 - 对于异步渲染，现在渲染有两个阶段：`reconciliation` 和 `commit` 。前者过程是可以打断的，后者不能暂停，会一直更新界面直到完成。
@@ -3485,11 +3485,11 @@ const Test = ({ list, handleClick }) => ({
 - 对于性能监控来说，我们可以直接使用浏览器自带的 `Performance API` 来实现这个功能。
 - 对于性能监控来说，其实我们只需要调用 `performance.getEntriesByType('navigation')` 这行代码就行了。对，你没看错，一行代码我们就可以获得页面中各种详细的性能相关信息
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/32.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/32.png)
 
 > 我们可以发现这行代码返回了一个数组，内部包含了相当多的信息，从数据开始在网络中传输到页面加载完成都提供了相应的数据
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/33.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/33.png)
 
 ### 30.3 异常监控
 
@@ -3588,7 +3588,7 @@ const Test = ({ list, handleClick }) => ({
 
 > `TCP` 的状态机是很复杂的，并且与建立断开连接时的握手息息相关，接下来就来详细描述下两种握手
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/34.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/34.png)
 
 > 在这之前需要了解一个重要的性能指标 `RTT`。该指标表示发送端发送数据到接收到对端数据所需的往返时间
 
@@ -3621,7 +3621,7 @@ const Test = ({ list, handleClick }) => ({
 
 **2.2. 断开链接四次握手**
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/35.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/35.png)
 
 > ```
 > TCP` 是全双工的，在断开连接时两端都需要发送 `FIN` 和 `ACK
@@ -3686,12 +3686,12 @@ const Test = ({ list, handleClick }) => ({
 - 上面小节中讲到了发送窗口。在 `TCP` 中，两端其实都维护着窗口：分别为发送端窗口和接收端窗口。
 - 发送端窗口包含已发送但未收到应答的数据和可以发送但是未发送的数据。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/36.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/36.png)
 
 - 发送端窗口是由接收窗口剩余大小决定的。接收方会把当前接收窗口的剩余大小写入应答报文，发送端收到应答后根据该值和当前网络拥塞情况设置发送窗口的大小，所以发送窗口的大小是不断变化的。
 - 当发送端接收到应答报文后，会随之将窗口进行滑动
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/37.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/37.png)
 
 > 滑动窗口是一个很重要的概念，它帮助 TCP 实现了流量控制的功能。接收方通过报文告知发送方还可以发送多少数据，从而保证接收方能够来得及接收数据，防止出现接收方带宽已满，但是发送方还一直发送数据的情况
 
@@ -3891,7 +3891,7 @@ const Test = ({ list, handleClick }) => ({
 
 TLS 握手过程如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/38.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/38.png)
 
 - 客户端发送一个随机值以及需要的协议和加密方式。
 - 服务端收到客户端的随机值，自己也产生一个随机值，并根据客户端需求的协议和加密方式来使用对应的方式，并且发送自己的证书（如果需要验证客户端证书需要说明）
@@ -3916,21 +3916,21 @@ TLS 握手过程如下图：
 
 > 大家可以通过 [该链接 (opens new window)](https://http2.akamai.com/demo)感受下 HTTP/2 比 HTTP/1 到底快了多少
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/103.png)
+![img](https://s.poetries.top/gitee/2020/09/103.png)
 
 > 在 `HTTP/1` 中，因为队头阻塞的原因，你会发现发送请求是长这样的
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/39.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/39.png)
 
 > 在 `HTTP/2` 中，因为可以复用同一个 `TCP` 连接，你会发现发送请求是长这样的
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/40.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/40.png)
 
 ### 33.2 二进制传输
 
 > `HTTP/2` 中所有加强性能的核心点在于此。在之前的 `HTTP` 版本中，我们是通过文本的方式传输数据。在 `HTTP/2` 中引入了新的编码机制，所有传输的数据都会被分割，并采用二进制格式编码。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/41.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/41.png)
 
 ### 33.3 多路复用
 
@@ -3938,7 +3938,7 @@ TLS 握手过程如下图：
 - 帧代表着最小的数据单位，每个帧会标识出该帧属于哪个流，流也就是多个帧组成的数据流。
 - 多路复用，就是在一个 `TCP` 连接中可以存在多条流。换句话说，也就是可以发送多个请求，对端可以通过帧中的标识知道属于哪个请求。通过这个技术，可以避免 `HTTP` 旧版本中的队头阻塞问题，极大的提高传输性能。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/42.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/42.png)
 
 ### 33.4 Header 压缩
 
@@ -4215,7 +4215,7 @@ function addEvent(elm, evType, fn, useCapture) {
 - 栈是一个线性结构，在计算机中是一个相当常见的数据结构。
 - 栈的特点是只能在某一端添加或删除数据，遵循先进后出的原则
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/43.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/43.png)
 
 **实现**
 
@@ -4280,7 +4280,7 @@ var isValid = function (s) {
 
 > 队列是一个线性结构，特点是在某一端添加数据，在另一端删除数据，遵循先进先出的原则
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/44.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/44.png)
 
 **实现**
 
@@ -4387,7 +4387,7 @@ class SqQueue {
 
 > 链表是一个线性结构，同时也是一个天然的递归结构。链表结构可以充分利用计算机内存空间，实现灵活的内存动态管理。但是链表失去了数组随机读取的优点，同时链表由于增加了结点的指针域，空间开销比较大。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/46.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/46.png)
 
 **实现**
 
@@ -4471,14 +4471,14 @@ class LinkList {
 - 树拥有很多种结构，二叉树是树中最常用的结构，同时也是一个天然的递归结构。
 - 二叉树拥有一个根节点，每个节点至多拥有两个子节点，分别为：左节点和右节点。树的最底部节点称之为叶节点，当一颗树的叶数量数量为满时，该树可以称之为满二叉树。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/47.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/47.png)
 
 **二分搜索树**
 
 - 二分搜索树也是二叉树，拥有二叉树的特性。但是区别在于二分搜索树每个节点的值都比他的左子树的值大，比右子树的值小。
 - 这种存储方式很适合于数据搜索。如下图所示，当需要查找 6 的时候，因为需要查找的值比根节点的值大，所以只需要在根节点的右子树上寻找，大大提高了搜索效率。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/48.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/48.png)
 
 **实现**
 
@@ -4752,7 +4752,7 @@ _delect(node, v) {
 - 因为 `AVL` 树是改进了二分搜索树，所以部分代码是于二分搜索树重复的，对于重复内容不作再次解析。
 - 对于 AVL 树来说，添加节点会有四种情况
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/49.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/49.png)
 
 - 对于左左情况来说，新增加的节点位于节点 `2` 的左侧，这时树已经不平衡，需要旋转。因为搜索树的特性，节点比左节点大，比右节点小，所以旋转以后也要实现这个特性。
 - 旋转之前：`new < 2 < C < 3 < B < 5 < A`，右旋之后节点 `3` 为根节点，这时候需要将节点 3 的右节点加到节点 5 的左边，最后还需要更新节点的高度。
@@ -4888,7 +4888,7 @@ class AVL {
 - 节点不存储字符，只有路径才存储，这点和其他的树结构不同
 - 从根节点开始到任意一个节点，将沿途经过的字符连接起来就是该节点对应的字符串
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/50.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/50.png)
 
 **实现**
 
@@ -4970,7 +4970,7 @@ class Trie {
 - `Find`：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。
 - `Union`：将两个子集合并成同一个集合。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/51.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/51.png)
 
 **实现**
 
@@ -5042,7 +5042,7 @@ class DisjointSet {
 - `shiftUp` 的核心思路是一路将节点与父节点对比大小，如果比父节点大，就和父节点交换位置。
 - `shiftDown` 的核心思路是先将根节点和末尾交换位置，然后移除末尾元素。接下来循环判断父节点和两个子节点的大小，如果子节点大，就把最大的子节点和父节点交换。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/fe/52.png)
+![img](https://s.poetries.top/gitee/2020/07/fe/52.png)
 
 ```js
 class MaxHeap {
@@ -5204,7 +5204,7 @@ function swap(array, left, right) {
 
 > 冒泡排序的原理如下，从第一个元素开始，把当前元素和下一个索引元素进行比较。如果当前元素大，那么就交换位置，重复操作直到比较到最后一个元素，那么此时最后一个元素就是该数组中最大的数。下一轮重复以上操作，但是此时最后一个元素已经是最大数了，所以不需要再比较最后一个元素，只需要比较到 `length - 1` 的位置。
 
-![img](https://user-gold-cdn.xitu.io/2018/4/12/162b895b452b306c) ![img](https://poetries1.gitee.io/img-repo/2020/09/104.png)
+![img](https://user-gold-cdn.xitu.io/2018/4/12/162b895b452b306c) ![img](https://s.poetries.top/gitee/2020/09/104.png)
 
 以下是实现该算法的代码
 

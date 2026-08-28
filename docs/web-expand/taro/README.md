@@ -17,7 +17,7 @@ taro -V
 $ taro init myApp
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/92.png)
+![img](https://s.poetries.top/gitee/2020/09/92.png)
 
 #### 1.2.1 微信小程序
 
@@ -106,7 +106,7 @@ $ taro update project
 - 设置关闭上传代码时样式自动补全
 - 设置关闭代码压缩上传
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/239.png)
+![img](https://s.poetries.top/gitee/2020/09/239.png)
 
 ### 2.2 Taro 与 React 的差异
 
@@ -360,13 +360,13 @@ class App extends Component {
 
 请遵守以上规则，否则编译后的代码在微信小程序中会报以下错误
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/240.png)
+![img](https://s.poetries.top/gitee/2020/09/240.png)
 
 ### 2.4 推荐安装 ESLint 编辑器插件
 
 > Taro 有些写法跟 React 有些差异，可以通过安装 ESLint 相关的编辑器插件来获得人性化的提示。由于不同编辑器安装的插件有所不同，具体安装方法请自行搜索，这里不再赘述。 如下图，就是安装插件后获得的提示
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/241.png) ![img](https://poetries1.gitee.io/img-repo/2020/09/242.png)
+![img](https://s.poetries.top/gitee/2020/09/241.png) ![img](https://s.poetries.top/gitee/2020/09/242.png)
 
 **组件传递函数属性名以 on 开头**
 
@@ -494,7 +494,7 @@ class Index extends Component {
 
 > 在 Taro 中采用的是编译原理的思想，所谓编译原理，就是一个对输入的源代码进行语法分析，语法树构建，随后对语法树进行转换操作再解析生成目标代码的过程。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/243.png)
+![img](https://s.poetries.top/gitee/2020/09/243.png)
 
 ### 3.1 抹平多端差异
 
@@ -502,12 +502,12 @@ class Index extends Component {
 
 以小程序和 Web 端为例
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/244.png) ![img](https://poetries1.gitee.io/img-repo/2020/09/245.png)
+![img](https://s.poetries.top/gitee/2020/09/244.png) ![img](https://s.poetries.top/gitee/2020/09/245.png)
 
 - 可以看出小程序和 Web 端上组件标准与 API 标准有很大差异，这些差异仅仅通过代码编译手段是无法抹平的，例如你不能直接在编译时将小程序的 `<view />` 直接编译成 `<div />`，因为他们虽然看上去有些类似，但是他们的组件属性有很大不同的，仅仅依靠代码编译，无法做到一致，同理，众多 `API` 也面临一样的情况。针对这样的情况，`Taro` 采用了定制一套运行时标准来抹平不同平台之间的差异。
 - 这一套标准主要以三个部分组成，包括标准运行时框架、标准基础组件库、标准端能力 API，其中运行时框架和 API 对应 `@taro/taro`，组件库对应 `@tarojs/components`，通过在不同端实现这些标准，从而达到去差异化的目的...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/245.png) ![img](https://poetries1.gitee.io/img-repo/2020/09/246.png)
+![img](https://s.poetries.top/gitee/2020/09/245.png) ![img](https://s.poetries.top/gitee/2020/09/246.png)
 
 ## 四、CLI 原理及不同端的运行机制
 
@@ -642,7 +642,7 @@ class Index extends Component {
 
 ### 4.3 Taro Init
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/247.png)
+![img](https://s.poetries.top/gitee/2020/09/247.png)
 
 > 当我们全局安装 `taro-cli` 包之后，我们的命令行里就有了 Taro 命令
 
@@ -763,7 +763,7 @@ this.fs.copyTpl(
 
 > Taro 的核心部分就是将代码编译成其他端（H5、小程序、React Native 等）代码。一般来说，将一种结构化语言的代码编译成另一种类似的结构化语言的代码包括以下几个步骤
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/248.png)
+![img](https://s.poetries.top/gitee/2020/09/248.png)
 
 首先是 `Parse`，将代码解析（`Parse`）成抽象语法树（Abstract Syntex Tree），然后对 `AST`进行遍历（`traverse`）和替换(`replace`)（这对于前端来说其实并不陌生，可以类比 `DOM` 树的操作），最后是生成（`generate`），根据新的 `AST` 生成编译后的代码...
 
@@ -842,7 +842,7 @@ function traverseObjectNode(node, obj) {
 
 H5 端使用官方提供的 WEUI 进行适配，React Native 端则在组件内添加样式，并通过脚本来控制一些状态类的样式，框架核心在编译的时候把源代码的 class 所指向的样式通过 css-to-react-native 进行转译，所得 StyleSheet 样式传入组件的 style 参数，组件内部会对样式进行二次处理，得到最终的样式...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/248.png)
+![img](https://s.poetries.top/gitee/2020/09/248.png)
 
 **为什么需要对样式进行二次处理？**
 
@@ -935,7 +935,7 @@ babylon.parse(code);...
 
 最终 `Babylon` 会解析成这样的数据结构：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/250.png)
+![img](https://s.poetries.top/gitee/2020/09/250.png)
 
 > 你也可以使用 [ASTExploroer (opens new window)](https://astexplorer.net/)快速地查看代码的 `AST`
 
@@ -1031,7 +1031,7 @@ class Home extends Component {
 - Taro 的结构主要分两个方面：运行时和编译时。运行时负责把编译后到代码运行在本不能运行的对应环境中，你可以把 Taro 运行时理解为前端开发当中 `polyfill`。举例来说，小程序新建一个页面是使用 `Page` 方法传入一个字面量对象，并不支持使用类。如果全部依赖编译时的话，那么我们要做到事情大概就是把类转化成对象，把 `state` 变为 `data`，把生命周期例如 componentDidMount 转化成 `onReady`，把事件由可能的类函数（`Class method`）和类属性函数(`Class property function`) 转化成字面量对象方法（Object `property function`）等等。
 - 但这显然会让我们的编译时工作变得非常繁重，在一个类异常复杂时出错的概率也会变高。但我们有更好的办法：实现一个 `createPage` 方法，接受一个类作为参数，返回一个小程序 `Page` 方法所需要的字面量对象。这样不仅简化了编译时的工作，我们还可以在 `createPage` 对编译时产出的类做各种操作和优化。通过运行时把工作分离了之后，再编译时我们只需要在文件底部加上一行代码 `Page(createPage(componentName))` 即可...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/251.png)
+![img](https://s.poetries.top/gitee/2020/09/251.png)
 
 - 回到一开始那段代码，我们定义了一个类属性 `config`，`config` 是一个对象表达式（Object Expression），这个对象表达式只接受键值为标识符（Identifier）或字符串，而键名只能是基本类型。这样简单的情况我们只需要把这个对象表达式转换为 `JSON` 即可。另外一个类属性 `state` 在 `Page` 当中有点像是小程序的 `data`，但它在多数情况不是完整的 `data`。这里我们不用做过多的操作，`babel`的插件 `transform-class-proerties` 会把它编译到类的构造器中。函数 `handleClick` 我们交给运行时处理，有兴趣的同学可以跳到 Taro 运行时原理查看具体技术细节。
 - 再来看我们的 `render()`函数，它的第一行代码通过 `filter` 把数字数组的所有偶数项都过滤掉，真正用来循环的是 `oddNumbers`，而 `oddNumbers` 并没有在 `this.state` 中，所以我们必须手动把它加入到 `this.state`。和 `React 一样，Taro 每次更新都会调用 render 函数，但和 React 不同的是，React 的 render` 是一个创建虚拟 DOM 的方法，而 Taro 的 render 会被重命名为 `_createData`，它是一个创建数据的方法：在 `JSX` 使用过的数据都在这里被创建最后放到小程序 `Page` 或 `Component` 工厂方法中的 `data`。最终我们的 `render` 方法会被编译为...
@@ -1218,13 +1218,13 @@ var $anonymousCallee__1 = this.state.list.map(function (item) {
 
 > 初始化过程里的生命周期对应很简单，在小程序的生命周期回调函数里调用 Taro 组件里对应的生命周期函数即可，例如：小程序组件 `ready` 的回调函数里会调用 Taro 组件的 `componentDidMount` 方法。它们的执行过程和对应关系如下图...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/252.png)
+![img](https://s.poetries.top/gitee/2020/09/252.png)
 
 > 小程序页面的`componentWillMount` 有一点特殊，会有两种初始化方式。由于小程序的页面需要等到 `onLoad` 之后才可以获取到页面的路由参数，因此如果是启动页面，会等到 `onLoad` 时才会触发。而对于小程序内部通过 `navigateTo`等 API 跳转的页面，Taro 做了一个兼容，调用 `navigateTo` 时将页面参数存储在一个全局对象中，在页面 `attached` 的时候从全局对象里取到，这样就不用等到页面 `onLoad` 即可获取到路由参数，触发 `componentWillMount`生命周期...
 
 **状态更新**
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/253.png)
+![img](https://s.poetries.top/gitee/2020/09/253.png)
 
 - Taro 组件的 `setState` 行为最终会对应到小程序的`setData`。Taro 引入了如 `nextTick` ，编译时识别模板中用到的数据，在 setData 前进行数据差异比较等方式来提高 `setState`的性能。
 - 如上图，组件调用 `setState` 方法之后，并不会立刻执行组件更新逻辑，而是会将最新的 `state` 暂存入一个数组中，等 `nextTick` 回调时才会计算最新的 `state` 进行组件更新。这样即使连续多次的调用`setState` 并不会触发多次的视图更新。在小程序中 `nextTick` 是这么实现的...
@@ -1332,13 +1332,13 @@ Taro.getStorage({
 
 使用Taro之后，我们书写的是类似于下图的代码...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/254.png)
+![img](https://s.poetries.top/gitee/2020/09/254.png)
 
 > 我们注意到，就算是转换过的代码，也依然存在着`view`、`button`等在 `Web` 开发中并不存在的组件。如何在 `Web` 端正常使用这些组件？这是我们碰到的第一个问题
 
 #### 8.1.1 组件实现
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/255.png)
+![img](https://s.poetries.top/gitee/2020/09/255.png)
 
 作为开发者，你第一反应或许会尝试在编译阶段下功夫，尝试直接使用效果类似的 Web 组件替代：用`div`替代`view`，用`img`替代`image`，以此类推。
 
@@ -1348,7 +1348,7 @@ Taro.getStorage({
 
 我们不妨去`babel`的 `playground` 看一看代码在转译前后的对比：在使用了`@babel/preset-env`的`BUILT-INS`之后，简单的一句源码`new Map()`，在`babel`编译后却变成了好几行代码...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/256.png)
+![img](https://s.poetries.top/gitee/2020/09/256.png)
 
 注意看这几个文件：`core-js/modules/web.dom.iterable`，`core-js/modules/es6.array.iterator`，`core-js/modules/es6.map`。我们可以在`core-js`的 `Git` 仓库找到他们的真身。很明显，这几个模块就是对应的 es 特性运行时的实现。
 
@@ -1400,7 +1400,7 @@ render() {
 
 > 除了组件，小程序下有一些 API 也是 Web 开发中所不具备的。比如小程序框架内置的`wx.request/wx.getStorage`等 API；但在 Web 开发中，我们使用的是`fetch/localStorage`等内置的函数或者对象
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/257.png)
+![img](https://s.poetries.top/gitee/2020/09/257.png)
 
 小程序的 API 实现是个巨大的黑盒，我们仅仅知道如何使用它，使用它会得到什么结果，但对它内部的实现一无所知。
 
@@ -1482,7 +1482,7 @@ function setStorage({ key, value, success, fail, complete }) {
 - 具体到`Taro`，为了保持跟小程序的行为一致，我们不需要细致到组件级别的路由方案，但需要为每次路由保存完整的页面栈。
 - 实现形式上，我们参考`react-router`：监听页面路径变化，再触发`UI` 更新。这是`React`的精髓之一，单向数据流...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/258.png)
+![img](https://s.poetries.top/gitee/2020/09/258.png)
 
 > `@tarojs/router`包中包含了一个轻量的`history`实现。`history`中维护了一个栈，用来记录页面历史的变化。对历史记录的监听，依赖两个事件：`hashchange`和`popstate`。
 

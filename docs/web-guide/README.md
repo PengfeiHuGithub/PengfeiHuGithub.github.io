@@ -1105,7 +1105,7 @@ history.forward()
 - 但是浏览器要把这个文档中的 HTML 按照标准渲染成一个页面，此时浏览器就需要将这堆代码处理成自己能理解的东西，也得处理成 JS 能理解的东西，因为还得允许 JS 修改页面内容呢。
 - 基于以上需求，浏览器就需要把 HTML 转变成 `DOM`，HTML 是一棵树，DOM 也是一棵树。对 DOM 的理解，可以暂时先抛开浏览器的内部因素，先从 JS 着手，即可以认为 `DOM` 就是 `JS` 能识别的 `HTML` 结构，一个普通的 JS 对象或者数组。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/1.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/1.png)
 
 **2. 获取 DOM 节点**
 
@@ -1584,7 +1584,7 @@ response.setHeader("Access-Control-Allow-Credentials", "true");
 
 > 初学 CSS 的朋友，一开始学 CSS 基础知识的时候一定学过`padding` `border`和`margin`，即内边距、边框和外边距。它们三者就构成了一个“盒子”。就像我们收到的快递，本来买了一部小小的手机，收到的却是那么大一个盒子。因为手机白色的包装盒和手机机器之间有间隔层（内边距），手机白色盒子有厚度，虽然很薄（边框），盒子和快递箱子之间还有一层泡沫板（外边距）。这就是一个典型的盒子。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/2.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/2.png)
 
 如上图，真正的内容就是这些文字，文字外围有 10px 的内边距，5px 的边框，10px 的外边距。看到盒子了吧？
 
@@ -1598,7 +1598,7 @@ response.setHeader("Access-Control-Allow-Credentials", "true");
 </div>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/3.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/3.png)
 
 如上图，得到网页效果之后，我们可以用截图工具来量一下文字内容的宽度。发现，文字内容的宽度刚好是 300px，也就是我们设置的宽度。
 
@@ -1619,7 +1619,7 @@ response.setHeader("Access-Control-Allow-Credentials", "true");
 </div>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/4.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/4.png)
 
 - 但是别忘记，这个 div 是个盒子模型，它的整个宽度包括（内容宽度 + `border`宽度 + `padding`宽度 + `margin`宽度），整个的宽度充满父容器。
 - 问题就在这里。如果父容器宽度不变，我们手动增大`margin`、`border`或`padding`其中一项的宽度值，都会导致内容宽度的减少。极端情况下，如果内容的宽度压缩到不能再压缩了（例如一个字的宽度），那么浏览器会强迫增加父容器的宽度。这可不是我们想要看到的。
@@ -1634,7 +1634,7 @@ response.setHeader("Access-Control-Allow-Credentials", "true");
 </div>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/5.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/5.png)
 
 **5. `box-sizing:border-box`**
 
@@ -1646,7 +1646,7 @@ response.setHeader("Access-Control-Allow-Credentials", "true");
 </div>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/6.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/6.png)
 
 > 上图中，为`div`设置了`box-sizing:border-box`之后，300px 的**宽度是内容 + `padding` + 边框的宽度（不包括`margin`）**，这样就比较符合我们的实际要求了。建议大家在为系统写 CSS 时候，第一个样式是：
 
@@ -1683,7 +1683,7 @@ float 被设计出来的初衷是用于**文字环绕效果**，即一个图片�
 
 **2. 破坏性**
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/7.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/7.png)
 
 > `float` 的**破坏性** —— float 破坏了父标签的原本结构，使得父标签出现了坍塌现象。导致这一现象的最根本原因在于：**被设置了 float 的元素会脱离文档流**。其根本原因在于 float 的设计初衷是解决文字环绕图片的问题。大家要记住 float 的这个影响。
 
@@ -1691,7 +1691,7 @@ float 被设计出来的初衷是用于**文字环绕效果**，即一个图片�
 
 **包裹性**也是 `float` 的一个非常重要的特性，大家用 `float` 时一定要熟知这一特性。咱们还是先从一个小例子看起：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/8.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/8.png)
 
 > 如上图，普通的 div 如果没有设置宽度，它会撑满整个屏幕，在之前的盒子模型那一节也讲到过。而如果给 div 增加`float:left`之后，它突然变得紧凑了，宽度发生了变化，把内容中的三个字包裹了——这就是包裹性。为 div 设置了 float 之后，其宽度会自动调整为包裹住内容宽度，而不是撑满整个父容器。
 
@@ -1711,11 +1711,11 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 </div>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/9.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/9.png)
 
 > 加上`float:left`之后：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/10.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/10.png)
 
 - 上面第一张图中，正常的 img 中间是会有空格的，因为多个 img 标签会有换行，而浏览器识别换行为空格，这也是很正常的。第二张图中，为 img 增加了`float:left`的样式，这就使得 img 之间没有了空格，4 个 img 紧紧挨着。
 - 如果大家之前没注意，现在想想之前写过的程序，是不是有这个特性。为什么 float 适合用于网页排版（俗称“砌砖头”）？就是因为 float 排版出来的网页严丝合缝，中间连个苍蝇都飞不进去。
@@ -1763,7 +1763,7 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 <p>第四段文字</p>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/11.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/11.png)
 
 > 然后我们在第三个`<p>`上面，加上`position:relative`并且设置`left`和`top`值，看这个`<p>`有什么变化。
 
@@ -1774,7 +1774,7 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 <p>第四段文字</p>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/12.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/12.png)
 
 > 上图中，大家应该要识别出两个信息（相信大部分人会忽略第二个信息）
 
@@ -1783,7 +1783,7 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 
 > 可见，**relative 会导致自身位置的相对变化，而不会影响其他元素的位置、大小**。这是 relative 的要点之一。还有第二个要点，就是 relative 产生一个新的定位上下文。下文有关于定位上下文的详细介绍，这里可以先通过一个例子来展示一下区别：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/13.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/13.png)
 
 注意看这两图的区别，下文将有解释。
 
@@ -1798,11 +1798,11 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 <p>第四段文字</p>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/14.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/14.png)
 
 > 然后，我们把第三个`<p>`改为`position:absolute;`，看看会发生什么变化。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/15.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/15.png)
 
 **从上面的结果中，我们能看出几点信息：**
 
@@ -1823,15 +1823,15 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 
 > `relative` 元素的定位永远是相对于元素自身位置的，和其他元素没关系，也不会影响其他元素。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/16.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/16.png)
 
 > `fixed` 元素的定位是相对于 `window` （或者 `iframe`）边界的，和其他元素没有关系。但是它具有破坏性，会导致其他元素位置的变化。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/17.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/17.png)
 
 > `absolute` 的定位相对于前两者要复杂许多。如果为 `absolute` 设置了 `top`、`left`，浏览器会根据什么去确定它的纵向和横向的偏移量呢？答案是浏览器会递归查找该元素的所有父元素，如果找到一个设置了`position:relative/absolute/fixed`的元素，就以该元素为基准定位，如果没找到，就以浏览器边界定位。如下两个图所示：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/18.png) ![img](https://poetries1.gitee.io/img-repo/2020/07/guide/19.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/18.png) ![img](https://s.poetries.top/gitee/2020/07/guide/19.png)
 
 ### flex布局
 
@@ -1860,7 +1860,7 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 </div>
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/20.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/20.png)
 
 注意，第三个`<div>`的`flex: 2`，其他的`<div>`的`flex: 1`，这样第二个`<div>`的宽度就是其他的`<div>`的两倍。
 
@@ -1868,7 +1868,7 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 
 > 设置了`display: flex`的元素，我们称为“容器”（flex container），其所有的子节点我们称为“成员”（flex item）。容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做 main start，结束位置叫做 main end；交叉轴的开始位置叫做 cross start，结束位置叫做cross end。项目默认沿主轴排列。单个项目占据的主轴空间叫做 main size，占据的交叉轴空间叫做 cross size。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/21.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/21.png)
 
 将以上文字和图片结合起来，再详细看一遍，这样就能理解 flex 的设计原理，才能更好地实际使用。
 
@@ -1889,7 +1889,7 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 
 以上代码设置的主轴方向，将依次对应下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/22.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/22.png)
 
 **4. 设置主轴的对齐方式**
 
@@ -1907,7 +1907,7 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 }
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/23.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/23.png)
 
 **5. 交叉轴的对齐方式**
 
@@ -1925,7 +1925,7 @@ float 还有一个大家可能不是很熟悉的特性——清空格。按照�
 }
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/24.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/24.png)
 
 ### 如何实现居中对齐？
 
@@ -2649,7 +2649,7 @@ console.log(reg.test(str), reg.lastIndex)
 
 `server` 端接收到 `HTTP` 请求，然后经过计算（向不同的用户推送不同的内容），返回 HTTP 请求，返回的内容如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/25.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/25.png)
 
 > 其实就是一堆 HMTL 格式的字符串，因为只有 HTML 格式浏览器才能正确解析，这是 W3C 标准的要求。接下来就是浏览器的渲染过程。
 
@@ -3119,7 +3119,7 @@ webpack.config.js
 - 接下来，将安装好 Charles 的电脑和要抓包的手机，连接到同一个网络（一般为公司统一提供的内网，由专业网络工程师搭建），保证 IP 段相同。然后，将手机设置网络代理（每种不同手机如何设置网络代理，网上都有傻瓜式教程），代理的 IP 为电脑的 IP，代理的端口为`8888`。然后，Charles 可能会有一个弹框提示是否允许连接代理，这里选择“允许”即可。这样，使用手机端访问的网页或者联网的请求，Charles 就能监听到了。
 - 在开发过程中，经常用到抓包工具来做代理，将线上的地址代理到测试环境，Charles 和 Fiddler 都可实现这个功能。以 Charles 为例，点击菜单栏中 Tools 菜单，然后二级菜单中点击 Map Remote，会弹出配置框。首先，选中 Enable Map Remote 复选框，然后点击 Add 按钮，添加一个代理项。例如，如果要将线上的`https://www.aaa.com/api/getuser?name=xxx`这个地址代理到测试地址`http://168.1.1.100:8080/api/getuser?name=xxx`，配置如下图
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/guide/26.png)
+![img](https://s.poetries.top/gitee/2020/07/guide/26.png)
 
 ### 小结
 

@@ -1039,7 +1039,7 @@ function func1(...rest, a){ /* ... */}
 
 > JavaScript 是一种灵活的语言，兼容并包含面向对象风格、函数式风格等编程风格。我们知道面向对象风格有三大特性和六大原则，三大特性是封装、继承、多态，六大原则是单一职责原则（SRP）、开放封闭原则（OCP）、里氏替换原则（LSP）、依赖倒置原则（DIP）、接口分离原则（ISP）、最少知识原则（LKP）。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/79.png)
+![img](https://s.poetries.top/gitee/2020/07/79.png)
 
 > `JavaScript` 并不是强面向对象语言，因此它的灵活性决定了并不是所有面向对象的特征都适合 JavaScript 开发，本教程将会着重介绍三大特性中的继承，和六大原则里的单一职责原则、开放封闭原则、最少知识原则
 
@@ -1094,7 +1094,7 @@ console.log(square.__proto__ === rectangle)                       // true
 console.log(square.__proto__.__proto__ === Object.prototype)      // true
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/80.png)
+![img](https://s.poetries.top/gitee/2020/07/80.png)
 
 - 对象 `square` 继承自对象 `rectangle`，也就继承了 `rectangle` 的 `sizeType` 属性和 `getSize()` 方法，又通过重写 `sizeType` 属性定义了一个自有属性，隐藏并替代了原型对象中的同名属性。所以 `rectangle.getSize()` 输出 「四边形」 而 `square.getSize()` 输出 「正方形」。
 - 在访问一个对象的时候，JavaScript 引擎会执行一个搜索过程，如果在对象实例上发现该属性，该属性值就会被使用，如果没有发现则搜索其原型对象 `[[Prototype]]`，如果仍然没有发现，则继续搜索该原型对象的原型对象 `[[Prototype]]`，直到继承链顶端，顶端通常是一个 `Object.prototype`，其 `[[prototype]]` 为 `null`。这就是原型链的查找过程。
@@ -1161,7 +1161,7 @@ rect.getSize()       // Rectangle: 5x10，面积: 50
 squa.getSize()       // Square: 6x6，面积: 36
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/81.png)
+![img](https://s.poetries.top/gitee/2020/07/81.png)
 
 - 为什么使用 `Square.prototype = new Rectangle()` 而不用 `Square.prototype = Rectangle.prototype` 呢。这是因为后者使得两个构造函数的 `prototype` 指向了同一个对象，当修改其中一个函数的 prototype 时，另一个函数也会受影响。
 - 所以 `Square` 构造函数的 `prototype` 属性被改写为了 `Rectagle` 的一个实例。
@@ -1514,7 +1514,7 @@ console.log(schedule1 === schedule2)	// true
 
 结构大概如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/82.png)
+![img](https://s.poetries.top/gitee/2020/07/82.png)
 
 下面使用通用的方法来实现一下。
 
@@ -1970,7 +1970,7 @@ const dish2 = restaurant.getMenu('HongSaoPaiGu')	// 输出: Error 这个菜本�
 
 结构大概如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/83.png)
+![img](https://s.poetries.top/gitee/2020/07/83.png)
 
 下面用通用的方法实现，这里直接用 class 语法：
 
@@ -2377,7 +2377,7 @@ const dish2 = restaurant.createDish('红烧排骨')  // 输出: Error 本店没�
 
 概略图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/84.png)
+![img](https://s.poetries.top/gitee/2020/07/84.png)
 
 下面是通用的实现，原型方式略过：
 
@@ -2718,7 +2718,7 @@ console.log(benchi1)
 
 概略图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/85.png)
+![img](https://s.poetries.top/gitee/2020/07/85.png)
 
 下面是通用的实现。
 
@@ -3071,7 +3071,7 @@ ProxyAssistant.playAdvertisement(1000001, '纯蒸酸牛奶，味道纯纯，尽�
 
 概略图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/86.png)
+![img](https://s.poetries.top/gitee/2020/07/86.png)
 
 > ES6 原生提供了 `Proxy` 构造函数，这个构造函数让我们可以很方便地创建代理对象：
 
@@ -3224,7 +3224,7 @@ ProxyAssistant.playAdvertisement(1000001, '纯蒸酸牛奶，味道纯纯，尽�
 
 > 一个很大的图片加载前，一般使用菊花图、低质量图片等提前占位，优化图片加载导致白屏的情况； 现在很流行的页面加载前使用骨架屏来提前占位，很多 `WebApp` 和 `NativeApp` 都采用这种方式来优化用户白屏体验
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/88.png)
+![img](https://s.poetries.top/gitee/2020/07/88.png)
 
 **4.5 正向代理与反向代理**
 
@@ -3235,7 +3235,7 @@ ProxyAssistant.playAdvertisement(1000001, '纯蒸酸牛奶，味道纯纯，尽�
 
 > 反向代理一般在处理跨域请求的时候比较常用，属于服务端开发人员的日常操作了，另外在缓存服务器、负载均衡服务器等等场景也是使用到代理模式的思想。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/90.png)
+![img](https://s.poetries.top/gitee/2020/07/90.png)
 
 **5. 代理模式的优缺点**
 
@@ -3351,7 +3351,7 @@ console.log('驾考车总数 - ' + examCarNum)
 
 主要的原理可以参看下面的示意图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/91.png)
+![img](https://s.poetries.top/gitee/2020/07/91.png)
 
 - 享元模式的主要思想是细粒度对象的共享和复用，因此对之前的驾考例子，我们可以继续改进一下：
 - 如果某考生正在使用一辆驾考车，那么这辆驾考车的状态就是被占用，其他考生只能选择剩下未被占用状态的驾考车；
@@ -3428,7 +3428,7 @@ ManualExamCarPool.registCandidates([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])  // 10个考
 
 在浏览器中运行下试试：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/92.gif)
+![img](https://s.poetries.top/gitee/2020/07/92.gif)
 
 > 可以看到一个驾考的过程被模拟出来了，这里只简单实现了手动档，自动档驾考场景同理，就不进行实现了。上面的实现还可以进一步优化，比如考生多的时候自动新建驾考车，考生少的时候逐渐减少驾考车，但又不能无限新建驾考车对象，这些情况读者可以自行发挥～
 
@@ -3448,7 +3448,7 @@ ManualExamCarPool.registCandidates([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])  // 10个考
 
 > 线程池在整个 `Node.js` 事件循环中的位置可以参照下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/93.png)
+![img](https://s.poetries.top/gitee/2020/07/93.png)
 
 上面这个图就是 Node.js 的事件循环（Event Loop）机制，简单解读一下（扩展视野，不一定需要懂）：
 
@@ -3463,7 +3463,7 @@ ManualExamCarPool.registCandidates([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])  // 10个考
 
 缓存服务器就是缓存的最常见应用之一，也是复用资源的一种常用手段。缓存服务器的示意图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/94.png)
+![img](https://s.poetries.top/gitee/2020/07/94.png)
 
 - 缓存服务器位于访问者与业务服务器之间，对业务服务器来说，减轻了压力，减小了负载，提高了数据查询的性能。对用户来说，提升了网页打开速度，优化了体验。
 - 缓存技术用的非常多，不仅仅用在缓存服务器上，浏览器本地也有缓存，查询的 DNS 也有缓存，包括我们的电脑 CPU 上，也有缓存硬件。
@@ -3633,7 +3633,7 @@ japanPlugAdapter(japanPlug).chinaInPlug()
 
 适配器模式的原理大概如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/95.png)
+![img](https://s.poetries.top/gitee/2020/07/95.png)
 
 > 访问者需要目标对象的某个功能，但是这个对象的接口不是自己期望的，那么通过适配器模式对现有对象的接口进行包装，来获得自己需要的接口格式。
 
@@ -3996,7 +3996,7 @@ originHouse.getDesc()
 
 装饰者模式的原理如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/96.png)
+![img](https://s.poetries.top/gitee/2020/07/96.png)
 
 > 可以从上图看出，在表现形式上，装饰者模式和适配器模式比较类似，都属于包装模式。在装饰者模式中，一个对象被另一个对象包装起来，形成一条包装链，并增加了原先对象的功能。
 
@@ -4217,7 +4217,7 @@ for (let key in new Greeter('Jim')) {
 
 无人机系统的模块图大概如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/97.png)
+![img](https://s.poetries.top/gitee/2020/07/97.png)
 
 可以看到无人机系统还是比较复杂的，系统内模块众多，如果用户需要对每个模块的作用都了解的话，那就太麻烦了，有了遥控器之后，使用者只要操作摇杆，发出前进、后退等等的命令，无人机系统接受到信号之后会经过算法把计算后的指令发送到电调，控制对应电机以不同转速带动桨叶，给无人机提供所需的扭矩和升力，从而实现目标运动。
 
@@ -4335,7 +4335,7 @@ uav.controller.left()    // 发送左转指令
 
 概略图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/98.png)
+![img](https://s.poetries.top/gitee/2020/07/98.png)
 
 > 注意：外观模式一般是作为子系统的功能出口出现，使用的时候可以在其中增加新的功能，但是不推介这样做，因为外观应该是对已有功能的包装，不应在其中掺杂新的功能。
 
@@ -4864,7 +4864,7 @@ foldMovies.scan(item => {
 
 组合模式的示意图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/99.png)
+![img](https://s.poetries.top/gitee/2020/07/99.png)
 
 **4. 实战中的组合模式**
 
@@ -5215,7 +5215,7 @@ bagB.show()
 
 概略图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/100.png)
+![img](https://s.poetries.top/gitee/2020/07/100.png)
 
 **4. 实战中的桥接模式**
 
@@ -5345,7 +5345,7 @@ btn.addEventListener('mouseup', function() {
 
 adadis 售货员这个例子的各方关系大概如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/101.png)
+![img](https://s.poetries.top/gitee/2020/07/101.png)
 
 在这样的逻辑中，有以下几个特点：
 
@@ -5524,7 +5524,7 @@ adadisPub.notify('运动鞋')    // 打电话通知买家运动鞋到货了
 
 现在的结构如下图
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/102.png)
+![img](https://s.poetries.top/gitee/2020/07/102.png)
 
 下面使用通用化的方法实现一下。
 
@@ -5691,7 +5691,7 @@ EventBus.$emit("myevent", 'some args')
 
 > 发布-订阅模式在源码中应用很多，特别是现在很多前端框架都会有的双向绑定机制的场景，这里以现在很火的 `Vue` 为例，来分析一下 `Vue` 是如何利用发布-订阅模式来实现视图层和数据层的双向绑定。先借用官网的双向绑定原理图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/103.png)
+![img](https://s.poetries.top/gitee/2020/07/103.png)
 
 下面稍微解释一下这个图（框架源码整个过程比较复杂，如果现在看不懂下面几段也没关系，大致了解一下即可）。
 
@@ -5746,7 +5746,7 @@ Object.defineProperty(obj, key, {
 
 观察者模式与发布-订阅者模式，在平时你可以认为他们是一个东西，但是某些场合（比如面试）下可能需要稍加注意，借用网上一张流行的图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/104.png)
+![img](https://s.poetries.top/gitee/2020/07/104.png)
 
 区别主要在发布-订阅模式中间的这个 Event Channel：
 
@@ -5888,7 +5888,7 @@ PriceCalculate.priceClac('minus150_40', 270)	// 输出: 230
 
 结构图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/105.png)
+![img](https://s.poetries.top/gitee/2020/07/105.png)
 
 下面使用通用化的方法实现一下。
 
@@ -5979,7 +5979,7 @@ export default strategyContext
 
 运行结果如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/106.png)
+![img](https://s.poetries.top/gitee/2020/07/106.png)
 
 **4.2 表单验证**
 
@@ -6079,7 +6079,7 @@ export const formValidateGene = (key, msg) => (rule, value, cb) => {
 
 运行结果：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/107.png)
+![img](https://s.poetries.top/gitee/2020/07/107.png)
 
 **5. 策略模式的优缺点**
 
@@ -6125,7 +6125,7 @@ export const formValidateGene = (key, msg) => (rule, value, cb) => {
 - 绿灯亮：行人等待，车辆通行；
 - 黄灯亮：行人等待，车辆等待；
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/108.png)
+![img](https://s.poetries.top/gitee/2020/07/108.png)
 
 > 还有下载文件的时候，就有好几个状态，比如下载验证、下载中、暂停下载、下载完毕、失败，文件在不同状态下表现的行为也不一样，比如下载中时显示可以暂停下载和下载进度，下载失败时弹框提示并询问是否重新下载等等。类似的场景还有很多，比如电灯的开关状态、电梯的运行状态等，女生作为你的朋友、好朋友、女朋友、老婆等不同状态的时候，行为也不同 。
 
@@ -6490,7 +6490,7 @@ trafficLight.employ(blueState)    // 输出： 交通灯颜色变为 蓝色，�
 - 最后加一些调味料（咖啡伴侣、枸杞、糖）
 - 无论冲饮的是咖啡、茶、牛奶，他们的制作过程都类似，可以被总结为这几个流程。也就是说这个流程是存在着类似的流程结构的，这就给我们留下了将操作流程抽象封装出来的余地。
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/109.png)
+![img](https://s.poetries.top/gitee/2020/07/109.png)
 
 再举个栗子，做菜的过程也可以被总结为固定的几个步骤：
 
@@ -7823,7 +7823,7 @@ zhangSan
 
 事件冒泡示意图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/112.png)
+![img](https://s.poetries.top/gitee/2020/07/112.png)
 
 可见虽然某些设计模式我们用的不多，但其实已经默默渗入到我们的日常开发中了。
 
@@ -8176,7 +8176,7 @@ MatchMaker.checkAllPurpose()
 
 结构图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/113.png) ![img](https://poetries1.gitee.io/img-repo/2020/07/114.png)
+![img](https://s.poetries.top/gitee/2020/07/113.png) ![img](https://s.poetries.top/gitee/2020/07/114.png)
 
 > 可以看到上图，使用中介者模式之后同事对象间的网状结构变成了星型结构，同事对象之间不需要知道彼此，符合最少知识原则。如果同事对象之间需要相互通信，只能通过中介者的方式，这样让同事对象之间原本的强耦合变成弱耦合，强相互依赖变成弱相互依赖，从而让这些同事对象可以独立地改变和复用。原本同事对象间的交互逻辑被中介者封装起来，各个同事对象只需关心自身即可。
 
@@ -8242,15 +8242,15 @@ MatchMaker.checkAllPurpose()
 
 > 典型思路是 `View` 层通过事件通知到 `Controller` 层，`Controller` 层经过对事件的处理完成相关业务逻辑，要求 `Model` 层改变数据状态，`Model` 层再将新数据更新到 `View`层。示意图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/115.png)
+![img](https://s.poetries.top/gitee/2020/07/115.png)
 
 > 在实际操作时，用户可以直接对 `View` 层的 `UI` 进行操作，以通过事件通知 `Controller` 层，经过处理后修改 `Model` 层的数据，`Model` 层使用最新数据更新 `View`。示意图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/116.png)
+![img](https://s.poetries.top/gitee/2020/07/116.png)
 
 用户也可以直接触发 `Controller` 去更新 `Model` 层状态，再更新 View 层：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/117.png)
+![img](https://s.poetries.top/gitee/2020/07/117.png)
 
 > 某些场景下，`View` 层直接采用观察者/发布订阅模式监听 `Model` 层的变化，这样 `View`层和 `Model` 层相互持有、相互操作，导致紧密耦合，在可维护性上有待提升。由此，`MVP` 模式应运而生 。
 
@@ -8267,11 +8267,11 @@ MatchMaker.checkAllPurpose()
 
 示意图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/118.png)
+![img](https://s.poetries.top/gitee/2020/07/118.png)
 
 > 在实际操作时，用户可以直接对 `View` 层的 `UI` 进行操作，`View` 层通知 `Presenter` 层，`Presenter` 层操作 `Model` 层的数据，`Presenter` 层获取到数据之后更新 `View`。示意图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/119.png)
+![img](https://s.poetries.top/gitee/2020/07/119.png)
 
 - 由于 `Presenter` 层负责了数据获取、数据处理、交互逻辑、`UI` 效果等等功能，所以 `Presenter` 层就变得强大起来，相应的，`Model` 层只负责数据存储，而 `View` 层只负责视图，`Model` 和 `View` 层的责任纯粹而单一，如果我们需要添加或修改功能模块，只需要修改 `Presenter` 层就够了。由于 `Presenter` 层需要调用 `View` 层的方法更新视图，`Presenter` 层直接持有 `View` 层导致了 `Presenter` 对 `View` 的依赖。
 
@@ -8285,7 +8285,7 @@ MatchMaker.checkAllPurpose()
 
 结构图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/120.png)
+![img](https://s.poetries.top/gitee/2020/07/120.png)
 
 > `MVVM` 模式的特征是 `ViewModel` 层和 `View` 层采用双向绑定的形式（Binding），`View` 层的变动，将自动反映在 `ViewModel` 层，反之亦然。
 
@@ -8293,11 +8293,11 @@ MatchMaker.checkAllPurpose()
 - 对简单`UI` 来说，实现 `MVVM` 模式的开销是不必要的，而对于大型应用来说，引入 MVVM 模式则会节约大量手动更新视图的复杂过程，是否使用，还是看使用场景。
 - `Vue` 的双向绑定机制应该算是比较有 `MVVM` 模式的影子，但 `Vue` 文档 里面是这么描述：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/121.png)
+![img](https://s.poetries.top/gitee/2020/07/121.png)
 
 > 这是为什么呢，因为 `MVVM` 模式要求 `Model` 层和 `View` 层完全解耦，但是由于 `Vue` 还提供了 `ref` 这样的 `API`，使得 `Model` 也可以直接持有 `View`：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/122.png)
+![img](https://s.poetries.top/gitee/2020/07/122.png)
 
 但是大多数帖子都说直接称呼 `Vue` 为 `MVVM` 框架，可见这些模式的划分也不是那么严格。
 
@@ -8885,7 +8885,7 @@ _.chain = function(obj) {
 
 > 返回的对象的隐式原型可以访问到 `Undersocre` 提供的很多方法，如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/125.png)
+![img](https://s.poetries.top/gitee/2020/07/125.png)
 
 > 这个 `chain` 方法的作用就是创建一个包裹了 `obj` 的 `Underscore` 实例对象，并标记该实例是使用链模式，最后返回这个包装好的链式化实例（叫链式化是因为可以继续调用 `underscore` 上的方法）。
 
@@ -8935,7 +8935,7 @@ _.prototype.value = function() {
 
 示意图如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/126.png)
+![img](https://s.poetries.top/gitee/2020/07/126.png)
 
 > 当接受到一个请求，对这个请求的处理过程可以看作是一个串联的管道，比如对于每个请求，我们都想插入一些相同的逻辑比如权限验证、数据过滤、日志统计、参数验证、异常处理等功能。对于开发者而言，自然不希望对于每个请求都特殊处理，因此引入中间件来简化和隔离这些基础设施与业务逻辑之间的细节，让开发者能够关注在业务的开发上，以达到提升开发效率的目的。
 
@@ -8988,7 +8988,7 @@ app.listen(10001)
 
 在使用多个中间件时，引用一张著名的洋葱模型图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/127.png)
+![img](https://s.poetries.top/gitee/2020/07/127.png)
 
 正如上面的洋葱图所示，请求在进入业务逻辑时，会依次经过一系列中间件，对数据进行有序处理，业务逻辑之后，又像栈的先入后出一样，倒序经过之前的中间件。洋葱模型允许当应用执行完主要逻辑之后进行一些后处理，再将响应返回给用户。
 

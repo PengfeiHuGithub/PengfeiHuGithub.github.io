@@ -145,7 +145,7 @@
 
 一般来说，组件可以有以下几种关系：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/1.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/1.png)
 
 > 和 B、B 和 C、B 和 D 都是父子关系，C 和 D 是兄弟关系，A 和 C 是隔代关系（可能隔多代）。组件间经常会通信，Vue.js 内置的通信手段一般有两种：
 
@@ -1045,7 +1045,7 @@ export default {
 
 （也可以在线访问本示例体验：[https://run.iviewui.com/jwrqnFss (opens new window)](https://run.iviewui.com/jwrqnFss)）
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/115.png)
+![img](https://s.poetries.top/gitee/2020/09/115.png)
 
 > Form 组件分为两个部分，一个是外层的 `Form` 表单域组件，一组表单控件只有一个 Form，而内部包含了多个 `FormItem` 组件，每一个表单控件都被一个 FormItem 包裹。基本的结构看起来像：
 
@@ -1191,7 +1191,7 @@ Form 要用到数据校验，并在对应的 FormItem 中给出校验失败的�
 
 > `Form` 组件的核心功能是数据校验，一个 Form 中包含了多个 FormItem，当点击提交按钮时，要逐一对每个 FormItem 内的表单组件校验，而校验是由使用者发起，并通过 `Form` 来调用每一个 `FormItem` 的验证方法，再将校验结果汇总后，通过 `Form` 返回出去。大致的流程如下图所示：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/116.png)
+![img](https://s.poetries.top/gitee/2020/09/116.png)
 
 > 因为要在 Form 中逐一调用 FormItem 的验证方法，而 Form 和 FormItem 是独立的，需要预先将 FormItem 的每个实例缓存在 Form 中，这个操作就需要用到第 4 节的组件通信方法。当每个 FormItem 渲染时，将其自身（this）作为参数通过 `dispatch` 派发到 Form 组件中，然后通过一个数组缓存起来；同理当 FormItem 销毁时，将其从 Form 缓存的数组中移除。相关代码如下：
 
@@ -1656,7 +1656,7 @@ handleSubmit () {
 
 运行效果：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/2.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/2.png)
 
 完整的示例源码可通过 GitHub 查看：
 
@@ -1686,7 +1686,7 @@ handleSubmit () {
 
 > 多选框组件也是由两个组件组成：CheckboxGroup 和 Checkbox。单独使用时，只需要一个 Checkbox，组合使用时，两者都要用到。效果如下图所示：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/117.png)
+![img](https://s.poetries.top/gitee/2020/09/117.png)
 
 单独使用，常见的场景有注册时勾选以同意注册条款，它只有一个独立的 Checkbox 组件，并且绑定一个布尔值，示例如下：
 
@@ -2505,7 +2505,7 @@ module.exports = {
 
 > 有一种 Vue.js 组件，它不同于常规的组件，但组件结构本身很简单，比如下面的全局提示组件：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/3.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/3.png)
 
 实现这样一个组件并不难，只需要简单的几行 div 和 css，但使用者可能要这样来显示组件：
 
@@ -2576,7 +2576,7 @@ methods: {
 
 最终效果如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/118.png)
+![img](https://s.poetries.top/gitee/2020/09/118.png)
 
 - 我们从最简单的入手，不考虑其它，先写一个基本的 Alert 组件。
 - 在 `src/component` 下新建 `alert` 目录，并创建文件 `alert.vue`：
@@ -2754,7 +2754,7 @@ export default {
 
 来看一下显示一个信息提示组件的流程：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/4.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/4.png)
 
 > 最后把 alert.js 作为插件注册到 Vue 里就行，在入口文件 `src/main.js`中，通过 `prototype` 给 Vue 添加一个实例方法：
 
@@ -2833,7 +2833,7 @@ Vue.js 的精髓是组件，组件的精髓是 JavaScript。将 JavaScript 开�
 - 一般来说，我们写 Vue.js 组件，模板都是写在 `<template>` 内的，但它并不是最终呈现的内容，template 只是一种对开发者友好的语法，能够一眼看到 DOM 节点，容易维护，在 Vue.js 编译阶段，会解析为 Virtual DOM。
 - 与 DOM 操作相比，Virtual DOM 是基于 JavaScript 计算的，所以开销会小很多。下图演示了 Virtual DOM 运行的过程：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/5.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/5.png)
 
 正常的 DOM 节点在 HTML 中是这样的：
 
@@ -3035,7 +3035,7 @@ export default {
 - 在 Render 函数里创建了一个 cloneVNode 的工厂函数，通过递归将 slot 所有子节点都克隆了一份，并对 VNode 的关键属性也进行了复制。
 - 深度克隆 slot 并非 Vue.js 内置方法，也没有得到推荐，属于黑科技，在一些特殊的场景才会使用到，正常业务几乎是用不到的。比如 iView 组件库的穿梭框组件 Transfer，就用到了这种方法：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/6.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/6.png)
 
 它的使用方法是：
 
@@ -3228,11 +3228,11 @@ export default {
 
 如果表格只是呈现数据，是比较简单的，比如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/7.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/7.png)
 
 因为结构简单，我们甚至不需要组件，直接使用标准的 table 系列标签就可以。但有的时候，除了呈现数据，也会带有一些交互，比如有一列操作栏，可以编辑整行的数据：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/8.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/8.png)
 
 > 写一个个的 table 系列标签是很麻烦并且重复的，而组件的好处就是省去这些基础的工作，我们直接给 Table 组件传递列的配置 **columns** 和行数据 **data**，其余的都交给 Table 组件做了。
 
@@ -3449,7 +3449,7 @@ export default {
 
 运行后的效果如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/119.png)
+![img](https://s.poetries.top/gitee/2020/09/119.png)
 
 > 表格已经能渲染出来了，但现在的单元格只是将 data 当作纯文本来显示，所以出生日期列显示为时间戳，因为服务端对日期有时会保存为时间戳格式。如果要显示正常的日期（如1991-5-14），目前可以另写一个计算属性（computed），手动将时间戳换算为标准日期格式后，来动态修改 data 里的 `birthday` 字段。这样做对于出生日期这样的数据还好，但对于**操作**这一列就不可取了，因为它带有业务逻辑，点击**编辑**按钮，是可以对当前行数据进行修改的。这时就要用到 Render 函数。
 
@@ -3564,7 +3564,7 @@ export default {
 
 效果如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/9.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/9.png)
 
 - 需要注意的是，columns 里定义的 render，是有两个参数的，第一个是 createElement（即 h），第二个是从 render.js 传过来的对象，它包含了当前行数据（`row`）、当前列配置（`column`）、当前是第几行（`index`），使用者可以基于这 3 个参数得到任意想要的结果。由于是自定义列了，显示什么都是使用者决定的，因此在使用了 render 的 column 里可以不用写字段 `key` 。
 - 如果你真正理解了，应该知道 columns 里定义的 render 字段，它仅仅是名字叫 render 的一个普通函数，并非 Vue.js 实例的 *render* 选项，只是我们恰巧把它叫做 render 而已，如果愿意，也可以改为其它名字，比如 renderRow。真正的 Render 函数只有一个地方，那就是 render.js 中的 render 选项，只是它代理了 column 中的 render。这里有点绕，理清这个关系，就对 Functional Render 彻底理解了。
@@ -4402,7 +4402,7 @@ table.vue 也要做一点修改：
 
 递归组件常用来开发具有未知层级关系的独立组件，在业务开发中很少使用。比如常见的有级联选择器和树形控件：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/10.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/10.png)
 
 这类组件一般都是数据驱动型的，父级有一个字段 children，然后递归。下一节的实战，会开发一个树形控件 Tree。
 
@@ -4555,7 +4555,7 @@ table.vue 也要做一点修改：
 
 最终会渲染出一个原生的 `<button>` 按钮和两个原生的链接 `<a>`，且第二个点击会在新窗口中打开链接，如图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/11.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/11.png)
 
 > i-button 组件中的 `<component>` `is` 绑定的就是一个标签名称 button / a，并且通过 `v-bind` 将一些额外的属性全部绑定到了 `<component>` 上。
 
@@ -4625,7 +4625,7 @@ Tree 组件是递归类组件的典型代表，它常用于文件夹、组织架
 
 本节要实现的 Tree 组件具有以下功能：
 
-![img](https://poetries1.gitee.io/img-repo/2020/07/vuejs/12.png)
+![img](https://s.poetries.top/gitee/2020/07/vuejs/12.png)
 
 - 节点可以无限延伸（递归）；
 - 可以展开 / 收起子节点；

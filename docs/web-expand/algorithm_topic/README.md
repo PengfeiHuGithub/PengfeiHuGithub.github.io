@@ -41,7 +41,7 @@ console.log(a===b);   //true
 
 防抖（`debounce`）：不管事件触发频率多高，一定在事件触发`n`秒后才执行，如果你在一个事件触发的 `n` 秒内又触发了这个事件，就以新的事件的时间为准，`n`秒后才执行，总之，触发完事件 `n` 秒内不再触发事件，`n`秒后再执行。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96.gif)
+![img](https://s.poetries.top/gitee/2020/09/img/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96.gif)
 
 ## 应用场景
 
@@ -222,7 +222,7 @@ let page1 = conardliSite('page1.html');
 
 节流（`throttle`）:不管事件触发频率多高，只在单位时间内执行一次。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96.gif)
+![img](https://s.poetries.top/gitee/2020/09/img/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96.gif)
 
 ## 实现
 
@@ -2051,7 +2051,7 @@ elem.dispatchEvent(myEvent);
 
 镜像二叉树：两颗二叉树根结点相同，但他们的左右两个子节点交换了位置。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91.png)
 
 如图，1为对称二叉树，2、3都不是。
 
@@ -2499,7 +2499,7 @@ function Mirror(root)
 
 以下图的二叉树来分析：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E4%BA%8C%E5%8F%89%E6%A0%91.jpeg)
+![img](https://s.poetries.top/gitee/2020/09/img/%E4%BA%8C%E5%8F%89%E6%A0%91.jpeg)
 
 中序遍历： CBDAEF
 
@@ -2884,7 +2884,7 @@ function Mirror(root)
 - 3.递归右子树，找到当前树的最后一个节点
 - 4.回溯到上一层，进行链接...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8.png)
 
 ## 代码
 
@@ -3092,7 +3092,7 @@ function Mirror(root)
 - 截取左子树的前序遍历、右子树的前序遍历
 - 递归重建二叉树
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91.png)
 
 ## 代码
 
@@ -3344,7 +3344,7 @@ function printListFromTailToHead(head)
 
 ## 思路
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8.png)
 
 链表头部节点比较，取较小节点。
 
@@ -3433,7 +3433,7 @@ function printListFromTailToHead(head)
 - 2.从环内某个节点开始计数，再回到此节点时得到链表环的长度 length
 - 3.P1、P2 回到head节点，让 P1 先走 length 步 ，当P2和P1相遇时即为链表环的起点
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E8%8A%82%E7%82%B9.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E8%8A%82%E7%82%B9.png)
 
 ## 代码
 
@@ -3494,7 +3494,7 @@ function EntryNodeOfLoop(pHead) {
 - 3.两个链表一起前进，比较获得第一个相等的节点
 - 时间复杂度`O(length1+length2)` 空间复杂度`O(0)`
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E9%93%BE%E8%A1%A8%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E9%93%BE%E8%A1%A8%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9.png)
 
 ## 代码
 
@@ -3554,7 +3554,7 @@ function FindFirstCommonNode(pHead1, pHead2) {
 
 > 据说著名犹太历史学家 Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数，直到所有人都自杀身亡为止。然而Josephus 和他的朋友并不想遵从。首先从一个人开始，越过k-2个人（因为第一个人已经被越过），并杀掉第k个人。接着，再越过k-1个人，并杀掉第k个人。这个过程沿着圆圈一直进行，直到最终只剩下一个人留下，这个人就可以继续活着。问题是，给定了和，一开始要站在什么地方才能避免被处决？Josephus要他的朋友先假装遵从，他将朋友与自己安排在第16个与第31个位置，于是逃过了这场死亡游戏。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/yuesefu.jpg)
+![img](https://s.poetries.top/gitee/2020/09/img/yuesefu.jpg)
 
 ## [#](https://interview.poetries.top/fe-algorithm-docs/algorithm2/dataStructure/32-链表_圈圈中最后剩下的数字.html#思路)思路
 
@@ -3938,7 +3938,7 @@ start遍历到偶数，end遍历到奇数时，交换两个数的位置
 
 `B[i]`的值是`A`数组所有元素的乘积再除以`A[i]`，但是题目中给定不能用除法，我们换一个思路，将`B[i]`的每个值列出来，如下图：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84.png)
 
 `B[i]`的值可以看作下图的矩阵中每行的乘积。
 
@@ -4476,7 +4476,7 @@ count += rightIndex-mid
 
 ## 思路
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5.png)
 
 借助图形思考，将复杂的矩阵拆解成若干个圈，循环打印矩阵，每次打印其中一个圈
 
@@ -4493,7 +4493,7 @@ count += rightIndex-mid
 
 最后一圈很有可能出现几种异常情况,打印矩阵最里面一圈可能只需三步、两步、甚至一步
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5.png)
 
 所以在每一行打印时要做好条件判断:
 
@@ -4738,7 +4738,7 @@ var fourSum = function (nums, target) {
 
 以数据[3,4,2,7,9,0]为例，让这组数字依次如栈，则栈和其对应的最小值栈如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/mainstack.png)
+![img](https://s.poetries.top/gitee/2020/09/img/mainstack.png)
 
 ## 代码
 
@@ -4803,7 +4803,7 @@ function min()
 - 3.队列元素入队
 - 4.第k次遍历后开始向结果中添加最大值
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC.png)
 
 时间复杂度：`O(n)`
 
@@ -4863,7 +4863,7 @@ function min()
 
 栈2为空才能补充栈1的数据，否则会打乱当前的顺序。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/queue.png)
+![img](https://s.poetries.top/gitee/2020/09/img/queue.png)
 
 ## 代码
 
@@ -4939,7 +4939,7 @@ function pop()
 
 6.当所有数据入栈完成，如果出栈顺序正确，那么辅助栈应该为空。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97.png)
 
 ## 代码
 
@@ -5801,7 +5801,7 @@ function Fibonacci(n){
 f(n)=f(n-1)+f(n-2)
 ```
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96.png)
 
 ```js
 function rectCover(n)
@@ -6241,7 +6241,7 @@ count += rightIndex-mid
 - 条件不满足，返回0，向上回溯。
 - 若上面三个条件都满足，继续向下递归，返回四个方向的递归之和+1（当前节点）
 
-下面是本算法的动画展示，可以点击[机器人的运动范围动画 (opens new window)](https://www.lisq.xyz/demo/机器人的运动范围.html)手动尝试。 ![机器人的运动范围动画](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4.gif)
+下面是本算法的动画展示，可以点击[机器人的运动范围动画 (opens new window)](https://www.lisq.xyz/demo/机器人的运动范围.html)手动尝试。 ![机器人的运动范围动画](https://s.poetries.top/gitee/2020/09/img/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4.gif)
 
 ## 代码
 
@@ -6329,7 +6329,7 @@ count += rightIndex-mid
 - 5.递归不断寻找四个方向是否满足条件，满足条件再忘更深层递归，不满足向上回溯
 - 6.如果回溯到最外层，则当前字符匹配失败，将当前字符标记为未走
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84.png)
 
 ## 代码
 
@@ -6837,7 +6837,7 @@ n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并
 - 即先使每个子序列有序，再使子序列段间有序
 - 若将两个有序表合并成一个有序表，称为二路归并
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif)
+![img](https://s.poetries.top/gitee/2020/09/img/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.gif)
 
 分割：
 
@@ -6962,9 +6962,9 @@ n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并
 
 下面是对序列`6、1、2、7、9、3、4、5、10、8`排序的过程：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.jpg)
+![img](https://s.poetries.top/gitee/2020/09/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.jpg)
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif)
+![img](https://s.poetries.top/gitee/2020/09/img/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.gif)
 
 ## 解法
 
@@ -7282,7 +7282,7 @@ function Sum_Solution(n) {
 - 3.下次比较从这 `i2,i3,i5` 三个下标开始乘起
 - 4.最后取`arr[i2]✖️2、arr[i3]✖️3、arr[i5]✖️5` 的最小值
 
-![丑数](https://poetries1.gitee.io/img-repo/2020/09/img/%E4%B8%91%E6%95%B0.png)
+![丑数](https://s.poetries.top/gitee/2020/09/img/%E4%B8%91%E6%95%B0.png)
 
 ## 代码
 
@@ -7496,7 +7496,7 @@ function NumberOf1(n)
 - 百位 `1`: `low`可能为`100 - 199`共`100`种情况，`high`可以取`0 - 7`共`8`种情况;当`high`取`8`时，`low`还可以取`100 - 104`，所有情况为`100 * 8 + 4 = 804`种情况。
 - 千位 `8`:`low`可能为`1000 - 1999`共`1000`种情况，当前已经是最高位了，`high`只有一种情况，所有情况为`1000 * 1 = 1000`种情况。
 
-![机器人的运动范围动画](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.png)
+![机器人的运动范围动画](https://s.poetries.top/gitee/2020/09/img/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.png)
 
 由以上示例：分三种情况考虑，现有数字`abcde`，分析百位数字`c`
 
@@ -8473,7 +8473,7 @@ f(k) = max(f(k – 2) + Ak, f(k – 1))
 - 3.队列元素入队
 - 4.第k次遍历后开始向结果中添加最大值
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC.png)
 
 时间复杂度：`O(n)`
 
@@ -8872,7 +8872,7 @@ function printListFromTailToHead(head)
 - 截取左子树的前序遍历、右子树的前序遍历
 - 递归重建二叉树
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91.png)
 
 ## 代码
 
@@ -8987,7 +8987,7 @@ while((pre = readline())!=null){
 
 以下图的二叉树来分析：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E4%BA%8C%E5%8F%89%E6%A0%91.jpeg)
+![img](https://s.poetries.top/gitee/2020/09/img/%E4%BA%8C%E5%8F%89%E6%A0%91.jpeg)
 
 中序遍历： CBDAEF
 
@@ -9058,7 +9058,7 @@ while((pre = readline())!=null){
 
 栈2为空才能补充栈1的数据，否则会打乱当前的顺序。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/queue.png)
+![img](https://s.poetries.top/gitee/2020/09/img/queue.png)
 
 ## 代码
 
@@ -9182,7 +9182,7 @@ function jumpFloorII(number)
 - 5.递归不断寻找四个方向是否满足条件，满足条件再忘更深层递归，不满足向上回溯
 - 6.如果回溯到最外层，则当前字符匹配失败，将当前字符标记为未走
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84.png)
 
 ## 代码
 
@@ -9319,7 +9319,7 @@ function minNumberInRotateArray(arr)
 - 条件不满足，返回0，向上回溯。
 - 若上面三个条件都满足，继续向下递归，返回四个方向的递归之和+1（当前节点）
 
-下面是本算法的动画展示，可以点击[机器人的运动范围动画 (opens new window)](https://www.lisq.xyz/demo/机器人的运动范围.html)手动尝试。 ![机器人的运动范围动画](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4.gif)
+下面是本算法的动画展示，可以点击[机器人的运动范围动画 (opens new window)](https://www.lisq.xyz/demo/机器人的运动范围.html)手动尝试。 ![机器人的运动范围动画](https://s.poetries.top/gitee/2020/09/img/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4.gif)
 
 ## 代码
 
@@ -9818,7 +9818,7 @@ start遍历到偶数，end遍历到奇数时，交换两个数的位置
 - 2.从环内某个节点开始计数，再回到此节点时得到链表环的长度 length
 - 3.P1、P2 回到head节点，让 P1 先走 length 步 ，当P2和P1相遇时即为链表环的起点
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E8%8A%82%E7%82%B9.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E8%8A%82%E7%82%B9.png)
 
 ## 代码
 
@@ -9904,7 +9904,7 @@ function EntryNodeOfLoop(pHead) {
 
 ## 思路
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E5%90%88%E5%B9%B6%E9%93%BE%E8%A1%A8.png)
 
 链表头部节点比较，取较小节点。
 
@@ -10046,7 +10046,7 @@ function Mirror(root)
 
 镜像二叉树：两颗二叉树根结点相同，但他们的左右两个子节点交换了位置。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91.png)
 
 如图，1为对称二叉树，2、3都不是。
 
@@ -10103,7 +10103,7 @@ function Mirror(root)
 
 ## 思路
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5.png)
 
 借助图形思考，将复杂的矩阵拆解成若干个圈，循环打印矩阵，每次打印其中一个圈
 
@@ -10120,7 +10120,7 @@ function Mirror(root)
 
 最后一圈很有可能出现几种异常情况,打印矩阵最里面一圈可能只需三步、两步、甚至一步
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5%E5%BC%82%E5%B8%B8%E6%83%85%E5%86%B5.png)
 
 所以在每一行打印时要做好条件判断:
 
@@ -10195,7 +10195,7 @@ function Mirror(root)
 
 以数据[3,4,2,7,9,0]为例，让这组数字依次如栈，则栈和其对应的最小值栈如下：
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/mainstack.png)
+![img](https://s.poetries.top/gitee/2020/09/img/mainstack.png)
 
 ## 代码
 
@@ -10247,7 +10247,7 @@ function min()
 
 6.当所有数据入栈完成，如果出栈顺序正确，那么辅助栈应该为空。
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97.png)
 
 ## 代码
 
@@ -10619,7 +10619,7 @@ function min()
 - 3.递归右子树，找到当前树的最后一个节点
 - 4.回溯到上一层，进行链接...
 
-![img](https://poetries1.gitee.io/img-repo/2020/09/img/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8.png)
+![img](https://s.poetries.top/gitee/2020/09/img/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8.png)
 
 ## 代码
 
@@ -11113,7 +11113,7 @@ function min()
 - 百位 `1`: `low`可能为`100 - 199`共`100`种情况，`high`可以取`0 - 7`共`8`种情况;当`high`取`8`时，`low`还可以取`100 - 104`，所有情况为`100 * 8 + 4 = 804`种情况。
 - 千位 `8`:`low`可能为`1000 - 1999`共`1000`种情况，当前已经是最高位了，`high`只有一种情况，所有情况为`1000 * 1 = 1000`种情况。
 
-![机器人的运动范围动画](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.png)
+![机器人的运动范围动画](https://s.poetries.top/gitee/2020/09/img/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.png)
 
 由以上示例：分三种情况考虑，现有数字`abcde`，分析百位数字`c`
 
@@ -11182,7 +11182,7 @@ function min()
 - 百位 `1`: `low`可能为`100 - 199`共`100`种情况，`high`可以取`0 - 7`共`8`种情况;当`high`取`8`时，`low`还可以取`100 - 104`，所有情况为`100 * 8 + 4 = 804`种情况。
 - 千位 `8`:`low`可能为`1000 - 1999`共`1000`种情况，当前已经是最高位了，`high`只有一种情况，所有情况为`1000 * 1 = 1000`种情况。
 
-![机器人的运动范围动画](https://poetries1.gitee.io/img-repo/2020/09/img/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.png)
+![机器人的运动范围动画](https://s.poetries.top/gitee/2020/09/img/%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.png)
 
 由以上示例：分三种情况考虑，现有数字`abcde`，分析百位数字`c`
 
@@ -11257,7 +11257,7 @@ function min()
 - 3.下次比较从这 `i2,i3,i5` 三个下标开始乘起
 - 4.最后取`arr[i2]✖️2、arr[i3]✖️3、arr[i5]✖️5` 的最小值
 
-![丑数](https://poetries1.gitee.io/img-repo/2020/09/img/%E4%B8%91%E6%95%B0.png)
+![丑数](https://s.poetries.top/gitee/2020/09/img/%E4%B8%91%E6%95%B0.png)
 
 ## 代码
 
@@ -11319,7 +11319,7 @@ function min()
 - 3.下次比较从这 `i2,i3,i5` 三个下标开始乘起
 - 4.最后取`arr[i2]✖️2、arr[i3]✖️3、arr[i5]✖️5` 的最小值
 
-![丑数](https://poetries1.gitee.io/img-repo/2020/09/img/%E4%B8%91%E6%95%B0.png)
+![丑数](https://s.poetries.top/gitee/2020/09/img/%E4%B8%91%E6%95%B0.png)
 
 ## 代码
 

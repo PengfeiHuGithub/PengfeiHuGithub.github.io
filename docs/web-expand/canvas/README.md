@@ -76,23 +76,23 @@
 
 下面我们来欣赏一下用 Canvas 制作的几款简单的小游戏~
 
-![赛车小游戏](https://poetries1.gitee.io/img-repo/2020/08/1.png)
+![赛车小游戏](https://s.poetries.top/gitee/2020/08/1.png)
 
 这是一款小型的赛车游戏，可以使用键盘的方向键来控制赛车的行驶方向，没有按键操作，速度就会变成 0。
 
-![五子棋小游戏](https://poetries1.gitee.io/img-repo/2020/08/2.png)
+![五子棋小游戏](https://s.poetries.top/gitee/2020/08/2.png)
 
 这是一款五子棋的小游戏，模拟五子棋游戏规则，游戏开始时一方先走，然后另一方再走，依次循环，直至一方有连成一条线的五个棋子，会自动判断输赢。
 
-![俄罗斯方块](https://poetries1.gitee.io/img-repo/2020/08/3.png)
+![俄罗斯方块](https://s.poetries.top/gitee/2020/08/3.png)
 
 就连经典的俄罗斯方块游戏也可以使用 Canvas 来制作。也是需要通过键盘的方向键来控制方块，左右方向键是控制方块移动的方向，下键是加速下落，上键是翻转方块，直至某一行完全被填满就被消除。
 
-![你画我猜小游戏](https://poetries1.gitee.io/img-repo/2020/08/4.png)
+![你画我猜小游戏](https://s.poetries.top/gitee/2020/08/4.png)
 
 还有前一段挺火的你画我猜小游戏也可以通过 Canvas 来实现。保存了鼠标的轨迹，还有清除屏幕和橡皮擦等功能。也可以将其保存为一张图片。
 
-![迷宫小球小游戏](https://poetries1.gitee.io/img-repo/2020/08/5.png)
+![迷宫小球小游戏](https://s.poetries.top/gitee/2020/08/5.png)
 
 这是一款迷宫类的小游戏，同样是通过键盘的方向键来控制小球的移动，最终到达某个地点就会判定通过游戏。
 
@@ -102,11 +102,11 @@
 
 例如：
 
-![转盘抽奖活动](https://poetries1.gitee.io/img-repo/2020/08/6.png)
+![转盘抽奖活动](https://s.poetries.top/gitee/2020/08/6.png)
 
 很常见的活动页面，某宝店铺的常见套路，模拟转盘抽奖。点击按钮，转盘转动，然后转盘停止，指针落在哪个区域就提示中奖的奖品。
 
-![刮刮乐抽奖活动](https://poetries1.gitee.io/img-repo/2020/08/7.png)
+![刮刮乐抽奖活动](https://s.poetries.top/gitee/2020/08/7.png)
 
 另一个比较常见的活动页面是刮刮乐的页面，在刮刮乐的区域，鼠标会显示为硬币的形状，然后按住鼠标并拖动，经过区域就会显示出最底层的图片，同时上层图片消失。模拟刮刮乐效果，刮开一定比例面积之后“刮奖”完成，返回回调函数。
 
@@ -114,21 +114,21 @@
 
 Canvas 还可以做一些小特效哦，这些小特效可以装饰你 的网站，使它变得更加精致~
 
-![纸片下落特效](https://poetries1.gitee.io/img-repo/2020/08/8.png)
+![纸片下落特效](https://s.poetries.top/gitee/2020/08/8.png)
 
 这个特效也可以在活动页面中用到。逼真的模拟了纸片下落的过程，随机出现的纸片有随机生成的颜色，然后模拟重力下落过程。
 
-![粒子组合文字特效](https://poetries1.gitee.io/img-repo/2020/08/9.png)
+![粒子组合文字特效](https://s.poetries.top/gitee/2020/08/9.png)
 
 这个其实是很不错的，只不过 gif 图片看得不是特别清楚。随机生成的大小随机的圆形或方形粒子组成指定的文字，粒子会自动缩放，给人闪烁的感觉。
 
-![数字时钟特效](https://poetries1.gitee.io/img-repo/2020/08/10.png)
+![数字时钟特效](https://s.poetries.top/gitee/2020/08/10.png)
 
 这个特效也是由粒子组合成文字的特效，只不过文字的内容是当前的时间，因为是 gif 图，所以大家看不到和鼠标的交互，这里粒子散开是因为我鼠标进行了点击，就是点击屏幕，粒子就会散开，点击的时间越长，粒子就越分散。当松开鼠标之后，所有的粒子就又全部回到原位~
 
 试想一下，如果你的个人网站中的当前时间使用了这样一个小特效，是不是会让访客觉得很有趣呢~٩(๑>◡<๑)۶
 
-![loading 特效](https://poetries1.gitee.io/img-repo/2020/08/11.png)
+![loading 特效](https://s.poetries.top/gitee/2020/08/11.png)
 
 同样的小特效还有这个 loading，使用 canvas 制作一个这样的 loading，也会给你的网站增添亮点。
 
@@ -138,37 +138,37 @@ Canvas 还可以做一些小特效哦，这些小特效可以装饰你 的网站
 
 > 因为 Canvas 的特性，所以如果你的网站想要一个炫酷的背景，那么 Canvas 无疑是最好的选择，让我们一起来欣赏一下 canvas 可以做出哪些炫酷的背景。
 
-![3D 线条](https://poetries1.gitee.io/img-repo/2020/08/12.png)
+![3D 线条](https://s.poetries.top/gitee/2020/08/12.png)
 
 > 这个特效是使用 three.js 和 Canvas 制作出的 3D 线条，随机生成的线条构建成 3D 的立体空间，还有和鼠标的交互，鼠标的移动会使得 3D 空间移动。
 
-![气泡背景](https://poetries1.gitee.io/img-repo/2020/08/13.png)
+![气泡背景](https://s.poetries.top/gitee/2020/08/13.png)
 
 这个气泡背景也是很赞的，随机生成透明度不同的气泡，气泡不断移动，渐变色的背景也在不断变换，给人以梦幻的感觉。
 
-![棱角背景](https://poetries1.gitee.io/img-repo/2020/08/14.png)
+![棱角背景](https://s.poetries.top/gitee/2020/08/14.png)
 
 这个的变换频率其实没有这么快，两次变换中间是有几秒钟的停留时间的，因为制作的 gif 大小有要求，所以中间的给截掉了，只保留变换的部分。
 
 这个特效给人的感觉是和钻石表面类似的菱角感觉，然后背景也是使用的渐变的颜色。一定时间就会变换一次。QQ 的登录框就是和这个类似的特效。
 
-![代码雨背景](https://poetries1.gitee.io/img-repo/2020/08/15.png)
+![代码雨背景](https://s.poetries.top/gitee/2020/08/15.png)
 
 这个背景是黑客帝国的代码雨特效，可能男程序员会比较喜欢，代码从上向下下落的效果。
 
-![星空连线背景](https://poetries1.gitee.io/img-repo/2020/08/16.png)
+![星空连线背景](https://s.poetries.top/gitee/2020/08/16.png)
 
 我个人是很喜欢这个特效的，前一段时间也将其作为我的个人博客的背景，该特效的背景是一个渐变色，随机生成的“小星星”会从下向上移动，最重要的是和鼠标有互动。鼠标经过的地方会产生“星星”并自动和其他的星星连成线。
 
-![流星雨特效](https://poetries1.gitee.io/img-repo/2020/08/17.png)
+![流星雨特效](https://s.poetries.top/gitee/2020/08/17.png)
 
 这个特效也是很不错的，模拟星空，随机生成的 “星星” 会有位移，透明度也在不断变化，会有 “流星” 随机从上向下掉落，并会有小尾巴的效果~
 
-![线条圈圈滚动背景](https://poetries1.gitee.io/img-repo/2020/08/18.png)
+![线条圈圈滚动背景](https://s.poetries.top/gitee/2020/08/18.png)
 
 这个特效是以黑色为背景，彩色的随机实心 + 空心圆圈构成，所有的圈圈用直线相连，并且一直移动。
 
-![相交线特效](https://poetries1.gitee.io/img-repo/2020/08/19.png)
+![相交线特效](https://s.poetries.top/gitee/2020/08/19.png)
 
 这个相交线特效其实也很简单，随机生成的线条在移动，相交的地方为小圆点。
 
@@ -200,7 +200,7 @@ Canvas 还可以做一些小特效哦，这些小特效可以装饰你 的网站
 
 我们打开浏览器来看一下：
 
-![创建 Canvas 画布](https://poetries1.gitee.io/img-repo/2020/08/20.png)
+![创建 Canvas 画布](https://s.poetries.top/gitee/2020/08/20.png)
 
 > 在上面的例子中页面上只有一个 Canvas，没有设置宽高，那么会自动创建一个 `300 \* 150` 的画布（单位默认为 `px`）
 
@@ -248,7 +248,7 @@ Canvas 还可以做一些小特效哦，这些小特效可以装饰你 的网站
 
 > 我们设置 Canvas 画布的宽度为 400，高度为 400，背景颜色为黑色（在 HTML 属性中直接设置宽度和高度是可以不加单位的，默认单位是 `px`）。在 Canvas 上画了一个圆心坐标为 100px、100px，半径为 50px 的白色的圆。来看一下浏览器中的显示效果：
 
-![HTML 属性设置宽度高度](https://poetries1.gitee.io/img-repo/2020/08/21.png)
+![HTML 属性设置宽度高度](https://s.poetries.top/gitee/2020/08/21.png)
 
 **2. CSS 属性设置 `width`、`height`**
 
@@ -288,7 +288,7 @@ Canvas 还可以做一些小特效哦，这些小特效可以装饰你 的网站
 
 我们来看下浏览器中的显示效果：
 
-![CSS 属性设置宽高](https://poetries1.gitee.io/img-repo/2020/08/22.png)
+![CSS 属性设置宽高](https://s.poetries.top/gitee/2020/08/22.png)
 
 OMG ヽ(；´Д｀)ﾉ，怎么会是这个样子，我明明是要画一个圆啊，怎么变成椭圆了，是不是我代码写的有问题？
 
@@ -334,7 +334,7 @@ OMG ヽ(；´Д｀)ﾉ，怎么会是这个样子，我明明是要画一个圆�
 
 在浏览器中的效果如下：
 
-![JS动态设置宽度高度](https://poetries1.gitee.io/img-repo/2020/08/23.png)
+![JS动态设置宽度高度](https://s.poetries.top/gitee/2020/08/23.png)
 
 这样就是正常的嘛~
 
@@ -423,7 +423,7 @@ var context = canvas.getContext("2d");
 
 让我们来看一下效果：
 
-![使用 Canvas 画一个点](https://poetries1.gitee.io/img-repo/2020/08/24.png)
+![使用 Canvas 画一个点](https://s.poetries.top/gitee/2020/08/24.png)
 
 有没有看到左上部分有一个白色的点，没有看到？没有看到的同学点开大图看一下(／_＼)
 
@@ -447,7 +447,7 @@ context.fill();            // 填充当前绘图（路径）
 
 我们可以总结出，使用 `Canvas` 绘制图像的步骤：
 
-![使用 Canvas 绘制图像的步骤](https://poetries1.gitee.io/img-repo/2020/08/25.png)
+![使用 Canvas 绘制图像的步骤](https://s.poetries.top/gitee/2020/08/25.png)
 
 通过使用 Canvas 绘制一个点，我们了解了在 Canvas 中绘图的大致步骤，下面我们来看一下刚刚提到的 `arc()` 方法。
 
@@ -466,7 +466,7 @@ context.arc(x,y,r,sAngle,eAngle,counterclockwise);
 - `eAngle`：结束角，以弧度计
 - `counterclockwise`：可选。规定应该逆时针还是顺时针绘图。`false` 为顺时针，`true` 为逆时针
 
-![图片来自 w3cschool](https://poetries1.gitee.io/img-repo/2020/08/26.png)
+![图片来自 w3cschool](https://s.poetries.top/gitee/2020/08/26.png)
 
 比如我们想画一个顺时针的四分之一圆，应该怎么写呢？
 
@@ -484,7 +484,7 @@ context.stroke();
 
 我们先来看一下浏览器中的效果：
 
-![画一个顺时针的四分之一圆](https://poetries1.gitee.io/img-repo/2020/08/27.png)
+![画一个顺时针的四分之一圆](https://s.poetries.top/gitee/2020/08/27.png)
 
 是不是你想要的效果呢(๑´ㅂ`๑)
 
@@ -493,7 +493,7 @@ context.stroke();
 - 因为我们设置的起始角是 0，对照 w3cschool 上的截图可知弧度的 0 的位置是 3 点钟方向，然后结束角我们设置为 0.5 PI，也就是 6 点钟方向，然后我们再设置描边颜色并且进行描边，就得出上图的效果。
 - 这里你可能会问，为什么这个不是闭合的图形呢？因为我只设置了 `beginPath` 并没有设置 `closePath`，所以这就不是一条闭合的路径。我们加上 `cloasePath` 看一下效果。
 
-![闭合图形](https://poetries1.gitee.io/img-repo/2020/08/28.png)
+![闭合图形](https://s.poetries.top/gitee/2020/08/28.png)
 
 如果跟着我一起写代码的话你就会发现，这个是空心的，并没有整个路径都被填充，这是怎么回事呢？
 
@@ -523,7 +523,7 @@ context.stroke();
 
 我们来看一下浏览器中的效果：
 
-![绘制直线](https://poetries1.gitee.io/img-repo/2020/08/29.png)
+![绘制直线](https://s.poetries.top/gitee/2020/08/29.png)
 
 在绘制直线的例子中，我们使用了
 
@@ -555,7 +555,7 @@ context.stroke();
 
 效果如下：
 
-![绘制直线](https://poetries1.gitee.io/img-repo/2020/08/30.png)
+![绘制直线](https://s.poetries.top/gitee/2020/08/30.png)
 
 在绘制了直线之后，我们来看一下怎么给绘制的直线添加样式：
 
@@ -582,7 +582,7 @@ context.strokeStyle = '#fff';
 context.stroke()
 ```
 
-![给直线添加属性](https://poetries1.gitee.io/img-repo/2020/08/31.png)
+![给直线添加属性](https://s.poetries.top/gitee/2020/08/31.png)
 
 > 我绘制了一条由点 (10,10) 到点 (100,100) 的直线，然后将其宽度设置为 10，并且加上“圆角”的效果。
 
@@ -646,7 +646,7 @@ context.fill()
 
 > 同样的方（tao）法（lu），我们只要在 `fill()` 方法之前设置模糊指数（`shadowBlur`）和颜色（`shadowColor`）就可以了。让我们来看一下浏览器中的效果：
 
-![设置阴影](https://poetries1.gitee.io/img-repo/2020/08/32.png)
+![设置阴影](https://s.poetries.top/gitee/2020/08/32.png)
 
 在暗色背景中有一个亮色的圆并且加了阴影效果，是不是很像发光的月亮呢(●´∀｀●)ﾉ
 
@@ -684,7 +684,7 @@ context.fillRect(100,100,200,200);
 
 我们看一下浏览器中的效果：
 
-![设置渐变](https://poetries1.gitee.io/img-repo/2020/08/33.png)
+![设置渐变](https://s.poetries.top/gitee/2020/08/33.png)
 
 > 可以看出，`createLinearGradient()` 的参数是两个点的坐标，这两个点的连线实际上就是渐变的方向。我们可以使用 `addColorStop()` 方法来设置渐变的颜色。
 
@@ -716,7 +716,7 @@ context.fillRect(0,0,400,400);
 
 效果如下：
 
-![彩虹渐变效果](https://poetries1.gitee.io/img-repo/2020/08/34.png)
+![彩虹渐变效果](https://s.poetries.top/gitee/2020/08/34.png)
 
 ### [#](http://interview.poetries.top/fe-mobile-docs/docs/canvas.html#图形转换)图形转换
 
@@ -750,7 +750,7 @@ context.strokeRect(5,5,50,25);
 
 只是使用 `scale()` 方法就可以实现缩放的效果，我们再来看一下浏览器中的显示情况：
 
-![实现缩放](https://poetries1.gitee.io/img-repo/2020/08/35.png)
+![实现缩放](https://s.poetries.top/gitee/2020/08/35.png)
 
 > 可以看到，在设置 `scale()` 方法之后再设置的矩形，无论是线条的宽度还是坐标的位置，都被放大了。并且 `scale()` 的效果是可以叠加的，也就是说，我们在上面的例子中使用了两次 `scale(2,2)` 那么，最后一个矩形相对于第一个矩形长和宽，以及坐标的位置就放大了 4 倍。
 
@@ -837,15 +837,15 @@ context.fillRect(70,30,200,100);
 
 我也希望是我自己做出来的啦，但是，答案，当然不是的啦，都是在网站上 down 的。网址可以分享给大家：[uigradients (opens new window)](https://uigradients.com/#MangoPulp)。
 
-![uigradients](https://poetries1.gitee.io/img-repo/2020/08/36.png)
+![uigradients](https://s.poetries.top/gitee/2020/08/36.png)
 
 这个网站可以自己生成渐变色，你的配色也可以跟大家分享，可以保存为图片，也可以导出为 CSS 样式。
 
 我们可以从这个网站上找到喜欢的配色，然后导出为 CSS 样式使用。
 
-![背景渐变](https://poetries1.gitee.io/img-repo/2020/08/37.png)
+![背景渐变](https://s.poetries.top/gitee/2020/08/37.png)
 
-![背景渐变](https://poetries1.gitee.io/img-repo/2020/08/38.png)
+![背景渐变](https://s.poetries.top/gitee/2020/08/38.png)
 
 我们看上面的两个例子，背景都是使用了渐变元素。第一个例子是一个气泡的效果。背景使用的是随机生成的颜色，使用我们上节介绍的 Canvas 设置渐变的方式。
 
@@ -853,7 +853,7 @@ context.fillRect(70,30,200,100);
 
 下面的树是一个 png 的背景
 
-![背景](https://poetries1.gitee.io/img-repo/2020/08/39.png)
+![背景](https://s.poetries.top/gitee/2020/08/39.png)
 
 然后我们将 `body` 的颜色设置为黑色到蓝色的由上向下的渐变：
 
@@ -863,7 +863,7 @@ background: linear-gradient(to bottom,#000000 0%,#5788fe 100%);
 
 效果如下：
 
-![黑色到蓝色渐变](https://poetries1.gitee.io/img-repo/2020/08/40.png)
+![黑色到蓝色渐变](https://s.poetries.top/gitee/2020/08/40.png)
 
 > 接下来我们要设置一个全屏的遮罩，将这个遮罩的背景色设置为红色，然后使用 CSS3 的 `animation` 属性，使用 `animation` 改变其透明度，由 0 变为 0.9。
 
@@ -944,7 +944,7 @@ CSS3 实现的动画效果，也是只能做有规律的“动”，并且 CSS �
 
 记得当年 QQ 空间盛行的时候，就有很多这种鼠标跟随的效果，鼠标滑过的路径，能够生产一个长长的尾巴，甚是招人喜欢。同样的，如果我们能实现鼠标跟随的效果，也是极好的。
 
-![背景渐变](https://poetries1.gitee.io/img-repo/2020/08/41.png)
+![背景渐变](https://s.poetries.top/gitee/2020/08/41.png)
 
 我们又拿出了这个特效 (ಥ_ಥ)
 
@@ -954,7 +954,7 @@ CSS3 实现的动画效果，也是只能做有规律的“动”，并且 CSS �
 
 还有一种经常见到的效果是数据差的效果，比如：
 
-![视觉差效果](https://poetries1.gitee.io/img-repo/2020/08/42.png)
+![视觉差效果](https://s.poetries.top/gitee/2020/08/42.png)
 
 这是锤子官网的一个特效，鼠标移动到哪哪就会下沉，并且如果你仔细看的话就会发现，上面的月份数字和底部的图片不是在一个层级上的，更加有立体的感觉，这就是视觉差的特效。
 
@@ -990,7 +990,7 @@ CSS3 实现的动画效果，也是只能做有规律的“动”，并且 CSS �
 
 > 将无数的单个粒子组合使其呈现出固定形态，借由控制器，脚本来控制其整体或单个的运动，模拟出现真实的效果。
 
-![粒子特效](https://poetries1.gitee.io/img-repo/2020/08/43.png)
+![粒子特效](https://s.poetries.top/gitee/2020/08/43.png)
 
 上面的例子是一种常见的粒子特效，使用若干粒子构成文字 “Hello World”，并且每一个粒子都在运动，和物理学的 “粒子” 概念类似。
 
@@ -1002,7 +1002,7 @@ CSS3 实现的动画效果，也是只能做有规律的“动”，并且 CSS �
 
 但是要想有随机效果使用 img 图片就不可以了，所以我们主要使用 Canvas 实现随机粒子效果。各项参数都是随机生成的。
 
-![背景渐变](https://poetries1.gitee.io/img-repo/2020/08/44.png)
+![背景渐变](https://s.poetries.top/gitee/2020/08/44.png)
 
 这个例子已经引用好多遍了╥﹏╥...但是它真的是很有特点啊，炫酷特效的通性全部都占有 o(*////▽////*)q
 
@@ -1018,7 +1018,7 @@ CSS3 实现的动画效果，也是只能做有规律的“动”，并且 CSS �
 
 效果如下：
 
-![随机粒子特效](https://poetries1.gitee.io/img-repo/2020/08/45.png)
+![随机粒子特效](https://s.poetries.top/gitee/2020/08/45.png)
 
 **1. 创建全屏 Canvas**
 
@@ -1364,7 +1364,7 @@ Round_item.prototype.move = function () {
 
 效果如下：
 
-![最终效果](https://poetries1.gitee.io/img-repo/2020/08/46.png)
+![最终效果](https://s.poetries.top/gitee/2020/08/46.png)
 
 ## 七、使你的鼠标和屏幕互动
 
@@ -1372,7 +1372,7 @@ Round_item.prototype.move = function () {
 
 我们先来看一下这个效果。
 
-![鼠标互动效果](https://poetries1.gitee.io/img-repo/2020/08/47.png)
+![鼠标互动效果](https://s.poetries.top/gitee/2020/08/47.png)
 
 > 然后我们分析一下这个效果：鼠标移动，会在经过的地方创建一个圆，圆的半径由小变大，达到某个固定大小时该圆消失。圆的颜色也是在随机变化的（gif 图片时间较短，效果不明显）。
 
