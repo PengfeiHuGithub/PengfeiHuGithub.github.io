@@ -6754,7 +6754,7 @@ window.requestAnimFrame = (function(){
 
 > 总结：Vue 采用数据劫持结合发布—订阅模式的方法，通过 `Object.defineProperty()` 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
 
-![img](https:////poetries1.gitee.io/img-repo/20190922/vue.jpeg)
+![img](https://s.poetries.top/gitee/20190922/vue.jpeg)
 
 - `Observer` 遍历数据对象，给所有属性加上 `setter` 和 `getter`，监听数据的变化
 - `compile` 解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图
@@ -7999,8 +7999,6 @@ function proxy( target, prop, key ) {
 
 其实我最终希望你明白的事情只有一件：`虚拟 DOM 的价值不在性能，而在别处`。因此想要从性能角度来把握虚拟 DOM 的优势，无异于南辕北辙。偏偏在面试场景下，10 个人里面有 9 个都走这条歧路，最后9个人里面自然没有一个能自圆其说，实在让人惋惜。
 
-[真正理解虚拟DOM(opens new window)](https:////interview.poetries.top/principle-docs/react/15-真正理解虚拟DOM.html)
-
 ### 1 谈谈你对React的理解
 
 > React 是一个网页 UI 框架，通过组件化的方式解决视图层开发复用的问题，本质是一个组件化框架。
@@ -8076,11 +8074,6 @@ Fiber 架构的重要特征就是可以被打断的异步渲染模式。但这�
 总的来说，render 阶段在执行过程中允许被打断，而 commit 阶段则总是同步执行的。
 
 > 为什么这样设计呢？简单来说，`由于 render 阶段的操作对用户来说其实是“不可见”的，所以就算打断再重启，对用户来说也是零感知`。而 `commit 阶段的操作则涉及真实 DOM 的渲染`，所以`这个过程必须用同步渲染来求稳`。
-
-**为什么 React 16 要更改组件的生命周期详解**
-
-> - [React16为什么要更改生命周期(opens new window)](https:////interview.poetries.top/principle-docs/react/12-React16为什么要更改生命周期(上).html)
-> - [React16为什么要更改生命周期(opens new window)](https:////interview.poetries.top/principle-docs/react/12-React16为什么要更改生命周期(下).html)
 
 ### 3 React Fiber架构
 
@@ -9560,7 +9553,7 @@ export default class CallingLazyComponents extends React.Component {
 
 > `Redux`是将整个应用状态存储到一个地方上称为`store`,里面保存着一个状态树`store tree`,组件可以派发(`dispatch`)行为(`action`)给`store`,而不是直接通知其他组件，组件内部通过订阅`store`中的状态`state`来刷新自己的视图
 
-![img](https:////poetries1.gitee.io/img-repo/2020/07/68.png)
+![img](https://s.poetries.top/gitee/2020/07/68.png)
 
 > 如果你想对数据进行修改，`只有一种途径：派发 action`。action 会被 reducer 读取，进而根据 action 内容的不同对数据进行修改、生成新的 state（状态），这个新的 state 会更新到 store 对象里，进而驱动视图层面做出对应的改变。
 
@@ -9744,7 +9737,6 @@ function applyMiddleware(middlewares) {
 
 > 上面的`middleware(store)(dispatch)` 就相当于是 `const logger = store => next => {}`，这就是构造后的dispatch，继续向下传递。这里`middlewares.reverse()`，进行数组反转的原因，是最后构造的`dispatch`，实际上是最先执行的。因为在`applyMiddleware`串联的时候，每个中间件只是返回一个新的`dispatch`函数给下一个中间件，实际上这个`dispatch`并不会执行。只有当我们在程序中通过`store.dispatch(action)`，真正派发的时候，才会执行。而此时的`dispatch`是最后一个中间件返回的包装函数。然后依次向前递推执行。
 
-[浅析中间件(opens new window)](https:////interview.poetries.top/principle-docs/react/08-浅析中间件.html)
 
 **action、store、reducer分析**
 
@@ -10833,7 +10825,6 @@ React 组件应从`设计与工程实践`两个方向进行探讨
 
 ![img](https:////img-repo.poetries.top/images/20210409164620.png)
 
-[React router原理分析(opens new window)](https:////interview.poetries.top/principle-docs/react/01-React-router原理.html)
 
 ### 28 React 17 带来了哪些改变
 
@@ -11896,7 +11887,6 @@ app.listen(3000);
 3. `plugin` 用 `babel-traverse` 对 `AST`树进行遍历编译，得到新的 `AST`树；
 4. 用 `babel-generator` 通过 `AST`树生成 `ES5` 代码。
 
-[Babel原理及其使用(opens new window)](https:////interview.poetries.top/principle-docs/webpack/05-Babel原理及其使用.html)
 
 ### 10 介绍一下Rollup
 
@@ -12051,7 +12041,7 @@ app.listen(3000);
 
 `HTTP` 协议为此定义了两个 `Accept` 请求头字段和两个 `Content` 实体头字段，用于客户端和服务器进行“内容协商”。也就是说，客户端用 `Accept` 头告诉服务器希望接收什么样的数据，而服务器用 `Content` 头告诉客户端实际发送了什么样的数据
 
-![img](https:////poetries1.gitee.io/img-repo/2019/12/15.png)
+![img](https://s.poetries.top/gitee/2019/12/15.png)
 
 > `Accept`字段标记的是客户端可理解的 `MIME` type，可以用“,”做分隔符列出多个类型，让服务器有更多的选择余地，例如下面的这个头：
 
@@ -12106,8 +12096,7 @@ Content-Type: text/html; charset=utf-8
 ```
 
 不过现在的浏览器都支持多种字符集，通常不会发送 `Accept-Charset`，而服务器也不会发送 `Content-Language`，因为使用的语言完全可以由字符集推断出来，所以在请求头里一般只会有 `Accept-Language` 字段，响应头里只会有 `Content-Type`字段
-
-![img](https:////poetries1.gitee.io/img-repo/2019/12/16.png)
+![img](https://s.poetries.top/gitee/2019/12/16.png)
 
 **4. 内容协商的质量值**
 
@@ -12139,7 +12128,7 @@ Vary: Accept-Encoding,User-Agent,Accept
 
 **6. 小结**
 
-![img](https:////poetries1.gitee.io/img-repo/2019/12/17.png)
+![img](https://s.poetries.top/gitee/2019/12/17.png)
 
 - 数据类型表示实体数据的内容是什么，使用的是 `MIME type`，相关的头字段是 `Accept`和 `Content-Type`；
 - 数据编码表示实体数据的压缩方式，相关的头字段是 `Accept-Encoding` 和 `Content-Encoding`；

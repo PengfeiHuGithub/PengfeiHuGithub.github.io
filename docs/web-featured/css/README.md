@@ -502,7 +502,7 @@ eg:
 1. 获取不存在与DOM树中的信息。比如a标签的`:link`、`visited`等，这些信息不存在与DOM树结构中，只能通过CSS选择器来获取；
 2. 获取不能被常规CSS选择器获取的信息。比如：要获取第一个子元素，我们无法用常规的CSS选择器获取，但可以通过 `:first-child` 来获取到。
 
-![img](https://blog.poetries.top/img-repo/2020/01/24.png)
+![img](https://s.poetries.top/gitee/2020/01/24.png)
 
 **伪元素**
 

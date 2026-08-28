@@ -82,17 +82,90 @@ module.exports = [{
     {
         text: '前端面试',
         link: '/web/',
-        items: [{
-                text: '优化相关之webpack',
-                link: '/web/webpack/'
-            },
+        items: [
             {
                 text: 'git',
-                link: '/web/git/'
+                link: '/web/git/',
+                items:[
+                    {
+                        text: 'git',
+                        link: '/web/git/',
+                    },
+                    {
+                        text: 'bug分支',
+                        link: '/web/git/bug分支',
+                    },
+                    {
+                        text: 'feature分支',
+                        link: '/web/git/feature分支',
+                    },
+                    {
+                        text: 'rebase',
+                        link: '/web/git/rebase',
+                    },
+                    {
+                        text: '从远程仓库克隆',
+                        link: '/web/git/从远程仓库克隆',
+                    },
+                    {
+                        text: '创建分支与合并分支',
+                        link: '/web/git/创建分支与合并分支',
+                    },
+                    {
+                        text: '创建标签',
+                        link: '/web/git/创建标签',
+                    },
+                    {
+                        text: '创建版本库',
+                        link: '/web/git/创建版本库',
+                    },
+                    {
+                        text: '删除文件',
+                        link: '/web/git/删除文件',
+                    },
+                    {
+                        text: '多人协作',
+                        link: '/web/git/多人协作',
+                    },
+                    {
+                        text: '工作区和缓存区',
+                        link: '/web/git/工作区和缓存区',
+                    },
+                    {
+                        text: '撤销修改',
+                        link: '/web/git/撤销修改',
+                    },
+                    {
+                        text: '操作标签',
+                        link: '/web/git/操作标签',
+                    },
+                    {
+                        text: '添加远程仓库',
+                        link: '/web/git/添加远程仓库',
+                    },
+                    {
+                        text: '版本回退',
+                        link: '/web/git/版本回退',
+                    },
+                    {
+                        text: '管理修改',
+                        link: '/web/git/管理修改',
+                    },
+                    {
+                        text: '解决冲突',
+                        link: '/web/git/解决冲突',
+                    }
+                ]
             },
             {
-                text: 'vue知识点解读',
-                link: '/web/vue难点解读/'
+                text: 'vue难点解读',
+                link: '/web/vue难点解读/',
+                items:[
+                    {
+                        text: 'vue难点解读',
+                        link: '/web/vue难点解读/',
+                    }
+                ]
             },
         ]
     },

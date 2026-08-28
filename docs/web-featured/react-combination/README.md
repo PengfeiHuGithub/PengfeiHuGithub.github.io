@@ -8,8 +8,6 @@
 
 想要摆脱对未来的迷茫，最好的方法就是向后看，看一路走来前端开发是如何从服务端主导的静态网站一步步发展到现在由客户端主导的单页应用。只有了解了过去前端分别在不同的阶段解决了怎样的问题，才能更好地看清楚未来要向哪里去。
 
-![img](https://user-gold-cdn.xitu.io/2018/6/15/16403cbbe2e891c5?w=286&h=176&f=png&s=3544)
-
 在前端界大名鼎鼎的 [jQuery (opens new window)](https://jquery.com/)诞生于 2006 年，那时还没有 [Google Chrome (opens new window)](https://en.wikipedia.org/wiki/Google_Chrome)，微软刚刚发布了直到现在还在令许多前端开发者头疼的 [IE 7 (opens new window)](https://en.wikipedia.org/wiki/Internet_Explorer_7)。
 
 jQuery 作为试图抹平不同浏览器之间 API 差异的先锋进入了人们的视野，并在之后很长的一段时间内占据了 Web 开发领域统治性的地位。那时开发一个网站并不需要先配置一个复杂的脚手架，只需要新建一个 HTML 文件即可，开发者们也远未意识到未来前端开发究竟会复杂到什么样的程度，以页面为单位的开发方式在当时看起来并没有什么问题。
@@ -20,7 +18,6 @@ jQuery 作为试图抹平不同浏览器之间 API 差异的先锋进入了人�
 
 ### 青铜时代 - 模块化
 
-![img](https://user-gold-cdn.xitu.io/2018/6/16/164080f0d96479ab?w=182&h=62&f=png&s=5975)
 
 随着 [Ajax (opens new window)](https://en.wikipedia.org/wiki/Ajax_(programming))等技术的普及，客户端 JavaScript 的代码量也越来越大，开发者们开始无法忍受全局变量带来的命名冲突，各个插件之间虽然相互独立但多个插件之间的依赖关系却也变得越来越复杂。这时前端开发对于模块化的需求变得非常强烈，于是便涌现出了 [RequireJS (opens new window)](http://requirejs.org/)和 [Sea.js (opens new window)](https://github.com/seajs/seajs)两大专注于解决前端模块化问题的类库，以 Sea.js 发布 1.0 正式版的时间为参考，那时是 2011 年 7 月。
 
@@ -30,7 +27,6 @@ jQuery 作为试图抹平不同浏览器之间 API 差异的先锋进入了人�
 
 ### 白银时代 - 组件化
 
-![img](https://user-gold-cdn.xitu.io/2018/6/15/16403cefec123ee1?w=200&h=200&f=png&s=8192)
 
 在前端模块化进行得如火如荼的同时，由谷歌开发的 [AngularJS (opens new window)](https://angularjs.org/)也于 2010 年 10 月发布，这是第一次 JavaScript 框架试图接管所有的 DOM 操作。不过由于在当时过于超前的设计和后续断崖式的升级，AngularJS 一直没能打破 jQuery 在前端开发界的统治地位，直到 2013 年 Facebook 发布 [React (opens new window)](https://reactjs.org/)。
 
@@ -44,7 +40,6 @@ jQuery 作为试图抹平不同浏览器之间 API 差异的先锋进入了人�
 
 ### 黄金时代 - 专业化
 
-![img](https://user-gold-cdn.xitu.io/2018/6/15/16403da01a06c7ca?w=1920&h=1080&f=png&s=157421)
 
 时间来到 2017 年，作为前端组件库界标杆的 ant-design 先后发布了 [ant-design-mobile (opens new window)](https://mobile.ant.design/)及 [ant-design-pro (opens new window)](https://pro.ant.design/)，淘宝系也发布了[飞冰 (opens new window)](https://alibaba.github.io/ice/)（以下称为 ice）。
 
@@ -55,7 +50,6 @@ ant-design-mobile 想要解决的是移动端的问题，而 ant-design-pro 想�
 这里我们先按下这些垂直领域的解决方案是否能够解决相应的问题不表，但我们从这些事例中可以看出的趋势是清晰的：**区别于之前大力建设作为前端基础设施的组件库，前端的下一个方向就是要在这些基础设施之上同时向多个细分领域进军，如上面提到的移动端、企业中后台，又如富文本编辑、数据可视化等这些对于专业深度要求更高的领域。**
 
 ## 资深工程师的下一站
-
 
 
 随着我们对未来的认知越来越清晰问题也随之而来：在这么多的细分领域中应该专攻哪一个呢？
@@ -74,19 +68,14 @@ ant-design-mobile 想要解决的是移动端的问题，而 ant-design-pro 想�
 
 # 似水流年：企业管理系统的前世今生
 
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647da99e643b687?w=773&h=336&f=png&s=58280)
-
 站在 2018 年 7 月这样一个时间点上，工程师们在谈起 Web 应用开发时已经很少再会提起如 [JSP（JavaServer Pages） (opens new window)](https://en.wikipedia.org/wiki/JavaServer_Pages)、[ASP.NET（Active Server Pages） (opens new window)](https://en.wikipedia.org/wiki/Active_Server_Pages)等这些传统的服务端 Web 应用开发方案，与此同时像 [jQuery (opens new window)](https://jquery.com/)、[Bootstrap (opens new window)](https://getbootstrap.com/)等这些直接处理样式及交互的工具库也逐渐淡出了历史舞台。随着 React、Angular 及 Vue 这些 MVVM 框架的流行，使用组件去组合页面逐渐代替了 Web 应用过去以页面为单位的开发方式，各种各样的组件库也应运而生成为了支撑现代 Web 应用开发的中坚力量。
 
 ## 历史
-
-
 
 时间退回到 2011 年，那是[千团大战（团购） (opens new window)](https://baike.baidu.com/item/千团大战)的元年，也是移动互联网开始真正进入人们日常生活的开始。从那之后，不论是 O2O、垂直电商，还是互联网金融等风靡全国的商业模式，各家创业公司都进入了一个 App 就可以创业的时代，同时也催生了技术领域学习 iOS 和 Android 开发的热潮，会用 Xcode 就可以月薪过万的 iOS 工程师成为了那个时代最好的代名词。但后来随着各大互联网巨头之间的合纵连横，能够不依赖投资机构独立运营的创业公司越来越少，客户端开发的需求也开始大量萎缩。在大起大落的移动端开发之外，其实这几年 Web 端开发的日子也并不好过。传统公司的官网项目连外包公司都喂不饱，除去个别大厂外又有多少公司一定要开发一个 Web 端的应用才能做生意呢？
 
 ### 传统企业管理系统（ERP）
 
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dab5c1e91ad9?w=1280&h=770&f=gif&s=103853)
 
 抛开一直在走下坡路的面向用户的客户端应用不谈，长期占据 Web 应用开发需求主流的各种企业管理系统却从来都没有沉寂过，只是因为这些内部应用的使用者通常来讲不过是内部员工而已，人们对这些管理系统的期待与忍耐度都已经被培养到了一种近乎变态的地步。
 
@@ -96,9 +85,6 @@ ant-design-mobile 想要解决的是移动端的问题，而 ant-design-pro 想�
 
 ## 雕版印刷术 vs. 活字印刷术
 
-
-
-![img](https://user-gold-cdn.xitu.io/2018/6/17/1640beee5154b502?w=600&h=316&f=jpeg&s=41059)
 
 发明于唐朝的雕版印刷术一直到明清时期都还在被广泛使用，而更为人所称道的宋代毕昇所发明的活字印刷术却一直都没有成为古代中国主流的印刷技术。这其中最主要的原因一方面是古代所要印刷的书大部分都是比较固定的（如四书五经等），雕版印刷的可复用性并不比活字印刷低多少。另一方面是制造和使用一块雕版还是几千个活字模在成本与复杂度上也是不可同日而语的。换句话说，如果现在就是要印 1000 册《论语》，你是会选择做一块雕版印 1000 次，还是先做几千个活字模并把它们组装好再印上 1000 次呢？答案不言而喻。而且别忘了印完这 1000 册《论语》后，接下来要印的可能是《大学》也可能是《中庸》，上次积累的这几千个活字模并不能够完全覆盖到其他的书，额外的拆卸与组装成本也是一笔不小的开销。再者而言，组装和拆卸活字模要求所有的印刷工人都必须识字，相反雕版印刷对于印刷工人来说几乎是零门槛的，任何人在接受了一定的训练后都可以把这个活儿干好。又由于一个个活字模本身是独立制造的，将几千个活字模组装好后印出的书也难免会出现字与字之间风格或样式不统一的问题，而统一制造的雕版就不存在这个缺陷。在古代，人们所达成的共识也是雕版印刷书的质量和美观程度都要远远胜过活字印刷。
 
@@ -116,22 +102,13 @@ ant-design-mobile 想要解决的是移动端的问题，而 ant-design-pro 想�
 
 [react-admin(opens new window)](https://github.com/marmelab/react-admin)
 
-![img](https://user-gold-cdn.xitu.io/2018/6/11/163eda126bff53f3?w=1024&h=576&f=png&s=196855)
-
 [ngx-admin(opens new window)](https://github.com/akveo/ngx-admin)
-
-![img](https://user-gold-cdn.xitu.io/2018/6/11/163eda1ac5e131a1?w=1024&h=576&f=png&s=325280)
 
 [blur-admin(opens new window)](https://github.com/akveo/blur-admin)
 
-![img](https://user-gold-cdn.xitu.io/2018/6/11/163eda1faf0e7aa4?w=1024&h=576&f=png&s=228384)
-
 [ant-design-pro(opens new window)](https://github.com/ant-design/ant-design-pro)
 
-![img](https://user-gold-cdn.xitu.io/2018/6/11/163eda226646646a?w=1024&h=576&f=png&s=165156)
-
 ## 工程师 vs. 设计师
-
 
 
 对于上面提到的这些优秀的开源项目，许多开发者所抱的态度很多时候都是又爱又恨。在网络讨论中，一个经常被人拿来讨论的问题是，互联网大厂的工程师和传统公司的工程师之间有什么区别？但其实除了工程师之间存在着不同外，互联网大厂设计师与传统公司设计师之间的区别才是最为巨大的。
@@ -143,7 +120,6 @@ ant-design-mobile 想要解决的是移动端的问题，而 ant-design-pro 想�
 是的，在非一线的互联网公司中，困扰程序员的关键往往不是技术，而是不同部门之间因为各自背景、诉求、视野等不同而产生的不协调。大而全的方案看起来很美，但实践起来却困难重重。
 
 ## 组合式开发
-
 
 
 为了解决大而全的方案在实践中不够灵活的问题，我们是不是可以将其中包含的各个模块解耦后，独立发布出来供开发者们按需取用呢？让我们先来看一段理想中完整的企业管理系统应用架构部分的伪代码：
@@ -199,7 +175,6 @@ const App = props => (
 
 这其中最经典的一个应用莫过于「可视化页面搭建工具」。
 
-![img](https://user-gold-cdn.xitu.io/2018/6/25/164376ee0b313636?w=770&h=380&f=jpeg&s=53781)
 
 对于任何一家有运营需求的公司，「可视化页面搭建工具」都是一个刚需，我们很难想象有哪家公司的前端工程师每天的工作就是做生命周期只有几天甚至几小时的活动页。所以一直以来「可视化页面搭建工具」在前端开发界都不是一个新鲜的议题。从 20 年前的 [Dreamweaver (opens new window)](https://en.wikipedia.org/wiki/Adobe_Dreamweaver)开始，一直到最近淘宝推出的 [飞冰（ice） (opens new window)](https://alibaba.github.io/ice/)，其本质上的思路都是类似的，即基于组件的模块化页面搭建。
 
@@ -213,11 +188,8 @@ const App = props => (
 
 ### 静态页面
 
-![img](https://user-gold-cdn.xitu.io/2018/6/25/164376bc84094315?w=1590&h=977&f=png&s=1219738)
-
 常见的可视化页面搭建工具一般都会包含**页面预览区**、**组件选择区**及**布局调整区**（如调整组件顺序等）等三个部分。在从组件选择区选择了某几个组件后，每个被选用的组件还会有各自的属性编辑界面，一般为弹窗的形式，如下图所示的表格组件编辑界面。
 
-![img](https://user-gold-cdn.xitu.io/2018/7/24/164ca43a9b8db929?w=1794&h=683&f=png&s=54559)
 
 最终的产出就是一段描述当前页面布局与内容的 [DSL (opens new window)](https://en.wikipedia.org/wiki/Domain-specific_language)，通常以 JSON 的格式存储。
 
@@ -296,8 +268,6 @@ const App = props => (
 ```
 
 除了直接配置数据接口外，另一种常见的做法是将数据接口统一处理为数据资产，在使用者配置组件的数据源时，让其可以在所有相关的数据资产中选择需要的部分，然后再转化为具体的数据接口，保存在组件配置中。
-
-![img](https://user-gold-cdn.xitu.io/2018/6/26/1643a100da62e87f?w=1862&h=1332&f=png&s=274984)
 
 但在引入了异步数据之后，有一个必须要解决的问题就是何时发出这些数据请求。这里推荐使用**高阶组件**的方法来解决这一问题，即抽象出一个专门根据组件的 `componentApi` 属性发送请求的高阶组件，并将它包裹在所有需要发送异步请求的组件之上。
 
@@ -689,8 +659,6 @@ $red-10: #5c0011 !default;
 
 JavaScript 作为近几年来变化最大的一部分，总结下来的改变主要集中在三个方面：一是需要将使用 ES2015、ES2016、ES2017 特性的 JavaScript 代码编译至大多数浏览器普遍支持的 ES5（对应工具为 Babel），二是需要将编译好的 JavaScript、CSS 及 HTML 整合起来，也就是我们常说的打包（对应工具为 webpack），三是需要对代码风格及规范进行检查（对应工具为 ESLint）。
 
-![img](https://user-gold-cdn.xitu.io/2018/6/18/164114407bfed7d8)
-
 `.babelrc` 作为 Babel 的配置文件，最核心的两部分就是 `presets` 以及 `plugins`。
 
 `presets` 代表了 Babel 配置的核心部分。其中 `babel-preset-env` 整合了 `es2015`、`es2016`、`es2017` 三个原先独立的 `preset`，开发者只需要引入 `env` 这样一个 `preset` 就可以安全地使用上述三个版本中包含的 JavaScript 新特性。
@@ -699,13 +667,9 @@ JavaScript 作为近几年来变化最大的一部分，总结下来的改变主
 
 Babel 作为一个基于插件系统打造的 JavaScript 编译工具，其可定制度是非常高的，开发者们完全可以根据自己的使用需要与编码习惯去选择或开发合适的插件以达到提升开发效率的效果。
 
-![img](https://user-gold-cdn.xitu.io/2018/6/18/164114462180b3bc?w=1280&h=660&f=jpeg&s=38167)
-
 webpack 作为现在最流行的前端打包工具，其一路走来的发展史也是许多前端开发者的血泪史。webpack 1 到 webpack 2 时破坏式的升级导致了许多前端项目直到今天都仍然停留在 webpack 1，而 webpack 3 到 webpack 4 时彻底重构了的内部插件系统又导致了第二次断崖式升级。但值得庆幸的是，webpack 在最新的 4+ 版本中终于承认了「约定大于配置」并大幅减少了在功能与插件方面配置代码的数量。
 
 webpack 配置的核心一是源代码的入口（entry）与打包后代码的出口（output），二是不同资源的加载器（loader），三是插件，常用的如处理 CSS 的 `mini-css-extract-plugin`，处理 HTML 的 `html-webpack-plugin` 等。具体实用的 webpack 配置大家可以参考示例项目 [`react-boilerplate` (opens new window)](https://github.com/AlanWei/react-boilerplate)中的 [`webpack.config.js` (opens new window)](https://github.com/AlanWei/react-boilerplate/blob/master/webpack.config.js)部分。
-
-![img](https://user-gold-cdn.xitu.io/2018/6/18/16411449e8db5234?w=398&h=233&f=png&s=12758)
 
 相较于 Babel 与 webpack，ESLint 更像是一个可选项，因为它并不会直接影响最终编译完成的代码，而是在编写阶段对开发者的编码风格进行约束，帮助开发者写出更好的 JavaScript 代码。
 
@@ -716,8 +680,6 @@ webpack 配置的核心一是源代码的入口（entry）与打包后代码的�
 
 
 介绍完了 HTML、CSS、JavaScript 三个部分后，项目脚手架已经初见雏形，让我们先来写一个 Hello World。
-
-![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c46791ba26b1?w=2560&h=1600&f=png&s=107962)
 
 脚手架除了能够帮助团队一次性地解决上述提到的这些技术栈配置问题外，还有一个重要的责任就是梳理项目的标准目录组织结构。从通用的角度来讲，一般一个完整的前端项目都至少需要包含以下九个部分：
 
@@ -732,8 +694,6 @@ webpack 配置的核心一是源代码的入口（entry）与打包后代码的�
 9. `i18n/`: 存放应用国际化需要的多语言文件
 
 在将这些文件夹都添加到我们的脚手架后，让我们来写一个复杂点的页面。
-
-![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c4a82308f45c?w=2560&h=1600&f=png&s=160649)
 
 最后关于 redux 部分的设置，根据业务需要可能会有所区别，大家可以参考以下的几个条件渐进式地选择数据流工具。
 
@@ -785,13 +745,8 @@ webpack 配置的核心一是源代码的入口（entry）与打包后代码的�
 
 在传统的前端开发中提到布局我们可能第一时间会想到「圣杯布局」或「双飞燕布局」这些跟 CSS 相关的页面布局方式。而在现代前端开发中，更准确地说在组件化开发逐渐成为现代前端开发主流之后对于布局这一概念又有了新的定义，那就是多个页面中共同的部分，也可以叫做页面的骨架。
 
-如下图，在不同页面中都会包含的侧边栏菜单就是页面基础布局的一部分：
-
-![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c60353535fa8?w=864&h=1360&f=png&s=52196)
 
 ## 布局与路由
-
-
 
 在讨论具体的布局组件设计前，我们首先要解决一个更为基础的问题，那就是如何将布局组件与应用路由结合起来。
 
@@ -906,8 +861,6 @@ const SidebarExample = () => (
 
 解决了与应用路由相结合的问题，具体到布局组件内部，其中最重要的两部分就是页面的页眉和页脚部分，而页眉又可以分为应用页眉与页面页眉两部分。
 
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647db6284664b46?w=2560&h=1600&f=png&s=251710)
-
 应用页眉指的是整个应用层面的页眉，与具体的页面无关，一般来说会包含用户头像、通知栏、搜索框、多语言切换等这些应用级别的信息与操作。页面页眉则一般来讲会包含页面标题、面包屑导航、页面通用操作等与具体页面相关的内容。
 
 在以往的项目中，尤其是在项目初期许多开发者因为对项目本身还没有一个整体的认识，很多时候会倾向于将应用页眉做成一个展示型组件并在不同的页面中直接调用。这样做当然有其方便之处，比如说页面与布局之间的数据同步环节就被省略掉了，每个页面都可以直接向页眉传递自己内部的数据。
@@ -951,8 +904,6 @@ const SidebarExample = () => (
 配置项（配置文件）天然就是一种集中式的管理模式，可以极大地降低应用复杂度。以页眉为例来说，如果我们每个页面文件中都调用了页眉组件，那么一旦页眉组件出现问题我们就需要修改所有用到页眉组件页面的代码。除去 debug 的情况外，哪怕只是修改一个页面标题这样简单的需求，开发者也需要先找到这个页面相对应的文件，并在其 `render` 函数中进行修改。这些隐性成本都是我们在设计企业管理系统解决方案时需要注意的，因为就是这样一个个的小细节造成了本身并不复杂的企业管理系统在维护、迭代了一段时间后应用复杂度陡增。理想情况下，一个优秀的企业管理系统解决方案应该可以做到 80% 以上非功能性需求变更都可以使用修改配置文件的方式解决。
 
 ### 配置式页眉
-
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647db9a22f6b1f9?w=2560&h=1600&f=png&s=221813)
 
 ```text
 import { matchRoutes } from 'react-router-config';
@@ -1071,7 +1022,6 @@ renderBreadcrumb = () => {
 > 2. [react-boilerplate-pro/src/app/init/router.js(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/app/init/router.js)
 > 3. [react-boilerplate-pro/src/app/config/routes.js(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/app/config/routes.js)
 
-![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c84270857908?w=600&h=400&f=jpeg&s=43441)
 
 权限管理作为企业管理系统中非常核心的一个部分，一直以来因为业务方很多时候无法使用准确的术语来描述需求成为了困扰开发者们的一大难题。这里我们先来介绍两种常见的权限管理设计模式，即基于角色的访问控制以及访问控制列表。
 
@@ -1090,8 +1040,6 @@ renderBreadcrumb = () => {
 下面就让我们按照这样的思路实现一个基础版的包含权限管理功能的应用路由。
 
 ## 实战代码
-
-
 
 ### 路由容器
 
@@ -1193,8 +1141,6 @@ const routes = [{
 
 在上面的配置中，admin 和 user 都可以访问门店列表页面，但只有 admin 才可以访问门店详情页面。
 
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dbdca3edc792?w=2560&h=1600&f=png&s=178741)
-
 对于没有权限查看当前页面的情况，一般来讲有两种处理方式，一是直接重定向到另一个页面（如首页），二是渲染一个无权限页面，提示用户因为没有当前页面的权限所以无法查看。二者是排他的，即每个页面只需要使用其中一种即可，于是我们在路由配置中可以根据需要去配置 `redirect` 或 `unauthorized` 属性，分别对应**无权限重定向**及**无权限显示无权限页面**两种处理方式。具体代码大家可以参考示例项目 [react-acl-router (opens new window)](https://github.com/AlanWei/react-acl-router/blob/master/src/AclRouter.jsx)中的实现，这里摘录一小段核心部分。
 
 ```text
@@ -1251,8 +1197,6 @@ renderAuthorizedRoute = (route) => {
 
 于是，在最终的路由中，我们会优先匹配无需鉴权的页面路径，保证所有用户在访问无需鉴权的页面时，第一时间就可以看到页面。然后再去匹配需要鉴权的页面路径，最终如果所有的路径都匹配不到的话，再渲染 404 页面告知用户当前页面路径不存在。
 
-![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c97456cd6847?w=2560&h=1600&f=png&s=119442)
-
 ```text
 <Switch>
   {map(normalRoutes, route => (
@@ -1266,8 +1210,6 @@ renderAuthorizedRoute = (route) => {
 ```
 
 需要鉴权的路由和不需要鉴权的路由作为两种不同的页面，一般而言它们的页面布局也是不同的。如登录页面使用的就是普通页面布局：
-
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647d205501260fd?w=2560&h=1600&f=png&s=162652)
 
 在这里我们可以将不同的页面布局与鉴权逻辑相结合以达到只需要在路由配置中配置相应的属性，新增加的页面就可以同时获得鉴权逻辑和基础布局的效果。这将极大地提升开发者们的工作效率，尤其是对于项目组的新成员来说纯配置的上手方式是最友好的。
 
@@ -1366,8 +1308,6 @@ export default connect(mapStateToProps)(Router);
 > 本节参考代码：
 > [react-sider(opens new window)](https://github.com/AlanWei/react-sider)
 
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dc258aff5805?w=2560&h=1600&f=png&s=228508)
-
 在大部分企业管理系统中，页面的基础布局所采取的一般都是侧边栏菜单加页面内容这样的组织形式。在成熟的组件库支持下，UI 层面想要做出一个漂亮的侧边栏菜单并不困难，但因为在企业管理系统中菜单还承担着页面导航的功能，于是就导致了两大难题，一是多级菜单如何处理，二是菜单项的子页面（如点击门店管理中的某一个门店进入的门店详情页在菜单中并没有对应的菜单项）如何高亮其隶属于的父级菜单。
 
 ## 多级菜单
@@ -1400,8 +1340,6 @@ const menuData = [{
 想要支持多级菜单，首先要解决的问题就是如何统一不同级别菜单项的交互。
 
 在大多数的情况下，每一个菜单项都代表着一个不同的页面路径，点击后会触发 url 的变化并跳转至相应页面，也就是上面配置中的 path 字段。
-
-![img](https://user-gold-cdn.xitu.io/2018/6/21/16421ba418c8b09e?w=512&h=1320&f=png&s=48361)
 
 但对于一个父菜单来说，点击还意味着打开或关闭相应的子菜单，这就与点击跳转页面发生了冲突。为了简化这个问题，我们先统一菜单的交互为点击父菜单（包含 children 属性的菜单项）为打开或关闭子菜单，点击子菜单（不包含 children 属性的菜单项）为跳转至相应页面。
 
@@ -1555,10 +1493,6 @@ const getMeunMatchKeys = (flatMenuKeys, paths) =>
 
 在侧边栏菜单中，有两个重要的状态：一个是 `selectedKeys`，即当前选定的菜单项；另一个是 `openKeys`，即多个多级菜单的打开状态。这二者的含义是不同的，因为在 `selectedKeys` 不变的情况下，用户在打开或关闭其他多级菜单后，`openKeys` 是会发生变化的，如下面二图所示，`selectedKeys` 相同但 `openKeys` 不同。
 
-![img](https://user-gold-cdn.xitu.io/2018/6/21/16421c5cf08184c4?w=512&h=1320&f=png&s=31726)
-
-![img](https://user-gold-cdn.xitu.io/2018/6/21/16421c6048790fdf?w=512&h=1320&f=png&s=37488)
-
 对于 `selectedKeys` 来说，由于它是由页面路径（`pathname`）决定的，所以每一次 `pathname` 发生变化都需要重新计算 `selectedKeys` 的值。又因为通过 `pathname` 以及最基础的菜单数据 `menuData` 去计算 `selectedKeys` 是一件非常昂贵的事情（要做许多数据格式处理和计算），有没有什么办法可以优化一下这个过程呢？
 
 [Memoization (opens new window)](https://en.wikipedia.org/wiki/Memoization)可以赋予普通函数记忆输出结果的功能，它会在每次调用函数之前检查传入的参数是否与之前执行过的参数完全相同，如果完全相同则直接返回上次计算过的结果，就像常用的缓存一样。
@@ -1648,8 +1582,6 @@ handleOpenChange = (openKeys) => {
 
 在操作反馈通知（Notification）之外，完善的企业管理系统还需要一个全局的消息系统以方便系统管理员向某些或全部成员发送系统消息（Notice），即应用页眉中的通知栏，如 [ant-design-pro (opens new window)](https://pro.ant.design/components/NoticeIcon-cn/)中的例子。
 
-![img](https://user-gold-cdn.xitu.io/2018/6/20/1641c9fce604fc4f?w=2560&h=1600&f=png&s=378152)
-
 ## 全局通知栏与应用初始化
 
 与前端主导的通知系统不同，系统消息更依赖后端的实现。这里我们假设后端提供了获取当前用户未读消息的接口 `/notices`，创建相应的 redux action 为：
@@ -1729,21 +1661,15 @@ ReactDOM.render(application, window.document.getElementById('app'));
 
 在解决了数据获取的问题后，我们的布局组件就可以直接访问 redux store 中 app reducer 下的 `notices` 数据了。这里关于把 `notices` 存在哪个 reducer 中可能会有争议，比如它可以属于 `app` 的 reducer，即存放全局数据的地方，也可以单独创建一个 `basicLayout` 的 reducer 来存放布局组件所需要的数据，两种方案都是可行的。
 
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dca73da0255e?w=1280&h=800&f=png&s=366138)
-
 接下来我们要实现的需求是在用户点击某一条消息后将其从消息列表中删除，因为系统消息列表是由后端控制的，所以这时我们需要向后端发送一个 `DELETE` 的请求以删除当前用户点击的某条消息。这时又会出现一个分歧是，后端在接收到 `DELETE` 请求后会不会将最新的消息列表再返回给前端。如果后端能够返回的话，我们只需要在 reducer 中替换掉原先的消息列表即可，但如果后端只返回操作成功或失败的话，我们还需要再发送一遍 `getNotices` 请求去拉取最新的消息列表。
 
 最后，我们还需要处理无未读消息时的情况。
-
-![img](https://user-gold-cdn.xitu.io/2018/6/20/1641cadbc47a40cf?w=960&h=600&f=png&s=333312)
 
 ## 全局通知
 
 回到一开始提到的操作反馈部分。
 
 如果系统中的每个页面都需要独立去处理操作反馈的话，可以预见的是 `<Notification />` 组件几乎会出现在所有的页面。这样的解决方案不仅非常烦琐而且不利于统一处理通用的逻辑。
-
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647dce9b295bb20?w=2560&h=1600&f=png&s=212308)
 
 既然通知组件可以使用绝对定位的方式出现在不同页面的同一位置，那么我们能不能将它的显示和隐藏逻辑也放在全局的层面上进行处理呢？
 
@@ -1904,8 +1830,6 @@ view = f1(f2(currentState, action))
 > 2. [react-boilerplate-pro/src/app/init/router.js(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/app/init/router.js)
 > 3. [react-boilerplate-pro/src/views/login/index.js(opens new window)](https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/views/login/index.js)
 
-![img](https://user-gold-cdn.xitu.io/2018/6/23/164287e50eac13b5?w=1600&h=746&f=png&s=208496)
-
 随着国内市场的逐渐饱和越来越多的中国公司开始将目光投向了国际市场，其中竞争最为激烈的莫过于东南亚。拥有 6.5 亿人口的东南亚，整个地区的 GDP 总和高达 2.6 万亿美元，作为一个互联网行业刚刚进入快速发展阶段的市场其未来的想象空间十分巨大。但与此同时，在这块面积并不算庞大的土地上却分布着大大小小 11 个国家，说着印尼语、马来语、英语、泰语、越南语、中文等几十种不同的语言。
 
 互联网作为一个规模效应非常明显的行业天然就带有扩张的属性，但许多中国公司在出海后面临的第一个挑战就是产品不支持多种语言无法直接进入相应国家的市场。又因为现有系统在架构初期并没有将多语言支持的需求考虑进去，所以临时增加这个功能就变成了一件牵一发而动全身的事情，最后往往无功而返只得重新再做一个新的国际版，也就在这样来来回回的反复中白白浪费掉了许多宝贵的竞争机会。在吃过了这样的亏后，许多公司现在在开始一个新项目时就非常重视产品国际化的需求，希望能在架构初期就打下坚实的基础以至于在需要时可以轻松地产出多个不同语言的版本。
@@ -1935,8 +1859,6 @@ locale.json
 在存储方面对于追求开发效率的团队来说，将语言文件直接 commit 到项目的代码仓库是一种可行的做法。但如果有条件的话还是应该将下载语言文件这一步放在项目[持续集成 (opens new window)](https://baike.baidu.com/item/持续集成)的流程中，每一次构建项目时从存放语言文件的远端服务器拉取最新的版本，以保证发布到生产环境中的语言文件永远是最新的。
 
 ## 多语言版本切换 vs. 多语言版本构建
-
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647d2ebbfde42dd?w=2560&h=1600&f=png&s=157482)
 
 在讨论具体的产品国际化方案前，首先要明确的一点是，多语言支持这样一个需求根据具体的产品形态可以有两种不同的解决方案。
 
@@ -2154,15 +2076,7 @@ export default injectIntl(OutletDetail);
 
 在读取语言文件 key 值的方法上，多语言版本切换与多语言版本构建之间也有着细微的差别，具体的处理方法可以参考 [react-intl-context (opens new window)](https://github.com/AlanWei/react-intl-context)中的 [MultiIntlProvider (opens new window)](https://github.com/AlanWei/react-intl-context/blob/master/src/MultiIntlProvider.jsx)和 [IntlProvider (opens new window)](https://github.com/AlanWei/react-intl-context/blob/master/src/IntlProvider.jsx)。
 
-来看一下最终的效果。
 
-英文：
-
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647d2b2ebcc2956?w=2560&h=1600&f=png&s=159800)
-
-中文：
-
-![img](https://user-gold-cdn.xitu.io/2018/7/9/1647d29ab158e51f?w=2560&h=1600&f=png&s=162652)
 
 ## 组合式开发：多语言支持
 

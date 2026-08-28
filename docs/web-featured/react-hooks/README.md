@@ -288,10 +288,6 @@ immutable 数据一种利用结构共享形成的持久化数据结构，一旦�
 
 具体点来说，immutable 对象数据内部采用是多叉树的结构，凡是有节点被改变，那么它和与它相关的所有上级节点都更新。
 
-用一张动图来模拟一下这个过程：
-
-![img](https://user-gold-cdn.xitu.io/2019/10/20/16de7a154c8b30b8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
-
 是吧！只更新了父节点，比直接比对所有的属性简直强太多，并且更新后返回了一个全新的引用，即使是浅比对也能感知到数据的改变。
 
 因此，采用 immutable 既能够最大效率地更新数据结构，又能够和现有的 PureComponent (memo) 顺利对接，感知到状态的变化，是提高 React 渲染性能的极佳方案。
@@ -6724,8 +6720,6 @@ const afterEnter = () => {
 
 仔细观察，Top 和 Bottom 部分出现的相应的过渡，可以发现现在的效果较之前是更加灵动的:
 
-![img](https://user-gold-cdn.xitu.io/2019/10/26/16e0800ac63ce804?imageslim)
-
 ## 出场动画
 
 
@@ -6796,8 +6790,6 @@ const afterLeave = () => {
   normalPlayerRef.current.style.display = "none";
 };
 ```
-
-![img](https://user-gold-cdn.xitu.io/2019/10/26/16e0800fb44c5345?imageslim)
 
 OK, 至此我们的进场和出场动画就开发完成了！是不是 get 到很多新姿势呢：）
 
@@ -7287,8 +7279,6 @@ import { getSongUrl } from "../../api/utils";
 ```
 
 但是你现在会看到这样的报错信息:
-
-![img](https://user-gold-cdn.xitu.io/2020/1/16/16fac32579302b6b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 这是因为初始化store数据的时候，currentSong是一个空对象，song.al为undefined, 因此song.al.picUrl就会报错。
 
@@ -10627,8 +10617,6 @@ pm2 start ./server.js
 # 彩蛋1 CD世界更新_歌曲倍速播放
 
 最近抽空将播放器的界面做了一些更新，如图所示:
-
-![img](https://user-gold-cdn.xitu.io/2019/10/26/16e080ce8d8611b3?imageslim)
 
 一共分两路更新:
 

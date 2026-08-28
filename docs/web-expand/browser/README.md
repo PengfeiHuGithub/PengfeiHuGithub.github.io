@@ -2216,7 +2216,7 @@ printName: function () {
 
 关于 this，我们还是得先从执行上下文说起。在前面几篇文章中，我们提到执行上下文中包含了变量环境、词法环境、外部环境，但其实还有一个 this 没有提及，具体你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/1.png)
+![img](https://s.poetries.top/gitee/2019/11/1.png)
 
 从图中可以看出，this 是和执行上下文绑定的，也就是说每个执行上下文中都有一个 this。前面《08 | 调用栈：为什么 JavaScript 代码会出现栈溢出？》中我们提到过，执行上下文主要分为三种——全局执行上下文、函数执行上下文和 eval 执行上下文，所以对应的 this 也只有这三种——全局执行上下文中的 this、函数中的 this 和 eval 中的 this。
 
@@ -2499,7 +2499,7 @@ c = a
 
 对于各种语言的类型，你可以参考下图
 
-![img](https://blog.poetries.top/img-repo/2019/11/2.png)
+![img](https://s.poetries.top/gitee/2019/11/2.png)
 
 ## JavaScript 的数据类型
 
@@ -2542,7 +2542,7 @@ console.log(typeof bar) //object
 
 其实 JavaScript 中的数据类型一种有 8 种，它们分别是：
 
-![img](https://blog.poetries.top/img-repo/2019/11/3.png)
+![img](https://s.poetries.top/gitee/2019/11/3.png)
 
 了解这些类型之后，还有三点需要你注意一下。
 
@@ -2565,7 +2565,7 @@ let myObj = {
 
 要理解 JavaScript 在运行过程中数据是如何存储的，你就得先搞清楚其存储空间的种类。下面是我画的 JavaScript 的内存模型，你可以参考下：
 
-![img](https://blog.poetries.top/img-repo/2019/11/4.png)
+![img](https://s.poetries.top/gitee/2019/11/4.png)
 
 从图中可以看出， 在 JavaScript 的执行过程中， 主要有三种类型内存空间，分别是代码空间、栈空间和堆空间。
 
@@ -2587,13 +2587,13 @@ foo()
 
 前面文章我们已经讲解过了，当执行一段代码时，需要先编译，并创建执行上下文，然后再按照顺序执行代码。那么下面我们来看看，当执行到第 3 行代码时，其调用栈的状态，你可以参考下面这张调用栈状态图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/5.png)
+![img](https://s.poetries.top/gitee/2019/11/5.png)
 
 从图中可以看出来，当执行到第 3 行时，变量 a 和变量 b 的值都被保存在执行上下文中，而执行上下文又被压入到栈中，所以你也可以认为变量 a 和变量 b 的值都是存放在栈中的。
 
 接下来继续执行第 4 行代码，由于 JavaScript 引擎判断右边的值是一个引用类型，这时候处理的情况就不一样了，JavaScript 引擎并不是直接将该对象存放到变量环境中，而是将它分配到堆空间里面，分配后该对象会有一个在“堆”中的地址，然后再将该数据的地址写进 c 的变量值，最终分配好内存的示意图如下所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/6.png)
+![img](https://s.poetries.top/gitee/2019/11/6.png)
 
 从上图你可以清晰地观察到，对象类型是存放在堆空间的，在栈空间中只是保留了对象的引用地址，当 JavaScript 需要访问该数据的时候，是通过栈中的引用地址来访问的，相当于多了一道转手流程。
 
@@ -2601,7 +2601,7 @@ foo()
 
 答案是不可以的。这是因为 JavaScript 引擎需要用栈来维护程序执行期间上下文的状态，如果栈空间大了话，所有的数据都存放在栈空间里面，那么会影响到上下文切换的效率，进而又影响到整个程序的执行效率。比如文中的 foo 函数执行结束了，JavaScript 引擎需要离开当前的执行上下文，只需要将指针下移到上个执行上下文的地址就可以了，foo 函数执行上下文栈区空间全部回收，具体过程你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/7.png)
+![img](https://s.poetries.top/gitee/2019/11/7.png)
 
 所以通常情况下，栈空间都不会设置太大，主要用来存放一些原始类型的小数据。而引用类型的数据占用的空间都比较大，所以这一类数据会被存放到堆中，堆空间很大，能存放很多大的数据，不过缺点是分配内存和回收内存都会占用一定的时间。
 
@@ -2611,7 +2611,7 @@ foo()
 
 所以d=c的操作就是把 c 的引用地址赋值给 d，你可以参考下图
 
-![img](https://blog.poetries.top/img-repo/2019/11/8.png)
+![img](https://s.poetries.top/gitee/2019/11/8.png)
 
 从图中你可以看到，变量 c 和变量 d 都指向了同一个堆中的对象，所以这就很好地解释了文章开头的那个问题，通过 c 修改 name 的值，变量 d 的值也跟着改变，归根结底它们是同一个对象。
 
@@ -2652,7 +2652,7 @@ console.log(bar.getName())
 
 通过上面的分析，我们可以画出执行到 foo 函数中“return innerBar”语句时的调用栈状态，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/9.png)
+![img](https://s.poetries.top/gitee/2019/11/9.png)
 
 从上图你可以清晰地看出，当执行到 foo 函数时，闭包就产生了；当 foo 函数执行结束之后，返回的 getName 和 setName 方法都引用“clourse(foo)”对象，所以即使 foo 函数退出了，“clourse(foo)”依然被其内部的 getName 和 setName 方法引用。所以在下次调用bar.setName或者bar.getName时，创建的执行上下文中就包含了“clourse(foo)”。
 
@@ -2768,7 +2768,7 @@ foo()
 
 当执行到第 6 行代码时，其调用栈和堆空间状态图如下所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/10.png)
+![img](https://s.poetries.top/gitee/2019/11/10.png)
 
 从图中可以看出，原始类型的数据被分配到栈中，引用类型的数据会被分配到堆中。当 foo 函数执行结束之后，foo 函数的执行上下文会从堆中被销毁掉，那么它是怎么被销毁的呢？下面我们就来分析一下。
 
@@ -2778,7 +2778,7 @@ foo()
 
 你可能会有点懵，ESP 指针向下移动怎么就能把 showName 的执行上下文销毁了呢？具体你可以看下面这张移动 ESP 前后的对比图
 
-![img](https://blog.poetries.top/img-repo/2019/11/11.png)
+![img](https://s.poetries.top/gitee/2019/11/11.png)
 
 从图中可以看出，当 showName 函数执行结束之后，ESP 向下移动到 foo 函数的执行上下文中，上面 showName 的执行上下文虽然保存在栈内存中，但是已经是无效内存了。比如当 foo 函数再次调用另外一个函数时，这块内容会被直接覆盖掉，用来存放另外一个函数的执行上下文。
 
@@ -2788,7 +2788,7 @@ foo()
 
 通过上面的讲解，我想现在你应该已经知道，当上面那段代码的 foo 函数执行结束之后，ESP 应该是指向全局执行上下文的，那这样的话，showName 函数和 foo 函数的执行上下文就处于无效状态了，不过保存在堆中的两个对象依然占用着空间，如下图所示
 
-![img](https://blog.poetries.top/img-repo/2019/11/12.png)
+![img](https://s.poetries.top/gitee/2019/11/12.png)
 
 从图中可以看出，1003 和 1050 这两块内存依然被占用。要回收堆中的垃圾数据，就需要用到 JavaScript 中的垃圾回收器了。
 
@@ -2834,7 +2834,7 @@ foo()
 
 新生代中用Scavenge 算法来处理。所谓 Scavenge 算法，是把新生代空间对半划分为两个区域，一半是对象区域，一半是空闲区域，如下图所示
 
-![img](https://blog.poetries.top/img-repo/2019/11/13.png)
+![img](https://s.poetries.top/gitee/2019/11/13.png)
 
 新加入的对象都会存放到对象区域，当对象区域快被写满时，就需要执行一次垃圾清理操作。
 
@@ -2856,17 +2856,17 @@ foo()
 
 比如最开始的那段代码，当 showName 函数执行退出之后，这段代码的调用栈和堆空间如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/14.png)
+![img](https://s.poetries.top/gitee/2019/11/14.png)
 
 从上图你可以大致看到垃圾数据的标记过程，当 showName 函数执行结束之后，ESP 向下移动，指向了 foo 函数的执行上下文，这时候如果遍历调用栈，是不会找到引用 1003 地址的变量，也就意味着 1003 这块数据为垃圾数据，被标记为红色。由于 1050 这块数据被变量 b 引用了，所以这块数据会被标记为活动对象。这就是大致的标记过程。
 
 接下来就是垃圾的清除过程。它和副垃圾回收器的垃圾清除过程完全不同，你可以理解这个过程是清除掉红色标记数据的过程，可参考下图大致理解下其清除过程：
 
-![img](https://blog.poetries.top/img-repo/2019/11/15.png)
+![img](https://s.poetries.top/gitee/2019/11/15.png)
 
 上面的标记过程和清除过程就是标记 - 清除算法，不过对一块内存多次执行标记 - 清除算法后，会产生大量不连续的内存碎片。而碎片过多会导致大对象无法分配到足够的连续内存，于是又产生了另外一种算法——标记 - 整理（Mark-Compact），这个标记过程仍然与标记 - 清除算法里的是一样的，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。你可以参考下图
 
-![img](https://blog.poetries.top/img-repo/2019/11/16.png)
+![img](https://s.poetries.top/gitee/2019/11/16.png)
 
 ## 全停顿
 
@@ -2874,13 +2874,13 @@ foo()
 
 比如堆中的数据有 1.5GB，V8 实现一次完整的垃圾回收需要 1 秒以上的时间，这也是由于垃圾回收而引起 JavaScript 线程暂停执行的时间，若是这样的时间花销，那么应用的性能和响应能力都会直线下降。主垃圾回收器执行一次完整的垃圾回收流程如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/17.png)
+![img](https://s.poetries.top/gitee/2019/11/17.png)
 
 在 V8 新生代的垃圾回收中，因其空间较小，且存活对象较少，所以全停顿的影响不大，但老生代就不一样了。如果在执行垃圾回收的过程中，占用主线程时间过久，就像上面图片展示的那样，花费了 200 毫秒，在这 200 毫秒内，主线程是不能做其他事情的。比如页面正在执行一个 JavaScript 动画，因为垃圾回收器在工作，就会导致这个动画在这 200 毫秒内无法执行的，这将会造成页面的卡顿现象。
 
 为了降低老生代的垃圾回收而造成的卡顿，V8 将标记过程分为一个个的子标记过程，同时让垃圾回收标记和 JavaScript 应用逻辑交替进行，直到标记阶段完成，我们把这个算法称为增量标记（Incremental Marking）算法。如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/18.png)
+![img](https://s.poetries.top/gitee/2019/11/18.png)
 
 使用增量标记算法，可以把一个完整的垃圾回收任务拆分为很多小的任务，这些小的任务执行时间比较短，可以穿插在其他的 JavaScript 任务中间执行，这样当执行上述动画效果时，就不会让用户因为垃圾回收任务而感受到页面的卡顿了。
 
@@ -2918,7 +2918,7 @@ foo()
 
 那编译器和解释器是如何“翻译”代码的呢？具体流程你可以参考下图
 
-![img](https://blog.poetries.top/img-repo/2019/11/19.png)
+![img](https://s.poetries.top/gitee/2019/11/19.png)
 
 从图中你可以看出这二者的执行流程，大致可阐述为如下：
 
@@ -2929,7 +2929,7 @@ foo()
 
 通过上面的介绍，相信你已经了解编译器和解释器了。那接下来，我们就重点分析下 V8 是如何执行一段 JavaScript 代码的。你可以先来“一览全局”，参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/20.png)
+![img](https://s.poetries.top/gitee/2019/11/20.png)
 
 从图中可以清楚地看到，V8 在执行过程中既有解释器 Ignition，又有编译器 TurboFan，那么它们是如何配合去执行一段 JavaScript 代码的呢? 下面我们就按照上图来一一分解其执行流程。
 
@@ -2954,7 +2954,7 @@ foo()
 
 这段代码经过javascript-ast站点处理后，生成的 AST 结构如下：
 
-![img](https://blog.poetries.top/img-repo/2019/11/21.png)
+![img](https://s.poetries.top/gitee/2019/11/21.png)
 
 从图中可以看出，AST 的结构和代码的结构非常相似，其实你也可以把 AST 看成代码的结构化的表示，编译器或者解释器后续的工作都需要依赖于 AST，而不是源代码。
 
@@ -2966,7 +2966,7 @@ AST 是非常重要的一种数据结构，在很多项目中有着广泛的应�
 
 **第一阶段是分词（tokenize），又称为词法分析**，其作用是将一行行的源码拆解成一个个 token。所谓token，指的是语法上不可能再分的、最小的单个字符或字符串。你可以参考下图来更好地理解什么 token。
 
-![img](https://blog.poetries.top/img-repo/2019/11/22.png)
+![img](https://s.poetries.top/gitee/2019/11/22.png)
 
 从图中可以看出，通过var myName = “极客时间”简单地定义了一个变量，其中关键字“var”、标识符“myName” 、赋值运算符“=”、字符串“极客时间”四个都是 token，而且它们代表的属性还不一样。
 
@@ -2988,7 +2988,7 @@ AST 是非常重要的一种数据结构，在很多项目中有着广泛的应�
 
 理解了什么是字节码，我们再来对比下高级代码、字节码和机器码，你可以参考下图
 
-![img](https://blog.poetries.top/img-repo/2019/11/23.png)
+![img](https://s.poetries.top/gitee/2019/11/23.png)
 
 从图中可以看出，机器码所占用的空间远远超过了字节码，所以使用字节码可以减少系统的内存使用。
 
@@ -3006,7 +3006,7 @@ V8 的解释器和编译器的取名也很有意思。解释器 Ignition 是点�
 
 这么多语言的工作引擎都使用了“字节码 +JIT”技术，因此理解 JIT 这套工作机制还是很有必要的。你可以结合下图看看 JIT 的工作过程：
 
-![img](https://blog.poetries.top/img-repo/2019/11/24.png)
+![img](https://s.poetries.top/gitee/2019/11/24.png)
 
 ## JavaScript 的性能优化
 
@@ -3064,7 +3064,7 @@ void MainThread(){
 
 在上面的执行代码中，我们把所有任务代码按照顺序写进主线程里，等线程执行时，这些任务会按照顺序在线程中依次被执行；等所有任务执行完成之后，线程会自动退出。可以参考下图来直观地理解下其执行过程：
 
-![img](https://blog.poetries.top/img-repo/2019/11/25.png)
+![img](https://s.poetries.top/gitee/2019/11/25.png)
 
 ## 在线程运行过程中处理新任务
 
@@ -3100,7 +3100,7 @@ void MainThread(){
 
 通过引入事件循环机制，就可以让该线程“活”起来了，我们每次输入两个数字，都会打印出两数字相加的结果，你可以结合下图来参考下这个改进版的线程：
 
-![img](https://blog.poetries.top/img-repo/2019/11/26.png)
+![img](https://s.poetries.top/gitee/2019/11/26.png)
 
 ## 处理其他线程发送过来的任务
 
@@ -3108,7 +3108,7 @@ void MainThread(){
 
 那下面我们就来看看其他线程是如何发送消息给渲染主线程的，具体形式你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/27.png)
+![img](https://s.poetries.top/gitee/2019/11/27.png)
 
 从上图可以看出，渲染主线程会频繁接收到来自于 IO 线程的一些任务，接收到这些任务之后，渲染进程就需要着手处理，比如接收到资源加载完成的消息后，渲染进程就要着手进行 DOM 解析了；接收到鼠标点击的消息后，渲染主线程就要开始执行相应的 JavaScript 脚本来处理该点击事件。
 
@@ -3116,13 +3116,13 @@ void MainThread(){
 
 一个通用模式是使用消息队列。在解释如何实现之前，我们先说说什么是消息队列，可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/28.png)
+![img](https://s.poetries.top/gitee/2019/11/28.png)
 
 从图中可以看出，消息队列是一种数据结构，可以存放要执行的任务。它符合队列“先进先出”的特点，也就是说要添加任务的话，添加到队列的尾部；要取出任务的话，从队列头部去取。
 
 有了队列之后，我们就可以继续改造线程模型了，改造方案如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/29.png)
+![img](https://s.poetries.top/gitee/2019/11/29.png)
 
 从上图可以看出，我们的改造可以分为下面三个步骤：
 
@@ -3170,7 +3170,7 @@ task_queue.pushTask(clickTask)
 
 通过使用消息队列，我们实现了线程之间的消息通信。在 Chrome 中，跨进程之间的任务也是频繁发生的，那么如何处理其他进程发送过来的任务？你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/30.png)
+![img](https://s.poetries.top/gitee/2019/11/30.png)
 
 从图中可以看出，渲染进程专门有一个 IO 线程用来接收其他进程传进来的消息，接收到消息之后，会将这些消息组装成任务发送给渲染主线程，后续的步骤就和前面讲解的“处理其他线程发送的任务”一样了，这里就不再重复了。
 
@@ -3230,7 +3230,7 @@ void MainThread(){
 
 因为所有的任务都是在单线程中执行的，所以每次只能执行一个任务，而其他任务就都处于等待状态。如果其中一个任务执行时间过久，那么下一个任务就要等待很长时间。可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/31.png)
+![img](https://s.poetries.top/gitee/2019/11/31.png)
 
 从图中你可以看到，如果在执行动画过程中，其中有个 JavaScript 任务因执行时间过久，占用了动画单帧的时间，这样会给用户制造了卡顿的感觉，这当然是极不好的用户体验。针对这种情况，JavaScript 可以通过回调功能来规避这种问题，也就是让要执行的 JavaScript 任务滞后执行。至于浏览器是如何实现回调功能的，我们在后面的章节中再详细介绍。
 
@@ -3240,7 +3240,7 @@ void MainThread(){
 
 你可以打开开发者工具，点击“Performance”标签，选择左上角的“start porfiling and load page”来记录整个页面加载过程中的事件执行情况，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/32.png)
+![img](https://s.poetries.top/gitee/2019/11/32.png)
 
 从图中可以看出，我们点击展开了 Main 这个项目，其记录了主线程执行过程中的所有任务。图中灰色的就是一个个任务，每个任务下面还有子任务，其中的 Parse HTML 任务，是把 HTML 解析为 DOM 的任务。值得注意的是，在执行 Parse HTML 的时候，如果遇到 JavaScript 脚本，那么会暂停当前的 HTML 解析而去执行 JavaScript 脚本。
 
@@ -3385,7 +3385,7 @@ foo()
 
 你也可以打开 Performance 来看看其执行过程，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/33.png)
+![img](https://s.poetries.top/gitee/2019/11/33.png)
 
 从图中可以看到，执行 foo 函数所消耗的时长是 500 毫秒，这也就意味着通过 setTimeout 设置的任务会被推迟到 500 毫秒以后再去执行，而设置 setTimeout 的回调延迟时间是 0。
 
@@ -3402,7 +3402,7 @@ setTimeout(cb, 0);
 
 你还是可以通过 Performance 来记录下这段代码的执行过程，如下图所示
 
-![img](https://blog.poetries.top/img-repo/2019/11/34.png)
+![img](https://s.poetries.top/gitee/2019/11/34.png)
 
 上图中的竖线就是定时器的函数回调过程，从图中可以看出，前面五次调用的时间间隔比较小，嵌套调用超过五次以上，后面每次的调用最小时间间隔是 4 毫秒。之所以出现这样的情况，是因为在 Chrome 中，定时器被嵌套调用 5 次以上，系统会判断该函数方法被阻塞了，如果定时器的调用时间间隔小于 4 毫秒，那么浏览器会将每次调用的时间间隔设置为 4 毫秒。下面是Chromium 实现 4 毫秒延迟的代码，你可以看下：
 
@@ -3551,7 +3551,7 @@ doWork(callback)
 
 这里还需要补充一点，那就是当循环系统在执行一个任务的时候，都要为这个任务维护一个系统调用栈。这个系统调用栈类似于 JavaScript 的调用栈，只不过系统调用栈是 Chromium 的开发语言 C++ 来维护的，其完整的调用栈信息你可以通过 chrome://tracing/ 来抓取。当然，你也可以通过 Performance 来抓取它核心的调用信息，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/35.png)
+![img](https://s.poetries.top/gitee/2019/11/35.png)
 
 这幅图记录了一个 Parse HTML 的任务执行过程，其中黄色的条目表示执行 JavaScript 的过程，其他颜色的条目表示浏览器内部系统的执行过程。
 
@@ -3568,7 +3568,7 @@ doWork(callback)
 
 理解了什么是同步回调和异步回调，接下来我们就来分析 XMLHttpRequest 背后的实现机制，具体工作过程你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/36.png)
+![img](https://s.poetries.top/gitee/2019/11/36.png)
 
 这是 XMLHttpRequest 的总执行流程图，下面我们就来分析从发起请求到接收数据的完整流程。
 
@@ -3652,7 +3652,7 @@ ontimeout，用来监控超时请求，如果后台请求超时了，该函数�
 
 我们还可以通过xhr.responseType = "text"来配置服务器返回的格式，将服务器返回的数据自动转换为自己想要的格式，如果将 responseType 的值设置为 json，那么系统会自动将服务器返回的数据转换为 JavaScript 对象格式。下面的图表是我列出的一些返回类型的描述：
 
-![img](https://blog.poetries.top/img-repo/2019/11/37.png)
+![img](https://s.poetries.top/gitee/2019/11/37.png)
 
 假如你还需要添加自己专用的请求头属性，可以通过 xhr.setRequestHeader 来添加。
 
@@ -3730,11 +3730,11 @@ Access to XMLHttpRequest at 'https://time.geekbang.org/' from origin 'https://ww
 
 通常，如果 HTTPS 请求页面中使用混合内容，浏览器会针对 HTTPS 混合内容显示警告，用来向用户表明此 HTTPS 页面包含不安全的资源。比如打开站点 https://www.iteye.com/groups ，可以通过控制台看到混合内容的警告，参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/38.png)
+![img](https://s.poetries.top/gitee/2019/11/38.png)
 
 从上图可以看出，通过 HTML 文件加载的混合资源，虽然给出警告，但大部分类型还是能加载的。而使用 XMLHttpRequest 请求时，浏览器认为这种请求可能是攻击者发起的，会阻止此类危险的请求。比如我通过浏览器打开地址 https://www.iteye.com/groups ，然后通过控制台，使用 XMLHttpRequest 来请求 http://img-ads.csdn.net/2018/201811150919211586.jpg ，这时候请求就会报错，出错信息如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/39.png)
+![img](https://s.poetries.top/gitee/2019/11/39.png)
 
 ## 总结
 
@@ -3809,7 +3809,7 @@ Access to XMLHttpRequest at 'https://time.geekbang.org/' from origin 'https://ww
 
 但实际情况是我们不能控制的，比如在你调用 setTimeout 来设置回调任务的间隙，消息队列中就有可能被插入很多系统级的任务。你可以打开 Performance 工具，来记录下这段任务的执行过程，也可参考文中我记录的图片：
 
-![img](https://blog.poetries.top/img-repo/2019/11/40.png)
+![img](https://s.poetries.top/gitee/2019/11/40.png)
 
 setTimeout 函数触发的回调函数都是宏任务，如图中，左右两个黄色块就是 setTimeout 触发的两个定时器任务。
 
@@ -3851,7 +3851,7 @@ setTimeout 函数触发的回调函数都是宏任务，如图中，左右两个
 
 为了直观地理解什么是微任务，你可以参考下面我画的示意图（由于内容比较多，我将其分为了两张）：
 
-![img](https://blog.poetries.top/img-repo/2019/11/41.png) ![img](https://blog.poetries.top/img-repo/2019/11/42.png)
+![img](https://s.poetries.top/gitee/2019/11/41.png) ![img](https://s.poetries.top/gitee/2019/11/42.png)
 
 该示意图是在执行一个 ParseHTML 的宏任务，在执行过程中，遇到了 JavaScript 脚本，那么就暂停解析流程，进入到 JavaScript 的执行环境。从图中可以看到，全局上下文中包含了微任务列表。
 
@@ -3918,7 +3918,7 @@ setTimeout 函数触发的回调函数都是宏任务，如图中，左右两个
 
 首先我们来回顾下 JavaScript 的异步编程模型，你应该已经非常熟悉页面的事件循环系统了，也知道页面中任务都是执行在主线程之上的，相对于页面来说，主线程就是它整个的世界，所以在执行一项耗时的任务时，比如下载网络文件任务、获取摄像头等设备信息任务，这些任务都会放到页面主线程之外的进程或者线程中去执行，这样就避免了耗时任务“霸占”页面主线程的情况。你可以结合下图来看看这个处理过程：
 
-![img](https://blog.poetries.top/img-repo/2019/11/43.png)
+![img](https://s.poetries.top/gitee/2019/11/43.png)
 
 上图展示的是一个标准的异步编程模型，页面主线程发起了一个耗时的任务，并将任务交给另外一个进程去处理，这时页面主线程会继续执行消息队列中的任务。等该进程处理完这个任务后，会将该任务添加到渲染进程的消息队列中，并排队等待循环系统的处理。排队结束之后，循环系统会取出消息队列中的任务进行处理，并触发相关的回调操作。
 
@@ -3959,7 +3959,7 @@ xhr.send();
 
 由于我们重点关注的是输入内容（请求信息）和输出内容（回复信息），至于中间的异步请求过程，我们不想在代码里面体现太多，因为这会干扰核心的代码逻辑。整体思路如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/44.png)
+![img](https://s.poetries.top/gitee/2019/11/44.png)
 
 从图中你可以看到，我们将 XMLHttpRequest 请求过程的代码封装起来了，重点关注输入数据和输出结果。
 
@@ -4136,7 +4136,7 @@ x1.then(onResolve)
 
 **其次，需要将回调函数 onResolve 的返回值穿透到最外层**。因为我们会根据 onResolve 函数的传入值来决定创建什么类型的 Promise 任务，创建好的 Promise 对象需要返回到最外层，这样就可以摆脱嵌套循环了。你可以先看下面的代码：
 
-![img](https://blog.poetries.top/img-repo/2019/11/45.png)
+![img](https://s.poetries.top/gitee/2019/11/45.png)
 
 现在我们知道了 Promise 通过回调函数延迟绑定和回调函数返回值穿透的技术，解决了循环嵌套。
 
@@ -4370,7 +4370,7 @@ console.log('main 4')
 
 为了让你更好地理解协程是怎么执行的，我结合上面那段代码的执行过程，画出了下面的“协程执行流程图”，你可以对照着代码来分析：
 
-![img](https://blog.poetries.top/img-repo/2019/11/46.png)
+![img](https://s.poetries.top/gitee/2019/11/46.png)
 
 **从图中可以看出来协程的四点规则：**
 
@@ -4389,7 +4389,7 @@ console.log('main 4')
 
 为了直观理解父协程和 gen 协程是如何切换调用栈的，你可以参考下图
 
-![img](https://blog.poetries.top/img-repo/2019/11/47.png)
+![img](https://s.poetries.top/gitee/2019/11/47.png)
 
 到这里相信你已经弄清楚了协程是怎么工作的，其实在 JavaScript 中，生成器就是协程的一种实现方式，这样相信你也就理解什么是生成器了。那么接下来，我们使用生成器和 Promise 来改造开头的那段 Promise 代码。改造后的代码如下所示：
 
@@ -4487,7 +4487,7 @@ console.log(3)
 
 观察上面这段代码，你能判断出打印出来的内容是什么吗？这得先来分析 async 结合 await 到底会发生什么。在详细介绍之前，我们先站在协程的视角来看看这段代码的整体执行流程图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/48.png)
+![img](https://s.poetries.top/gitee/2019/11/48.png)
 
 结合上图，我们来一起分析下 async/await 的执行流程。
 
@@ -4555,13 +4555,13 @@ Chrome 开发者工具有很多重要的面板，比如与性能相关的有网�
 
 你可以在浏览器窗口的右上方选择 Chrome 菜单，然后选择“更多工具–> 开发者工具”来打开 Chrome 开发者工具。打开的页面如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/49.png)
+![img](https://s.poetries.top/gitee/2019/11/49.png)
 
 从图中可以看出，它一共包含了 10 个功能面板，包括了 Elements、Console、Sources、NetWork、Performance、Memory、Application、Security、Audits 和 Layers。
 
 关于这 10 个面板的大致功能，我做了一个表格，感兴趣的话，你可以详细看下：
 
-![img](https://blog.poetries.top/img-repo/2019/11/50.png)
+![img](https://s.poetries.top/gitee/2019/11/50.png)
 
 简单来说，Chrome 开发者工具为我们提供了通过界面访问或者编辑 DOM 和 CSSOM 的能力，还提供了强大的调试功能和查看性能指标的能力。
 
@@ -4571,13 +4571,13 @@ OK，接下来我们就要重点看下其中重要的 Network 面板，即网络
 
 网络面板由控制器、过滤器、抓图信息、时间线、详细列表和下载信息概要这 6 个区域构成（如下图所示）。
 
-![img](https://blog.poetries.top/img-repo/2019/11/51.png)
+![img](https://s.poetries.top/gitee/2019/11/51.png)
 
 **1. 控制器**
 
 其中，控制器有 4 个比较重要的功能，我们按照下文中的这张图来简单介绍下。
 
-![img](https://blog.poetries.top/img-repo/2019/11/52.png)
+![img](https://s.poetries.top/gitee/2019/11/52.png)
 
 - 红色圆点的按钮，表示“开始 / 暂停抓包”，这个功能很常见，很容易理解。
 - “全局搜索”按钮，这个功能就非常重要了，可以在所有下载资源中搜索相关内容，还可以快速定位到某几个你想要的文件上。
@@ -4621,13 +4621,13 @@ OK，接下来我们就要重点看下其中重要的 Network 面板，即网络
 
 另外，你也可以按照列表的属性来给列表排序，默认情况下，列表是按请求发起的时间来排序的，最早发起请求的资源在顶部。当然也可以按照返回状态码、请求类型、请求时长、内容大小等基础属性排序，只需点击相应属性即可。
 
-![img](https://blog.poetries.top/img-repo/2019/11/53.png)
+![img](https://s.poetries.top/gitee/2019/11/53.png)
 
 **2. 详细信息**
 
 如果你选中详细列表中的一项，右边就会出现该项的详细信息，如下所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/54.png)
+![img](https://s.poetries.top/gitee/2019/11/54.png)
 
 你可以在此查看请求列表中任意一项的请求行和请求头信息，还可以查看响应行、响应头和响应体。然后你可以根据这些查看的信息来判断你的业务逻辑是否正确，或者有时候也可以用来逆向推导别人网站的业务逻辑。
 
@@ -4635,13 +4635,13 @@ OK，接下来我们就要重点看下其中重要的 Network 面板，即网络
 
 了解了每个资源的详细请求信息之后，我们再来分析单个资源请求时间线，这就涉及具体的 HTTP 请求流程了。
 
-![img](https://blog.poetries.top/img-repo/2019/11/55.png)
+![img](https://s.poetries.top/gitee/2019/11/55.png)
 
 我们再回顾下在《03 | HTTP 请求流程：为什么很多站点第二次打开速度会很快？》这篇文章，我们介绍过发起一个 HTTP 请求之后，浏览器首先查找缓存，如果缓存没有命中，那么继续发起 DNS 请求获取 IP 地址，然后利用 IP 地址和服务器端建立 TCP 连接，再发送 HTTP 请求，等待服务器响应；不过，如果服务器响应头中包含了重定向的信息，那么整个流程就需要重新再走一遍。这就是在浏览器中一个 HTTP 请求的基础流程。
 
 那详细列表中是如何表示出这个流程的呢？这就要重点看下时间线面板了
 
-![img](https://blog.poetries.top/img-repo/2019/11/56.png)
+![img](https://s.poetries.top/gitee/2019/11/56.png)
 
 那面板中这各项到底是什么含义呢？
 
@@ -4725,7 +4725,7 @@ OK，接下来我们就要重点看下其中重要的 Network 面板，即网络
 
 前面我们说过代码从网络传输过来是字节流的形式，那么后续字节流是如何转换为 DOM 的呢？你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/57.png)
+![img](https://s.poetries.top/gitee/2019/11/57.png)
 
 从图中你可以看出，字节流转换为 DOM 需要三个阶段。
 
@@ -4733,7 +4733,7 @@ OK，接下来我们就要重点看下其中重要的 Network 面板，即网络
 
 前面《14 | 编译器和解释器：V8 是如何执行一段 JavaScript 代码的？》文章中我们介绍过，V8 编译 JavaScript 过程中的第一步是做词法分析，将 JavaScript 先分解为一个个 Token。解析 HTML 也是一样的，需要通过分词器先将字节流转换为一个个 Token，分为 Tag Token 和文本 Token。上述 HTML 代码通过词法分析生成的 Token 如下所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/58.png)
+![img](https://s.poetries.top/gitee/2019/11/58.png)
 
 由图可以看出，Tag Token 又分 StartTag 和 EndTag，比如
 
@@ -4766,23 +4766,23 @@ OK，接下来我们就要重点看下其中重要的 Network 面板，即网络
 
 这里需要补充说明下，HTML 解析器开始工作时，会默认创建了一个根为 document 的空 DOM 结构，同时会将一个 StartTag document 的 Token 压入栈底。然后经过分词器解析出来的第一个 StartTag html Token 会被压入到栈中，并创建一个 html 的 DOM 节点，添加到 document 上，如下图所示
 
-![img](https://blog.poetries.top/img-repo/2019/11/59.png)
+![img](https://s.poetries.top/gitee/2019/11/59.png)
 
 然后按照同样的流程解析出来 StartTag body 和 StartTag div，其 Token 栈和 DOM 的状态如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/60.png)
+![img](https://s.poetries.top/gitee/2019/11/60.png)
 
 接下来解析出来的是第一个 div 的文本 Token，渲染引擎会为该 Token 创建一个文本节点，并将该 Token 添加到 DOM 中，它的父节点就是当前 Token 栈顶元素对应的节点，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/61.png)
+![img](https://s.poetries.top/gitee/2019/11/61.png)
 
 再接下来，分词器解析出来第一个 EndTag div，这时候 HTML 解析器会去判断当前栈顶的元素是否是 StartTag div，如果是则从栈顶弹出 StartTag div，如下图所示
 
-![img](https://blog.poetries.top/img-repo/2019/11/62.png)
+![img](https://s.poetries.top/gitee/2019/11/62.png)
 
 按照同样的规则，一路解析，最终结果如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/63.png)
+![img](https://s.poetries.top/gitee/2019/11/63.png)
 
 通过上面的介绍，相信你已经清楚 DOM 是怎么生成的了。不过在实际生产环境中，HTML 源文件中既包含 CSS 和 JavaScript，又包含图片、音频、视频等文件，所以处理过程远比上面这个示范 Demo 复杂。不过理解了这个简单的 Demo 生成过程，我们就可以往下分析更加复杂的场景了。
 
@@ -4807,7 +4807,7 @@ OK，接下来我们就要重点看下其中重要的 Network 面板，即网络
 
 通过前面 DOM 生成流程分析，我们已经知道当解析到 script 脚本标签时，其 DOM 树结构如下所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/64.png)
+![img](https://s.poetries.top/gitee/2019/11/64.png)
 
 这时候 HTML 解析器暂停工作，JavaScript 引擎介入，并执行 script 标签中的这段脚本，因为这段 JavaScript 脚本修改了 DOM 中第一个 div 中的内容，所以执行这段脚本之后，div 节点内容已经修改为 time.geekbang 了。脚本执行完成之后，HTML 解析器恢复解析过程，继续解析后续的内容，直至生成最终的 DOM。
 
@@ -4901,7 +4901,7 @@ div{
 
 这两段代码分别由 CSS 文件和 HTML 文件构成，我们来分析下打开这段 HTML 文件时的渲染流水线，你可以先参考下面这张渲染流水线示意图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/65.png)
+![img](https://s.poetries.top/gitee/2019/11/65.png)
 
 下面我们结合上图来分析这个页面文件的渲染流水线。
 
@@ -4941,7 +4941,7 @@ div{
 
 这段代码是我在开头代码的基础之上做了一点小修改，在 body 标签内部加了一个简单的 JavaScript。有了 JavaScript，渲染流水线就有点不一样了，可以参考下面这张渲染流水线图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/66.png)
+![img](https://s.poetries.top/gitee/2019/11/66.png)
 
 那我们就结合这张图来分析含有外部 CSS 文件和 JavaScript 代码的页面渲染流水线，上一篇文章中我们提到过在解析 DOM 的过程中，如果遇到了 JavaScript 脚本，那么需要先暂停 DOM 解析去执行 JavaScript，因为 JavaScript 有可能会修改当前状态下的 DOM。
 
@@ -4971,7 +4971,7 @@ console.log('time.geekbang.org')
 
 从上面代码可以看出来，HTML 文件中包含了 CSS 的外部引用和 JavaScript 外部文件，那它们的渲染流水线是怎样的呢？可参考下图
 
-![img](https://blog.poetries.top/img-repo/2019/11/67.png)
+![img](https://s.poetries.top/gitee/2019/11/67.png)
 
 从图中可以看出来，在接收到 HTML 数据之后的预解析过程中，HTML 预解析器识别出来了有 CSS 文件和 JavaScript 文件需要下载，然后就同时发起这两个文件的下载请求，需要注意的是，这两个文件的下载过程是重叠的，所以下载时间按照最久的那个文件来算。
 
@@ -5128,7 +5128,7 @@ will-change: transform, opacity;
 
 我们先来分析如何系统优化加载阶段中的页面，还是先看一个典型的渲染流水线，如下图所示
 
-![img](https://blog.poetries.top/img-repo/2019/11/68.png)
+![img](https://s.poetries.top/gitee/2019/11/68.png)
 
 观察上面这个渲染流水线，你能分析出来有哪些因素影响了页面加载速度吗？下面我们就先来分析下这个问题。
 
@@ -5158,7 +5158,7 @@ will-change: transform, opacity;
 
 我们先来看看交互阶段的渲染流水线（如下图）。和加载阶段的渲染流水线有一些不同的地方是，在交互阶段没有了加载关键资源和构建 DOM、CSSOM 流程，通常是由 JavaScript 触发交互动画的。
 
-![img](https://blog.poetries.top/img-repo/2019/11/69.png)
+![img](https://s.poetries.top/gitee/2019/11/69.png)
 
 结合上图，我们来一起回顾下交互阶段是如何生成一个帧的。大部分情况下，生成一个新的帧都是由 JavaScript 通过修改 DOM 或者 CSSOM 来触发的。还有另外一部分帧是由 CSS 来触发的。
 
@@ -5209,7 +5209,7 @@ will-change: transform, opacity;
 
 对于上面这段代码，我们可以使用 Performance 工具来记录添加元素的过程，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/70.png)
+![img](https://s.poetries.top/gitee/2019/11/70.png)
 
 从图中可以看出来，执行 JavaScript 添加元素是在一个任务中执行的，重新计算样式布局是在另外一个任务中执行，这就是正常情况下的布局操作。
 
@@ -5235,7 +5235,7 @@ function foo() {
 
 同样，你可以看下面通过 Performance 记录的任务状态：
 
-![img](https://blog.poetries.top/img-repo/2019/11/71.png)
+![img](https://s.poetries.top/gitee/2019/11/71.png)
 
 从上图可以看出来，计算样式和布局都是在当前脚本执行过程中触发的，这就是强制同步布局。
 
@@ -5274,7 +5274,7 @@ function foo() {
 
 我们在一个 for 循环语句里面不断读取属性值，每次读取属性值之前都要进行计算样式和布局。执行代码之后，使用 Performance 记录的状态如下所示
 
-![img](https://blog.poetries.top/img-repo/2019/11/72.png)
+![img](https://s.poetries.top/gitee/2019/11/72.png)
 
 从上图可以看出，在 foo 函数内部重复执行计算样式和布局，这会大大影响当前函数的执行效率。这种情况的避免方式和强制同步布局一样，都是尽量不要在修改 DOM 结构时再去查询一些相关值。
 
@@ -5328,7 +5328,7 @@ function foo() {
 
 基于以上三点，我们再来看看什么是虚拟 DOM。为了直观理解，你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/73.png)
+![img](https://s.poetries.top/gitee/2019/11/73.png)
 
 该图是我结合 React 流程画的一张虚拟 DOM 执行流程图，下面我们就结合这张图来分析下虚拟 DOM 到底怎么运行的。
 
@@ -5359,13 +5359,13 @@ function foo() {
 
 关于 MVC 的基础结构，你可以先参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/74.png)
+![img](https://s.poetries.top/gitee/2019/11/74.png)
 
 通过上图你可以发现，MVC 的整体结构比较简单，由模型、视图和控制器组成，其核心思想就是将数据和视图分离，也就是说视图和模型之间是不允许直接通信的，它们之间的通信都是通过控制器来完成的。通常情况下的通信路径是视图发生了改变，然后通知控制器，控制器再根据情况判断是否需要更新模型数据。当然还可以根据不同的通信路径和控制器不同的实现方式，基于 MVC 又能衍生出很多其他的模式，如 MVP、MVVM 等，不过万变不离其宗，它们的基础骨架都是基于 MVC 而来。
 
 所以在分析基于 React 或者 Vue 这些前端框架时，我们需要先重点把握大的 MVC 骨架结构，然后再重点查看通信方式和控制器的具体实现方式，这样我们就能从架构的视角来理解这些前端框架了。比如在分析 React 项目时，我们可以把 React 的部分看成是一个 MVC 中的视图，在项目中结合 Redux 就可以构建一个 MVC 的模型结构，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/75.png)
+![img](https://s.poetries.top/gitee/2019/11/75.png)
 
 在该图中，我们可以把虚拟 DOM 看成是 MVC 的视图部分，其控制器和模型都是由 Redux 提供的。其具体实现过程如下：
 
@@ -5423,7 +5423,7 @@ PWA，全称是 Progressive Web App，翻译过来就是渐进式网页应用。
 
 所以在 2014 年的时候，标准委员会就提出了 Service Worker 的概念，它的主要思想是在页面和网络之间增加一个拦截器，用来缓存和拦截请求。整体结构如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/76.png)
+![img](https://s.poetries.top/gitee/2019/11/76.png)
 
 在没有安装 Service Worker 之前，WebApp 都是直接通过网络模块来请求资源的。安装了 Service Worker 模块之后，WebApp 请求资源时，会先通过 Service Worker，让它判断是返回 Service Worker 缓存的资源还是重新去网络请求资源。一切的控制权都交由 Service Worker 来处理。
 
@@ -5607,7 +5607,7 @@ WebComponent 给出了解决思路，它提供了对局部视图封装能力，�
 
 上述代码最终渲染出来的页面，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/77.png)
+![img](https://s.poetries.top/gitee/2019/11/77.png)
 
 从图中我们可以看出，影子 DOM 内部的样式是不会影响到全局 CSSOM 的。另外，使用 DOM 接口也是无法直接查询到影子 DOM 内部元素的，比如你可以使用document.getElementsByTagName('div')来查找所有 div 元素，这时候你会发现影子 DOM 内部的元素都是无法查找的，因为要想查找影子 DOM 内部的元素需要专门的接口，所以通过这种方式又将影子内部的 DOM 和外部的 DOM 进行了隔离。
 
@@ -5622,7 +5622,7 @@ WebComponent 给出了解决思路，它提供了对局部视图封装能力，�
 
 那么浏览器是如何实现影子 DOM 的呢？下面我们就来分析下，如下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/78.png)
+![img](https://s.poetries.top/gitee/2019/11/78.png)
 
 该图是上面那段示例代码对应的 DOM 结构图，从图中可以看出，我们使用了两次 geek-bang 属性，那么就会生成两个影子 DOM，并且每个影子 DOM 都有一个 shadow root 的根节点，我们可以将要展示的样式或者元素添加到影子 DOM 的根节点上，每个影子 DOM 你都可以看成是一个独立的 DOM，它有自己的样式、自己的属性，内部样式不会影响到外部样式，外部样式也不会影响到内部样式。
 
@@ -5659,7 +5659,7 @@ WebComponent 给出了解决思路，它提供了对局部视图封装能力，�
 - 服务器接收请求信息之后，读取对应的 HTML 文件，并将数据以 ASCII 字符流返回给客户端。
 - HTML 文档传输完成后，断开连接。
 
-![img](https://blog.poetries.top/img-repo/2019/11/79.png)
+![img](https://s.poetries.top/gitee/2019/11/79.png)
 
 总的来说，当时的需求很简单，就是用来传输体积很小的 HTML 文件，所以 HTTP/0.9 的实现有以下三个特点。
 
@@ -5681,7 +5681,7 @@ HTTP/0.9 虽然简单，但是已经可以满足当时的需求了。不过变�
 
 这种简单的交流型形式无疑不能满足传输多种类型文件的需求，那为了让客户端和服务器能更深入地交流，HTTP/1.0 引入了请求头和响应头，它们都是以为 Key-Value 形式保存的，在 HTTP 发送请求时，会带上请求头信息，服务器返回数据时，会先返回响应头信息。至于 HTTP/1.0 具体的请求流程，你可以参考下图。
 
-![img](https://blog.poetries.top/img-repo/2019/11/80.png)
+![img](https://s.poetries.top/gitee/2019/11/80.png)
 
 有了请求头和响应头，浏览器和服务器就能进行更加深入的交流了。
 
@@ -5730,13 +5730,13 @@ HTTP/1.0 除了对多文件提供良好的支持外，还依据当时实际的�
 
 HTTP/1.0 每进行一次 HTTP 通信，都需要经历建立 TCP 连接、传输 HTTP 数据和断开 TCP 连接三个阶段（如下图）。
 
-![img](https://blog.poetries.top/img-repo/2019/11/81.png)
+![img](https://s.poetries.top/gitee/2019/11/81.png)
 
 在当时，由于通信的文件比较小，而且每个页面的引用也不多，所以这种传输形式没什么大问题。但是随着浏览器普及，单个页面中的图片文件越来越多，有时候一个页面可能包含了几百个外部引用的资源文件，如果在下载每个文件的时候，都需要经历建立 TCP 连接、传输数据和断开连接这样的步骤，无疑会增加大量无谓的开销。
 
 为了解决这个问题，HTTP/1.1 中增加了持久连接的方法，它的特点是在一个 TCP 连接上可以传输多个 HTTP 请求，只要浏览器或者服务器没有明确断开连接，那么该 TCP 连接会一直保持。
 
-![img](https://blog.poetries.top/img-repo/2019/11/82.png)
+![img](https://s.poetries.top/gitee/2019/11/82.png)
 
 从上图可以看出，HTTP 的持久连接可以有效减少 TCP 建立连接和断开连接的次数，这样的好处是减少了服务器额外的负担，并提升整体 HTTP 的请求时长。
 
@@ -5794,7 +5794,7 @@ HTTP/1.1 通过引入Chunk transfer 机制来解决这个问题，服务器会�
 
 通过这些方式就大大提高了页面的下载速度，你可以通过下图来直观感受下：
 
-![img](https://blog.poetries.top/img-repo/2019/11/83.png)
+![img](https://s.poetries.top/gitee/2019/11/83.png)
 
 在该图中，引入了 CDN，并同时为每个域名维护 6 个连接，这样就大大减轻了整个资源的下载时间。这里我们可以简单计算下：如果使用单个 TCP 的持久连接，下载 100 个资源所花费的时间为 100 * n * RTT；若通过上面的技术，就可以把整个时间缩短为 100 * n * RTT/(6 * CDN 个数)。从这个计算结果来看，我们的页面加载速度变快了不少
 
@@ -5848,7 +5848,7 @@ HTTP/1.1 通过引入Chunk transfer 机制来解决这个问题，服务器会�
 
 所以，HTTP/2 的解决方案可以总结为：一个域名只使用一个 TCP 长连接和消除队头阻塞问题。可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/84.png)
+![img](https://s.poetries.top/gitee/2019/11/84.png)
 
 该图就是 HTTP/2 最核心、最重要且最具颠覆性的多路复用机制。从图中你会发现每个请求都有一个对应的 ID，如 stream1 表示 index.html 的请求，stream2 表示 foo.css 的请求。这样在浏览器端，就可以随时将请求发送给服务器了。
 
@@ -5860,7 +5860,7 @@ HTTP/2 使用了多路复用技术，可以将请求分成一帧一帧的数据�
 
 现在我们知道为了解决 HTTP/1.1 存在的问题，HTTP/2 采用了多路复用机制，那 HTTP/2 是怎么实现多路复用的呢？你可以先看下面这张图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/85.png)
+![img](https://s.poetries.top/gitee/2019/11/85.png)
 
 从图中可以看出，HTTP/2 添加了一个二进制分帧层，那我们就结合图来分析下 HTTP/2 的请求和接收过程。
 
@@ -5919,19 +5919,19 @@ HTTP/2 的一个核心特性是使用了多路复用技术，因此它可以通�
 
 接下来我们就来分析下 HTTP/1.1 协议栈中 TCP 是如何传输数据的。为直观理解，你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/86.png)
+![img](https://s.poetries.top/gitee/2019/11/86.png)
 
 通过上图你会发现，从一端发送给另外一端的数据会被拆分为一个个按照顺序排列的数据包，这些数据包通过网络传输到了接收端，接收端再按照顺序将这些数据包组合成原始数据，这样就完成了数据传输。
 
 不过，如果在数据传输的过程中，有一个数据因为网络故障或者其他原因而丢包了，那么整个 TCP 的连接就会处于暂停状态，需要等待丢失的数据包被重新传输过来。你可以把 TCP 连接看成是一个按照顺序传输数据的管道，管道中的任意一个数据丢失了，那之后的数据都需要等待该数据的重新传输。为了直观理解，你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/87.png)
+![img](https://s.poetries.top/gitee/2019/11/87.png)
 
 我们就把在 TCP 传输过程中，由于单个数据包的丢失而造成的阻塞称为 TCP 上的队头阻塞。
 
 那队头阻塞是怎么影响 HTTP/2 传输的呢？首先我们来看正常情况下 HTTP/2 是怎么传输多路请求的，为了直观理解，你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/88.png)
+![img](https://s.poetries.top/gitee/2019/11/88.png)
 
 通过该图，我们知道在 HTTP/2 中，多个请求是跑在一个 TCP 管道中的，如果其中任意一路数据流中出现了丢包的情况，那么就会阻塞该 TCP 连接中的所有请求。这不同于 HTTP/1.1，使用 HTTP/1.1 时，浏览器为每个域名开启了 6 个 TCP 连接，如果其中的 1 个 TCP 连接发生了队头阻塞，那么其他的 5 个连接依然可以继续传输数据。
 
@@ -5943,7 +5943,7 @@ HTTP/2 的一个核心特性是使用了多路复用技术，因此它可以通�
 
 为了搞清楚 TCP 协议建立连接的延迟问题，我们还是先来回顾下网络延迟的概念，这会有助于你对后面内容的理解。网络延迟又称为 RTT（Round Trip Time）。我们把从浏览器发送一个数据包到服务器，再从服务器返回数据包到浏览器的整个往返时间称为 RTT（如下图）。RTT 是反映网络性能的一个重要指标。
 
-![img](https://blog.poetries.top/img-repo/2019/11/89.png)
+![img](https://s.poetries.top/gitee/2019/11/89.png)
 
 那建立 TCP 连接时，需要花费多少个 RTT 呢？下面我们来计算下。
 
@@ -5974,7 +5974,7 @@ HTTP/2 存在一些比较严重的与 TCP 协议相关的缺陷，但由于 TCP 
 
 因此，HTTP/3 选择了一个折衷的方法——UDP 协议，基于 UDP 实现了类似于 TCP 的多路数据流、传输可靠性等功能，我们把这套功能称为QUIC 协议。关于 HTTP/2 和 HTTP/3 协议栈的比较，你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/90.png)
+![img](https://s.poetries.top/gitee/2019/11/90.png)
 
 通过上图我们可以看出，HTTP/3 中的 QUIC 协议集合了以下几点功能。
 
@@ -5982,7 +5982,7 @@ HTTP/2 存在一些比较严重的与 TCP 协议相关的缺陷，但由于 TCP 
 - 集成了 TLS 加密功能。目前 QUIC 使用的是 TLS1.3，相较于早期版本 TLS1.3 有更多的优点，其中最重要的一点是减少了握手所花费的 RTT 个数。
 - 实现了 HTTP/2 中的多路复用功能。和 TCP 不同，QUIC 实现了在同一物理连接上可以有多个独立的逻辑数据流（如下图）。实现了数据流的单独传输，就解决了 TCP 中队头阻塞的问题。
 
-![img](https://blog.poetries.top/img-repo/2019/11/91.png)
+![img](https://s.poetries.top/gitee/2019/11/91.png)
 
 实现了快速握手功能。由于 QUIC 是基于 UDP 的，所以 QUIC 可以实现使用 0-RTT 或者 1-RTT 来建立连接，这意味着 QUIC 可以用最快的速度来发送和接收数据，这样可以大大提升首次打开页面的速度。
 
@@ -6074,7 +6074,7 @@ https://time.geekbang.org/?category=0
 
 比如，恶意程序在 HTML 文件内容中插入如下一段 JavaScript 代码
 
-![img](https://blog.poetries.top/img-repo/2019/11/92.png)
+![img](https://s.poetries.top/gitee/2019/11/92.png)
 
 当这段 HTML 文件的数据被送达浏览器时，浏览器是无法区分被插入的文件是恶意的还是正常的，这样恶意脚本就寄生在页面之中，当页面启动时，它可以修改用户的搜索结果、改变一些内容的连接指向，等等。
 
@@ -6141,7 +6141,7 @@ XSS 全称是 Cross Site Scripting，为了与“CSS”区分开来，故简称 
 
 我们先来看看存储型 XSS 攻击是怎么向 HTML 文件中注入恶意脚本的，你可以参考下图
 
-![img](https://blog.poetries.top/img-repo/2019/11/93.png)
+![img](https://s.poetries.top/gitee/2019/11/93.png)
 
 通过上图，我们可以看出存储型 XSS 攻击大致需要经过如下步骤：
 
@@ -6150,21 +6150,21 @@ XSS 全称是 Cross Site Scripting，为了与“CSS”区分开来，故简称 
 - 当用户浏览该页面的时候，恶意脚本就会将用户的 Cookie 信息等数据上传到服务器。
 - 下面我们来看个例子，2015 年喜马拉雅就被曝出了存储型 XSS 漏洞。起因是在用户设置专辑名称时，服务器对关键字过滤不严格，比如可以将专辑名称设置为一段 JavaScript，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/94.png)
+![img](https://s.poetries.top/gitee/2019/11/94.png)
 
 当黑客将专辑名称设置为一段 JavaScript 代码并提交时，喜马拉雅的服务器会保存该段 JavaScript 代码到数据库中。然后当用户打开黑客设置的专辑时，这段代码就会在用户的页面里执行（如下图），这样就可以获取用户的 Cookie 等数据信息
 
-![img](https://blog.poetries.top/img-repo/2019/11/95.png)
+![img](https://s.poetries.top/gitee/2019/11/95.png)
 
 当用户打开黑客设置的专辑页面时，服务器也会将这段恶意 JavaScript 代码返回给用户，因此这段恶意脚本就在用户的页面中执行了。
 
 恶意脚本可以通过 XMLHttpRequest 或者 Fetch 将用户的 Cookie 数据上传到黑客的服务器，如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/96.png)
+![img](https://s.poetries.top/gitee/2019/11/96.png)
 
 黑客拿到了用户 Cookie 信息之后，就可以利用 Cookie 信息在其他机器上登录该用户的账号（如下图），并利用用户账号进行一些恶意操作。
 
-![img](https://blog.poetries.top/img-repo/2019/11/97.png)
+![img](https://s.poetries.top/gitee/2019/11/97.png)
 
 以上就是存储型 XSS 攻击的一个典型案例，这是乌云网在 2015 年曝出来的，虽然乌云网由于某些原因被关停了，但是你依然可以通过这个站点来查看乌云网的一些备份信息。
 
@@ -6204,11 +6204,11 @@ module.exports = router;
 
 上面这两段代码，第一段是路由，第二段是视图，作用是将 URL 中 xss 参数的内容显示在页面。我们可以在本地演示下，比如打开http://localhost:3000/?xss=123这个链接，这样在页面中展示就是“123”了（如下图），是正常的，没有问题的。
 
-![img](https://blog.poetries.top/img-repo/2019/11/98.png)
+![img](https://s.poetries.top/gitee/2019/11/98.png)
 
 > 但当打开`http://localhost:3000/?xss=<script>alert('你被xss攻击了')</script>`这段 URL 时，其结果如下图所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/99.png)
+![img](https://s.poetries.top/gitee/2019/11/99.png)
 
 通过这个操作，我们会发现用户将一段含有恶意代码的请求提交给 Web 服务器，Web 服务器接收到请求时，又将恶意代码反射给了浏览器端，这就是反射型 XSS 攻击。在现实生活中，黑客经常会通过 QQ 群或者邮件等渠道诱导用户去点击这些恶意链接，所以对于一些链接我们一定要慎之又慎。
 
@@ -6273,7 +6273,7 @@ set-cookie: NID=189=M8q2FtWbsR8RlcldPVt7qkrqR38LmFY9jUxkKo3-4Bi6Qu_ocNOat7nkYZUT
 
 我们可以看到，set-cookie 属性值最后使用了 HttpOnly 来标记该 Cookie。顾名思义，使用 HttpOnly 标记的 Cookie 只能使用在 HTTP 请求过程中，所以无法通过 JavaScript 来读取这段 Cookie。我们还可以通过 Chrome 开发者工具来查看哪些 Cookie 被标记了 HttpOnly，如下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/100.png)
+![img](https://s.poetries.top/gitee/2019/11/100.png)
 
 从图中可以看出，NID 这个 Cookie 的 HttpOlny 属性是被勾选上的，所以 NID 的内容是无法通过 document.cookie 是来读取的。
 
@@ -6305,7 +6305,7 @@ XSS 攻击就是黑客往页面中注入恶意脚本，然后将页面的一些�
 
 我们结合下图来分析下 David 域名的被盗流程：
 
-![img](https://blog.poetries.top/img-repo/2019/11/101.png)
+![img](https://s.poetries.top/gitee/2019/11/101.png)
 
 - 首先 David 发起登录 Gmail 邮箱请求，然后 Gmail 服务器返回一些登录状态给 David 的浏览器，这些信息包括了 Cookie、Session 等，这样在 David 的浏览器中，Gmail 邮箱就处于登录状态了。
 - 接着黑客通过各种手段引诱 David 去打开他的链接，比如 hacker.com，然后在 hacker.com 页面中，黑客编写好了一个邮件过滤器，并通过 Gmail 提供的 HTTP 设置接口设置好了新的邮件过滤功能，该过滤器会将 David 所有的邮件都转发到黑客的邮箱中。
@@ -6321,7 +6321,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 下面我们以极客时间官网为例子，来分析这三种攻击方式都是怎么实施的。这里假设极客时间具有转账功能，可以通过 POST 或 Get 来实现转账，转账接口如下所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/102.png)
+![img](https://s.poetries.top/gitee/2019/11/102.png)
 
 有了上面的转账接口，我们就可以来模拟 CSRF 攻击了。
 
@@ -6329,7 +6329,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 黑客最容易实施的攻击方式是自动发起 Get 请求，具体攻击方式你可以参考下面这段代码：
 
-![img](https://blog.poetries.top/img-repo/2019/11/103.png)
+![img](https://s.poetries.top/gitee/2019/11/103.png)
 
 这是黑客页面的 HTML 代码，在这段代码中，黑客将转账的请求接口隐藏在 img 标签内，欺骗浏览器这是一张图片资源。当该页面被加载时，浏览器会自动发起 img 的资源请求，如果服务器没有对该请求做判断的话，那么服务器就会认为该请求是一个转账请求，于是用户账户上的 100 极客币就被转移到黑客的账户上去了。
 
@@ -6337,7 +6337,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 除了自动发送 Get 请求之外，有些服务器的接口是使用 POST 方法的，所以黑客还需要在他的站点上伪造 POST 请求，当用户打开黑客的站点时，是自动提交 POST 请求，具体的方式你可以参考下面示例代码：
 
-![img](https://blog.poetries.top/img-repo/2019/11/104.png)
+![img](https://s.poetries.top/gitee/2019/11/104.png)
 
 在这段代码中，我们可以看到黑客在他的页面中构建了一个隐藏的表单，该表单的内容就是极客时间的转账接口。当用户打开该站点之后，这个表单会被自动执行提交；当表单被提交之后，服务器就会执行转账操作。因此使用构建自动提交表单这种方式，就可以自动实现跨站点 POST 数据提交。
 
@@ -6345,7 +6345,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 除了自动发起 Get 和 Post 请求之外，还有一种方式是诱惑用户点击黑客站点上的链接，这种方式通常出现在论坛或者恶意邮件上。黑客会采用很多方式去诱惑用户点击链接，示例代码如下所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/105.png)
+![img](https://s.poetries.top/gitee/2019/11/105.png)
 
 这段黑客站点代码，页面上放了一张美女图片，下面放了图片下载地址，而这个下载地址实际上是黑客用来转账的接口，一旦用户点击了这个链接，那么他的极客币就被转到黑客账户上了。
 
@@ -6380,7 +6380,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 在 HTTP 响应头中，通过 set-cookie 字段设置 Cookie 时，可以带上 SameSite 选项，如下：
 
-![img](https://blog.poetries.top/img-repo/2019/11/106.png)
+![img](https://s.poetries.top/gitee/2019/11/106.png)
 
 **SameSite 选项通常有 Strict、Lax 和 None 三个值。**
 
@@ -6398,13 +6398,13 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 **Referer 是 HTTP 请求头中的一个字段，记录了该 HTTP 请求的来源地址**。比如我从极客时间的官网打开了 InfoQ 的站点，那么请求头中的 Referer 值是极客时间的 URL，如下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/107.png)
+![img](https://s.poetries.top/gitee/2019/11/107.png)
 
 虽然可以通过 Referer 告诉服务器 HTTP 请求的来源，但是有一些场景是不适合将来源 URL 暴露给服务器的，因此浏览器提供给开发者一个选项，可以不用上传 Referer 值，具体可参考**Referrer Policy**
 
 但在服务器端验证请求头中的 Referer 并不是太可靠，因此标准委员会又制定了**Origin 属性**，在一些重要的场合，比如通过 XMLHttpRequest、Fecth 发起跨站请求或者通过 Post 方法发送请求时，都会带上 Origin 属性，如下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/108.png)
+![img](https://s.poetries.top/gitee/2019/11/108.png)
 
 从上图可以看出，Origin 属性只包含了域名信息，并没有包含具体的 URL 路径，这是 Origin 和 Referer 的一个主要区别。在这里需要补充一点，Origin 的值之所以不包含详细路径信息，是有些站点因为安全考虑，不想把源站点的详细路径暴露给服务器。
 
@@ -6416,7 +6416,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 第一步，在浏览器向服务器发起请求时，服务器生成一个 CSRF Token。CSRF Token 其实就是服务器生成的字符串，然后将该字符串植入到返回的页面中。你可以参考下面示例代码：
 
-![img](https://blog.poetries.top/img-repo/2019/11/109.png)
+![img](https://s.poetries.top/gitee/2019/11/109.png)
 
 第二步，在浏览器端如果要发起转账的请求，那么需要带上页面中的 CSRF Token，然后服务器会验证该 Token 是否合法。如果是从第三方站点发出的请求，那么将无法获取到 CSRF Token 的值，所以即使发出了请求，服务器也会因为 CSRF Token 不正确而拒绝请求。
 
@@ -6449,7 +6449,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 现代浏览器的设计目标是**安全、快速**和**稳定**，而这种核弹级杀伤力的安全问题就是一个很大的潜在威胁，因此在设计现代浏览器的体系架构时，需要解决这个问题。
 
-![img](https://blog.poetries.top/img-repo/2019/11/110.png)
+![img](https://s.poetries.top/gitee/2019/11/110.png)
 
 观察上图，我们知道浏览器被划分为**浏览器内核**和**渲染内核**两个核心模块，其中浏览器内核是由网络进程、浏览器主进程和 GPU 进程组成的，渲染内核就是渲染进程。那如果我们在浏览器中打开一个页面，这两个模块是怎么配合的呢？
 
@@ -6486,7 +6486,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 了解了被安全沙箱保护的进程会有一系列的受限操作之后，接下来我们就可以分析渲染进程和浏览器内核各自都有哪些职责，如下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/111.png)
+![img](https://s.poetries.top/gitee/2019/11/111.png)
 
 通过该图，我们可以看到由于渲染进程需要安全沙箱的保护，因此需要把在渲染进程内部涉及到和系统交互的功能都转移到浏览器内核中去实现。
 
@@ -6546,7 +6546,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 我们先从 HTTP 的明文传输的特性讲起，在上一个模块的三篇文章中我们分析过，起初设计 HTTP 协议的目的很单纯，就是为了传输超文本文件，那时候也没有太强的加密传输的数据需求，所以 HTTP 一直保持着明文传输数据的特征。但这样的话，在传输过程中的每一个环节，数据都有可能被窃取或者篡改，这也意味着你和服务器之间还可能有个中间人，你们在通信过程中的一切内容都在中间人的掌握中，如下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/112.png)
+![img](https://s.poetries.top/gitee/2019/11/112.png)
 
 从上图可以看出，我们使用 HTTP 传输的内容很容易被中间人窃取、伪造和篡改，通常我们把这种攻击方式称为**中间人攻击**
 
@@ -6558,7 +6558,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 从 HTTP 协议栈层面来看，我们可以在 TCP 和 HTTP 之间插入一个安全层，所有经过安全层的数据都会被加密或者解密，你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/113.png)
+![img](https://s.poetries.top/gitee/2019/11/113.png)
 
 从图中我们可以看出 HTTPS 并非是一个新的协议，通常 HTTP 直接和 TCP 通信，HTTPS 则先和安全层通信，然后安全层再和 TCP 层通信。也就是说 HTTPS 所有的安全核心都在安全层，它不会影响到上面的 HTTP 协议，也不会影响到下面的 TCP/IP，因此要搞清楚 HTTPS 是如何工作的，就要弄清楚安全层是怎么工作的。
 
@@ -6574,7 +6574,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 要在两台电脑上加解密同一个文件，我们至少需要知道加解密方式和密钥，因此，在 HTTPS 发送数据之前，浏览器和服务器之间需要协商加密方式和密钥，过程如下所示：
 
-![img](https://blog.poetries.top/img-repo/2019/11/114.png)
+![img](https://s.poetries.top/gitee/2019/11/114.png)
 
 通过上图我们可以看出，HTTPS 首先要协商加解密方式，这个过程就是 HTTPS 建立安全连接的过程。为了让加密的密钥更加难以破解，我们让服务器和客户端同时决定密钥，具体过程如下：
 
@@ -6594,7 +6594,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 在 HTTPS 中，服务器会将其中的一个密钥通过明文的形式发送给浏览器，我们把这个密钥称为**公钥**，服务器自己留下的那个密钥称为**私钥**。顾名思义，**公钥是每个人都能获取到的，而私钥只有服务器才能知道，不对任何人公开**。下图是使用非对称加密改造的 HTTPS 协议：
 
-![img](https://blog.poetries.top/img-repo/2019/11/115.png)
+![img](https://s.poetries.top/gitee/2019/11/115.png)
 
 根据该图，我们来分析下使用非对称加密的请求流程。
 
@@ -6611,7 +6611,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 基于以上两点原因，我们最终选择了一个更加完美的方案，那就是**在传输数据阶段依然使用对称加密，但是对称加密的密钥我们采用非对称加密来传输**。下图就是改造后的版本：
 
-![img](https://blog.poetries.top/img-repo/2019/11/116.png)
+![img](https://s.poetries.top/gitee/2019/11/116.png)
 
 **从图中可以看出，改造后的流程是这样的：**
 
@@ -6640,7 +6640,7 @@ CSRF 英文全称是 Cross-site request forgery，所以又称为“跨站请求
 
 接下来我们看看含有数字证书的 HTTPS 的请求流程，你可以参考下图：
 
-![img](https://blog.poetries.top/img-repo/2019/11/117.png)
+![img](https://s.poetries.top/gitee/2019/11/117.png)
 
 **相较于第三版的 HTTPS 协议，这里主要有两点改变：**
 

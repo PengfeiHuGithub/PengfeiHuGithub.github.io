@@ -4036,8 +4036,6 @@ EventBus源码地址
 
 不通过父子组件属性和回调函数通信， 通过 `EventBus` 中介者模式实现一个加减计数器组件
 
-![img](https://user-gold-cdn.xitu.io/2019/2/11/168db25e82630580?imageslim)
-
 ### 目录结构
 
 ```text
