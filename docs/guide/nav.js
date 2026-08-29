@@ -1,6 +1,51 @@
-module.exports = [{
+module.exports = [
+    {
+        text: '基础',
+        link: '/web-basics/' 
+    },
+    {
         text: '进阶',
         link: '/web-advanced/'
+    },
+    {
+        text: '高频',
+        link: '/web-high_frequency/'
+    },
+    {
+        text: '指南',
+        link: '/web-guide/'
+    },
+    {
+        text: '性能',
+        link: '/web-performance/'
+    },
+    {
+        text: '综合',
+        link: '/web-comprehensive/'
+    },
+    {
+        text: '原理',
+        link: '/web-principle/'
+    },
+    {
+        text: '手写',
+        link: '/web-handwriting/'
+    },
+    {
+        text: '模式',
+        link: '/web-model/'
+    },
+    {
+        text: '算法',
+        link: '/web-algorithm/'
+    },
+    {
+        text: 'AI面试',
+        link: '/ai-interview/'
+    },
+    {
+        text: '每日一题',
+        link: '/daily-question/'
     },
     {
         text: '精选',
@@ -48,115 +93,81 @@ module.exports = [{
         ]
     },
     {
-        text: '高频',
-        link: '/web-high_frequency/'
-    },
-    {
-        text: '指南',
-        link: '/web-guide/'
-    },
-    {
-        text: '性能',
-        link: '/web-performance/'
-    },
-    {
-        text: '综合',
-        link: '/web-comprehensive/'
-    },
-    {
-        text: '原理',
-        link: '/web-principle/'
-    },
-    {
-        text: '手写',
-        link: '/web-handwriting/'
-    },
-    {
-        text: '模式',
-        link: '/web-model/'
-    },
-    {
-        text: '算法',
-        link: '/web-algorithm/'
+        text: 'Git相关',
+        link: '/web-git/',
+        items: [
+                    {
+                text: 'git',
+                link: '/git-related/',
+                items:[
+                    {
+                        text: 'bug分支',
+                        link: '/web-git/git-related/bug分支',
+                    },
+                    {
+                        text: 'feature分支',
+                        link: '/web-git/git-related/feature分支',
+                    },
+                    {
+                        text: 'rebase',
+                        link: '/web-git/git-related/rebase',
+                    },
+                    {
+                        text: '从远程仓库克隆',
+                        link: '/web-git/git-related/从远程仓库克隆',
+                    },
+                    {
+                        text: '创建分支与合并分支',
+                        link: '/web-git/git-related/创建分支与合并分支',
+                    },
+                    {
+                        text: '创建标签',
+                        link: '/web-git/git-related/创建标签',
+                    },
+                    {
+                        text: '创建版本库',
+                        link: '/web-git/git-related/创建版本库',
+                    },
+                    {
+                        text: '多人协作',
+                        link: '/web-git/git-related/多人协作',
+                    },
+                    {
+                        text: '工作区和缓存区',
+                        link: '/web-git/git-related/工作区和缓存区',
+                    },
+                    {
+                        text: '撤销修改',
+                        link: '/web-git/git-related/撤销修改',
+                    },
+                    {
+                        text: '操作标签',
+                        link: '/web-git/git-related/操作标签',
+                    },
+                    {
+                        text: '添加远程仓库',
+                        link: '/web-git/git-related/添加远程仓库',
+                    },
+                    {
+                        text: '版本回退',
+                        link: '/web-git/git-related/版本回退',
+                    },
+                    {
+                        text: '管理修改',
+                        link: '/web-git/git-related/管理修改',
+                    },
+                    {
+                        text: '解决冲突',
+                        link: '/web-git/git-related/解决冲突',
+                    }
+                ]
+            },
+        ]
     },
     {
         text: '前端面试',
         link: '/web/',
         items: [
-            {
-                text: 'git',
-                link: '/web/git/',
-                items:[
-                    {
-                        text: 'git',
-                        link: '/web/git/',
-                    },
-                    {
-                        text: 'bug分支',
-                        link: '/web/git/bug分支',
-                    },
-                    {
-                        text: 'feature分支',
-                        link: '/web/git/feature分支',
-                    },
-                    {
-                        text: 'rebase',
-                        link: '/web/git/rebase',
-                    },
-                    {
-                        text: '从远程仓库克隆',
-                        link: '/web/git/从远程仓库克隆',
-                    },
-                    {
-                        text: '创建分支与合并分支',
-                        link: '/web/git/创建分支与合并分支',
-                    },
-                    {
-                        text: '创建标签',
-                        link: '/web/git/创建标签',
-                    },
-                    {
-                        text: '创建版本库',
-                        link: '/web/git/创建版本库',
-                    },
-                    {
-                        text: '删除文件',
-                        link: '/web/git/删除文件',
-                    },
-                    {
-                        text: '多人协作',
-                        link: '/web/git/多人协作',
-                    },
-                    {
-                        text: '工作区和缓存区',
-                        link: '/web/git/工作区和缓存区',
-                    },
-                    {
-                        text: '撤销修改',
-                        link: '/web/git/撤销修改',
-                    },
-                    {
-                        text: '操作标签',
-                        link: '/web/git/操作标签',
-                    },
-                    {
-                        text: '添加远程仓库',
-                        link: '/web/git/添加远程仓库',
-                    },
-                    {
-                        text: '版本回退',
-                        link: '/web/git/版本回退',
-                    },
-                    {
-                        text: '管理修改',
-                        link: '/web/git/管理修改',
-                    },
-                    {
-                        text: '解决冲突',
-                        link: '/web/git/解决冲突',
-                    }
-                ]
-            },
             {
                 text: 'vue难点解读',
                 link: '/web/vue难点解读/',
