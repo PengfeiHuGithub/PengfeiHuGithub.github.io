@@ -44,10 +44,6 @@ module.exports = [
         link: '/ai-interview/'
     },
     {
-        text: '每日一题',
-        link: '/daily-question/'
-    },
-    {
         text: '精选',
         link: '/web-featured/',
         items: [{
@@ -261,5 +257,13 @@ module.exports = [
                 link: '/web-expand/project/'
             }
         ]
+    },
+    {
+        text: '每日一题',
+        link: '/daily-question/'
+    },
+    {
+        text: '在线题库',
+        link: '/question-bank/'
     }
 ];
