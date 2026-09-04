@@ -1,5 +1,6 @@
 {
-  "total": 4137,
+  "total": 64,
+  "sourceTotal": 894,
   "questions": [
     {
       "id": "af9be91f6a7c756f0006e32c2761f255",
@@ -32,7 +33,7 @@
         "B",
         "D"
       ],
-      "explanation": "",
+      "explanation": "## 答案：A,B,D\n\n`Vite` 的开发模式利用原生 `ESM`，通常无需在启动前把全部业务源码打成完整 `bundle`，而是按请求转换并提供模块；依赖预构建则用于改善 `CommonJS` 兼容性和依赖请求效率。因此快速启动与冷页面首次访问较慢可以同时存在，应检查预构建缓存、页面依赖规模、请求瀑布以及插件转换耗时。\n\n### 逐项解析\n\n- **A（正确）**：按需处理业务模块减少了启动阶段工作，但也会把部分成本推迟到首次请求该模块时。冷门路由此前未被访问，其模块转换和依赖发现可能刚刚发生。\n\n- **B（正确）**：依赖预构建缓存若因配置、锁文件或依赖变化而反复失效，会增加开发等待；单个页面引入庞大依赖图也会增加请求、解析和转换成本。\n\n- **C（错误）**：该描述混淆了传统预打包和 `Vite` 开发服务机制。启动快通常恰恰因为没有先完整打包所有业务模块，因此不能据此认定浏览器故障。\n\n- **D（正确）**：即使单次转换较快，深层依赖瀑布和大量请求仍可能累积延迟；开发插件执行昂贵 `transform` 或同步工作，也会直接阻塞模块响应。\n\n### 易错点\n\n不要把开发服务器行为直接外推到生产产物。`Vite` 的开发模式与生产构建链路目的不同；诊断时应分别查看服务端转换计时、浏览器网络瀑布和依赖预构建日志，而非只比较启动秒数。",
       "difficulty": "中等"
     },
     {
@@ -64,7 +65,7 @@
       "answer": [
         "A"
       ],
-      "explanation": "",
+      "explanation": "## 答案：A\n\n`sideEffects: false` 是包级承诺，表示模块在未使用其导出时可以安全删除。题目中的顶层样式注册显然具有可观察副作用，因此该声明过于宽泛。应使用 `sideEffects` 数组精确标记必须保留的脚本或 `CSS`，或移除错误声明，使 `webpack` 在模块图优化时不把必要执行逻辑裁掉。\n\n### 逐项解析\n\n- **A（正确）**：精确列出有副作用的文件能保留 `Tree` `Shaking` 对纯模块的收益，同时确保注册代码和样式导入仍会执行，是兼顾正确性与产物体积的方案。\n\n- **B（错误）**：增加一个无人使用的导出并不能推翻包对无副作用的声明；优化器仍可能判断该模块无被使用的导出并将整个模块移除。\n\n- **C（错误）**：`minimize` 控制代码压缩，但模块是否可被判定为无副作用并从图中删除并不只发生在压缩器阶段，关闭压缩不是可靠修复。\n\n- **D（错误）**：`dynamicImport` 不是能够替代 `import` 的 `JavaScript` 关键字或 `webpack` `API`。即便改为真正的 `import()`，也应先正确表达模块副作用语义。\n\n### 易错点\n\n`sideEffects` 与函数是否纯净不是同一层面的概念：前者主要描述模块求值行为，后者可能由压缩器根据调用标注判断。`CSS`、`polyfill`、注册器和顶层初始化通常需要特别声明。",
       "difficulty": "困难"
     },
     {
@@ -98,7 +99,7 @@
         "C",
         "D"
       ],
-      "explanation": "",
+      "explanation": "## 答案：A,C,D\n\n`webpack` 插件应根据所需生命周期选择 `compiler` 或 `compilation` `hook`，并遵守对应 `Tapable` `Hook` 的同步或异步契约。异步摘要写入必须被 `webpack` 等待，结果还应结合 `stats` 或 `compilation.errors` 判断成功与否。`watch` 模式是持续进程，因此不能在每轮结束后无条件退出，否则监听器和开发服务都会被终止。\n\n### 逐项解析\n\n- **A（正确）**：不同 `hook` 对应不同生命周期和 `Tapable` 类型，异步工作应使用该 `hook` 支持的 `tapPromise` 或 `tapAsync` 注册。选错时机可能导致产物尚未完成就读取结果。\n\n- **B（错误）**：`process.exit(0)` 会直接结束 `Node.js` 进程，`watch` 模式无法继续监听，而且尚未刷新的异步日志或文件写入也可能丢失，因此该原则不正确。\n\n- **C（正确）**：返回可等待的 `Promise` 或按约定调用 `callback`，能让 `webpack` 知道异步副作用何时完成。若直接启动异步任务后返回，构建可能提前结束。\n\n- **D（正确）**：`done` 等时机可能同时携带失败构建的统计结果，插件应检查 `hasErrors` 或相关错误集合，再决定摘要状态，不能把 `hook` 被调用等同于成功。\n\n### 易错点\n\n“编译结束退出命令”的插件只适用于明确的一次性构建流程，也应通过设置退出码并让流程自然收尾来避免丢数据。插件还要防止在 `watch` 多轮编译中重复注册监听器或泄漏资源。",
       "difficulty": "困难"
     },
     {
@@ -643,6 +644,1433 @@
       ],
       "answer": [
         "B"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "7f33a8796a7c757a00114fb055527853",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "点击第二个列表项时，事件处理函数打印出的数据是什么？",
+      "description": "```html\n<view wx:for=\"{{list}}\" wx:key=\"id\" data-index=\"{{index}}\" data-id=\"{{item.id}}\" bindtap=\"choose\">\n  {{item.name}}\n</view>\n\nPage({\n  data: {\n    list: [\n      { id: 7, name: '甲' },\n      { id: 9, name: '乙' }\n    ]\n  },\n  choose(e) {\n    console.log(e.currentTarget.dataset.index, e.currentTarget.dataset.id);\n  }\n});\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "打印 1 和 9，二者均按表达式结果作为数值传入"
+        },
+        {
+          "key": "B",
+          "text": "打印字符串 \"1\" 和字符串 \"9\""
+        },
+        {
+          "key": "C",
+          "text": "打印 0 和 7，因为 wx:key 固定指向首项"
+        },
+        {
+          "key": "D",
+          "text": "打印 undefined 和 undefined，因为 dataset 不能放在循环节点上"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "简单"
+    },
+    {
+      "id": "43af56d46a7c757b00019c272dc79733",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "连续更新嵌套字段后，页面最终展示的计数值是多少？",
+      "description": "```css\nPage({\n  data: {\n    user: { name: '小明', stats: { count: 1 } }\n  },\n  onLoad() {\n    this.setData({ 'user.stats.count': 2 });\n    this.setData({ 'user.stats.count': this.data.user.stats.count + 3 });\n  }\n});\n\n假设没有其他代码修改该字段。\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "1，因为嵌套对象不能通过路径更新"
+        },
+        {
+          "key": "B",
+          "text": "2，因为第二次更新会被同一批次丢弃"
+        },
+        {
+          "key": "C",
+          "text": "4，因为第二次读取到的仍是初始值 1"
+        },
+        {
+          "key": "D",
+          "text": "5，因为第二次读取到逻辑层中已更新为 2 的数据"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "简单"
+    },
+    {
+      "id": "3d32a27a6a7c7579000cc86c147fa8a4",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "（多选）针对小程序中频繁出现的状态错乱、接口重复请求和页面返回后数据过期问题，哪些治理措施是合理的？",
+      "description": "一个页面可能多次进入可见状态，网络请求可能乱序返回，用户也可能连续点击提交。",
+      "options": [
+        {
+          "key": "A",
+          "text": "明确区分页面首次加载与每次展示时需要执行的逻辑"
+        },
+        {
+          "key": "B",
+          "text": "为请求结果设置版本标识或有效性判断，避免旧响应覆盖新状态"
+        },
+        {
+          "key": "C",
+          "text": "把所有页面状态永久放在全局对象中，以保证任何页面都不会销毁数据"
+        },
+        {
+          "key": "D",
+          "text": "对提交操作设置进行中状态，并在成功或失败后按规则恢复"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "43af56d46a7c757b00019c2803846d2c",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "执行下列跳转后，页面栈从底到顶最可能是什么？",
+      "description": "```css\n初始页面栈为：首页。\n\n首页执行：wx.navigateTo({ url: '/pages/detail/detail' })\n详情页执行：wx.redirectTo({ url: '/pages/edit/edit' })\n编辑页执行：wx.navigateBack()\n\n三个页面均为普通非 tabBar 页面，调用均成功。\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "首页 → 详情页，因为 navigateBack 会恢复被替换的页面"
+        },
+        {
+          "key": "B",
+          "text": "首页 → 编辑页，因为 navigateBack 只隐藏栈顶页面"
+        },
+        {
+          "key": "C",
+          "text": "最终只剩首页，因为详情页已被编辑页替换，编辑页随后出栈"
+        },
+        {
+          "key": "D",
+          "text": "最终页面栈为空，因为 redirectTo 会清空此前全部页面"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "3d32a27a6a7c7577000cc8673dc9b117",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "列表中某一项的点赞状态发生变化时，哪种更新方式通常更符合小程序的数据更新机制？",
+      "description": "已知变化项索引为 `index`，需要更新 `data.list`[`index`].`liked`。",
+      "options": [
+        {
+          "key": "A",
+          "text": "直接执行 this.data.list[index].liked = true，并等待视图自动侦测"
+        },
+        {
+          "key": "B",
+          "text": "重新调用 Page，将整个页面定义注册一次"
+        },
+        {
+          "key": "C",
+          "text": "构造动态数据路径，并通过 setData 只提交该字段的变化"
+        },
+        {
+          "key": "D",
+          "text": "直接查询对应标签并修改它的 className"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "43af56d46a7c757700019c234bb6d1f9",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "现代小程序中，业务希望获得用户头像和昵称用于完善资料，哪种设计更符合授权与交互边界？",
+      "description": "资料获取必须由用户主动触发，且用户拒绝后仍可继续使用不依赖该资料的功能。",
+      "options": [
+        {
+          "key": "A",
+          "text": "在 App 启动时循环弹出授权请求，直到用户同意"
+        },
+        {
+          "key": "B",
+          "text": "在明确的资料完善页面提供用户操作入口，并为拒绝或取消提供降级路径"
+        },
+        {
+          "key": "C",
+          "text": "先展示一套虚构头像昵称，并在后台视为用户已经授权"
+        },
+        {
+          "key": "D",
+          "text": "要求用户授权资料后才允许浏览任何与身份无关的公开内容"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "7f33a8796a7c757500114f9b526138b0",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "为了统计某个页面每次真正展示给用户的次数，埋点代码放在哪个页面生命周期中更合适？",
+      "description": "页面从详情页返回后会再次展示，但页面实例不一定重新创建。",
+      "options": [
+        {
+          "key": "A",
+          "text": "onLoad"
+        },
+        {
+          "key": "B",
+          "text": "onShow"
+        },
+        {
+          "key": "C",
+          "text": "onReady"
+        },
+        {
+          "key": "D",
+          "text": "onUnload"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": "简单"
+    },
+    {
+      "id": "3d32a27a6a7c757c000cc8716155bee2",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "为导出 Canvas 图片，下面哪种调用顺序能够可靠避免导出空白或旧画面？",
+      "description": "页面使用 `Canvas` 2`D` 节点绘制海报。图片资源已通过 `getImageInfo` 获得可用本地路径，接下来需要绘制并保存到相册。",
+      "options": [
+        {
+          "key": "A",
+          "text": "等待图片加载与绘制准备完成，再导出临时文件，导出成功后调用 saveImageToPhotosAlbum"
+        },
+        {
+          "key": "B",
+          "text": "先调用 saveImageToPhotosAlbum，再在成功回调中执行绘制和导出"
+        },
+        {
+          "key": "C",
+          "text": "开始加载网络图片后立即导出，图片加载完成会自动补写进已有临时文件"
+        },
+        {
+          "key": "D",
+          "text": "直接把 Canvas 节点对象传给 saveImageToPhotosAlbum，无须生成临时文件"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "7f33a8796a7c757d00114fb952087e6e",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "（多选）下面哪些改动能够直接降低首屏启动阶段的资源加载或逻辑层到视图层通信压力？",
+      "description": "某小程序首页首次进入较慢：主包包含多个仅在二级页面使用的功能；首页 `onLoad` 一次 `setData` 传入完整商品对象数组，每个对象还包含详情正文和调试字段；首屏只展示名称、价格与缩略图。",
+      "options": [
+        {
+          "key": "A",
+          "text": "把仅由二级页面使用且符合拆分条件的页面与资源迁移到分包"
+        },
+        {
+          "key": "B",
+          "text": "把一次大 setData 拆成数百次逐字段 setData，并保持传输总数据量不变"
+        },
+        {
+          "key": "C",
+          "text": "为首屏构造精简视图模型，只传名称、价格、缩略图等实际渲染字段"
+        },
+        {
+          "key": "D",
+          "text": "对非首屏列表采用分页或按需加载，并控制单次渲染的数据规模"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "43af56d46a7c757d00019c2933f6647c",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "自定义埋点封装执行后，最终会上报哪个页面路径？",
+      "description": "```js\nfunction report(event, extra = {}) {\n  const pages = getCurrentPages();\n  const page = pages[pages.length - 1];\n  wx.request({\n    url: 'https://example.com/track',\n    data: {\n      event,\n      path: page ? page.route : '',\n      ...extra\n    }\n  });\n}\n\nreport('buy_click', { path: 'manual/path', sku: 'A1' });\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "当前页面的 page.route，因为对象中较早声明的字段优先"
+        },
+        {
+          "key": "B",
+          "text": "空字符串，因为 getCurrentPages 不能在普通函数中调用"
+        },
+        {
+          "key": "C",
+          "text": "同时上报两个 path 字段，由服务端决定使用哪个"
+        },
+        {
+          "key": "D",
+          "text": "manual/path，因为后展开的 extra 覆盖了同名 path 字段"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "3d32a27a6a7c7578000cc86a4e4bc7d2",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "首页首屏代码较小，但项目包含多个低频业务模块。哪种组织方式通常更有利于控制首次下载与启动成本？",
+      "description": "低频模块不会在首页初始化时使用，且其资源能够按业务边界独立组织。",
+      "options": [
+        {
+          "key": "A",
+          "text": "把全部页面和资源都放入主包，避免出现任何分包"
+        },
+        {
+          "key": "B",
+          "text": "在首页 onLoad 中提前读取并初始化所有低频模块"
+        },
+        {
+          "key": "C",
+          "text": "把所有图片转成 Base64 后集中写入首页脚本"
+        },
+        {
+          "key": "D",
+          "text": "按业务划分分包，将首屏必要页面与公共启动代码保留在主包"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "3d32a27a6a7c7586000cc8800f538f92",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "在现代小程序中，业务希望获取用户头像和昵称用于完善资料。哪种交互与数据策略更合理？",
+      "description": "资料并非浏览首页的必要条件，用户拒绝后仍应能够使用基础功能。",
+      "options": [
+        {
+          "key": "A",
+          "text": "在用户触发完善资料时请求所需信息，说明用途并提供拒绝后的可用路径"
+        },
+        {
+          "key": "B",
+          "text": "小程序启动后立即循环弹出授权请求，直到用户同意"
+        },
+        {
+          "key": "C",
+          "text": "将历史缓存中的头像昵称永久视为最新且已获持续授权"
+        },
+        {
+          "key": "D",
+          "text": "把资料授权结果当作服务端所有业务权限的唯一依据"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "7f33a8796a7c757500114f9a7ef05851",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "使用 Canvas 生成分享图并导出临时图片时，哪一种时序最可靠？",
+      "description": "绘制内容包含一张通过异步接口取得本地临时路径的网络图片，随后需要调用画布导出能力。",
+      "options": [
+        {
+          "key": "A",
+          "text": "发起图片下载后立即导出，导出接口会自动等待所有资源完成"
+        },
+        {
+          "key": "B",
+          "text": "先导出空白画布，再异步绘制，临时文件内容会自动更新"
+        },
+        {
+          "key": "C",
+          "text": "等待图片可用并确认绘制提交完成后，再执行画布导出"
+        },
+        {
+          "key": "D",
+          "text": "把网络图片地址直接写入导出结果，无须经过画布绘制"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "43af56d46a7c757600019c221968ba41",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "在多人维护的小程序工程中，哪项措施最能避免开发、测试和生产环境配置被误用？",
+      "description": "项目需要切换 `API` 地址，但私密凭据不允许被打入客户端产物。",
+      "options": [
+        {
+          "key": "A",
+          "text": "由开发者发布前手工修改源码中的 API 地址"
+        },
+        {
+          "key": "B",
+          "text": "把所有环境的服务端密钥写入同一个配置文件供运行时选择"
+        },
+        {
+          "key": "C",
+          "text": "根据当前操作者的微信昵称自动推断目标环境"
+        },
+        {
+          "key": "D",
+          "text": "由构建模式注入非敏感环境配置，并在服务端保管真正的密钥"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "3d32a27a6a7c7576000cc864689f4164",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "关于小程序运行架构中的逻辑层与渲染层，下列描述最准确的是？",
+      "description": "",
+      "options": [
+        {
+          "key": "A",
+          "text": "二者职责分离，数据与事件需要通过运行环境提供的通信机制传递"
+        },
+        {
+          "key": "B",
+          "text": "逻辑层可以直接持有并修改渲染层中的原生 DOM 节点"
+        },
+        {
+          "key": "C",
+          "text": "WXML 中的事件处理函数会在浏览器页面全局作用域内执行"
+        },
+        {
+          "key": "D",
+          "text": "逻辑层与渲染层共享同一个 JavaScript 堆，因此对象引用可零成本传递"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "af9be91f6a7c75870006e3b8713a2665",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "某小程序包含订单查询与地址管理功能。以下哪些措施能够有效降低接口被越权调用或敏感数据泄露的风险？（多选）",
+      "description": "客户端代码、请求参数和本地缓存均不能被假设为攻击者不可见。",
+      "options": [
+        {
+          "key": "A",
+          "text": "服务端按当前登录身份校验订单和地址资源的归属关系"
+        },
+        {
+          "key": "B",
+          "text": "将接口参数 Base64 编码，以阻止用户查看和篡改内容"
+        },
+        {
+          "key": "C",
+          "text": "业务会话设置有效期并支持失效，敏感操作进行再次校验"
+        },
+        {
+          "key": "D",
+          "text": "本地只保存必要数据，日志和上报内容对敏感字段做最小化处理"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "7f33a8796a7c758700114fdc302adaa8",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "一个仍使用 mpvue 的多年项目准备增加复杂业务，并计划长期维护。面对框架已停止活跃演进、平台能力持续变化的风险，最稳妥的架构决策是？",
+      "description": "现有项目规模较大，无法一次性重写，团队希望控制迁移风险。",
+      "options": [
+        {
+          "key": "A",
+          "text": "继续无限期锁定全部依赖，因为不升级就不会产生兼容问题"
+        },
+        {
+          "key": "B",
+          "text": "立刻删除旧项目，在一个迭代内完整重写所有页面"
+        },
+        {
+          "key": "C",
+          "text": "在业务代码中到处直接调用框架私有接口，以快速适配新能力"
+        },
+        {
+          "key": "D",
+          "text": "建立能力适配层和迁移边界，按模块渐进迁往受维护的技术方案"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "3d32a27a6a7c758f000cc88e2973ff7d",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "以下跨源 iframe 代码执行时，最可能发生什么？",
+      "description": "父页面地址为 `https`://`app.example`/`a`，`iframe` 地址为 `https`://`admin.example`/`b`，两个页面均未修改 `document.domain`：\n`const` `frame = document.querySelector('iframe')`;\n`console.log(frame.contentWindow.location.href)`;",
+      "options": [
+        {
+          "key": "A",
+          "text": "输出 https://admin.example/b，因为两个主机具有相同的注册域"
+        },
+        {
+          "key": "B",
+          "text": "输出空字符串，因为浏览器会隐藏路径但保留读取权限"
+        },
+        {
+          "key": "C",
+          "text": "输出 https://admin.example/，因为只能读取跨源页面的 origin"
+        },
+        {
+          "key": "D",
+          "text": "访问 href 时抛出安全相关异常，因为两个页面不同源"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "简单"
+    },
+    {
+      "id": "43af56d46a7c758a00019c3c3e160b80",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "关于浏览器同源策略对跨源交互的限制，下列描述最准确的是哪一项？",
+      "description": "页面来源为 `https`://`app.example`，目标为 `https`://`api.other.example`。",
+      "options": [
+        {
+          "key": "A",
+          "text": "同源策略会阻止页面发出所有指向其他源的网络请求"
+        },
+        {
+          "key": "B",
+          "text": "某些跨源资源可被嵌入或请求，但脚本读取其内容通常仍受限制"
+        },
+        {
+          "key": "C",
+          "text": "只要两个地址都使用 HTTPS，它们就一定属于同源"
+        },
+        {
+          "key": "D",
+          "text": "同源策略只保护 Cookie，不限制 DOM 或网络响应读取"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": "简单"
+    },
+    {
+      "id": "3d32a27a6a7c758b000cc88636d4c1ff",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "页面需要读取另一个源提供的公开 JSON 数据，目标服务也由同一团队维护。现代浏览器中最规范的方案是哪一项？",
+      "description": "不考虑旧式浏览器兼容，也不允许把任意外部地址交给服务端代取。",
+      "options": [
+        {
+          "key": "A",
+          "text": "在前端设置请求头 Access-Control-Allow-Origin"
+        },
+        {
+          "key": "B",
+          "text": "关闭 fetch 的同源检查选项并直接读取响应"
+        },
+        {
+          "key": "C",
+          "text": "由目标服务返回匹配调用方的 CORS 响应头"
+        },
+        {
+          "key": "D",
+          "text": "把 JSON 放入隐藏 iframe 后直接读取其 document"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "简单"
+    },
+    {
+      "id": "af9be91f6a7c75890006e3c140945b0a",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "关于使用 HttpOnly 属性保护登录 Cookie，下列说法最准确的是哪一项？",
+      "description": "假设浏览器遵循现代 `Cookie` 行为，站点仍可能存在可执行脚本型 `XSS`。",
+      "options": [
+        {
+          "key": "A",
+          "text": "HttpOnly 会阻止浏览器在任何网络请求中携带该 Cookie"
+        },
+        {
+          "key": "B",
+          "text": "HttpOnly 能阻止页面中的恶意脚本发起已登录请求"
+        },
+        {
+          "key": "C",
+          "text": "HttpOnly 主要阻止脚本通过 document.cookie 读取该 Cookie，但不会消除 XSS"
+        },
+        {
+          "key": "D",
+          "text": "HttpOnly 能让该 Cookie 自动获得跨站请求伪造防护"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "简单"
+    },
+    {
+      "id": "43af56d46a7c758f00019c444b8454c6",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "这段跨域请求会产生哪种可观察结果？",
+      "description": "页面位于 `https`://`shop.example`：\n`fetch('https://api.example/profile')`\n  .`then`(`r` => `r.text()`)\n  .`then(console.log)`\n  .`catch`(() => `console.log('blocked')`);\n接口实际返回 200 和正文，但响应中没有 `Access-Control-Allow-Origin`。请求为普通 `GET`，且未添加非简单请求头。",
+      "options": [
+        {
+          "key": "A",
+          "text": "浏览器不发送网络请求，直接输出 blocked"
+        },
+        {
+          "key": "B",
+          "text": "浏览器发送请求并把 200 正文输出到控制台"
+        },
+        {
+          "key": "C",
+          "text": "浏览器发送请求，但因响应缺少 CORS 许可而输出 blocked"
+        },
+        {
+          "key": "D",
+          "text": "浏览器先发送 OPTIONS；OPTIONS 失败后输出 blocked"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "af9be91f6a7c75850006e3a47772f5e4",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "页面要导出一张包含用户头像、订单信息和二维码的分享图。为兼顾成功率、性能与安全，哪种方案最合理？",
+      "description": "头像来自用户可变的网络地址，二维码由业务服务端生成，导出前需要绘制到 `Canvas`。",
+      "options": [
+        {
+          "key": "A",
+          "text": "直接把任意网络图片地址交给 Canvas 绘制，失败时无限重试"
+        },
+        {
+          "key": "B",
+          "text": "每次进入页面立即生成高清大图，即使用户没有点击导出"
+        },
+        {
+          "key": "C",
+          "text": "由客户端拼接二维码业务参数，并把服务端密钥内置到包中"
+        },
+        {
+          "key": "D",
+          "text": "校验素材来源并先获取可绘制的本地临时文件，按需绘制和导出"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "af9be91f6a7c75830006e39e7e29bdfb",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "线上小程序接口大量失败，但开发者工具中始终正常，以下哪些措施适合作为首轮诊断？（多选）",
+      "description": "故障只出现在部分真机和正式版本。客户端统一提示“网络异常”，服务端监控显示部分请求根本没有到达业务应用。",
+      "options": [
+        {
+          "key": "A",
+          "text": "保留真实错误对象与请求上下文，区分域名校验、TLS、超时、HTTP 状态和业务错误"
+        },
+        {
+          "key": "B",
+          "text": "把所有失败请求永久改成无限重试，直到用户关闭小程序"
+        },
+        {
+          "key": "C",
+          "text": "核对正式环境请求域名配置、证书链、重定向链路及真机网络差异"
+        },
+        {
+          "key": "D",
+          "text": "使用请求标识关联客户端日志、网关日志和业务服务日志，确认请求中断层级"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "43af56d46a7c758300019c3317c19401",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "某商品列表页每秒接收多次库存变化，但只有少量商品发生改变。为了降低视图层通信与渲染开销，最合理的更新方式是？",
+      "description": "列表数据保存在 `data.products` 中，每项均有稳定 `id`，更新可能连续到达。",
+      "options": [
+        {
+          "key": "A",
+          "text": "每次变化都深拷贝整个 products，并立即 setData 全量列表"
+        },
+        {
+          "key": "B",
+          "text": "合并短时间内的变化，通过数据路径批量 setData 实际改变的字段"
+        },
+        {
+          "key": "C",
+          "text": "直接修改 this.data.products，等待框架自动同步视图"
+        },
+        {
+          "key": "D",
+          "text": "把列表转成 JSON 字符串后整体 setData，以减少对象处理"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "43af56d46a7c758100019c2f1d85821e",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "用户点击头像区域后仍拿不到真实头像和昵称，产品流程应如何调整？",
+      "description": "现代微信小程序中，团队仍在页面加载时调用旧式用户信息获取逻辑，期望静默得到用户头像与昵称并写入业务账户。",
+      "options": [
+        {
+          "key": "A",
+          "text": "将身份登录与资料填写分离，通过头像选择和昵称输入等用户主动操作收集必要资料"
+        },
+        {
+          "key": "B",
+          "text": "反复调用 wx.login，直到返回结果中直接包含头像和昵称"
+        },
+        {
+          "key": "C",
+          "text": "读取本地缓存中其他用户的资料，先作为当前用户的默认真实资料"
+        },
+        {
+          "key": "D",
+          "text": "在 App.onLaunch 中循环弹出授权提示，直到用户允许"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "7f33a8796a7c759000114ff815d6ef27",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "下列哪一项修改可以让预检通过，并允许脚本读取响应？",
+      "description": "```css\n页面位于 https://app.example，执行：\nfetch('https://api.example/data', {\n  method: 'PUT',\n  headers: {'X-Trace': '7'}\n});\n服务器当前对 OPTIONS 返回：\nAccess-Control-Allow-Origin: https://app.example\nAccess-Control-Allow-Methods: GET, POST\nAccess-Control-Allow-Headers: Content-Type\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "把允许方法加入 PUT，并把允许请求头加入 X-Trace"
+        },
+        {
+          "key": "B",
+          "text": "只把实际 PUT 响应的 Content-Type 改为 text/plain"
+        },
+        {
+          "key": "C",
+          "text": "在前端 fetch 中加入 mode: 'no-cors'"
+        },
+        {
+          "key": "D",
+          "text": "只在 OPTIONS 响应中加入 Access-Control-Expose-Headers: X-Trace"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "43af56d46a7c759100019c47515b52fe",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "（多选）启用以下 CSP 后，哪些脚本会被允许执行？",
+      "description": "响应头：\n`Content-Security-Policy: script-src` '`self`' '`nonce-r4nd0m`'\n页面位于 `https`://`app.example`/`index.html`，且不存在其他 `CSP` 指令或重定向。",
+      "options": [
+        {
+          "key": "A",
+          "text": "<script nonce=\"r4nd0m\">startApp()</script>"
+        },
+        {
+          "key": "B",
+          "text": "<button onclick=\"startApp()\">启动</button>"
+        },
+        {
+          "key": "C",
+          "text": "<script src=\"/assets/app.js\"></script>"
+        },
+        {
+          "key": "D",
+          "text": "<script src=\"https://cdn.example/app.js\"></script>"
+        }
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "7f33a8796a7c759100114ffd6867b662",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "以下登录前端代码中，哪种改动最能避免密码被意外写入 URL 和常见访问日志？",
+      "description": "```js\nconst password = document.querySelector('#password').value;\nlocation.href = '/login?password=' + encodeURIComponent(password);\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "通过 HTTPS 对 /login 发起 POST，并把密码放入请求体"
+        },
+        {
+          "key": "B",
+          "text": "继续使用 GET，但先对密码执行一次 Base64 编码"
+        },
+        {
+          "key": "C",
+          "text": "继续放在查询参数中，但在发送前调用 encodeURIComponent 两次"
+        },
+        {
+          "key": "D",
+          "text": "把参数名 password 改成不易识别的字段名 p"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "简单"
+    },
+    {
+      "id": "43af56d46a7c758a00019c3b6c00364a",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "在使用 Cookie 会话的 Web 应用中，以下哪项最适合作为关键状态变更接口的主要 CSRF 防护？",
+      "description": "接口由本站前端调用，服务端能够为用户会话生成并验证不可预测值。",
+      "options": [
+        {
+          "key": "A",
+          "text": "只检查请求方法必须是 POST"
+        },
+        {
+          "key": "B",
+          "text": "只把接口路径改成随机且较长的字符串"
+        },
+        {
+          "key": "C",
+          "text": "只要求请求头中存在常见的 User-Agent"
+        },
+        {
+          "key": "D",
+          "text": "要求提交与会话关联且不可预测的 CSRF Token，并由服务端验证"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "3d32a27a6a7c7581000cc87e08f76a5a",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "自定义组件中的按钮样式在开发者工具正常，接入页面后却未生效，首先应如何定位？",
+      "description": "组件模板使用 `class=\"primary\"`，组件自身 `WXSS` 未定义该类；开发者原以为页面中的 .`primary` 会自动作用到组件内部。项目未主动关闭组件样式隔离。",
+      "options": [
+        {
+          "key": "A",
+          "text": "给页面选择器统一增加更高的 CSS 权重"
+        },
+        {
+          "key": "B",
+          "text": "把 class 改成 id，依赖 id 选择器穿透组件边界"
+        },
+        {
+          "key": "C",
+          "text": "在组件 WXSS 中定义内部样式，或通过 externalClasses 等明确暴露外部样式入口"
+        },
+        {
+          "key": "D",
+          "text": "在按钮点击事件中调用 setData，重新设置相同的 class 字符串"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "af9be91f6a7c757f0006e38a5f9aa900",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "页面返回后曝光统计偶尔重复上报，最可能需要怎样修正？",
+      "description": "列表页在 `onShow` 中注册 `IntersectionObserver` 监听卡片曝光，在 `onHide` 中没有处理。用户多次进入详情页再返回列表页后，同一卡片一次出现会触发多次上报。",
+      "options": [
+        {
+          "key": "A",
+          "text": "保存观察器实例，在隐藏或卸载时 disconnect，并在再次显示时受控地重新创建"
+        },
+        {
+          "key": "B",
+          "text": "把所有曝光请求改为同步执行，确保前一次上报先完成"
+        },
+        {
+          "key": "C",
+          "text": "将曝光事件改为在卡片 tap 处理函数中上报"
+        },
+        {
+          "key": "D",
+          "text": "每次 onShow 时清空列表数据，再从服务器重新拉取"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "af9be91f6a7c75820006e39832b54c5e",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "主包接近体积限制且首屏启动变慢，哪项改造最能同时改善发布与加载问题？",
+      "description": "“运营报表”和“图片编辑器”仅少量用户访问，但其页面、组件和静态资源都位于主包；首页只需要基础组件与登录状态。",
+      "options": [
+        {
+          "key": "A",
+          "text": "把两个低频模块的源码压缩成单行后继续放在主包"
+        },
+        {
+          "key": "B",
+          "text": "首页启动时预先读取两个模块的所有图片并放入 Storage"
+        },
+        {
+          "key": "C",
+          "text": "删除项目中的源码注释，但保留全部模块和资源位置不变"
+        },
+        {
+          "key": "D",
+          "text": "将低频页面及专属依赖迁入独立分包，并按访问路径配置合理预下载策略"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "43af56d46a7c757e00019c2a0cd1af2e",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "（多选）在现代微信小程序的用户信息与登录流程中，哪些处理方式是合理的？",
+      "description": "用户点击“登录并完善资料”按钮。业务需要建立服务端会话，并由用户主动选择头像、填写昵称；在用户拒绝某项能力时仍允许浏览公共内容。",
+      "options": [
+        {
+          "key": "A",
+          "text": "在明确的用户操作后调用 wx.login，把 code 发送给服务端换取业务会话"
+        },
+        {
+          "key": "B",
+          "text": "使用 button 的 chooseAvatar 能力让用户主动选择头像，并用昵称输入能力收集昵称"
+        },
+        {
+          "key": "C",
+          "text": "把 wx.login 返回的 code 长期保存为业务 token，并在以后所有请求中重复使用"
+        },
+        {
+          "key": "D",
+          "text": "把拒绝授权或取消选择视为可恢复状态，保留公共浏览能力并提供再次操作入口"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "af9be91f6a7c759a0006e4021155a0a4",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "网站从第三方 CDN 加载固定版本的前端脚本，希望在不自建镜像的前提下降低 CDN 内容被篡改的风险。首选方案是？",
+      "description": "资源内容在该版本发布后保持不变，页面只支持现代浏览器。",
+      "options": [
+        {
+          "key": "A",
+          "text": "在 script 上配置匹配文件内容的 integrity，并设置适当的 crossorigin"
+        },
+        {
+          "key": "B",
+          "text": "给 CDN 地址增加随机查询参数，使攻击者无法预测最终 URL"
+        },
+        {
+          "key": "C",
+          "text": "用 defer 属性延迟执行脚本，以便浏览器在执行前判断其安全性"
+        },
+        {
+          "key": "D",
+          "text": "在业务代码执行后计算脚本文本哈希，若不一致再刷新页面"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "af9be91f6a7c75780006e36176b425e5",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "（多选）维护基于 Wepy 或 mpvue 的历史小程序项目时，下列哪些判断是合理的？",
+      "description": "限定为存量项目维护场景，不假定这些框架已经适配当前全部平台能力。",
+      "options": [
+        {
+          "key": "A",
+          "text": "升级小程序基础能力前，应核查框架编译产物、运行时封装和相关插件的兼容性"
+        },
+        {
+          "key": "B",
+          "text": "只要源码采用组件语法，框架就必然与最新原生能力同步且不存在适配延迟"
+        },
+        {
+          "key": "C",
+          "text": "排查问题时，应区分业务源码、框架转换层与最终生成的小程序代码"
+        },
+        {
+          "key": "D",
+          "text": "决定继续维护或迁移时，应综合社区状态、依赖风险、测试成本与团队能力"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "af9be91f6a7c75790006e3680b52b68c",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "并发请求遇到登录态失效时，下面代码最可能产生什么运行结果？",
+      "description": "```js\nlet refreshing = false;\n\nasync function request(url) {\n  const res = await wx.p.request({ url });\n  if (res.statusCode === 401) {\n    if (!refreshing) {\n      refreshing = true;\n      await wx.p.login();\n      refreshing = false;\n    }\n    return request(url);\n  }\n  return res;\n}\n\nPromise.all([request('/a'), request('/b')]);\n\n假设 /a 与 /b 首次同时返回 401，wx.p.login() 完成前登录态不会恢复。\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "只调用一次 login，两个请求都会在登录完成后各重试一次"
+        },
+        {
+          "key": "B",
+          "text": "调用两次 login，但两个请求最终都能正常结束"
+        },
+        {
+          "key": "C",
+          "text": "通常只启动一次 login，但未等待该 login 的另一个请求可能持续快速重试"
+        },
+        {
+          "key": "D",
+          "text": "Promise.all 会自动把两个 401 请求合并为一次网络请求"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "43af56d46a7c759b00019c525bfcca65",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "（多选）一个微前端平台必须渲染来自不同业务团队的页面模块，其中部分团队不能被完全信任。哪些措施能够实质性缩小 XSS 与权限扩散范围？",
+      "description": "平台需要在性能开销可控的前提下，区分可信组件与不可信内容模块。",
+      "options": [
+        {
+          "key": "A",
+          "text": "将不可信模块放入独立来源的 sandbox iframe，并只开放必要的 sandbox 能力"
+        },
+        {
+          "key": "B",
+          "text": "让所有模块共享主页面运行环境，仅通过 JavaScript 命名空间约定隔离"
+        },
+        {
+          "key": "C",
+          "text": "为跨窗口通信定义精简协议，校验 origin、source、消息结构和业务权限"
+        },
+        {
+          "key": "D",
+          "text": "可信同源组件采用受控 DOM 接收点与严格 CSP，不可信富文本仍经过白名单清洗"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "3d32a27a6a7c759a000cc8aa072d4239",
+      "category": "5b049cc861e0e33d057f365d225400ef",
+      "categoryName": "前端安全",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "关于登录页面的密码强度检测与泄露密码检查，哪种架构最合适？",
+      "description": "团队希望提供即时反馈，但不能把用户明文密码交给第三方服务，也不能依赖前端规则作为最终安全控制。",
+      "options": [
+        {
+          "key": "A",
+          "text": "仅在前端要求必须包含大小写、数字和符号，服务端接受所有前端判定通过的密码"
+        },
+        {
+          "key": "B",
+          "text": "把明文密码发送给第三方强度接口，响应后再提交本站服务端"
+        },
+        {
+          "key": "C",
+          "text": "前端先用固定快速哈希存入 localStorage，登录时提交该哈希作为长期凭据"
+        },
+        {
+          "key": "D",
+          "text": "前端本地提供强度提示，服务端执行最终策略与慢哈希存储；泄露检查采用不暴露完整密码或完整摘要的设计"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "43af56d46a7c758400019c3403b0197e",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "关于小程序登录，哪种服务端设计最能避免客户端伪造身份？",
+      "description": "客户端调用 `wx.login` 获得临时 `code`，业务需要建立自己的登录态。",
+      "options": [
+        {
+          "key": "A",
+          "text": "客户端把 code 交给业务服务端，由服务端换取身份并签发业务会话"
+        },
+        {
+          "key": "B",
+          "text": "客户端把 openid 写入本地缓存，后续请求直接用它证明身份"
+        },
+        {
+          "key": "C",
+          "text": "客户端生成随机 userId，服务端首次收到时自动注册并信任"
+        },
+        {
+          "key": "D",
+          "text": "客户端将 code 长期保存，之后每次请求都重复将其作为访问令牌"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "3d32a27a6a7c7574000cc85d118b0bd4",
+      "category": "bf4a0bf261e0e31e0611a2951e38cd5f",
+      "categoryName": "前端工程化",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "为降低构建插件与 loader 带来的供应链风险，哪些措施具有实际价值？（多选）",
+      "description": "`CI` 会安装依赖并执行 `webpack` 生产构建，第三方插件和 `loader` 在构建期间拥有执行 `JavaScript` 的能力。",
+      "options": [
+        {
+          "key": "A",
+          "text": "锁定依赖版本并使用可复现安装，审查锁文件中的异常变更"
+        },
+        {
+          "key": "B",
+          "text": "限制 CI 凭据和网络权限，将构建任务放入隔离环境"
+        },
+        {
+          "key": "C",
+          "text": "把插件名称改成本地别名，即可阻止其读取环境变量"
+        },
+        {
+          "key": "D",
+          "text": "减少不必要依赖，对高权限构建扩展进行来源、维护状态和更新审查"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "困难"
+    },
+    {
+      "id": "43af56d46a7c757400019c21674beb4e",
+      "category": "bf4a0bf261e0e2d60611488e0549bfb1",
+      "categoryName": "小程序",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "关于小程序登录态建立流程，下列做法最符合安全边界的是？",
+      "description": "客户端调用 `wx.login` 获取临时 `code`，业务需要建立自己的登录态。",
+      "options": [
+        {
+          "key": "A",
+          "text": "客户端将 code 长期保存，并直接把它作为业务登录令牌"
+        },
+        {
+          "key": "B",
+          "text": "客户端把 code 发送给业务服务端，由服务端换取身份标识并签发自有会话"
+        },
+        {
+          "key": "C",
+          "text": "客户端使用 AppSecret 自行换取身份标识，再把结果同步给服务端"
+        },
+        {
+          "key": "D",
+          "text": "服务端仅校验客户端上传的用户昵称，即可创建可信登录态"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "7f33a8796a7c75a50011503618a6fc15",
+      "category": "54ad1eea61e0e2ff06c1855a5a957068",
+      "categoryName": "性能优化",
+      "type": "multiple",
+      "typeName": "多选题",
+      "title": "关于下列资源提示的实际作用，哪些判断正确？（多选）",
+      "description": "```html\n<link rel=\"dns-prefetch\" href=\"//api.example.com\">\n<link rel=\"preconnect\" href=\"https://cdn.example.com\" crossorigin>\n<link rel=\"preload\" href=\"/fonts/main.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "dns-prefetch 可提前进行 api.example.com 的域名解析，但不会因此发送业务 API 请求"
+        },
+        {
+          "key": "B",
+          "text": "preconnect 可提前准备到 CDN 源的连接，通常涵盖 DNS、TCP，并在 HTTPS 下进行 TLS 建连"
+        },
+        {
+          "key": "C",
+          "text": "preload 字体后，浏览器一定会立即把该字体用于所有文本，无须 CSS 中声明 font-face"
+        },
+        {
+          "key": "D",
+          "text": "字体 preload 的 as、crossorigin 等属性应与后续真实字体请求匹配，否则可能无法复用并产生重复下载"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": "中等"
+    },
+    {
+      "id": "43af56d46a7c75a400019c586ae674b7",
+      "category": "54ad1eea61e0e2ff06c1855a5a957068",
+      "categoryName": "性能优化",
+      "type": "single",
+      "typeName": "单选题",
+      "title": "在 Vue 3 中，连续点击两次按钮后 expensive 共执行多少次？",
+      "description": "```html\n<script setup>\nimport { ref, computed } from 'vue';\nconst price = ref(10);\nconst count = ref(2);\nconst theme = ref('light');\nlet calls = 0;\nconst total = computed(() => {\n  calls++;\n  return price.value * count.value;\n});\n</script>\n\n<template>\n  <p>{{ total }}</p>\n  <p>{{ theme }}</p>\n  <button @click=\"theme = theme === 'light' ? 'dark' : 'light'\">切换</button>\n</template>\n\n其中题目所称 expensive 即 computed 回调；初次渲染完成后再连续点击两次。\n```",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 次"
+        },
+        {
+          "key": "B",
+          "text": "2 次"
+        },
+        {
+          "key": "C",
+          "text": "3 次"
+        },
+        {
+          "key": "D",
+          "text": "是否执行取决于浏览器是否命中 HTTP 缓存"
+        }
+      ],
+      "answer": [
+        "A"
       ],
       "explanation": "",
       "difficulty": "中等"

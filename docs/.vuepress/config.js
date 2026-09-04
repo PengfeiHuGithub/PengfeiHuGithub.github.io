@@ -41,10 +41,10 @@ module.exports = {
                     model: 'hibiki',
                     display: {
                         position: "right", // 显示位置：left/right(default: 'right')
-                        width: 135, // 模型的长度(default: 135)
-                        height: 300, // 模型的高度(default: 300)
-                        hOffset: 65, //  水平偏移(default: 65)
-                        vOffset: 0, //  垂直偏移(default: 0)
+                        width: 240, // 扩大画布，避免头部与脚部裁切
+                        height: 440, // 保留完整人物纵向空间
+                        hOffset: 8, // 贴近右侧但保留边距
+                        vOffset: 8, // 避开浏览器底部边缘
                     },
                     mobile: {
                         show: false // 是否在移动设备上显示(default: false)
